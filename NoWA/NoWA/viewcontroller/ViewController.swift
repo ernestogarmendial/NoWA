@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var coverScrollView:UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = .redColor()
+        
+        let boton = UIButton()
+        boton.backgroundColor = .blueColor()
+        
+        self.view.addSubview(boton)
+        
+        boton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
+        boton.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: self.view)
+
     }
 
     override func didReceiveMemoryWarning() {

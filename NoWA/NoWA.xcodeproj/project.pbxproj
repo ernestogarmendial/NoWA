@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C01C0CDF3C00E67905 /* UIColorExtension.swift */; };
+		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
 		94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */; };
-		94686C751C0BA9EE00D05BD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94686C741C0BA9EE00D05BD9 /* ViewController.swift */; };
 		94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94686C791C0BA9EE00D05BD9 /* Assets.xcassets */; };
+		949778AD1C0CDCCC0045099C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949778AC1C0CDCCC0045099C /* ViewController.swift */; };
+		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,13 +33,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D78AA6A48DB986E52D0FAD3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		941109C01C0CDF3C00E67905 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		941109C11C0CDF3C00E67905 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		94686C6F1C0BA9EE00D05BD9 /* NoWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94686C741C0BA9EE00D05BD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		94686C791C0BA9EE00D05BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94686C7E1C0BA9EE00D05BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94686C831C0BA9EE00D05BD9 /* NoWATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoWATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C8E1C0BA9EE00D05BD9 /* NoWAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoWAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		949778AC1C0CDCCC0045099C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = viewcontroller/ViewController.swift; sourceTree = "<group>"; };
+		949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NoWA-Bridging-Header.h"; sourceTree = "<group>"; };
+		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A826FA5374D4448A1079C48C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,11 +74,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941109BF1C0CDF3C00E67905 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				941109C01C0CDF3C00E67905 /* UIColorExtension.swift */,
+				941109C11C0CDF3C00E67905 /* UIFontExtension.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		94686C661C0BA9EE00D05BD9 = {
 			isa = PBXGroup;
 			children = (
+				9497789D1C0CDC260045099C /* Frameworks */,
 				94686C711C0BA9EE00D05BD9 /* NoWA */,
 				94686C701C0BA9EE00D05BD9 /* Products */,
+				AFC4C6ADB84285702FCCED31 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,12 +106,39 @@
 		94686C711C0BA9EE00D05BD9 /* NoWA */ = {
 			isa = PBXGroup;
 			children = (
+				941109BF1C0CDF3C00E67905 /* utils */,
+				949778AB1C0CDC610045099C /* Viewcontroller */,
 				94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */,
-				94686C741C0BA9EE00D05BD9 /* ViewController.swift */,
 				94686C791C0BA9EE00D05BD9 /* Assets.xcassets */,
 				94686C7E1C0BA9EE00D05BD9 /* Info.plist */,
+				949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */,
 			);
 			path = NoWA;
+			sourceTree = "<group>";
+		};
+		9497789D1C0CDC260045099C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAC99C11815F718924B1B194 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		949778AB1C0CDC610045099C /* Viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				949778AC1C0CDCCC0045099C /* ViewController.swift */,
+			);
+			name = Viewcontroller;
+			sourceTree = "<group>";
+		};
+		AFC4C6ADB84285702FCCED31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D78AA6A48DB986E52D0FAD3 /* Pods.debug.xcconfig */,
+				449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94686C971C0BA9EE00D05BD9 /* Build configuration list for PBXNativeTarget "NoWA" */;
 			buildPhases = (
+				60D4A8A9ACA9E72D3B2DAEF2 /* Check Pods Manifest.lock */,
 				94686C6B1C0BA9EE00D05BD9 /* Sources */,
 				94686C6C1C0BA9EE00D05BD9 /* Frameworks */,
 				94686C6D1C0BA9EE00D05BD9 /* Resources */,
+				1E43078F88F151B678574EFA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,13 +267,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E43078F88F151B678574EFA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60D4A8A9ACA9E72D3B2DAEF2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		94686C6B1C0BA9EE00D05BD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94686C751C0BA9EE00D05BD9 /* ViewController.swift in Sources */,
+				949778AD1C0CDCCC0045099C /* ViewController.swift in Sources */,
+				941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */,
 				94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */,
+				941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,23 +427,27 @@
 		};
 		94686C981C0BA9EE00D05BD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D78AA6A48DB986E52D0FAD3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NoWA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.egl.NoWA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NoWA/NoWA-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		94686C991C0BA9EE00D05BD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NoWA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.egl.NoWA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NoWA/NoWA-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -429,6 +518,7 @@
 				94686C991C0BA9EE00D05BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94686C9A1C0BA9EE00D05BD9 /* Build configuration list for PBXNativeTarget "NoWATests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +527,7 @@
 				94686C9C1C0BA9EE00D05BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94686C9D1C0BA9EE00D05BD9 /* Build configuration list for PBXNativeTarget "NoWAUITests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +536,7 @@
 				94686C9F1C0BA9EE00D05BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
