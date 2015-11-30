@@ -18,10 +18,7 @@ class TourView: UIView {
         //        self.addSubview(imageView)
         //
         //        self.bringSubviewToFront(imageView)
-        
-        
-        
-        
+
     }
     
     func setBackground(){
