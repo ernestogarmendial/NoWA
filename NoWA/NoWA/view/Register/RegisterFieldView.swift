@@ -27,9 +27,9 @@ class RegisterFieldView: UIView {
         recoverlabel.textColor = UIColor.whiteColor()
         recoverlabel.backgroundColor = UIColor.yellowColor()
         recoverlabel.font = UIFont(name: "HelveticaNeue", size: 12)
+        recoverlabel.text = "RECUPERAR"
         recoverlabel.adjustsFontSizeToFitWidth = true
         recoverlabel.numberOfLines = 1
-        recoverlabel.text = "RECUPERAR"
         recoverlabel.hidden = true
         self.addSubview(recoverlabel)
         
@@ -46,21 +46,26 @@ class RegisterFieldView: UIView {
     
     override func layoutSubviews() {
         
+        if recoverlabel.hidden == false {
+            recoverlabel.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
+            recoverlabel.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self)
+            recoverlabel.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: lineView)
+            recoverlabel.autoSetDimension(ALDimension.Width, toSize: self.frame.size.width / 4)
+        }
         
         inputTextField.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self, withOffset: 40)
+        if recoverlabel.hidden == false {
+            inputTextField.autoPinEdge(ALEdge.Right, toEdge: .Left, ofView: recoverlabel)
+        }else{
+            inputTextField.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
+        }
         inputTextField.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self)
         inputTextField.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: lineView)
-        
-        recoverlabel.autoPinEdge(ALEdge.Left, toEdge: .Right, ofView: inputTextField)
-        recoverlabel.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
-        recoverlabel.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self)
-        recoverlabel.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: lineView)
-        recoverlabel.autoSetDimension(ALDimension.Width, toSize: self.frame.size.width / 3.5)
         
         lineView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self)
         lineView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
         lineView.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: self)
-        lineView.autoSetDimension(ALDimension.Height, toSize: 1.5)
+        lineView.autoSetDimension(ALDimension.Height, toSize: 1)
         
         
     }
@@ -78,6 +83,9 @@ class RegisterFieldView: UIView {
         
         if recover == true{
             recoverlabel.hidden = false
+            
+        } else {
+            recoverlabel.hidden = true
         }
         
         if secureMode == true{
