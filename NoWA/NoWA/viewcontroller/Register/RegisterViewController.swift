@@ -51,28 +51,27 @@ class RegisterViewController: UIViewController {
     }
     
     
-    
     func setupConstrains(){
     
         emailView.autoSetDimension(ALDimension.Height, toSize: 60)
         emailView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
         emailView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
-        emailView.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: 40 )
+        emailView.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: self.view.frame.height / 2)
     
         passwordView.autoSetDimension(ALDimension.Height, toSize: 60)
         passwordView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
         passwordView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
-        passwordView.autoPinEdge(ALEdge.Top, toEdge: .Bottom, ofView: emailView, withOffset: 40 )
+        passwordView.autoPinEdge(ALEdge.Top, toEdge: .Bottom, ofView: emailView, withOffset: 30 )
     
         ingresarButton.autoSetDimension(ALDimension.Height, toSize: 40)
         ingresarButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
         ingresarButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
-        ingresarButton.autoPinEdge(ALEdge.Top, toEdge: .Bottom, ofView: passwordView, withOffset: 50)
+        ingresarButton.autoPinEdge(ALEdge.Top, toEdge: .Bottom, ofView: passwordView, withOffset: 30)
         
         ingresarFacebookButton.autoSetDimension(ALDimension.Height, toSize: 40)
         ingresarFacebookButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
         ingresarFacebookButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
-        ingresarFacebookButton.autoPinEdge(ALEdge.Top, toEdge: .Bottom, ofView: ingresarButton, withOffset: 50)
+        ingresarFacebookButton.autoPinEdge(ALEdge.Top, toEdge: .Bottom, ofView: ingresarButton, withOffset: 30)
         
     }
     
