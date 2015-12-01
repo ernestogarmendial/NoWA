@@ -21,12 +21,12 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         
         self.page = 0
         
-        self.tourScrollView = UIScrollView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
+        self.automaticallyAdjustsScrollViewInsets = false
         
+        self.tourScrollView = UIScrollView(frame: self.view.bounds)//CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
         self.tourScrollView.delegate = self
         self.tourScrollView.pagingEnabled = true
-        self.tourScrollView.contentSize = CGSizeMake(CGFloat(3*Int(tourScrollView.frame.size.width)), tourScrollView.frame.size.height-64)
-        self.tourScrollView.clipsToBounds = false
+        self.tourScrollView.contentSize = CGSizeMake(CGFloat(3*Int(tourScrollView.frame.size.width)), tourScrollView.frame.size.height)//-64)
         self.tourScrollView.showsHorizontalScrollIndicator = false
         self.tourScrollView.showsVerticalScrollIndicator = false
         self.tourScrollView.scrollEnabled = false
@@ -44,10 +44,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
             
         }
         
-        
         self.view.addSubview(self.tourScrollView)
-        
-        
         
         boton = UIButton()
         boton.backgroundColor = .blueColor()
@@ -61,17 +58,9 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     }
     
     
-    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
-    
-    //    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-    //
-    //        self.page = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
-    //
-    //        print("pagina \(page)")
-    //    }
     
     func goNextPage(){
         
@@ -84,7 +73,6 @@ class ViewController: UIViewController,UIScrollViewDelegate {
             boton.setTitle("Ingresá", forState: UIControlState.Normal)
             boton.addTarget(self, action: "goToRegister", forControlEvents: UIControlEvents.TouchUpInside)
         }
-        
         
     }
     
