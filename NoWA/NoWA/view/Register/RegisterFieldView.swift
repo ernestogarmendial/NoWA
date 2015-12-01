@@ -58,7 +58,7 @@ class RegisterFieldView: UIView {
         recoverlabel.autoSetDimension(ALDimension.Width, toSize: self.frame.size.width / 3.5)
         
         lineView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self)
-        lineView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self, withOffset: 10)
+        lineView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
         lineView.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: self)
         lineView.autoSetDimension(ALDimension.Height, toSize: 1.5)
         

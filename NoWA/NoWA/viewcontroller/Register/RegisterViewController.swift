@@ -10,7 +10,6 @@ class RegisterViewController: UIViewController {
     
     var emailView : RegisterFieldView!
     var passwordView : RegisterFieldView!
-
     var aceptTermsButton : UIButton!
     var aceptTermsLabel : UILabel!
     var ingresarButton : UIButton!
@@ -46,6 +45,15 @@ class RegisterViewController: UIViewController {
         ingresarFacebookButton.layer.cornerRadius = 20
         self.view.addSubview(ingresarFacebookButton)
         
+        
+        createAccountButton = UIButton()
+        createAccountButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 12)
+        createAccountButton.backgroundColor = .brownColor()
+        createAccountButton.setTitle("CREAR UNA CUENTA", forState: UIControlState.Normal)
+        createAccountButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        createAccountButton.addTarget(self, action: "createAccount", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(createAccountButton)
+        
         setupConstrains()
         
     }
@@ -56,7 +64,7 @@ class RegisterViewController: UIViewController {
         emailView.autoSetDimension(ALDimension.Height, toSize: 60)
         emailView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
         emailView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
-        emailView.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: self.view.frame.height / 2)
+        emailView.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: self.view.frame.height / 2.5)
     
         passwordView.autoSetDimension(ALDimension.Height, toSize: 60)
         passwordView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
@@ -73,6 +81,10 @@ class RegisterViewController: UIViewController {
         ingresarFacebookButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
         ingresarFacebookButton.autoPinEdge(ALEdge.Top, toEdge: .Bottom, ofView: ingresarButton, withOffset: 30)
         
+        createAccountButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
+        createAccountButton.autoSetDimension(ALDimension.Height, toSize: 40)
+        createAccountButton.autoSetDimension(ALDimension.Width, toSize: 200)
+        createAccountButton.autoPinEdge(ALEdge.Top, toEdge: .Bottom, ofView: ingresarFacebookButton, withOffset: 30)
     }
     
     func startApp(){
@@ -81,6 +93,10 @@ class RegisterViewController: UIViewController {
     
     func loginFacebook(){
         
+    }
+    
+    func createAccount(){
+    
     }
     
 }
