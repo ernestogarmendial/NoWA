@@ -9,19 +9,19 @@
 class RegisterFieldView: UIView {
     
     var iconImage : UIImageView!
-    var registerTextField : UITextField!
+    var inputTextField : UITextField!
     var recoverlabel : UILabel!
     var lineView : UIView!
     
     override init(frame:CGRect) {
         super.init(frame:frame)
         
-        registerTextField = UITextField()
-        registerTextField.textColor = UIColor.whiteColor()
-        registerTextField.backgroundColor = UIColor.blueColor()
-        registerTextField.adjustsFontSizeToFitWidth = true
+        inputTextField = UITextField()
+        inputTextField.textColor = UIColor.whiteColor()
+        inputTextField.backgroundColor = UIColor.blueColor()
+        inputTextField.adjustsFontSizeToFitWidth = true
         
-        self.addSubview(registerTextField)
+        self.addSubview(inputTextField)
         
         recoverlabel = UILabel()
         recoverlabel.textColor = UIColor.whiteColor()
@@ -47,11 +47,11 @@ class RegisterFieldView: UIView {
     override func layoutSubviews() {
         
         
-        registerTextField.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self, withOffset: 40)
-        registerTextField.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self)
-        registerTextField.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: lineView)
+        inputTextField.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self, withOffset: 40)
+        inputTextField.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self)
+        inputTextField.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: lineView)
         
-        recoverlabel.autoPinEdge(ALEdge.Left, toEdge: .Right, ofView: registerTextField)
+        recoverlabel.autoPinEdge(ALEdge.Left, toEdge: .Right, ofView: inputTextField)
         recoverlabel.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
         recoverlabel.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self)
         recoverlabel.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: lineView)
@@ -65,14 +65,14 @@ class RegisterFieldView: UIView {
         
     }
     
-    func setItems(icon: String?, placeholder: String?, recover: Bool){
+    func setItems(icon: String?, placeholder: String?, recover: Bool, secureMode: Bool){
         
         //        if let _icon = icon{
         //
         //        }
         
         if let _placeholder = placeholder{
-            registerTextField.attributedPlaceholder =  NSAttributedString(string:_placeholder,
+            inputTextField.attributedPlaceholder =  NSAttributedString(string:_placeholder,
                 attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         }
         
@@ -80,7 +80,9 @@ class RegisterFieldView: UIView {
             recoverlabel.hidden = false
         }
         
-        
+        if secureMode == true{
+            inputTextField.secureTextEntry = true
+        }
     }
     
 }

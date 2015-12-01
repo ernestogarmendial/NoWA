@@ -10,8 +10,6 @@ class RegisterViewController: UIViewController {
     
     var emailView : RegisterFieldView!
     var passwordView : RegisterFieldView!
-    var aceptTermsButton : UIButton!
-    var aceptTermsLabel : UILabel!
     var ingresarButton : UIButton!
     var ingresarFacebookButton : UIButton!
     var createAccountButton : UIButton!
@@ -23,12 +21,12 @@ class RegisterViewController: UIViewController {
         
         emailView = RegisterFieldView()
         emailView.backgroundColor = .grayColor()
-        emailView.setItems(nil,placeholder: "TU CORREO", recover: false)
+        emailView.setItems(nil,placeholder: "TU CORREO", recover: false, secureMode: false)
         self.view.addSubview(emailView)
         
         passwordView = RegisterFieldView()
         passwordView.backgroundColor = .orangeColor()
-        passwordView.setItems(nil,placeholder: "CONTRASENIA", recover: true)
+        passwordView.setItems(nil,placeholder: "CONTRASENIA", recover: true, secureMode: true)
         self.view.addSubview(passwordView)
         
         ingresarButton = UIButton()
