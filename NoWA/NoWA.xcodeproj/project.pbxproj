@@ -11,8 +11,10 @@
 		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
 		94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */; };
 		94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94686C791C0BA9EE00D05BD9 /* Assets.xcassets */; };
-		94801F821C0CF3C000D05D6E /* TourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F811C0CF3C000D05D6E /* TourView.swift */; };
-		949778AD1C0CDCCC0045099C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949778AC1C0CDCCC0045099C /* ViewController.swift */; };
+		94801F861C0DD7D100D05D6E /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F851C0DD7D100D05D6E /* TourViewController.swift */; };
+		94801F891C0DD8D100D05D6E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F881C0DD8D100D05D6E /* RegisterViewController.swift */; };
+		94801F911C0DDFC100D05D6E /* RegisterFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F8E1C0DDFC100D05D6E /* RegisterFieldView.swift */; };
+		94801F921C0DDFC100D05D6E /* TourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F901C0DDFC100D05D6E /* TourView.swift */; };
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +46,10 @@
 		94686C7E1C0BA9EE00D05BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94686C831C0BA9EE00D05BD9 /* NoWATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoWATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C8E1C0BA9EE00D05BD9 /* NoWAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoWAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94801F811C0CF3C000D05D6E /* TourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TourView.swift; path = view/TourView.swift; sourceTree = "<group>"; };
-		949778AC1C0CDCCC0045099C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = viewcontroller/ViewController.swift; sourceTree = "<group>"; };
+		94801F851C0DD7D100D05D6E /* TourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
+		94801F881C0DD8D100D05D6E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		94801F8E1C0DDFC100D05D6E /* RegisterFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFieldView.swift; sourceTree = "<group>"; };
+		94801F901C0DDFC100D05D6E /* TourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourView.swift; sourceTree = "<group>"; };
 		949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NoWA-Bridging-Header.h"; sourceTree = "<group>"; };
 		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,9 +126,46 @@
 		94801F7C1C0CF28100D05D6E /* view */ = {
 			isa = PBXGroup;
 			children = (
-				94801F811C0CF3C000D05D6E /* TourView.swift */,
+				94801F8D1C0DDFC100D05D6E /* Register */,
+				94801F8F1C0DDFC100D05D6E /* Tour */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		94801F841C0DD7D100D05D6E /* Tour */ = {
+			isa = PBXGroup;
+			children = (
+				94801F851C0DD7D100D05D6E /* TourViewController.swift */,
+			);
+			name = Tour;
+			path = viewcontroller/Tour;
+			sourceTree = "<group>";
+		};
+		94801F871C0DD8BC00D05D6E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				94801F881C0DD8D100D05D6E /* RegisterViewController.swift */,
+			);
+			name = Register;
+			path = viewcontroller/Register;
+			sourceTree = "<group>";
+		};
+		94801F8D1C0DDFC100D05D6E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				94801F8E1C0DDFC100D05D6E /* RegisterFieldView.swift */,
+			);
+			name = Register;
+			path = view/Register;
+			sourceTree = "<group>";
+		};
+		94801F8F1C0DDFC100D05D6E /* Tour */ = {
+			isa = PBXGroup;
+			children = (
+				94801F901C0DDFC100D05D6E /* TourView.swift */,
+			);
+			name = Tour;
+			path = view/Tour;
 			sourceTree = "<group>";
 		};
 		9497789D1C0CDC260045099C /* Frameworks */ = {
@@ -138,7 +179,8 @@
 		949778AB1C0CDC610045099C /* Viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
-				949778AC1C0CDCCC0045099C /* ViewController.swift */,
+				94801F871C0DD8BC00D05D6E /* Register */,
+				94801F841C0DD7D100D05D6E /* Tour */,
 			);
 			name = Viewcontroller;
 			sourceTree = "<group>";
@@ -316,10 +358,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94801F821C0CF3C000D05D6E /* TourView.swift in Sources */,
-				949778AD1C0CDCCC0045099C /* ViewController.swift in Sources */,
+				94801F921C0DDFC100D05D6E /* TourView.swift in Sources */,
+				94801F861C0DD7D100D05D6E /* TourViewController.swift in Sources */,
 				941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */,
+				94801F891C0DD8D100D05D6E /* RegisterViewController.swift in Sources */,
 				94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */,
+				94801F911C0DDFC100D05D6E /* RegisterFieldView.swift in Sources */,
 				941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TourViewController.swift
 //  NoWA
 //
 //  Created by Ernesto Garmendia Luis on 29/11/15.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIScrollViewDelegate {
+class TourViewController: UIViewController,UIScrollViewDelegate {
     
     var tourScrollView:UIScrollView!
-    var boton : UIButton!
+    var nextButton : UIButton!
     var page : Int!
     
     
@@ -46,12 +46,12 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         
         self.view.addSubview(self.tourScrollView)
         
-        boton = UIButton()
-        boton.backgroundColor = .blueColor()
-        boton.setTitle("Siguiente", forState: UIControlState.Normal)
-        boton.addTarget(self, action: "goNextPage", forControlEvents: UIControlEvents.TouchUpInside)
-        boton.layer.cornerRadius = 20
-        self.view.addSubview(boton)
+        nextButton = UIButton()
+        nextButton.backgroundColor = .blueColor()
+        nextButton.setTitle("Siguiente", forState: UIControlState.Normal)
+        nextButton.addTarget(self, action: "goNextPage", forControlEvents: UIControlEvents.TouchUpInside)
+        nextButton.layer.cornerRadius = 20
+        self.view.addSubview(nextButton)
         
         setupConstrains()
         
@@ -70,8 +70,8 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         tourScrollView.scrollRectToVisible(scrollViewFrame, animated: true)
         
         if page == 2{
-            boton.setTitle("Ingresá", forState: UIControlState.Normal)
-            boton.addTarget(self, action: "goToRegister", forControlEvents: UIControlEvents.TouchUpInside)
+            nextButton.setTitle("Ingresá", forState: UIControlState.Normal)
+            nextButton.addTarget(self, action: "goToRegister", forControlEvents: UIControlEvents.TouchUpInside)
         }
         
     }
@@ -88,11 +88,16 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     }
     
     func setupConstrains(){
-        boton.autoSetDimension(ALDimension.Height, toSize: 40)
-        boton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
-        boton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
-        boton.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -30)
+        nextButton.autoSetDimension(ALDimension.Height, toSize: 40)
+        nextButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
+        nextButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
+        nextButton.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -30)
     }
     
+    func goToRegister(){
+        let registerViewController = RegisterViewController()
+        self.navigationController?.pushViewController(registerViewController, animated: true)
+    
+    }
 }
 

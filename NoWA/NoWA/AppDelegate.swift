@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let nav1 = UINavigationController()
-        nav1.viewControllers = [ViewController()]
-        self.window!.rootViewController = nav1
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [TourViewController()]
+        self.window!.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
         
