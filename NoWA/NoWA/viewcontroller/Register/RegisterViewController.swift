@@ -96,7 +96,8 @@ class RegisterViewController: UIViewController {
     }
     
     func createAccount(){
-    
+        let createAccountViewController = CreateAccountViewController()
+        self.navigationController?.pushViewController(createAccountViewController, animated: true)
     }
     
 }
