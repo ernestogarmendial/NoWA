@@ -21,7 +21,7 @@ class CreateAccountViewController: UIViewController {
         
         self.title = "REGISTRO"
         
-        self.view.backgroundColor = UIColor.grayColor()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "registro")!)
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tap)
