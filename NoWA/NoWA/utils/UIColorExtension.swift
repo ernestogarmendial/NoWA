@@ -22,6 +22,14 @@ extension UIColor {
         return UIColor(red: 50/255, green: 142/255, blue: 255/255, alpha: 1.0)
     }
     
+    class func buttonSelectedRedColor()-> UIColor {
+        return UIColor(red: 255/255, green: 62/255, blue: 117/255, alpha: 1.0)
+    }
+    
+    class func registroGrayColor()-> UIColor {
+        return UIColor(red: 58/255, green: 70/255, blue: 86/255, alpha: 1.0)
+    }
+    
     class func darkGreyCustomColor() -> UIColor {
         return UIColorFromRGB("1E1E20")
     }

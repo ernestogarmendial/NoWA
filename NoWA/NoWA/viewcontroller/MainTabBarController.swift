@@ -11,13 +11,17 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        self.title = "NO WakeAPP"
+        self.title = "NOWAKEAPP"
         
-        self.view.backgroundColor = .redColor()
+        self.view.backgroundColor = .registroGrayColor()
         
-        UITabBar.appearance().barTintColor = UIColor.clearColor()        
+        
+//        UITabBar.appearance().barTintColor = UIColor.clearColor()
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().shadowImage = UIImage()
+
+        self.tabBar.tintColor = UIColor.buttonSelectedRedColor()
+
     }
     
     

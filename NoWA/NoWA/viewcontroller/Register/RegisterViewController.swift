@@ -121,11 +121,11 @@ class RegisterViewController: UIViewController {
         vc1.tabBarItem = UITabBarItem(
             title: "Pie",
             image: firstImage,
-            tag: 1)
+            selectedImage: secondImage)
         vc2.tabBarItem = UITabBarItem(
             title: "Pizza",
             image: secondImage,
-            tag:2)
+            selectedImage: firstImage)
         
         
         let navigationController = UINavigationController()
