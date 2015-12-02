@@ -138,6 +138,7 @@ class CreateAccountViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = .clearColor()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage();
+        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont.appLatoFontOfSize(18)]
     }
     
     //Calls this function when the tap is recognized.
