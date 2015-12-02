@@ -8,6 +8,7 @@
 
 class RegisterViewController: UIViewController {
     
+    var backgroundImage : UIImageView!
     var emailView : RegisterFieldView!
     var passwordView : RegisterFieldView!
     var ingresarButton : UIButton!
@@ -16,8 +17,11 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "login")!)
+                
+        backgroundImage = UIImageView()
+        backgroundImage.image = UIImage(named: "login")
+        backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
+        self.view.addSubview(backgroundImage)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tap)
@@ -33,21 +37,24 @@ class RegisterViewController: UIViewController {
         self.view.addSubview(passwordView)
         
         ingresarButton = UIButton()
-        ingresarButton.backgroundColor = .blueColor()
+        ingresarButton.backgroundColor = .loginRedColor()
         ingresarButton.setTitle("INGRESAR", forState: UIControlState.Normal)
+        ingresarButton.titleLabel!.font = UIFont.appLatoFontOfSize(17)
+        
         ingresarButton.addTarget(self, action: "startApp", forControlEvents: UIControlEvents.TouchUpInside)
-        ingresarButton.layer.cornerRadius = 20
+        ingresarButton.layer.cornerRadius = 25
         self.view.addSubview(ingresarButton)
         
         ingresarFacebookButton = UIButton()
-        ingresarFacebookButton.backgroundColor = .blueColor()
+        ingresarFacebookButton.backgroundColor = .loginBlueColor()
         ingresarFacebookButton.setTitle("INGRESAR CON FACEBOOK", forState: UIControlState.Normal)
+        ingresarFacebookButton.titleLabel!.font = UIFont.appLatoFontOfSize(17)
         ingresarFacebookButton.addTarget(self, action: "loginFacebook", forControlEvents: UIControlEvents.TouchUpInside)
-        ingresarFacebookButton.layer.cornerRadius = 20
+        ingresarFacebookButton.layer.cornerRadius = 25
         self.view.addSubview(ingresarFacebookButton)
         
         createAccountButton = UIButton()
-        createAccountButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 12)
+        createAccountButton.titleLabel!.font = UIFont.appLatoFontOfSize(12)
         createAccountButton.backgroundColor = .brownColor()
         createAccountButton.setTitle("CREAR UNA CUENTA", forState: UIControlState.Normal)
         createAccountButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
@@ -61,14 +68,19 @@ class RegisterViewController: UIViewController {
     
     func setupConstrains(){
         
+        backgroundImage.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view)
+        backgroundImage.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: self.view)
+        backgroundImage.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view)
+        backgroundImage.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view)
+        
+        ingresarButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
         ingresarButton.autoSetDimension(ALDimension.Height, toSize: 50)
-        ingresarButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
-        ingresarButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
+        ingresarButton.autoSetDimension(ALDimension.Width, toSize: self.view.frame.width * 0.7)
         ingresarButton.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: self.view.frame.height * 0.65)
         
+        ingresarFacebookButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
         ingresarFacebookButton.autoSetDimension(ALDimension.Height, toSize: 50)
-        ingresarFacebookButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
-        ingresarFacebookButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
+        ingresarFacebookButton.autoSetDimension(ALDimension.Width, toSize: self.view.frame.width * 0.7)
         ingresarFacebookButton.autoPinEdge(ALEdge.Top, toEdge: .Bottom, ofView: ingresarButton, withOffset: 20)
         
         createAccountButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)

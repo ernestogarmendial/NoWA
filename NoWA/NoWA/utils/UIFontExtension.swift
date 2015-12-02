@@ -14,8 +14,8 @@ extension UIFont {
         return UIFont.systemFontOfSize(fontSize);
     }
     
-    class func appBlackFontOfSize(fontSize: CGFloat) -> UIFont {
-        return UIFont(name: "Raleway-Black", size: fontSize)!;
+    class func appLatoFontOfSize(fontSize: CGFloat) -> UIFont {
+        return UIFont(name: "Lato-Regular", size: fontSize)!;
     }
     
     class func appBlackItalicFontOfSize(fontSize: CGFloat) -> UIFont {

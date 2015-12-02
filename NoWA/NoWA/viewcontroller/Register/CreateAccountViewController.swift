@@ -8,6 +8,7 @@
 
 class CreateAccountViewController: UIViewController {
 
+    var backgroundImage : UIImageView!
     var checkButton : UIButton!
     var aceptTermsLabel : UILabel!
     var emailView : RegisterFieldView!
@@ -23,6 +24,11 @@ class CreateAccountViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "registro")!)
 
+        backgroundImage = UIImageView()
+        backgroundImage.image = UIImage(named: "registro")
+        backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
+        self.view.addSubview(backgroundImage)
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tap)
     
@@ -42,14 +48,15 @@ class CreateAccountViewController: UIViewController {
         self.view.addSubview(confirmView)
         
         ingresarButton = UIButton()
-        ingresarButton.backgroundColor = .redColor()
+        ingresarButton.backgroundColor = .loginRedColor()
         ingresarButton.setTitle("INGRESAR", forState: UIControlState.Normal)
+        ingresarButton.titleLabel!.font = UIFont.appLatoFontOfSize(17)
         ingresarButton.addTarget(self, action: "startApp", forControlEvents: UIControlEvents.TouchUpInside)
-        ingresarButton.layer.cornerRadius = 20
+        ingresarButton.layer.cornerRadius = 25
         self.view.addSubview(ingresarButton)
      
         aceptTermsLabel = UILabel()
-        aceptTermsLabel.font = UIFont(name: "Helvetica",size:12)
+        aceptTermsLabel.font = UIFont.appLatoFontOfSize(12)
         aceptTermsLabel.text = "ACEPTO TÉRMINOS Y CONDICIONES"
         aceptTermsLabel.textColor = .whiteColor()
         aceptTermsLabel.textAlignment = .Center
@@ -76,9 +83,14 @@ class CreateAccountViewController: UIViewController {
     
     func setupConstrains() {
         
+        backgroundImage.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view)
+        backgroundImage.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: self.view)
+        backgroundImage.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view)
+        backgroundImage.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view)
+        
+        ingresarButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
         ingresarButton.autoSetDimension(ALDimension.Height, toSize: 50)
-        ingresarButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
-        ingresarButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
+        ingresarButton.autoSetDimension(ALDimension.Width, toSize: self.view.frame.width * 0.7)
         ingresarButton.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: self.view.frame.height * 0.65)
         
         checkButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: termsView)

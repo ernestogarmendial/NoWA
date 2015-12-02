@@ -16,6 +16,7 @@
 		94801F911C0DDFC100D05D6E /* RegisterFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F8E1C0DDFC100D05D6E /* RegisterFieldView.swift */; };
 		94801F921C0DDFC100D05D6E /* TourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F901C0DDFC100D05D6E /* TourView.swift */; };
 		94801F961C0E143400D05D6E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F951C0E143400D05D6E /* CreateAccountViewController.swift */; };
+		94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94801F991C0F368800D05D6E /* Lato-Regular.ttf */; };
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		94801F8E1C0DDFC100D05D6E /* RegisterFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFieldView.swift; sourceTree = "<group>"; };
 		94801F901C0DDFC100D05D6E /* TourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourView.swift; sourceTree = "<group>"; };
 		94801F951C0E143400D05D6E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		94801F991C0F368800D05D6E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NoWA-Bridging-Header.h"; sourceTree = "<group>"; };
 		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,10 +116,8 @@
 		94686C711C0BA9EE00D05BD9 /* NoWA */ = {
 			isa = PBXGroup;
 			children = (
-				949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */,
-				94686C7E1C0BA9EE00D05BD9 /* Info.plist */,
+				94801F971C0F363900D05D6E /* Supporting Files */,
 				94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */,
-				94686C791C0BA9EE00D05BD9 /* Assets.xcassets */,
 				941109BF1C0CDF3C00E67905 /* utils */,
 				94801F7C1C0CF28100D05D6E /* view */,
 				949778AB1C0CDC610045099C /* Viewcontroller */,
@@ -169,6 +169,25 @@
 			);
 			name = Tour;
 			path = view/Tour;
+			sourceTree = "<group>";
+		};
+		94801F971C0F363900D05D6E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94801F981C0F364B00D05D6E /* Fonts */,
+				949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */,
+				94686C7E1C0BA9EE00D05BD9 /* Info.plist */,
+				94686C791C0BA9EE00D05BD9 /* Assets.xcassets */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94801F981C0F364B00D05D6E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				94801F991C0F368800D05D6E /* Lato-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		9497789D1C0CDC260045099C /* Frameworks */ = {
@@ -305,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
+				94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

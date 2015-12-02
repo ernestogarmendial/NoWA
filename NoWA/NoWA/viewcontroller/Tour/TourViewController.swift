@@ -47,10 +47,10 @@ class TourViewController: UIViewController,UIScrollViewDelegate {
         self.view.addSubview(self.tourScrollView)
         
         nextButton = UIButton()
-        nextButton.backgroundColor = .blueColor()
+        nextButton.backgroundColor = .tourBlueColor()
         nextButton.setTitle("Siguiente", forState: UIControlState.Normal)
         nextButton.addTarget(self, action: "goNextPage", forControlEvents: UIControlEvents.TouchUpInside)
-        nextButton.layer.cornerRadius = 20
+        nextButton.layer.cornerRadius = 25
         self.view.addSubview(nextButton)
         
         setupConstrains()
@@ -88,10 +88,10 @@ class TourViewController: UIViewController,UIScrollViewDelegate {
     }
     
     func setupConstrains(){
-        nextButton.autoSetDimension(ALDimension.Height, toSize: 40)
-        nextButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
-        nextButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
-        nextButton.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -30)
+        nextButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
+        nextButton.autoSetDimension(ALDimension.Height, toSize: 50)
+        nextButton.autoSetDimension(ALDimension.Width, toSize: self.view.frame.width * 0.7)
+        nextButton.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -40)
     }
     
     func goToRegister(){

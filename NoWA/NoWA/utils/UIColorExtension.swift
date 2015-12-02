@@ -10,22 +10,21 @@ import UIKit
 
 extension UIColor {
     
-    class func twitterBlueColor()-> UIColor {
-        return UIColor(red: 178.7/255, green: 24.8/255, blue: 10.4/255, alpha: 1.0)
+    class func tourBlueColor()-> UIColor {
+        return UIColor(red: 0/255, green: 159/255, blue: 232/255, alpha: 1.0)
     }
     
-    class func viewPagerColor() -> UIColor {
-        return UIColor(red: 23.0/255.0, green: 23.0/255.0, blue: 24.0/255.0, alpha: 1.0);
+    class func loginRedColor()-> UIColor {
+        return UIColor(red: 252/255, green: 54/255, blue: 175/255, alpha: 1.0)
+    }
+
+    class func loginBlueColor()-> UIColor {
+        return UIColor(red: 50/255, green: 142/255, blue: 255/255, alpha: 1.0)
     }
     
     class func darkGreyCustomColor() -> UIColor {
         return UIColorFromRGB("1E1E20")
     }
-    
-    class func normalGreyCustomColor() -> UIColor {
-        return UIColorFromRGB("2A2C2B")
-    }
-    
     
     class func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
         let scanner = NSScanner(string:colorCode)

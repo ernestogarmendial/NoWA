@@ -18,6 +18,7 @@ class RegisterFieldView: UIView {
         
         inputTextField = UITextField()
         inputTextField.textColor = UIColor.whiteColor()
+        inputTextField.font = UIFont.appLatoFontOfSize(12)
         inputTextField.backgroundColor = UIColor.blueColor()
         inputTextField.adjustsFontSizeToFitWidth = true
         
@@ -26,7 +27,7 @@ class RegisterFieldView: UIView {
         recoverlabel = UILabel()
         recoverlabel.textColor = UIColor.whiteColor()
         recoverlabel.backgroundColor = UIColor.yellowColor()
-        recoverlabel.font = UIFont(name: "HelveticaNeue", size: 12)
+        recoverlabel.font = UIFont.appLatoFontOfSize(12)
         recoverlabel.text = "RECUPERAR"
         recoverlabel.adjustsFontSizeToFitWidth = true
         recoverlabel.numberOfLines = 1
