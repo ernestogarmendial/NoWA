@@ -33,26 +33,23 @@ class CreateAccountViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
     
         emailView = RegisterFieldView()
-        emailView.backgroundColor = .grayColor()
         emailView.setItems(nil,placeholder: "TU CORREO", recover: false, secureMode: false)
         self.view.addSubview(emailView)
         
         passwordView = RegisterFieldView()
-        passwordView.backgroundColor = .orangeColor()
         passwordView.setItems(nil,placeholder: "CONTRASENIA", recover: false, secureMode: true)
         self.view.addSubview(passwordView)
         
         confirmView = RegisterFieldView()
-        confirmView.backgroundColor = .orangeColor()
         confirmView.setItems(nil,placeholder: "CONFIRMAR", recover: false, secureMode: true)
         self.view.addSubview(confirmView)
         
         ingresarButton = UIButton()
         ingresarButton.backgroundColor = .loginRedColor()
         ingresarButton.setTitle("INGRESAR", forState: UIControlState.Normal)
-        ingresarButton.titleLabel!.font = UIFont.appLatoFontOfSize(17)
+        ingresarButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
         ingresarButton.addTarget(self, action: "startApp", forControlEvents: UIControlEvents.TouchUpInside)
-        ingresarButton.layer.cornerRadius = 25
+        ingresarButton.layer.cornerRadius = 20
         self.view.addSubview(ingresarButton)
      
         aceptTermsLabel = UILabel()
@@ -61,7 +58,6 @@ class CreateAccountViewController: UIViewController {
         aceptTermsLabel.textColor = .whiteColor()
         aceptTermsLabel.textAlignment = .Center
         aceptTermsLabel.adjustsFontSizeToFitWidth = true
-        aceptTermsLabel.backgroundColor = .greenColor()
         aceptTermsLabel.numberOfLines = 1
         self.view.addSubview(aceptTermsLabel)
         
@@ -71,7 +67,6 @@ class CreateAccountViewController: UIViewController {
         self.view.addSubview(checkButton)
         
         termsView = UIView()
-        termsView.backgroundColor = UIColor.whiteColor()
         termsView.addSubview(aceptTermsLabel)
         termsView.addSubview(checkButton)
         self.view.addSubview(termsView)
@@ -89,9 +84,9 @@ class CreateAccountViewController: UIViewController {
         backgroundImage.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view)
         
         ingresarButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
-        ingresarButton.autoSetDimension(ALDimension.Height, toSize: 50)
+        ingresarButton.autoSetDimension(ALDimension.Height, toSize: 40)
         ingresarButton.autoSetDimension(ALDimension.Width, toSize: self.view.frame.width * 0.7)
-        ingresarButton.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: self.view.frame.height * 0.65)
+        ingresarButton.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: self.view.frame.height * 0.68)
         
         checkButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: termsView)
         checkButton.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: termsView)
@@ -105,12 +100,12 @@ class CreateAccountViewController: UIViewController {
 
         termsView.autoSetDimension(ALDimension.Height, toSize: 30)
         termsView.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
-        termsView.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: ingresarButton, withOffset: -10 )
+        termsView.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: ingresarButton, withOffset: -20 )
         
         confirmView.autoSetDimension(ALDimension.Height, toSize: 50)
         confirmView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
         confirmView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
-        confirmView.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: termsView, withOffset: -10 )
+        confirmView.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: termsView, withOffset: -20 )
         
         passwordView.autoSetDimension(ALDimension.Height, toSize: 50)
         passwordView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
