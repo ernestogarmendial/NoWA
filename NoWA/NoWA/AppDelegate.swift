@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -22,11 +21,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         let navigationController = UINavigationController()
-        navigationController.viewControllers = [TourViewController()]
+        
+        
+// EGARMENDIA - DESCOMENTAR
+//        if((NSUserDefaults.standardUserDefaults().valueForKey("firstTime")) != nil){
+            navigationController.viewControllers = [RegisterViewController()]
+//        }else{
+//            navigationController.viewControllers = [TourViewController()]
+//            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstTime")
+//            NSUserDefaults.standardUserDefaults().synchronize()
+//        }
+// EGARMENDIA - DESCOMENTAR
+
+        
         self.window!.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
-        
-        
         return true
     }
     
