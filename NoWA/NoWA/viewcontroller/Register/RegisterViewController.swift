@@ -27,11 +27,11 @@ class RegisterViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
         
         emailView = RegisterFieldView()
-        emailView.setItems(nil,placeholder: "TU CORREO", recover: false, secureMode: false)
+        emailView.setItems("envelope",placeholder: "TU CORREO", recover: false, secureMode: false)
         self.view.addSubview(emailView)
         
         passwordView = RegisterFieldView()
-        passwordView.setItems(nil,placeholder: "CONTRASENIA", recover: true, secureMode: true)
+        passwordView.setItems("lock",placeholder: "CONTRASENIA", recover: true, secureMode: true)
         self.view.addSubview(passwordView)
         
         ingresarButton = UIButton()

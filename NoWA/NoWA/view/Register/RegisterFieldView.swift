@@ -16,6 +16,11 @@ class RegisterFieldView: UIView {
     override init(frame:CGRect) {
         super.init(frame:frame)
         
+        
+        iconImage = UIImageView()
+        iconImage.contentMode = UIViewContentMode.ScaleAspectFit
+        self.addSubview(iconImage)
+        
         inputTextField = UITextField()
         inputTextField.textColor = UIColor.whiteColor()
         inputTextField.font = UIFont.appLatoFontOfSize(15)
@@ -45,12 +50,19 @@ class RegisterFieldView: UIView {
     
     override func layoutSubviews() {
         
+        iconImage.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self, withOffset: 10)
+        iconImage.autoSetDimension(ALDimension.Width, toSize: 18)
+        iconImage.autoSetDimension(ALDimension.Height, toSize: 18)
+        iconImage.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: self)
+
+        
         if recoverlabel.hidden == false {
             recoverlabel.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
             recoverlabel.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self)
             recoverlabel.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: lineView)
             recoverlabel.autoSetDimension(ALDimension.Width, toSize: self.frame.size.width / 4)
         }
+        
         
         inputTextField.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self, withOffset: 40)
         if recoverlabel.hidden == false {
@@ -60,6 +72,7 @@ class RegisterFieldView: UIView {
         }
         inputTextField.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self)
         inputTextField.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: lineView)
+        
         
         lineView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self)
         lineView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
@@ -71,9 +84,9 @@ class RegisterFieldView: UIView {
     
     func setItems(icon: String?, placeholder: String?, recover: Bool, secureMode: Bool){
         
-        //        if let _icon = icon{
-        //
-        //        }
+        if let _icon = icon{
+            iconImage.image = UIImage(named: _icon)
+        }
         
         if let _placeholder = placeholder{
             inputTextField.attributedPlaceholder =  NSAttributedString(string:_placeholder,

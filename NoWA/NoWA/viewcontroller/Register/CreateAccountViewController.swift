@@ -33,15 +33,15 @@ class CreateAccountViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
     
         emailView = RegisterFieldView()
-        emailView.setItems(nil,placeholder: "TU CORREO", recover: false, secureMode: false)
+        emailView.setItems("envelope",placeholder: "TU CORREO", recover: false, secureMode: false)
         self.view.addSubview(emailView)
         
         passwordView = RegisterFieldView()
-        passwordView.setItems(nil,placeholder: "CONTRASENIA", recover: false, secureMode: true)
+        passwordView.setItems("lock",placeholder: "CONTRASENIA", recover: false, secureMode: true)
         self.view.addSubview(passwordView)
         
         confirmView = RegisterFieldView()
-        confirmView.setItems(nil,placeholder: "CONFIRMAR", recover: false, secureMode: true)
+        confirmView.setItems("lock",placeholder: "CONFIRMAR", recover: false, secureMode: true)
         self.view.addSubview(confirmView)
         
         ingresarButton = UIButton()
