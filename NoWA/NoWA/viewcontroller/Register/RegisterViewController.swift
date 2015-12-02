@@ -116,8 +116,8 @@ class RegisterViewController: UIViewController {
         
         tabBarController.viewControllers = controllers
         
-        let firstImage = UIImage(named: "envelope")
-        let secondImage = UIImage(named: "lock")
+        let firstImage = UIImage(named: "alarma")?.imageWithRenderingMode(.AlwaysOriginal)
+        let secondImage = UIImage(named: "profile")?.imageWithRenderingMode(.AlwaysOriginal)
         vc1.tabBarItem = UITabBarItem(
             title: "Pie",
             image: firstImage,
@@ -125,7 +125,7 @@ class RegisterViewController: UIViewController {
         vc2.tabBarItem = UITabBarItem(
             title: "Pizza",
             image: secondImage,
-            selectedImage: firstImage)
+            selectedImage: secondImage)
         
         
         let navigationController = UINavigationController()

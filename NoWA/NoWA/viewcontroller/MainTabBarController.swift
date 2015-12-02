@@ -22,6 +22,8 @@ class MainTabBarController: UITabBarController {
 
         self.tabBar.tintColor = UIColor.buttonSelectedRedColor()
 
+//        UITabBarItem.appearance().setTitleTextAttributes({NSForegroundColorAttributeName: UIColor.blackColor()}, forState:.Selected)
+//        UITabBarItem.appearance().setTitleTextAttributes({NSForegroundColorAttributeName: UIColor.whiteColor()}, forState:.Normal)
     }
     
     
