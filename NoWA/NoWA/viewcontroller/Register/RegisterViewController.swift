@@ -17,7 +17,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         backgroundImage = UIImageView()
         backgroundImage.image = UIImage(named: "login")
         backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
@@ -109,6 +109,30 @@ class RegisterViewController: UIViewController {
     
     func startApp(){
         
+        let tabBarController = MainTabBarController()
+        let vc1 = UIViewController()
+        let vc2 = UIViewController()
+        let controllers = [vc1,vc2]
+        
+        tabBarController.viewControllers = controllers
+        
+        let firstImage = UIImage(named: "envelope")
+        let secondImage = UIImage(named: "lock")
+        vc1.tabBarItem = UITabBarItem(
+            title: "Pie",
+            image: firstImage,
+            tag: 1)
+        vc2.tabBarItem = UITabBarItem(
+            title: "Pizza",
+            image: secondImage,
+            tag:2)
+        
+        
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [tabBarController]
+        
+        switchRootViewController(navigationController, animated: true, completion: nil)
+        
     }
     
     func loginFacebook(){
@@ -119,5 +143,23 @@ class RegisterViewController: UIViewController {
         let createAccountViewController = CreateAccountViewController()
         self.navigationController?.pushViewController(createAccountViewController, animated: true)
     }
+    
+    func switchRootViewController(rootViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        if animated {
+            UIView.transitionWithView(UIApplication.sharedApplication().keyWindow!, duration: 0.5, options: .TransitionCrossDissolve, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled()
+                UIView.setAnimationsEnabled(false)
+                UIApplication.sharedApplication().keyWindow?.rootViewController = rootViewController
+                UIView.setAnimationsEnabled(oldState)
+                }, completion: { (finished: Bool) -> () in
+                    if (completion != nil) {
+                        completion!()
+                    }
+            })
+        } else {
+            UIApplication.sharedApplication().keyWindow?.rootViewController = rootViewController
+        }
+    }
+    
     
 }

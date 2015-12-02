@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C01C0CDF3C00E67905 /* UIColorExtension.swift */; };
 		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
+		945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C48AF1C0F8168006367C9 /* MainTabBarController.swift */; };
 		94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */; };
 		94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94686C791C0BA9EE00D05BD9 /* Assets.xcassets */; };
 		94801F861C0DD7D100D05D6E /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F851C0DD7D100D05D6E /* TourViewController.swift */; };
@@ -42,6 +43,7 @@
 		449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		941109C01C0CDF3C00E67905 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		941109C11C0CDF3C00E67905 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		945C48AF1C0F8168006367C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = viewcontroller/MainTabBarController.swift; sourceTree = "<group>"; };
 		94686C6F1C0BA9EE00D05BD9 /* NoWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94686C791C0BA9EE00D05BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				94801F871C0DD8BC00D05D6E /* Register */,
 				94801F841C0DD7D100D05D6E /* Tour */,
+				945C48AF1C0F8168006367C9 /* MainTabBarController.swift */,
 			);
 			name = Viewcontroller;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			files = (
 				94801F921C0DDFC100D05D6E /* TourView.swift in Sources */,
 				94801F861C0DD7D100D05D6E /* TourViewController.swift in Sources */,
+				945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */,
 				941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */,
 				94801F891C0DD8D100D05D6E /* RegisterViewController.swift in Sources */,
 				94801F961C0E143400D05D6E /* CreateAccountViewController.swift in Sources */,
