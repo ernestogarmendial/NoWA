@@ -97,6 +97,9 @@ class TourViewController: UIViewController,UIScrollViewDelegate {
     func goToRegister(){
         let registerViewController = RegisterViewController()
         self.navigationController?.pushViewController(registerViewController, animated: true)
+        
+//        UIApplication.sharedApplication().keyWindow?.rootViewController = registerViewController
+
     
     }
 }
