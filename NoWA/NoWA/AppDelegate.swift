@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 // EGARMENDIA - DESCOMENTAR
 //        if((NSUserDefaults.standardUserDefaults().valueForKey("firstTime")) != nil){
-            navigationController.viewControllers = [RegisterViewController()]
+//            navigationController.viewControllers = [RegisterViewController()]
 //        }else{
-//            navigationController.viewControllers = [TourViewController()]
+            navigationController.viewControllers = [TourViewController()]
 //            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstTime")
 //            NSUserDefaults.standardUserDefaults().synchronize()
 //        }
