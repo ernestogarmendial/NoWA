@@ -23,6 +23,7 @@ class RegisterFieldView: UIView {
         
         inputTextField = UITextField()
         inputTextField.textColor = UIColor.whiteColor()
+        inputTextField.keyboardType = UIKeyboardType.EmailAddress
         inputTextField.font = UIFont.appLatoFontOfSize(15)
         inputTextField.adjustsFontSizeToFitWidth = true
         
