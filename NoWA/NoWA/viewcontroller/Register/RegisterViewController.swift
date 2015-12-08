@@ -31,7 +31,7 @@ class RegisterViewController: UIViewController {
         self.view.addSubview(emailView)
         
         passwordView = RegisterFieldView()
-        passwordView.setItems("lock",placeholder: "CONTRASENIA", recover: true, secureMode: true)
+        passwordView.setItems("lock",placeholder: "CONTRASEÑA", recover: true, secureMode: true)
         self.view.addSubview(passwordView)
         
         ingresarButton = UIButton()

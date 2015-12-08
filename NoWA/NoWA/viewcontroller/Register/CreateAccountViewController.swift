@@ -9,7 +9,7 @@
 class CreateAccountViewController: UIViewController {
 
     var backgroundImage : UIImageView!
-    var checkButton : UIButton!
+    var checkImage : UIImageView!
     var aceptTermsLabel : UILabel!
     var emailView : RegisterFieldView!
     var passwordView : RegisterFieldView!
@@ -37,7 +37,7 @@ class CreateAccountViewController: UIViewController {
         self.view.addSubview(emailView)
         
         passwordView = RegisterFieldView()
-        passwordView.setItems("lock",placeholder: "CONTRASENIA", recover: false, secureMode: true)
+        passwordView.setItems("lock",placeholder: "CONTRASEÑA", recover: false, secureMode: true)
         self.view.addSubview(passwordView)
         
         confirmView = RegisterFieldView()
@@ -60,15 +60,15 @@ class CreateAccountViewController: UIViewController {
         aceptTermsLabel.adjustsFontSizeToFitWidth = true
         aceptTermsLabel.numberOfLines = 1
         self.view.addSubview(aceptTermsLabel)
-        
-        checkButton = UIButton()
-        checkButton.backgroundColor = .redColor()
-        checkButton.addTarget(self, action: "checkBoxPressed", forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(checkButton)
+                
+        checkImage = UIImageView()
+        checkImage.image = UIImage(named: "tilde")
+        checkImage.contentMode = UIViewContentMode.ScaleAspectFill
+        self.view.addSubview(checkImage)
         
         termsView = UIView()
         termsView.addSubview(aceptTermsLabel)
-        termsView.addSubview(checkButton)
+        termsView.addSubview(checkImage)
         self.view.addSubview(termsView)
         
         setupConstrains()
@@ -88,12 +88,12 @@ class CreateAccountViewController: UIViewController {
         ingresarButton.autoSetDimension(ALDimension.Width, toSize: self.view.frame.width * 0.7)
         ingresarButton.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: self.view.frame.height * 0.68)
         
-        checkButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: termsView)
-        checkButton.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: termsView)
-        checkButton.autoSetDimension(ALDimension.Height, toSize: 30)
-        checkButton.autoSetDimension(ALDimension.Width, toSize: 30)
+        checkImage.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: termsView)
+        checkImage.autoAlignAxis(.Horizontal, toSameAxisOfView: termsView)
+        checkImage.autoSetDimension(ALDimension.Height, toSize: 25)
+        checkImage.autoSetDimension(ALDimension.Width, toSize: 25)
         
-        aceptTermsLabel.autoPinEdge(ALEdge.Left, toEdge: .Right, ofView: checkButton, withOffset: 10)
+        aceptTermsLabel.autoPinEdge(ALEdge.Left, toEdge: .Right, ofView: checkImage, withOffset: 10)
         aceptTermsLabel.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: termsView)
         aceptTermsLabel.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: termsView)
         aceptTermsLabel.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: termsView)
@@ -116,8 +116,6 @@ class CreateAccountViewController: UIViewController {
         emailView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
         emailView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
         emailView.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: passwordView, withOffset: -20)
-        
-        
         
 
 
@@ -144,10 +142,6 @@ class CreateAccountViewController: UIViewController {
     
     func startApp(){
         
-    }
-    
-    func checkBoxPressed(){
-        checkButton.backgroundColor = .whiteColor()
     }
     
 }
