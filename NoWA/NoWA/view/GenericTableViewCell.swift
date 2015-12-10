@@ -1,5 +1,5 @@
 //
-//  GenericTableTableViewCell.swift
+//  GenericTableViewCell.swift
 //  NoWA
 //
 //  Created by Ernesto Garmendia on 12/10/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericTableTableViewCell: UITableViewCell {
+class GenericTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +19,15 @@ class GenericTableTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
 }

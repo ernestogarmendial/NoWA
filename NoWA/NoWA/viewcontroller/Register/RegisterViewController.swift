@@ -110,7 +110,7 @@ class RegisterViewController: UIViewController {
     func startApp(){
         
         let tabBarController = MainTabBarController()
-        let vc1 = UIViewController()
+        let vc1 = AlarmasTableViewController()//UIViewController()
         let vc2 = UIViewController()
         let controllers = [vc1,vc2]
         
