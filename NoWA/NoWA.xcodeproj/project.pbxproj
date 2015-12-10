@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C01C0CDF3C00E67905 /* UIColorExtension.swift */; };
 		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
+		942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A99651C1A12A400B12292 /* GenericTableViewController.swift */; };
+		942A996E1C1A13A300B12292 /* AlarmasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A996D1C1A13A300B12292 /* AlarmasTableViewController.swift */; };
+		942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A996F1C1A13BF00B12292 /* TorneosTableViewController.swift */; };
+		942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A99711C1A13D900B12292 /* ServicioTableViewController.swift */; };
+		942A99741C1A13EF00B12292 /* PerfilTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A99731C1A13EF00B12292 /* PerfilTableViewController.swift */; };
+		942A99761C1A147800B12292 /* GenericTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A99751C1A147800B12292 /* GenericTableTableViewCell.swift */; };
 		945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C48AF1C0F8168006367C9 /* MainTabBarController.swift */; };
 		94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */; };
 		94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94686C791C0BA9EE00D05BD9 /* Assets.xcassets */; };
@@ -43,6 +49,12 @@
 		449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		941109C01C0CDF3C00E67905 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		941109C11C0CDF3C00E67905 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		942A99651C1A12A400B12292 /* GenericTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTableViewController.swift; path = viewcontroller/GenericTableViewController.swift; sourceTree = "<group>"; };
+		942A996D1C1A13A300B12292 /* AlarmasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmasTableViewController.swift; path = viewcontroller/Alarmas/AlarmasTableViewController.swift; sourceTree = "<group>"; };
+		942A996F1C1A13BF00B12292 /* TorneosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneosTableViewController.swift; path = viewcontroller/Torneos/TorneosTableViewController.swift; sourceTree = "<group>"; };
+		942A99711C1A13D900B12292 /* ServicioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServicioTableViewController.swift; path = viewcontroller/Servicio/ServicioTableViewController.swift; sourceTree = "<group>"; };
+		942A99731C1A13EF00B12292 /* PerfilTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerfilTableViewController.swift; path = viewcontroller/Perfil/PerfilTableViewController.swift; sourceTree = "<group>"; };
+		942A99751C1A147800B12292 /* GenericTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTableTableViewCell.swift; path = view/GenericTableTableViewCell.swift; sourceTree = "<group>"; };
 		945C48AF1C0F8168006367C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = viewcontroller/MainTabBarController.swift; sourceTree = "<group>"; };
 		94686C6F1C0BA9EE00D05BD9 /* NoWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +107,38 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		942A99691C1A131200B12292 /* Alarmas */ = {
+			isa = PBXGroup;
+			children = (
+				942A996D1C1A13A300B12292 /* AlarmasTableViewController.swift */,
+			);
+			name = Alarmas;
+			sourceTree = "<group>";
+		};
+		942A996A1C1A132600B12292 /* Torneos */ = {
+			isa = PBXGroup;
+			children = (
+				942A996F1C1A13BF00B12292 /* TorneosTableViewController.swift */,
+			);
+			name = Torneos;
+			sourceTree = "<group>";
+		};
+		942A996B1C1A133400B12292 /* Servicio */ = {
+			isa = PBXGroup;
+			children = (
+				942A99711C1A13D900B12292 /* ServicioTableViewController.swift */,
+			);
+			name = Servicio;
+			sourceTree = "<group>";
+		};
+		942A996C1C1A137700B12292 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				942A99731C1A13EF00B12292 /* PerfilTableViewController.swift */,
+			);
+			name = Perfil;
+			sourceTree = "<group>";
+		};
 		94686C661C0BA9EE00D05BD9 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +176,7 @@
 			children = (
 				94801F8D1C0DDFC100D05D6E /* Register */,
 				94801F8F1C0DDFC100D05D6E /* Tour */,
+				942A99751C1A147800B12292 /* GenericTableTableViewCell.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -203,9 +248,14 @@
 		949778AB1C0CDC610045099C /* Viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				942A996C1C1A137700B12292 /* Perfil */,
+				942A996B1C1A133400B12292 /* Servicio */,
+				942A996A1C1A132600B12292 /* Torneos */,
+				942A99691C1A131200B12292 /* Alarmas */,
 				94801F871C0DD8BC00D05D6E /* Register */,
 				94801F841C0DD7D100D05D6E /* Tour */,
 				945C48AF1C0F8168006367C9 /* MainTabBarController.swift */,
+				942A99651C1A12A400B12292 /* GenericTableViewController.swift */,
 			);
 			name = Viewcontroller;
 			sourceTree = "<group>";
@@ -385,14 +435,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */,
 				94801F921C0DDFC100D05D6E /* TourView.swift in Sources */,
 				94801F861C0DD7D100D05D6E /* TourViewController.swift in Sources */,
 				945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */,
+				942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */,
+				942A99741C1A13EF00B12292 /* PerfilTableViewController.swift in Sources */,
+				942A99761C1A147800B12292 /* GenericTableTableViewCell.swift in Sources */,
 				941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */,
 				94801F891C0DD8D100D05D6E /* RegisterViewController.swift in Sources */,
 				94801F961C0E143400D05D6E /* CreateAccountViewController.swift in Sources */,
+				942A996E1C1A13A300B12292 /* AlarmasTableViewController.swift in Sources */,
 				94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */,
 				94801F911C0DDFC100D05D6E /* RegisterFieldView.swift in Sources */,
+				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
 				941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
