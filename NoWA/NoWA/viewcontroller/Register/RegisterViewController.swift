@@ -6,7 +6,7 @@
 //  Copyright © 2015 Ernesto Garmendia Luis. All rights reserved.
 //
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: LoginViewController {
     
     var backgroundImage : UIImageView!
     var emailView : RegisterFieldView!
@@ -22,9 +22,6 @@ class RegisterViewController: UIViewController {
         backgroundImage.image = UIImage(named: "login")
         backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
         self.view.addSubview(backgroundImage)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        self.view.addGestureRecognizer(tap)
         
         emailView = RegisterFieldView()
         emailView.setItems("envelope",placeholder: "TU CORREO", recover: false, secureMode: false)
@@ -96,44 +93,7 @@ class RegisterViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.hidden = true
-    }
-    
-    //Calls this function when the tap is recognized.
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
-    
-    func startApp(){
-        
-        let tabBarController = MainTabBarController()
-        let vc1 = AlarmasTableViewController()//UIViewController()
-        let vc2 = UIViewController()
-        let controllers = [vc1,vc2]
-        
-        tabBarController.viewControllers = controllers
-        
-        let firstImage = UIImage(named: "alarma")?.imageWithRenderingMode(.AlwaysOriginal)
-        let secondImage = UIImage(named: "profile")?.imageWithRenderingMode(.AlwaysOriginal)
-        vc1.tabBarItem = UITabBarItem(
-            title: "Pie",
-            image: firstImage,
-            selectedImage: secondImage)
-        vc2.tabBarItem = UITabBarItem(
-            title: "Pizza",
-            image: secondImage,
-            selectedImage: secondImage)
-        
-        
-        let navigationController = UINavigationController()
-        navigationController.viewControllers = [tabBarController]
-        
-        switchRootViewController(navigationController, animated: true, completion: nil)
-        
-    }
+
     
     func loginFacebook(){
         
@@ -144,22 +104,7 @@ class RegisterViewController: UIViewController {
         self.navigationController?.pushViewController(createAccountViewController, animated: true)
     }
     
-    func switchRootViewController(rootViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
-        if animated {
-            UIView.transitionWithView(UIApplication.sharedApplication().keyWindow!, duration: 0.5, options: .TransitionCrossDissolve, animations: {
-                let oldState: Bool = UIView.areAnimationsEnabled()
-                UIView.setAnimationsEnabled(false)
-                UIApplication.sharedApplication().keyWindow?.rootViewController = rootViewController
-                UIView.setAnimationsEnabled(oldState)
-                }, completion: { (finished: Bool) -> () in
-                    if (completion != nil) {
-                        completion!()
-                    }
-            })
-        } else {
-            UIApplication.sharedApplication().keyWindow?.rootViewController = rootViewController
-        }
-    }
+
     
     
 }

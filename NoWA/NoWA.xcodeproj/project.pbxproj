@@ -27,6 +27,7 @@
 		94801F921C0DDFC100D05D6E /* TourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F901C0DDFC100D05D6E /* TourView.swift */; };
 		94801F961C0E143400D05D6E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F951C0E143400D05D6E /* CreateAccountViewController.swift */; };
 		94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94801F991C0F368800D05D6E /* Lato-Regular.ttf */; };
+		94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A501C28D12E00BA2BB8 /* LoginViewController.swift */; };
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		94801F951C0E143400D05D6E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		94801F991C0F368800D05D6E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NoWA-Bridging-Header.h"; sourceTree = "<group>"; };
+		94A39A501C28D12E00BA2BB8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -209,6 +211,7 @@
 		94801F871C0DD8BC00D05D6E /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				94A39A501C28D12E00BA2BB8 /* LoginViewController.swift */,
 				94801F881C0DD8D100D05D6E /* RegisterViewController.swift */,
 				94801F951C0E143400D05D6E /* CreateAccountViewController.swift */,
 			);
@@ -453,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */,
 				942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */,
 				94801F921C0DDFC100D05D6E /* TourView.swift in Sources */,
 				94801F861C0DD7D100D05D6E /* TourViewController.swift in Sources */,

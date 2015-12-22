@@ -6,7 +6,7 @@
 //  Copyright © 2015 Ernesto Garmendia Luis. All rights reserved.
 //
 
-class CreateAccountViewController: UIViewController {
+class CreateAccountViewController: LoginViewController {
 
     var backgroundImage : UIImageView!
     var checkImage : UIImageView!
@@ -28,9 +28,6 @@ class CreateAccountViewController: UIViewController {
         backgroundImage.image = UIImage(named: "registro")
         backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
         self.view.addSubview(backgroundImage)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        self.view.addGestureRecognizer(tap)
     
         emailView = RegisterFieldView()
         emailView.setItems("envelope",placeholder: "TU CORREO", recover: false, secureMode: false)
@@ -116,32 +113,8 @@ class CreateAccountViewController: UIViewController {
         emailView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
         emailView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
         emailView.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: passwordView, withOffset: -20)
-        
-
 
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.translucent = true;
 
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.hidden = false
-        
-        self.navigationController?.navigationBar.backgroundColor = .clearColor()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage();
-        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont.appLatoFontOfSize(18)]
-    }
-    
-    //Calls this function when the tap is recognized.
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
-    
-    func startApp(){
-        
-    }
     
 }

@@ -15,7 +15,6 @@ class MainTabBarController: UITabBarController {
         
         self.view.backgroundColor = .registroGrayColor()
         
-        
 //        UITabBar.appearance().barTintColor = UIColor.clearColor()
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().shadowImage = UIImage()
