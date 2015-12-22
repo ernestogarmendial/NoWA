@@ -10,12 +10,35 @@ import UIKit
 
 class TorneoItemTableViewCell: AlarmItemTableViewCell {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+    var cancelLabel: UILabel?
 
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+     
+        
+        alarmSwitch?.hidden = true
+        
+        cancelLabel = UILabel()
+        cancelLabel!.text = "CANCELADA POR ORGANIZADOR"
+        cancelLabel!.textColor = UIColor.buttonSelectedRedColor()
+//        cancelLabel!.backgroundColor = .yellowColor()
+        cancelLabel!.font = UIFont.appLatoFontOfSize(12)
+        cancelLabel!.adjustsFontSizeToFitWidth = true
+        cancelLabel!.textAlignment = .Left
+        cancelLabel!.numberOfLines = 2
+        self.addSubview(cancelLabel!)
+        
+        serviceLabel!.text = "SUPER COPA"
+        
+        cancelLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: infoView!)
+        cancelLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: -10)
+        cancelLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: dateLabel!)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    
 }

@@ -16,7 +16,7 @@ class CircleDayView: UIView {
     init(day: String, frame: CGRect) {
         super.init(frame:frame)
         
-        self.backgroundColor = .blueColor()
+        self.backgroundColor = .tourBlueColor()
         
         textLabel = UILabel()
         textLabel!.textColor = .whiteColor()

@@ -31,6 +31,8 @@
 		94A39A531C28D87500BA2BB8 /* AlarmItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A521C28D87500BA2BB8 /* AlarmItemTableViewCell.swift */; };
 		94A39A551C28DCDD00BA2BB8 /* WeekDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A541C28DCDD00BA2BB8 /* WeekDaysView.swift */; };
 		94A39A571C28F3B300BA2BB8 /* CircleDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A561C28F3B300BA2BB8 /* CircleDayView.swift */; };
+		94A39A5C1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A5B1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift */; };
+		94A39A5E1C29021B00BA2BB8 /* AlarmHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A5D1C29021B00BA2BB8 /* AlarmHeaderView.swift */; };
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		94A39A521C28D87500BA2BB8 /* AlarmItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmItemTableViewCell.swift; path = view/Alarm/AlarmItemTableViewCell.swift; sourceTree = "<group>"; };
 		94A39A541C28DCDD00BA2BB8 /* WeekDaysView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekDaysView.swift; path = view/Alarm/WeekDaysView.swift; sourceTree = "<group>"; };
 		94A39A561C28F3B300BA2BB8 /* CircleDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleDayView.swift; path = view/CircleDayView.swift; sourceTree = "<group>"; };
+		94A39A5B1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneoItemTableViewCell.swift; path = view/Torneos/TorneoItemTableViewCell.swift; sourceTree = "<group>"; };
+		94A39A5D1C29021B00BA2BB8 /* AlarmHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmHeaderView.swift; path = view/Alarm/AlarmHeaderView.swift; sourceTree = "<group>"; };
 		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,6 +165,7 @@
 				94A39A521C28D87500BA2BB8 /* AlarmItemTableViewCell.swift */,
 				94A39A541C28DCDD00BA2BB8 /* WeekDaysView.swift */,
 				94A39A561C28F3B300BA2BB8 /* CircleDayView.swift */,
+				94A39A5D1C29021B00BA2BB8 /* AlarmHeaderView.swift */,
 			);
 			name = Alarmas;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 		94801F7C1C0CF28100D05D6E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				94A39A5A1C28FA5100BA2BB8 /* Torneos */,
 				942A99771C1A156100B12292 /* Alarmas */,
 				94801F8D1C0DDFC100D05D6E /* Register */,
 				94801F8F1C0DDFC100D05D6E /* Tour */,
@@ -287,6 +293,14 @@
 				942A99651C1A12A400B12292 /* GenericTableViewController.swift */,
 			);
 			name = Viewcontroller;
+			sourceTree = "<group>";
+		};
+		94A39A5A1C28FA5100BA2BB8 /* Torneos */ = {
+			isa = PBXGroup;
+			children = (
+				94A39A5B1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift */,
+			);
+			name = Torneos;
 			sourceTree = "<group>";
 		};
 		AFC4C6ADB84285702FCCED31 /* Pods */ = {
@@ -476,6 +490,7 @@
 				942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */,
 				942A99741C1A13EF00B12292 /* PerfilTableViewController.swift in Sources */,
 				942A99791C1A15C000B12292 /* GenericTableViewCell.swift in Sources */,
+				94A39A5C1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift in Sources */,
 				941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */,
 				94801F891C0DD8D100D05D6E /* RegisterViewController.swift in Sources */,
 				94801F961C0E143400D05D6E /* CreateAccountViewController.swift in Sources */,
@@ -484,6 +499,7 @@
 				94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */,
 				94801F911C0DDFC100D05D6E /* RegisterFieldView.swift in Sources */,
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
+				94A39A5E1C29021B00BA2BB8 /* AlarmHeaderView.swift in Sources */,
 				942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */,
 				941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */,
 			);

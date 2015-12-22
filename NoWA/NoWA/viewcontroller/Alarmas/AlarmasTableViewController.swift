@@ -17,13 +17,13 @@ class AlarmasTableViewController: GenericTableViewController {
         
         self.tableView.registerClass(AlarmItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
         
-        self.tableView.backgroundColor = .redColor()
+        self.tableView.backgroundColor = .darkGrayColor()
         
         // not working
         let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
         self.navigationItem.rightBarButtonItem = addAlarmButton
         // not working
-        
+
         
         let path = NSBundle.mainBundle().pathForResource("AlarmasCells", ofType: "plist")
         self.alarmsArray = NSMutableArray(contentsOfFile: path!)
@@ -61,5 +61,15 @@ class AlarmasTableViewController: GenericTableViewController {
         
         return genericCell
     }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let alarmHeaderView : AlarmHeaderView = AlarmHeaderView(frame: CGRectMake(0, 0, self.view.frame.size.width, 1))
+        return alarmHeaderView
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
     
 }

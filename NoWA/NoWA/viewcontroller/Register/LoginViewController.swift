@@ -58,15 +58,15 @@ class LoginViewController: UIViewController {
             selectedImage: secondImage)
         alarmas.tabBarItem = UITabBarItem(
             title: "Alarmas",
-            image: secondImage,
+            image: firstImage,
             selectedImage: secondImage)
         torneos.tabBarItem = UITabBarItem(
             title: "Torneos",
-            image: secondImage,
+            image: firstImage,
             selectedImage: secondImage)
         perfil.tabBarItem = UITabBarItem(
             title: "Perfil",
-            image: secondImage,
+            image: firstImage,
             selectedImage: secondImage)
         
         let navigationController = UINavigationController()

@@ -15,11 +15,11 @@ class MainTabBarController: UITabBarController {
         
         self.view.backgroundColor = .registroGrayColor()
         
-//        UITabBar.appearance().barTintColor = UIColor.clearColor()
-        UITabBar.appearance().backgroundImage = UIImage()
-        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().barTintColor = UIColor.registroGrayColor()
+//        UITabBar.appearance().backgroundImage = UIImage()
+//        UITabBar.appearance().shadowImage = UIImage()
 
-        self.tabBar.tintColor = UIColor.buttonSelectedRedColor()
+        self.tabBar.tintColor = UIColor.whiteColor()//UIColor.buttonSelectedRedColor()
 
 //        UITabBarItem.appearance().setTitleTextAttributes({NSForegroundColorAttributeName: UIColor.blackColor()}, forState:.Selected)
 //        UITabBarItem.appearance().setTitleTextAttributes({NSForegroundColorAttributeName: UIColor.whiteColor()}, forState:.Normal)
@@ -33,10 +33,11 @@ class MainTabBarController: UITabBarController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.hidden = false
         
-        self.navigationController?.navigationBar.backgroundColor = .clearColor()
+        self.navigationController?.navigationBar.backgroundColor = .loginRedColor()//.clearColor()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage();
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont.appLatoFontOfSize(18)]
+        
     }
     
 }
