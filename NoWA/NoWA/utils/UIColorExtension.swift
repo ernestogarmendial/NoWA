@@ -17,7 +17,7 @@ extension UIColor {
     class func loginRedColor()-> UIColor {
         return UIColor(red: 252/255, green: 54/255, blue: 175/255, alpha: 1.0)
     }
-
+    
     class func loginBlueColor()-> UIColor {
         return UIColor(red: 50/255, green: 142/255, blue: 255/255, alpha: 1.0)
     }
@@ -31,10 +31,14 @@ extension UIColor {
     }
     
     class func darkGrayCustomColor() -> UIColor {
-        return UIColorFromRGB("363943")
+        return UIColor(red: 36/255, green: 39/255, blue: 43/255, alpha: 1.0)
     }
     
-    class func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
+    class func canceledGrayColor() -> UIColor {
+        return UIColor(red: 144/255, green: 146/255, blue: 148/255, alpha: 1.0)
+    }
+    
+    func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
         let scanner = NSScanner(string:colorCode)
         var color:UInt32 = 0;
         scanner.scanHexInt(&color)
