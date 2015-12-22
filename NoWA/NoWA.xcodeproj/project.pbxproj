@@ -28,6 +28,8 @@
 		94801F961C0E143400D05D6E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F951C0E143400D05D6E /* CreateAccountViewController.swift */; };
 		94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94801F991C0F368800D05D6E /* Lato-Regular.ttf */; };
 		94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A501C28D12E00BA2BB8 /* LoginViewController.swift */; };
+		94A39A531C28D87500BA2BB8 /* AlarmItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A521C28D87500BA2BB8 /* AlarmItemTableViewCell.swift */; };
+		94A39A551C28DCDD00BA2BB8 /* WeekDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A541C28DCDD00BA2BB8 /* WeekDaysView.swift */; };
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		94801F991C0F368800D05D6E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NoWA-Bridging-Header.h"; sourceTree = "<group>"; };
 		94A39A501C28D12E00BA2BB8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		94A39A521C28D87500BA2BB8 /* AlarmItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmItemTableViewCell.swift; path = view/Alarm/AlarmItemTableViewCell.swift; sourceTree = "<group>"; };
+		94A39A541C28DCDD00BA2BB8 /* WeekDaysView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekDaysView.swift; path = view/Alarm/WeekDaysView.swift; sourceTree = "<group>"; };
 		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -152,6 +156,8 @@
 			children = (
 				942A997A1C1A15F500B12292 /* InfoAlarmTableViewCell.swift */,
 				942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */,
+				94A39A521C28D87500BA2BB8 /* AlarmItemTableViewCell.swift */,
+				94A39A541C28DCDD00BA2BB8 /* WeekDaysView.swift */,
 			);
 			name = Alarmas;
 			sourceTree = "<group>";
@@ -457,9 +463,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */,
+				94A39A531C28D87500BA2BB8 /* AlarmItemTableViewCell.swift in Sources */,
 				942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */,
 				94801F921C0DDFC100D05D6E /* TourView.swift in Sources */,
 				94801F861C0DD7D100D05D6E /* TourViewController.swift in Sources */,
+				94A39A551C28DCDD00BA2BB8 /* WeekDaysView.swift in Sources */,
 				942A997B1C1A15F500B12292 /* InfoAlarmTableViewCell.swift in Sources */,
 				945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */,
 				942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */,

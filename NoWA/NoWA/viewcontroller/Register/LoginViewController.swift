@@ -40,23 +40,34 @@ class LoginViewController: UIViewController {
     func startApp(){
         
         let tabBarController = MainTabBarController()
-        let vc1 = AlarmasTableViewController()//UIViewController()
-        let vc2 = UIViewController()
-        let controllers = [vc1,vc2]
+        
+        let servicio = ServicioTableViewController()
+        let alarmas = AlarmasTableViewController()
+        let torneos = TorneosTableViewController()
+        let perfil = PerfilTableViewController()
+        let controllers = [servicio,alarmas,torneos,perfil]
         
         tabBarController.viewControllers = controllers
         
         let firstImage = UIImage(named: "alarma")?.imageWithRenderingMode(.AlwaysOriginal)
         let secondImage = UIImage(named: "profile")?.imageWithRenderingMode(.AlwaysOriginal)
-        vc1.tabBarItem = UITabBarItem(
-            title: "Pie",
+        
+        servicio.tabBarItem = UITabBarItem(
+            title: "Servicio",
             image: firstImage,
             selectedImage: secondImage)
-        vc2.tabBarItem = UITabBarItem(
-            title: "Pizza",
+        alarmas.tabBarItem = UITabBarItem(
+            title: "Alarmas",
             image: secondImage,
             selectedImage: secondImage)
-        
+        torneos.tabBarItem = UITabBarItem(
+            title: "Torneos",
+            image: secondImage,
+            selectedImage: secondImage)
+        perfil.tabBarItem = UITabBarItem(
+            title: "Perfil",
+            image: secondImage,
+            selectedImage: secondImage)
         
         let navigationController = UINavigationController()
         navigationController.viewControllers = [tabBarController]

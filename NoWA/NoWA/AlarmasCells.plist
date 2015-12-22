@@ -10,5 +10,9 @@
 		<key>identifier</key>
 		<string>celda2</string>
 	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>celda3</string>
+	</dict>
 </array>
 </plist>

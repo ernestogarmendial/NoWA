@@ -30,7 +30,7 @@ extension UIColor {
         return UIColor(red: 58/255, green: 70/255, blue: 86/255, alpha: 1.0)
     }
     
-    class func darkGreyCustomColor() -> UIColor {
+    class func darkGrayCustomColor() -> UIColor {
         return UIColorFromRGB("1E1E20")
     }
     
