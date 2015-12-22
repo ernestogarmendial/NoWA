@@ -31,7 +31,7 @@ extension UIColor {
     }
     
     class func darkGrayCustomColor() -> UIColor {
-        return UIColorFromRGB("1E1E20")
+        return UIColorFromRGB("363943")
     }
     
     class func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {

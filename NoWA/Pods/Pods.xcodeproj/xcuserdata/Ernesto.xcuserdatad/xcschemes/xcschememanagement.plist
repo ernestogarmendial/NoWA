@@ -2,39 +2,97 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ISO8601DateFormatterValueTransformer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RKValueTransformers.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RestKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SOCKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TransitionKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-pop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>47C800E42623009B7192B025B3DD25A1</key>
+		<key>03BA0B825E31523778E98EC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7CF857C3F7EEFDF0F7822A2733D7FAFD</key>
+		<key>1A3C5DFBDBEE198E8FD7FCF7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7F2062E4E785F61FC4EE5F6F9C3B2199</key>
+		<key>39BC8EB441BDEAB2411EE768</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>87667C1E6AC8D8AC9DB6A80E7A0B6B3C</key>
+		<key>4875A7ED46CC022232108C69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A2770197345BCE1622568AECE6B8E824</key>
+		<key>522CA503635341669F925E5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C6088836E877C4848489B6A41694A7AE</key>
+		<key>77D041E605D5794491722054</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DC5EF226BDC53703043A233643163607</key>
+		<key>97294D1491E55B1A832CB7E4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B60888D8B7D3F679AF0C1F8C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4190CE7084AD9FFA85D5E8D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
