@@ -20,7 +20,7 @@
 //
 //#import "TTInternetConnection.h"
 //#import "POP.h"
-//#import "RestKit.h"
+#import "RestKit.h"
 //#import "CarbonKit.h"
 //#import "TTPopButton.h"
 //#import "UILabel+Boldify.h"
