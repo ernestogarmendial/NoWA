@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C01C0CDF3C00E67905 /* UIColorExtension.swift */; };
 		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
+		9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB221C2A0DBC003CDB83 /* Reachability.m */; };
+		9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */; };
 		942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A99651C1A12A400B12292 /* GenericTableViewController.swift */; };
 		942A996E1C1A13A300B12292 /* AlarmasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A996D1C1A13A300B12292 /* AlarmasTableViewController.swift */; };
 		942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A996F1C1A13BF00B12292 /* TorneosTableViewController.swift */; };
@@ -58,6 +60,10 @@
 		449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		941109C01C0CDF3C00E67905 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		941109C11C0CDF3C00E67905 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		9425DB211C2A0DBC003CDB83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9425DB221C2A0DBC003CDB83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
+		9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInternetConnection.m; sourceTree = "<group>"; };
 		942A99651C1A12A400B12292 /* GenericTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTableViewController.swift; path = viewcontroller/GenericTableViewController.swift; sourceTree = "<group>"; };
 		942A996D1C1A13A300B12292 /* AlarmasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmasTableViewController.swift; path = viewcontroller/Alarmas/AlarmasTableViewController.swift; sourceTree = "<group>"; };
 		942A996F1C1A13BF00B12292 /* TorneosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneosTableViewController.swift; path = viewcontroller/Torneos/TorneosTableViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +129,17 @@
 				941109C11C0CDF3C00E67905 /* UIFontExtension.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		9425DB201C2A0D9A003CDB83 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				9425DB211C2A0DBC003CDB83 /* Reachability.h */,
+				9425DB221C2A0DBC003CDB83 /* Reachability.m */,
+				9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */,
+				9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */,
+			);
+			name = component;
 			sourceTree = "<group>";
 		};
 		942A99691C1A131200B12292 /* Alarmas */ = {
@@ -193,6 +210,7 @@
 		94686C711C0BA9EE00D05BD9 /* NoWA */ = {
 			isa = PBXGroup;
 			children = (
+				9425DB201C2A0D9A003CDB83 /* component */,
 				94801F971C0F363900D05D6E /* Supporting Files */,
 				94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */,
 				941109BF1C0CDF3C00E67905 /* utils */,
@@ -487,8 +505,10 @@
 				94A39A551C28DCDD00BA2BB8 /* WeekDaysView.swift in Sources */,
 				942A997B1C1A15F500B12292 /* InfoAlarmTableViewCell.swift in Sources */,
 				945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */,
+				9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */,
 				942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */,
 				942A99741C1A13EF00B12292 /* PerfilTableViewController.swift in Sources */,
+				9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */,
 				942A99791C1A15C000B12292 /* GenericTableViewCell.swift in Sources */,
 				94A39A5C1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift in Sources */,
 				941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */,
