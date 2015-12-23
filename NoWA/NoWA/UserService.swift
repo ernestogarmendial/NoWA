@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class UserService: GenericService {
     
     static var currentUser: UserDTO!
@@ -34,7 +33,7 @@ class UserService: GenericService {
                 
                 UserService.currentUser = result as! UserDTO;
                 //
-                if let accessToken = UserService.currentUser.access_token {
+                if let accessToken = UserService.currentUser.token {
                     //
                     serviceResult.addEntity(UserService.currentUser, forKey: "User")
                     
@@ -43,5 +42,20 @@ class UserService: GenericService {
             }
         })
     }
+    
+//    func md5(string string: String) -> String {
+//        var digest = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
+//        if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
+//            CC_MD5(data.bytes, CC_LONG(data.length), &digest)
+//        }
+//        
+//        var digestHex = ""
+//        for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
+//            digestHex += String(format: "%02x", digest[index])
+//        }
+//        
+//        return digestHex
+//    }
+    
 }
 

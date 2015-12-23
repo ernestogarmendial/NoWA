@@ -30,23 +30,17 @@ class UserDTO: GenericDTO {
         if user.userID != nil{
             self.userID = user.userID
         }
-        
-        
         if user.lastName != nil{
             self.lastName = user.lastName
         }
-        
         if user.stamp != nil{
             self.stamp = user.stamp
         }
-        
         if user.birth != nil{
             self.birth = user.birth
         }
-        
         if user.phone != nil{
             self.phone = user.phone
-            
         }
         if user.instagram != nil{
             self.instagram = user.instagram
@@ -54,42 +48,30 @@ class UserDTO: GenericDTO {
         if user.id != nil{
             self.id = user.id
         }
-        
-        
         if user.twitter != nil{
             self.twitter = user.twitter
         }
-        
         if user.username != nil{
             self.username = user.username
         }
-        
-        
         if user.notifications != nil{
             self.notifications = user.notifications
         }
-        
         if user.token != nil{
             self.token = user.token
         }
-        
         if user.phrase != nil{
             self.phrase = user.phrase
         }
-        
         if user.name != nil{
             self.name = user.name
         }
-        
-        
         if user.facebook != nil{
             self.facebook = user.facebook
         }
-        
         if user.dni != nil{
             self.dni = user.dni
         }
-        
     }
     
 }
