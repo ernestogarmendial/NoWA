@@ -27,9 +27,9 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.backgroundColor = .darkGrayCustomColor()
         
         serviceIcon = UIImageView()
-        serviceIcon!.image = UIImage(named: "accu-weather")
+        serviceIcon!.image = UIImage(named: "cloud_blue")
 //        serviceIcon!.backgroundColor = .grayColor()
-        serviceIcon!.contentMode = UIViewContentMode.ScaleAspectFill
+        serviceIcon!.contentMode = UIViewContentMode.ScaleAspectFit
         self.addSubview(serviceIcon!)
         
         serviceLabel = UILabel()
@@ -113,9 +113,9 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         serviceView!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.18)
         
         serviceIcon!.autoAlignAxis(.Vertical, toSameAxisOfView: serviceView!)
-        serviceIcon!.autoConstrainAttribute(.MarginTop, toAttribute: .MarginTop, ofView: self, withMultiplier: 2)
-        serviceIcon!.autoMatchDimension(.Width, toDimension: .Width, ofView: serviceView!, withMultiplier: 0.5)
-        serviceIcon!.autoMatchDimension(.Height, toDimension: .Width, ofView: serviceView!, withMultiplier: 0.5)
+        serviceIcon!.autoConstrainAttribute(.MarginTop, toAttribute: .MarginTop, ofView: self, withMultiplier: 2.8)
+        serviceIcon!.autoMatchDimension(.Width, toDimension: .Width, ofView: serviceView!, withMultiplier: 0.35)
+        serviceIcon!.autoMatchDimension(.Height, toDimension: .Width, ofView: serviceView!, withMultiplier: 0.35)
         
         serviceLabel!.autoAlignAxis(.Vertical, toSameAxisOfView: serviceView!)
         serviceLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: serviceView!, withOffset: 5)
@@ -144,7 +144,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         dateLabel!.autoMatchDimension(.Height, toDimension: .Height, ofView: timeLabel!, withMultiplier: 0.50)
 
         descriptionLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: infoView!)
-        descriptionLabel!.autoPinEdge(.Top, toEdge: .Bottom, ofView: timeLabel!, withOffset: -10)
+        descriptionLabel!.autoPinEdge(.Top, toEdge: .Bottom, ofView: timeLabel!, withOffset: -8)
         descriptionLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: infoView!)
         descriptionLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: infoView!)
 

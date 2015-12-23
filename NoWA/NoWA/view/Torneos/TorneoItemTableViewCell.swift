@@ -19,6 +19,9 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
         
         alarmSwitch?.hidden = true
         
+        serviceIcon!.image = UIImage(named: "cup")
+
+        
         cancelLabel = UILabel()
         cancelLabel!.text = "CANCELADA POR ORGANIZADOR"
         cancelLabel!.textColor = UIColor.buttonSelectedRedColor()
