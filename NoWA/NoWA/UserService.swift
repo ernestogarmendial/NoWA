@@ -14,7 +14,7 @@ class UserService: GenericService {
     static var currentUser: UserDTO!
     func login(name : String?, code :String?, target _target : NSObject, message _message : String ) {
         
-        var serviceResult = ServiceResult()
+        let serviceResult = ServiceResult()
         
         if !TTInternetConnection.sharedInstance().internetAccess() {
             serviceResult.addError("No Internet")
@@ -22,10 +22,10 @@ class UserService: GenericService {
             return
         }
         
-        var userDAO: UserDAO = UserDAO()
+        let userDAO: UserDAO = UserDAO()
         userDAO.delegate = self
         userDAO.login( name: name, code: code, handler: { (operation, result) in
-            var user = result as? UserDTO;
+            let user = result as? UserDTO;
             
             if(user == nil || (user != nil && user!.errorTitle != nil)){
                 serviceResult.addErrorsFromDTO(user!)
