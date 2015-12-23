@@ -19,6 +19,7 @@
 		9425DB361C2A0F09003CDB83 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB341C2A0F09003CDB83 /* ServiceResult.swift */; };
 		9425DB381C2A0F19003CDB83 /* FestMakerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB371C2A0F19003CDB83 /* FestMakerService.swift */; };
 		9425DB3A1C2A2565003CDB83 /* ServicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB391C2A2565003CDB83 /* ServicioViewController.swift */; };
+		9425DB3C1C2A2AEF003CDB83 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB3B1C2A2AEF003CDB83 /* LoginService.swift */; };
 		942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A99651C1A12A400B12292 /* GenericTableViewController.swift */; };
 		942A996E1C1A13A300B12292 /* AlarmasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A996D1C1A13A300B12292 /* AlarmasTableViewController.swift */; };
 		942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A996F1C1A13BF00B12292 /* TorneosTableViewController.swift */; };
@@ -80,6 +81,7 @@
 		9425DB341C2A0F09003CDB83 /* ServiceResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		9425DB371C2A0F19003CDB83 /* FestMakerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestMakerService.swift; sourceTree = "<group>"; };
 		9425DB391C2A2565003CDB83 /* ServicioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServicioViewController.swift; path = viewcontroller/Servicio/ServicioViewController.swift; sourceTree = "<group>"; };
+		9425DB3B1C2A2AEF003CDB83 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginService.swift; path = service/LoginService.swift; sourceTree = "<group>"; };
 		942A99651C1A12A400B12292 /* GenericTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTableViewController.swift; path = viewcontroller/GenericTableViewController.swift; sourceTree = "<group>"; };
 		942A996D1C1A13A300B12292 /* AlarmasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmasTableViewController.swift; path = viewcontroller/Alarmas/AlarmasTableViewController.swift; sourceTree = "<group>"; };
 		942A996F1C1A13BF00B12292 /* TorneosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneosTableViewController.swift; path = viewcontroller/Torneos/TorneosTableViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				9425DB331C2A0F09003CDB83 /* GenericService.swift */,
 				9425DB341C2A0F09003CDB83 /* ServiceResult.swift */,
 				9425DB371C2A0F19003CDB83 /* FestMakerService.swift */,
+				9425DB3B1C2A2AEF003CDB83 /* LoginService.swift */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */,
 				942A99741C1A13EF00B12292 /* PerfilTableViewController.swift in Sources */,
 				9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */,
+				9425DB3C1C2A2AEF003CDB83 /* LoginService.swift in Sources */,
 				942A99791C1A15C000B12292 /* GenericTableViewCell.swift in Sources */,
 				94A39A5C1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift in Sources */,
 				941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */,

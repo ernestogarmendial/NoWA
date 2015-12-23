@@ -39,6 +39,10 @@ class LoginViewController: UIViewController {
     
     func startApp(){
         
+        
+        callService()
+        
+        
         let tabBarController = MainTabBarController()
         
         let servicio = ServicioViewController()//ServicioTableViewController()
@@ -96,4 +100,16 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func callService () {
+        let loginService : LoginService = LoginService()
+        loginService.login(target: self,message: "loginFinish:")        
+    }
+    
+    func loginFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+    }
 }

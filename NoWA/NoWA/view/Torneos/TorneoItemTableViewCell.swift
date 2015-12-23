@@ -35,7 +35,7 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
         serviceLabel!.text = "SUPER COPA"
         
         cancelLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: infoView!)
-        cancelLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: -10)
+        cancelLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: -12)
         cancelLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: dateLabel!)
     }
 
