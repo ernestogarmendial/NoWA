@@ -1,9 +1,9 @@
 //
 //  TTInternetConnection.h
-//  InternetConnection
+//  NoWA
 //
-//  Created by Victor Chirino on 2/6/14.
-//  Copyright (c) 2014 Tictapps. All rights reserved.
+//  Created by Ernesto Garmendia on 12/10/15.
+//  Copyright © 2015 Ernesto Garmendia Luis. All rights reserved.
 //
 
 

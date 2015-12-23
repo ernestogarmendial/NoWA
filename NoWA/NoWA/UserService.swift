@@ -1,9 +1,9 @@
 //
 //  UserService.swift
-//  TICTAPPS
+//  NoWA
 //
-//  Created by Mariano D'Agostino on 5/25/15.
-//  Copyright (c) 2015 TICTAPPS. All rights reserved.
+//  Created by Ernesto Garmendia on 12/10/15.
+//  Copyright © 2015 Ernesto Garmendia Luis. All rights reserved.
 //
 
 import UIKit

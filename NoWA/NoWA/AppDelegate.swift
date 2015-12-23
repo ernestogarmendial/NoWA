@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         UINavigationBar.appearance().hidden = false
-        UINavigationBar.appearance().barTintColor = UIColor(red: 252/255, green: 54/255, blue: 175/255, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 252/255, green: 54/255, blue: 175/255, alpha: 0.7)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().translucent = false
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)

@@ -2,7 +2,7 @@
 //  UIFontExtension.swift
 //  Encuestas
 //
-//  Created by Mariano D'Agostino on 5/4/15.
+//  Created by Ernesto Garmendia on 5/27/15.
 //  Copyright (c) 2015 WOP. All rights reserved.
 //
 
