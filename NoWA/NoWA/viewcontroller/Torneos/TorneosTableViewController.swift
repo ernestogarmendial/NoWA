@@ -32,10 +32,8 @@ class TorneosTableViewController: GenericTableViewController {
 //        backgroundImage.image = UIImage(named: "create_alarm_background")
 //        backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
 //        self.tableView.addSubview(backgroundImage)
-//        
-//        backgroundImage.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.tableView)
-//        backgroundImage.autoPinEdge(.Left, toEdge: .Left, ofView: self.tableView)
-//        backgroundImage.autoPinEdge(.Right, toEdge: .Right, ofView: self.tableView)
+        
+
     }
     
     func addAlarm(){

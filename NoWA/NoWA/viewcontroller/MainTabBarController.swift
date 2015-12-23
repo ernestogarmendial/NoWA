@@ -14,11 +14,18 @@ class MainTabBarController: UITabBarController {
         self.title = "NOWAKEAPP"
         
         self.view.backgroundColor = .registroGrayColor()
-        
+       
         UITabBar.appearance().barTintColor = UIColor.registroGrayColor()
+        
+        // descomentar esto para que se haga transparente
+//        
+//        UITabBar.appearance().barTintColor = UIColor.clearColor()
 //        UITabBar.appearance().backgroundImage = UIImage()
 //        UITabBar.appearance().shadowImage = UIImage()
-
+//
+        // descomentar esto para que se haga transparente
+        
+        
         self.tabBar.tintColor = UIColor.whiteColor()//UIColor.buttonSelectedRedColor()
 
 //        UITabBarItem.appearance().setTitleTextAttributes({NSForegroundColorAttributeName: UIColor.blackColor()}, forState:.Selected)
