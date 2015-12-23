@@ -21,9 +21,11 @@ class UserService: GenericService {
             return
         }
         
+        let md5code = md5(string: code!)
+        
         let userDAO: UserDAO = UserDAO()
         userDAO.delegate = self
-        userDAO.login( name: name, code: code, handler: { (operation, result) in
+        userDAO.login( name: name, code: md5code, handler: { (operation, result) in
             let user = result as? UserDTO;
             
             if(user == nil || (user != nil && user!.errorTitle != nil)){
@@ -43,19 +45,19 @@ class UserService: GenericService {
         })
     }
     
-//    func md5(string string: String) -> String {
-//        var digest = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
-//        if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
-//            CC_MD5(data.bytes, CC_LONG(data.length), &digest)
-//        }
-//        
-//        var digestHex = ""
-//        for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
-//            digestHex += String(format: "%02x", digest[index])
-//        }
-//        
-//        return digestHex
-//    }
+    func md5(string string: String) -> String {
+        var digest = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
+        if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
+            CC_MD5(data.bytes, CC_LONG(data.length), &digest)
+        }
+        
+        var digestHex = ""
+        for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
+            digestHex += String(format: "%02x", digest[index])
+        }
+        
+        return digestHex
+    }
     
 }
 

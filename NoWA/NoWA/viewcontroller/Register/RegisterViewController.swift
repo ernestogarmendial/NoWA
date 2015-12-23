@@ -121,5 +121,14 @@ class RegisterViewController: LoginViewController {
             print("Error papu")
             return
         }
+        
+        let usuarioLogueado:UserDTO = result.entityForKey("User") as! UserDTO
+        if usuarioLogueado.token != nil {
+            dispatch_async(dispatch_get_main_queue()) {
+            self.startApp()
+            }
+
+        }
+        
     }
 }

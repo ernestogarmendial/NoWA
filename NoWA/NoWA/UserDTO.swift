@@ -9,7 +9,6 @@
 import Foundation
 
 class UserDTO: GenericDTO {
-    var userID : String?
     var lastName: String?
     var stamp: String?
     var birth: String?
@@ -27,9 +26,6 @@ class UserDTO: GenericDTO {
     
     func update(user: UserDTO) {
         
-        if user.userID != nil{
-            self.userID = user.userID
-        }
         if user.lastName != nil{
             self.lastName = user.lastName
         }
