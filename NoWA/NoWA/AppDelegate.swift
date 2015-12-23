@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        
+        
+        UINavigationBar.appearance().hidden = false
+        UINavigationBar.appearance().barTintColor = UIColor(red: 252/255, green: 54/255, blue: 175/255, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().translucent = false
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
+        
+        
         UINavigationBar.appearance().barStyle = .Black
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -23,16 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         
         
-// EGARMENDIA - DESCOMENTAR
-//        if((NSUserDefaults.standardUserDefaults().valueForKey("firstTime")) != nil){
-//            navigationController.viewControllers = [RegisterViewController()]
-//        }else{
-            navigationController.viewControllers = [TourViewController()]
-//            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstTime")
-//            NSUserDefaults.standardUserDefaults().synchronize()
-//        }
-// EGARMENDIA - DESCOMENTAR
-
+        // EGARMENDIA - DESCOMENTAR
+        //        if((NSUserDefaults.standardUserDefaults().valueForKey("firstTime")) != nil){
+        //            navigationController.viewControllers = [RegisterViewController()]
+        //        }else{
+        navigationController.viewControllers = [TourViewController()]
+        //            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstTime")
+        //            NSUserDefaults.standardUserDefaults().synchronize()
+        //        }
+        // EGARMENDIA - DESCOMENTAR
+        
         
         self.window!.rootViewController = navigationController
         self.window?.makeKeyAndVisible()

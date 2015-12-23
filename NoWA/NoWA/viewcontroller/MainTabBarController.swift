@@ -33,18 +33,30 @@ class MainTabBarController: UITabBarController {
     }
     
     
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.navigationBar.translucent = true;
+//        self.navigationController?.navigationBar.hidden = false
+//        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+//        self.navigationController?.navigationBar.backgroundColor = .loginRedColor()//.clearColor()
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage();
+//
+//    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.translucent = true;
-        
+        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().hidden = false
+
+        self.navigationController?.navigationBar.translucent = false;
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.hidden = false
         
-        self.navigationController?.navigationBar.backgroundColor = .loginRedColor()//.clearColor()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage();
+        self.navigationController?.navigationBar.backgroundColor = .clearColor()
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = nil;
+        
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont.appLatoFontOfSize(18)]
         
     }
-    
 }
