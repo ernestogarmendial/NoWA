@@ -10,7 +10,7 @@ class RegisterFieldView: UIView {
     
     var iconImage : UIImageView!
     var inputTextField : UITextField!
-    var recoverlabel : UILabel!
+    var recoverButton : UIButton!
     var lineView : UIView!
     
     override init(frame:CGRect) {
@@ -29,14 +29,17 @@ class RegisterFieldView: UIView {
         
         self.addSubview(inputTextField)
         
-        recoverlabel = UILabel()
-        recoverlabel.textColor = UIColor.whiteColor()
-        recoverlabel.font = UIFont.appLatoFontOfSize(15)
-        recoverlabel.text = "RECUPERAR"
-        recoverlabel.adjustsFontSizeToFitWidth = true
-        recoverlabel.numberOfLines = 1
-        recoverlabel.hidden = true
-        self.addSubview(recoverlabel)
+
+        
+        recoverButton = UIButton()
+        recoverButton.backgroundColor = .clearColor()
+        recoverButton.setTitle("RECUPERAR", forState: UIControlState.Normal)
+        recoverButton.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
+        recoverButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
+        recoverButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        recoverButton.addTarget(self, action: "recover", forControlEvents: UIControlEvents.TouchUpInside)
+        recoverButton.hidden = true
+        self.addSubview(recoverButton)
         
         lineView = UIView()
         lineView.backgroundColor = UIColor.whiteColor()
@@ -57,17 +60,17 @@ class RegisterFieldView: UIView {
         iconImage.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: self)
 
         
-        if recoverlabel.hidden == false {
-            recoverlabel.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
-            recoverlabel.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self)
-            recoverlabel.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: lineView)
-            recoverlabel.autoSetDimension(ALDimension.Width, toSize: self.frame.size.width / 4)
+        if recoverButton.hidden == false {
+            recoverButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
+            recoverButton.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self)
+            recoverButton.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: lineView)
+            recoverButton.autoSetDimension(ALDimension.Width, toSize: self.frame.size.width / 4)
         }
         
         
         inputTextField.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self, withOffset: 40)
-        if recoverlabel.hidden == false {
-            inputTextField.autoPinEdge(ALEdge.Right, toEdge: .Left, ofView: recoverlabel)
+        if recoverButton.hidden == false {
+            inputTextField.autoPinEdge(ALEdge.Right, toEdge: .Left, ofView: recoverButton)
         }else{
             inputTextField.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
         }
@@ -95,15 +98,19 @@ class RegisterFieldView: UIView {
         }
         
         if recover == true{
-            recoverlabel.hidden = false
+            recoverButton.hidden = false
             
         } else {
-            recoverlabel.hidden = true
+            recoverButton.hidden = true
         }
         
         if secureMode == true{
             inputTextField.secureTextEntry = true
         }
+    }
+    
+    func recover(){
+        print("recover")
     }
     
 }

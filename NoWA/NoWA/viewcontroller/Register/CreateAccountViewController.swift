@@ -45,7 +45,7 @@ class CreateAccountViewController: LoginViewController {
         ingresarButton.backgroundColor = .loginRedColor()
         ingresarButton.setTitle("INGRESAR", forState: UIControlState.Normal)
         ingresarButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
-        ingresarButton.addTarget(self, action: "startApp", forControlEvents: UIControlEvents.TouchUpInside)
+        ingresarButton.addTarget(self, action: "register", forControlEvents: UIControlEvents.TouchUpInside)
         ingresarButton.layer.cornerRadius = 20
         self.view.addSubview(ingresarButton)
      
@@ -114,6 +114,10 @@ class CreateAccountViewController: LoginViewController {
         emailView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
         emailView.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: passwordView, withOffset: -20)
 
+    }
+    
+    func register(){
+        print("register")
     }
 
     
