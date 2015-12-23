@@ -19,7 +19,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     var descriptionLabel: UILabel?
     var infoView : UIView?
     var weekDaysView : WeekDaysView?
-    var alarmSwitch : UISwitch?
+    var alarmSwitch : UIButton?
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -93,9 +93,10 @@ class AlarmItemTableViewCell: GenericTableViewCell {
 //        weekDaysView?.backgroundColor = .redColor()
         self.addSubview(weekDaysView!)
         
-        alarmSwitch = UISwitch()
-        alarmSwitch!.setOn(true, animated: true)
-        alarmSwitch!.tintColor = .grayColor()
+        alarmSwitch = UIButton()
+        alarmSwitch!.addTarget(self, action: "alarmSwitchPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        alarmSwitch!.setImage(UIImage(named: "switch_on"), forState: UIControlState.Normal)
+        alarmSwitch!.setImage(UIImage(named: "switch_off"), forState: UIControlState.Selected)
         self.addSubview(alarmSwitch!)
 
         setupConstrains()
@@ -154,14 +155,28 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         weekDaysView!.autoPinEdge(.Right, toEdge: .Right, ofView: infoView!)
 
         alarmSwitch!.autoPinEdge(.Left, toEdge: .Right, ofView: infoView!, withOffset: 10)
-        alarmSwitch!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
-        alarmSwitch!.autoConstrainAttribute(.MarginTop, toAttribute: .MarginTop, ofView: self, withMultiplier: 2)
+        alarmSwitch!.autoConstrainAttribute(.MarginTop, toAttribute: .MarginTop, ofView: self, withMultiplier: 3)
+        alarmSwitch!.autoSetDimension(.Width, toSize: 50)
+        alarmSwitch!.autoSetDimension(.Height, toSize: 30)
 
     }
     
     override func layoutSubviews(){
         super.layoutSubviews()
         
+    }
+    
+    func alarmSwitchPressed (sender:UIButton) {
+        //        sender.selected = !sender.selected;
+        
+//        if !sender.selected{
+//            if let melodyId = self.myMelodyDTO?.objectId{ // todo borrar
+//                var festMakerService : FestMakerService = FestMakerService()
+//                festMakerService.likeMelody(target: self, message: "likeFinish:", melodyID: melodyId)
+                sender.selected = !sender.selected;
+//                sender.userInteractionEnabled = false
+//            }
+//        }
     }
     
 }

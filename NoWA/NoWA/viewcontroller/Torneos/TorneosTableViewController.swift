@@ -28,6 +28,14 @@ class TorneosTableViewController: GenericTableViewController {
         let path = NSBundle.mainBundle().pathForResource("AlarmasCells", ofType: "plist")
         self.alarmsArray = NSMutableArray(contentsOfFile: path!)
         
+//        let backgroundImage = UIImageView()
+//        backgroundImage.image = UIImage(named: "create_alarm_background")
+//        backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
+//        self.tableView.addSubview(backgroundImage)
+//        
+//        backgroundImage.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.tableView)
+//        backgroundImage.autoPinEdge(.Left, toEdge: .Left, ofView: self.tableView)
+//        backgroundImage.autoPinEdge(.Right, toEdge: .Right, ofView: self.tableView)
     }
     
     func addAlarm(){
