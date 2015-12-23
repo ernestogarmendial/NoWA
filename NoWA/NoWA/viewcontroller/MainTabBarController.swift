@@ -30,6 +30,9 @@ class MainTabBarController: UITabBarController {
 
 //        UITabBarItem.appearance().setTitleTextAttributes({NSForegroundColorAttributeName: UIColor.blackColor()}, forState:.Selected)
 //        UITabBarItem.appearance().setTitleTextAttributes({NSForegroundColorAttributeName: UIColor.whiteColor()}, forState:.Normal)
+        
+//        let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
+//        self.navigationItem.rightBarButtonItem = addAlarmButton
     }
     
 

@@ -17,6 +17,11 @@ class GenericTableViewController: UITableViewController {
 
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController!.navigationItem.rightBarButtonItem = nil
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

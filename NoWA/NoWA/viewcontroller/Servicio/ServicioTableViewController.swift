@@ -32,7 +32,10 @@ class ServicioTableViewController: GenericTableViewController {
 //        self.alarmsArray = NSMutableArray(contentsOfFile: path!)
 //        
 //    }
-//    
+    //        override func viewWillAppear(animated: Bool) {
+//    super.viewWillAppear(true)
+//    self.tabBarController!.navigationItem.rightBarButtonItem = nil
+//}
 //    func addAlarm(){
 //        print("add Alarm")
 //    }

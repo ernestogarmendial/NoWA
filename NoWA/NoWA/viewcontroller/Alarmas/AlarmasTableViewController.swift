@@ -23,11 +23,17 @@ class AlarmasTableViewController: GenericTableViewController {
         let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
         self.navigationItem.rightBarButtonItem = addAlarmButton
         // not working
-
+        
         
         let path = NSBundle.mainBundle().pathForResource("AlarmasCells", ofType: "plist")
         self.alarmsArray = NSMutableArray(contentsOfFile: path!)
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
+        self.tabBarController!.navigationItem.rightBarButtonItem = addAlarmButton
     }
     
     func addAlarm(){
@@ -55,8 +61,8 @@ class AlarmasTableViewController: GenericTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let identificador = alarmsArray[indexPath.row]["identifier"] as! String
-//        
+        //        let identificador = alarmsArray[indexPath.row]["identifier"] as! String
+        //
         let genericCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! GenericTableViewCell
         
         return genericCell
