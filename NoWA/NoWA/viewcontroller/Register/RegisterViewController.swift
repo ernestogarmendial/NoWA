@@ -104,7 +104,22 @@ class RegisterViewController: LoginViewController {
         self.navigationController?.pushViewController(createAccountViewController, animated: true)
     }
     
+    func login(){
+    
+        callService()
+
+    }
 
     
+    func callService () {
+        let userService : UserService = UserService()
+        userService.login(emailView.inputTextField.text, code: passwordView.inputTextField.text ,target: self,message: "loginFinish:")
+    }
     
+    func loginFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+    }
 }

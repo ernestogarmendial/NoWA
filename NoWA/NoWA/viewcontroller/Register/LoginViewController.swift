@@ -9,15 +9,15 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tap)
         
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.translucent = true;
@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage();
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont.appLatoFontOfSize(18)]
     }
-
+    
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -38,9 +38,6 @@ class LoginViewController: UIViewController {
     }
     
     func startApp(){
-        
-        
-        callService()
         
         
         let tabBarController = MainTabBarController()
@@ -57,7 +54,7 @@ class LoginViewController: UIViewController {
         let secondImage = UIImage(named: "equalizer")?.imageWithRenderingMode(.AlwaysOriginal)
         let thirdImage = UIImage(named: "clock")?.imageWithRenderingMode(.AlwaysOriginal)
         let fourthImage = UIImage(named: "team")?.imageWithRenderingMode(.AlwaysOriginal)
-
+        
         
         servicio.tabBarItem = UITabBarItem(
             title: "Servicio",
@@ -100,16 +97,5 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func callService () {
-        let loginService : LoginService = LoginService()
-        loginService.login(target: self,message: "loginFinish:")        
-    }
-    
-    func loginFinish (result : ServiceResult!){
-        if(result.hasErrors()){
-            print("Error papu")
-            return
-        }
-        
-    }
 }
+
