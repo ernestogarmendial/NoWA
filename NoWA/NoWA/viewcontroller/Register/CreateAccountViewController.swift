@@ -7,7 +7,7 @@
 //
 
 class CreateAccountViewController: LoginViewController {
-
+    
     var backgroundImage : UIImageView!
     var checkImage : UIImageView!
     var aceptTermsLabel : UILabel!
@@ -23,12 +23,12 @@ class CreateAccountViewController: LoginViewController {
         self.title = "REGISTRO"
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "registro")!)
-
+        
         backgroundImage = UIImageView()
         backgroundImage.image = UIImage(named: "registro")
         backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
         self.view.addSubview(backgroundImage)
-    
+        
         emailView = RegisterFieldView()
         emailView.setItems("envelope",placeholder: "TU CORREO", recover: false, secureMode: false)
         self.view.addSubview(emailView)
@@ -48,7 +48,7 @@ class CreateAccountViewController: LoginViewController {
         ingresarButton.addTarget(self, action: "register", forControlEvents: UIControlEvents.TouchUpInside)
         ingresarButton.layer.cornerRadius = 20
         self.view.addSubview(ingresarButton)
-     
+        
         aceptTermsLabel = UILabel()
         aceptTermsLabel.font = UIFont.appLatoFontOfSize(12)
         aceptTermsLabel.text = "ACEPTO TÉRMINOS Y CONDICIONES"
@@ -57,7 +57,7 @@ class CreateAccountViewController: LoginViewController {
         aceptTermsLabel.adjustsFontSizeToFitWidth = true
         aceptTermsLabel.numberOfLines = 1
         self.view.addSubview(aceptTermsLabel)
-                
+        
         checkImage = UIImageView()
         checkImage.image = UIImage(named: "tilde")
         checkImage.contentMode = UIViewContentMode.ScaleAspectFill
@@ -69,7 +69,7 @@ class CreateAccountViewController: LoginViewController {
         self.view.addSubview(termsView)
         
         setupConstrains()
-
+        
         
     }
     
@@ -94,7 +94,7 @@ class CreateAccountViewController: LoginViewController {
         aceptTermsLabel.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: termsView)
         aceptTermsLabel.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: termsView)
         aceptTermsLabel.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: termsView)
-
+        
         termsView.autoSetDimension(ALDimension.Height, toSize: 30)
         termsView.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
         termsView.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: ingresarButton, withOffset: -20 )
@@ -113,12 +113,35 @@ class CreateAccountViewController: LoginViewController {
         emailView.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: self.view, withOffset: 40)
         emailView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
         emailView.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: passwordView, withOffset: -20)
-
+        
     }
     
     func register(){
-        print("register")
+        
+        callService()
     }
-
+    
+    
+    func callService () {
+        let userService : UserService = UserService()
+        userService.register(emailView.inputTextField.text, code: passwordView.inputTextField.text ,target: self,message: "registerFinish:")
+    }
+    
+    func registerFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        let usuarioLogueado:UserDTO = result.entityForKey("RegisterUser") as! UserDTO
+        if usuarioLogueado.token != nil {
+            dispatch_async(dispatch_get_main_queue()) {
+                self.startApp()
+            }
+            
+        }
+        
+    }
+    
     
 }

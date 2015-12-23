@@ -11,6 +11,7 @@ import UIKit
 class UserService: GenericService {
     
     static var currentUser: UserDTO!
+    
     func login(name : String?, code :String?, target _target : NSObject, message _message : String ) {
         
         let serviceResult = ServiceResult()
@@ -45,19 +46,81 @@ class UserService: GenericService {
         })
     }
     
-    func md5(string string: String) -> String {
-        var digest = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
-        if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
-            CC_MD5(data.bytes, CC_LONG(data.length), &digest)
+    func register(name : String?, code :String?, target _target : NSObject, message _message : String ) {
+        
+        let serviceResult = ServiceResult()
+        
+        if !TTInternetConnection.sharedInstance().internetAccess() {
+            serviceResult.addError("No Internet")
+            self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            return
         }
         
-        var digestHex = ""
-        for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
-            digestHex += String(format: "%02x", digest[index])
-        }
+        let md5code = md5(string: code!)
         
-        return digestHex
+        let userDAO: UserDAO = UserDAO()
+        userDAO.delegate = self
+        userDAO.register( name: name, code: md5code, handler: { (operation, result) in
+            let user = result as? UserDTO;
+            
+            if(user == nil || (user != nil && user!.errorTitle != nil)){
+                serviceResult.addErrorsFromDTO(user!)
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }else{
+                
+                UserService.currentUser = result as! UserDTO;
+                //
+                if let accessToken = UserService.currentUser.token {
+                    //
+                    serviceResult.addEntity(UserService.currentUser, forKey: "RegisterUser")
+                    
+                    self.callMessage(target: _target, message: _message, withResult: serviceResult)
+                }
+            }
+        })
     }
     
+    func recover(name : String?, target _target : NSObject, message _message : String ) {
+        
+        let serviceResult = ServiceResult()
+        
+        if !TTInternetConnection.sharedInstance().internetAccess() {
+            serviceResult.addError("No Internet")
+            self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            return
+        }
+        
+        let userDAO: UserDAO = UserDAO()
+        userDAO.delegate = self
+        userDAO.recover( name: name, handler: { (operation, result) in
+            
+            let recoverCode = result as? String;
+            
+            if(recoverCode == nil){
+                
+                serviceResult.addEntity(recoverCode, forKey: "RecoverCode")
+                
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }
+        })
+    }
 }
+
+
+
+func md5(string string: String) -> String {
+    var digest = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
+    if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
+        CC_MD5(data.bytes, CC_LONG(data.length), &digest)
+    }
+    
+    var digestHex = ""
+    for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
+        digestHex += String(format: "%02x", digest[index])
+    }
+    
+    return digestHex
+}
+
+
 

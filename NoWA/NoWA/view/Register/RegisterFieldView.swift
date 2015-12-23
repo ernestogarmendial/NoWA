@@ -29,7 +29,6 @@ class RegisterFieldView: UIView {
         
         self.addSubview(inputTextField)
         
-
         
         recoverButton = UIButton()
         recoverButton.backgroundColor = .clearColor()
@@ -58,7 +57,7 @@ class RegisterFieldView: UIView {
         iconImage.autoSetDimension(ALDimension.Width, toSize: 18)
         iconImage.autoSetDimension(ALDimension.Height, toSize: 18)
         iconImage.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: self)
-
+        
         
         if recoverButton.hidden == false {
             recoverButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self)
@@ -110,7 +109,27 @@ class RegisterFieldView: UIView {
     }
     
     func recover(){
-        print("recover")
+        callService()
+    }
+    
+    
+    func callService () {
+        let userService : UserService = UserService()
+        userService.recover(inputTextField.text,target: self,message: "recoverFinish:")
+    }
+    
+    func recoverFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        let recoverCode:String = result.entityForKey("recover") as! String
+        if recoverCode != "" {
+            print(recoverCode)
+        }
+        
     }
     
 }
+

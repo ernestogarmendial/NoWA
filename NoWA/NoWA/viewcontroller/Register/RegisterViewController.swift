@@ -105,9 +105,8 @@ class RegisterViewController: LoginViewController {
     }
     
     func login(){
-    
+        
         callService()
-
     }
 
     
