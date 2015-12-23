@@ -15,13 +15,13 @@ class MainTabBarController: UITabBarController {
         
         self.view.backgroundColor = .registroGrayColor()
        
-        UITabBar.appearance().barTintColor = UIColor.registroGrayColor()
+//        UITabBar.appearance().barTintColor = UIColor.registroGrayColor()
         
         // descomentar esto para que se haga transparente
-//        
-//        UITabBar.appearance().barTintColor = UIColor.clearColor()
-//        UITabBar.appearance().backgroundImage = UIImage()
-//        UITabBar.appearance().shadowImage = UIImage()
+        
+        UITabBar.appearance().barTintColor = UIColor.clearColor()
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().shadowImage = UIImage()
 //
         // descomentar esto para que se haga transparente
         
@@ -32,17 +32,7 @@ class MainTabBarController: UITabBarController {
 //        UITabBarItem.appearance().setTitleTextAttributes({NSForegroundColorAttributeName: UIColor.whiteColor()}, forState:.Normal)
     }
     
-    
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.navigationController?.navigationBar.translucent = true;
-//        self.navigationController?.navigationBar.hidden = false
-//        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-//        self.navigationController?.navigationBar.backgroundColor = .loginRedColor()//.clearColor()
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage();
-//
-//    }
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
