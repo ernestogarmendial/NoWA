@@ -31,7 +31,6 @@ class ServiceLocationTableViewCell: GenericTableViewCell {
         
         for var i = 0; i < cellsArray!.count; i++ {
             if cellsArray![i]["identifier"] as! String == reuseIdentifier {
-                
                 if let dictionary = cellsArray![i] as? NSDictionary {
                     
                     if let left_icon = dictionary["left_icon"] as? String{
@@ -45,15 +44,13 @@ class ServiceLocationTableViewCell: GenericTableViewCell {
                     if let title = dictionary["title"] as? String{
                         titleString = title
                     }
-                    
                 }
-                
             }
         }
         
         leftIcon = UIImageView()
         leftIcon!.image = UIImage(named: leftIconString!)
-        leftIcon!.contentMode = UIViewContentMode.ScaleAspectFit
+        leftIcon!.contentMode = UIViewContentMode.Center
         self.addSubview(leftIcon!)
         
         titleLabel = UILabel()

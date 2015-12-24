@@ -65,7 +65,7 @@ class ServicePickerTableViewCell: GenericTableViewCell {
         selectedServiceLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         selectedServiceLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.40)
 
-        pickerArrow!.autoPinEdge(.Left, toEdge: .Right, ofView: selectedServiceLabel!)
+        pickerArrow!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
         pickerArrow!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         pickerArrow!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         pickerArrow!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
