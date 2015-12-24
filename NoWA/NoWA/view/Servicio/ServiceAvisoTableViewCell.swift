@@ -61,7 +61,7 @@ class ServiceAvisoTableViewCell: GenericTableViewCell {
         cancelationView!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         cancelationView!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         cancelationView!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
-        cancelationView!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.40)
+        cancelationView!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.30)
         
         cancelationLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: cancelationView!, withOffset: 20)
         cancelationLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: cancelationView!)

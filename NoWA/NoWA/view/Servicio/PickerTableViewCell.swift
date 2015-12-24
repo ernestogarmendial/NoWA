@@ -1,5 +1,5 @@
 //
-//  ServiceLocationTableViewCell.swift
+//  PickerTableViewCell
 //  NoWA
 //
 //  Created by Ernesto Garmendia Luis on 24/12/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ServiceLocationTableViewCell: GenericTableViewCell {
+class PickerTableViewCell: GenericTableViewCell {
     
     var titleLabel : UILabel?
     var descriptionLabel : UILabel?

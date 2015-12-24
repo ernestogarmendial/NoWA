@@ -6,11 +6,11 @@
 		<key>identifier</key>
 		<string>ServicePicker</string>
 		<key>height</key>
-		<integer>60</integer>
+		<integer>55</integer>
 	</dict>
 	<dict>
 		<key>identifier</key>
-		<string>Pickable</string>
+		<string>ServiceLocationCell</string>
 		<key>left_icon</key>
 		<string>location</string>
 		<key>right_icon</key>
@@ -18,13 +18,35 @@
 		<key>title</key>
 		<string>UBICACION</string>
 		<key>height</key>
-		<integer>70</integer>
+		<integer>75</integer>
 	</dict>
 	<dict>
 		<key>identifier</key>
-		<string>Aviso</string>
+		<string>ServiceAdviceCell</string>
 		<key>height</key>
-		<integer>100</integer>
+		<integer>90</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>ClimeConditionCell</string>
+		<key>left_icon</key>
+		<string>ice</string>
+		<key>right_icon</key>
+		<string>down_arrow</string>
+		<key>title</key>
+		<string>CONDICION CLIMATICA</string>
+		<key>height</key>
+		<integer>75</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>TempSliderCell</string>
+		<key>left_icon</key>
+		<string>sun</string>
+		<key>title</key>
+		<string>TEMPERATURA</string>
+		<key>height</key>
+		<integer>75</integer>
 	</dict>
 </array>
 </plist>
