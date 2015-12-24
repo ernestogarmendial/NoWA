@@ -58,7 +58,7 @@ class ServiceLocationTableViewCell: GenericTableViewCell {
         titleLabel!.textColor = .whiteColor()
         titleLabel!.font = UIFont.appLatoFontOfSize(14)
         titleLabel!.adjustsFontSizeToFitWidth = true
-        titleLabel!.textAlignment = .Center
+        titleLabel!.textAlignment = .Left
         titleLabel!.numberOfLines = 1
         self.addSubview(titleLabel!)
         
@@ -66,7 +66,7 @@ class ServiceLocationTableViewCell: GenericTableViewCell {
         descriptionLabel!.textColor = .whiteColor()
         descriptionLabel!.font = UIFont.appLatoFontOfSize(14)
         descriptionLabel!.adjustsFontSizeToFitWidth = true
-        descriptionLabel!.textAlignment = .Center
+        descriptionLabel!.textAlignment = .Left
         descriptionLabel!.numberOfLines = 1
         self.addSubview(descriptionLabel!)
         

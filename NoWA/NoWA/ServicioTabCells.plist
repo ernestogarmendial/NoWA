@@ -5,12 +5,6 @@
 	<dict>
 		<key>identifier</key>
 		<string>ServicePicker</string>
-		<key>left_icon</key>
-		<string></string>
-		<key>right_icon</key>
-		<string></string>
-		<key>title</key>
-		<string></string>
 	</dict>
 	<dict>
 		<key>identifier</key>

@@ -18,7 +18,7 @@ class ServicioTableViewController: GenericTableViewController {
         
         self.tableView.registerClass(ServicePickerTableViewCell.self, forCellReuseIdentifier: "ServicePicker")
         self.tableView.registerClass(ServiceLocationTableViewCell.self, forCellReuseIdentifier: "Pickable")
-//        self.tableView.registerClass(ItemTableViewCell.self, forCellReuseIdentifier: "celda3")
+        //        self.tableView.registerClass(ItemTableViewCell.self, forCellReuseIdentifier: "celda3")
         
         self.tableView.backgroundColor = .redColor()
         
@@ -38,7 +38,11 @@ class ServicioTableViewController: GenericTableViewController {
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellsArray.count
+        if cellsArray != nil{
+            return cellsArray.count
+        }else{
+            return 0
+        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -61,8 +65,8 @@ class ServicioTableViewController: GenericTableViewController {
         
         let genericCell = tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
-//        let cellDitionary = cellsArray[indexPath.row] as! NSDictionary
-//        genericCell.setItems(cellDitionary)
+        //        let cellDitionary = cellsArray[indexPath.row] as! NSDictionary
+        //        genericCell.setItems(cellDitionary)
         
         return genericCell
     }

@@ -15,6 +15,8 @@ class GenericTableViewController: UITableViewController {
 
         self.tableView.backgroundColor = .darkGrayCustomColor()
 
+        self.tableView.tableFooterView = UIView()
+
     }
 
     override func viewWillAppear(animated: Bool) {
