@@ -34,11 +34,19 @@ extension UIColor {
         return UIColor(red: 36/255, green: 39/255, blue: 43/255, alpha: 1.0)
     }
     
+    class func ribbonAltColor() -> UIColor {
+        return UIColorFromRGB("566b85")
+    }
+    
+    class func servicePickerBlueColor() -> UIColor{
+        return UIColorFromRGB("2b90bb")//("1d8eaa")
+    }
+    
     class func canceledGrayColor() -> UIColor {
         return UIColor(red: 144/255, green: 146/255, blue: 148/255, alpha: 1.0)
     }
     
-    func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
+    class func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
         let scanner = NSScanner(string:colorCode)
         var color:UInt32 = 0;
         scanner.scanHexInt(&color)

@@ -19,14 +19,14 @@ class AlarmasTableViewController: GenericTableViewController {
         
         self.tableView.backgroundColor = .darkGrayColor()
         
-        // not working
-        let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
-        self.navigationItem.rightBarButtonItem = addAlarmButton
-        // not working
-        
-        
-        let path = NSBundle.mainBundle().pathForResource("AlarmasCells", ofType: "plist")
-        self.alarmsArray = NSMutableArray(contentsOfFile: path!)
+//        // not working
+//        let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
+//        self.navigationItem.rightBarButtonItem = addAlarmButton
+//        // not working
+//        
+//
+//        let path = NSBundle.mainBundle().pathForResource("AlarmasCells", ofType: "plist")
+//        self.alarmsArray = NSMutableArray(contentsOfFile: path!)
         
     }
     
@@ -42,7 +42,7 @@ class AlarmasTableViewController: GenericTableViewController {
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4//return alarmsArray.count
+        return 5//return alarmsArray.count
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -4,15 +4,17 @@
 <array>
 	<dict>
 		<key>identifier</key>
-		<string>celda1</string>
+		<string>ServicePicker</string>
 	</dict>
 	<dict>
 		<key>identifier</key>
-		<string>celda2</string>
-	</dict>
-	<dict>
-		<key>identifier</key>
-		<string>celda3</string>
+		<string>Pickable</string>
+		<key>left_icon</key>
+		<string>location</string>
+		<key>right_icon</key>
+		<string>location_arrow</string>
+		<key>title</key>
+		<string>UBICACION</string>
 	</dict>
 </array>
 </plist>

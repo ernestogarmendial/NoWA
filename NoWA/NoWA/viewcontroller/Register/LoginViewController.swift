@@ -51,9 +51,9 @@ class LoginViewController: UIViewController {
         tabBarController.viewControllers = controllers
         
         let firstImage = UIImage(named: "cloud")?.imageWithRenderingMode(.AlwaysOriginal)
-        let secondImage = UIImage(named: "equalizer")?.imageWithRenderingMode(.AlwaysOriginal)
-        let thirdImage = UIImage(named: "clock")?.imageWithRenderingMode(.AlwaysOriginal)
-        let fourthImage = UIImage(named: "team")?.imageWithRenderingMode(.AlwaysOriginal)
+        let secondImage = UIImage(named: "clock")?.imageWithRenderingMode(.AlwaysOriginal)
+        let thirdImage = UIImage(named: "team")?.imageWithRenderingMode(.AlwaysOriginal)
+        let fourthImage = UIImage(named: "equalizer")?.imageWithRenderingMode(.AlwaysOriginal)
         
         
         servicio.tabBarItem = UITabBarItem(

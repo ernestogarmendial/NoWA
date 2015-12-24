@@ -15,13 +15,13 @@ class MainTabBarController: UITabBarController {
         
         self.view.backgroundColor = .registroGrayColor()
        
-//        UITabBar.appearance().barTintColor = UIColor.registroGrayColor()
+        UITabBar.appearance().barTintColor = UIColor.registroGrayColor()
         
         // descomentar esto para que se haga transparente
         
-        UITabBar.appearance().barTintColor = UIColor.clearColor()
-        UITabBar.appearance().backgroundImage = UIImage()
-        UITabBar.appearance().shadowImage = UIImage()
+//        UITabBar.appearance().barTintColor = UIColor.clearColor()
+//        UITabBar.appearance().backgroundImage = UIImage()
+//        UITabBar.appearance().shadowImage = UIImage()
 //
         // descomentar esto para que se haga transparente
         

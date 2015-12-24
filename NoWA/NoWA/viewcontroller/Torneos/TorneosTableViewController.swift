@@ -19,21 +19,13 @@ class TorneosTableViewController: GenericTableViewController {
         
         self.tableView.backgroundColor = .darkGrayColor()
         
-        // not working
-        let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
-        self.navigationItem.rightBarButtonItem = addAlarmButton
-        // not working
+        
+        //        let backgroundImage = UIImageView()
+        //        backgroundImage.image = UIImage(named: "create_alarm_background")
+        //        backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
+        //        self.tableView.addSubview(backgroundImage)
         
         
-        let path = NSBundle.mainBundle().pathForResource("AlarmasCells", ofType: "plist")
-        self.alarmsArray = NSMutableArray(contentsOfFile: path!)
-        
-//        let backgroundImage = UIImageView()
-//        backgroundImage.image = UIImage(named: "create_alarm_background")
-//        backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
-//        self.tableView.addSubview(backgroundImage)
-        
-
     }
     
     func addAlarm(){
@@ -67,5 +59,5 @@ class TorneosTableViewController: GenericTableViewController {
         
         return genericCell
     }
-
+    
 }

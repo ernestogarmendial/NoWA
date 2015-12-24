@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C01C0CDF3C00E67905 /* UIColorExtension.swift */; };
 		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
+		941421771C2BAA6B00D9495E /* ServiceLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421761C2BAA6B00D9495E /* ServiceLocationTableViewCell.swift */; };
 		9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB221C2A0DBC003CDB83 /* Reachability.m */; };
 		9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */; };
 		9425DB291C2A0E34003CDB83 /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB281C2A0E34003CDB83 /* GenericDAO.swift */; };
@@ -30,10 +31,11 @@
 		942A99791C1A15C000B12292 /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A99781C1A15C000B12292 /* GenericTableViewCell.swift */; };
 		942A997B1C1A15F500B12292 /* InfoAlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A997A1C1A15F500B12292 /* InfoAlarmTableViewCell.swift */; };
 		942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */; };
-		942A997F1C1A169600B12292 /* AlarmasCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 942A997E1C1A169600B12292 /* AlarmasCells.plist */; };
+		942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 942A997E1C1A169600B12292 /* ServicioTabCells.plist */; };
 		945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C48AF1C0F8168006367C9 /* MainTabBarController.swift */; };
 		94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */; };
 		94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94686C791C0BA9EE00D05BD9 /* Assets.xcassets */; };
+		9476A9051C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A9041C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift */; };
 		94801F861C0DD7D100D05D6E /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F851C0DD7D100D05D6E /* TourViewController.swift */; };
 		94801F891C0DD8D100D05D6E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F881C0DD8D100D05D6E /* RegisterViewController.swift */; };
 		94801F911C0DDFC100D05D6E /* RegisterFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F8E1C0DDFC100D05D6E /* RegisterFieldView.swift */; };
@@ -71,6 +73,7 @@
 		449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		941109C01C0CDF3C00E67905 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		941109C11C0CDF3C00E67905 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		941421761C2BAA6B00D9495E /* ServiceLocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceLocationTableViewCell.swift; path = view/Servicio/ServiceLocationTableViewCell.swift; sourceTree = "<group>"; };
 		9425DB211C2A0DBC003CDB83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9425DB221C2A0DBC003CDB83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
@@ -94,7 +97,7 @@
 		942A99781C1A15C000B12292 /* GenericTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTableViewCell.swift; path = view/GenericTableViewCell.swift; sourceTree = "<group>"; };
 		942A997A1C1A15F500B12292 /* InfoAlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoAlarmTableViewCell.swift; path = view/Alarm/InfoAlarmTableViewCell.swift; sourceTree = "<group>"; };
 		942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = view/Alarm/ItemTableViewCell.swift; sourceTree = "<group>"; };
-		942A997E1C1A169600B12292 /* AlarmasCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AlarmasCells.plist; sourceTree = "<group>"; };
+		942A997E1C1A169600B12292 /* ServicioTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServicioTabCells.plist; sourceTree = "<group>"; };
 		945C48AF1C0F8168006367C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = viewcontroller/MainTabBarController.swift; sourceTree = "<group>"; };
 		94686C6F1C0BA9EE00D05BD9 /* NoWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 		94686C7E1C0BA9EE00D05BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94686C831C0BA9EE00D05BD9 /* NoWATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoWATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C8E1C0BA9EE00D05BD9 /* NoWAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoWAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9476A9041C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServicePickerTableViewCell.swift; path = view/Servicio/ServicePickerTableViewCell.swift; sourceTree = "<group>"; };
 		94801F851C0DD7D100D05D6E /* TourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
 		94801F881C0DD8D100D05D6E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		94801F8E1C0DDFC100D05D6E /* RegisterFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFieldView.swift; sourceTree = "<group>"; };
@@ -285,9 +289,19 @@
 			path = NoWA;
 			sourceTree = "<group>";
 		};
+		9476A9031C2B9E5A004AB8E3 /* Servicio */ = {
+			isa = PBXGroup;
+			children = (
+				9476A9041C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift */,
+				941421761C2BAA6B00D9495E /* ServiceLocationTableViewCell.swift */,
+			);
+			name = Servicio;
+			sourceTree = "<group>";
+		};
 		94801F7C1C0CF28100D05D6E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				9476A9031C2B9E5A004AB8E3 /* Servicio */,
 				94A39A5A1C28FA5100BA2BB8 /* Torneos */,
 				942A99771C1A156100B12292 /* Alarmas */,
 				94801F8D1C0DDFC100D05D6E /* Register */,
@@ -342,7 +356,7 @@
 				949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */,
 				94686C7E1C0BA9EE00D05BD9 /* Info.plist */,
 				94686C791C0BA9EE00D05BD9 /* Assets.xcassets */,
-				942A997E1C1A169600B12292 /* AlarmasCells.plist */,
+				942A997E1C1A169600B12292 /* ServicioTabCells.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -503,7 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
-				942A997F1C1A169600B12292 /* AlarmasCells.plist in Resources */,
+				942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */,
 				94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */,
+				9476A9051C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift in Sources */,
 				9425DB3A1C2A2565003CDB83 /* ServicioViewController.swift in Sources */,
 				94A39A531C28D87500BA2BB8 /* AlarmItemTableViewCell.swift in Sources */,
 				942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */,
@@ -573,6 +588,7 @@
 				94A39A551C28DCDD00BA2BB8 /* WeekDaysView.swift in Sources */,
 				9425DB301C2A0ED4003CDB83 /* GenericDTO.swift in Sources */,
 				942A997B1C1A15F500B12292 /* InfoAlarmTableViewCell.swift in Sources */,
+				941421771C2BAA6B00D9495E /* ServiceLocationTableViewCell.swift in Sources */,
 				945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */,
 				9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */,
 				9425DB441C2A3076003CDB83 /* UserDAO.swift in Sources */,
