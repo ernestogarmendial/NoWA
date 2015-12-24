@@ -1,5 +1,5 @@
 //
-//  SliderTableViewCell.swift
+//  PredictionTableViewCell.swift
 //  NoWA
 //
 //  Created by Ernesto Garmendia Luis on 24/12/15.
@@ -8,10 +8,12 @@
 
 import UIKit
 
-class SliderTableViewCell: GenericTableViewCell {
+class PredictionTableViewCell: GenericTableViewCell {
     
     var titleView : UIView?
     var sliderView : UIView?
+    
+    var explainLabel : UILabel?
     
     var titleLabel : UILabel?
     var leftIcon : UIImageView?
@@ -57,7 +59,7 @@ class SliderTableViewCell: GenericTableViewCell {
         self.addSubview(leftIcon!)
         
         rightIcon = UIImageView()
-//        rightIcon!.image = UIImage(named: leftIconString!)
+        //        rightIcon!.image = UIImage(named: leftIconString!)
         rightIcon!.contentMode = UIViewContentMode.Center
         self.addSubview(rightIcon!)
         
@@ -69,6 +71,15 @@ class SliderTableViewCell: GenericTableViewCell {
         titleLabel!.textAlignment = .Left
         titleLabel!.numberOfLines = 1
         self.addSubview(titleLabel!)
+        
+        explainLabel = UILabel()
+        explainLabel!.text = "La cancelación quedará sin efecto si se predice una mejoría dentro de:"
+        explainLabel!.textColor = .whiteColor()
+        explainLabel!.font = UIFont.appLatoFontOfSize(14)
+        explainLabel!.adjustsFontSizeToFitWidth = true
+        explainLabel!.textAlignment = .Left
+        explainLabel!.numberOfLines = 2
+        self.addSubview(explainLabel!)
         
         sliderLeft = UISlider()
         sliderLeft!.minimumValue = 0
@@ -99,12 +110,10 @@ class SliderTableViewCell: GenericTableViewCell {
         titleView!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         titleView!.autoPinEdge(.Left, toEdge: .Left, ofView: self)
         titleView!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
-        titleView!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.5)
-
-
+        titleView!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.33)
+        
         leftIcon!.autoPinEdge(.Left, toEdge: .Left, ofView: titleView!)
         leftIcon!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: titleView!)
-
         leftIcon!.autoPinEdge(.Top, toEdge: .Top, ofView: titleView!)
         leftIcon!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
         
@@ -113,11 +122,16 @@ class SliderTableViewCell: GenericTableViewCell {
         titleLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: titleView!)
         titleLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: titleView!)
         
+        explainLabel!.autoPinEdge(.Top, toEdge: .Bottom, ofView: titleView!)
+        explainLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: leftIcon!)
+        explainLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: -20)
+        explainLabel!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.33)
+        
         sliderView!.autoPinEdge(.Left, toEdge: .Right, ofView: leftIcon!)
-        sliderView!.autoPinEdge(.Top, toEdge: .Bottom, ofView: titleLabel!)
+        sliderView!.autoPinEdge(.Top, toEdge: .Bottom, ofView: explainLabel!)
         sliderView!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         sliderView!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.60)
-        sliderView!.autoMatchDimension(.Height, toDimension: .Height, ofView: titleLabel!)
+//        sliderView!.autoMatchDimension(.Height, toDimension: .Height, ofView: titleLabel!)
         
         sliderLeft!.autoPinEdge(.Left, toEdge: .Left, ofView: sliderView!)
         sliderLeft!.autoPinEdge(.Right, toEdge: .Right, ofView: sliderView!)
@@ -133,5 +147,6 @@ class SliderTableViewCell: GenericTableViewCell {
     func rightButtonPressed(){
         print("pepe")
     }
+    
     
 }

@@ -21,6 +21,12 @@ class ServicioTableViewController: GenericTableViewController {
         self.tableView.registerClass(ServiceAvisoTableViewCell.self, forCellReuseIdentifier: "ServiceAdviceCell")
         self.tableView.registerClass(PickerTableViewCell.self, forCellReuseIdentifier: "ClimeConditionCell")
         self.tableView.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "TempSliderCell")
+        self.tableView.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "WindSliderCell")
+        self.tableView.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "HumiditySliderCell")
+        self.tableView.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
+
+        
+
         
         self.tableView.backgroundColor = .redColor()
         

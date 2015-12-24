@@ -12,6 +12,7 @@
 		941421771C2BAA6B00D9495E /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421761C2BAA6B00D9495E /* PickerTableViewCell.swift */; };
 		941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */; };
 		9414217D1C2C59E200D9495E /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */; };
+		9414217F1C2C65C800D9495E /* PredictionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414217E1C2C65C800D9495E /* PredictionTableViewCell.swift */; };
 		9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB221C2A0DBC003CDB83 /* Reachability.m */; };
 		9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */; };
 		9425DB291C2A0E34003CDB83 /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB281C2A0E34003CDB83 /* GenericDAO.swift */; };
@@ -78,6 +79,7 @@
 		941421761C2BAA6B00D9495E /* PickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerTableViewCell.swift; path = view/Servicio/PickerTableViewCell.swift; sourceTree = "<group>"; };
 		941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceAvisoTableViewCell.swift; path = view/Servicio/ServiceAvisoTableViewCell.swift; sourceTree = "<group>"; };
 		9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SliderTableViewCell.swift; path = view/SliderTableViewCell.swift; sourceTree = "<group>"; };
+		9414217E1C2C65C800D9495E /* PredictionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PredictionTableViewCell.swift; path = view/PredictionTableViewCell.swift; sourceTree = "<group>"; };
 		9425DB211C2A0DBC003CDB83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9425DB221C2A0DBC003CDB83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				94801F8F1C0DDFC100D05D6E /* Tour */,
 				942A99781C1A15C000B12292 /* GenericTableViewCell.swift */,
 				9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */,
+				9414217E1C2C65C800D9495E /* PredictionTableViewCell.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				9425DB421C2A304A003CDB83 /* UserDTO.swift in Sources */,
 				9425DB351C2A0F09003CDB83 /* GenericService.swift in Sources */,
 				94801F911C0DDFC100D05D6E /* RegisterFieldView.swift in Sources */,
+				9414217F1C2C65C800D9495E /* PredictionTableViewCell.swift in Sources */,
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
 				941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */,
 				9414217D1C2C59E200D9495E /* SliderTableViewCell.swift in Sources */,

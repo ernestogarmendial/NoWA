@@ -48,5 +48,35 @@
 		<key>height</key>
 		<integer>75</integer>
 	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>WindSliderCell</string>
+		<key>left_icon</key>
+		<string>wind</string>
+		<key>title</key>
+		<string>VIENTO</string>
+		<key>height</key>
+		<integer>75</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>HumiditySliderCell</string>
+		<key>left_icon</key>
+		<string>cloud</string>
+		<key>title</key>
+		<string>HUMEDAD</string>
+		<key>height</key>
+		<integer>75</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>PredictionSliderCell</string>
+		<key>left_icon</key>
+		<string>equalizer</string>
+		<key>title</key>
+		<string>PREDICCION</string>
+		<key>height</key>
+		<integer>120</integer>
+	</dict>
 </array>
 </plist>

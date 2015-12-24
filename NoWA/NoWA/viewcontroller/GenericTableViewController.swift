@@ -15,7 +15,7 @@ class GenericTableViewController: UITableViewController {
 
         self.tableView.backgroundColor = .darkGrayCustomColor()
 
-        self.tableView.tableFooterView = UIView()
+        self.tableView.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
 
         self.tableView.separatorColor = .clearColor()
 
