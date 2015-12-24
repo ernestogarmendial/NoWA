@@ -71,4 +71,9 @@ class ServicioTableViewController: GenericTableViewController {
         return genericCell
     }
     
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        
+//        self.tableView.layoutMargins = UIEdgeInsetsZero;
+//    }
 }

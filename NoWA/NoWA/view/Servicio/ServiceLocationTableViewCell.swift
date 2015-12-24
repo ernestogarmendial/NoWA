@@ -71,7 +71,7 @@ class ServiceLocationTableViewCell: GenericTableViewCell {
         self.addSubview(descriptionLabel!)
         
         rightButton = UIButton()
-        rightButton!.addTarget(self, action: "rightButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        rightButton!.addTarget(self, action: "rightButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
         rightButton!.setImage(UIImage(named: rightIconString!), forState: UIControlState.Normal)
         
         self.addSubview(rightButton!)
@@ -101,7 +101,7 @@ class ServiceLocationTableViewCell: GenericTableViewCell {
     }
     
     func rightButtonPressed(){
-        
+        print("pepe")
     }
     
 }

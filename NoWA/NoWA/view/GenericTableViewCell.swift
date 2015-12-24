@@ -18,7 +18,6 @@ class GenericTableViewCell: UITableViewCell {
         self.layoutMargins = UIEdgeInsetsZero
         self.selectionStyle = .None
 
-
         
     }
 

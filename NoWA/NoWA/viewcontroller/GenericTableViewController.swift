@@ -17,6 +17,8 @@ class GenericTableViewController: UITableViewController {
 
         self.tableView.tableFooterView = UIView()
 
+        self.tableView.separatorColor = .clearColor()
+
     }
 
     override func viewWillAppear(animated: Bool) {
