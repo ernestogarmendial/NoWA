@@ -16,9 +16,7 @@ class AlarmasTableViewController: GenericTableViewController {
         super.viewDidLoad()
         
         self.tableView.registerClass(AlarmItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
-        
-        self.tableView.backgroundColor = .darkGrayColor()
-        
+                
 //        // not working
 //        let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
 //        self.navigationItem.rightBarButtonItem = addAlarmButton

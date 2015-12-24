@@ -25,9 +25,6 @@ class ServicioTableViewController: GenericTableViewController {
         self.tableView.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "HumiditySliderCell")
         self.tableView.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
         
-        
-        self.tableView.backgroundColor = .redColor()
-        
         let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
         

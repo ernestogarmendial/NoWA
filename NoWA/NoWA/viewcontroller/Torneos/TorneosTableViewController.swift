@@ -17,9 +17,6 @@ class TorneosTableViewController: GenericTableViewController {
         
         self.tableView.registerClass(TorneoItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
         
-        self.tableView.backgroundColor = .darkGrayColor()
-        
-        
         //        let backgroundImage = UIImageView()
         //        backgroundImage.image = UIImage(named: "create_alarm_background")
         //        backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
