@@ -10,6 +10,7 @@
 		941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C01C0CDF3C00E67905 /* UIColorExtension.swift */; };
 		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
 		941421771C2BAA6B00D9495E /* ServiceLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421761C2BAA6B00D9495E /* ServiceLocationTableViewCell.swift */; };
+		941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */; };
 		9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB221C2A0DBC003CDB83 /* Reachability.m */; };
 		9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */; };
 		9425DB291C2A0E34003CDB83 /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB281C2A0E34003CDB83 /* GenericDAO.swift */; };
@@ -74,6 +75,7 @@
 		941109C01C0CDF3C00E67905 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		941109C11C0CDF3C00E67905 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		941421761C2BAA6B00D9495E /* ServiceLocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceLocationTableViewCell.swift; path = view/Servicio/ServiceLocationTableViewCell.swift; sourceTree = "<group>"; };
+		941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceAvisoTableViewCell.swift; path = view/Servicio/ServiceAvisoTableViewCell.swift; sourceTree = "<group>"; };
 		9425DB211C2A0DBC003CDB83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9425DB221C2A0DBC003CDB83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			children = (
 				9476A9041C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift */,
 				941421761C2BAA6B00D9495E /* ServiceLocationTableViewCell.swift */,
+				941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */,
 			);
 			name = Servicio;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				9425DB351C2A0F09003CDB83 /* GenericService.swift in Sources */,
 				94801F911C0DDFC100D05D6E /* RegisterFieldView.swift in Sources */,
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
+				941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */,
 				94A39A5E1C29021B00BA2BB8 /* AlarmHeaderView.swift in Sources */,
 				942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */,
 				9425DB311C2A0ED4003CDB83 /* MyMelodyDTO.swift in Sources */,

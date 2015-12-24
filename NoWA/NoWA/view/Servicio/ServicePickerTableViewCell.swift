@@ -25,7 +25,7 @@ class ServicePickerTableViewCell: GenericTableViewCell {
         serviceLabel!.textColor = .whiteColor()
         serviceLabel!.font = UIFont.appLatoFontOfSize(14)
         serviceLabel!.adjustsFontSizeToFitWidth = true
-        serviceLabel!.textAlignment = .Center
+        serviceLabel!.textAlignment = .Left
         serviceLabel!.numberOfLines = 1
         self.addSubview(serviceLabel!)
         
@@ -55,7 +55,7 @@ class ServicePickerTableViewCell: GenericTableViewCell {
     
     func setupConstrains(){
 
-        serviceLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: self)
+        serviceLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 20)
         serviceLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         serviceLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         serviceLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.30)

@@ -18,7 +18,7 @@ class ServicioTableViewController: GenericTableViewController {
         
         self.tableView.registerClass(ServicePickerTableViewCell.self, forCellReuseIdentifier: "ServicePicker")
         self.tableView.registerClass(ServiceLocationTableViewCell.self, forCellReuseIdentifier: "Pickable")
-        //        self.tableView.registerClass(ItemTableViewCell.self, forCellReuseIdentifier: "celda3")
+        self.tableView.registerClass(ServiceAvisoTableViewCell.self, forCellReuseIdentifier: "Aviso")
         
         self.tableView.backgroundColor = .redColor()
         
@@ -57,8 +57,12 @@ class ServicioTableViewController: GenericTableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
-        return 60
+        
+        let height = cellsArray[indexPath.row]["height"] as! CGFloat
+        return height
+        
     }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identificador = cellsArray[indexPath.row]["identifier"] as! String
@@ -71,9 +75,9 @@ class ServicioTableViewController: GenericTableViewController {
         return genericCell
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        
-//        self.tableView.layoutMargins = UIEdgeInsetsZero;
-//    }
+    //    override func viewDidLayoutSubviews() {
+    //        super.viewDidLayoutSubviews()
+    //
+    //        self.tableView.layoutMargins = UIEdgeInsetsZero;
+    //    }
 }
