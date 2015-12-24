@@ -24,9 +24,7 @@ class ServicioTableViewController: GenericTableViewController {
         self.tableView.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "WindSliderCell")
         self.tableView.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "HumiditySliderCell")
         self.tableView.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
-
         
-
         
         self.tableView.backgroundColor = .redColor()
         
@@ -83,9 +81,13 @@ class ServicioTableViewController: GenericTableViewController {
         return genericCell
     }
     
-    //    override func viewDidLayoutSubviews() {
-    //        super.viewDidLayoutSubviews()
-    //
-    //        self.tableView.layoutMargins = UIEdgeInsetsZero;
-    //    }
+//    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let footerView = ButtonTableFooterView()
+//        
+//        return footerView
+//    }
+//    
+//    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 120
+//    }
 }

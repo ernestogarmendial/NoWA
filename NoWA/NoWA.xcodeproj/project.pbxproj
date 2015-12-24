@@ -13,6 +13,7 @@
 		941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */; };
 		9414217D1C2C59E200D9495E /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */; };
 		9414217F1C2C65C800D9495E /* PredictionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414217E1C2C65C800D9495E /* PredictionTableViewCell.swift */; };
+		941421811C2C6E1600D9495E /* ButtonTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421801C2C6E1600D9495E /* ButtonTableFooterView.swift */; };
 		9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB221C2A0DBC003CDB83 /* Reachability.m */; };
 		9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */; };
 		9425DB291C2A0E34003CDB83 /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB281C2A0E34003CDB83 /* GenericDAO.swift */; };
@@ -80,6 +81,7 @@
 		941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceAvisoTableViewCell.swift; path = view/Servicio/ServiceAvisoTableViewCell.swift; sourceTree = "<group>"; };
 		9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SliderTableViewCell.swift; path = view/SliderTableViewCell.swift; sourceTree = "<group>"; };
 		9414217E1C2C65C800D9495E /* PredictionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PredictionTableViewCell.swift; path = view/PredictionTableViewCell.swift; sourceTree = "<group>"; };
+		941421801C2C6E1600D9495E /* ButtonTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonTableFooterView.swift; path = view/ButtonTableFooterView.swift; sourceTree = "<group>"; };
 		9425DB211C2A0DBC003CDB83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9425DB221C2A0DBC003CDB83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				942A99781C1A15C000B12292 /* GenericTableViewCell.swift */,
 				9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */,
 				9414217E1C2C65C800D9495E /* PredictionTableViewCell.swift */,
+				941421801C2C6E1600D9495E /* ButtonTableFooterView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */,
 				9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */,
 				9425DB441C2A3076003CDB83 /* UserDAO.swift in Sources */,
+				941421811C2C6E1600D9495E /* ButtonTableFooterView.swift in Sources */,
 				9425DB2B1C2A0E94003CDB83 /* MyMelodiesDAO.swift in Sources */,
 				942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */,
 				942A99741C1A13EF00B12292 /* PerfilTableViewController.swift in Sources */,
