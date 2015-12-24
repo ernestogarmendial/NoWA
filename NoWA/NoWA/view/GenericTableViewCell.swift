@@ -17,7 +17,7 @@ class GenericTableViewCell: UITableViewCell {
         self.contentView.backgroundColor = UIColor.darkGrayCustomColor()
         self.layoutMargins = UIEdgeInsetsZero
         self.selectionStyle = .None
-        
+
     }
 
     required init?(coder aDecoder: NSCoder) {

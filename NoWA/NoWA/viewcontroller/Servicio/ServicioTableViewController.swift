@@ -61,6 +61,9 @@ class ServicioTableViewController: GenericTableViewController {
         
         let genericCell = tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
+//        let cellDitionary = cellsArray[indexPath.row] as! NSDictionary
+//        genericCell.setItems(cellDitionary)
+        
         return genericCell
     }
     
