@@ -78,5 +78,13 @@
 		<key>height</key>
 		<integer>120</integer>
 	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>AcceptButtonCell</string>
+		<key>title</key>
+		<string>PREDICCION</string>
+		<key>height</key>
+		<integer>100</integer>
+	</dict>
 </array>
 </plist>

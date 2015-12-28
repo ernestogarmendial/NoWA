@@ -148,7 +148,6 @@ class RegisterViewController: LoginViewController {
         
     }
     
-    
     func recover(){
         
         print("recover")

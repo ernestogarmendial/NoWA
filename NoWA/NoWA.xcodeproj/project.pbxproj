@@ -24,7 +24,6 @@
 		9425DB351C2A0F09003CDB83 /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB331C2A0F09003CDB83 /* GenericService.swift */; };
 		9425DB361C2A0F09003CDB83 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB341C2A0F09003CDB83 /* ServiceResult.swift */; };
 		9425DB381C2A0F19003CDB83 /* FestMakerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB371C2A0F19003CDB83 /* FestMakerService.swift */; };
-		9425DB3A1C2A2565003CDB83 /* ServicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB391C2A2565003CDB83 /* ServicioViewController.swift */; };
 		9425DB401C2A3022003CDB83 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB3F1C2A3022003CDB83 /* UserService.swift */; };
 		9425DB421C2A304A003CDB83 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB411C2A304A003CDB83 /* UserDTO.swift */; };
 		9425DB441C2A3076003CDB83 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB431C2A3076003CDB83 /* UserDAO.swift */; };
@@ -95,7 +94,6 @@
 		9425DB331C2A0F09003CDB83 /* GenericService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
 		9425DB341C2A0F09003CDB83 /* ServiceResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		9425DB371C2A0F19003CDB83 /* FestMakerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestMakerService.swift; sourceTree = "<group>"; };
-		9425DB391C2A2565003CDB83 /* ServicioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServicioViewController.swift; path = viewcontroller/Servicio/ServicioViewController.swift; sourceTree = "<group>"; };
 		9425DB3F1C2A3022003CDB83 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		9425DB411C2A304A003CDB83 /* UserDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		9425DB431C2A3076003CDB83 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				942A99711C1A13D900B12292 /* ServicioTableViewController.swift */,
-				9425DB391C2A2565003CDB83 /* ServicioViewController.swift */,
 			);
 			name = Servicio;
 			sourceTree = "<group>";
@@ -593,7 +590,6 @@
 			files = (
 				94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */,
 				9476A9051C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift in Sources */,
-				9425DB3A1C2A2565003CDB83 /* ServicioViewController.swift in Sources */,
 				94A39A531C28D87500BA2BB8 /* AlarmItemTableViewCell.swift in Sources */,
 				942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */,
 				94801F921C0DDFC100D05D6E /* TourView.swift in Sources */,

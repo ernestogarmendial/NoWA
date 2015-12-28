@@ -17,6 +17,8 @@ class SliderTableViewCell: GenericTableViewCell {
     var leftIcon : UIImageView?
     var rightIcon : UIImageView?
     var sliderLeft : UISlider?
+    var sliderLeftValue : UILabel?
+
     
     var titleString : String?
     var rightIconString : String?
@@ -74,8 +76,20 @@ class SliderTableViewCell: GenericTableViewCell {
         sliderLeft!.minimumValue = 0
         sliderLeft!.maximumValue = 100
         sliderLeft!.tintColor = UIColor.loginBlueColor()
+        
+        sliderLeft!.continuous = true;
+        sliderLeft!.addTarget(self, action: "sliderValueChanged:", forControlEvents: .ValueChanged)
+
         self.addSubview(sliderLeft!)
         
+        sliderLeftValue = UILabel()
+        sliderLeftValue!.textColor = .whiteColor()
+        sliderLeftValue!.font = UIFont.appLatoFontOfSize(14)
+        sliderLeftValue!.adjustsFontSizeToFitWidth = true
+        sliderLeftValue!.textAlignment = .Center
+        sliderLeftValue!.numberOfLines = 1
+        self.addSubview(sliderLeftValue!)
+
         
         titleView = UIView()
         titleView!.addSubview(leftIcon!)
@@ -89,7 +103,15 @@ class SliderTableViewCell: GenericTableViewCell {
         
         setupConstrains()
     }
-    
+
+
+func sliderValueChanged(sender: UISlider) {
+
+    let value : Int = Int(sender.value)
+    sliderLeftValue!.text = String(value)
+}
+
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -128,6 +150,11 @@ class SliderTableViewCell: GenericTableViewCell {
         rightIcon!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         rightIcon!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         rightIcon!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
+        
+        sliderLeftValue!.autoPinEdge(.Left, toEdge: .Left, ofView: leftIcon!)
+        sliderLeftValue!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
+        sliderLeftValue!.autoPinEdge(.Top, toEdge: .Bottom, ofView: leftIcon!)
+
     }
     
     func rightButtonPressed(){

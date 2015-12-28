@@ -24,7 +24,10 @@ class ServicioTableViewController: GenericTableViewController {
         self.tableView.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "WindSliderCell")
         self.tableView.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "HumiditySliderCell")
         self.tableView.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
+        self.tableView.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")
+
         
+
         let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
         

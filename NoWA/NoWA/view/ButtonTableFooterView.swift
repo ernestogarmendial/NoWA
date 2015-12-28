@@ -8,17 +8,20 @@
 
 import UIKit
 
-class ButtonTableFooterView: UIView {
-
+class ButtonTableFooterView: GenericTableViewCell{//UIView {
+    
     var acceptButton : UIButton?
     
-    override init(frame: CGRect) {
-        super.init(frame:frame)
+    //    override init(frame: CGRect) {
+    //        super.init(frame:frame)
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .darkGrayCustomColor()
+        self.backgroundColor = .registroGrayColor()
+        self.contentView.backgroundColor = .registroGrayColor()
         
         acceptButton = UIButton()
-        acceptButton!.backgroundColor = .loginBlueColor()
+        acceptButton!.backgroundColor = .servicePickerBlueColor()
         acceptButton!.setTitle("ACEPTAR", forState: UIControlState.Normal)
         acceptButton!.titleLabel!.font = UIFont.appLatoFontOfSize(15)
         acceptButton!.addTarget(self, action: "accept", forControlEvents: UIControlEvents.TouchUpInside)
@@ -40,5 +43,5 @@ class ButtonTableFooterView: UIView {
     func accept(){
         print("aceptar pressed")
     }
-
+    
 }
