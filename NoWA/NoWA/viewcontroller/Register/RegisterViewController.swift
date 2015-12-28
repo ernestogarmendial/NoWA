@@ -14,6 +14,8 @@ class RegisterViewController: LoginViewController {
     var ingresarButton : UIButton!
     var ingresarFacebookButton : UIButton!
     var createAccountButton : UIButton!
+    var recoverButton : UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +26,11 @@ class RegisterViewController: LoginViewController {
         self.view.addSubview(backgroundImage)
         
         emailView = RegisterFieldView()
-        emailView.setItems("envelope",placeholder: "TU CORREO", recover: false, secureMode: false)
+        emailView.setItems("envelope",placeholder: "TU CORREO", secureMode: false)
         self.view.addSubview(emailView)
         
         passwordView = RegisterFieldView()
-        passwordView.setItems("lock",placeholder: "CONTRASEÑA", recover: true, secureMode: true)
+        passwordView.setItems("lock",placeholder: "CONTRASEÑA", secureMode: true)
         self.view.addSubview(passwordView)
         
         ingresarButton = UIButton()
@@ -54,6 +56,16 @@ class RegisterViewController: LoginViewController {
         createAccountButton.addTarget(self, action: "createAccount", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(createAccountButton)
         
+        recoverButton = UIButton()
+        recoverButton.backgroundColor = .clearColor()
+        recoverButton.setTitle("RECUPERAR", forState: UIControlState.Normal)
+        recoverButton.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
+        recoverButton.titleLabel!.font = UIFont.appLatoFontOfSize(12)
+        recoverButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        recoverButton.addTarget(self, action: "recover", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(recoverButton)
+        
+        self.view.bringSubviewToFront(recoverButton)
         setupConstrains()
         
     }
@@ -91,9 +103,14 @@ class RegisterViewController: LoginViewController {
         emailView.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: self.view, withOffset: -40)
         emailView.autoPinEdge(ALEdge.Bottom, toEdge: .Top, ofView: passwordView, withOffset: -20)
         
+        recoverButton.autoPinEdge(.Top, toEdge: .Top, ofView: passwordView)
+        recoverButton.autoPinEdge(.Right, toEdge: .Right, ofView: passwordView)
+        recoverButton.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: passwordView)
+        recoverButton.autoMatchDimension(.Width, toDimension: .Width, ofView: passwordView, withMultiplier: 0.4)
+        
     }
     
-
+    
     
     func loginFacebook(){
         
@@ -108,7 +125,7 @@ class RegisterViewController: LoginViewController {
         
         callService()
     }
-
+    
     
     func callService () {
         let userService : UserService = UserService()
@@ -124,10 +141,40 @@ class RegisterViewController: LoginViewController {
         let usuarioLogueado:UserDTO = result.entityForKey("User") as! UserDTO
         if usuarioLogueado.token != nil {
             dispatch_async(dispatch_get_main_queue()) {
-            self.startApp()
+                self.startApp()
             }
-
+            
         }
         
     }
+    
+    
+    func recover(){
+        
+        print("recover")
+        let userService : UserService = UserService()
+        userService.recover(emailView.inputTextField.text,target: self,message: "recoverFinish:")
+    }
+    
+    
+    func recoverFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        let recoverDTO:RecoverDTO = result.entityForKey("RecoverCode") as! RecoverDTO
+        if recoverDTO.code != "" {
+            let alert = UIAlertController(title: "Nueva Contraseña:", message: recoverDTO.code, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            
+        }
+        
+    }
+    
+    
 }

@@ -23,6 +23,7 @@ class UserDTO: GenericDTO {
     var name: String?
     var facebook: String?
     var dni: String?
+    var code: String?
     
     func update(user: UserDTO) {
         
@@ -67,6 +68,9 @@ class UserDTO: GenericDTO {
         }
         if user.dni != nil{
             self.dni = user.dni
+        }
+        if user.code != nil{
+            self.code = user.code
         }
     }
     

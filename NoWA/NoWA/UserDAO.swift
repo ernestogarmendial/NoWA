@@ -122,22 +122,9 @@ class UserDAO: GenericDAO {
         
         RKMIMETypeSerialization.registerClass(RKNSJSONSerialization.self, forMIMEType: "application/json")
         
-        let mapping = RKObjectMapping(forClass: UserDTO.self)
+        let mapping = RKObjectMapping(forClass: RecoverDTO.self)
         mapping.addAttributeMappingsFromDictionary([
-            "lastName": "lastName",
-            "stamp": "stamp",
-            "birth": "birth",
-            "phone": "phone",
-            "instagram": "instagram",
-            "id": "id",
-            "twitter": "twitter",
-            "username": "username",
-            "notifications": "notifications",
-            "token": "token",
-            "phrase": "phrase",
-            "name": "name",
-            "facebook": "facebook",
-            "dni": "dni"
+            "code": "code"
             ])
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
@@ -150,8 +137,8 @@ class UserDAO: GenericDAO {
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in
-            let recoverCode = response.array()[0] as! String
-            self.finish(recoverCode)
+            let recoverDTO = response.array()[0] as! RecoverDTO
+            self.finish(recoverDTO)
             },
             failure: { (operation, error) in
                 self.finish(nil)
@@ -159,6 +146,8 @@ class UserDAO: GenericDAO {
         operation.start()
         
     }
+    
+    
     
 //    func settings(token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
 //

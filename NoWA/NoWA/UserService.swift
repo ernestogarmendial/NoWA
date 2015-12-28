@@ -94,11 +94,11 @@ class UserService: GenericService {
         userDAO.delegate = self
         userDAO.recover( name: name, handler: { (operation, result) in
             
-            let recoverCode = result as? String;
-            
-            if(recoverCode == nil){
+            if let recoverDTO = result as? RecoverDTO {
                 
-                serviceResult.addEntity(recoverCode, forKey: "RecoverCode")
+                //            if(recoverDTO!.code != nil){
+                
+                serviceResult.addEntity(recoverDTO, forKey: "RecoverCode")
                 
                 self.callMessage(target: _target, message: _message, withResult: serviceResult)
             }

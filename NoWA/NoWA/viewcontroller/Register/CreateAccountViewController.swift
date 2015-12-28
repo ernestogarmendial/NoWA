@@ -30,15 +30,15 @@ class CreateAccountViewController: LoginViewController {
         self.view.addSubview(backgroundImage)
         
         emailView = RegisterFieldView()
-        emailView.setItems("envelope",placeholder: "TU CORREO", recover: false, secureMode: false)
+        emailView.setItems("envelope",placeholder: "TU CORREO", secureMode: false)
         self.view.addSubview(emailView)
         
         passwordView = RegisterFieldView()
-        passwordView.setItems("lock",placeholder: "CONTRASEÑA", recover: false, secureMode: true)
+        passwordView.setItems("lock",placeholder: "CONTRASEÑA", secureMode: true)
         self.view.addSubview(passwordView)
         
         confirmView = RegisterFieldView()
-        confirmView.setItems("lock",placeholder: "CONFIRMAR", recover: false, secureMode: true)
+        confirmView.setItems("lock",placeholder: "CONFIRMAR", secureMode: true)
         self.view.addSubview(confirmView)
         
         ingresarButton = UIButton()
