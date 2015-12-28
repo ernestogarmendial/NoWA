@@ -18,7 +18,8 @@ class SliderTableViewCell: GenericTableViewCell {
     var rightIcon : UIImageView?
     var sliderLeft : UISlider?
     var sliderLeftValue : UILabel?
-
+    var sliderRight : UISlider?
+    var sliderRightValue : UILabel?
     
     var titleString : String?
     var rightIconString : String?
@@ -59,7 +60,7 @@ class SliderTableViewCell: GenericTableViewCell {
         self.addSubview(leftIcon!)
         
         rightIcon = UIImageView()
-//        rightIcon!.image = UIImage(named: leftIconString!)
+        //        rightIcon!.image = UIImage(named: leftIconString!)
         rightIcon!.contentMode = UIViewContentMode.Center
         self.addSubview(rightIcon!)
         
@@ -75,21 +76,41 @@ class SliderTableViewCell: GenericTableViewCell {
         sliderLeft = UISlider()
         sliderLeft!.minimumValue = 0
         sliderLeft!.maximumValue = 100
+        sliderLeft!.value = 0
         sliderLeft!.tintColor = UIColor.loginBlueColor()
-        
+        sliderLeft!.minimumTrackTintColor = UIColor.loginBlueColor()
+        sliderLeft!.maximumTrackTintColor = UIColor.loginBlueColor()
         sliderLeft!.continuous = true;
-        sliderLeft!.addTarget(self, action: "sliderValueChanged:", forControlEvents: .ValueChanged)
-
+        sliderLeft!.addTarget(self, action: "sliderLeftValueChanged:", forControlEvents: .ValueChanged)
         self.addSubview(sliderLeft!)
         
         sliderLeftValue = UILabel()
+        sliderLeftValue!.text = "0"
         sliderLeftValue!.textColor = .whiteColor()
         sliderLeftValue!.font = UIFont.appLatoFontOfSize(14)
         sliderLeftValue!.adjustsFontSizeToFitWidth = true
         sliderLeftValue!.textAlignment = .Center
         sliderLeftValue!.numberOfLines = 1
         self.addSubview(sliderLeftValue!)
-
+        
+        sliderRight = UISlider()
+        sliderRight!.minimumValue = 0
+        sliderRight!.maximumValue = 100
+        sliderRight!.value = 100
+        sliderRight!.minimumTrackTintColor = UIColor.loginBlueColor()
+        sliderRight!.maximumTrackTintColor = UIColor.loginBlueColor()
+        sliderRight!.continuous = true;
+        sliderRight!.addTarget(self, action: "sliderRightValueChanged:", forControlEvents: .ValueChanged)
+        self.addSubview(sliderRight!)
+        
+        sliderRightValue = UILabel()
+        sliderRightValue!.text = "100"
+        sliderRightValue!.textColor = .whiteColor()
+        sliderRightValue!.font = UIFont.appLatoFontOfSize(14)
+        sliderRightValue!.adjustsFontSizeToFitWidth = true
+        sliderRightValue!.textAlignment = .Center
+        sliderRightValue!.numberOfLines = 1
+        self.addSubview(sliderRightValue!)
         
         titleView = UIView()
         titleView!.addSubview(leftIcon!)
@@ -99,19 +120,35 @@ class SliderTableViewCell: GenericTableViewCell {
         
         sliderView = UIView()
         sliderView!.addSubview(sliderLeft!)
+        sliderView!.addSubview(sliderRight!)
         self.addSubview(sliderView!)
         
         setupConstrains()
     }
-
-
-func sliderValueChanged(sender: UISlider) {
-
-    let value : Int = Int(sender.value)
-    sliderLeftValue!.text = String(value)
-}
-
-
+    
+    
+    func sliderLeftValueChanged(sender: UISlider) {
+        
+        if sender.value >= sliderRight?.value{
+            sender.value = (sliderRight?.value)!
+        }else{
+            let value : Int = Int(sender.value)
+            sliderLeftValue!.text = String(value)
+        }
+    }
+    
+    
+    func sliderRightValueChanged(sender: UISlider) {
+        
+        if sender.value <= sliderLeft?.value{
+            sender.value = (sliderLeft?.value)!
+        }else{
+            let value : Int = Int(sender.value)
+            sliderRightValue!.text = String(value)
+        }
+    }
+    
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -122,11 +159,11 @@ func sliderValueChanged(sender: UISlider) {
         titleView!.autoPinEdge(.Left, toEdge: .Left, ofView: self)
         titleView!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         titleView!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.5)
-
-
+        
+        
         leftIcon!.autoPinEdge(.Left, toEdge: .Left, ofView: titleView!)
         leftIcon!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: titleView!)
-
+        
         leftIcon!.autoPinEdge(.Top, toEdge: .Top, ofView: titleView!)
         leftIcon!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
         
@@ -142,9 +179,15 @@ func sliderValueChanged(sender: UISlider) {
         sliderView!.autoMatchDimension(.Height, toDimension: .Height, ofView: titleLabel!)
         
         sliderLeft!.autoPinEdge(.Left, toEdge: .Left, ofView: sliderView!)
-        sliderLeft!.autoPinEdge(.Right, toEdge: .Right, ofView: sliderView!)
+        //        sliderLeft!.autoPinEdge(.Right, toEdge: .Right, ofView: sliderView!)
         sliderLeft!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: sliderView!)
         sliderLeft!.autoPinEdge(.Top, toEdge: .Top, ofView: sliderView!)
+        
+        sliderRight!.autoPinEdge(.Left, toEdge: .Right, ofView: sliderLeft!, withOffset: 12)
+        sliderRight!.autoPinEdge(.Right, toEdge: .Right, ofView: sliderView!)
+        sliderRight!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: sliderView!)
+        sliderRight!.autoPinEdge(.Top, toEdge: .Top, ofView: sliderView!)
+        sliderRight!.autoMatchDimension(.Width, toDimension: .Width, ofView: sliderLeft!, withMultiplier: 1)
         
         rightIcon!.autoPinEdge(.Left, toEdge: .Right, ofView: titleLabel!)
         rightIcon!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
@@ -154,7 +197,11 @@ func sliderValueChanged(sender: UISlider) {
         sliderLeftValue!.autoPinEdge(.Left, toEdge: .Left, ofView: leftIcon!)
         sliderLeftValue!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
         sliderLeftValue!.autoPinEdge(.Top, toEdge: .Bottom, ofView: leftIcon!)
-
+        
+        sliderRightValue!.autoPinEdge(.Left, toEdge: .Right, ofView: sliderView!)
+        sliderRightValue!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
+        sliderRightValue!.autoPinEdge(.Top, toEdge: .Bottom, ofView: leftIcon!)
+        
     }
     
     func rightButtonPressed(){
