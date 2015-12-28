@@ -32,30 +32,30 @@ class SliderTableViewCell: GenericTableViewCell {
         self.backgroundColor = .registroGrayColor()
         self.contentView.backgroundColor = .registroGrayColor()
         
-        let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
-        let cellsArray = NSMutableArray(contentsOfFile: path!)
-        
-        for var i = 0; i < cellsArray!.count; i++ {
-            if cellsArray![i]["identifier"] as! String == reuseIdentifier {
-                if let dictionary = cellsArray![i] as? NSDictionary {
-                    
-                    if let left_icon = dictionary["left_icon"] as? String{
-                        leftIconString = left_icon
-                    }
-                    
-                    if let right_icon = dictionary["right_icon"] as? String{
-                        rightIconString = right_icon
-                    }
-                    
-                    if let title = dictionary["title"] as? String{
-                        titleString = title
-                    }
-                }
-            }
-        }
+//        let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
+//        let cellsArray = NSMutableArray(contentsOfFile: path!)
+//        
+//        for var i = 0; i < cellsArray!.count; i++ {
+//            if cellsArray![i]["identifier"] as! String == reuseIdentifier {
+//                if let dictionary = cellsArray![i] as? NSDictionary {
+//                    
+//                    if let left_icon = dictionary["left_icon"] as? String{
+//                        leftIconString = left_icon
+//                    }
+//                    
+//                    if let right_icon = dictionary["right_icon"] as? String{
+//                        rightIconString = right_icon
+//                    }
+//                    
+//                    if let title = dictionary["title"] as? String{
+//                        titleString = title
+//                    }
+//                }
+//            }
+//        }
         
         leftIcon = UIImageView()
-        leftIcon!.image = UIImage(named: leftIconString!)
+//        leftIcon!.image = UIImage(named: leftIconString!)
         leftIcon!.contentMode = UIViewContentMode.Center
         self.addSubview(leftIcon!)
         
@@ -65,7 +65,7 @@ class SliderTableViewCell: GenericTableViewCell {
         self.addSubview(rightIcon!)
         
         titleLabel = UILabel()
-        titleLabel!.text = titleString
+//        titleLabel!.text = titleString
         titleLabel!.textColor = .whiteColor()
         titleLabel!.font = UIFont.appLatoFontOfSize(14)
         titleLabel!.adjustsFontSizeToFitWidth = true
@@ -126,6 +126,23 @@ class SliderTableViewCell: GenericTableViewCell {
         setupConstrains()
     }
     
+    
+    override func setItems(myDictionary: NSDictionary){
+        if let left_icon = myDictionary["left_icon"] as? String{
+//            leftIconString = left_icon
+            leftIcon!.image = UIImage(named: left_icon)
+
+        }
+        
+        if let right_icon = myDictionary["right_icon"] as? String{
+            rightIconString = right_icon
+        }
+        
+        if let title = myDictionary["title"] as? String{
+            //            titleString = title
+            titleLabel!.text = title
+        }
+    }
     
     func sliderLeftValueChanged(sender: UISlider) {
         

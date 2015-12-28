@@ -31,30 +31,30 @@ class PredictionTableViewCell: GenericTableViewCell {
         self.backgroundColor = .registroGrayColor()
         self.contentView.backgroundColor = .registroGrayColor()
         
-        let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
-        let cellsArray = NSMutableArray(contentsOfFile: path!)
-        
-        for var i = 0; i < cellsArray!.count; i++ {
-            if cellsArray![i]["identifier"] as! String == reuseIdentifier {
-                if let dictionary = cellsArray![i] as? NSDictionary {
-                    
-                    if let left_icon = dictionary["left_icon"] as? String{
-                        leftIconString = left_icon
-                    }
-                    
-                    if let right_icon = dictionary["right_icon"] as? String{
-                        rightIconString = right_icon
-                    }
-                    
-                    if let title = dictionary["title"] as? String{
-                        titleString = title
-                    }
-                }
-            }
-        }
+        //        let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
+        //        let cellsArray = NSMutableArray(contentsOfFile: path!)
+        //
+        //        for var i = 0; i < cellsArray!.count; i++ {
+        //            if cellsArray![i]["identifier"] as! String == reuseIdentifier {
+        //                if let dictionary = cellsArray![i] as? NSDictionary {
+        //
+        //                    if let left_icon = dictionary["left_icon"] as? String{
+        //                        leftIconString = left_icon
+        //                    }
+        //
+        //                    if let right_icon = dictionary["right_icon"] as? String{
+        //                        rightIconString = right_icon
+        //                    }
+        //
+        //                    if let title = dictionary["title"] as? String{
+        //                        titleString = title
+        //                    }
+        //                }
+        //            }
+        //        }
         
         leftIcon = UIImageView()
-        leftIcon!.image = UIImage(named: leftIconString!)
+//        leftIcon!.image = UIImage(named: leftIconString!)
         leftIcon!.contentMode = UIViewContentMode.Center
         self.addSubview(leftIcon!)
         
@@ -105,6 +105,23 @@ class PredictionTableViewCell: GenericTableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func setItems(myDictionary: NSDictionary) {
+        
+        if let left_icon = myDictionary["left_icon"] as? String{
+//            leftIconString = left_icon
+            leftIcon!.image = UIImage(named: left_icon)
+
+        }
+        
+        if let right_icon = myDictionary["right_icon"] as? String{
+            rightIconString = right_icon
+        }
+        
+        if let title = myDictionary["title"] as? String{
+            titleString = title
+        }
+    }
+    
     func setupConstrains(){
         
         titleView!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
@@ -131,7 +148,7 @@ class PredictionTableViewCell: GenericTableViewCell {
         sliderView!.autoPinEdge(.Top, toEdge: .Bottom, ofView: explainLabel!)
         sliderView!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         sliderView!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.60)
-//        sliderView!.autoMatchDimension(.Height, toDimension: .Height, ofView: titleLabel!)
+        //        sliderView!.autoMatchDimension(.Height, toDimension: .Height, ofView: titleLabel!)
         
         sliderLeft!.autoPinEdge(.Left, toEdge: .Left, ofView: sliderView!)
         sliderLeft!.autoPinEdge(.Right, toEdge: .Right, ofView: sliderView!)

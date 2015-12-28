@@ -55,6 +55,10 @@ class ServiceAvisoTableViewCell: GenericTableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func setItems(myDictionary: NSDictionary) {
+        
+    }
+    
     func setupConstrains(){
         
         cancelationView!.autoPinEdge(.Left, toEdge: .Left, ofView: self)

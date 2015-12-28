@@ -40,6 +40,10 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
         
     }
     
+    override func setItems(myDictionary: NSDictionary){
+        
+    }
+    
     func accept(){
         print("aceptar pressed")
     }

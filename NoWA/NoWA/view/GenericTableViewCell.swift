@@ -10,6 +10,11 @@ import UIKit
 
 class GenericTableViewCell: UITableViewCell {
 
+    var myDictionary : NSDictionary? {
+        didSet{
+            setItems(myDictionary!)
+        }
+    }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,4 +30,10 @@ class GenericTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    
+    func setItems(myDictionary: NSDictionary){
+    
+    }
+
+    
 }
