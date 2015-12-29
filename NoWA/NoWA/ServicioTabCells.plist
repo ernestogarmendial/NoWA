@@ -40,33 +40,51 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
-		<string>TempSliderCell</string>
+		<string>SliderCell</string>
 		<key>left_icon</key>
 		<string>sun</string>
 		<key>title</key>
 		<string>TEMPERATURA</string>
+		<key>unity</key>
+		<string>°C</string>
+		<key>min</key>
+		<integer>0</integer>
+		<key>max</key>
+		<integer>100</integer>
 		<key>height</key>
-		<integer>75</integer>
+		<integer>80</integer>
 	</dict>
 	<dict>
 		<key>identifier</key>
-		<string>WindSliderCell</string>
+		<string>SliderCell</string>
 		<key>left_icon</key>
 		<string>wind</string>
 		<key>title</key>
 		<string>VIENTO</string>
+		<key>unity</key>
+		<string>km/h</string>
+		<key>min</key>
+		<integer>0</integer>
+		<key>max</key>
+		<integer>100</integer>
 		<key>height</key>
-		<integer>75</integer>
+		<integer>80</integer>
 	</dict>
 	<dict>
 		<key>identifier</key>
-		<string>HumiditySliderCell</string>
+		<string>SliderCell</string>
 		<key>left_icon</key>
 		<string>cloud</string>
 		<key>title</key>
 		<string>HUMEDAD</string>
+		<key>unity</key>
+		<string>%</string>
+		<key>min</key>
+		<integer>0</integer>
+		<key>max</key>
+		<integer>100</integer>
 		<key>height</key>
-		<integer>75</integer>
+		<integer>80</integer>
 	</dict>
 	<dict>
 		<key>identifier</key>

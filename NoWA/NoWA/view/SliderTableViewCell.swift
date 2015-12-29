@@ -17,13 +17,15 @@ class SliderTableViewCell: GenericTableViewCell {
     var leftIcon : UIImageView?
     var rightIcon : UIImageView?
     var sliderLeft : UISlider?
-    var sliderLeftValue : UILabel?
+    var sliderMinLabel : UILabel?
     var sliderRight : UISlider?
-    var sliderRightValue : UILabel?
+    var sliderMaxLabel : UILabel?
     
     var titleString : String?
     var rightIconString : String?
     var leftIconString : String?
+    
+    var unity : String!
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -32,40 +34,15 @@ class SliderTableViewCell: GenericTableViewCell {
         self.backgroundColor = .registroGrayColor()
         self.contentView.backgroundColor = .registroGrayColor()
         
-//        let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
-//        let cellsArray = NSMutableArray(contentsOfFile: path!)
-//        
-//        for var i = 0; i < cellsArray!.count; i++ {
-//            if cellsArray![i]["identifier"] as! String == reuseIdentifier {
-//                if let dictionary = cellsArray![i] as? NSDictionary {
-//                    
-//                    if let left_icon = dictionary["left_icon"] as? String{
-//                        leftIconString = left_icon
-//                    }
-//                    
-//                    if let right_icon = dictionary["right_icon"] as? String{
-//                        rightIconString = right_icon
-//                    }
-//                    
-//                    if let title = dictionary["title"] as? String{
-//                        titleString = title
-//                    }
-//                }
-//            }
-//        }
-        
         leftIcon = UIImageView()
-//        leftIcon!.image = UIImage(named: leftIconString!)
         leftIcon!.contentMode = UIViewContentMode.Center
         self.addSubview(leftIcon!)
         
         rightIcon = UIImageView()
-        //        rightIcon!.image = UIImage(named: leftIconString!)
         rightIcon!.contentMode = UIViewContentMode.Center
         self.addSubview(rightIcon!)
         
         titleLabel = UILabel()
-//        titleLabel!.text = titleString
         titleLabel!.textColor = .whiteColor()
         titleLabel!.font = UIFont.appLatoFontOfSize(14)
         titleLabel!.adjustsFontSizeToFitWidth = true
@@ -74,43 +51,37 @@ class SliderTableViewCell: GenericTableViewCell {
         self.addSubview(titleLabel!)
         
         sliderLeft = UISlider()
-        sliderLeft!.minimumValue = 0
-        sliderLeft!.maximumValue = 100
-        sliderLeft!.value = 0
         sliderLeft!.tintColor = UIColor.loginBlueColor()
         sliderLeft!.minimumTrackTintColor = UIColor.loginBlueColor()
         sliderLeft!.maximumTrackTintColor = UIColor.loginBlueColor()
         sliderLeft!.continuous = true;
-        sliderLeft!.addTarget(self, action: "sliderLeftValueChanged:", forControlEvents: .ValueChanged)
+        sliderLeft!.addTarget(self, action: "sliderMinLabelChanged:", forControlEvents: .ValueChanged)
         self.addSubview(sliderLeft!)
         
-        sliderLeftValue = UILabel()
-        sliderLeftValue!.text = "0"
-        sliderLeftValue!.textColor = .whiteColor()
-        sliderLeftValue!.font = UIFont.appLatoFontOfSize(14)
-        sliderLeftValue!.adjustsFontSizeToFitWidth = true
-        sliderLeftValue!.textAlignment = .Center
-        sliderLeftValue!.numberOfLines = 1
-        self.addSubview(sliderLeftValue!)
+        sliderMinLabel = UILabel()
+        sliderMinLabel!.text = "Min \nOff"
+        sliderMinLabel!.textColor = .whiteColor()
+        sliderMinLabel!.font = UIFont.appLatoFontOfSize(12)
+        sliderMinLabel!.adjustsFontSizeToFitWidth = true
+        sliderMinLabel!.textAlignment = .Center
+        sliderMinLabel!.numberOfLines = 2
+        self.addSubview(sliderMinLabel!)
         
         sliderRight = UISlider()
-        sliderRight!.minimumValue = 0
-        sliderRight!.maximumValue = 100
-        sliderRight!.value = 100
         sliderRight!.minimumTrackTintColor = UIColor.loginBlueColor()
         sliderRight!.maximumTrackTintColor = UIColor.loginBlueColor()
         sliderRight!.continuous = true;
-        sliderRight!.addTarget(self, action: "sliderRightValueChanged:", forControlEvents: .ValueChanged)
+        sliderRight!.addTarget(self, action: "sliderMaxLabelChanged:", forControlEvents: .ValueChanged)
         self.addSubview(sliderRight!)
         
-        sliderRightValue = UILabel()
-        sliderRightValue!.text = "100"
-        sliderRightValue!.textColor = .whiteColor()
-        sliderRightValue!.font = UIFont.appLatoFontOfSize(14)
-        sliderRightValue!.adjustsFontSizeToFitWidth = true
-        sliderRightValue!.textAlignment = .Center
-        sliderRightValue!.numberOfLines = 1
-        self.addSubview(sliderRightValue!)
+        sliderMaxLabel = UILabel()
+        sliderMaxLabel!.text =  "Max \nOff"
+        sliderMaxLabel!.textColor = .whiteColor()
+        sliderMaxLabel!.font = UIFont.appLatoFontOfSize(12)
+        sliderMaxLabel!.adjustsFontSizeToFitWidth = true
+        sliderMaxLabel!.textAlignment = .Center
+        sliderMaxLabel!.numberOfLines = 2
+        self.addSubview(sliderMaxLabel!)
         
         titleView = UIView()
         titleView!.addSubview(leftIcon!)
@@ -129,9 +100,8 @@ class SliderTableViewCell: GenericTableViewCell {
     
     override func setItems(myDictionary: NSDictionary){
         if let left_icon = myDictionary["left_icon"] as? String{
-//            leftIconString = left_icon
             leftIcon!.image = UIImage(named: left_icon)
-
+            
         }
         
         if let right_icon = myDictionary["right_icon"] as? String{
@@ -139,29 +109,64 @@ class SliderTableViewCell: GenericTableViewCell {
         }
         
         if let title = myDictionary["title"] as? String{
-            //            titleString = title
             titleLabel!.text = title
         }
+        
+        if let cellUnity = myDictionary["unity"] as? String{
+            unity = cellUnity
+        }
+        
+        if let minValue = myDictionary["min"] as? Float{
+            sliderLeft!.minimumValue = minValue
+            sliderRight!.minimumValue = minValue
+            sliderLeft!.value = minValue
+        }
+        
+        if let maxValue = myDictionary["max"] as? Float{
+            sliderLeft!.maximumValue = maxValue
+            sliderRight!.maximumValue = maxValue
+            sliderRight!.value = maxValue
+            
+        }
+        
+        
     }
     
-    func sliderLeftValueChanged(sender: UISlider) {
+    func sliderMinLabelChanged(sender: UISlider) {
+        
+        var value : Int!
         
         if sender.value >= sliderRight?.value{
             sender.value = (sliderRight?.value)!
+            value = Int((sliderRight?.value)!)
         }else{
-            let value : Int = Int(sender.value)
-            sliderLeftValue!.text = String(value)
+            value = Int(sender.value)
         }
+        
+        if value != Int((sliderLeft?.minimumValue)!) {
+            sliderMinLabel!.text = "Min \n \(String(value))\(unity)"
+        }else{
+            sliderMinLabel!.text = "Min \nOff"
+        }
+        
     }
     
     
-    func sliderRightValueChanged(sender: UISlider) {
+    func sliderMaxLabelChanged(sender: UISlider) {
+        
+        var value : Int!
         
         if sender.value <= sliderLeft?.value{
             sender.value = (sliderLeft?.value)!
+            value = Int((sliderLeft?.value)!)
         }else{
-            let value : Int = Int(sender.value)
-            sliderRightValue!.text = String(value)
+            value = Int(sender.value)
+        }
+        
+        if value != Int((sliderRight?.maximumValue)!) {
+            sliderMaxLabel!.text = "Max \n \(String(value))\(unity)"
+        }else{
+            sliderMaxLabel!.text = "Max \nOff"
         }
     }
     
@@ -175,7 +180,7 @@ class SliderTableViewCell: GenericTableViewCell {
         titleView!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         titleView!.autoPinEdge(.Left, toEdge: .Left, ofView: self)
         titleView!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
-        titleView!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.5)
+        titleView!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.45)
         
         
         leftIcon!.autoPinEdge(.Left, toEdge: .Left, ofView: titleView!)
@@ -196,7 +201,6 @@ class SliderTableViewCell: GenericTableViewCell {
         sliderView!.autoMatchDimension(.Height, toDimension: .Height, ofView: titleLabel!)
         
         sliderLeft!.autoPinEdge(.Left, toEdge: .Left, ofView: sliderView!)
-        //        sliderLeft!.autoPinEdge(.Right, toEdge: .Right, ofView: sliderView!)
         sliderLeft!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: sliderView!)
         sliderLeft!.autoPinEdge(.Top, toEdge: .Top, ofView: sliderView!)
         
@@ -211,13 +215,17 @@ class SliderTableViewCell: GenericTableViewCell {
         rightIcon!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         rightIcon!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         
-        sliderLeftValue!.autoPinEdge(.Left, toEdge: .Left, ofView: leftIcon!)
-        sliderLeftValue!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
-        sliderLeftValue!.autoPinEdge(.Top, toEdge: .Bottom, ofView: leftIcon!)
+        sliderMinLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: leftIcon!)
+        sliderMinLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
+        sliderMinLabel!.autoPinEdge(.Top, toEdge: .Bottom, ofView: leftIcon!)
+        sliderMinLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         
-        sliderRightValue!.autoPinEdge(.Left, toEdge: .Right, ofView: sliderView!)
-        sliderRightValue!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
-        sliderRightValue!.autoPinEdge(.Top, toEdge: .Bottom, ofView: leftIcon!)
+        
+        sliderMaxLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: sliderView!)
+        sliderMaxLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
+        sliderMaxLabel!.autoPinEdge(.Top, toEdge: .Bottom, ofView: leftIcon!)
+        sliderMaxLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
+        
         
     }
     
