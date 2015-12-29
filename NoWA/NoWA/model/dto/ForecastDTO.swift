@@ -9,5 +9,21 @@
 import UIKit
 
 class ForecastDTO: GenericDTO {
-
+    
+    var forecastID : NSNumber?
+    var name : String?
+    
+    override class func mapping() -> RKObjectMapping {
+        
+        let mapping = RKObjectMapping(forClass: ForecastDTO.self)
+        mapping.addAttributeMappingsFromDictionary([
+            
+            "forecastID" : "forecastID",
+            "name" : "name",
+            
+            ])
+        
+        return mapping
+    }
+    
 }

@@ -77,6 +77,31 @@ class ServicePickerTableViewCell: GenericTableViewCell {
     }
     
     func pickerArrowPressed(){
-        print("gonzagato")
+        print("service picker presse")
+        
+        let weatherService : WeatherService = WeatherService()
+        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getForecastsFinish:")
+    }
+    
+    
+    func getForecastsFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        let weatherDTO : WeatherDTO = result.entityForKey("Forecasts") as! WeatherDTO
+        
+        print(weatherDTO.forecast?.name)
+//        if recoverDTO.code != "" {
+//            let alert = UIAlertController(title: "Nueva Contraseña:", message: recoverDTO.code, preferredStyle: UIAlertControllerStyle.Alert)
+//            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+//            
+//            dispatch_async(dispatch_get_main_queue()) {
+//                self.presentViewController(alert, animated: true, completion: nil)
+//            }
+//            
+//        }
+        
     }
 }
