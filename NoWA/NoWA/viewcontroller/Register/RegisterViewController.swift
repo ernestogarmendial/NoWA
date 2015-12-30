@@ -129,7 +129,9 @@ class RegisterViewController: LoginViewController {
     
     func callService () {
         let userService : UserService = UserService()
-        userService.login(emailView.inputTextField.text, code: passwordView.inputTextField.text ,target: self,message: "loginFinish:")
+        userService.login("gfaraone@litebox.com.ar", code: "631263" ,target: self,message: "loginFinish:")
+
+//        userService.login(emailView.inputTextField.text, code: passwordView.inputTextField.text ,target: self,message: "loginFinish:")
     }
     
     func loginFinish (result : ServiceResult!){

@@ -13,7 +13,7 @@ class ServicePickerTableViewCell: GenericTableViewCell {
     var serviceLabel : UILabel?
     var selectedServiceLabel : UILabel?
     var pickerArrow : UIButton?
-    var forecasts : WeatherDTO?
+    var forecasts : [ForecastDTO]?
 
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -92,7 +92,7 @@ class ServicePickerTableViewCell: GenericTableViewCell {
             return
         }
         
-        self.forecasts = (result.entityForKey("Forecasts") as? WeatherDTO)
+        self.forecasts = (result.entityForKey("Forecasts") as? [ForecastDTO])
         
             
             

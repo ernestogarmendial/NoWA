@@ -22,24 +22,26 @@ class WeatherDAO: GenericDAO {
         
         RKMIMETypeSerialization.registerClass(RKNSJSONSerialization.self, forMIMEType: "application/json")
         
-        let mapping = WeatherDTO.mapping()
+        let mapping = ForecastDTO.mapping()
 
-        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
+        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "FORECASTIO", statusCodes: nil)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "weather/services/\(_token)/",
+            path: "weather/services/0a8dae93572ebce60fdb73014d7728be/",
             parameters: nil)
         
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in
-            let weatherDTO = response.array()[0] as! WeatherDTO
-            self.finish(weatherDTO)
+//            let array = response.array() as NSArray
+            let forecastDTO = response.firstObject as? ForecastDTO
+            self.finish(forecastDTO)
 //            self.finish(response.array())
 
             },
             failure: { (operation, error) in
+                self.printResponse(operation)
                 self.finish(nil)
         })
         operation.start()
@@ -61,8 +63,6 @@ class WeatherDAO: GenericDAO {
         
         let mapping = LocationDTO.mapping()
         
-//        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
-        
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "zone", statusCodes: nil)
         
         let request = objectManager.requestWithObject(  nil,
@@ -75,8 +75,7 @@ class WeatherDAO: GenericDAO {
         operation.setCompletionBlockWithSuccess({ (operation, response) in
 //            let weatherDTO = response.array()[0] as! LocationDTO
 //            self.finish(weatherDTO)
-            
-            let array = response.array() as? NSArray
+            let array = response.array() as NSArray
             self.finish(array)
 //            self.finish(response.array())
             
