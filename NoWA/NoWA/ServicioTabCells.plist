@@ -10,7 +10,7 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
-		<string>PickerCell</string>
+		<string>LocationCell</string>
 		<key>left_icon</key>
 		<string>location</string>
 		<key>right_icon</key>
@@ -18,7 +18,7 @@
 		<key>title</key>
 		<string>UBICACION</string>
 		<key>height</key>
-		<integer>75</integer>
+		<integer>80</integer>
 	</dict>
 	<dict>
 		<key>identifier</key>

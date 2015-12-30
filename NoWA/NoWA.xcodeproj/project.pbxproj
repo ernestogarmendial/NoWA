@@ -40,6 +40,7 @@
 		942A997B1C1A15F500B12292 /* InfoAlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A997A1C1A15F500B12292 /* InfoAlarmTableViewCell.swift */; };
 		942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */; };
 		942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 942A997E1C1A169600B12292 /* ServicioTabCells.plist */; };
+		94500D611C344616003A70FA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D601C344616003A70FA /* LocationTableViewCell.swift */; };
 		945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C48AF1C0F8168006367C9 /* MainTabBarController.swift */; };
 		94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */; };
 		94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94686C791C0BA9EE00D05BD9 /* Assets.xcassets */; };
@@ -114,6 +115,7 @@
 		942A997A1C1A15F500B12292 /* InfoAlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoAlarmTableViewCell.swift; path = view/Alarm/InfoAlarmTableViewCell.swift; sourceTree = "<group>"; };
 		942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = view/Alarm/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		942A997E1C1A169600B12292 /* ServicioTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServicioTabCells.plist; sourceTree = "<group>"; };
+		94500D601C344616003A70FA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = view/LocationTableViewCell.swift; sourceTree = "<group>"; };
 		945C48AF1C0F8168006367C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = viewcontroller/MainTabBarController.swift; sourceTree = "<group>"; };
 		94686C6F1C0BA9EE00D05BD9 /* NoWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -321,7 +323,6 @@
 		94801F7C1C0CF28100D05D6E /* view */ = {
 			isa = PBXGroup;
 			children = (
-				941421761C2BAA6B00D9495E /* PickerTableViewCell.swift */,
 				9476A9031C2B9E5A004AB8E3 /* Servicio */,
 				94A39A5A1C28FA5100BA2BB8 /* Torneos */,
 				942A99771C1A156100B12292 /* Alarmas */,
@@ -331,6 +332,8 @@
 				9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */,
 				9414217E1C2C65C800D9495E /* PredictionTableViewCell.swift */,
 				941421801C2C6E1600D9495E /* ButtonTableFooterView.swift */,
+				941421761C2BAA6B00D9495E /* PickerTableViewCell.swift */,
+				94500D601C344616003A70FA /* LocationTableViewCell.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				941CA1301C323B66004E4969 /* ForecastDTO.swift in Sources */,
 				9425DB311C2A0ED4003CDB83 /* MyMelodyDTO.swift in Sources */,
 				9425DB361C2A0F09003CDB83 /* ServiceResult.swift in Sources */,
+				94500D611C344616003A70FA /* LocationTableViewCell.swift in Sources */,
 				941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

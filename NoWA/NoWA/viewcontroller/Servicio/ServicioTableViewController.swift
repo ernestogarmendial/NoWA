@@ -18,6 +18,7 @@ class ServicioTableViewController: GenericTableViewController {
         
         self.tableView.registerClass(ServicePickerTableViewCell.self, forCellReuseIdentifier: "ServicePicker")
         self.tableView.registerClass(PickerTableViewCell.self, forCellReuseIdentifier: "PickerCell")
+        self.tableView.registerClass(LocationTableViewCell.self, forCellReuseIdentifier: "LocationCell")
         self.tableView.registerClass(ServiceAvisoTableViewCell.self, forCellReuseIdentifier: "ServiceAdviceCell")
         self.tableView.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "SliderCell")
         self.tableView.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")

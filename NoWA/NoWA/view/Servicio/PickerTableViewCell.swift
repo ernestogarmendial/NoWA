@@ -15,10 +15,6 @@ class PickerTableViewCell: GenericTableViewCell {
     var leftIcon : UIImageView?
     var rightButton : UIButton?
     
-    var titleString : String?
-    var rightIconString : String?
-    var leftIconString : String?
-    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,27 +22,6 @@ class PickerTableViewCell: GenericTableViewCell {
         self.backgroundColor = .registroGrayColor()
         self.contentView.backgroundColor = .registroGrayColor()
         
-        //        let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
-        //        let cellsArray = NSMutableArray(contentsOfFile: path!)
-        //
-        //        for var i = 0; i < cellsArray!.count; i++ {
-        //            if cellsArray![i]["identifier"] as! String == reuseIdentifier {
-        //                if let dictionary = cellsArray![i] as? NSDictionary {
-        //
-        //                    if let left_icon = dictionary["left_icon"] as? String{
-        //                        leftIconString = left_icon
-        //                    }
-        //
-        //                    if let right_icon = dictionary["right_icon"] as? String{
-        //                        rightIconString = right_icon
-        //                    }
-        //
-        //                    if let title = dictionary["title"] as? String{
-        //                        titleString = title
-        //                    }
-        //                }
-        //            }
-        //        }
         
         leftIcon = UIImageView()
         leftIcon!.contentMode = UIViewContentMode.Center
@@ -82,19 +57,16 @@ class PickerTableViewCell: GenericTableViewCell {
     override func setItems(myDictionary: NSDictionary) {
         
         if let left_icon = myDictionary["left_icon"] as? String{
-            //                leftIconString = left_icon
             leftIcon!.image = UIImage(named: left_icon)
             
         }
         
         if let right_icon = myDictionary["right_icon"] as? String{
-            //                rightIconString = right_icon
             rightButton!.setImage(UIImage(named: right_icon), forState: UIControlState.Normal)
             
         }
         
         if let title = myDictionary["title"] as? String{
-            //            titleString = title
             titleLabel!.text = title
             
         }
@@ -121,12 +93,27 @@ class PickerTableViewCell: GenericTableViewCell {
     func rightButtonPressed(){
         print("pepe")
         
-        if self.titleLabel!.text == "UBICACION" {
-            print(self.titleLabel!.text)
-        }
-        else if  self.titleLabel!.text == "CONDICION CLIMATICA" {
-            print(self.titleLabel!.text)
-        }
+        callService()
+
     }
     
+    func callService(){
+        
+        let weatherService : WeatherService = WeatherService()
+        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getForecastsFinish:")
+    }
+    
+    
+    
+    
+    func getForecastsFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+//        self.forecasts = (result.entityForKey("Forecasts") as? WeatherDTO)
+        
+
+    }
 }
