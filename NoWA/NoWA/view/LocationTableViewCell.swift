@@ -124,6 +124,10 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate, UITextFieldDel
             return
         }
         
+        dispatch_async(dispatch_get_main_queue()) {
+            self.locationTextField!.resignFirstResponder()
+        }
+        
         self.locations = (result.entityForKey("Locations") as! [LocationDTO])
         
         locationsPicker = NSMutableArray()

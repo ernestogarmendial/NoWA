@@ -19,29 +19,23 @@ class GenericTableViewController: UITableViewController {
 
         self.tableView.separatorColor = .clearColor()
 
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        self.tableView.addGestureRecognizer(tap)
+        
+
     }
 
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        self.tableView.endEditing(true)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         self.tabBarController!.navigationItem.rightBarButtonItem = nil
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
 
 //    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 //        let imageFooterView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, 125))
