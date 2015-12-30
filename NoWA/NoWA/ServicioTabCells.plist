@@ -88,6 +88,22 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
+		<string>SliderCell</string>
+		<key>left_icon</key>
+		<string>ice</string>
+		<key>title</key>
+		<string>Nieve</string>
+		<key>unity</key>
+		<string>%</string>
+		<key>min</key>
+		<integer>0</integer>
+		<key>max</key>
+		<integer>100</integer>
+		<key>height</key>
+		<integer>80</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
 		<string>PredictionSliderCell</string>
 		<key>left_icon</key>
 		<string>equalizer</string>

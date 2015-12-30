@@ -41,6 +41,7 @@
 		942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 942A997E1C1A169600B12292 /* ServicioTabCells.plist */; };
 		94500D611C344616003A70FA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D601C344616003A70FA /* LocationTableViewCell.swift */; };
 		94500D671C3455FD003A70FA /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D661C3455FD003A70FA /* LocationDTO.swift */; };
+		94500D6A1C346E20003A70FA /* PopUpPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D691C346E20003A70FA /* PopUpPickerViewController.swift */; };
 		945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C48AF1C0F8168006367C9 /* MainTabBarController.swift */; };
 		94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */; };
 		94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94686C791C0BA9EE00D05BD9 /* Assets.xcassets */; };
@@ -116,6 +117,7 @@
 		942A997E1C1A169600B12292 /* ServicioTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServicioTabCells.plist; sourceTree = "<group>"; };
 		94500D601C344616003A70FA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = view/LocationTableViewCell.swift; sourceTree = "<group>"; };
 		94500D661C3455FD003A70FA /* LocationDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDTO.swift; path = model/dto/LocationDTO.swift; sourceTree = "<group>"; };
+		94500D691C346E20003A70FA /* PopUpPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpPickerViewController.swift; path = viewcontroller/PopUpPickerViewController.swift; sourceTree = "<group>"; };
 		945C48AF1C0F8168006367C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = viewcontroller/MainTabBarController.swift; sourceTree = "<group>"; };
 		94686C6F1C0BA9EE00D05BD9 /* NoWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				94801F841C0DD7D100D05D6E /* Tour */,
 				945C48AF1C0F8168006367C9 /* MainTabBarController.swift */,
 				942A99651C1A12A400B12292 /* GenericTableViewController.swift */,
+				94500D691C346E20003A70FA /* PopUpPickerViewController.swift */,
 			);
 			name = Viewcontroller;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				94A39A551C28DCDD00BA2BB8 /* WeekDaysView.swift in Sources */,
 				9425DB301C2A0ED4003CDB83 /* GenericDTO.swift in Sources */,
 				942A997B1C1A15F500B12292 /* InfoAlarmTableViewCell.swift in Sources */,
+				94500D6A1C346E20003A70FA /* PopUpPickerViewController.swift in Sources */,
 				941421771C2BAA6B00D9495E /* PickerTableViewCell.swift in Sources */,
 				945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */,
 				9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */,

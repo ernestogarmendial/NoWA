@@ -8,13 +8,16 @@
 
 import UIKit
 
-class LocationTableViewCell: GenericTableViewCell {
+class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     
     var titleLabel : UILabel?
     var locationTextField : UITextField?
     var leftIcon : UIImageView?
     var rightButton : UIButton?
     var locations : [LocationDTO]?
+    
+    var locationsPicker:NSMutableArray!
+    
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -106,6 +109,7 @@ class LocationTableViewCell: GenericTableViewCell {
         
         let weatherService : WeatherService = WeatherService()
         weatherService.getLocations(name: locationTextField?.text, token: UserService.currentUser.token,target: self,message: "getLocationsFinish:")
+        
     }
     
     
@@ -119,9 +123,38 @@ class LocationTableViewCell: GenericTableViewCell {
         
         self.locations = (result.entityForKey("Locations") as! [LocationDTO])
         
+        locationsPicker = NSMutableArray()
+        
+        for location in locations! {
+            locationsPicker.addObject(location.name!)
+        }
+        
+        ////// borrar esto
         dispatch_async(dispatch_get_main_queue()) {
             self.locationTextField!.text = (self.locations![0].name as! String)
         }
+        ////// borrar esto
+        
+        if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
+            let popupViewController = PopUpPickerViewController()
+            popupViewController.locationsPicker = locationsPicker
+            popupViewController.delegate = self
+            rootViewController.addChildViewController(popupViewController)
+            dispatch_async(dispatch_get_main_queue()) {
+                popupViewController.view.frame = rootViewController.view.frame
+                rootViewController.view.addSubview(popupViewController.view)
+                popupViewController.didMoveToParentViewController(rootViewController)
+                popupViewController.view.alpha = 0
+                UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    popupViewController.view.alpha = 1
+                    }, completion: nil)
+            }
+
+        }
+        
+    }
+    
+    func pickerOptionSelected(selectedRow : Int){
         
     }
 }
