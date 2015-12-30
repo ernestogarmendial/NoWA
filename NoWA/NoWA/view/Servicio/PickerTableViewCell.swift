@@ -12,6 +12,7 @@ class PickerTableViewCell: GenericTableViewCell {
     
     var titleLabel : UILabel?
     var descriptionLabel : UILabel?
+    var selectedLabel : UILabel?
     var leftIcon : UIImageView?
     var rightButton : UIButton?
     
@@ -36,6 +37,7 @@ class PickerTableViewCell: GenericTableViewCell {
         self.addSubview(titleLabel!)
         
         descriptionLabel = UILabel()
+        descriptionLabel!.text = "Borrar este texto"
         descriptionLabel!.textColor = .whiteColor()
         descriptionLabel!.font = UIFont.appLatoFontOfSize(14)
         descriptionLabel!.adjustsFontSizeToFitWidth = true
@@ -80,9 +82,15 @@ class PickerTableViewCell: GenericTableViewCell {
         leftIcon!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
         
         titleLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: leftIcon!)
-        titleLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
+//        titleLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         titleLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         titleLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.60)
+        titleLabel!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.80)
+        
+        descriptionLabel!.autoConstrainAttribute(.MarginTop, toAttribute: .MarginBottom, ofView: self, withMultiplier: 0.5)
+        descriptionLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: leftIcon!)
+        descriptionLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
+        descriptionLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.60)
         
         rightButton!.autoPinEdge(.Left, toEdge: .Right, ofView: titleLabel!)
         rightButton!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)

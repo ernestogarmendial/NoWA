@@ -59,17 +59,14 @@ class LocationTableViewCell: GenericTableViewCell {
             
             if let left_icon = myDictionary["left_icon"] as? String{
                 leftIcon!.image = UIImage(named: left_icon)
-                
             }
             
             if let right_icon = myDictionary["right_icon"] as? String{
                 rightButton!.setImage(UIImage(named: right_icon), forState: UIControlState.Normal)
-                
             }
             
             if let title = myDictionary["title"] as? String{
                 titleLabel!.text = title
-                
             }
         }
         
