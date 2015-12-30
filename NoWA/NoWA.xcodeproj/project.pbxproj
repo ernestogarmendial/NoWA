@@ -41,6 +41,7 @@
 		942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */; };
 		942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 942A997E1C1A169600B12292 /* ServicioTabCells.plist */; };
 		94500D611C344616003A70FA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D601C344616003A70FA /* LocationTableViewCell.swift */; };
+		94500D671C3455FD003A70FA /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D661C3455FD003A70FA /* LocationDTO.swift */; };
 		945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C48AF1C0F8168006367C9 /* MainTabBarController.swift */; };
 		94686C731C0BA9EE00D05BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */; };
 		94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94686C791C0BA9EE00D05BD9 /* Assets.xcassets */; };
@@ -116,6 +117,7 @@
 		942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = view/Alarm/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		942A997E1C1A169600B12292 /* ServicioTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServicioTabCells.plist; sourceTree = "<group>"; };
 		94500D601C344616003A70FA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = view/LocationTableViewCell.swift; sourceTree = "<group>"; };
+		94500D661C3455FD003A70FA /* LocationDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDTO.swift; path = model/dto/LocationDTO.swift; sourceTree = "<group>"; };
 		945C48AF1C0F8168006367C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = viewcontroller/MainTabBarController.swift; sourceTree = "<group>"; };
 		94686C6F1C0BA9EE00D05BD9 /* NoWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				941421821C30CC7800D9495E /* RecoverDTO.swift */,
 				941CA12D1C322E59004E4969 /* WeatherDTO.swift */,
 				941CA12F1C323B66004E4969 /* ForecastDTO.swift */,
+				94500D661C3455FD003A70FA /* LocationDTO.swift */,
 			);
 			name = dto;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				9425DB351C2A0F09003CDB83 /* GenericService.swift in Sources */,
 				94801F911C0DDFC100D05D6E /* RegisterFieldView.swift in Sources */,
 				9414217F1C2C65C800D9495E /* PredictionTableViewCell.swift in Sources */,
+				94500D671C3455FD003A70FA /* LocationDTO.swift in Sources */,
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
 				941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */,
 				9414217D1C2C59E200D9495E /* SliderTableViewCell.swift in Sources */,

@@ -14,6 +14,7 @@ class LocationTableViewCell: GenericTableViewCell {
         var locationTextField : UITextField?
         var leftIcon : UIImageView?
         var rightButton : UIButton?
+        var locations : [LocationDTO]?
         
         
         override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -104,19 +105,21 @@ class LocationTableViewCell: GenericTableViewCell {
         func callService(){
         
             let weatherService : WeatherService = WeatherService()
-            weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getForecastsFinish:")
+            weatherService.getLocations(name: locationTextField?.text, token: UserService.currentUser.token,target: self,message: "getLocationsFinish:")
         }
         
         
         
         
-        func getForecastsFinish (result : ServiceResult!){
+        func getLocationsFinish (result : ServiceResult!){
             if(result.hasErrors()){
                 print("Error papu")
                 return
             }
             
-            //        self.forecasts = (result.entityForKey("Forecasts") as? WeatherDTO)
+                    self.locations = (result.entityForKey("Locations") as! [LocationDTO])
+            
+            var location = locations![0]
             
             
         }
