@@ -94,9 +94,9 @@ class PickerTableViewCell: GenericTableViewCell {
         }
         
         if let title = myDictionary["title"] as? String{
-//            titleString = title
+            //            titleString = title
             titleLabel!.text = title
-
+            
         }
     }
     
@@ -120,6 +120,13 @@ class PickerTableViewCell: GenericTableViewCell {
     
     func rightButtonPressed(){
         print("pepe")
+        
+        if self.titleLabel!.text == "UBICACION" {
+            print(self.titleLabel!.text)
+        }
+        else if  self.titleLabel!.text == "CONDICION CLIMATICA" {
+            print(self.titleLabel!.text)
+        }
     }
     
 }
