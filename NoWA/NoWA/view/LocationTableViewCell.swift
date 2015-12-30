@@ -8,16 +8,14 @@
 
 import UIKit
 
-class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
+class LocationTableViewCell: GenericTableViewCell,pickerDelegate, UITextFieldDelegate {
     
     var titleLabel : UILabel?
     var locationTextField : UITextField?
     var leftIcon : UIImageView?
     var rightButton : UIButton?
     var locations : [LocationDTO]?
-    
     var locationsPicker:NSMutableArray!
-    
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -25,7 +23,6 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         
         self.backgroundColor = .registroGrayColor()
         self.contentView.backgroundColor = .registroGrayColor()
-        
         
         leftIcon = UIImageView()
         leftIcon!.contentMode = UIViewContentMode.Center
@@ -40,10 +37,12 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         self.addSubview(titleLabel!)
         
         locationTextField = UITextField()
+        locationTextField!.delegate = self
         locationTextField!.attributedPlaceholder =  NSAttributedString(string: "Ingrese una ubicación y presione el botón",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         locationTextField!.textColor = UIColor.whiteColor()
-        locationTextField!.keyboardType = UIKeyboardType.EmailAddress
+        locationTextField!.keyboardType = UIKeyboardType.Default
+        locationTextField!.clearButtonMode = .WhileEditing
         locationTextField!.font = UIFont.appLatoFontOfSize(13)
         locationTextField!.adjustsFontSizeToFitWidth = true
         self.addSubview(locationTextField!)
@@ -74,6 +73,13 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         }
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        rightButtonPressed()
+        return true
+    }
+    
     func setupConstrains(){
         
         leftIcon!.autoPinEdge(.Left, toEdge: .Left, ofView: self)
@@ -82,7 +88,6 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         leftIcon!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
         
         titleLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: leftIcon!)
-        //            titleLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         titleLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         titleLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.60)
         titleLabel!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.80)
@@ -113,8 +118,6 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     }
     
     
-    
-    
     func getLocationsFinish (result : ServiceResult!){
         if(result.hasErrors()){
             print("Error papu")
@@ -129,11 +132,6 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
             locationsPicker.addObject(location.name!)
         }
         
-        ////// borrar esto
-//        dispatch_async(dispatch_get_main_queue()) {
-//            self.locationTextField!.text = (self.locations![0].name as! String)
-//        }
-        ////// borrar esto
         
         if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
             let popupViewController = PopUpPickerViewController()
@@ -149,14 +147,12 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
                     popupViewController.view.alpha = 1
                     }, completion: nil)
             }
-
+            
         }
         
     }
     
     func pickerOptionSelected(selectedRow : Int){
-//        dispatch_async(dispatch_get_main_queue()) {
-            self.locationTextField!.text = (self.locations![selectedRow].name as! String)
-//        }
+        self.locationTextField!.text = (self.locations![selectedRow].name as! String)
     }
 }

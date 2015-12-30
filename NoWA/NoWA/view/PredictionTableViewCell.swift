@@ -17,12 +17,10 @@ class PredictionTableViewCell: GenericTableViewCell {
     
     var titleLabel : UILabel?
     var leftIcon : UIImageView?
-    var rightIcon : UIImageView?
     var sliderLeft : UISlider?
     
-    var titleString : String?
-    var rightIconString : String?
-    var leftIconString : String?
+    var sliderLabel : UILabel?
+    
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -31,40 +29,11 @@ class PredictionTableViewCell: GenericTableViewCell {
         self.backgroundColor = .registroGrayColor()
         self.contentView.backgroundColor = .registroGrayColor()
         
-        //        let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
-        //        let cellsArray = NSMutableArray(contentsOfFile: path!)
-        //
-        //        for var i = 0; i < cellsArray!.count; i++ {
-        //            if cellsArray![i]["identifier"] as! String == reuseIdentifier {
-        //                if let dictionary = cellsArray![i] as? NSDictionary {
-        //
-        //                    if let left_icon = dictionary["left_icon"] as? String{
-        //                        leftIconString = left_icon
-        //                    }
-        //
-        //                    if let right_icon = dictionary["right_icon"] as? String{
-        //                        rightIconString = right_icon
-        //                    }
-        //
-        //                    if let title = dictionary["title"] as? String{
-        //                        titleString = title
-        //                    }
-        //                }
-        //            }
-        //        }
-        
         leftIcon = UIImageView()
-//        leftIcon!.image = UIImage(named: leftIconString!)
         leftIcon!.contentMode = UIViewContentMode.Center
         self.addSubview(leftIcon!)
         
-        rightIcon = UIImageView()
-        //        rightIcon!.image = UIImage(named: leftIconString!)
-        rightIcon!.contentMode = UIViewContentMode.Center
-        self.addSubview(rightIcon!)
-        
         titleLabel = UILabel()
-        titleLabel!.text = titleString
         titleLabel!.textColor = .whiteColor()
         titleLabel!.font = UIFont.appLatoFontOfSize(14)
         titleLabel!.adjustsFontSizeToFitWidth = true
@@ -81,10 +50,20 @@ class PredictionTableViewCell: GenericTableViewCell {
         explainLabel!.numberOfLines = 2
         self.addSubview(explainLabel!)
         
+        sliderLabel = UILabel()
+        sliderLabel!.text =  "Off"
+        sliderLabel!.textColor = .whiteColor()
+        sliderLabel!.font = UIFont.appLatoFontOfSize(12)
+        sliderLabel!.adjustsFontSizeToFitWidth = true
+        sliderLabel!.textAlignment = .Center
+        sliderLabel!.numberOfLines = 1
+        self.addSubview(sliderLabel!)
+        
         sliderLeft = UISlider()
         sliderLeft!.minimumValue = 0
-        sliderLeft!.maximumValue = 100
+        sliderLeft!.maximumValue = 10
         sliderLeft!.tintColor = UIColor.loginBlueColor()
+        sliderLeft!.addTarget(self, action: "sliderValueChanged:", forControlEvents: .ValueChanged)
         self.addSubview(sliderLeft!)
         
         
@@ -108,17 +87,12 @@ class PredictionTableViewCell: GenericTableViewCell {
     override func setItems(myDictionary: NSDictionary) {
         
         if let left_icon = myDictionary["left_icon"] as? String{
-//            leftIconString = left_icon
             leftIcon!.image = UIImage(named: left_icon)
-
-        }
-        
-        if let right_icon = myDictionary["right_icon"] as? String{
-            rightIconString = right_icon
+            
         }
         
         if let title = myDictionary["title"] as? String{
-            titleString = title
+            titleLabel!.text = title
         }
     }
     
@@ -148,21 +122,33 @@ class PredictionTableViewCell: GenericTableViewCell {
         sliderView!.autoPinEdge(.Top, toEdge: .Bottom, ofView: explainLabel!)
         sliderView!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         sliderView!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.60)
-        //        sliderView!.autoMatchDimension(.Height, toDimension: .Height, ofView: titleLabel!)
         
         sliderLeft!.autoPinEdge(.Left, toEdge: .Left, ofView: sliderView!)
         sliderLeft!.autoPinEdge(.Right, toEdge: .Right, ofView: sliderView!)
         sliderLeft!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: sliderView!)
         sliderLeft!.autoPinEdge(.Top, toEdge: .Top, ofView: sliderView!)
         
-        rightIcon!.autoPinEdge(.Left, toEdge: .Right, ofView: titleLabel!)
-        rightIcon!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
-        rightIcon!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
-        rightIcon!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
+        sliderLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: sliderView!)
+        sliderLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
+        sliderLabel!.autoPinEdge(.Top, toEdge: .Bottom, ofView: leftIcon!)
+        sliderLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
+        
     }
     
     func rightButtonPressed(){
         print("pepe")
+    }
+    
+    func sliderValueChanged(sender: UISlider) {
+        
+        let value = Int(sender.value)
+        
+        if value != Int((sliderLeft?.minimumValue)!) {
+            sliderLabel!.text = "\(String(value))hs"
+        }else{
+            sliderLabel!.text = "Off"
+        }
+        
     }
     
     

@@ -37,7 +37,7 @@ class PickerTableViewCell: GenericTableViewCell {
         self.addSubview(titleLabel!)
         
         descriptionLabel = UILabel()
-        descriptionLabel!.text = "Borrar este texto"
+        descriptionLabel!.text = "LLuvioso (Hardcode)"
         descriptionLabel!.textColor = .whiteColor()
         descriptionLabel!.font = UIFont.appLatoFontOfSize(14)
         descriptionLabel!.adjustsFontSizeToFitWidth = true

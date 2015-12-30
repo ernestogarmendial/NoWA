@@ -21,7 +21,6 @@ class SliderTableViewCell: GenericTableViewCell {
     var sliderRight : UISlider?
     var sliderMaxLabel : UILabel?
     
-    var titleString : String?
     var rightIconString : String?
     var leftIconString : String?
     
