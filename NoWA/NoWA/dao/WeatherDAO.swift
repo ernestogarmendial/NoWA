@@ -9,7 +9,7 @@
 import UIKit
 
 class WeatherDAO: GenericDAO {
-
+    
     func getForecasts(token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         
         if(!self.register()){
@@ -23,7 +23,7 @@ class WeatherDAO: GenericDAO {
         RKMIMETypeSerialization.registerClass(RKNSJSONSerialization.self, forMIMEType: "application/json")
         
         let mapping = ForecastDTO.mapping()
-
+        
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "FORECASTIO", statusCodes: nil)
         
         let request = objectManager.requestWithObject(  nil,
@@ -34,11 +34,11 @@ class WeatherDAO: GenericDAO {
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in
-//            let array = response.array() as NSArray
+            //            let array = response.array() as NSArray
             let forecastDTO = response.firstObject as? ForecastDTO
             self.finish(forecastDTO)
-//            self.finish(response.array())
-
+            //            self.finish(response.array())
+            
             },
             failure: { (operation, error) in
                 self.printResponse(operation)
@@ -73,12 +73,14 @@ class WeatherDAO: GenericDAO {
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in
-//            let weatherDTO = response.array()[0] as! LocationDTO
-//            self.finish(weatherDTO)
-            let array = response.array() as NSArray
-            self.finish(array)
-//            self.finish(response.array())
             
+            if response != nil{
+                let array = response.array() as NSArray
+                self.finish(array)
+                //            self.finish(response.array())
+            }else{
+                self.finish(nil)
+            }
             },
             failure: { (operation, error) in
                 self.finish(nil)

@@ -44,7 +44,7 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         locationTextField!.textColor = UIColor.whiteColor()
         locationTextField!.keyboardType = UIKeyboardType.EmailAddress
-        locationTextField!.font = UIFont.appLatoFontOfSize(12)
+        locationTextField!.font = UIFont.appLatoFontOfSize(13)
         locationTextField!.adjustsFontSizeToFitWidth = true
         self.addSubview(locationTextField!)
         
@@ -130,9 +130,9 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         }
         
         ////// borrar esto
-        dispatch_async(dispatch_get_main_queue()) {
-            self.locationTextField!.text = (self.locations![0].name as! String)
-        }
+//        dispatch_async(dispatch_get_main_queue()) {
+//            self.locationTextField!.text = (self.locations![0].name as! String)
+//        }
         ////// borrar esto
         
         if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
@@ -155,6 +155,8 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     }
     
     func pickerOptionSelected(selectedRow : Int){
-        
+//        dispatch_async(dispatch_get_main_queue()) {
+            self.locationTextField!.text = (self.locations![selectedRow].name as! String)
+//        }
     }
 }

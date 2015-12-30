@@ -16,7 +16,6 @@ class PopUpPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     
     var delegate : pickerDelegate?
     
-    var locationsArray: NSArray!
     var locationsPicker:NSMutableArray!
     var pickerContainerView : UIView?
     var cityPicker : UIPickerView?
@@ -28,7 +27,7 @@ class PopUpPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         self.view.addGestureRecognizer(tap)
         
         pickerContainerView = UIView()
-        pickerContainerView?.backgroundColor = .whiteColor()
+        pickerContainerView?.backgroundColor = .ribbonAltColor()//.whiteColor()
         self.view.addSubview(pickerContainerView!)
         
         cityPicker = UIPickerView()
@@ -45,13 +44,13 @@ class PopUpPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         pickerContainerView?.bringSubviewToFront(okButton)
         
         pickerContainerView?.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: self.view)
-        pickerContainerView?.autoSetDimension(ALDimension.Height, toSize: self.view.frame.size.height / 3)
+        pickerContainerView?.autoSetDimension(ALDimension.Height, toSize: self.view.frame.size.height / 3.5)
         pickerContainerView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
         
         okButton.autoPinEdge(.Top, toEdge: .Top, ofView: pickerContainerView!)
         okButton.autoPinEdge(.Left, toEdge: .Left, ofView: pickerContainerView!)
         okButton.autoPinEdge(.Right, toEdge: .Right, ofView: pickerContainerView!)
-        okButton.autoSetDimension(.Height, toSize: 50)
+        okButton.autoSetDimension(.Height, toSize: 40)
         
         cityPicker!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: pickerContainerView!)
         cityPicker!.autoPinEdge(.Left, toEdge: .Left, ofView: pickerContainerView!)
@@ -93,6 +92,11 @@ class PopUpPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return (locationsPicker[row] as! String)
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: self.locationsPicker![row] as! String, attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
+        return attributedString
     }
     
 }
