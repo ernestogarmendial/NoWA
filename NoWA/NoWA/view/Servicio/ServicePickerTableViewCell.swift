@@ -13,6 +13,8 @@ class ServicePickerTableViewCell: GenericTableViewCell {
     var serviceLabel : UILabel?
     var selectedServiceLabel : UILabel?
     var pickerArrow : UIButton?
+    var forecasts : WeatherDTO?
+
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -90,18 +92,12 @@ class ServicePickerTableViewCell: GenericTableViewCell {
             return
         }
         
-        let weatherDTO : WeatherDTO = result.entityForKey("Forecasts") as! WeatherDTO
+        self.forecasts = (result.entityForKey("Forecasts") as? WeatherDTO)
         
-        print(weatherDTO.forecast?.name)
-//        if recoverDTO.code != "" {
-//            let alert = UIAlertController(title: "Nueva Contraseña:", message: recoverDTO.code, preferredStyle: UIAlertControllerStyle.Alert)
-//            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-//            
-//            dispatch_async(dispatch_get_main_queue()) {
-//                self.presentViewController(alert, animated: true, completion: nil)
-//            }
-//            
-//        }
+            
+            
+
+        
         
     }
 }

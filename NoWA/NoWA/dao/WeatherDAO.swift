@@ -36,6 +36,8 @@ class WeatherDAO: GenericDAO {
         operation.setCompletionBlockWithSuccess({ (operation, response) in
             let weatherDTO = response.array()[0] as! WeatherDTO
             self.finish(weatherDTO)
+//            self.finish(response.array())
+
             },
             failure: { (operation, error) in
                 self.finish(nil)

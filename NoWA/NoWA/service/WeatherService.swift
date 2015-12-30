@@ -23,22 +23,17 @@ class WeatherService: GenericService {
         let weatherDAO: WeatherDAO = WeatherDAO()
         weatherDAO.delegate = self
         weatherDAO.getForecasts( token: _token, handler: { (operation, result) in
+//            let forecasts = result as? WeatherDTO;
             
-            let weatherDTO = result as? WeatherDTO;
+//            if(weatherDTO == nil || (weatherDTO != nil && weatherDTO!.errorTitle != nil)){
+//                serviceResult.addErrorsFromDTO(weatherDTO!)
+//                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+//            }else{
             
-            if(weatherDTO == nil || (weatherDTO != nil && weatherDTO!.errorTitle != nil)){
-                serviceResult.addErrorsFromDTO(weatherDTO!)
-                self.callMessage(target: _target, message: _message, withResult: serviceResult)
-            }else{
-                
-//                UserService.currentUser = result as! UserDTO;
-//                //
-//                if let accessToken = UserService.currentUser.token {
-//                    //
-                    serviceResult.addEntity(weatherDTO, forKey: "Forecasts")
+                    serviceResult.addEntity(result, forKey: "Forecasts")
                     
                     self.callMessage(target: _target, message: _message, withResult: serviceResult)
-                }
+//                }
 //            }
         })
     }

@@ -18,7 +18,7 @@ class ForecastDTO: GenericDTO {
         let mapping = RKObjectMapping(forClass: ForecastDTO.self)
         mapping.addAttributeMappingsFromDictionary([
             
-            "forecastID" : "forecastID",
+            "id" : "forecastID",
             "name" : "name",
             
             ])
