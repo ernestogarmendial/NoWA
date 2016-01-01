@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ServicioTableViewController: GenericTableViewController {
+class ServicioTableViewController: GenericTableViewController, ButtonFooterDelegate {
     
     
     var cellsArray: NSMutableArray!
@@ -23,9 +23,9 @@ class ServicioTableViewController: GenericTableViewController {
         self.tableView.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "SliderCell")
         self.tableView.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
         self.tableView.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")
-
         
-
+        
+        
         let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
         
@@ -74,19 +74,14 @@ class ServicioTableViewController: GenericTableViewController {
         let genericCell = tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
-        //        let cellDitionary = cellsArray[indexPath.row] as! NSDictionary
-        //        genericCell.setItems(cellDitionary)
         
+        if identificador == "AcceptButtonCell"{
+            genericCell.acceptDelegate = self
+        }
         return genericCell
     }
     
-//    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let footerView = ButtonTableFooterView()
-//        
-//        return footerView
-//    }
-//    
-//    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 120
-//    }
+    func acceptButtonPressed() {
+        print("delegado")
+    }
 }

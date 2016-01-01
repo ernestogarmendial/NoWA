@@ -9,7 +9,9 @@
 import UIKit
 
 class GenericTableViewCell: UITableViewCell {
-
+    
+    var acceptDelegate : ButtonFooterDelegate?
+    
     var myDictionary : NSDictionary? {
         didSet{
             setItems(myDictionary!)

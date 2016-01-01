@@ -8,12 +8,15 @@
 
 import UIKit
 
+protocol ButtonFooterDelegate {
+    func acceptButtonPressed() -> Void
+}
+
 class ButtonTableFooterView: GenericTableViewCell{//UIView {
     
+//    var delegate : ButtonFooterDelegate?
     var acceptButton : UIButton?
     
-    //    override init(frame: CGRect) {
-    //        super.init(frame:frame)
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -41,11 +44,12 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
     }
     
     override func setItems(myDictionary: NSDictionary){
-        
+    
     }
     
     func accept(){
         print("aceptar pressed")
+        self.acceptDelegate!.acceptButtonPressed()
     }
     
 }
