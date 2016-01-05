@@ -11,6 +11,17 @@ import UIKit
 class ServicioTableViewController: GenericTableViewController, ButtonFooterDelegate {
     
     var defaultService : NSNumber?
+    var defaultLocation : String?
+    var defaultCondition : NSNumber?
+    var defaultPrediction : NSNumber?
+    var defaultMinTemp : NSNumber?
+    var defaultMaxTemp : NSNumber?
+    var defaultMinSnow : NSNumber?
+    var defaultMaxSnow : NSNumber?
+    var defaultMinWind : NSNumber?
+    var defaultMaxWind : NSNumber?
+    var defaultMinHumidity : NSNumber?
+    var defaultMaxHumidity : NSNumber?
     
     var cellsArray: NSMutableArray!
     
@@ -87,11 +98,23 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
     
     func setDefault(){
         
-       let serviceCell = tableView.dequeueReusableCellWithIdentifier("ServicePicker", forIndexPath:NSIndexPath(forItem: 0, inSection: 0)) as! ServicePickerTableViewCell
-        defaultService = serviceCell.service
+        let serviceCell = tableView.dequeueReusableCellWithIdentifier("ServicePicker", forIndexPath:NSIndexPath(forItem: 0, inSection: 0)) as! ServicePickerTableViewCell
+        if let service = serviceCell.service{
+            defaultService = service
+        }
         
-//        let weatherService : WeatherService = WeatherService()
-//        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getForecastsFinish:")
+        let locationCell = tableView.dequeueReusableCellWithIdentifier("LocationCell", forIndexPath:NSIndexPath(forItem: 1, inSection: 0)) as! LocationTableViewCell
+        if let place = locationCell.place{
+            defaultLocation = place
+        }
+        
+        let predictionCell = tableView.dequeueReusableCellWithIdentifier("PredictionSliderCell", forIndexPath:NSIndexPath(forItem: 8, inSection: 0)) as! PredictionTableViewCell
+        if let prediction = predictionCell.prediction{
+            defaultPrediction = prediction
+        }
+        
+        //        let weatherService : WeatherService = WeatherService()
+        //        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getForecastsFinish:")
     }
     
     func getForecastsFinish (result : ServiceResult!){
@@ -100,7 +123,7 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
             return
         }
         
-//        self.forecasts = (result.entityForKey("Forecasts") as! [ForecastDTO])
+        //        self.forecasts = (result.entityForKey("Forecasts") as! [ForecastDTO])
     }
     
     

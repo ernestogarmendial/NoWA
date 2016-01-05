@@ -21,7 +21,6 @@ class PredictionTableViewCell: GenericTableViewCell {
     var sliderLabel : UILabel?
     
     
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -146,12 +145,13 @@ class PredictionTableViewCell: GenericTableViewCell {
         
         let value = Int(sender.value)
         
+        self.prediction = value as NSNumber
+        
         if value != Int((sliderLeft?.minimumValue)!) {
             sliderLabel!.text = "\(String(value))hs"
         }else{
             sliderLabel!.text = "Off"
         }
-        
     }
     
     
