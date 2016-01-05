@@ -10,12 +10,15 @@ import UIKit
 
 class LocationTableViewCell: GenericTableViewCell,pickerDelegate, UITextFieldDelegate {
     
+    var place : String?
+    
     var titleLabel : UILabel?
     var locationTextField : UITextField?
     var leftIcon : UIImageView?
     var rightButton : UIButton?
     var locations : [LocationDTO]?
     var locationsPicker:NSMutableArray!
+    
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -40,6 +43,9 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate, UITextFieldDel
         locationTextField!.delegate = self
         locationTextField!.attributedPlaceholder =  NSAttributedString(string: "Ingrese una ubicación y presione el botón",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+        if self.place != nil{
+            locationTextField!.text = self.place!
+        }
         locationTextField!.textColor = UIColor.whiteColor()
         locationTextField!.keyboardType = UIKeyboardType.Default
         locationTextField!.clearButtonMode = .WhileEditing
@@ -159,5 +165,6 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate, UITextFieldDel
     
     func pickerOptionSelected(selectedRow : Int){
         self.locationTextField!.text = (self.locations![selectedRow].name as! String)
+        self.place = (self.locations![selectedRow].name as! String)
     }
 }

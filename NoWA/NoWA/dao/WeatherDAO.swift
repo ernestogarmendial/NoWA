@@ -24,21 +24,22 @@ class WeatherDAO: GenericDAO {
         
         let mapping = ForecastDTO.mapping()
         
-        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "FORECASTIO", statusCodes: nil)
+        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "services", statusCodes: nil)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "weather/services/0a8dae93572ebce60fdb73014d7728be/",
+            path: "weather/services/\(_token)/",
             parameters: nil)
         
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in
-            //            let array = response.array() as NSArray
-            let forecastDTO = response.firstObject as? ForecastDTO
-            self.finish(forecastDTO)
-            //            self.finish(response.array())
-            
+            if response != nil{
+                let array = response.array() as NSArray
+                self.finish(array)
+            }else{
+                self.finish(nil)
+            }
             },
             failure: { (operation, error) in
                 self.printResponse(operation)
@@ -77,7 +78,6 @@ class WeatherDAO: GenericDAO {
             if response != nil{
                 let array = response.array() as NSArray
                 self.finish(array)
-                //            self.finish(response.array())
             }else{
                 self.finish(nil)
             }

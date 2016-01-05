@@ -17,6 +17,7 @@ class PopUpPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     var delegate : pickerDelegate?
     
     var locationsPicker:NSMutableArray!
+    
     var pickerContainerView : UIView?
     var cityPicker : UIPickerView?
     
@@ -96,6 +97,8 @@ class PopUpPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let attributedString = NSAttributedString(string: self.locationsPicker![row] as! String, attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
+        
+        
         return attributedString
     }
     

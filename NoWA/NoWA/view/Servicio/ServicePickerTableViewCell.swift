@@ -10,17 +10,20 @@ import UIKit
 
 class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
+    var service : NSNumber? // el que va a set / update
+    
     var serviceLabel : UILabel?
     var selectedServiceLabel : UILabel?
     var pickerArrow : UIButton?
     var forecasts : [ForecastDTO]?
     var forecastsPicker:NSMutableArray!
-
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.backgroundColor = .servicePickerBlueColor()
         self.contentView.backgroundColor = .servicePickerBlueColor()
+        
         
         serviceLabel = UILabel()
         serviceLabel!.text = "SERVICIO"
@@ -32,7 +35,6 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         self.addSubview(serviceLabel!)
         
         selectedServiceLabel = UILabel()
-        selectedServiceLabel!.text = "YR"
         selectedServiceLabel!.textColor = .whiteColor()
         selectedServiceLabel!.font = UIFont.appLatoFontOfSize(26)
         selectedServiceLabel!.adjustsFontSizeToFitWidth = true
@@ -45,6 +47,7 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         pickerArrow!.setImage(UIImage(named: "down_arrow"), forState: UIControlState.Normal)
         self.addSubview(pickerArrow!)
         
+        callService()
         
         setupConstrains()
     }
@@ -70,7 +73,6 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         selectedServiceLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: serviceLabel!)
         selectedServiceLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         selectedServiceLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
-        selectedServiceLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.40)
         
         pickerArrow!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
         pickerArrow!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
@@ -81,27 +83,6 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     func pickerArrowPressed(){
         print("service picker pressed")
-        
-        let weatherService : WeatherService = WeatherService()
-        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getLocationsFinish:")
-        
-    }
-    
-    
-    func getLocationsFinish (result : ServiceResult!){
-        if(result.hasErrors()){
-            print("Error papu")
-            return
-        }
-        
-        self.forecasts = (result.entityForKey("Locations") as! [ForecastDTO])
-        
-        forecastsPicker = NSMutableArray()
-        
-        for forecast in forecasts! {
-            forecastsPicker.addObject(forecast.name!)
-        }
-        
         
         if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
             let popupViewController = PopUpPickerViewController()
@@ -117,12 +98,38 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
                     popupViewController.view.alpha = 1
                     }, completion: nil)
             }
-            
+        }
+    }
+    
+    func callService(){
+        let weatherService : WeatherService = WeatherService()
+        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getForecastsFinish:")
+    }
+    
+    func getForecastsFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        self.forecasts = (result.entityForKey("Forecasts") as! [ForecastDTO])
+        
+        forecastsPicker = NSMutableArray()
+        
+        for forecast in forecasts! {
+            forecastsPicker.addObject(forecast.name!)
+        }
+        
+        if self.service == nil{
+            if let firstForecast : String = forecastsPicker[0] as? String {
+                self.selectedServiceLabel!.text = firstForecast
+            }
         }
         
     }
     
     func pickerOptionSelected(selectedRow : Int){
         self.selectedServiceLabel!.text = self.forecasts![selectedRow].name!
+        self.service = self.forecasts![selectedRow].forecastID!
     }
 }

@@ -23,18 +23,11 @@ class WeatherService: GenericService {
         let weatherDAO: WeatherDAO = WeatherDAO()
         weatherDAO.delegate = self
         weatherDAO.getForecasts( token: _token, handler: { (operation, result) in
-//            let forecasts = result as? WeatherDTO;
             
-//            if(weatherDTO == nil || (weatherDTO != nil && weatherDTO!.errorTitle != nil)){
-//                serviceResult.addErrorsFromDTO(weatherDTO!)
-//                self.callMessage(target: _target, message: _message, withResult: serviceResult)
-//            }else{
+            serviceResult.addEntity(result, forKey: "Forecasts")
             
-                    serviceResult.addEntity(result, forKey: "Forecasts")
-                    
-                    self.callMessage(target: _target, message: _message, withResult: serviceResult)
-//                }
-//            }
+            self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            
         })
     }
     
@@ -52,18 +45,11 @@ class WeatherService: GenericService {
         let weatherDAO: WeatherDAO = WeatherDAO()
         weatherDAO.delegate = self
         weatherDAO.getLocations(name: _name, token: _token, handler: { (operation, result) in
-            //            let forecasts = result as? WeatherDTO;
-            
-            //            if(weatherDTO == nil || (weatherDTO != nil && weatherDTO!.errorTitle != nil)){
-            //                serviceResult.addErrorsFromDTO(weatherDTO!)
-            //                self.callMessage(target: _target, message: _message, withResult: serviceResult)
-            //            }else{
             
             serviceResult.addEntity(result, forKey: "Locations")
             
             self.callMessage(target: _target, message: _message, withResult: serviceResult)
-            //                }
-            //            }
+            
         })
     }
     
