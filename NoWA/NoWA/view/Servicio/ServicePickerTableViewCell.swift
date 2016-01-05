@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ServicePickerTableViewCell: GenericTableViewCell {
-
+class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
+    
     var serviceLabel : UILabel?
     var selectedServiceLabel : UILabel?
     var pickerArrow : UIButton?
     var forecasts : [ForecastDTO]?
+    var forecastsPicker:NSMutableArray!
 
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -44,23 +44,24 @@ class ServicePickerTableViewCell: GenericTableViewCell {
         pickerArrow!.addTarget(self, action: "pickerArrowPressed", forControlEvents: UIControlEvents.TouchUpInside)
         pickerArrow!.setImage(UIImage(named: "down_arrow"), forState: UIControlState.Normal)
         self.addSubview(pickerArrow!)
-
+        
         
         setupConstrains()
     }
     
     
-
+    
     required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func setItems(myDictionary: NSDictionary) {
         
     }
     
     func setupConstrains(){
-
+        
         serviceLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 20)
         serviceLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         serviceLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
@@ -70,34 +71,58 @@ class ServicePickerTableViewCell: GenericTableViewCell {
         selectedServiceLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         selectedServiceLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         selectedServiceLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.40)
-
+        
         pickerArrow!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
         pickerArrow!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         pickerArrow!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         pickerArrow!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
-
+        
     }
     
     func pickerArrowPressed(){
-        print("service picker presse")
+        print("service picker pressed")
         
         let weatherService : WeatherService = WeatherService()
-        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getForecastsFinish:")
+        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getLocationsFinish:")
+        
     }
     
     
-    func getForecastsFinish (result : ServiceResult!){
+    func getLocationsFinish (result : ServiceResult!){
         if(result.hasErrors()){
             print("Error papu")
             return
         }
         
-        self.forecasts = (result.entityForKey("Forecasts") as? [ForecastDTO])
+        self.forecasts = (result.entityForKey("Locations") as! [ForecastDTO])
         
+        forecastsPicker = NSMutableArray()
+        
+        for forecast in forecasts! {
+            forecastsPicker.addObject(forecast.name!)
+        }
+        
+        
+        if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
+            let popupViewController = PopUpPickerViewController()
+            popupViewController.locationsPicker = forecastsPicker
+            popupViewController.delegate = self
+            rootViewController.addChildViewController(popupViewController)
+            dispatch_async(dispatch_get_main_queue()) {
+                popupViewController.view.frame = rootViewController.view.frame
+                rootViewController.view.addSubview(popupViewController.view)
+                popupViewController.didMoveToParentViewController(rootViewController)
+                popupViewController.view.alpha = 0
+                UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    popupViewController.view.alpha = 1
+                    }, completion: nil)
+            }
             
-            
-
+        }
         
-        
+    }
+    
+    func pickerOptionSelected(selectedRow : Int){
+        self.selectedServiceLabel!.text = self.forecasts![selectedRow].name!
     }
 }

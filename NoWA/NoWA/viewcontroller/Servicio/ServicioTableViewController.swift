@@ -83,5 +83,6 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
     
     func acceptButtonPressed() {
         print("delegado")
+//        let num
     }
 }

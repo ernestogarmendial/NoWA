@@ -9,16 +9,17 @@
 import UIKit
 
 class ItemTableViewCell: GenericTableViewCell {
-
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.backgroundColor = .blueColor()
-
+        
         
     }
     
     required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
 }
