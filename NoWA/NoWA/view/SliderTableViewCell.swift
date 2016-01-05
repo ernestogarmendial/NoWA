@@ -10,6 +10,9 @@ import UIKit
 
 class SliderTableViewCell: GenericTableViewCell {
     
+    var minValue : NSNumber?
+    var maxValue : NSNumber?
+    
     var titleView : UIView?
     var sliderView : UIView?
     
@@ -128,7 +131,6 @@ class SliderTableViewCell: GenericTableViewCell {
             
         }
         
-        
     }
     
     func sliderMinLabelChanged(sender: UISlider) {
@@ -147,6 +149,8 @@ class SliderTableViewCell: GenericTableViewCell {
         }else{
             sliderMinLabel!.text = "Min \nOff"
         }
+        
+        minValue = value
         
     }
     
@@ -167,6 +171,9 @@ class SliderTableViewCell: GenericTableViewCell {
         }else{
             sliderMaxLabel!.text = "Max \nOff"
         }
+        
+        maxValue = value
+
     }
     
     

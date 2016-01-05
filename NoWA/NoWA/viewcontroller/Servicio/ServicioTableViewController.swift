@@ -82,6 +82,7 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         let genericCell = tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
+        genericCell.tag = indexPath.row
         
         if identificador == "AcceptButtonCell"{
             genericCell.acceptDelegate = self
@@ -108,7 +109,13 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
             defaultLocation = place
         }
         
-        let predictionCell = tableView.dequeueReusableCellWithIdentifier("PredictionSliderCell", forIndexPath:NSIndexPath(forItem: 8, inSection: 0)) as! PredictionTableViewCell
+        let temperatureCell = tableView.dequeueReusableCellWithIdentifier("SliderCell", forIndexPath:NSIndexPath(forItem: 4, inSection: 0)) as! SliderTableViewCell
+        if let minTemp = temperatureCell.minValue{
+            defaultMinTemp = minTemp
+        }
+
+        let predictionCell = tableView.viewWithTag(8) as! PredictionTableViewCell
+//        let predictionCell = tableView.dequeueReusableCellWithIdentifier("PredictionSliderCell", forIndexPath:NSIndexPath(forItem: 8, inSection: 0)) as! PredictionTableViewCell
         if let prediction = predictionCell.prediction{
             defaultPrediction = prediction
         }
