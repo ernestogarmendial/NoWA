@@ -8,14 +8,17 @@
 
 import UIKit
 
-class PickerTableViewCell: GenericTableViewCell {
+class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
+    
+    var condition : NSNumber?
     
     var titleLabel : UILabel?
     var descriptionLabel : UILabel?
     var selectedLabel : UILabel?
     var leftIcon : UIImageView?
     var rightButton : UIButton?
-    
+    var conditions : [ConditionDTO]?
+    var conditionsPicker:NSMutableArray!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,7 +40,6 @@ class PickerTableViewCell: GenericTableViewCell {
         self.addSubview(titleLabel!)
         
         descriptionLabel = UILabel()
-        descriptionLabel!.text = "LLuvioso (Hardcode)"
         descriptionLabel!.textColor = .whiteColor()
         descriptionLabel!.font = UIFont.appLatoFontOfSize(14)
         descriptionLabel!.adjustsFontSizeToFitWidth = true
@@ -49,6 +51,11 @@ class PickerTableViewCell: GenericTableViewCell {
         rightButton!.addTarget(self, action: "rightButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.addSubview(rightButton!)
+        
+        // comentado pq se rompe por caracter con tilde (Unable to convert data to string around character 135)
+//        callService()
+        // comentado pq se rompe por caracter con tilde (Unable to convert data to string around character 135)
+
         setupConstrains()
     }
     
@@ -83,7 +90,6 @@ class PickerTableViewCell: GenericTableViewCell {
         leftIcon!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
         
         titleLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: leftIcon!)
-//        titleLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         titleLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         titleLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.60)
         titleLabel!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.80)
@@ -99,30 +105,58 @@ class PickerTableViewCell: GenericTableViewCell {
         rightButton!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
     }
     
-    func rightButtonPressed(){
-        print("pepe")
-        
-        callService()
-
-    }
     
     func callService(){
-        
         let weatherService : WeatherService = WeatherService()
-        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getForecastsFinish:")
+        weatherService.getConditions(token: UserService.currentUser.token,target: self,message: "getConditionsFinish:")
     }
     
-    
-    
-    
-    func getForecastsFinish (result : ServiceResult!){
+    func getConditionsFinish (result : ServiceResult!){
         if(result.hasErrors()){
             print("Error papu")
             return
         }
         
-//        self.forecasts = (result.entityForKey("Forecasts") as? WeatherDTO)
+        self.conditions = (result.entityForKey("Conditions") as! [ConditionDTO])
         
-
+        conditionsPicker = NSMutableArray()
+        
+        for condition in conditions! {
+            conditionsPicker.addObject(condition.name!)
+        }
+        
+        if self.condition == nil{
+            if let firstCondition : String = conditionsPicker[0] as? String {
+                self.descriptionLabel!.text = firstCondition
+            }
+        }
+        
+    }
+    
+    
+    func rightButtonPressed(){
+        print("right ButtonPressedpressed")
+        
+        if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
+            let popupViewController = PopUpPickerViewController()
+            popupViewController.locationsPicker = conditionsPicker
+            popupViewController.delegate = self
+            rootViewController.addChildViewController(popupViewController)
+            dispatch_async(dispatch_get_main_queue()) {
+                popupViewController.view.frame = rootViewController.view.frame
+                rootViewController.view.addSubview(popupViewController.view)
+                popupViewController.didMoveToParentViewController(rootViewController)
+                popupViewController.view.alpha = 0
+                UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    popupViewController.view.alpha = 1
+                    }, completion: nil)
+            }
+        }
+    }
+    
+    
+    func pickerOptionSelected(selectedRow : Int){
+        self.descriptionLabel!.text = self.conditions![selectedRow].name!
+        self.condition = self.conditions![selectedRow].conditionID!
     }
 }

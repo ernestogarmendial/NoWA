@@ -10,6 +10,7 @@ import UIKit
 
 class ServicioTableViewController: GenericTableViewController, ButtonFooterDelegate {
     
+    var defaultService : NSNumber?
     
     var cellsArray: NSMutableArray!
     
@@ -34,10 +35,6 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         self.tabBarController!.navigationItem.rightBarButtonItem = nil
-    }
-    
-    func addAlarm(){
-        print("add Alarm")
     }
     
     
@@ -83,6 +80,28 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
     
     func acceptButtonPressed() {
         print("delegado")
-//        let num
+        
+        setDefault()
+        
     }
+    
+    func setDefault(){
+        
+       let serviceCell = tableView.dequeueReusableCellWithIdentifier("ServicePicker", forIndexPath:NSIndexPath(forItem: 0, inSection: 0)) as! ServicePickerTableViewCell
+        defaultService = serviceCell.service
+        
+//        let weatherService : WeatherService = WeatherService()
+//        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getForecastsFinish:")
+    }
+    
+    func getForecastsFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+//        self.forecasts = (result.entityForKey("Forecasts") as! [ForecastDTO])
+    }
+    
+    
 }

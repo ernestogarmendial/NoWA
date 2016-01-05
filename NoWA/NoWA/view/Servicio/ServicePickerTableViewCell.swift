@@ -118,14 +118,12 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         for forecast in forecasts! {
             forecastsPicker.addObject(forecast.name!)
-        }
-        
-        if self.service == nil{
-            if let firstForecast : String = forecastsPicker[0] as? String {
-                self.selectedServiceLabel!.text = firstForecast
+            if self.service == nil{
+                self.service = forecast.forecastID
+                self.selectedServiceLabel!.text = forecast.name
+                
             }
         }
-        
     }
     
     func pickerOptionSelected(selectedRow : Int){

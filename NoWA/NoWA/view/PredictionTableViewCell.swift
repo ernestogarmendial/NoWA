@@ -10,15 +10,14 @@ import UIKit
 
 class PredictionTableViewCell: GenericTableViewCell {
     
+    var prediction : NSNumber?
+    
     var titleView : UIView?
     var sliderView : UIView?
-    
     var explainLabel : UILabel?
-    
     var titleLabel : UILabel?
     var leftIcon : UIImageView?
     var sliderLeft : UISlider?
-    
     var sliderLabel : UILabel?
     
     
@@ -60,6 +59,9 @@ class PredictionTableViewCell: GenericTableViewCell {
         self.addSubview(sliderLabel!)
         
         sliderLeft = UISlider()
+        if self.prediction != nil{
+            sliderLeft!.value = self.prediction as! Float
+        }
         sliderLeft!.minimumValue = 0
         sliderLeft!.maximumValue = 10
         sliderLeft!.tintColor = UIColor.loginBlueColor()
