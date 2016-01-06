@@ -74,6 +74,7 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         let genericCell = tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
+        //        genericCell.alarmDefaults = self.defaultDataDTO
         genericCell.tag = indexPath.row + 100
         
         if identificador == "AcceptButtonCell"{
@@ -182,7 +183,11 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
             return
         }
         
-        self.defaultDataDTO = result.entityForKey("GetDefault") as! AlarmDTO
+        self.defaultDataDTO = result.entityForKey("GetDefault") as? AlarmDTO
         
+        let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
+        temperatureCell.sliderLeft!.value = Float((self.defaultDataDTO?.minTemp)!)
     }
+    
+    
 }

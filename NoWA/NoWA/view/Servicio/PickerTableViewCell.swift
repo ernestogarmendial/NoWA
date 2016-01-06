@@ -63,22 +63,17 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     }
     
     override func setItems(myDictionary: NSDictionary) {
-        
         if let left_icon = myDictionary["left_icon"] as? String{
             leftIcon!.image = UIImage(named: left_icon)
-            
         }
-        
         if let right_icon = myDictionary["right_icon"] as? String{
             rightButton!.setImage(UIImage(named: right_icon), forState: UIControlState.Normal)
-            
         }
-        
         if let title = myDictionary["title"] as? String{
             titleLabel!.text = title
-            
         }
     }
+
     
     func setupConstrains(){
         
@@ -127,13 +122,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
                 
             }
         }
-        
-//        if self.condition == nil{
-//            if let firstCondition : String = conditionsPicker[0] as? String {
-//                self.descriptionLabel!.text = firstCondition
-//            }
-//        }
-        
+
     }
     
     

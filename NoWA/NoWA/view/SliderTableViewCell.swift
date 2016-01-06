@@ -103,37 +103,38 @@ class SliderTableViewCell: GenericTableViewCell {
     override func setItems(myDictionary: NSDictionary){
         if let left_icon = myDictionary["left_icon"] as? String{
             leftIcon!.image = UIImage(named: left_icon)
-            
         }
-        
         if let right_icon = myDictionary["right_icon"] as? String{
             rightIconString = right_icon
         }
-        
         if let title = myDictionary["title"] as? String{
             titleLabel!.text = title
         }
-        
         if let cellUnity = myDictionary["unity"] as? String{
             unity = cellUnity
         }
-        
         if let minValue = myDictionary["min"] as? Float{
             sliderLeft!.minimumValue = minValue
             sliderRight!.minimumValue = minValue
             sliderLeft!.value = minValue
             self.minValue = minValue
         }
-        
         if let maxValue = myDictionary["max"] as? Float{
             sliderLeft!.maximumValue = maxValue
             sliderRight!.maximumValue = maxValue
             sliderRight!.value = maxValue
             self.maxValue = maxValue
-
-            
         }
-        
+    }
+    
+    override func setDefaults(myDefault: AlarmDTO) {
+        if self.titleLabel == "TEMPERATURA"{
+            self.minValue = myDefault.minTemp
+            self.maxValue = myDefault.maxTemp
+            self.sliderLeft?.value = Float(myDefault.minTemp)
+            self.sliderRight?.value = Float(myDefault.maxTemp)
+
+        }
     }
     
     func sliderMinLabelChanged(sender: UISlider) {
