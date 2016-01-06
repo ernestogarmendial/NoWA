@@ -154,9 +154,17 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
             return
         }
         
-        print("pepito")
+        let alert = UIAlertController(title: "Servicio", message: "Se han guardado tus preferencias", preferredStyle: UIAlertControllerStyle.Alert)
         
-        //        self.forecasts = (result.entityForKey("Forecasts") as! [ForecastDTO])
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        let delay = 1 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     
