@@ -19,6 +19,7 @@
 		941CA12C1C322DC1004E4969 /* WeatherDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA12B1C322DC1004E4969 /* WeatherDAO.swift */; };
 		941CA1301C323B66004E4969 /* ForecastDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA12F1C323B66004E4969 /* ForecastDTO.swift */; };
 		941CA1321C3B676F004E4969 /* ConditionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA1311C3B676F004E4969 /* ConditionDTO.swift */; };
+		941CA1341C3CB49D004E4969 /* AlarmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA1331C3CB49D004E4969 /* AlarmDTO.swift */; };
 		9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB221C2A0DBC003CDB83 /* Reachability.m */; };
 		9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */; };
 		9425DB291C2A0E34003CDB83 /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB281C2A0E34003CDB83 /* GenericDAO.swift */; };
@@ -94,6 +95,7 @@
 		941CA12B1C322DC1004E4969 /* WeatherDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDAO.swift; path = dao/WeatherDAO.swift; sourceTree = "<group>"; };
 		941CA12F1C323B66004E4969 /* ForecastDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForecastDTO.swift; path = model/dto/ForecastDTO.swift; sourceTree = "<group>"; };
 		941CA1311C3B676F004E4969 /* ConditionDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConditionDTO.swift; path = model/dto/ConditionDTO.swift; sourceTree = "<group>"; };
+		941CA1331C3CB49D004E4969 /* AlarmDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmDTO.swift; path = model/dto/AlarmDTO.swift; sourceTree = "<group>"; };
 		9425DB211C2A0DBC003CDB83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9425DB221C2A0DBC003CDB83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				941CA12F1C323B66004E4969 /* ForecastDTO.swift */,
 				94500D661C3455FD003A70FA /* LocationDTO.swift */,
 				941CA1311C3B676F004E4969 /* ConditionDTO.swift */,
+				941CA1331C3CB49D004E4969 /* AlarmDTO.swift */,
 			);
 			name = dto;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */,
 				941CA1301C323B66004E4969 /* ForecastDTO.swift in Sources */,
 				9425DB311C2A0ED4003CDB83 /* MyMelodyDTO.swift in Sources */,
+				941CA1341C3CB49D004E4969 /* AlarmDTO.swift in Sources */,
 				9425DB361C2A0F09003CDB83 /* ServiceResult.swift in Sources */,
 				94500D611C344616003A70FA /* LocationTableViewCell.swift in Sources */,
 				941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */,

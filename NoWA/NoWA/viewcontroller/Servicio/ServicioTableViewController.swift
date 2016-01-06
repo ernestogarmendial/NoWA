@@ -10,18 +10,7 @@ import UIKit
 
 class ServicioTableViewController: GenericTableViewController, ButtonFooterDelegate {
     
-    var defaultService : NSNumber?
-    var defaultLocation : String?
-    var defaultCondition : NSNumber?
-    var defaultPrediction : NSNumber?
-    var defaultMinTemp : NSNumber?
-    var defaultMaxTemp : NSNumber?
-    var defaultMinSnow : NSNumber?
-    var defaultMaxSnow : NSNumber?
-    var defaultMinWind : NSNumber?
-    var defaultMaxWind : NSNumber?
-    var defaultMinHumidity : NSNumber?
-    var defaultMaxHumidity : NSNumber?
+    var defaultWeatherDTO : AlarmDTO?
     
     var cellsArray: NSMutableArray!
     
@@ -99,51 +88,73 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
     
     func setDefault(){
         
+        defaultWeatherDTO = AlarmDTO()
+        
         let serviceCell = tableView.viewWithTag(100) as! ServicePickerTableViewCell
         if let service = serviceCell.service{
-            defaultService = service
+            defaultWeatherDTO?.service = service
         }
         
         let locationCell = tableView.viewWithTag(101) as! LocationTableViewCell
         if let place = locationCell.place{
-            defaultLocation = place
+            defaultWeatherDTO?.place = place
         }
         
         let conditionCell = tableView.viewWithTag(103) as! PickerTableViewCell
         if let condition = conditionCell.condition{
-            defaultCondition = condition
+            defaultWeatherDTO?.condition = condition
         }
-
+        
         let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
         if let minTemp = temperatureCell.minValue{
-            defaultMinTemp = minTemp
+            defaultWeatherDTO?.minTemp = minTemp
         }
         if let maxTemp = temperatureCell.maxValue{
-            defaultMaxTemp = maxTemp
+            defaultWeatherDTO?.maxTemp = maxTemp
         }
         
         let windCell = tableView.viewWithTag(105) as! SliderTableViewCell
         if let minWind = windCell.minValue{
-            defaultMinWind = minWind
+            defaultWeatherDTO?.minWind = minWind
         }
-        if let maxWind = temperatureCell.maxValue{
-            defaultMaxWind = maxWind
-        }
-
-        let predictionCell = tableView.viewWithTag(108) as! PredictionTableViewCell
-        if let prediction = predictionCell.prediction{
-            defaultPrediction = prediction
+        if let maxWind = windCell.maxValue{
+            defaultWeatherDTO?.maxWind = maxWind
         }
         
-        //        let weatherService : WeatherService = WeatherService()
-        //        weatherService.getForecasts(token: UserService.currentUser.token,target: self,message: "getForecastsFinish:")
+        let humidityCell = tableView.viewWithTag(106) as! SliderTableViewCell
+        if let minHumidity = humidityCell.minValue{
+            defaultWeatherDTO?.minHumidity = minHumidity
+        }
+        if let maxHumidity = humidityCell.maxValue{
+            defaultWeatherDTO?.maxHumidity = maxHumidity
+        }
+        
+        let snowCell = tableView.viewWithTag(107) as! SliderTableViewCell
+        if let minSnow = snowCell.minValue{
+            defaultWeatherDTO?.minSnow = minSnow
+        }
+        if let maxSnow = snowCell.maxValue{
+            defaultWeatherDTO?.maxSnow = maxSnow
+        }
+        
+        let predictionCell = tableView.viewWithTag(108) as! PredictionTableViewCell
+        if let prediction = predictionCell.prediction{
+            defaultWeatherDTO?.prediction = prediction
+        }
+        
+        
+        let weatherService : WeatherService = WeatherService()
+        weatherService.setDefault( weatherDTO: defaultWeatherDTO, token: UserService.currentUser.token,target: self,message: "setDefaultFinish:")
+        
     }
     
-    func getForecastsFinish (result : ServiceResult!){
+    func setDefaultFinish (result : ServiceResult!){
         if(result.hasErrors()){
             print("Error papu")
             return
         }
+        
+        print("pepito")
         
         //        self.forecasts = (result.entityForKey("Forecasts") as! [ForecastDTO])
     }
