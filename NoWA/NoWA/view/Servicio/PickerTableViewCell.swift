@@ -53,7 +53,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         self.addSubview(rightButton!)
         
         callService()
-
+        
         setupConstrains()
     }
     
@@ -121,13 +121,18 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         for condition in conditions! {
             conditionsPicker.addObject(condition.name!)
-        }
-        
-        if self.condition == nil{
-            if let firstCondition : String = conditionsPicker[0] as? String {
-                self.descriptionLabel!.text = firstCondition
+            if self.condition == nil{
+                self.condition = condition.conditionID
+                self.descriptionLabel!.text = condition.name
+                
             }
         }
+        
+//        if self.condition == nil{
+//            if let firstCondition : String = conditionsPicker[0] as? String {
+//                self.descriptionLabel!.text = firstCondition
+//            }
+//        }
         
     }
     

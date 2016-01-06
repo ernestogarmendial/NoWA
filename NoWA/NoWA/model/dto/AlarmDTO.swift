@@ -29,17 +29,17 @@ class AlarmDTO: GenericDTO {
     
     override class func mapping() -> RKObjectMapping {
         
-        let mapping = RKObjectMapping(forClass: ConditionDTO.self)
+        let mapping = RKObjectMapping(forClass: AlarmDTO.self)
         mapping.addAttributeMappingsFromDictionary([
             
+            "condition": "condition",
             "stamp": "stamp",
             "status": "status",
-            "condition": "condition",
             "maxWind": "maxWind",
             "prediction": "prediction",
             "minTemp": "minTemp",
             "minHumidity": "minHumidity",
-            "id": "id",
+            "id": "alarmID",
             "maxTemp": "maxTemp",
             "minWind": "minWind",
             "isDefault": "isDefault",

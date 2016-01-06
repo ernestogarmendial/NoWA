@@ -144,7 +144,7 @@ class WeatherDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
     
-        let place : String?
+        let place : String!
         if _weatherDTO!.place == nil{
             place = "place"
         }else{
@@ -157,6 +157,7 @@ class WeatherDAO: GenericDAO {
             path: "weather/set/default/\(_weatherDTO.condition!.intValue)/\(_weatherDTO.prediction!.intValue)/\(_weatherDTO.minTemp!.intValue)/\(_weatherDTO.maxTemp!.intValue)/\(_weatherDTO.minHumidity!.intValue)/\(_weatherDTO.maxHumidity!.intValue)/\(_weatherDTO.minWind!.intValue)/\(_weatherDTO.maxWind!.intValue)/\(_weatherDTO.minSnow!.intValue)/\(_weatherDTO.maxSnow!.intValue)/\(_weatherDTO.service!.intValue)/\(place)/\(_token)/",
             parameters: nil)
         
+        print("weather/set/default/\(_weatherDTO.condition!.intValue)/\(_weatherDTO.prediction!.intValue)/\(_weatherDTO.minTemp!.intValue)/\(_weatherDTO.maxTemp!.intValue)/\(_weatherDTO.minHumidity!.intValue)/\(_weatherDTO.maxHumidity!.intValue)/\(_weatherDTO.minWind!.intValue)/\(_weatherDTO.maxWind!.intValue)/\(_weatherDTO.minSnow!.intValue)/\(_weatherDTO.maxSnow!.intValue)/\(_weatherDTO.service!.intValue)/\(place)/\(_token)/")
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in
