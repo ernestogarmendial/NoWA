@@ -48,9 +48,9 @@
 		<key>unity</key>
 		<string>°C</string>
 		<key>min</key>
-		<integer>0</integer>
+		<integer>-40</integer>
 		<key>max</key>
-		<integer>100</integer>
+		<integer>50</integer>
 		<key>height</key>
 		<integer>80</integer>
 	</dict>
@@ -64,9 +64,9 @@
 		<key>unity</key>
 		<string>km/h</string>
 		<key>min</key>
-		<integer>0</integer>
+		<integer>19</integer>
 		<key>max</key>
-		<integer>100</integer>
+		<integer>52</integer>
 		<key>height</key>
 		<integer>80</integer>
 	</dict>

@@ -52,9 +52,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         self.addSubview(rightButton!)
         
-        // comentado pq se rompe por caracter con tilde (Unable to convert data to string around character 135)
-//        callService()
-        // comentado pq se rompe por caracter con tilde (Unable to convert data to string around character 135)
+        callService()
 
         setupConstrains()
     }

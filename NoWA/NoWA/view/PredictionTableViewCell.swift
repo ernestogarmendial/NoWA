@@ -49,7 +49,6 @@ class PredictionTableViewCell: GenericTableViewCell {
         self.addSubview(explainLabel!)
         
         sliderLabel = UILabel()
-        sliderLabel!.text =  "Off"
         sliderLabel!.textColor = .whiteColor()
         sliderLabel!.font = UIFont.appLatoFontOfSize(12)
         sliderLabel!.adjustsFontSizeToFitWidth = true
@@ -61,12 +60,14 @@ class PredictionTableViewCell: GenericTableViewCell {
         if self.prediction != nil{
             sliderLeft!.value = self.prediction as! Float
         }
-        sliderLeft!.minimumValue = 0
-        sliderLeft!.maximumValue = 10
+        sliderLeft!.minimumValue = 1
+        sliderLeft!.maximumValue = 3
         sliderLeft!.tintColor = UIColor.loginBlueColor()
         sliderLeft!.addTarget(self, action: "sliderValueChanged:", forControlEvents: .ValueChanged)
         self.addSubview(sliderLeft!)
         
+        self.prediction = sliderLeft!.minimumValue
+        sliderLabel!.text = "\(Int(sliderLeft!.minimumValue))hs"
         
         titleView = UIView()
         titleView!.addSubview(leftIcon!)
@@ -147,11 +148,11 @@ class PredictionTableViewCell: GenericTableViewCell {
         
         self.prediction = value as NSNumber
         
-        if value != Int((sliderLeft?.minimumValue)!) {
+//        if value != Int((sliderLeft?.minimumValue)!) {
             sliderLabel!.text = "\(String(value))hs"
-        }else{
-            sliderLabel!.text = "Off"
-        }
+//        }else{
+//            sliderLabel!.text = "Off"
+//        }
     }
     
     

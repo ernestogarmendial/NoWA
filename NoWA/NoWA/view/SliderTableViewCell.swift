@@ -122,12 +122,15 @@ class SliderTableViewCell: GenericTableViewCell {
             sliderLeft!.minimumValue = minValue
             sliderRight!.minimumValue = minValue
             sliderLeft!.value = minValue
+            self.minValue = minValue
         }
         
         if let maxValue = myDictionary["max"] as? Float{
             sliderLeft!.maximumValue = maxValue
             sliderRight!.maximumValue = maxValue
             sliderRight!.value = maxValue
+            self.maxValue = maxValue
+
             
         }
         

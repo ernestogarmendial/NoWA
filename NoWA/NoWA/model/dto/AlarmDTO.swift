@@ -10,18 +10,18 @@ import UIKit
 
 class AlarmDTO: GenericDTO {
 
-    var service : NSNumber?
+    var service : NSNumber!
     var place : String?
-    var condition : NSNumber?
-    var prediction : NSNumber?
-    var minTemp : NSNumber?
-    var maxTemp : NSNumber?
-    var minSnow : NSNumber?
-    var maxSnow : NSNumber?
-    var minWind : NSNumber?
-    var maxWind : NSNumber?
-    var minHumidity : NSNumber?
-    var maxHumidity : NSNumber?
+    var condition : NSNumber!
+    var prediction : NSNumber!
+    var minTemp : NSNumber!
+    var maxTemp : NSNumber!
+    var minSnow : NSNumber!
+    var maxSnow : NSNumber!
+    var minWind : NSNumber!
+    var maxWind : NSNumber!
+    var minHumidity : NSNumber!
+    var maxHumidity : NSNumber!
     var stamp : String?
     var alarmID : NSNumber?
     var status : NSNumber?
