@@ -82,7 +82,7 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         let genericCell = tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
-        genericCell.tag = indexPath.row
+        genericCell.tag = indexPath.row + 100
         
         if identificador == "AcceptButtonCell"{
             genericCell.acceptDelegate = self
@@ -99,23 +99,38 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
     
     func setDefault(){
         
-        let serviceCell = tableView.dequeueReusableCellWithIdentifier("ServicePicker", forIndexPath:NSIndexPath(forItem: 0, inSection: 0)) as! ServicePickerTableViewCell
+        let serviceCell = tableView.viewWithTag(100) as! ServicePickerTableViewCell
         if let service = serviceCell.service{
             defaultService = service
         }
         
-        let locationCell = tableView.dequeueReusableCellWithIdentifier("LocationCell", forIndexPath:NSIndexPath(forItem: 1, inSection: 0)) as! LocationTableViewCell
+        let locationCell = tableView.viewWithTag(101) as! LocationTableViewCell
         if let place = locationCell.place{
             defaultLocation = place
         }
         
-        let temperatureCell = tableView.dequeueReusableCellWithIdentifier("SliderCell", forIndexPath:NSIndexPath(forItem: 4, inSection: 0)) as! SliderTableViewCell
+        let conditionCell = tableView.viewWithTag(103) as! PickerTableViewCell
+        if let condition = conditionCell.condition{
+            defaultCondition = condition
+        }
+
+        let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
         if let minTemp = temperatureCell.minValue{
             defaultMinTemp = minTemp
         }
+        if let maxTemp = temperatureCell.maxValue{
+            defaultMaxTemp = maxTemp
+        }
+        
+        let windCell = tableView.viewWithTag(105) as! SliderTableViewCell
+        if let minWind = windCell.minValue{
+            defaultMinWind = minWind
+        }
+        if let maxWind = temperatureCell.maxValue{
+            defaultMaxWind = maxWind
+        }
 
-        let predictionCell = tableView.viewWithTag(8) as! PredictionTableViewCell
-//        let predictionCell = tableView.dequeueReusableCellWithIdentifier("PredictionSliderCell", forIndexPath:NSIndexPath(forItem: 8, inSection: 0)) as! PredictionTableViewCell
+        let predictionCell = tableView.viewWithTag(108) as! PredictionTableViewCell
         if let prediction = predictionCell.prediction{
             defaultPrediction = prediction
         }
