@@ -11,6 +11,7 @@ import UIKit
 class ServicioTableViewController: GenericTableViewController, ButtonFooterDelegate {
     
     var defaultWeatherDTO : AlarmDTO?
+    var defaultDataDTO : AlarmDTO?
     
     var cellsArray: NSMutableArray!
     
@@ -29,6 +30,8 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         
         let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
+        
+        getDefaults()
         
     }
     
@@ -167,5 +170,19 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         }
     }
     
+    func getDefaults(){
+        let weatherService : WeatherService = WeatherService()
+        weatherService.getDefault(token: UserService.currentUser.token,target: self,message: "getDefaultFinish:")
+        
+    }
     
+    func getDefaultFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        self.defaultDataDTO = result.entityForKey("GetDefault") as! AlarmDTO
+        
+    }
 }

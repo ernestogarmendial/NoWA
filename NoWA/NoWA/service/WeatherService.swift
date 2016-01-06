@@ -95,12 +95,37 @@ class WeatherService: GenericService {
                 self.callMessage(target: _target, message: _message, withResult: serviceResult)
             }else{
                 
-                serviceResult.addEntity(defaultDTO, forKey: "Default")
+                serviceResult.addEntity(defaultDTO, forKey: "SetDefault")
                 
                 self.callMessage(target: _target, message: _message, withResult: serviceResult)
             }
         })
     }
-    
+    func getDefault(token _token :String?, target _target : NSObject, message _message : String ) {
+        
+        let serviceResult = ServiceResult()
+        
+        if !TTInternetConnection.sharedInstance().internetAccess() {
+            serviceResult.addError("No Internet")
+            self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            return
+        }
+        
+        let weatherDAO: WeatherDAO = WeatherDAO()
+        weatherDAO.delegate = self
+        weatherDAO.getDefault(token: _token, handler: { (operation, result) in
+            let defaultDTO = result as? AlarmDTO;
+            
+            if(defaultDTO == nil){
+                serviceResult.addErrorsFromDTO(defaultDTO!)
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }else{
+                
+                serviceResult.addEntity(defaultDTO, forKey: "GetDefault")
+                
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }
+        })
+    }
     
 }
