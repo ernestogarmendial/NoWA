@@ -148,12 +148,14 @@ class PredictionTableViewCell: GenericTableViewCell {
         
         self.prediction = value as NSNumber
         
-//        if value != Int((sliderLeft?.minimumValue)!) {
-            sliderLabel!.text = "\(String(value))hs"
-//        }else{
-//            sliderLabel!.text = "Off"
-//        }
+        sliderLabel!.text = "\(String(value))hs"
+        
     }
     
+    func setDefaults(prediction : NSNumber) {
+        self.prediction = prediction
+        self.sliderLeft!.value = Float(prediction)
+        self.sliderLabel!.text = "\(String(prediction))hs"
+    }
     
 }

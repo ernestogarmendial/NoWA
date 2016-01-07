@@ -14,7 +14,6 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     var titleLabel : UILabel?
     var descriptionLabel : UILabel?
-    var selectedLabel : UILabel?
     var leftIcon : UIImageView?
     var rightButton : UIButton?
     var conditions : [ConditionDTO]?
@@ -73,7 +72,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
             titleLabel!.text = title
         }
     }
-
+    
     
     func setupConstrains(){
         
@@ -122,7 +121,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
                 
             }
         }
-
+        
     }
     
     
@@ -151,4 +150,21 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         self.descriptionLabel!.text = self.conditions![selectedRow].name!
         self.condition = self.conditions![selectedRow].conditionID!
     }
+    
+    func setDefaults(condition : NSNumber) {
+        self.condition = condition
+        
+        let delay = 3 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+            if self.conditions != nil {
+                for cond in self.conditions!{
+                    if cond.conditionID == condition{
+                        self.descriptionLabel!.text = cond.name
+                    }
+                }
+            }
+        }
+    }
+    
 }

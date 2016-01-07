@@ -98,17 +98,14 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         if let service = serviceCell.service{
             defaultWeatherDTO?.service = service
         }
-        
         let locationCell = tableView.viewWithTag(101) as! LocationTableViewCell
         if let place = locationCell.locationTextField!.text{//locationCell.place{
             defaultWeatherDTO?.place = place
         }
-        
         let conditionCell = tableView.viewWithTag(103) as! PickerTableViewCell
         if let condition = conditionCell.condition{
             defaultWeatherDTO?.condition = condition
         }
-        
         let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
         if let minTemp = temperatureCell.minValue{
             defaultWeatherDTO?.minTemp = minTemp
@@ -116,7 +113,6 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         if let maxTemp = temperatureCell.maxValue{
             defaultWeatherDTO?.maxTemp = maxTemp
         }
-        
         let windCell = tableView.viewWithTag(105) as! SliderTableViewCell
         if let minWind = windCell.minValue{
             defaultWeatherDTO?.minWind = minWind
@@ -124,7 +120,6 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         if let maxWind = windCell.maxValue{
             defaultWeatherDTO?.maxWind = maxWind
         }
-        
         let humidityCell = tableView.viewWithTag(106) as! SliderTableViewCell
         if let minHumidity = humidityCell.minValue{
             defaultWeatherDTO?.minHumidity = minHumidity
@@ -132,7 +127,6 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         if let maxHumidity = humidityCell.maxValue{
             defaultWeatherDTO?.maxHumidity = maxHumidity
         }
-        
         let snowCell = tableView.viewWithTag(107) as! SliderTableViewCell
         if let minSnow = snowCell.minValue{
             defaultWeatherDTO?.minSnow = minSnow
@@ -140,12 +134,10 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         if let maxSnow = snowCell.maxValue{
             defaultWeatherDTO?.maxSnow = maxSnow
         }
-        
         let predictionCell = tableView.viewWithTag(108) as! PredictionTableViewCell
         if let prediction = predictionCell.prediction{
             defaultWeatherDTO?.prediction = prediction
         }
-        
         
         let weatherService : WeatherService = WeatherService()
         weatherService.setDefault( weatherDTO: defaultWeatherDTO, token: UserService.currentUser.token,target: self,message: "setDefaultFinish:")
@@ -196,7 +188,7 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
             }
             
             let conditionCell = tableView.viewWithTag(103) as! PickerTableViewCell
-            
+            conditionCell.setDefaults(defaultDTO.condition)
             
             let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
             temperatureCell.setDefaults(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
@@ -211,8 +203,17 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
             let snowCell = tableView.viewWithTag(107) as! SliderTableViewCell
             snowCell.setDefaults(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow)
             
-            //            let predictionCell = tableView.viewWithTag(108) as! PredictionTableViewCell
-            //            predictionCell.setDefaults(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
+            dispatch_async(dispatch_get_main_queue()) {
+                _ = self.tableView(self.tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 8, inSection: 0) )
+                
+//                let delay = 3 * Double(NSEC_PER_SEC)
+//                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+//                dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+                    let predictionCell = self.tableView.viewWithTag(108) as! PredictionTableViewCell
+                    predictionCell.setDefaults(defaultDTO.prediction)
+//                }
+            }
+            
             
             
         }

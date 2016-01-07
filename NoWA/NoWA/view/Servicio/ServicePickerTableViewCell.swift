@@ -134,14 +134,15 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     func setDefaults(service : NSNumber) {
         self.service = service
         
-        let delay = 1.5 * Double(NSEC_PER_SEC)
+        let delay = 3 * Double(NSEC_PER_SEC)
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-            for forecast in self.forecasts!{
-                if forecast.forecastID == service{
-                    self.selectedServiceLabel!.text = forecast.name
+            if self.forecasts != nil{
+                for forecast in self.forecasts!{
+                    if forecast.forecastID == service{
+                        self.selectedServiceLabel!.text = forecast.name
+                    }
                 }
-                
             }
         }
     }
