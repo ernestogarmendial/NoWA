@@ -134,15 +134,15 @@ class SliderTableViewCell: GenericTableViewCell {
         self.sliderRight?.value = Float(maxDefaultValue)
         
         if minDefaultValue != sliderLeft?.minimumValue{
-            self.sliderMinLabel?.text = String(minDefaultValue)
+            self.sliderMinLabel?.text = "Min \n \(String(minDefaultValue)) \(unity)"
         }else{
-            self.sliderMinLabel?.text = "Off"
+            self.sliderMinLabel?.text = "Min \nOff"
         }
         
         if maxDefaultValue != sliderLeft?.maximumValue{
-            self.sliderMaxLabel?.text = String(maxDefaultValue)
+            self.sliderMaxLabel?.text = "Max \n \(String(maxDefaultValue)) \(unity)"
         }else{
-            self.sliderMaxLabel?.text = "Off"
+            self.sliderMaxLabel?.text = "Max \nOff"
         }
         
     }
