@@ -127,14 +127,24 @@ class SliderTableViewCell: GenericTableViewCell {
         }
     }
     
-    override func setDefaults(myDefault: AlarmDTO) {
-        if self.titleLabel == "TEMPERATURA"{
-            self.minValue = myDefault.minTemp
-            self.maxValue = myDefault.maxTemp
-            self.sliderLeft?.value = Float(myDefault.minTemp)
-            self.sliderRight?.value = Float(myDefault.maxTemp)
-
+    func setDefaults(minDefaultValue : NSNumber, maxDefaultValue : NSNumber) {
+        self.minValue = minDefaultValue
+        self.maxValue = maxDefaultValue
+        self.sliderLeft?.value = Float(minDefaultValue)
+        self.sliderRight?.value = Float(maxDefaultValue)
+        
+        if minDefaultValue != sliderLeft?.minimumValue{
+            self.sliderMinLabel?.text = String(minDefaultValue)
+        }else{
+            self.sliderMinLabel?.text = "Off"
         }
+        
+        if maxDefaultValue != sliderLeft?.maximumValue{
+            self.sliderMaxLabel?.text = String(maxDefaultValue)
+        }else{
+            self.sliderMaxLabel?.text = "Off"
+        }
+        
     }
     
     func sliderMinLabelChanged(sender: UISlider) {
@@ -177,7 +187,7 @@ class SliderTableViewCell: GenericTableViewCell {
         }
         
         maxValue = value
-
+        
     }
     
     

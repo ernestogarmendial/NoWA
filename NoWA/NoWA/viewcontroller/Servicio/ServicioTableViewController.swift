@@ -185,9 +185,26 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         
         self.defaultDataDTO = result.entityForKey("GetDefault") as? AlarmDTO
         
-        let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
-        temperatureCell.sliderLeft!.value = Float((self.defaultDataDTO?.minTemp)!)
+        if let defaultDTO = self.defaultDataDTO {
+           
+            let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
+            temperatureCell.setDefaults(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
+            
+            let windCell = tableView.viewWithTag(105) as! SliderTableViewCell
+            windCell.setDefaults(defaultDTO.minWind, maxDefaultValue: defaultDTO.maxWind)
+
+            
+            let humidityCell = tableView.viewWithTag(106) as! SliderTableViewCell
+            humidityCell.setDefaults(defaultDTO.minHumidity, maxDefaultValue: defaultDTO.maxHumidity)
+
+            let snowCell = tableView.viewWithTag(107) as! SliderTableViewCell
+            snowCell.setDefaults(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow)
+
+//            let predictionCell = tableView.viewWithTag(108) as! PredictionTableViewCell
+//            predictionCell.setDefaults(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
+
+            
+        }
     }
-    
     
 }
