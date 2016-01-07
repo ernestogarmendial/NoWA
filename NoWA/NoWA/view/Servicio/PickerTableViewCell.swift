@@ -151,16 +151,19 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         self.condition = self.conditions![selectedRow].conditionID!
     }
     
-    func setDefaults(condition : NSNumber) {
-        self.condition = condition
-        
-        let delay = 3 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-            if self.conditions != nil {
-                for cond in self.conditions!{
-                    if cond.conditionID == condition{
-                        self.descriptionLabel!.text = cond.name
+    override func setDefaults(defaultDTO: AlarmDTO){
+        if let condition = defaultDTO.condition{
+            
+            self.condition = condition
+            
+            let delay = 3 * Double(NSEC_PER_SEC)
+            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+                if self.conditions != nil {
+                    for cond in self.conditions!{
+                        if cond.conditionID == condition{
+                            self.descriptionLabel!.text = cond.name
+                        }
                     }
                 }
             }

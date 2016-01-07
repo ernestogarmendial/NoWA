@@ -10,6 +10,12 @@ import UIKit
 
 class GenericTableViewCell: UITableViewCell {
     
+    var defaultDTO : AlarmDTO?{
+        didSet{
+            setDefaults(defaultDTO!)
+        }
+    }
+    
     var acceptDelegate : ButtonFooterDelegate?
     
     var myDictionary : NSDictionary? {
@@ -24,22 +30,22 @@ class GenericTableViewCell: UITableViewCell {
         self.contentView.backgroundColor = UIColor.darkGrayCustomColor()
         self.layoutMargins = UIEdgeInsetsZero
         self.selectionStyle = .None
-
+        
         
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     
     func setItems(myDictionary: NSDictionary){
-    
+        
     }
-
-//    func setDefaults(myDefault: AlarmDTO){
-//        
-//    }
+    
+    func setDefaults(defaultDTO: AlarmDTO){
+        
+    }
     
 }

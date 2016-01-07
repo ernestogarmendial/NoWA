@@ -27,7 +27,6 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         self.tableView.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")
         
         
-        
         let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
         
@@ -71,11 +70,15 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identificador = cellsArray[indexPath.row]["identifier"] as! String
         
-        let genericCell = tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
+        let genericCell = self.tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
         //        genericCell.alarmDefaults = self.defaultDataDTO
         genericCell.tag = indexPath.row + 100
+        
+        if (self.defaultDataDTO != nil){
+            genericCell.defaultDTO = self.defaultDataDTO
+        }
         
         if identificador == "AcceptButtonCell"{
             genericCell.acceptDelegate = self
@@ -177,46 +180,46 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         
         self.defaultDataDTO = result.entityForKey("GetDefault") as? AlarmDTO
         
-        if let defaultDTO = self.defaultDataDTO {
-            
-            let serviceCell = tableView.viewWithTag(100) as! ServicePickerTableViewCell
-            serviceCell.setDefaults(defaultDTO.service)
-            
-            if let place = defaultDTO.place {
-                let locationCell = tableView.viewWithTag(101) as! LocationTableViewCell
-                locationCell.setDefaults(place)
-            }
-            
-            let conditionCell = tableView.viewWithTag(103) as! PickerTableViewCell
-            conditionCell.setDefaults(defaultDTO.condition)
-            
-            let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
-            temperatureCell.setDefaults(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
-            
-            let windCell = tableView.viewWithTag(105) as! SliderTableViewCell
-            windCell.setDefaults(defaultDTO.minWind, maxDefaultValue: defaultDTO.maxWind)
-            
-            
-            let humidityCell = tableView.viewWithTag(106) as! SliderTableViewCell
-            humidityCell.setDefaults(defaultDTO.minHumidity, maxDefaultValue: defaultDTO.maxHumidity)
-            
-            let snowCell = tableView.viewWithTag(107) as! SliderTableViewCell
-            snowCell.setDefaults(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow)
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                _ = self.tableView(self.tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 8, inSection: 0) )
-                
-//                let delay = 3 * Double(NSEC_PER_SEC)
-//                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-//                dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-                    let predictionCell = self.tableView.viewWithTag(108) as! PredictionTableViewCell
-                    predictionCell.setDefaults(defaultDTO.prediction)
-//                }
-            }
-            
-            
-            
-        }
+        self.tableView.reloadData()
     }
+    
+    //    func setCellDefaults(genericCell: GenericTableViewCell){
+    //
+    //
+    //        if let defaultDTO = self.defaultDataDTO {
+    //
+    //            let serviceCell = tableView.viewWithTag(100) as! ServicePickerTableViewCell
+    //            serviceCell.setDefaults(defaultDTO.service)
+    //
+    //
+    //            if let place = defaultDTO.place {
+    //                let locationCell = tableView.viewWithTag(101) as! LocationTableViewCell
+    //                locationCell.setDefaults(place)
+    //            }
+    //
+    //            let conditionCell = tableView.viewWithTag(103) as! PickerTableViewCell
+    //            conditionCell.setDefaults(defaultDTO.condition)
+    //
+    //            let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
+    //            temperatureCell.setDefaults(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
+    //
+    //            let windCell = tableView.viewWithTag(105) as! SliderTableViewCell
+    //            windCell.setDefaults(defaultDTO.minWind, maxDefaultValue: defaultDTO.maxWind)
+    //
+    //
+    //            let humidityCell = tableView.viewWithTag(106) as! SliderTableViewCell
+    //            humidityCell.setDefaults(defaultDTO.minHumidity, maxDefaultValue: defaultDTO.maxHumidity)
+    //
+    //
+    //            let snowCell = tableView.viewWithTag(107) as! SliderTableViewCell
+    //            snowCell.setDefaults(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow)
+    //
+    //
+    //            let predictionCell = self.tableView.viewWithTag(108) as! PredictionTableViewCell
+    //            predictionCell.setDefaults(defaultDTO.prediction)
+    //            
+    //        }
+    //    
+    //    }
     
 }

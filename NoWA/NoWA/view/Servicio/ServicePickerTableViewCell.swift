@@ -30,7 +30,7 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         serviceLabel!.textColor = .whiteColor()
         serviceLabel!.font = UIFont.appLatoFontOfSize(14)
         serviceLabel!.adjustsFontSizeToFitWidth = true
-        serviceLabel!.textAlignment = .Left
+        serviceLabel!.textAlignment = .Center
         serviceLabel!.numberOfLines = 1
         self.addSubview(serviceLabel!)
         
@@ -65,16 +65,18 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     func setupConstrains(){
         
-        serviceLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 20)
+        serviceLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: self)
         serviceLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         serviceLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
-        serviceLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.30)
+        serviceLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.25)
         
         selectedServiceLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: serviceLabel!)
         selectedServiceLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         selectedServiceLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
+        selectedServiceLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.50)
+
         
-        pickerArrow!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.20)
+        pickerArrow!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.25)
         pickerArrow!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         pickerArrow!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         pickerArrow!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
@@ -131,7 +133,10 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         self.service = self.forecasts![selectedRow].forecastID!
     }
     
-    func setDefaults(service : NSNumber) {
+    override func setDefaults(defaultDTO: AlarmDTO){
+        
+        let service = defaultDTO.service
+        
         self.service = service
         
         let delay = 3 * Double(NSEC_PER_SEC)
