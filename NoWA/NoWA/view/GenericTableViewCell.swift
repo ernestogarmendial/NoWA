@@ -38,8 +38,8 @@ class GenericTableViewCell: UITableViewCell {
     
     }
 
-    func setDefaults(myDefault: AlarmDTO){
-        
-    }
+//    func setDefaults(myDefault: AlarmDTO){
+//        
+//    }
     
 }

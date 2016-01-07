@@ -100,7 +100,7 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         }
         
         let locationCell = tableView.viewWithTag(101) as! LocationTableViewCell
-        if let place = locationCell.place{
+        if let place = locationCell.locationTextField!.text{//locationCell.place{
             defaultWeatherDTO?.place = place
         }
         
@@ -186,23 +186,34 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         self.defaultDataDTO = result.entityForKey("GetDefault") as? AlarmDTO
         
         if let defaultDTO = self.defaultDataDTO {
-           
+            
+            let serviceCell = tableView.viewWithTag(100) as! ServicePickerTableViewCell
+            serviceCell.setDefaults(defaultDTO.service)
+            
+            if let place = defaultDTO.place {
+                let locationCell = tableView.viewWithTag(101) as! LocationTableViewCell
+                locationCell.setDefaults(place)
+            }
+            
+            let conditionCell = tableView.viewWithTag(103) as! PickerTableViewCell
+            
+            
             let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
             temperatureCell.setDefaults(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
             
             let windCell = tableView.viewWithTag(105) as! SliderTableViewCell
             windCell.setDefaults(defaultDTO.minWind, maxDefaultValue: defaultDTO.maxWind)
-
+            
             
             let humidityCell = tableView.viewWithTag(106) as! SliderTableViewCell
             humidityCell.setDefaults(defaultDTO.minHumidity, maxDefaultValue: defaultDTO.maxHumidity)
-
+            
             let snowCell = tableView.viewWithTag(107) as! SliderTableViewCell
             snowCell.setDefaults(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow)
-
-//            let predictionCell = tableView.viewWithTag(108) as! PredictionTableViewCell
-//            predictionCell.setDefaults(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
-
+            
+            //            let predictionCell = tableView.viewWithTag(108) as! PredictionTableViewCell
+            //            predictionCell.setDefaults(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
+            
             
         }
     }

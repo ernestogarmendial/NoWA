@@ -167,4 +167,10 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate, UITextFieldDel
         self.locationTextField!.text = (self.locations![selectedRow].name as! String)
         self.place = (self.locations![selectedRow].name as! String)
     }
+    
+    func setDefaults(place : String) {
+        self.place = place
+        self.locationTextField!.text = place
+        
+    }
 }
