@@ -153,9 +153,11 @@ class PredictionTableViewCell: GenericTableViewCell {
     }
     
     override func setDefaults(defaultDTO: AlarmDTO){
-//        self.prediction = prediction
-//        self.sliderLeft!.value = Float(prediction)
-//        self.sliderLabel!.text = "\(String(prediction))hs"
+        if let prediction = defaultDTO.prediction{
+            self.prediction = prediction
+            self.sliderLeft!.value = Float(prediction)
+            self.sliderLabel!.text = "\(String(prediction))hs"
+        }
     }
     
 }

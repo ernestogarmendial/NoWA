@@ -156,7 +156,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
             
             self.condition = condition
             
-            let delay = 3 * Double(NSEC_PER_SEC)
+            let delay = 1 * Double(NSEC_PER_SEC)
             let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
             dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
                 if self.conditions != nil {

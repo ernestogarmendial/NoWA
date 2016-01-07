@@ -183,43 +183,5 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         self.tableView.reloadData()
     }
     
-    //    func setCellDefaults(genericCell: GenericTableViewCell){
-    //
-    //
-    //        if let defaultDTO = self.defaultDataDTO {
-    //
-    //            let serviceCell = tableView.viewWithTag(100) as! ServicePickerTableViewCell
-    //            serviceCell.setDefaults(defaultDTO.service)
-    //
-    //
-    //            if let place = defaultDTO.place {
-    //                let locationCell = tableView.viewWithTag(101) as! LocationTableViewCell
-    //                locationCell.setDefaults(place)
-    //            }
-    //
-    //            let conditionCell = tableView.viewWithTag(103) as! PickerTableViewCell
-    //            conditionCell.setDefaults(defaultDTO.condition)
-    //
-    //            let temperatureCell = tableView.viewWithTag(104) as! SliderTableViewCell
-    //            temperatureCell.setDefaults(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
-    //
-    //            let windCell = tableView.viewWithTag(105) as! SliderTableViewCell
-    //            windCell.setDefaults(defaultDTO.minWind, maxDefaultValue: defaultDTO.maxWind)
-    //
-    //
-    //            let humidityCell = tableView.viewWithTag(106) as! SliderTableViewCell
-    //            humidityCell.setDefaults(defaultDTO.minHumidity, maxDefaultValue: defaultDTO.maxHumidity)
-    //
-    //
-    //            let snowCell = tableView.viewWithTag(107) as! SliderTableViewCell
-    //            snowCell.setDefaults(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow)
-    //
-    //
-    //            let predictionCell = self.tableView.viewWithTag(108) as! PredictionTableViewCell
-    //            predictionCell.setDefaults(defaultDTO.prediction)
-    //            
-    //        }
-    //    
-    //    }
     
 }

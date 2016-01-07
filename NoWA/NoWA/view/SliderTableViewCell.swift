@@ -129,23 +129,36 @@ class SliderTableViewCell: GenericTableViewCell {
     
     override func setDefaults(defaultDTO: AlarmDTO) {
         
-//        self.minValue = minDefaultValue
-//        self.maxValue = maxDefaultValue
-//        self.sliderLeft?.value = Float(minDefaultValue)
-//        self.sliderRight?.value = Float(maxDefaultValue)
-//        
-//        if minDefaultValue != sliderLeft?.minimumValue{
-//            self.sliderMinLabel?.text = "Min \n \(String(minDefaultValue)) \(unity)"
-//        }else{
-//            self.sliderMinLabel?.text = "Min \nOff"
-//        }
-//        
-//        if maxDefaultValue != sliderLeft?.maximumValue{
-//            self.sliderMaxLabel?.text = "Max \n \(String(maxDefaultValue)) \(unity)"
-//        }else{
-//            self.sliderMaxLabel?.text = "Max \nOff"
-//        }
+        if titleLabel!.text == "TEMPERATURA"{
+            setDefaultValues(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
+        }else if titleLabel!.text == "VIENTO"{
+            setDefaultValues(defaultDTO.minWind, maxDefaultValue: defaultDTO.maxWind)
+        }else if titleLabel!.text == "HUMEDAD"{
+            setDefaultValues(defaultDTO.minHumidity, maxDefaultValue: defaultDTO.maxHumidity)
+        }else if titleLabel!.text == "NIEVE"{
+            setDefaultValues(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow)
+        }
         
+        
+    }
+    
+    func setDefaultValues(minDefaultValue: NSNumber, maxDefaultValue: NSNumber) {
+        self.minValue = minDefaultValue
+        self.maxValue = maxDefaultValue
+        self.sliderLeft?.value = Float(minDefaultValue)
+        self.sliderRight?.value = Float(maxDefaultValue)
+        
+        if minDefaultValue != sliderLeft?.minimumValue{
+            self.sliderMinLabel?.text = "Min \n \(String(minDefaultValue)) \(unity)"
+        }else{
+            self.sliderMinLabel?.text = "Min \nOff"
+        }
+        
+        if maxDefaultValue != sliderLeft?.maximumValue{
+            self.sliderMaxLabel?.text = "Max \n \(String(maxDefaultValue)) \(unity)"
+        }else{
+            self.sliderMaxLabel?.text = "Max \nOff"
+        }
     }
     
     func sliderMinLabelChanged(sender: UISlider) {
