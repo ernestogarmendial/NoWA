@@ -24,6 +24,8 @@
 		941CA1381C3F5911004E4969 /* AlarmDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA1371C3F5911004E4969 /* AlarmDAO.swift */; };
 		941CA13A1C3F5BCD004E4969 /* PersonalAlarmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA1391C3F5BCD004E4969 /* PersonalAlarmDTO.swift */; };
 		941CA13C1C3F5BF5004E4969 /* EventDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA13B1C3F5BF5004E4969 /* EventDTO.swift */; };
+		941CA13E1C3F6179004E4969 /* TournamentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA13D1C3F6179004E4969 /* TournamentDTO.swift */; };
+		941CA1401C3F6268004E4969 /* TeamDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA13F1C3F6268004E4969 /* TeamDTO.swift */; };
 		9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB221C2A0DBC003CDB83 /* Reachability.m */; };
 		9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */; };
 		9425DB291C2A0E34003CDB83 /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB281C2A0E34003CDB83 /* GenericDAO.swift */; };
@@ -101,6 +103,8 @@
 		941CA1371C3F5911004E4969 /* AlarmDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmDAO.swift; path = dao/AlarmDAO.swift; sourceTree = "<group>"; };
 		941CA1391C3F5BCD004E4969 /* PersonalAlarmDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalAlarmDTO.swift; path = model/dto/PersonalAlarmDTO.swift; sourceTree = "<group>"; };
 		941CA13B1C3F5BF5004E4969 /* EventDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDTO.swift; path = model/dto/EventDTO.swift; sourceTree = "<group>"; };
+		941CA13D1C3F6179004E4969 /* TournamentDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentDTO.swift; path = model/TournamentDTO.swift; sourceTree = "<group>"; };
+		941CA13F1C3F6268004E4969 /* TeamDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamDTO.swift; path = model/dto/TeamDTO.swift; sourceTree = "<group>"; };
 		9425DB211C2A0DBC003CDB83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9425DB221C2A0DBC003CDB83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 				941CA1331C3CB49D004E4969 /* AlarmDTO.swift */,
 				941CA1391C3F5BCD004E4969 /* PersonalAlarmDTO.swift */,
 				941CA13B1C3F5BF5004E4969 /* EventDTO.swift */,
+				941CA13D1C3F6179004E4969 /* TournamentDTO.swift */,
+				941CA13F1C3F6268004E4969 /* TeamDTO.swift */,
 			);
 			name = dto;
 			sourceTree = "<group>";
@@ -617,6 +623,7 @@
 			files = (
 				94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */,
 				9476A9051C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift in Sources */,
+				941CA13E1C3F6179004E4969 /* TournamentDTO.swift in Sources */,
 				94A39A531C28D87500BA2BB8 /* AlarmItemTableViewCell.swift in Sources */,
 				941CA13C1C3F5BF5004E4969 /* EventDTO.swift in Sources */,
 				942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */,
@@ -657,6 +664,7 @@
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
 				941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */,
 				941CA1381C3F5911004E4969 /* AlarmDAO.swift in Sources */,
+				941CA1401C3F6268004E4969 /* TeamDTO.swift in Sources */,
 				9414217D1C2C59E200D9495E /* SliderTableViewCell.swift in Sources */,
 				94A39A5E1C29021B00BA2BB8 /* AlarmHeaderView.swift in Sources */,
 				942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */,

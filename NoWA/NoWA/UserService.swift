@@ -70,7 +70,7 @@ class UserService: GenericService {
                 
                 UserService.currentUser = result as! UserDTO;
                 //
-                if let accessToken = UserService.currentUser.token {
+                if let _ = UserService.currentUser.token {
                     //
                     serviceResult.addEntity(UserService.currentUser, forKey: "RegisterUser")
                     

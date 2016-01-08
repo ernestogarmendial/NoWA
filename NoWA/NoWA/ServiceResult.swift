@@ -60,7 +60,7 @@ import UIKit
     }
     
     public func errorsString () -> String {
-        var string = NSMutableString();
+        let string = NSMutableString();
         for errorText in self.errors! {
             string.appendString("\(errorText)\n")
         }
