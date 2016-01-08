@@ -17,15 +17,7 @@ class AlarmasTableViewController: GenericTableViewController {
         
         self.tableView.registerClass(AlarmItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
                 
-//        // not working
-//        let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
-//        self.navigationItem.rightBarButtonItem = addAlarmButton
-//        // not working
-//        
-//
-//        let path = NSBundle.mainBundle().pathForResource("AlarmasCells", ofType: "plist")
-//        self.alarmsArray = NSMutableArray(contentsOfFile: path!)
-        
+        callService()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,6 +25,24 @@ class AlarmasTableViewController: GenericTableViewController {
         let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
         self.tabBarController!.navigationItem.rightBarButtonItem = addAlarmButton
     }
+    
+    func callService(){
+        let alarmService : AlarmService = AlarmService()
+        alarmService.getPersonalAlarms(token: UserService.currentUser.token,target: self,message: "getPersonalAlarmsFinish:")
+    }
+    
+    
+    func getPersonalAlarmsFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+//        self.defaultDataDTO = result.entityForKey("GetDefault") as? AlarmDTO
+        
+        self.tableView.reloadData()
+    }
+
     
     func addAlarm(){
         print("add Alarm")
@@ -75,5 +85,6 @@ class AlarmasTableViewController: GenericTableViewController {
         return 1
     }
     
+
     
 }

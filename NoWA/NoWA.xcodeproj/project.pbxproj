@@ -20,15 +20,16 @@
 		941CA1301C323B66004E4969 /* ForecastDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA12F1C323B66004E4969 /* ForecastDTO.swift */; };
 		941CA1321C3B676F004E4969 /* ConditionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA1311C3B676F004E4969 /* ConditionDTO.swift */; };
 		941CA1341C3CB49D004E4969 /* AlarmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA1331C3CB49D004E4969 /* AlarmDTO.swift */; };
+		941CA1361C3F58CA004E4969 /* AlarmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA1351C3F58CA004E4969 /* AlarmService.swift */; };
+		941CA1381C3F5911004E4969 /* AlarmDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA1371C3F5911004E4969 /* AlarmDAO.swift */; };
+		941CA13A1C3F5BCD004E4969 /* PersonalAlarmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA1391C3F5BCD004E4969 /* PersonalAlarmDTO.swift */; };
+		941CA13C1C3F5BF5004E4969 /* EventDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA13B1C3F5BF5004E4969 /* EventDTO.swift */; };
 		9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB221C2A0DBC003CDB83 /* Reachability.m */; };
 		9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */; };
 		9425DB291C2A0E34003CDB83 /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB281C2A0E34003CDB83 /* GenericDAO.swift */; };
-		9425DB2B1C2A0E94003CDB83 /* MyMelodiesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB2A1C2A0E94003CDB83 /* MyMelodiesDAO.swift */; };
 		9425DB301C2A0ED4003CDB83 /* GenericDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB2E1C2A0ED4003CDB83 /* GenericDTO.swift */; };
-		9425DB311C2A0ED4003CDB83 /* MyMelodyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB2F1C2A0ED4003CDB83 /* MyMelodyDTO.swift */; };
 		9425DB351C2A0F09003CDB83 /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB331C2A0F09003CDB83 /* GenericService.swift */; };
 		9425DB361C2A0F09003CDB83 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB341C2A0F09003CDB83 /* ServiceResult.swift */; };
-		9425DB381C2A0F19003CDB83 /* FestMakerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB371C2A0F19003CDB83 /* FestMakerService.swift */; };
 		9425DB401C2A3022003CDB83 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB3F1C2A3022003CDB83 /* UserService.swift */; };
 		9425DB421C2A304A003CDB83 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB411C2A304A003CDB83 /* UserDTO.swift */; };
 		9425DB441C2A3076003CDB83 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB431C2A3076003CDB83 /* UserDAO.swift */; };
@@ -96,17 +97,18 @@
 		941CA12F1C323B66004E4969 /* ForecastDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForecastDTO.swift; path = model/dto/ForecastDTO.swift; sourceTree = "<group>"; };
 		941CA1311C3B676F004E4969 /* ConditionDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConditionDTO.swift; path = model/dto/ConditionDTO.swift; sourceTree = "<group>"; };
 		941CA1331C3CB49D004E4969 /* AlarmDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmDTO.swift; path = model/dto/AlarmDTO.swift; sourceTree = "<group>"; };
+		941CA1351C3F58CA004E4969 /* AlarmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmService.swift; path = service/AlarmService.swift; sourceTree = "<group>"; };
+		941CA1371C3F5911004E4969 /* AlarmDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmDAO.swift; path = dao/AlarmDAO.swift; sourceTree = "<group>"; };
+		941CA1391C3F5BCD004E4969 /* PersonalAlarmDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalAlarmDTO.swift; path = model/dto/PersonalAlarmDTO.swift; sourceTree = "<group>"; };
+		941CA13B1C3F5BF5004E4969 /* EventDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDTO.swift; path = model/dto/EventDTO.swift; sourceTree = "<group>"; };
 		9425DB211C2A0DBC003CDB83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9425DB221C2A0DBC003CDB83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
 		9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInternetConnection.m; sourceTree = "<group>"; };
 		9425DB281C2A0E34003CDB83 /* GenericDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDAO.swift; sourceTree = "<group>"; };
-		9425DB2A1C2A0E94003CDB83 /* MyMelodiesDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMelodiesDAO.swift; sourceTree = "<group>"; };
 		9425DB2E1C2A0ED4003CDB83 /* GenericDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDTO.swift; sourceTree = "<group>"; };
-		9425DB2F1C2A0ED4003CDB83 /* MyMelodyDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMelodyDTO.swift; sourceTree = "<group>"; };
 		9425DB331C2A0F09003CDB83 /* GenericService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
 		9425DB341C2A0F09003CDB83 /* ServiceResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
-		9425DB371C2A0F19003CDB83 /* FestMakerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestMakerService.swift; sourceTree = "<group>"; };
 		9425DB3F1C2A3022003CDB83 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		9425DB411C2A304A003CDB83 /* UserDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		9425DB431C2A3076003CDB83 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
@@ -197,8 +199,8 @@
 			children = (
 				9425DB431C2A3076003CDB83 /* UserDAO.swift */,
 				9425DB281C2A0E34003CDB83 /* GenericDAO.swift */,
-				9425DB2A1C2A0E94003CDB83 /* MyMelodiesDAO.swift */,
 				941CA12B1C322DC1004E4969 /* WeatherDAO.swift */,
+				941CA1371C3F5911004E4969 /* AlarmDAO.swift */,
 			);
 			name = dao;
 			sourceTree = "<group>";
@@ -216,12 +218,13 @@
 			children = (
 				9425DB411C2A304A003CDB83 /* UserDTO.swift */,
 				9425DB2E1C2A0ED4003CDB83 /* GenericDTO.swift */,
-				9425DB2F1C2A0ED4003CDB83 /* MyMelodyDTO.swift */,
 				941421821C30CC7800D9495E /* RecoverDTO.swift */,
 				941CA12F1C323B66004E4969 /* ForecastDTO.swift */,
 				94500D661C3455FD003A70FA /* LocationDTO.swift */,
 				941CA1311C3B676F004E4969 /* ConditionDTO.swift */,
 				941CA1331C3CB49D004E4969 /* AlarmDTO.swift */,
+				941CA1391C3F5BCD004E4969 /* PersonalAlarmDTO.swift */,
+				941CA13B1C3F5BF5004E4969 /* EventDTO.swift */,
 			);
 			name = dto;
 			sourceTree = "<group>";
@@ -232,8 +235,8 @@
 				9425DB3F1C2A3022003CDB83 /* UserService.swift */,
 				9425DB331C2A0F09003CDB83 /* GenericService.swift */,
 				9425DB341C2A0F09003CDB83 /* ServiceResult.swift */,
-				9425DB371C2A0F19003CDB83 /* FestMakerService.swift */,
 				941CA1291C322B9D004E4969 /* WeatherService.swift */,
+				941CA1351C3F58CA004E4969 /* AlarmService.swift */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -615,9 +618,9 @@
 				94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */,
 				9476A9051C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift in Sources */,
 				94A39A531C28D87500BA2BB8 /* AlarmItemTableViewCell.swift in Sources */,
+				941CA13C1C3F5BF5004E4969 /* EventDTO.swift in Sources */,
 				942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */,
 				94801F921C0DDFC100D05D6E /* TourView.swift in Sources */,
-				9425DB381C2A0F19003CDB83 /* FestMakerService.swift in Sources */,
 				9425DB291C2A0E34003CDB83 /* GenericDAO.swift in Sources */,
 				94801F861C0DD7D100D05D6E /* TourViewController.swift in Sources */,
 				94A39A551C28DCDD00BA2BB8 /* WeekDaysView.swift in Sources */,
@@ -630,7 +633,7 @@
 				9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */,
 				9425DB441C2A3076003CDB83 /* UserDAO.swift in Sources */,
 				941421811C2C6E1600D9495E /* ButtonTableFooterView.swift in Sources */,
-				9425DB2B1C2A0E94003CDB83 /* MyMelodiesDAO.swift in Sources */,
+				941CA1361C3F58CA004E4969 /* AlarmService.swift in Sources */,
 				942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */,
 				941CA12A1C322B9D004E4969 /* WeatherService.swift in Sources */,
 				942A99741C1A13EF00B12292 /* PerfilTableViewController.swift in Sources */,
@@ -653,11 +656,12 @@
 				94500D671C3455FD003A70FA /* LocationDTO.swift in Sources */,
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
 				941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */,
+				941CA1381C3F5911004E4969 /* AlarmDAO.swift in Sources */,
 				9414217D1C2C59E200D9495E /* SliderTableViewCell.swift in Sources */,
 				94A39A5E1C29021B00BA2BB8 /* AlarmHeaderView.swift in Sources */,
 				942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */,
 				941CA1301C323B66004E4969 /* ForecastDTO.swift in Sources */,
-				9425DB311C2A0ED4003CDB83 /* MyMelodyDTO.swift in Sources */,
+				941CA13A1C3F5BCD004E4969 /* PersonalAlarmDTO.swift in Sources */,
 				941CA1341C3CB49D004E4969 /* AlarmDTO.swift in Sources */,
 				9425DB361C2A0F09003CDB83 /* ServiceResult.swift in Sources */,
 				94500D611C344616003A70FA /* LocationTableViewCell.swift in Sources */,
