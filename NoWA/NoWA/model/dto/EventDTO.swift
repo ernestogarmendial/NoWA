@@ -20,7 +20,7 @@ class EventDTO: GenericDTO {
     
     override class func mapping() -> RKObjectMapping {
         
-        let mapping = RKObjectMapping(forClass: ConditionDTO.self)
+        let mapping = RKObjectMapping(forClass: EventDTO.self)
         mapping.addAttributeMappingsFromDictionary([
             
             "id" : "eventID",

@@ -10,7 +10,8 @@ import UIKit
 
 class AlarmasTableViewController: GenericTableViewController {
     
-    var alarmsArray: NSMutableArray!
+    var alarmsArray: [PersonalAlarmDTO]!
+    var alarms: NSMutableArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,11 @@ class AlarmasTableViewController: GenericTableViewController {
             return
         }
         
-//        self.defaultDataDTO = result.entityForKey("GetDefault") as? AlarmDTO
+        self.alarmsArray = result.entityForKey("PersonalAlarms") as? [PersonalAlarmDTO]
+        
+//        for alarm in alarmsArray! {
+//            alarms!.addObject((alarm.event?.eventID!)!)
+//        }
         
         self.tableView.reloadData()
     }
