@@ -10,8 +10,8 @@ import UIKit
 
 class PersonalAlarmDTO: GenericDTO {
     
-    var event : EventDTO?
-    var weather : AlarmDTO?
+    var event : NSMutableArray?//EventDTO?
+    var weather : NSMutableArray?//AlarmDTO?
     
     override class func mapping() -> RKObjectMapping {
         
@@ -22,11 +22,11 @@ class PersonalAlarmDTO: GenericDTO {
         //            ])
         
         let eventMapping = EventDTO.mapping()
-        let eventRelation = RKRelationshipMapping(fromKeyPath: "events", toKeyPath: "event", withMapping: eventMapping)
+        let eventRelation = RKRelationshipMapping(fromKeyPath: "event", toKeyPath: "event", withMapping: eventMapping)
         mapping.addPropertyMapping(eventRelation)
         
         let weatherMapping = AlarmDTO.mapping()
-        let weatherRelation = RKRelationshipMapping(fromKeyPath: "events", toKeyPath: "weather", withMapping: weatherMapping)
+        let weatherRelation = RKRelationshipMapping(fromKeyPath: "weather", toKeyPath: "weather", withMapping: weatherMapping)
         mapping.addPropertyMapping(weatherRelation)
         
         return mapping
