@@ -17,7 +17,7 @@ class AlarmasTableViewController: GenericTableViewController {
         super.viewDidLoad()
         
         self.tableView.registerClass(AlarmItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
-                
+        
         callService()
     }
     
@@ -41,17 +41,21 @@ class AlarmasTableViewController: GenericTableViewController {
         
         self.alarmsArray = result.entityForKey("PersonalAlarms") as? [PersonalAlarmDTO]
         
-        for alarm in alarmsArray! {
-            
-            let event = alarm.event![0] as! EventDTO
-            let alarm = alarm.weather![0] as! AlarmDTO
-            
-//            alarms!.addObject(event.eventID!)
-        }
+        //        for alarm in alarmsArray! {
+        //
+        //            let event = alarm.event![0] as! EventDTO
+        //            let alarm = alarm.weather![0] as! AlarmDTO
+        //
+        //            let dateFormatter = NSDateFormatter()
+        //            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.S" /*find out and place date format from http://userguide.icu-project.org/formatparse/datetime*/
+        //            let date = dateFormatter.dateFromString(event.stamp!)
+        //
+        //            alarms!.addObject(event.eventID!)
+        //        }
         
         self.tableView.reloadData()
     }
-
+    
     
     func addAlarm(){
         print("add Alarm")
@@ -59,7 +63,13 @@ class AlarmasTableViewController: GenericTableViewController {
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5//return alarmsArray.count
+        
+        if self.alarmsArray != nil{
+            if self.alarmsArray!.count > 0{
+                return self.alarmsArray.count
+            }
+        }
+        return 1 //////// si pongo 0 se mochea
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -85,15 +95,15 @@ class AlarmasTableViewController: GenericTableViewController {
         return genericCell
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let alarmHeaderView : AlarmHeaderView = AlarmHeaderView(frame: CGRectMake(0, 0, self.view.frame.size.width, 1))
-        return alarmHeaderView
-    }
+    //    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //        let alarmHeaderView : AlarmHeaderView = AlarmHeaderView(frame: CGRectMake(0, 0, self.view.frame.size.width, 1))
+    //        return alarmHeaderView
+    //    }
+    //
+    //    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    //        return 1
+    //    }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
-    }
     
-
     
 }
