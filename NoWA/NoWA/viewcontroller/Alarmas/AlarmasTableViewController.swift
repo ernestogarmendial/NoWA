@@ -69,7 +69,7 @@ class AlarmasTableViewController: GenericTableViewController {
                 return self.alarmsArray.count
             }
         }
-        return 1 //////// si pongo 0 se mochea
+        return 2 //////// si pongo 0 se mochea
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -92,7 +92,7 @@ class AlarmasTableViewController: GenericTableViewController {
         let alarmCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! AlarmItemTableViewCell
         
         if self.alarmsArray != nil{
-            alarmCell.setupAlarm(self.alarmsArray.first!)
+            alarmCell.setupAlarm(self.alarmsArray[indexPath.row])
         }
         
         return alarmCell

@@ -57,7 +57,6 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         timeLabel = UILabel()
         timeLabel!.text = "07:30"
         timeLabel!.textColor = .whiteColor()
-        //        timeLabel!.backgroundColor = .yellowColor()
         timeLabel!.font = UIFont.appLatoFontOfSize(40)
         timeLabel!.adjustsFontSizeToFitWidth = true
         timeLabel!.textAlignment = .Left
@@ -65,9 +64,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.addSubview(timeLabel!)
         
         dateLabel = UILabel()
-        dateLabel!.text = "27-05"
         dateLabel!.textColor = .whiteColor()
-        //        dateLabel!.backgroundColor = .blueColor()
         dateLabel!.font = UIFont.appLatoFontOfSize(15)
         dateLabel!.adjustsFontSizeToFitWidth = true
         dateLabel!.textAlignment = .Left
@@ -77,7 +74,6 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         descriptionLabel = UILabel()
         descriptionLabel!.text = "ENTRENAMIENTO SEMANAL"
         descriptionLabel!.textColor = .whiteColor()
-        //        descriptionLabel!.backgroundColor = .greenColor()
         descriptionLabel!.font = UIFont.appLatoFontOfSize(12)
         descriptionLabel!.adjustsFontSizeToFitWidth = true
         descriptionLabel!.textAlignment = .Left
@@ -187,6 +183,25 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         let event = alarm.event![0] as! EventDTO
         let alarm = alarm.weather![0] as! AlarmDTO
         
+//        let dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.S"
+//        let date = dateFormatter.dateFromString(event.stamp!)
+        
+        let stamp = event.stamp! as NSString
+        
+        timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
+        
+        let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
+        let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
+
+        dateLabel!.text = "\(day)-\(month)"
+        
+        descriptionLabel!.text = event.eventDescription
+        
+        if event.status == 0{
+            alarmSwitch?.selected = false
+        }
+
     }
     
 }
