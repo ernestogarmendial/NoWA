@@ -9,7 +9,7 @@
 import UIKit
 
 class AlarmItemTableViewCell: GenericTableViewCell {
-
+    
     var serviceIcon: UIImageView?
     var serviceLabel: UILabel?
     var serviceView : UIView?
@@ -20,7 +20,8 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     var infoView : UIView?
     var weekDaysView : WeekDaysView?
     var alarmSwitch : UIButton?
-
+    
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -29,14 +30,14 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         
         serviceIcon = UIImageView()
         serviceIcon!.image = UIImage(named: "cloud_blue")
-//        serviceIcon!.backgroundColor = .grayColor()
+        //        serviceIcon!.backgroundColor = .grayColor()
         serviceIcon!.contentMode = UIViewContentMode.ScaleAspectFit
         self.addSubview(serviceIcon!)
         
         serviceLabel = UILabel()
         serviceLabel!.text = "ACCU WEATHER"
         serviceLabel!.textColor = .whiteColor()
-//        serviceLabel!.backgroundColor = .yellowColor()
+        //        serviceLabel!.backgroundColor = .yellowColor()
         serviceLabel!.font = UIFont.appLatoFontOfSize(10)
         serviceLabel!.adjustsFontSizeToFitWidth = true
         serviceLabel!.textAlignment = .Center
@@ -44,7 +45,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.addSubview(serviceLabel!)
         
         serviceView = UIView()
-//        serviceView!.backgroundColor = .orangeColor()
+        //        serviceView!.backgroundColor = .orangeColor()
         serviceView!.addSubview(serviceIcon!)
         serviceView!.addSubview(serviceLabel!)
         self.addSubview(serviceView!)
@@ -56,7 +57,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         timeLabel = UILabel()
         timeLabel!.text = "07:30"
         timeLabel!.textColor = .whiteColor()
-//        timeLabel!.backgroundColor = .yellowColor()
+        //        timeLabel!.backgroundColor = .yellowColor()
         timeLabel!.font = UIFont.appLatoFontOfSize(40)
         timeLabel!.adjustsFontSizeToFitWidth = true
         timeLabel!.textAlignment = .Left
@@ -66,7 +67,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         dateLabel = UILabel()
         dateLabel!.text = "27-05"
         dateLabel!.textColor = .whiteColor()
-//        dateLabel!.backgroundColor = .blueColor()
+        //        dateLabel!.backgroundColor = .blueColor()
         dateLabel!.font = UIFont.appLatoFontOfSize(15)
         dateLabel!.adjustsFontSizeToFitWidth = true
         dateLabel!.textAlignment = .Left
@@ -76,7 +77,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         descriptionLabel = UILabel()
         descriptionLabel!.text = "ENTRENAMIENTO SEMANAL"
         descriptionLabel!.textColor = .whiteColor()
-//        descriptionLabel!.backgroundColor = .greenColor()
+        //        descriptionLabel!.backgroundColor = .greenColor()
         descriptionLabel!.font = UIFont.appLatoFontOfSize(12)
         descriptionLabel!.adjustsFontSizeToFitWidth = true
         descriptionLabel!.textAlignment = .Left
@@ -84,14 +85,14 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.addSubview(descriptionLabel!)
         
         infoView = UIView()
-//        infoView?.backgroundColor = .purpleColor()
+        //        infoView?.backgroundColor = .purpleColor()
         infoView?.addSubview(timeLabel!)
         infoView?.addSubview(dateLabel!)
         infoView?.addSubview(descriptionLabel!)
         self.addSubview(infoView!)
         
         weekDaysView = WeekDaysView()
-//        weekDaysView?.backgroundColor = .redColor()
+        //        weekDaysView?.backgroundColor = .redColor()
         self.addSubview(weekDaysView!)
         
         alarmSwitch = UIButton()
@@ -99,7 +100,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         alarmSwitch!.setImage(UIImage(named: "switch_on"), forState: UIControlState.Normal)
         alarmSwitch!.setImage(UIImage(named: "switch_off"), forState: UIControlState.Selected)
         self.addSubview(alarmSwitch!)
-
+        
         setupConstrains()
     }
     
@@ -107,7 +108,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     func setupConstrains(){
         
         serviceView!.autoPinEdge(.Left, toEdge: .Left, ofView: self)
@@ -125,12 +126,12 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         serviceLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: serviceView!, withOffset: -5)
         serviceLabel!.autoPinEdge(.Top, toEdge: .Bottom, ofView: serviceIcon!, withOffset: 5)
         serviceLabel!.autoMatchDimension(.Height, toDimension: .Width, ofView: serviceView!, withMultiplier: 0.5)
-    
+        
         separatorBar!.autoMatchDimension(.Height, toDimension: .Height, ofView: self, withMultiplier: 0.8)
         separatorBar!.autoSetDimension(.Width, toSize: 1.5)
         separatorBar!.autoConstrainAttribute(.MarginTop, toAttribute: .MarginTop, ofView: self, withMultiplier: 2)
         separatorBar!.autoPinEdge(.Left, toEdge: .Right, ofView: serviceView!)
-
+        
         infoView!.autoPinEdge(.Left, toEdge: .Right, ofView: separatorBar!, withOffset: 8)
         infoView!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         infoView!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.55)
@@ -145,22 +146,22 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         dateLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: timeLabel!, withOffset: -5)
         dateLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: infoView!)
         dateLabel!.autoMatchDimension(.Height, toDimension: .Height, ofView: timeLabel!, withMultiplier: 0.50)
-
+        
         descriptionLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: infoView!)
         descriptionLabel!.autoPinEdge(.Top, toEdge: .Bottom, ofView: timeLabel!, withOffset: -8)
         descriptionLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: infoView!)
         descriptionLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: infoView!)
-
+        
         weekDaysView!.autoPinEdge(.Top, toEdge: .Bottom, ofView: infoView!)
         weekDaysView!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         weekDaysView!.autoPinEdge(.Left, toEdge: .Left, ofView: infoView!)
         weekDaysView!.autoPinEdge(.Right, toEdge: .Right, ofView: infoView!)
-
+        
         alarmSwitch!.autoPinEdge(.Left, toEdge: .Right, ofView: infoView!, withOffset: 10)
         alarmSwitch!.autoConstrainAttribute(.MarginTop, toAttribute: .MarginTop, ofView: self, withMultiplier: 3)
         alarmSwitch!.autoSetDimension(.Width, toSize: 50)
         alarmSwitch!.autoSetDimension(.Height, toSize: 30)
-
+        
     }
     
     override func layoutSubviews(){
@@ -171,14 +172,21 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     func alarmSwitchPressed (sender:UIButton) {
         //        sender.selected = !sender.selected;
         
-//        if !sender.selected{
-//            if let melodyId = self.myMelodyDTO?.objectId{ // todo borrar
-//                var festMakerService : FestMakerService = FestMakerService()
-//                festMakerService.likeMelody(target: self, message: "likeFinish:", melodyID: melodyId)
-                sender.selected = !sender.selected;
-//                sender.userInteractionEnabled = false
-//            }
-//        }
+        //        if !sender.selected{
+        //            if let melodyId = self.myMelodyDTO?.objectId{ // todo borrar
+        //                var festMakerService : FestMakerService = FestMakerService()
+        //                festMakerService.likeMelody(target: self, message: "likeFinish:", melodyID: melodyId)
+        sender.selected = !sender.selected;
+        //                sender.userInteractionEnabled = false
+        //            }
+        //        }
+    }
+    
+    func setupAlarm(alarm: PersonalAlarmDTO){
+        
+        let event = alarm.event![0] as! EventDTO
+        let alarm = alarm.weather![0] as! AlarmDTO
+        
     }
     
 }

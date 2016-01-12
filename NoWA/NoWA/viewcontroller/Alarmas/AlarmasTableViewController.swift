@@ -88,11 +88,15 @@ class AlarmasTableViewController: GenericTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //        let identificador = alarmsArray[indexPath.row]["identifier"] as! String
-        //
-        let genericCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! GenericTableViewCell
         
-        return genericCell
+        let alarmCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! AlarmItemTableViewCell
+        
+        if self.alarmsArray != nil{
+            alarmCell.setupAlarm(self.alarmsArray.first!)
+        }
+        
+        return alarmCell
+        
     }
     
     //    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
