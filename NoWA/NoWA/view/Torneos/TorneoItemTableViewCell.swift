@@ -43,6 +43,12 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func setupAlarm(alarm: PersonalAlarmDTO, type: String){
+        super.setupAlarm(alarm, type: type)
+        
+        
+    }
 
     
 }

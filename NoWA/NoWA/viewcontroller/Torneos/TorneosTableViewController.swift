@@ -10,24 +10,36 @@ import UIKit
 
 class TorneosTableViewController: GenericTableViewController {
     
-    var alarmsArray: NSMutableArray!
+    var alarmsArray: [PersonalAlarmDTO]!
+    var alarms: NSMutableArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.registerClass(TorneoItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
-        
-        //        let backgroundImage = UIImageView()
-        //        backgroundImage.image = UIImage(named: "create_alarm_background")
-        //        backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
-        //        self.tableView.addSubview(backgroundImage)
-        
-        
+        callService()
+
     }
     
-    func addAlarm(){
-        print("add Alarm")
+    
+    func callService(){
+        let alarmService : AlarmService = AlarmService()
+        alarmService.getTournamentAlarms(token: UserService.currentUser.token,target: self,message: "getTournamentAlarmsFinish:")
     }
+    
+    
+    func getTournamentAlarmsFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        self.alarmsArray = result.entityForKey("PersonalAlarms") as? [PersonalAlarmDTO]
+        
+        self.tableView.reloadData()
+    }
+    
+
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

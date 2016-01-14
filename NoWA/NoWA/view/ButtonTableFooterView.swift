@@ -14,7 +14,7 @@ protocol ButtonFooterDelegate {
 
 class ButtonTableFooterView: GenericTableViewCell{//UIView {
     
-//    var delegate : ButtonFooterDelegate?
+    //    var delegate : ButtonFooterDelegate?
     var acceptButton : UIButton?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -24,10 +24,10 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
         self.contentView.backgroundColor = .registroGrayColor()
         
         acceptButton = UIButton()
-        acceptButton!.backgroundColor = .servicePickerBlueColor()
-        acceptButton!.setTitle("ACEPTAR", forState: UIControlState.Normal)
+        //        acceptButton!.backgroundColor = .servicePickerBlueColor()
+        //        acceptButton!.setTitle("ACEPTAR", forState: UIControlState.Normal)
         acceptButton!.titleLabel!.font = UIFont.appLatoFontOfSize(15)
-        acceptButton!.addTarget(self, action: "accept", forControlEvents: UIControlEvents.TouchUpInside)
+//                acceptButton!.addTarget(self, action: "accept", forControlEvents: UIControlEvents.TouchUpInside)
         acceptButton!.layer.cornerRadius = 20
         self.addSubview(acceptButton!)
         
@@ -44,7 +44,15 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
     }
     
     override func setItems(myDictionary: NSDictionary){
-    
+        if let title = myDictionary["title"] as? String{
+            acceptButton!.setTitle(title, forState: UIControlState.Normal)
+        }
+        if let color = myDictionary["color"] as? String{
+            acceptButton!.backgroundColor = UIColor.UIColorFromRGB("\(color)")
+        }
+        if let action = myDictionary["action"] as? Selector{
+            acceptButton!.addTarget(self, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        }
     }
     
     func accept(){

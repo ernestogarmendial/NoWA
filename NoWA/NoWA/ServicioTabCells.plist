@@ -116,7 +116,11 @@
 		<key>identifier</key>
 		<string>AcceptButtonCell</string>
 		<key>title</key>
-		<string>PREDICCION</string>
+		<string>ACEPTAR</string>
+		<key>action</key>
+		<string>accept</string>
+		<key>color</key>
+		<string>1993C9</string>
 		<key>height</key>
 		<integer>100</integer>
 	</dict>

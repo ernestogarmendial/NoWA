@@ -178,14 +178,14 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         //        }
     }
     
-    func setupAlarm(alarm: PersonalAlarmDTO){
+    func setupAlarm(alarm: PersonalAlarmDTO, type: String){
         
         let event = alarm.event![0] as! EventDTO
         let alarm = alarm.weather![0] as! AlarmDTO
         
-//        let dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.S"
-//        let date = dateFormatter.dateFromString(event.stamp!)
+        //        let dateFormatter = NSDateFormatter()
+        //        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.S"
+        //        let date = dateFormatter.dateFromString(event.stamp!)
         
         let stamp = event.stamp! as NSString
         
@@ -193,15 +193,17 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         
         let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
         let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
-
+        
         dateLabel!.text = "\(day)-\(month)"
         
         descriptionLabel!.text = event.eventDescription
         
-        if event.status == 0{
-            alarmSwitch?.selected = true
+        if type == "Personal"{
+            if event.status == 0{
+                alarmSwitch?.selected = true
+            }
         }
-
+        
     }
     
 }

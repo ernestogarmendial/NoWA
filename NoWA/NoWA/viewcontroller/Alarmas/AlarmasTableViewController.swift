@@ -92,7 +92,7 @@ class AlarmasTableViewController: GenericTableViewController {
         if self.alarmsArray != nil{
             let alarmCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! AlarmItemTableViewCell
             
-            alarmCell.setupAlarm(self.alarmsArray[indexPath.row])
+            alarmCell.setupAlarm(self.alarmsArray[indexPath.row], type: "Personal")
             
             return alarmCell
         }
@@ -101,16 +101,5 @@ class AlarmasTableViewController: GenericTableViewController {
             return cell
         }
     }
-    
-    //    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //        let alarmHeaderView : AlarmHeaderView = AlarmHeaderView(frame: CGRectMake(0, 0, self.view.frame.size.width, 1))
-    //        return alarmHeaderView
-    //    }
-    //
-    //    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //        return 1
-    //    }
-    
-    
-    
+        
 }

@@ -10,26 +10,61 @@ import UIKit
 
 class PerfilTableViewController: GenericTableViewController {
 
+    var cellsArray: NSMutableArray!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.tableView.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
+        self.tableView.registerClass(AddressTableViewCell.self, forCellReuseIdentifier: "Address")
+        self.tableView.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
+        self.tableView.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "ButtonCell")
+        
+        
+        let path = NSBundle.mainBundle().pathForResource("PerfilTabCells", ofType: "plist")
+        self.cellsArray = NSMutableArray(contentsOfFile: path!)    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if cellsArray != nil{
+            return cellsArray.count
+        }else{
+            return 0
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+        
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+        
+        let height = cellsArray[indexPath.row]["height"] as! CGFloat
+        return height
+        
+    }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let identificador = cellsArray[indexPath.row]["identifier"] as! String
+        
+        let genericCell = self.tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
+        
+        genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
+        //        genericCell.alarmDefaults = self.defaultDataDTO
+        genericCell.tag = indexPath.row + 100
+//                
+//        if identificador == "AcceptButtonCell"{
+//            genericCell.acceptDelegate = self
+//        }
+        return genericCell
+    }
 
+    
 }

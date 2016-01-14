@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>identifier</key>
+		<string>Picture</string>
+		<key>height</key>
+		<integer>200</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>Address</string>
+		<key>icon</key>
+		<string>envelope</string>
+		<key>text</key>
+		<string>Ingresá tu dirección de e-mail</string>
+		<key>bold_text</key>
+		<string>e-mail</string>
+		<key>height</key>
+		<integer>60</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>Address</string>
+		<key>icon</key>
+		<string>facebook_ico</string>
+		<key>text</key>
+		<string>Ingresá tu dirección de Facebook</string>
+		<key>bold_text</key>
+		<string>Facebook</string>
+		<key>height</key>
+		<integer>60</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>Address</string>
+		<key>icon</key>
+		<string>twitter_ico</string>
+		<key>text</key>
+		<string>Ingresá tu dirección de Twitter</string>
+		<key>bold_text</key>
+		<string>Twitter</string>
+		<key>height</key>
+		<integer>60</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>Address</string>
+		<key>icon</key>
+		<string>instagram_ico</string>
+		<key>text</key>
+		<string>Ingresá tu dirección de Instagram</string>
+		<key>bold_text</key>
+		<string>Instagram</string>
+		<key>height</key>
+		<integer>60</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>Config</string>
+		<key>height</key>
+		<integer>40</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>Address</string>
+		<key>text</key>
+		<string>ACERCA DE NWA</string>
+		<key>bold_text</key>
+		<string>NWA</string>
+		<key>height</key>
+		<integer>60</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>Address</string>
+		<key>text</key>
+		<string>SOPORTE</string>
+		<key>bold_text</key>
+		<string>NWA</string>
+		<key>height</key>
+		<integer>60</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>Address</string>
+		<key>text</key>
+		<string>TÉRMINOS Y CONDICIONES</string>
+		<key>bold_text</key>
+		<string>NWA</string>
+		<key>height</key>
+		<integer>60</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>ButtonCell</string>
+		<key>title</key>
+		<string>ACCEDER AL ADMINISTRADOR</string>
+		<key>action</key>
+		<string>admin</string>
+		<key>color</key>
+		<string>FC36AF</string>
+		<key>height</key>
+		<integer>80</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>ButtonCell</string>
+		<key>title</key>
+		<string>CERRAR SESION</string>
+		<key>action</key>
+		<string>close</string>
+		<key>color</key>
+		<string>566b85</string>
+		<key>height</key>
+		<integer>80</integer>
+	</dict>
+</array>
+</plist>
