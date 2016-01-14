@@ -10,12 +10,13 @@ import UIKit
 
 protocol ButtonFooterDelegate {
     func acceptButtonPressed() -> Void
+    func adminButtonPressed() -> Void
 }
 
 class ButtonTableFooterView: GenericTableViewCell{//UIView {
     
     //    var delegate : ButtonFooterDelegate?
-    var acceptButton : UIButton?
+    var button : UIButton?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -23,18 +24,18 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
         self.backgroundColor = .registroGrayColor()
         self.contentView.backgroundColor = .registroGrayColor()
         
-        acceptButton = UIButton()
+        button = UIButton()
         //        acceptButton!.backgroundColor = .servicePickerBlueColor()
         //        acceptButton!.setTitle("ACEPTAR", forState: UIControlState.Normal)
-        acceptButton!.titleLabel!.font = UIFont.appLatoFontOfSize(15)
-//                acceptButton!.addTarget(self, action: "accept", forControlEvents: UIControlEvents.TouchUpInside)
-        acceptButton!.layer.cornerRadius = 20
-        self.addSubview(acceptButton!)
+        button!.titleLabel!.font = UIFont.appLatoFontOfSize(15)
+        //                acceptButton!.addTarget(self, action: "accept", forControlEvents: UIControlEvents.TouchUpInside)
+        button!.layer.cornerRadius = 20
+        self.addSubview(button!)
         
-        acceptButton!.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self)
-        acceptButton!.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: self)
-        acceptButton!.autoSetDimension(ALDimension.Height, toSize: 40)
-        acceptButton!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.7)
+        button!.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self)
+        button!.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: self)
+        button!.autoSetDimension(ALDimension.Height, toSize: 40)
+        button!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.7)
         
     }
     
@@ -45,19 +46,44 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
     
     override func setItems(myDictionary: NSDictionary){
         if let title = myDictionary["title"] as? String{
-            acceptButton!.setTitle(title, forState: UIControlState.Normal)
+            button!.setTitle(title, forState: UIControlState.Normal)
         }
         if let color = myDictionary["color"] as? String{
-            acceptButton!.backgroundColor = UIColor.UIColorFromRGB("\(color)")
+            button!.backgroundColor = UIColor.UIColorFromRGB("\(color)")
         }
-        if let action = myDictionary["action"] as? Selector{
-            acceptButton!.addTarget(self, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        if let action = myDictionary["action"] as? String{
+            
+            if action == "accept"{
+                button!.addTarget(self, action: "accept", forControlEvents: UIControlEvents.TouchUpInside)
+            }
+            if action == "save"{
+                button!.addTarget(self, action: "save", forControlEvents: UIControlEvents.TouchUpInside)
+            }
+            if action == "close"{
+                button!.addTarget(self, action: "close", forControlEvents: UIControlEvents.TouchUpInside)
+            }
+            if action == "admin"{
+                button!.addTarget(self, action: "admin", forControlEvents: UIControlEvents.TouchUpInside)
+            }
         }
     }
     
     func accept(){
         print("aceptar pressed")
-        self.acceptDelegate!.acceptButtonPressed()
+        self.buttonDelegate!.acceptButtonPressed()
     }
     
+    func save(){
+        print("guardar pressed")
+//                self.acceptDelegate!.acceptButtonPressed()
+    }
+    
+    func close(){
+        print("close pressed")
+        //        self.acceptDelegate!.acceptButtonPressed()
+    }
+    func admin(){
+        print("admin pressed")
+        self.buttonDelegate!.adminButtonPressed()
+    }
 }

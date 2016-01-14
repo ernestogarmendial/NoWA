@@ -8,13 +8,13 @@
 
 import UIKit
 
-class PerfilTableViewController: GenericTableViewController {
-
+class PerfilTableViewController: GenericTableViewController, ButtonFooterDelegate {
+    
     var cellsArray: NSMutableArray!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tableView.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
         self.tableView.registerClass(AddressTableViewCell.self, forCellReuseIdentifier: "Address")
         self.tableView.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
@@ -22,7 +22,9 @@ class PerfilTableViewController: GenericTableViewController {
         
         
         let path = NSBundle.mainBundle().pathForResource("PerfilTabCells", ofType: "plist")
-        self.cellsArray = NSMutableArray(contentsOfFile: path!)    }
+        self.cellsArray = NSMutableArray(contentsOfFile: path!)
+        
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if cellsArray != nil{
@@ -59,12 +61,22 @@ class PerfilTableViewController: GenericTableViewController {
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
         //        genericCell.alarmDefaults = self.defaultDataDTO
         genericCell.tag = indexPath.row + 100
-//                
-//        if identificador == "AcceptButtonCell"{
-//            genericCell.acceptDelegate = self
-//        }
+        
+        //if identificador == "AcceptButtonCell"{
+        genericCell.buttonDelegate = self
+        //}
         return genericCell
     }
-
+    
+    func adminButtonPressed(){
+        let adminTableViewController = AdminTableViewController()
+        self.navigationController?.pushViewController(adminTableViewController, animated:true )
+        
+    }
+    
+    func acceptButtonPressed() {
+        
+        print("pepe")
+    }
     
 }

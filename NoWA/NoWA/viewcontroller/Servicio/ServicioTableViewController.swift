@@ -81,7 +81,9 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         }
         
         if identificador == "AcceptButtonCell"{
-            genericCell.acceptDelegate = self
+            //            genericCell.acceptDelegate = self
+            genericCell.buttonDelegate = self
+            
         }
         return genericCell
     }
@@ -183,5 +185,8 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         self.tableView.reloadData()
     }
     
+    func adminButtonPressed(){
+        print("pepe")
+    }
     
 }
