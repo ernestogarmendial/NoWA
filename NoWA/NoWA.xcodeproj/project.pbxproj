@@ -50,6 +50,7 @@
 		9447282D1C47446700F8E963 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447282C1C47446700F8E963 /* AddressTableViewCell.swift */; };
 		9447282F1C474B7B00F8E963 /* ConfigTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447282E1C474B7B00F8E963 /* ConfigTableViewCell.swift */; };
 		944728311C475B7800F8E963 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944728301C475B7800F8E963 /* AdminTableViewController.swift */; };
+		944728331C47615800F8E963 /* NewAlarmTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944728321C47615800F8E963 /* NewAlarmTableTableViewController.swift */; };
 		94500D611C344616003A70FA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D601C344616003A70FA /* LocationTableViewCell.swift */; };
 		94500D671C3455FD003A70FA /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D661C3455FD003A70FA /* LocationDTO.swift */; };
 		94500D6A1C346E20003A70FA /* PopUpPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D691C346E20003A70FA /* PopUpPickerViewController.swift */; };
@@ -137,6 +138,7 @@
 		9447282C1C47446700F8E963 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressTableViewCell.swift; path = view/Perfil/AddressTableViewCell.swift; sourceTree = "<group>"; };
 		9447282E1C474B7B00F8E963 /* ConfigTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigTableViewCell.swift; sourceTree = "<group>"; };
 		944728301C475B7800F8E963 /* AdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminTableViewController.swift; path = viewcontroller/Perfil/AdminTableViewController.swift; sourceTree = "<group>"; };
+		944728321C47615800F8E963 /* NewAlarmTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewAlarmTableTableViewController.swift; path = viewcontroller/Alarmas/NewAlarmTableTableViewController.swift; sourceTree = "<group>"; };
 		94500D601C344616003A70FA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = view/LocationTableViewCell.swift; sourceTree = "<group>"; };
 		94500D661C3455FD003A70FA /* LocationDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDTO.swift; path = model/dto/LocationDTO.swift; sourceTree = "<group>"; };
 		94500D691C346E20003A70FA /* PopUpPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpPickerViewController.swift; path = viewcontroller/PopUpPickerViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				942A996D1C1A13A300B12292 /* AlarmasTableViewController.swift */,
+				944728321C47615800F8E963 /* NewAlarmTableTableViewController.swift */,
 			);
 			name = Alarmas;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				94A39A5E1C29021B00BA2BB8 /* AlarmHeaderView.swift in Sources */,
 				942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */,
 				941CA1301C323B66004E4969 /* ForecastDTO.swift in Sources */,
+				944728331C47615800F8E963 /* NewAlarmTableTableViewController.swift in Sources */,
 				941CA13A1C3F5BCD004E4969 /* PersonalAlarmDTO.swift in Sources */,
 				941CA1341C3CB49D004E4969 /* AlarmDTO.swift in Sources */,
 				944728291C47331200F8E963 /* PictureTableViewCell.swift in Sources */,

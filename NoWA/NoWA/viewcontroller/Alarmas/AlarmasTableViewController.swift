@@ -59,6 +59,9 @@ class AlarmasTableViewController: GenericTableViewController {
     
     func addAlarm(){
         print("add Alarm")
+        let newAlarmTableTableViewController = NewAlarmTableTableViewController()
+        self.navigationController?.pushViewController(newAlarmTableTableViewController, animated:true )
+        
     }
     
     
