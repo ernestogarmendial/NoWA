@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdminTableViewController: GenericTableViewController {
+class AdminTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
