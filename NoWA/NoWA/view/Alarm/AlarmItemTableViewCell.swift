@@ -199,7 +199,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         descriptionLabel!.text = event.eventDescription
         
         if event.status == 0{
-            alarmSwitch?.selected = false
+            alarmSwitch?.selected = true
         }
 
     }
