@@ -82,7 +82,7 @@ class PictureTableViewCell: GenericTableViewCell {
         circlePictureView?.autoAlignAxis(.Vertical, toSameAxisOfView: self)
         circlePictureView?.autoPinEdge(.Top, toEdge: .Top, ofView: self, withOffset: 15)
         
-        nameLabel?.autoPinEdge(.Top, toEdge: .Bottom, ofView: circlePictureView!, withOffset: 10)
+        nameLabel?.autoPinEdge(.Top, toEdge: .Bottom, ofView: circlePictureView!, withOffset: 15)
         nameLabel?.autoPinEdge(.Left, toEdge: .Left, ofView: self)
         nameLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
 

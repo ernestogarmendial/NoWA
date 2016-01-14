@@ -58,6 +58,18 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
+		<string>ButtonCell</string>
+		<key>title</key>
+		<string>GUARDAR</string>
+		<key>action</key>
+		<string>save</string>
+		<key>color</key>
+		<string>1993c9</string>
+		<key>height</key>
+		<integer>80</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
 		<string>Config</string>
 		<key>height</key>
 		<integer>40</integer>
@@ -102,7 +114,7 @@
 		<key>color</key>
 		<string>FC36AF</string>
 		<key>height</key>
-		<integer>80</integer>
+		<integer>60</integer>
 	</dict>
 	<dict>
 		<key>identifier</key>
@@ -114,7 +126,7 @@
 		<key>color</key>
 		<string>566b85</string>
 		<key>height</key>
-		<integer>80</integer>
+		<integer>70</integer>
 	</dict>
 </array>
 </plist>
