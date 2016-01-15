@@ -33,10 +33,10 @@ class TournamentDTO: GenericDTO {
             
             ])
         
-//        var teamMapping = TeamDTO.mapping()
-//        
-//        var relation = RKRelationshipMapping(fromKeyPath: "teams", toKeyPath: "teams", withMapping: teamMapping)
-//        mapping.addPropertyMapping(relation)
+        let teamMapping = TeamDTO.mapping()
+        
+        let relation = RKRelationshipMapping(fromKeyPath: "teams", toKeyPath: "teams", withMapping: teamMapping)
+        mapping.addPropertyMapping(relation)
         
         return mapping
     }

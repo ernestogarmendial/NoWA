@@ -60,7 +60,7 @@ class AlarmDAO: GenericDAO {
         
         RKMIMETypeSerialization.registerClass(RKNSJSONSerialization.self, forMIMEType: "application/json")
         
-        let mapping = PersonalAlarmDTO.mapping()
+        let mapping = TournamentDTO.mapping()
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "events", statusCodes: nil)
         
