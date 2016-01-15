@@ -204,6 +204,13 @@ class AlarmItemTableViewCell: GenericTableViewCell {
             }
         }
         
+        if let daysString : String = event.repetition{
+            
+            let daysArray : NSArray = daysString.componentsSeparatedByString(",")
+            
+            weekDaysView?.showDays(daysArray)
+//            var dia1: String = daysArray[0]
+        }
     }
     
 }
