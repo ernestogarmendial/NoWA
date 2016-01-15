@@ -18,8 +18,8 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .darkGrayCustomColor()
-        self.contentView.backgroundColor = .darkGrayCustomColor()
+        self.backgroundColor = .registroGrayColor()
+        self.contentView.backgroundColor = .registroGrayColor()
         
         newAlertLabel = UILabel()
         newAlertLabel!.text = "NUEVA ALERTA"
@@ -34,7 +34,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         nameTextField!.attributedPlaceholder =  NSAttributedString(string: "INGRESÁ UN NOMBRE ...",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         nameTextField!.textColor = .whiteColor()
-        nameTextField!.font = UIFont.appLatoFontOfSize(14)
+        nameTextField!.font = UIFont.appLatoFontOfSize(16)
         nameTextField!.adjustsFontSizeToFitWidth = true
         nameTextField!.keyboardType = UIKeyboardType.Default
         nameTextField!.clearButtonMode = .WhileEditing
@@ -44,7 +44,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         timeLabel = UILabel()
         timeLabel!.text = "07:30"
         timeLabel!.textColor = .whiteColor()
-        timeLabel!.font = UIFont.appLatoFontOfSize(40)
+        timeLabel!.font = UIFont.appLatoFontOfSize(60)
         timeLabel!.adjustsFontSizeToFitWidth = true
         timeLabel!.textAlignment = .Left
         timeLabel!.numberOfLines = 1
@@ -64,7 +64,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         newAlertLabel?.autoPinEdge(.Left, toEdge: .Left, ofView: self)
         newAlertLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         
-        nameTextField?.autoPinEdge(.Top, toEdge: .Bottom, ofView: newAlertLabel!, withOffset: 10)
+        nameTextField?.autoPinEdge(.Top, toEdge: .Bottom, ofView: newAlertLabel!, withOffset: 15)
         nameTextField?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 10)
         nameTextField?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         
