@@ -12,6 +12,7 @@ class TournamentDTO: GenericDTO {
 
     var tournamentID : NSNumber?
     var teams : NSMutableArray?
+    var stamp : String?
     var status : NSNumber?
     var tournamentDescription : String?
     var name : String?

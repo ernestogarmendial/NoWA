@@ -41,18 +41,6 @@ class AlarmasTableViewController: GenericTableViewController {
         
         self.alarmsArray = result.entityForKey("PersonalAlarms") as? [PersonalAlarmDTO]
         
-        //        for alarm in alarmsArray! {
-        //
-        //            let event = alarm.event![0] as! EventDTO
-        //            let alarm = alarm.weather![0] as! AlarmDTO
-        //
-        //            let dateFormatter = NSDateFormatter()
-        //            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.S" /*find out and place date format from http://userguide.icu-project.org/formatparse/datetime*/
-        //            let date = dateFormatter.dateFromString(event.stamp!)
-        //
-        //            alarms!.addObject(event.eventID!)
-        //        }
-        
         self.tableView.reloadData()
     }
     

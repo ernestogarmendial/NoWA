@@ -72,7 +72,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.addSubview(dateLabel!)
         
         descriptionLabel = UILabel()
-        descriptionLabel!.text = "ENTRENAMIENTO SEMANAL"
+//        descriptionLabel!.text = "ENTRENAMIENTO SEMANAL"
         descriptionLabel!.textColor = .whiteColor()
         descriptionLabel!.font = UIFont.appLatoFontOfSize(12)
         descriptionLabel!.adjustsFontSizeToFitWidth = true

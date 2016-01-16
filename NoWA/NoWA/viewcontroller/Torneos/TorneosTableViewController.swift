@@ -10,15 +10,15 @@ import UIKit
 
 class TorneosTableViewController: GenericTableViewController {
     
-    var alarmsArray: [PersonalAlarmDTO]!
+    var tournamentsArray: [TournamentDTO]!
     var alarms: NSMutableArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerClass(TorneoItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
+        self.tableView.registerClass(TorneoItemTableViewCell.self, forCellReuseIdentifier: "tournamentItem")
         callService()
-
+        
     }
     
     
@@ -34,16 +34,21 @@ class TorneosTableViewController: GenericTableViewController {
             return
         }
         
-        self.alarmsArray = result.entityForKey("PersonalAlarms") as? [PersonalAlarmDTO]
+        self.tournamentsArray = result.entityForKey("TournamentAlarms") as? [TournamentDTO]
         
         self.tableView.reloadData()
     }
     
-
+    
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7//return alarmsArray.count
+        if self.tournamentsArray != nil{
+            if tournamentsArray.count > 0{
+                return tournamentsArray.count
+            }
+        }
+        return 0
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -62,11 +67,12 @@ class TorneosTableViewController: GenericTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //        let identificador = alarmsArray[indexPath.row]["identifier"] as! String
-        //
-        let genericCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! GenericTableViewCell
+
+        let torneoCell = tableView.dequeueReusableCellWithIdentifier("tournamentItem", forIndexPath: indexPath) as! TorneoItemTableViewCell
+       
+        torneoCell.setupTournament(self.tournamentsArray[indexPath.row])
         
-        return genericCell
+        return torneoCell
     }
     
 }
