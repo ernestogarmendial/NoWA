@@ -83,25 +83,36 @@ class WeekDaysView: UIView {
         
     }
     
-    func showDays(days : NSArray){
+    func showDays(days : NSArray, color : UIColor){
         
         for day in days{
             
             switch (day as! String ) {
             case "1":
                 lunes?.hidden = false
+                lunes?.backgroundColor = color
             case "2":
                 martes?.hidden = false
+                martes?.backgroundColor = color
+
             case "3":
                 miercoles?.hidden = false
+                miercoles?.backgroundColor = color
+
             case "4":
                 jueves?.hidden = false
+                jueves?.backgroundColor = color
+
             case "5":
                 viernes?.hidden = false
+                viernes?.backgroundColor = color
+
             case "6":
                 sabado?.hidden = false
+                sabado?.backgroundColor = color
             case "7":
                 domingo?.hidden = false
+                domingo?.backgroundColor = color
             default:
                 print("default case")
             }

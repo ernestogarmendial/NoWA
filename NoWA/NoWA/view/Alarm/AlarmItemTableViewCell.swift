@@ -181,11 +181,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     func setupAlarm(alarm: PersonalAlarmDTO, type: String){
         
         let event = alarm.event![0] as! EventDTO
-        let alarm = alarm.weather![0] as! AlarmDTO
-        
-        //        let dateFormatter = NSDateFormatter()
-        //        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.S"
-        //        let date = dateFormatter.dateFromString(event.stamp!)
+//        let alarm = alarm.weather![0] as! AlarmDTO
         
         let stamp = event.stamp! as NSString
         
@@ -205,12 +201,10 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         }
         
         if let daysString : String = event.repetition{
-            
             let daysArray : NSArray = daysString.componentsSeparatedByString(",")
-            
-            weekDaysView?.showDays(daysArray)
-//            var dia1: String = daysArray[0]
+            weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
         }
     }
+    
     
 }

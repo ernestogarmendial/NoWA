@@ -51,18 +51,7 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
         let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
         let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
         dateLabel!.text = "\(day)-\(month)"
-        
-        if tournament.status == 0{
-            cancelLabel!.hidden = false
-        }else{
-            cancelLabel!.hidden = true
-        }
-        
-        if let daysString : String = tournament.repetition{
-            let daysArray : NSArray = daysString.componentsSeparatedByString(",")
-            weekDaysView?.showDays(daysArray)
-        }
-        
+
         if let tournamentName = tournament.name {
             serviceLabel!.text = tournamentName
         }
@@ -79,10 +68,30 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
             }
         }
         
-        //        descriptionLabel!.text
+        if tournament.status == 0{
+            cancelLabel!.hidden = false
+            setCanceledColours()
+        }else{
+            cancelLabel!.hidden = true
+        }
         
-        
+        if let daysString : String = tournament.repetition{
+            let daysArray : NSArray = daysString.componentsSeparatedByString(",")
+            if tournament.status == 0{
+                weekDaysView?.showDays(daysArray, color: UIColor.daysInactiveColor())
+            }else{
+                weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
+            }
+        }
     }
     
+    func setCanceledColours(){
+        descriptionLabel!.textColor = .daysInactiveColor()
+        serviceLabel!.textColor = .daysInactiveColor()
+        dateLabel!.textColor = .daysInactiveColor()
+        timeLabel!.textColor = .daysInactiveColor()
+        serviceIcon!.image = UIImage(named: "cup_inactive")
+
+    }
     
 }

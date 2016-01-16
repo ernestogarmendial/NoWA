@@ -42,6 +42,14 @@ extension UIColor {
         return UIColorFromRGB("2b90bb")//("1d8eaa")
     }
     
+    class func daysInactiveColor() -> UIColor{
+        return UIColorFromRGB("909294")
+    }
+    
+    class func daysActiveColor() -> UIColor{
+        return UIColorFromRGB("00b8ff")
+    }
+    
     class func canceledGrayColor() -> UIColor {
         return UIColor(red: 144/255, green: 146/255, blue: 148/255, alpha: 1.0)
     }
