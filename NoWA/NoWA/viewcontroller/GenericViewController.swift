@@ -10,11 +10,9 @@ import UIKit
 
 class GenericViewController: UIViewController {
 
-    
     var tabla : UITableView?
     var pictureView : UIImageView?
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,24 +39,10 @@ class GenericViewController: UIViewController {
         tabla?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
         tabla?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
 
-        
-
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func dismissKeyboard() {
+        tabla!.endEditing(true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
