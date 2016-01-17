@@ -17,8 +17,8 @@ class PictureTableViewCell: GenericTableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .registroGrayColor()
-        self.contentView.backgroundColor = .registroGrayColor()
+        self.backgroundColor = .clearColor()
+        self.contentView.backgroundColor = .clearColor()
 
         circlePictureView = CirclePictureView()
         self.addSubview(circlePictureView!)

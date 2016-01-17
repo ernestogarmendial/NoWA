@@ -44,5 +44,11 @@ class GenericViewController: UIViewController {
     func dismissKeyboard() {
         tabla!.endEditing(true)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController!.navigationItem.rightBarButtonItem = nil
+    }
+    
 
 }

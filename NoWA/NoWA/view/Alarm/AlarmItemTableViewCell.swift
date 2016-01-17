@@ -30,14 +30,11 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         
         serviceIcon = UIImageView()
         serviceIcon!.image = UIImage(named: "cloud_blue")
-        //        serviceIcon!.backgroundColor = .grayColor()
         serviceIcon!.contentMode = UIViewContentMode.ScaleAspectFit
         self.addSubview(serviceIcon!)
         
         serviceLabel = UILabel()
-        serviceLabel!.text = "ACCU WEATHER"
         serviceLabel!.textColor = .whiteColor()
-        //        serviceLabel!.backgroundColor = .yellowColor()
         serviceLabel!.font = UIFont.appLatoFontOfSize(10)
         serviceLabel!.adjustsFontSizeToFitWidth = true
         serviceLabel!.textAlignment = .Center
@@ -207,6 +204,8 @@ class AlarmItemTableViewCell: GenericTableViewCell {
                 weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
             }
         }
+        
+        serviceLabel!.text = "ACCU WEATHER"
     }
     
     func setInactiveColours(){

@@ -21,8 +21,8 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .registroGrayColor()
-        self.contentView.backgroundColor = .registroGrayColor()
+        self.backgroundColor = .serviceLocationColor()
+        self.contentView.backgroundColor = .serviceLocationColor()
         
         button = UIButton()
         //        acceptButton!.backgroundColor = .servicePickerBlueColor()
