@@ -11,7 +11,7 @@ import UIKit
 class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     var condition : NSNumber?
-    
+//    var defaultSeted : Bool! = false
     var titleLabel : UILabel?
     var descriptionLabel : UILabel?
     var leftIcon : UIImageView?
@@ -152,17 +152,20 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     }
     
     override func setDefaults(defaultDTO: AlarmDTO){
-        if let condition = defaultDTO.condition{
-            
-            self.condition = condition
-            
-            let delay = 1 * Double(NSEC_PER_SEC)
-            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-            dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-                if self.conditions != nil {
-                    for cond in self.conditions!{
-                        if cond.conditionID == condition{
-                            self.descriptionLabel!.text = cond.name
+        if self.defaultSeted == false{
+            if let condition = defaultDTO.condition{
+                
+                self.condition = condition
+                
+                let delay = 1 * Double(NSEC_PER_SEC)
+                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+                    if self.conditions != nil {
+                        for cond in self.conditions!{
+                            if cond.conditionID == condition{
+                                self.descriptionLabel!.text = cond.name
+                                self.defaultSeted = true
+                            }
                         }
                     }
                 }

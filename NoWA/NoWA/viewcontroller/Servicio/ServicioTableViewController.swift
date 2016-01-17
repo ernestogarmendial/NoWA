@@ -73,7 +73,6 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         let genericCell = self.tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
-        //        genericCell.alarmDefaults = self.defaultDataDTO
         genericCell.tag = indexPath.row + 100
         
         if (self.defaultDataDTO != nil){
@@ -81,7 +80,6 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         }
         
         if identificador == "AcceptButtonCell"{
-            //            genericCell.acceptDelegate = self
             genericCell.buttonDelegate = self
             
         }

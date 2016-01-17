@@ -10,6 +10,8 @@ import UIKit
 
 class GenericTableViewCell: UITableViewCell {
     
+    var defaultSeted : Bool! = false
+
     var defaultDTO : AlarmDTO?{
         didSet{
             setDefaults(defaultDTO!)

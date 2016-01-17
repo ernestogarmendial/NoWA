@@ -139,26 +139,27 @@ class SliderTableViewCell: GenericTableViewCell {
             setDefaultValues(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow)
         }
         
-        
     }
     
     func setDefaultValues(minDefaultValue: NSNumber, maxDefaultValue: NSNumber) {
-        self.minValue = minDefaultValue
-        self.maxValue = maxDefaultValue
-        self.sliderLeft?.value = Float(minDefaultValue)
-        self.sliderRight?.value = Float(maxDefaultValue)
         
-        if minDefaultValue != sliderLeft?.minimumValue{
-            self.sliderMinLabel?.text = "Min \n \(String(minDefaultValue)) \(unity)"
-        }else{
-            self.sliderMinLabel?.text = "Min \nOff"
-        }
+            self.minValue = minDefaultValue
+            self.maxValue = maxDefaultValue
+            self.sliderLeft?.value = Float(minDefaultValue)
+            self.sliderRight?.value = Float(maxDefaultValue)
+            
+            if minDefaultValue != sliderLeft?.minimumValue{
+                self.sliderMinLabel?.text = "Min \n \(String(minDefaultValue)) \(unity)"
+            }else{
+                self.sliderMinLabel?.text = "Min \nOff"
+            }
+            
+            if maxDefaultValue != sliderLeft?.maximumValue{
+                self.sliderMaxLabel?.text = "Max \n \(String(maxDefaultValue)) \(unity)"
+            }else{
+                self.sliderMaxLabel?.text = "Max \nOff"
+            }
         
-        if maxDefaultValue != sliderLeft?.maximumValue{
-            self.sliderMaxLabel?.text = "Max \n \(String(maxDefaultValue)) \(unity)"
-        }else{
-            self.sliderMaxLabel?.text = "Max \nOff"
-        }
     }
     
     func sliderMinLabelChanged(sender: UISlider) {

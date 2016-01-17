@@ -74,7 +74,7 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         selectedServiceLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         selectedServiceLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         selectedServiceLabel!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.50)
-
+        
         
         pickerArrow!.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.25)
         pickerArrow!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
@@ -134,21 +134,27 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     }
     
     override func setDefaults(defaultDTO: AlarmDTO){
-        
-        let service = defaultDTO.service
-        
-        self.service = service
-        
-        let delay = 1 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-            if self.forecasts != nil{
-                for forecast in self.forecasts!{
-                    if forecast.forecastID == service{
-                        self.selectedServiceLabel!.text = forecast.name
+        if self.defaultSeted == false{
+            
+            if let service = defaultDTO.service{
+                
+                self.service = service
+                
+                let delay = 1 * Double(NSEC_PER_SEC)
+                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+                    if self.forecasts != nil{
+                        for forecast in self.forecasts!{
+                            if forecast.forecastID == service{
+                                self.selectedServiceLabel!.text = forecast.name
+                                self.defaultSeted = true
+                                
+                            }
+                        }
                     }
                 }
             }
         }
+        
     }
 }
