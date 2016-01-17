@@ -19,6 +19,9 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         
         self.view.backgroundColor = .registroGrayColor()
 
+        let image = UIImage(named: "torneos_background")
+        pictureView?.image = image
+        
         tabla?.delegate = self
         tabla?.dataSource = self
 
@@ -30,8 +33,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         self.tabla!.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
         self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")
         
-        let image = UIImage(named: "torneos_background")
-        pictureView?.image = image
+
 
         let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)

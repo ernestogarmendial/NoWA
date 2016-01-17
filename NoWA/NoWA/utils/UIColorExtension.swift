@@ -42,6 +42,10 @@ extension UIColor {
         return UIColor(red: 58/255, green: 70/255, blue: 86/255, alpha: 0.5)
     }
     
+    class func personalAlarmColor()-> UIColor {
+        return UIColor(red: 36/255, green: 39/255, blue: 43/255, alpha: 0.5)
+    }
+    
     class func servicePickerBlueColor() -> UIColor{
         return UIColorFromRGB("2b90bb").colorWithAlphaComponent(0.5)//("1d8eaa")
     }

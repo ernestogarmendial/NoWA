@@ -25,8 +25,8 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .darkGrayCustomColor()
-        self.contentView.backgroundColor = .darkGrayCustomColor()
+        self.backgroundColor = .personalAlarmColor()
+        self.contentView.backgroundColor = .personalAlarmColor()
         
         serviceIcon = UIImageView()
         serviceIcon!.image = UIImage(named: "cloud_blue")
