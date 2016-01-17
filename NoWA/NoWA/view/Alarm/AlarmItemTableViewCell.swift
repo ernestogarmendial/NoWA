@@ -72,7 +72,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.addSubview(dateLabel!)
         
         descriptionLabel = UILabel()
-//        descriptionLabel!.text = "ENTRENAMIENTO SEMANAL"
+        //        descriptionLabel!.text = "ENTRENAMIENTO SEMANAL"
         descriptionLabel!.textColor = .whiteColor()
         descriptionLabel!.font = UIFont.appLatoFontOfSize(12)
         descriptionLabel!.adjustsFontSizeToFitWidth = true
@@ -166,22 +166,22 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     }
     
     func alarmSwitchPressed (sender:UIButton) {
-        //        sender.selected = !sender.selected;
         
-        //        if !sender.selected{
-        //            if let melodyId = self.myMelodyDTO?.objectId{ // todo borrar
-        //                var festMakerService : FestMakerService = FestMakerService()
-        //                festMakerService.likeMelody(target: self, message: "likeFinish:", melodyID: melodyId)
         sender.selected = !sender.selected;
-        //                sender.userInteractionEnabled = false
-        //            }
-        //        }
+        
+        if sender.selected{
+            setInactiveColours()
+            self.weekDaysView?.setDaysColor(.daysInactiveColor())
+        }else{
+            setActiveColours()
+            self.weekDaysView?.setDaysColor(.daysActiveColor())
+        }
     }
     
-    func setupAlarm(alarm: PersonalAlarmDTO, type: String){
+    func setupAlarm(alarm: PersonalAlarmDTO){
         
         let event = alarm.event![0] as! EventDTO
-//        let alarm = alarm.weather![0] as! AlarmDTO
+        //        let alarm = alarm.weather![0] as! AlarmDTO
         
         let stamp = event.stamp! as NSString
         
@@ -194,17 +194,33 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         
         descriptionLabel!.text = event.eventDescription
         
-        if type == "Personal"{
-            if event.status == 0{
-                alarmSwitch?.selected = true
-            }
+        if event.status == 0{
+            alarmSwitch?.selected = true
+            setInactiveColours()
         }
         
         if let daysString : String = event.repetition{
             let daysArray : NSArray = daysString.componentsSeparatedByString(",")
-            weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
+            if event.status == 0{
+                weekDaysView?.showDays(daysArray, color: UIColor.daysInactiveColor())
+            }else{
+                weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
+            }
         }
     }
     
+    func setInactiveColours(){
+        descriptionLabel!.textColor = .daysInactiveColor()
+        serviceLabel!.textColor = .daysInactiveColor()
+        dateLabel!.textColor = .daysInactiveColor()
+        timeLabel!.textColor = .daysInactiveColor()
+    }
+    
+    func setActiveColours(){
+        descriptionLabel!.textColor = .whiteColor()
+        serviceLabel!.textColor = .whiteColor()
+        dateLabel!.textColor = .whiteColor()
+        timeLabel!.textColor = .whiteColor()
+    }
     
 }

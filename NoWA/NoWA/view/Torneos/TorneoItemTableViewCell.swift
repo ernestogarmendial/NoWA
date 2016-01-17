@@ -15,11 +15,9 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        
         alarmSwitch?.hidden = true
         
         serviceIcon!.image = UIImage(named: "cup")
-        
         
         cancelLabel = UILabel()
         cancelLabel!.text = "CANCELADA POR ORGANIZADOR"
@@ -51,26 +49,29 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
         let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
         let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
         dateLabel!.text = "\(day)-\(month)"
-
-        if let tournamentName = tournament.name {
-            serviceLabel!.text = tournamentName
-        }
         
         var teamsString : String!
         for team in tournament.teams!{
             
-            teamsString = team.name!
+            let _team = team as! TeamDTO
+            teamsString = _team.name!
             
             if descriptionLabel!.text == nil {
                 descriptionLabel!.text = teamsString
             }else{
                 descriptionLabel!.text = descriptionLabel!.text! + " VS \(teamsString)"
             }
+            
+            if serviceLabel!.text == nil {
+                if let tournamentName = _team.tournament {
+                    serviceLabel!.text = tournamentName
+                }
+            }
         }
         
         if tournament.status == 0{
             cancelLabel!.hidden = false
-            setCanceledColours()
+            setInactiveColours()
         }else{
             cancelLabel!.hidden = true
         }
@@ -85,13 +86,9 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
         }
     }
     
-    func setCanceledColours(){
-        descriptionLabel!.textColor = .daysInactiveColor()
-        serviceLabel!.textColor = .daysInactiveColor()
-        dateLabel!.textColor = .daysInactiveColor()
-        timeLabel!.textColor = .daysInactiveColor()
+    override func setInactiveColours(){
+        super.setInactiveColours()
         serviceIcon!.image = UIImage(named: "cup_inactive")
-
     }
     
 }

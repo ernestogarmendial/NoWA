@@ -83,7 +83,7 @@ class AlarmasTableViewController: GenericTableViewController {
         if self.alarmsArray != nil{
             let alarmCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! AlarmItemTableViewCell
             
-            alarmCell.setupAlarm(self.alarmsArray[indexPath.row], type: "Personal")
+            alarmCell.setupAlarm(self.alarmsArray[indexPath.row])
             
             return alarmCell
         }
