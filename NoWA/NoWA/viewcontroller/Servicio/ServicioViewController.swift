@@ -15,20 +15,20 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
     
     var cellsArray: NSMutableArray!
     
-    
-    var tabla : UITableView?
-    var pictureView : UIImageView?
+//    
+//    var tabla : UITableView?
+//    var pictureView : UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .registroGrayColor()
 
-        tabla = UITableView()
+//        tabla = UITableView()
         tabla?.delegate = self
         tabla?.dataSource = self
-        tabla?.backgroundColor = .clearColor()
-        self.view.addSubview(tabla!)
+//        tabla?.backgroundColor = .clearColor()
+//        self.view.addSubview(tabla!)
         
         self.tabla!.registerClass(ServicePickerTableViewCell.self, forCellReuseIdentifier: "ServicePicker")
         self.tabla!.registerClass(PickerTableViewCell.self, forCellReuseIdentifier: "PickerCell")
@@ -39,21 +39,21 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")
         
         let image = UIImage(named: "torneos_background")
-        
-        pictureView = UIImageView()
+//        
+//        pictureView = UIImageView()
         pictureView?.image = image
-        self.view.addSubview(pictureView!)
-        self.view.bringSubviewToFront(tabla!)
-        
-        pictureView?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view)
-        pictureView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
-        pictureView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
-        pictureView?.autoSetDimension(.Height, toSize: 170)
-        
-        tabla?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
-        tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 64)
-        tabla?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
-        tabla?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
+//        self.view.addSubview(pictureView!)
+//        self.view.bringSubviewToFront(tabla!)
+//        
+//        pictureView?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view)
+//        pictureView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
+//        pictureView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
+//        pictureView?.autoSetDimension(.Height, toSize: 170)
+//        
+//        tabla?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
+//        tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 64)
+//        tabla?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
+//        tabla?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
 
         
         //        self.tableView.registerClass(ServicePickerTableViewCell.self, forCellReuseIdentifier: "ServicePicker")

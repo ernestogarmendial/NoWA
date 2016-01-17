@@ -22,15 +22,12 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
         cancelLabel = UILabel()
         cancelLabel!.text = "CANCELADA POR ORGANIZADOR"
         cancelLabel!.textColor = UIColor.buttonSelectedRedColor()
-        //        cancelLabel!.backgroundColor = .yellowColor()
         cancelLabel!.font = UIFont.appLatoFontOfSize(12)
         cancelLabel!.adjustsFontSizeToFitWidth = true
         cancelLabel!.textAlignment = .Left
         cancelLabel!.numberOfLines = 2
         cancelLabel!.hidden = true
         self.addSubview(cancelLabel!)
-        
-        //        serviceLabel!.text = "SUPER COPA"
         
         cancelLabel!.autoPinEdge(.Left, toEdge: .Right, ofView: infoView!)
         cancelLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: -12)
