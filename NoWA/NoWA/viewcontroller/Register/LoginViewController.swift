@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
         
         let tabBarController = MainTabBarController()
         
-        let servicio = ServicioTableViewController()
+        let servicio = ServicioViewController()
         let alarmas = AlarmasTableViewController()
         let torneos = TorneosTableViewController()
         let perfil = PerfilTableViewController()

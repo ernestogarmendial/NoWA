@@ -38,8 +38,12 @@ extension UIColor {
         return UIColorFromRGB("566b85")
     }
     
+    class func serviceLocationColor()-> UIColor {
+        return UIColor(red: 58/255, green: 70/255, blue: 86/255, alpha: 0.5)
+    }
+    
     class func servicePickerBlueColor() -> UIColor{
-        return UIColorFromRGB("2b90bb")//("1d8eaa")
+        return UIColorFromRGB("2b90bb").colorWithAlphaComponent(0.5)//("1d8eaa")
     }
     
     class func daysInactiveColor() -> UIColor{
