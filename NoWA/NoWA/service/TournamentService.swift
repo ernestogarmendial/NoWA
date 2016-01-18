@@ -11,7 +11,7 @@ import UIKit
 class TournamentService: GenericService {
 
     
-    func getTournamentAlarms(token _token :String?, target _target : NSObject, message _message : String ) {
+    func getTournaments(token _token :String?, target _target : NSObject, message _message : String ) {
         
         let serviceResult = ServiceResult()
         
@@ -21,11 +21,11 @@ class TournamentService: GenericService {
             return
         }
         
-        let alarmDAO: AlarmDAO = AlarmDAO()
-        alarmDAO.delegate = self
-        alarmDAO.getTournamentAlarms( token: _token, handler: { (operation, result) in
+        let tournamentDAO: TournamentDAO = TournamentDAO()
+        tournamentDAO.delegate = self
+        tournamentDAO.getTournamentsAdmin( token: _token, handler: { (operation, result) in
             
-            serviceResult.addEntity(result, forKey: "TournamentAlarms")
+            serviceResult.addEntity(result, forKey: "TournamentsAdmin")
             
             self.callMessage(target: _target, message: _message, withResult: serviceResult)
             

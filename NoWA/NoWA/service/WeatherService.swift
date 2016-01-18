@@ -10,6 +10,8 @@ import UIKit
 
 class WeatherService: GenericService {
     
+    static var defaultSettings : AlarmDTO!
+    
     func getForecasts(token _token :String?, target _target : NSObject, message _message : String ) {
         
         let serviceResult = ServiceResult()
@@ -94,6 +96,8 @@ class WeatherService: GenericService {
                 serviceResult.addErrorsFromDTO(defaultDTO!)
                 self.callMessage(target: _target, message: _message, withResult: serviceResult)
             }else{
+                
+                WeatherService.defaultSettings = result as! AlarmDTO
                 
                 serviceResult.addEntity(defaultDTO, forKey: "SetDefault")
                 

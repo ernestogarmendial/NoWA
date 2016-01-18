@@ -32,18 +32,18 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
     }
     
     func callService(){
-        let alarmService : AlarmService = AlarmService()
-        alarmService.getTournamentAlarms(token: UserService.currentUser.token,target: self,message: "getTournamentAlarmsFinish:")
+        let tournamentService : TournamentService = TournamentService()
+        tournamentService.getTournaments(token: UserService.currentUser.token,target: self,message: "getTournamentsFinish:")
     }
     
     
-    func getTournamentAlarmsFinish (result : ServiceResult!){
+    func getTournamentsFinish (result : ServiceResult!){
         if(result.hasErrors()){
             print("Error papu")
             return
         }
         
-        self.cellsArray = result.entityForKey("AdminTournaments") as? [TournamentAdminDTO]
+        self.cellsArray = result.entityForKey("TournamentsAdmin") as? [TournamentAdminDTO]
         
         self.tabla!.reloadData()
     }
