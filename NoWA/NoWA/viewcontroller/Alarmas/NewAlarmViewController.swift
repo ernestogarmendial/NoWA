@@ -11,8 +11,9 @@ import UIKit
 class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
     
     var newAlarmDTO : AlarmDTO?
-    var cellsArray: NSMutableArray!
+    var newAlarmEventDTO : EventDTO?
     
+    var cellsArray: NSMutableArray!
     
     override func viewDidLoad() {
         
@@ -87,56 +88,95 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         print("new alarm view controller")
         
         newAlarmDTO = AlarmDTO()
+        newAlarmEventDTO = EventDTO()
         
-        let serviceCell = tabla!.viewWithTag(100) as! ServicePickerTableViewCell
-        if let service = serviceCell.service{
-            newAlarmDTO?.service = service
+        let insertCell = tabla!.viewWithTag(100) as! NewAlarmInsertTableViewCell
+        if let alarmName = insertCell.nameTextField!.text{
+            newAlarmEventDTO?.name = alarmName
+            newAlarmEventDTO?.eventDescription = alarmName // preguntar este campo que onda
         }
-        let locationCell = tabla!.viewWithTag(101) as! LocationTableViewCell
-        if let place = locationCell.locationTextField!.text{//locationCell.place{
-            newAlarmDTO?.place = place
-        }
-        let conditionCell = tabla!.viewWithTag(103) as! PickerTableViewCell
-        if let condition = conditionCell.condition{
-            newAlarmDTO?.condition = condition
-        }
-        let temperatureCell = tabla!.viewWithTag(104) as! SliderTableViewCell
-        if let minTemp = temperatureCell.minValue{
-            newAlarmDTO?.minTemp = minTemp
-        }
-        if let maxTemp = temperatureCell.maxValue{
-            newAlarmDTO?.maxTemp = maxTemp
-        }
-        let windCell = tabla!.viewWithTag(105) as! SliderTableViewCell
-        if let minWind = windCell.minValue{
-            newAlarmDTO?.minWind = minWind
-        }
-        if let maxWind = windCell.maxValue{
-            newAlarmDTO?.maxWind = maxWind
-        }
-        let humidityCell = tabla!.viewWithTag(106) as! SliderTableViewCell
-        if let minHumidity = humidityCell.minValue{
-            newAlarmDTO?.minHumidity = minHumidity
-        }
-        if let maxHumidity = humidityCell.maxValue{
-            newAlarmDTO?.maxHumidity = maxHumidity
-        }
-        let snowCell = tabla!.viewWithTag(107) as! SliderTableViewCell
-        if let minSnow = snowCell.minValue{
-            newAlarmDTO?.minSnow = minSnow
-        }
-        if let maxSnow = snowCell.maxValue{
-            newAlarmDTO?.maxSnow = maxSnow
-        }
-        let predictionCell = tabla!.viewWithTag(108) as! PredictionTableViewCell
-        if let prediction = predictionCell.prediction{
-            newAlarmDTO?.prediction = prediction
-        }
+        setNewAlarmRepetitionDays(insertCell, newAlarmDTO: newAlarmDTO!, newAlarmEventDTO: newAlarmEventDTO!)
         
-        let alarmService : AlarmService = AlarmService()
-//        weatherService.setDefault( weatherDTO: defaultWeatherDTO, token: UserService.currentUser.token,target: self,message: "setDefaultFinish:")
+//        let locationCell = tabla!.viewWithTag(101) as! LocationTableViewCell
+//        if let place = locationCell.locationTextField!.text{
+//            newAlarmDTO?.place = place
+//        }
+//        let conditionCell = tabla!.viewWithTag(103) as! PickerTableViewCell
+//        if let condition = conditionCell.condition{
+//            newAlarmDTO?.condition = condition
+//        }
+//        let temperatureCell = tabla!.viewWithTag(104) as! SliderTableViewCell
+//        if let minTemp = temperatureCell.minValue{
+//            newAlarmDTO?.minTemp = minTemp
+//        }
+//        if let maxTemp = temperatureCell.maxValue{
+//            newAlarmDTO?.maxTemp = maxTemp
+//        }
+//        let windCell = tabla!.viewWithTag(105) as! SliderTableViewCell
+//        if let minWind = windCell.minValue{
+//            newAlarmDTO?.minWind = minWind
+//        }
+//        if let maxWind = windCell.maxValue{
+//            newAlarmDTO?.maxWind = maxWind
+//        }
+//        let humidityCell = tabla!.viewWithTag(106) as! SliderTableViewCell
+//        if let minHumidity = humidityCell.minValue{
+//            newAlarmDTO?.minHumidity = minHumidity
+//        }
+//        if let maxHumidity = humidityCell.maxValue{
+//            newAlarmDTO?.maxHumidity = maxHumidity
+//        }
+//        let snowCell = tabla!.viewWithTag(107) as! SliderTableViewCell
+//        if let minSnow = snowCell.minValue{
+//            newAlarmDTO?.minSnow = minSnow
+//        }
+//        if let maxSnow = snowCell.maxValue{
+//            newAlarmDTO?.maxSnow = maxSnow
+//        }
+//        let predictionCell = tabla!.viewWithTag(108) as! PredictionTableViewCell
+//        if let prediction = predictionCell.prediction{
+//            newAlarmDTO?.prediction = prediction
+//        }
+        
+        //        let alarmService : AlarmService = AlarmService()
+        //        weatherService.setDefault( weatherDTO: defaultWeatherDTO, token: UserService.currentUser.token,target: self,message: "setDefaultFinish:")
         
         
+    }
+    
+    func setNewAlarmRepetitionDays(insertCell: NewAlarmInsertTableViewCell, newAlarmDTO : AlarmDTO, newAlarmEventDTO : EventDTO){
+        
+        if insertCell.daysButtonsView?.lunes?.dayButton?.selected == false {
+            setRepetitionValue("1")
+        }
+        if insertCell.daysButtonsView?.martes?.dayButton?.selected == false {
+            setRepetitionValue("2")
+        }
+        if insertCell.daysButtonsView?.miercoles?.dayButton?.selected == false {
+            setRepetitionValue("3")
+        }
+        if insertCell.daysButtonsView?.jueves?.dayButton?.selected == false {
+            setRepetitionValue("4")
+        }
+        if insertCell.daysButtonsView?.viernes?.dayButton?.selected == false {
+            setRepetitionValue("5")
+        }
+        if insertCell.daysButtonsView?.sabado?.dayButton?.selected == false {
+            setRepetitionValue("6")
+        }
+        if insertCell.daysButtonsView?.domingo?.dayButton?.selected == false {
+            setRepetitionValue("7")
+        }
+    }
+    
+    func setRepetitionValue(day: String){
+        if newAlarmEventDTO!.repetition == nil{
+            newAlarmEventDTO!.repetition = ""
+            newAlarmEventDTO!.repetition = (newAlarmEventDTO!.repetition)! + "\(day)"
+        }else{
+            newAlarmEventDTO!.repetition = (newAlarmEventDTO!.repetition)! + ",\(day)"
+        }
+        print(newAlarmEventDTO!.repetition)
     }
     
 }
