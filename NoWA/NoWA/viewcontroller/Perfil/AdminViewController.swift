@@ -44,9 +44,9 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
         print("celda tocada")
+
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
     

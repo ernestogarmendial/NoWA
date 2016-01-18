@@ -56,8 +56,8 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     
     func addAlarm(){
         print("add Alarm")
-        let newAlarmTableViewController = NewAlarmTableViewController()
-        self.navigationController?.pushViewController(newAlarmTableViewController, animated:true )
+        let newAlarmViewController = NewAlarmViewController()
+        self.navigationController?.pushViewController(newAlarmViewController, animated:true )
         
     }
     

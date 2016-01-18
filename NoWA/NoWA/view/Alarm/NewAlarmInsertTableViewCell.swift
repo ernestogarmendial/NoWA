@@ -12,14 +12,14 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     
     var newAlertLabel : UILabel?
     var nameTextField : UITextField?
-    var timeLabel: UILabel?
-    
+    var timeLabel: UITextField?
+    var datePicker : UIDatePicker?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .registroGrayColor()
-        self.contentView.backgroundColor = .registroGrayColor()
+        self.backgroundColor = .clearColor()
+        self.contentView.backgroundColor = .clearColor()
         
         newAlertLabel = UILabel()
         newAlertLabel!.text = "NUEVA ALERTA"
@@ -41,16 +41,31 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         nameTextField!.textAlignment = .Left
         self.addSubview(nameTextField!)
         
-        timeLabel = UILabel()
+        
+        
+        datePicker = UIDatePicker()//(frame: CGRect(x: 0, y: 210, width: 320, height: 216))
+        datePicker!.datePickerMode = UIDatePickerMode.Time
+        datePicker!.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
+        datePicker?.backgroundColor = .ribbonAltColor()
+        datePicker!.addTarget(self, action: "onDatePickerValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        timeLabel = UITextField()
         timeLabel!.text = "07:30"
         timeLabel!.textColor = .whiteColor()
         timeLabel!.font = UIFont.appLatoFontOfSize(60)
         timeLabel!.adjustsFontSizeToFitWidth = true
         timeLabel!.textAlignment = .Left
-        timeLabel!.numberOfLines = 1
+        timeLabel!.inputView = datePicker!
         self.addSubview(timeLabel!)
         
         setupConstrains()
+    }
+    
+    func onDatePickerValueChanged(datePicker: UIDatePicker){
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm"
+//        datePicker.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
+        timeLabel!.text = String(dateFormatter.stringFromDate(datePicker.date))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,7 +75,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     
     func setupConstrains(){
         
-        newAlertLabel?.autoPinEdge(.Top, toEdge: .Top, ofView: self, withOffset: 10)
+        newAlertLabel?.autoPinEdge(.Top, toEdge: .Top, ofView: self, withOffset: 5)
         newAlertLabel?.autoPinEdge(.Left, toEdge: .Left, ofView: self)
         newAlertLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         
