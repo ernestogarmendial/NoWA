@@ -15,6 +15,8 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Perfil"
+        
         self.view.backgroundColor = .registroGrayColor()
         
         let image = UIImage(named: "torneos_background")
@@ -22,6 +24,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         
         tabla?.delegate = self
         tabla?.dataSource = self
+        tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
         
         self.tabla!.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
         self.tabla!.registerClass(AddressTableViewCell.self, forCellReuseIdentifier: "Address")
@@ -32,6 +35,11 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         let path = NSBundle.mainBundle().pathForResource("PerfilTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController!.navigationItem.rightBarButtonItem = nil
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,8 +85,8 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
     }
     
     func adminButtonPressed(){
-        let adminTableViewController = AdminTableViewController()
-        self.navigationController?.pushViewController(adminTableViewController, animated:true )
+        let adminViewController = AdminViewController()
+        self.navigationController?.pushViewController(adminViewController, animated:true )
         
     }
     

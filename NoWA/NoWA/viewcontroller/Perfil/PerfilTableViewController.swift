@@ -69,8 +69,8 @@ class PerfilTableViewController: GenericTableViewController, ButtonFooterDelegat
     }
     
     func adminButtonPressed(){
-        let adminTableViewController = AdminTableViewController()
-        self.navigationController?.pushViewController(adminTableViewController, animated:true )
+        let adminViewController = AdminViewController()
+        self.navigationController?.pushViewController(adminViewController, animated:true )
         
     }
     

@@ -18,7 +18,6 @@ class GenericViewController: UIViewController {
 
         tabla = UITableView()
         tabla!.backgroundColor = .clearColor()
-        tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
         tabla!.separatorColor = .clearColor()
         self.view.addSubview(tabla!)
         
@@ -44,11 +43,5 @@ class GenericViewController: UIViewController {
     func dismissKeyboard() {
         tabla!.endEditing(true)
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        self.tabBarController!.navigationItem.rightBarButtonItem = nil
-    }
-    
 
 }

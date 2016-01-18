@@ -23,12 +23,18 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         
         tabla?.delegate = self
         tabla?.dataSource = self
+        tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
         
         self.tabla!.registerClass(TorneoItemTableViewCell.self, forCellReuseIdentifier: "tournamentItem")
         callService()
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController!.navigationItem.rightBarButtonItem = nil
+    }
+
     
     func callService(){
         let alarmService : AlarmService = AlarmService()

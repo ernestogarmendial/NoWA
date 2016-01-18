@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().shadowImage = UIImage()
         
         
-        
         UINavigationBar.appearance().barStyle = .Black
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)

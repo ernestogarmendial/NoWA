@@ -23,7 +23,8 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         
         tabla?.delegate = self
         tabla?.dataSource = self
-        
+        tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
+
         self.tabla!.registerClass(AlarmItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
         
         callService()
