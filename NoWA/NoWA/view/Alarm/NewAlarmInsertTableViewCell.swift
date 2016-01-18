@@ -95,10 +95,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         daysButtonsView?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 10)
         daysButtonsView?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         daysButtonsView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
-
-
-
-        
+ 
     }
     
 }

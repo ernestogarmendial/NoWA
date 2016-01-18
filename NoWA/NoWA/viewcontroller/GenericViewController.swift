@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericViewController: UIViewController {
+class GenericViewController: UIViewController, ButtonFooterDelegate {
 
     var tabla : UITableView?
     var pictureView : UIImageView?
@@ -44,4 +44,15 @@ class GenericViewController: UIViewController {
         tabla!.endEditing(true)
     }
 
+    func acceptButtonPressed(){
+        print("accept")
+    }
+    func adminButtonPressed(){
+        print("admin")
+    }
+    
+    func createButtonPressed(){
+        print("create")
+    }
+    
 }

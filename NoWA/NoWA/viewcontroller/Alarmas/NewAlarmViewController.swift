@@ -9,7 +9,7 @@
 import UIKit
 
 class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     
     var cellsArray: NSMutableArray!
     
@@ -40,7 +40,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
     }
     
-     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if cellsArray != nil{
             return cellsArray.count
         }else{
@@ -48,18 +48,18 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         }
     }
     
-     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
         
     }
     
-     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
     
-     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
         
         let height = cellsArray[indexPath.row]["height"] as! CGFloat
         return height
@@ -67,7 +67,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     }
     
     
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identificador = cellsArray[indexPath.row]["identifier"] as! String
         
         let genericCell = self.tabla!.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
@@ -75,12 +75,14 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
         genericCell.tag = indexPath.row + 100
         
+        genericCell.buttonDelegate = self
+
         
         return genericCell
     }
     
-    
-    
-    
-    
+    override func createButtonPressed() {
+        print("new alarm view controller")
+    }
+
 }

@@ -68,15 +68,17 @@ class PerfilTableViewController: GenericTableViewController, ButtonFooterDelegat
         return genericCell
     }
     
-    func adminButtonPressed(){
+    override func adminButtonPressed(){
         let adminViewController = AdminViewController()
         self.navigationController?.pushViewController(adminViewController, animated:true )
         
     }
     
-    func acceptButtonPressed() {
+    override func acceptButtonPressed() {
         
         print("pepe")
     }
-    
+    override func createButtonPressed() {
+        print("create")
+    }
 }

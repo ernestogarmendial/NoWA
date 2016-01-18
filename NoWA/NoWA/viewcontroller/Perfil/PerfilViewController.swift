@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PerfilViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, ButtonFooterDelegate {
+class PerfilViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
     
     var cellsArray: NSMutableArray!
     
@@ -84,13 +84,13 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         return genericCell
     }
     
-    func adminButtonPressed(){
+    override func adminButtonPressed(){
         let adminViewController = AdminViewController()
         self.navigationController?.pushViewController(adminViewController, animated:true )
         
     }
     
-    func acceptButtonPressed() {
+    override func acceptButtonPressed() {
         
         print("pepe")
     }

@@ -57,4 +57,19 @@ class GenericTableViewController: UITableViewController {
 //        return 125
 //    }
 
+    
+    func adminButtonPressed(){
+        print("admin")
+
+    }
+    
+    func acceptButtonPressed() {
+        
+        print("accept")
+    }
+    
+    func createButtonPressed() {
+        print("create")
+    }
+    
 }

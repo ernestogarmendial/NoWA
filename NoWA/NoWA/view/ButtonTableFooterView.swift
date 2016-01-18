@@ -11,6 +11,7 @@ import UIKit
 protocol ButtonFooterDelegate {
     func acceptButtonPressed() -> Void
     func adminButtonPressed() -> Void
+    func createButtonPressed() -> Void
 }
 
 class ButtonTableFooterView: GenericTableViewCell{//UIView {
@@ -65,6 +66,9 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
             if action == "admin"{
                 button!.addTarget(self, action: "admin", forControlEvents: UIControlEvents.TouchUpInside)
             }
+            if action == "create"{
+                button!.addTarget(self, action: "create", forControlEvents: UIControlEvents.TouchUpInside)
+            }
         }
     }
     
@@ -85,5 +89,10 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
     func admin(){
         print("admin pressed")
         self.buttonDelegate!.adminButtonPressed()
+    }
+    
+    func create(){
+        print("admin pressed")
+        self.buttonDelegate!.createButtonPressed()
     }
 }

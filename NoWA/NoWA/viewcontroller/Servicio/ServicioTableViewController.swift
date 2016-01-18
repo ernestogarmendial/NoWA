@@ -86,7 +86,7 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         return genericCell
     }
     
-    func acceptButtonPressed() {
+    override func acceptButtonPressed() {
         print("delegado")
         
         setDefault()
@@ -182,7 +182,7 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         
         self.tableView.reloadData()
     }
-    
+override     
     func adminButtonPressed(){
         print("pepe")
     }

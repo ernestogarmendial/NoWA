@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ServicioViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, ButtonFooterDelegate {
+class ServicioViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
     var defaultWeatherDTO : AlarmDTO?
     var defaultDataDTO : AlarmDTO?
     
@@ -95,7 +95,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         return genericCell
     }
     
-    func acceptButtonPressed() {
+    override func acceptButtonPressed() {
         print("delegado")
         
         setDefault()
@@ -192,7 +192,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         self.tabla!.reloadData()
     }
     
-    func adminButtonPressed(){
+    override func adminButtonPressed(){
         print("pepe")
     }
     
