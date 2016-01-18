@@ -87,8 +87,8 @@ class AlarmDAO: GenericDAO {
     }
     
     
-//    func createAlarms(weatherDTO _weatherDTO: PersonalAlarmDTO!, token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
-//        
+    func createAlarm(alarmDTO _alarmDTO: AlarmDTO!, token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
+        
 //        if(!self.register()){
 //            return;
 //        }
@@ -125,8 +125,8 @@ class AlarmDAO: GenericDAO {
 //                self.finish(nil)
 //        })
 //        operation.start()
-//        
-//    }
+        
+    }
     
     func cancelAlarm(alarmID _alarmID : NSNumber!,token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         

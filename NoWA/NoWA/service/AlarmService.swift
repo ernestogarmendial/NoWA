@@ -52,4 +52,25 @@ class AlarmService: GenericService {
         })
     }
     
+    func createAlarm(alarmDTO _alarmDTO : AlarmDTO, token _token :String?, target _target : NSObject, message _message : String ) {
+        
+        let serviceResult = ServiceResult()
+        
+        if !TTInternetConnection.sharedInstance().internetAccess() {
+            serviceResult.addError("No Internet")
+            self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            return
+        }
+        
+        let alarmDAO: AlarmDAO = AlarmDAO()
+        alarmDAO.delegate = self
+        alarmDAO.createAlarm( alarmDTO: _alarmDTO, token: _token, handler: { (operation, result) in
+            
+            serviceResult.addEntity(result, forKey: "CreateAlarm")
+            
+            self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            
+        })
+    }
+    
 }

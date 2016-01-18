@@ -13,6 +13,7 @@ class AlarmDTO: GenericDTO {
     var service : NSNumber!
     var place : String?
     var condition : NSNumber!
+    var repetition : String?
     var prediction : NSNumber!
     var minTemp : NSNumber!
     var maxTemp : NSNumber!
@@ -36,6 +37,7 @@ class AlarmDTO: GenericDTO {
             "stamp": "stamp",
             "status": "status",
             "maxWind": "maxWind",
+            "repetition": "repetition",
             "prediction": "prediction",
             "minTemp": "minTemp",
             "minHumidity": "minHumidity",

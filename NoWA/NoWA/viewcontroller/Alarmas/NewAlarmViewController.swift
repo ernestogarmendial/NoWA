@@ -10,7 +10,7 @@ import UIKit
 
 class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+    var newAlarmDTO : AlarmDTO?
     var cellsArray: NSMutableArray!
     
     
@@ -75,14 +75,68 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
         genericCell.tag = indexPath.row + 100
         
-        genericCell.buttonDelegate = self
-
+        if identificador == "AcceptButtonCell"{
+            genericCell.buttonDelegate = self
+        }
+        
         
         return genericCell
     }
     
     override func createButtonPressed() {
         print("new alarm view controller")
+        
+        newAlarmDTO = AlarmDTO()
+        
+        let serviceCell = tabla!.viewWithTag(100) as! ServicePickerTableViewCell
+        if let service = serviceCell.service{
+            newAlarmDTO?.service = service
+        }
+        let locationCell = tabla!.viewWithTag(101) as! LocationTableViewCell
+        if let place = locationCell.locationTextField!.text{//locationCell.place{
+            newAlarmDTO?.place = place
+        }
+        let conditionCell = tabla!.viewWithTag(103) as! PickerTableViewCell
+        if let condition = conditionCell.condition{
+            newAlarmDTO?.condition = condition
+        }
+        let temperatureCell = tabla!.viewWithTag(104) as! SliderTableViewCell
+        if let minTemp = temperatureCell.minValue{
+            newAlarmDTO?.minTemp = minTemp
+        }
+        if let maxTemp = temperatureCell.maxValue{
+            newAlarmDTO?.maxTemp = maxTemp
+        }
+        let windCell = tabla!.viewWithTag(105) as! SliderTableViewCell
+        if let minWind = windCell.minValue{
+            newAlarmDTO?.minWind = minWind
+        }
+        if let maxWind = windCell.maxValue{
+            newAlarmDTO?.maxWind = maxWind
+        }
+        let humidityCell = tabla!.viewWithTag(106) as! SliderTableViewCell
+        if let minHumidity = humidityCell.minValue{
+            newAlarmDTO?.minHumidity = minHumidity
+        }
+        if let maxHumidity = humidityCell.maxValue{
+            newAlarmDTO?.maxHumidity = maxHumidity
+        }
+        let snowCell = tabla!.viewWithTag(107) as! SliderTableViewCell
+        if let minSnow = snowCell.minValue{
+            newAlarmDTO?.minSnow = minSnow
+        }
+        if let maxSnow = snowCell.maxValue{
+            newAlarmDTO?.maxSnow = maxSnow
+        }
+        let predictionCell = tabla!.viewWithTag(108) as! PredictionTableViewCell
+        if let prediction = predictionCell.prediction{
+            newAlarmDTO?.prediction = prediction
+        }
+        
+        let alarmService : AlarmService = AlarmService()
+//        weatherService.setDefault( weatherDTO: defaultWeatherDTO, token: UserService.currentUser.token,target: self,message: "setDefaultFinish:")
+        
+        
     }
-
+    
 }
