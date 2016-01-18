@@ -94,6 +94,10 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         if let alarmName = insertCell.nameTextField!.text{
             newAlarmEventDTO?.name = alarmName
             newAlarmEventDTO?.eventDescription = alarmName // preguntar este campo que onda
+            
+            // armar stamp con dia actual mas horario del picker
+            setStamp(insertCell, newAlarmDTO: newAlarmDTO!)
+            
         }
         setNewAlarmRepetitionDays(insertCell, newAlarmDTO: newAlarmDTO!, newAlarmEventDTO: newAlarmEventDTO!)
         
@@ -146,7 +150,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         }
         
         
-                let alarmService : AlarmService = AlarmService()
+        let alarmService : AlarmService = AlarmService()
         alarmService.createAlarm(eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "setDefaultFinish:")
         
         
@@ -187,4 +191,14 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         print(newAlarmEventDTO!.repetition)
     }
     
+    func setStamp(insertCell: NewAlarmInsertTableViewCell, newAlarmDTO : AlarmDTO){
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar() //2015-11-24 17:00:49.0
+        let components = calendar.components([ .Year, .Month, .Day], fromDate: date)
+        let year = components.year
+        let month = components.month
+        let day = components.day
+        
+        let stamp = "\(year)-\(month)-\(day) \(insertCell.timeLabel!.text!):00.0"
+    }
 }
