@@ -87,7 +87,7 @@ class AlarmDAO: GenericDAO {
     }
     
     
-    func createAlarm(alarmDTO _alarmDTO: AlarmDTO!, token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
+    func createAlarm(eventDTO _eventDTO : EventDTO, alarmDTO _alarmDTO: AlarmDTO!, token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         
 //        if(!self.register()){
 //            return;

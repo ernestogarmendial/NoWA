@@ -52,7 +52,7 @@ class AlarmService: GenericService {
         })
     }
     
-    func createAlarm(alarmDTO _alarmDTO : AlarmDTO, token _token :String?, target _target : NSObject, message _message : String ) {
+    func createAlarm(eventDTO _eventDTO : EventDTO, alarmDTO _alarmDTO : AlarmDTO, token _token :String?, target _target : NSObject, message _message : String ) {
         
         let serviceResult = ServiceResult()
         
@@ -64,7 +64,7 @@ class AlarmService: GenericService {
         
         let alarmDAO: AlarmDAO = AlarmDAO()
         alarmDAO.delegate = self
-        alarmDAO.createAlarm( alarmDTO: _alarmDTO, token: _token, handler: { (operation, result) in
+        alarmDAO.createAlarm(eventDTO: _eventDTO, alarmDTO: _alarmDTO, token: _token, handler: { (operation, result) in
             
             serviceResult.addEntity(result, forKey: "CreateAlarm")
             
