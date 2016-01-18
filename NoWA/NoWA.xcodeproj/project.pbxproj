@@ -44,6 +44,7 @@
 		942A997B1C1A15F500B12292 /* InfoAlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A997A1C1A15F500B12292 /* InfoAlarmTableViewCell.swift */; };
 		942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */; };
 		942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 942A997E1C1A169600B12292 /* ServicioTabCells.plist */; };
+		94457EDB1C4D8224004D4E80 /* CheckAlarmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */; };
 		944728261C472B7600F8E963 /* PerfilTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 944728251C472B7600F8E963 /* PerfilTabCells.plist */; };
 		944728291C47331200F8E963 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944728281C47331200F8E963 /* PictureTableViewCell.swift */; };
 		9447282B1C47343600F8E963 /* CirclePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447282A1C47343600F8E963 /* CirclePictureView.swift */; };
@@ -146,6 +147,7 @@
 		942A997A1C1A15F500B12292 /* InfoAlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoAlarmTableViewCell.swift; path = view/Alarm/InfoAlarmTableViewCell.swift; sourceTree = "<group>"; };
 		942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = view/Alarm/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		942A997E1C1A169600B12292 /* ServicioTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServicioTabCells.plist; sourceTree = "<group>"; };
+		94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckAlarmDTO.swift; sourceTree = "<group>"; };
 		944728251C472B7600F8E963 /* PerfilTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PerfilTabCells.plist; sourceTree = "<group>"; };
 		944728281C47331200F8E963 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureTableViewCell.swift; path = view/Perfil/PictureTableViewCell.swift; sourceTree = "<group>"; };
 		9447282A1C47343600F8E963 /* CirclePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CirclePictureView.swift; path = view/Perfil/CirclePictureView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				941CA13D1C3F6179004E4969 /* TournamentDTO.swift */,
 				941CA13F1C3F6268004E4969 /* TeamDTO.swift */,
 				9447284F1C4D735500F8E963 /* TournamentAdminDTO.swift */,
+				94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */,
 			);
 			name = dto;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				94500D671C3455FD003A70FA /* LocationDTO.swift in Sources */,
 				944728481C4C896B00F8E963 /* DaysButtonsView.swift in Sources */,
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
+				94457EDB1C4D8224004D4E80 /* CheckAlarmDTO.swift in Sources */,
 				941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */,
 				941CA1381C3F5911004E4969 /* AlarmDAO.swift in Sources */,
 				941CA1401C3F6268004E4969 /* TeamDTO.swift in Sources */,
