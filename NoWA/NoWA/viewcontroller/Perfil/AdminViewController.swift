@@ -10,7 +10,7 @@ import UIKit
 
 class AdminViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var cellsArray: NSMutableArray!
+    var cellsArray: [TournamentAdminDTO]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,25 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         self.tabla!.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
         self.tabla!.registerClass(TorneoAdminTableViewCell.self, forCellReuseIdentifier: "Tournament")
     
+//        callService()
+        
+    }
+    
+    func callService(){
+        let alarmService : AlarmService = AlarmService()
+        alarmService.getTournamentAlarms(token: UserService.currentUser.token,target: self,message: "getTournamentAlarmsFinish:")
+    }
+    
+    
+    func getTournamentAlarmsFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        self.cellsArray = result.entityForKey("AdminTournaments") as? [TournamentAdminDTO]
+        
+        self.tabla!.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -62,6 +62,9 @@
 		944728461C4C7E0A00F8E963 /* NewAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944728451C4C7E0A00F8E963 /* NewAlarmViewController.swift */; };
 		944728481C4C896B00F8E963 /* DaysButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944728471C4C896B00F8E963 /* DaysButtonsView.swift */; };
 		9447284A1C4C89B600F8E963 /* CircleDayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944728491C4C89B600F8E963 /* CircleDayButtonView.swift */; };
+		9447284C1C4D72E100F8E963 /* TournamentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447284B1C4D72E100F8E963 /* TournamentService.swift */; };
+		9447284E1C4D730D00F8E963 /* TournamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447284D1C4D730D00F8E963 /* TournamentDAO.swift */; };
+		944728501C4D735500F8E963 /* TournamentAdminDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447284F1C4D735500F8E963 /* TournamentAdminDTO.swift */; };
 		94500D611C344616003A70FA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D601C344616003A70FA /* LocationTableViewCell.swift */; };
 		94500D671C3455FD003A70FA /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D661C3455FD003A70FA /* LocationDTO.swift */; };
 		94500D6A1C346E20003A70FA /* PopUpPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94500D691C346E20003A70FA /* PopUpPickerViewController.swift */; };
@@ -161,6 +164,9 @@
 		944728451C4C7E0A00F8E963 /* NewAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewAlarmViewController.swift; path = viewcontroller/Alarmas/NewAlarmViewController.swift; sourceTree = "<group>"; };
 		944728471C4C896B00F8E963 /* DaysButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaysButtonsView.swift; path = view/Alarm/DaysButtonsView.swift; sourceTree = "<group>"; };
 		944728491C4C89B600F8E963 /* CircleDayButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleDayButtonView.swift; path = view/Alarm/CircleDayButtonView.swift; sourceTree = "<group>"; };
+		9447284B1C4D72E100F8E963 /* TournamentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentService.swift; path = service/TournamentService.swift; sourceTree = "<group>"; };
+		9447284D1C4D730D00F8E963 /* TournamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentDAO.swift; path = dao/TournamentDAO.swift; sourceTree = "<group>"; };
+		9447284F1C4D735500F8E963 /* TournamentAdminDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentAdminDTO.swift; path = model/dto/TournamentAdminDTO.swift; sourceTree = "<group>"; };
 		94500D601C344616003A70FA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = view/LocationTableViewCell.swift; sourceTree = "<group>"; };
 		94500D661C3455FD003A70FA /* LocationDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDTO.swift; path = model/dto/LocationDTO.swift; sourceTree = "<group>"; };
 		94500D691C346E20003A70FA /* PopUpPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpPickerViewController.swift; path = viewcontroller/PopUpPickerViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +247,7 @@
 				9425DB281C2A0E34003CDB83 /* GenericDAO.swift */,
 				941CA12B1C322DC1004E4969 /* WeatherDAO.swift */,
 				941CA1371C3F5911004E4969 /* AlarmDAO.swift */,
+				9447284D1C4D730D00F8E963 /* TournamentDAO.swift */,
 			);
 			name = dao;
 			sourceTree = "<group>";
@@ -267,6 +274,7 @@
 				941CA13B1C3F5BF5004E4969 /* EventDTO.swift */,
 				941CA13D1C3F6179004E4969 /* TournamentDTO.swift */,
 				941CA13F1C3F6268004E4969 /* TeamDTO.swift */,
+				9447284F1C4D735500F8E963 /* TournamentAdminDTO.swift */,
 			);
 			name = dto;
 			sourceTree = "<group>";
@@ -279,6 +287,7 @@
 				9425DB341C2A0F09003CDB83 /* ServiceResult.swift */,
 				941CA1291C322B9D004E4969 /* WeatherService.swift */,
 				941CA1351C3F58CA004E4969 /* AlarmService.swift */,
+				9447284B1C4D72E100F8E963 /* TournamentService.swift */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -743,10 +752,13 @@
 				941CA1401C3F6268004E4969 /* TeamDTO.swift in Sources */,
 				9414217D1C2C59E200D9495E /* SliderTableViewCell.swift in Sources */,
 				94A39A5E1C29021B00BA2BB8 /* AlarmHeaderView.swift in Sources */,
+				9447284C1C4D72E100F8E963 /* TournamentService.swift in Sources */,
 				942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */,
 				941CA1301C323B66004E4969 /* ForecastDTO.swift in Sources */,
 				944728331C47615800F8E963 /* NewAlarmTableViewController.swift in Sources */,
+				9447284E1C4D730D00F8E963 /* TournamentDAO.swift in Sources */,
 				941CA13A1C3F5BCD004E4969 /* PersonalAlarmDTO.swift in Sources */,
+				944728501C4D735500F8E963 /* TournamentAdminDTO.swift in Sources */,
 				9447284A1C4C89B600F8E963 /* CircleDayButtonView.swift in Sources */,
 				944728441C4C62E100F8E963 /* TorneoAdminTableViewCell.swift in Sources */,
 				941CA1341C3CB49D004E4969 /* AlarmDTO.swift in Sources */,
