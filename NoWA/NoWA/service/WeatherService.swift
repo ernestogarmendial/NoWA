@@ -125,6 +125,8 @@ class WeatherService: GenericService {
                 self.callMessage(target: _target, message: _message, withResult: serviceResult)
             }else{
                 
+                WeatherService.defaultSettings = result as! AlarmDTO
+                
                 serviceResult.addEntity(defaultDTO, forKey: "GetDefault")
                 
                 self.callMessage(target: _target, message: _message, withResult: serviceResult)
