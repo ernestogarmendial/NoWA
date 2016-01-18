@@ -113,17 +113,21 @@ class SliderTableViewCell: GenericTableViewCell {
         if let cellUnity = myDictionary["unity"] as? String{
             unity = cellUnity
         }
-        if let minValue = myDictionary["min"] as? Float{
-            sliderLeft!.minimumValue = minValue
-            sliderRight!.minimumValue = minValue
-            sliderLeft!.value = minValue
-            self.minValue = minValue
+        if let minimumValue = myDictionary["min"] as? Float{
+            if self.minValue == nil {
+                sliderLeft!.minimumValue = minimumValue
+                sliderRight!.minimumValue = minimumValue
+                sliderLeft!.value = minimumValue
+                self.minValue = minimumValue
+            }
         }
-        if let maxValue = myDictionary["max"] as? Float{
-            sliderLeft!.maximumValue = maxValue
-            sliderRight!.maximumValue = maxValue
-            sliderRight!.value = maxValue
-            self.maxValue = maxValue
+        if let maximumValue = myDictionary["max"] as? Float{
+            if self.maxValue == nil {
+                sliderLeft!.maximumValue = maximumValue
+                sliderRight!.maximumValue = maximumValue
+                sliderRight!.value = maximumValue
+                self.maxValue = maximumValue
+            }
         }
     }
     
@@ -143,22 +147,22 @@ class SliderTableViewCell: GenericTableViewCell {
     
     func setDefaultValues(minDefaultValue: NSNumber, maxDefaultValue: NSNumber) {
         
-            self.minValue = minDefaultValue
-            self.maxValue = maxDefaultValue
-            self.sliderLeft?.value = Float(minDefaultValue)
-            self.sliderRight?.value = Float(maxDefaultValue)
-            
-            if minDefaultValue != sliderLeft?.minimumValue{
-                self.sliderMinLabel?.text = "Min \n \(String(minDefaultValue)) \(unity)"
-            }else{
-                self.sliderMinLabel?.text = "Min \nOff"
-            }
-            
-            if maxDefaultValue != sliderLeft?.maximumValue{
-                self.sliderMaxLabel?.text = "Max \n \(String(maxDefaultValue)) \(unity)"
-            }else{
-                self.sliderMaxLabel?.text = "Max \nOff"
-            }
+        self.minValue = minDefaultValue
+        self.maxValue = maxDefaultValue
+        self.sliderLeft?.value = Float(minDefaultValue)
+        self.sliderRight?.value = Float(maxDefaultValue)
+        
+        if minDefaultValue != sliderLeft?.minimumValue{
+            self.sliderMinLabel?.text = "Min \n \(String(minDefaultValue)) \(unity)"
+        }else{
+            self.sliderMinLabel?.text = "Min \nOff"
+        }
+        
+        if maxDefaultValue != sliderLeft?.maximumValue{
+            self.sliderMaxLabel?.text = "Max \n \(String(maxDefaultValue)) \(unity)"
+        }else{
+            self.sliderMaxLabel?.text = "Max \nOff"
+        }
         
     }
     
