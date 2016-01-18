@@ -14,6 +14,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     var nameTextField : UITextField?
     var timeLabel: UITextField?
     var datePicker : UIDatePicker?
+    var daysButtonsView : DaysButtonsView?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -43,20 +44,24 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         
         
         
-        datePicker = UIDatePicker()//(frame: CGRect(x: 0, y: 210, width: 320, height: 216))
+        datePicker = UIDatePicker()
         datePicker!.datePickerMode = UIDatePickerMode.Time
         datePicker!.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
         datePicker?.backgroundColor = .ribbonAltColor()
         datePicker!.addTarget(self, action: "onDatePickerValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
         timeLabel = UITextField()
-        timeLabel!.text = "07:30"
+        timeLabel!.text = "00:00"
         timeLabel!.textColor = .whiteColor()
         timeLabel!.font = UIFont.appLatoFontOfSize(60)
         timeLabel!.adjustsFontSizeToFitWidth = true
+        timeLabel!.clearButtonMode = .WhileEditing
         timeLabel!.textAlignment = .Left
         timeLabel!.inputView = datePicker!
         self.addSubview(timeLabel!)
+        
+        daysButtonsView = DaysButtonsView()
+        self.addSubview(daysButtonsView!)
         
         setupConstrains()
     }
@@ -64,7 +69,6 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     func onDatePickerValueChanged(datePicker: UIDatePicker){
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "hh:mm"
-//        datePicker.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
         timeLabel!.text = String(dateFormatter.stringFromDate(datePicker.date))
     }
     
@@ -87,6 +91,13 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         timeLabel?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 10)
         timeLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         
+        daysButtonsView?.autoPinEdge(.Top, toEdge: .Bottom, ofView: timeLabel!)
+        daysButtonsView?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 10)
+        daysButtonsView?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
+        daysButtonsView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
+
+
+
         
     }
     
