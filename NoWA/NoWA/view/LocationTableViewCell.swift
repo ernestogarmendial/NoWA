@@ -169,9 +169,16 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate, UITextFieldDel
     }
     
     override func setDefaults(defaultDTO: AlarmDTO){
-        if let place = defaultDTO.place{
-            self.place = place
-            self.locationTextField!.text = place
+        
+        if !defaultSeted{
+            
+            if let place = defaultDTO.place{
+                self.place = place
+                self.locationTextField!.text = place
+                defaultSeted = true
+                
+                
+            }
         }
     }
 }
