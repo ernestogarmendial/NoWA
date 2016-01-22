@@ -203,6 +203,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         sender.selected = !sender.selected;
         
         if sender.selected{
+            cancelAlarmService()
             setInactiveColours()
             self.weekDaysView?.setDaysColor(.daysInactiveColor())
         }else{
@@ -258,8 +259,15 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     }
     
     func cancelAlarmService(){
-//        let alarmService : AlarmService = AlarmService()
-//        alarmService.cancelAlarm(alarmID: <#T##NSNumber#>, token: <#T##String?#>, target: <#T##NSObject#>, message: <#T##String#>)
+        let alarmService : AlarmService = AlarmService()
+        alarmService.cancelAlarm(alarmID: alarmID!, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
     }
     
+    func cancelAlarm (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+
+    }
 }
