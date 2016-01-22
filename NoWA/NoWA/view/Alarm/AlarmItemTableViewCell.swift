@@ -21,6 +21,42 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     var weekDaysView : WeekDaysView?
     var alarmSwitch : UIButton?
     
+    var alarmID : NSNumber?
+    var alarmDTO : PersonalAlarmDTO?{
+        didSet{
+            let event = alarmDTO!.event![0] as! EventDTO
+            
+            alarmID = event.eventID
+            
+            let stamp = event.stamp! as NSString
+            
+            timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
+            
+            let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
+            let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
+            
+            dateLabel!.text = "\(day)-\(month)"
+            
+            descriptionLabel!.text = event.eventDescription
+            
+            if event.status == 0{
+                alarmSwitch?.selected = true
+                setInactiveColours()
+            }
+            
+            if let daysString : String = event.repetition{
+                let daysArray : NSArray = daysString.componentsSeparatedByString(",")
+                if event.status == 0{
+                    weekDaysView?.showDays(daysArray, color: UIColor.daysInactiveColor())
+                }else{
+                    weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
+                }
+            }
+            
+            serviceLabel!.text = "ACCU WEATHER"
+        }
+    }
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -175,37 +211,36 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         }
     }
     
-    func setupAlarm(alarm: PersonalAlarmDTO){
+    func setupAlarm(){
         
-        let event = alarm.event![0] as! EventDTO
-        //        let alarm = alarm.weather![0] as! AlarmDTO
-        
-        let stamp = event.stamp! as NSString
-        
-        timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
-        
-        let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
-        let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
-        
-        dateLabel!.text = "\(day)-\(month)"
-        
-        descriptionLabel!.text = event.eventDescription
-        
-        if event.status == 0{
-            alarmSwitch?.selected = true
-            setInactiveColours()
-        }
-        
-        if let daysString : String = event.repetition{
-            let daysArray : NSArray = daysString.componentsSeparatedByString(",")
-            if event.status == 0{
-                weekDaysView?.showDays(daysArray, color: UIColor.daysInactiveColor())
-            }else{
-                weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
-            }
-        }
-        
-        serviceLabel!.text = "ACCU WEATHER"
+//        let event = alarmDTO!.event![0] as! EventDTO
+//        
+//        let stamp = event.stamp! as NSString
+//        
+//        timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
+//        
+//        let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
+//        let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
+//        
+//        dateLabel!.text = "\(day)-\(month)"
+//        
+//        descriptionLabel!.text = event.eventDescription
+//        
+//        if event.status == 0{
+//            alarmSwitch?.selected = true
+//            setInactiveColours()
+//        }
+//        
+//        if let daysString : String = event.repetition{
+//            let daysArray : NSArray = daysString.componentsSeparatedByString(",")
+//            if event.status == 0{
+//                weekDaysView?.showDays(daysArray, color: UIColor.daysInactiveColor())
+//            }else{
+//                weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
+//            }
+//        }
+//        
+//        serviceLabel!.text = "ACCU WEATHER"
     }
     
     func setInactiveColours(){
@@ -220,6 +255,11 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         serviceLabel!.textColor = .whiteColor()
         dateLabel!.textColor = .whiteColor()
         timeLabel!.textColor = .whiteColor()
+    }
+    
+    func cancelAlarmService(){
+//        let alarmService : AlarmService = AlarmService()
+//        alarmService.cancelAlarm(alarmID: <#T##NSNumber#>, token: <#T##String?#>, target: <#T##NSObject#>, message: <#T##String#>)
     }
     
 }
