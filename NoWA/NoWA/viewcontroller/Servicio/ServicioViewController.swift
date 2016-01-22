@@ -19,6 +19,9 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         
         self.view.backgroundColor = .registroGrayColor()
 
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        tabla!.addGestureRecognizer(tap)
+        
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         

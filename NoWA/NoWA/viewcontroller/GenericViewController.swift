@@ -21,9 +21,6 @@ class GenericViewController: UIViewController, ButtonFooterDelegate {
         tabla!.separatorColor = .clearColor()
         self.view.addSubview(tabla!)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        tabla!.addGestureRecognizer(tap)
-        
         pictureView = UIImageView()
         self.view.addSubview(pictureView!)
         self.view.bringSubviewToFront(tabla!)

@@ -17,6 +17,8 @@ class TorneoAdminTableViewCell: GenericTableViewCell {
         
         self.backgroundColor = .clearColor()
         self.contentView.backgroundColor = .clearColor()
+        self.selectionStyle = .Default
+
         
         self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         

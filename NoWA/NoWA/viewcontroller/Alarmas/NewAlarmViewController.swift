@@ -20,6 +20,9 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         self.view.backgroundColor = .registroGrayColor()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        tabla!.addGestureRecognizer(tap)
+        
         let image = UIImage(named: "create_alarm_background")
         pictureView?.image = image
         

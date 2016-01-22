@@ -203,10 +203,15 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         sender.selected = !sender.selected;
         
         if sender.selected{
+            
             cancelAlarmService()
+            
             setInactiveColours()
             self.weekDaysView?.setDaysColor(.daysInactiveColor())
         }else{
+            
+            //activarAlarmaService()
+            
             setActiveColours()
             self.weekDaysView?.setDaysColor(.daysActiveColor())
         }

@@ -22,6 +22,7 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         
         tabla?.delegate = self
         tabla?.dataSource = self
+//        tabla?.allowsSelection = true
         
         self.tabla!.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
         self.tabla!.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
