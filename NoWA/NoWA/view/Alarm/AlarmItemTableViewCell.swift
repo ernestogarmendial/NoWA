@@ -24,6 +24,8 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     var alarmID : NSNumber?
     var alarmDTO : PersonalAlarmDTO?{
         didSet{
+            
+            
             let event = alarmDTO!.event![0] as! EventDTO
             
             alarmID = event.eventID
@@ -42,8 +44,12 @@ class AlarmItemTableViewCell: GenericTableViewCell {
             if event.status == 0{
                 alarmSwitch?.selected = true
                 setInactiveColours()
+            }else{
+                alarmSwitch?.selected = false
+                setActiveColours()
             }
             
+            weekDaysView?.hideAll()
             if let daysString : String = event.repetition{
                 let daysArray : NSArray = daysString.componentsSeparatedByString(",")
                 if event.status == 0{

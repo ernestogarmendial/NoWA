@@ -115,8 +115,6 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     
     func refresh () {
         
-//        self.alarmsArray.removeAll()
-        
         self.callService()
         
         self.tabla!.reloadData()

@@ -93,6 +93,16 @@ class WeekDaysView: UIView {
          domingo?.backgroundColor = color
     }
     
+    func hideAll(){
+        lunes?.hidden = true
+        martes?.hidden = true
+        miercoles?.hidden = true
+        jueves?.hidden = true
+        viernes?.hidden = true
+        sabado?.hidden = true
+        domingo?.hidden = true
+    }
+    
     func showDays(days : NSArray, color : UIColor){
         
         for day in days{
