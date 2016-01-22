@@ -22,13 +22,13 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         
         tabla?.delegate = self
         tabla?.dataSource = self
-//        tabla?.allowsSelection = true
+        //        tabla?.allowsSelection = true
         
         self.tabla!.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
         self.tabla!.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
         self.tabla!.registerClass(TorneoAdminTableViewCell.self, forCellReuseIdentifier: "Tournament")
-    
-//        callService()
+        
+        //        callService()
         
     }
     
@@ -63,10 +63,13 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        print("celda tocada")
-
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if indexPath.row > 1 {
+            
+            let torneosAdminViewController = TorneosAdminViewController()
+            self.navigationController?.pushViewController(torneosAdminViewController, animated: true)
+        }
         
     }
     

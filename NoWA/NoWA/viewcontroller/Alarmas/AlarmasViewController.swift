@@ -13,6 +13,10 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     var alarmsArray: [PersonalAlarmDTO]!
     var alarms: NSMutableArray?
     
+    var myRefresh = UIRefreshControl()
+    var progressIcon = UIActivityIndicatorView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,11 +28,14 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         
-        tabla?.delegate = self
-        tabla?.dataSource = self
+        tabla!.delegate = self
+        tabla!.dataSource = self
         tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
-
+        
         self.tabla!.registerClass(AlarmItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
+        
+        self.myRefresh.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        tabla!.addSubview(myRefresh)
         
         callService()
     }
@@ -97,13 +104,25 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
             
             alarmCell.alarmDTO = self.alarmsArray[indexPath.row] as PersonalAlarmDTO
             alarmCell.setupAlarm()//(self.alarmsArray[indexPath.row])
-
+            
             return alarmCell
         }
         else{
             let cell = UITableViewCell()
             return cell
         }
+    }
+    
+    func refresh () {
+        
+//        self.alarmsArray.removeAll()
+        
+        self.callService()
+        
+        self.tabla!.reloadData()
+        
+        self.myRefresh.endRefreshing()
+        
     }
     
 }

@@ -84,6 +84,7 @@
 		94A39A571C28F3B300BA2BB8 /* CircleDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A561C28F3B300BA2BB8 /* CircleDayView.swift */; };
 		94A39A5C1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A5B1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift */; };
 		94A39A5E1C29021B00BA2BB8 /* AlarmHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A5D1C29021B00BA2BB8 /* AlarmHeaderView.swift */; };
+		94DEFEC21C51DE7400E40861 /* TorneosAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */; };
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +192,7 @@
 		94A39A561C28F3B300BA2BB8 /* CircleDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleDayView.swift; path = view/CircleDayView.swift; sourceTree = "<group>"; };
 		94A39A5B1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneoItemTableViewCell.swift; path = view/Torneos/TorneoItemTableViewCell.swift; sourceTree = "<group>"; };
 		94A39A5D1C29021B00BA2BB8 /* AlarmHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmHeaderView.swift; path = view/Alarm/AlarmHeaderView.swift; sourceTree = "<group>"; };
+		94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneosAdminViewController.swift; path = viewcontroller/Perfil/TorneosAdminViewController.swift; sourceTree = "<group>"; };
 		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -327,6 +329,7 @@
 				942A99731C1A13EF00B12292 /* PerfilTableViewController.swift */,
 				944728301C475B7800F8E963 /* AdminViewController.swift */,
 				944728401C4C5D3800F8E963 /* PerfilViewController.swift */,
+				94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */,
 			);
 			name = Perfil;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				942A997B1C1A15F500B12292 /* InfoAlarmTableViewCell.swift in Sources */,
 				94500D6A1C346E20003A70FA /* PopUpPickerViewController.swift in Sources */,
 				941421771C2BAA6B00D9495E /* PickerTableViewCell.swift in Sources */,
+				94DEFEC21C51DE7400E40861 /* TorneosAdminViewController.swift in Sources */,
 				941CA1321C3B676F004E4969 /* ConditionDTO.swift in Sources */,
 				945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */,
 				9447283B1C4C3A1F00F8E963 /* ServicioViewController.swift in Sources */,
