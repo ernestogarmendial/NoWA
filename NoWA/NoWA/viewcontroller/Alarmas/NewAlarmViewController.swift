@@ -154,9 +154,16 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         
         let alarmService : AlarmService = AlarmService()
-        alarmService.createAlarm(eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "setDefaultFinish:")
+        alarmService.createAlarm(eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "createAlarmFinish:")
         
         
+    }
+    
+    func createAlarmFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
     }
     
     func setNewAlarmRepetitionDays(insertCell: NewAlarmInsertTableViewCell, newAlarmDTO : AlarmDTO, newAlarmEventDTO : EventDTO){
