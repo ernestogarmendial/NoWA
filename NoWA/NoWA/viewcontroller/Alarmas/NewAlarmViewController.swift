@@ -164,6 +164,15 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
             print("Error papu")
             return
         }
+        
+        
+        let alert = UIAlertController(title: "Se ha creado la alarma", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
     }
     
     func setNewAlarmRepetitionDays(insertCell: NewAlarmInsertTableViewCell, newAlarmDTO : AlarmDTO, newAlarmEventDTO : EventDTO){

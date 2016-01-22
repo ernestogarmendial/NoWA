@@ -104,7 +104,7 @@ class AlarmDAO: GenericDAO {
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
         let place : String!
-        if _alarmDTO!.place == nil{
+        if _alarmDTO!.place == ""{
             place = "place"
         }else{
             place = _alarmDTO!.place
