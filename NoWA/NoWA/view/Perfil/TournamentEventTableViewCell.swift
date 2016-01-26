@@ -22,6 +22,8 @@ class TournamentEventTableViewCell: GenericTableViewCell {
         self.backgroundColor = .clearColor()
         self.contentView.backgroundColor = .clearColor()
         
+        self.isCancel = true
+        
         cancelIcon = UIImageView()
         cancelIcon!.image = UIImage(named: "tilde")
         cancelIcon!.contentMode = UIViewContentMode.ScaleAspectFit
@@ -72,10 +74,10 @@ class TournamentEventTableViewCell: GenericTableViewCell {
     func checkCancel(){
         if cancelIcon?.hidden == true {
             cancelIcon?.hidden = false
-            self.isCancel = false
+            self.isCancel = true
         }else{
             cancelIcon?.hidden = true
-            self.isCancel = true
+            self.isCancel = false
         }
     }
     

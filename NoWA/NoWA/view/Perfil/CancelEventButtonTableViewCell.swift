@@ -46,7 +46,7 @@ class CancelEventButtonTableViewCell: GenericTableViewCell {
     
     func cancel(){
         print("cancelar pressed")
-//        self.cancelDelegate!.cancelButtonPressed()
+        self.cancelDelegate!.cancelButtonPressed()
     }
 
 }

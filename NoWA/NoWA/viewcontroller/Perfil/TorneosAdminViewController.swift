@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
+class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, CancelEventDelegate {
     
     var torneo : TournamentAdminDTO!
     var cellsArray: [TournamentAdminDTO]!
@@ -99,6 +99,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
             return configTableViewCell
         } else if indexPath.row == 6{//self.cellsArray.count + 3{
             let cancelButtonCell = self.tabla!.dequeueReusableCellWithIdentifier("CancelButton", forIndexPath: indexPath) as! CancelEventButtonTableViewCell
+                cancelButtonCell.cancelDelegate = self
             return cancelButtonCell
         } else{
             
@@ -113,5 +114,23 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
             
         }
     }
+    
+    func cancelButtonPressed(){
+        print("delegado cancelar apretado")
+        
+        for var i = 2; i < 6 ; i++ {//self.cellsArray.count; i++ {
+            
+            let _indexPath = NSIndexPath(forRow: i, inSection: 0)
+            let currentCell = self.tabla?.cellForRowAtIndexPath(_indexPath) as? TournamentEventTableViewCell
+            
+            if currentCell?.isCancel == true {
+                print("evento nro \(i) cancelado")
+            }
+        }
+        
+    }
+   
+    
+    
     
 }
