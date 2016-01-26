@@ -38,12 +38,10 @@ class TorneoCancelAllTableViewCell: GenericTableViewCell {
         self.addSubview(cancelButton!)
         
         configLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 20)
-//        configLabel!.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         configLabel!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         configLabel!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         
-        cancelButton!.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: -15)
-//        cancelButton!.autoPinEdge(.Left, toEdge: .Right, ofView: configLabel!)
+        cancelButton!.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: -20)
         cancelButton!.autoPinEdge(.Top, toEdge: .Top, ofView: self)
         cancelButton!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
         

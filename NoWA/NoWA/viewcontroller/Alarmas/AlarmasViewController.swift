@@ -103,7 +103,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
             let alarmCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! AlarmItemTableViewCell
             
             alarmCell.alarmDTO = self.alarmsArray[indexPath.row] as PersonalAlarmDTO
-            alarmCell.setupAlarm()//(self.alarmsArray[indexPath.row])
+//            alarmCell.setupAlarm()//(self.alarmsArray[indexPath.row])
             
             return alarmCell
         }

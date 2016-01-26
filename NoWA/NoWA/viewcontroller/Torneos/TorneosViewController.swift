@@ -13,6 +13,9 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
     var tournamentsArray: [TournamentDTO]!
     var alarms: NSMutableArray!
     
+    var myRefresh = UIRefreshControl()
+    var progressIcon = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +32,10 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
         
         self.tabla!.registerClass(TorneoItemTableViewCell.self, forCellReuseIdentifier: "tournamentItem")
+        
+        self.myRefresh.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        tabla!.addSubview(myRefresh)
+        
         callService()
         
     }
@@ -37,7 +44,7 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         super.viewWillAppear(true)
         self.tabBarController!.navigationItem.rightBarButtonItem = nil
     }
-
+    
     
     func callService(){
         let alarmService : AlarmService = AlarmService()
@@ -85,11 +92,23 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        
         let torneoCell = tableView.dequeueReusableCellWithIdentifier("tournamentItem", forIndexPath: indexPath) as! TorneoItemTableViewCell
         
-        torneoCell.setupTournament(self.tournamentsArray[indexPath.row])
-        
+        if tournamentsArray != nil {
+            torneoCell.torneoDTO = self.tournamentsArray[indexPath.row] as TournamentDTO
+            
+            //        torneoCell.setupTournament(self.tournamentsArray[indexPath.row])
+        }
         return torneoCell
+    }
+    
+    func refresh () {
+        
+        self.callService()
+        self.tabla!.reloadData()
+        self.myRefresh.endRefreshing()
+        
     }
     
 }
