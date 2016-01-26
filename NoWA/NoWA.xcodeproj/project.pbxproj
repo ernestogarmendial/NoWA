@@ -85,6 +85,7 @@
 		94A39A5C1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A5B1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift */; };
 		94A39A5E1C29021B00BA2BB8 /* AlarmHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A5D1C29021B00BA2BB8 /* AlarmHeaderView.swift */; };
 		94DEFEC21C51DE7400E40861 /* TorneosAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */; };
+		94DEFEC41C5700E700E40861 /* TournamentObjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */; };
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +194,7 @@
 		94A39A5B1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneoItemTableViewCell.swift; path = view/Torneos/TorneoItemTableViewCell.swift; sourceTree = "<group>"; };
 		94A39A5D1C29021B00BA2BB8 /* AlarmHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmHeaderView.swift; path = view/Alarm/AlarmHeaderView.swift; sourceTree = "<group>"; };
 		94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneosAdminViewController.swift; path = viewcontroller/Perfil/TorneosAdminViewController.swift; sourceTree = "<group>"; };
+		94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentObjectDTO.swift; path = model/dto/TournamentObjectDTO.swift; sourceTree = "<group>"; };
 		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -278,6 +280,7 @@
 				941CA13F1C3F6268004E4969 /* TeamDTO.swift */,
 				9447284F1C4D735500F8E963 /* TournamentAdminDTO.swift */,
 				94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */,
+				94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */,
 			);
 			name = dto;
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				94801F911C0DDFC100D05D6E /* RegisterFieldView.swift in Sources */,
 				9414217F1C2C65C800D9495E /* PredictionTableViewCell.swift in Sources */,
 				94500D671C3455FD003A70FA /* LocationDTO.swift in Sources */,
+				94DEFEC41C5700E700E40861 /* TournamentObjectDTO.swift in Sources */,
 				944728481C4C896B00F8E963 /* DaysButtonsView.swift in Sources */,
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
 				94457EDB1C4D8224004D4E80 /* CheckAlarmDTO.swift in Sources */,

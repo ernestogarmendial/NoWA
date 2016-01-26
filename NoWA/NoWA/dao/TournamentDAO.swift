@@ -10,7 +10,7 @@ import UIKit
 
 class TournamentDAO: GenericDAO {
 
-    func getTournamentsAdmin(token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
+    func getTournamentsListAdmin(token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         
         if(!self.register()){
             return;
@@ -22,13 +22,13 @@ class TournamentDAO: GenericDAO {
         
         RKMIMETypeSerialization.registerClass(RKNSJSONSerialization.self, forMIMEType: "application/json")
         
-        let mapping = TournamentDTO.mapping()
+        let mapping = TournamentAdminDTO.mapping()
         
-        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "events", statusCodes: nil)
+        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "tournaments", statusCodes: nil)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "alarms/tournament/\(_token)/",
+            path: "tournaments/list/\(_token)/",
             parameters: nil)
         
         

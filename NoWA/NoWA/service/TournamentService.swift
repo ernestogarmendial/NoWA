@@ -23,7 +23,7 @@ class TournamentService: GenericService {
         
         let tournamentDAO: TournamentDAO = TournamentDAO()
         tournamentDAO.delegate = self
-        tournamentDAO.getTournamentsAdmin( token: _token, handler: { (operation, result) in
+        tournamentDAO.getTournamentsListAdmin( token: _token, handler: { (operation, result) in
             
             serviceResult.addEntity(result, forKey: "TournamentsAdmin")
             

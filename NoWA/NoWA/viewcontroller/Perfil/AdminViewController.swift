@@ -28,7 +28,7 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         self.tabla!.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
         self.tabla!.registerClass(TorneoAdminTableViewCell.self, forCellReuseIdentifier: "Tournament")
         
-        //        callService()
+        callService()
         
     }
     
@@ -51,9 +51,9 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if cellsArray != nil{
-            return cellsArray.count
+            return cellsArray.count + 2
         }else{
-            return 6
+            return 2
         }
     }
     
@@ -97,7 +97,14 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
             return configTableViewCell
         }
         
+        
         let torneoAdminTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Tournament", forIndexPath: indexPath) as! TorneoAdminTableViewCell
+        
+        if self.cellsArray != nil {
+            let torneo = self.cellsArray[indexPath.row - 2] as TournamentAdminDTO
+            torneoAdminTableViewCell.tournamentName!.text = torneo.name
+        }
+        
         
         return torneoAdminTableViewCell
         
