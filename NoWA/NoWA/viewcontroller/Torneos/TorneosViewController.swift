@@ -60,6 +60,8 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         
         self.tournamentsArray = result.entityForKey("TournamentAlarms") as? [TournamentDTO]
         
+        tournamentsArray = tournamentsArray!.sort { $0.tournamentID!.compare($1.tournamentID!) == .OrderedAscending }
+
         self.tabla!.reloadData()
     }
     
