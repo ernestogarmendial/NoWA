@@ -68,6 +68,7 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         if indexPath.row > 1 {
             
             let torneosAdminViewController = TorneosAdminViewController()
+            torneosAdminViewController.torneo = self.cellsArray[indexPath.row - 2] as TournamentAdminDTO
             self.navigationController?.pushViewController(torneosAdminViewController, animated: true)
         }
         
@@ -97,14 +98,12 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
             return configTableViewCell
         }
         
-        
         let torneoAdminTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Tournament", forIndexPath: indexPath) as! TorneoAdminTableViewCell
         
         if self.cellsArray != nil {
             let torneo = self.cellsArray[indexPath.row - 2] as TournamentAdminDTO
             torneoAdminTableViewCell.tournamentName!.text = torneo.name
         }
-        
         
         return torneoAdminTableViewCell
         

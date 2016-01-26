@@ -30,13 +30,9 @@ class TournamentAdminDTO: GenericDTO {
             "isSchool" : "isSchool",
             "id" : "tournamentID",
             "stamp": "stamp",
-//            "category" : "tournamentCategory",
-            "modalidad": "modalidad",
             "status": "status",
             "name": "name",
-//            "sport": "sport",
             "year": "year",
-            "type": "tournamentType"
 
             
             ])
@@ -45,10 +41,17 @@ class TournamentAdminDTO: GenericDTO {
         let categoryRelation = RKRelationshipMapping(fromKeyPath: "category", toKeyPath: "tournamentCategory", withMapping: tournamentCategoryMapping)
         mapping.addPropertyMapping(categoryRelation)
         
+        let modalidadMapping = TournamentObjectDTO.mapping()
+        let modalidadRelation = RKRelationshipMapping(fromKeyPath: "modalidad", toKeyPath: "modalidad", withMapping: modalidadMapping)
+        mapping.addPropertyMapping(modalidadRelation)
+        
         let sportMapping = TournamentObjectDTO.mapping()
         let sportRelation = RKRelationshipMapping(fromKeyPath: "sport", toKeyPath: "sport", withMapping: sportMapping)
         mapping.addPropertyMapping(sportRelation)
         
+        let typeMapping = TournamentObjectDTO.mapping()
+        let typeRelation = RKRelationshipMapping(fromKeyPath: "type", toKeyPath: "tournamentType", withMapping: typeMapping)
+        mapping.addPropertyMapping(typeRelation)
         return mapping
     }
     

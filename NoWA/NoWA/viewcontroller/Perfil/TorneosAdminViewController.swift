@@ -8,28 +8,102 @@
 
 import UIKit
 
-class TorneosAdminViewController: GenericViewController {
-
+class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var torneo : TournamentAdminDTO?
+    var cellsArray: [TournamentAdminDTO]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.view.backgroundColor = .registroGrayColor()
+        
+        let image = UIImage(named: "torneos_background")
+        pictureView?.image = image
+        
+        tabla?.delegate = self
+        tabla?.dataSource = self
+        
+        self.tabla!.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
+        self.tabla!.registerClass(TorneoCancelAllTableViewCell.self, forCellReuseIdentifier: "Cancel")
+        self.tabla!.registerClass(TorneoAdminTableViewCell.self, forCellReuseIdentifier: "Tournament")
+        
+//        callService()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func callService(){
+        let tournamentService : TournamentService = TournamentService()
+        tournamentService.getTournaments(token: UserService.currentUser.token,target: self,message: "getTournamentsFinish:")
     }
-    */
-
+    
+    
+    func getTournamentsFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        self.cellsArray = result.entityForKey("TournamentsAdmin") as? [TournamentAdminDTO]
+        
+        self.tabla!.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if cellsArray != nil{
+            return cellsArray.count + 2
+        }else{
+            return 2
+        }
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if indexPath.row > 1 {
+            
+        }
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+        if indexPath.row == 0{
+            return 190
+        } else if indexPath.row == 1{
+            return 40
+        } else {
+            return 60
+        }
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 0 {
+            let pictureCell = self.tabla!.dequeueReusableCellWithIdentifier("Picture", forIndexPath: indexPath) as! PictureTableViewCell
+            pictureCell.leyendLabel?.hidden = true
+            
+            return pictureCell
+        } else if indexPath.row == 1 {
+            let configTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Cancel", forIndexPath: indexPath) as! TorneoCancelAllTableViewCell
+            configTableViewCell.configLabel!.text = self.torneo?.name
+            return configTableViewCell
+        }
+        
+        let torneoAdminTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Tournament", forIndexPath: indexPath) as! TorneoAdminTableViewCell
+        
+        if self.cellsArray != nil {
+//            let torneo = self.cellsArray[indexPath.row - 2] as TournamentAdminDTO
+//            torneoAdminTableViewCell.tournamentName!.text = torneo.name
+        }
+        
+        return torneoAdminTableViewCell
+        
+    }
+    
 }
