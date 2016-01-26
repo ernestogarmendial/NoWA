@@ -43,6 +43,7 @@
 		942A997B1C1A15F500B12292 /* InfoAlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A997A1C1A15F500B12292 /* InfoAlarmTableViewCell.swift */; };
 		942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */; };
 		942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 942A997E1C1A169600B12292 /* ServicioTabCells.plist */; };
+		942C18FD1C57C71C0071D10A /* CancelEventButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C18FC1C57C71C0071D10A /* CancelEventButtonTableViewCell.swift */; };
 		94457EDB1C4D8224004D4E80 /* CheckAlarmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */; };
 		944728261C472B7600F8E963 /* PerfilTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 944728251C472B7600F8E963 /* PerfilTabCells.plist */; };
 		944728291C47331200F8E963 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944728281C47331200F8E963 /* PictureTableViewCell.swift */; };
@@ -149,6 +150,7 @@
 		942A997A1C1A15F500B12292 /* InfoAlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoAlarmTableViewCell.swift; path = view/Alarm/InfoAlarmTableViewCell.swift; sourceTree = "<group>"; };
 		942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = view/Alarm/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		942A997E1C1A169600B12292 /* ServicioTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServicioTabCells.plist; sourceTree = "<group>"; };
+		942C18FC1C57C71C0071D10A /* CancelEventButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancelEventButtonTableViewCell.swift; path = view/Perfil/CancelEventButtonTableViewCell.swift; sourceTree = "<group>"; };
 		94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckAlarmDTO.swift; sourceTree = "<group>"; };
 		944728251C472B7600F8E963 /* PerfilTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PerfilTabCells.plist; sourceTree = "<group>"; };
 		944728281C47331200F8E963 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureTableViewCell.swift; path = view/Perfil/PictureTableViewCell.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				944728431C4C62E100F8E963 /* TorneoAdminTableViewCell.swift */,
 				94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */,
 				94F069871C571C5D00F88340 /* TournamentEventTableViewCell.swift */,
+				942C18FC1C57C71C0071D10A /* CancelEventButtonTableViewCell.swift */,
 			);
 			name = Perfil;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				942A99791C1A15C000B12292 /* GenericTableViewCell.swift in Sources */,
 				9447283F1C4C5AF300F8E963 /* TorneosViewController.swift in Sources */,
 				94A39A5C1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift in Sources */,
+				942C18FD1C57C71C0071D10A /* CancelEventButtonTableViewCell.swift in Sources */,
 				941CA12C1C322DC1004E4969 /* WeatherDAO.swift in Sources */,
 				9425DB401C2A3022003CDB83 /* UserService.swift in Sources */,
 				941421831C30CC7800D9495E /* RecoverDTO.swift in Sources */,

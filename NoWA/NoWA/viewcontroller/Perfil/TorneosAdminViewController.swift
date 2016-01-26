@@ -27,8 +27,10 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         self.tabla!.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
         self.tabla!.registerClass(TorneoCancelAllTableViewCell.self, forCellReuseIdentifier: "Cancel")
         self.tabla!.registerClass(TournamentEventTableViewCell.self, forCellReuseIdentifier: "Tournament")
+        self.tabla!.registerClass(CancelEventButtonTableViewCell.self, forCellReuseIdentifier: "CancelButton")
         
-//        callService()
+        
+        //        callService()
         
     }
     
@@ -53,7 +55,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         if cellsArray != nil{
             return cellsArray.count + 2
         }else{
-            return 6
+            return 7
         }
     }
     
@@ -95,17 +97,21 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
             let configTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Cancel", forIndexPath: indexPath) as! TorneoCancelAllTableViewCell
             configTableViewCell.configLabel!.text = self.torneo?.name
             return configTableViewCell
+        } else if indexPath.row == 6{//self.cellsArray.count + 3{
+            let cancelButtonCell = self.tabla!.dequeueReusableCellWithIdentifier("CancelButton", forIndexPath: indexPath) as! CancelEventButtonTableViewCell
+            return cancelButtonCell
+        } else{
+            
+            let eventTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Tournament", forIndexPath: indexPath) as! TournamentEventTableViewCell
+            
+            if self.cellsArray != nil {
+                //            let torneo = self.cellsArray[indexPath.row - 2] as TournamentAdminDTO
+                //            torneoAdminTableViewCell.tournamentName!.text = torneo.name
+            }
+            
+            return eventTableViewCell
+            
         }
-        
-        let eventTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Tournament", forIndexPath: indexPath) as! TournamentEventTableViewCell
-        
-        if self.cellsArray != nil {
-//            let torneo = self.cellsArray[indexPath.row - 2] as TournamentAdminDTO
-//            torneoAdminTableViewCell.tournamentName!.text = torneo.name
-        }
-        
-        return eventTableViewCell
-        
     }
     
 }
