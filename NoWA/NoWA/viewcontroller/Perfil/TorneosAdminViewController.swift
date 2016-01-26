@@ -66,9 +66,9 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         if indexPath.row > 1 {
-        let eventTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Tournament", forIndexPath: indexPath) as! TournamentEventTableViewCell
-            
-            eventTableViewCell
+//        let eventTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Tournament", forIndexPath: indexPath) as! TournamentEventTableViewCell
+//            
+//            eventTableViewCell
         }
         
     }
