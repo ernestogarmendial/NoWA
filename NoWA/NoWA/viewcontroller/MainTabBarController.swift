@@ -28,7 +28,7 @@ class MainTabBarController: UITabBarController {
         // descomentar esto para que se haga transparente
         
         
-        self.tabBar.tintColor = UIColor.whiteColor()//UIColor.buttonSelectedRedColor()
+        self.tabBar.tintColor = UIColor.whiteColor()
         
     }
 
@@ -45,5 +45,13 @@ class MainTabBarController: UITabBarController {
         self.navigationController?.navigationBar.shadowImage = UIImage();
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont.appLatoFontOfSize(18)]
         
+        for item in self.tabBar.items! {
+            
+            let unselectedItem: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+            let selectedItem: NSDictionary = [NSForegroundColorAttributeName: UIColor.buttonSelectedRedColor()]
+            item.setTitleTextAttributes(unselectedItem as? [String : AnyObject], forState: .Normal)
+            item.setTitleTextAttributes(selectedItem as? [String : AnyObject], forState: .Selected)
+            
+        }
     }
 }
