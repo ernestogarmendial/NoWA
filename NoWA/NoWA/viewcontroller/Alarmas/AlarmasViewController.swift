@@ -10,7 +10,9 @@ import UIKit
 
 class AlarmasViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var alarmsArray: [PersonalAlarmDTO]!
+    var alarmsArray: [PersonalAlarmDTO]?
+    var sortedAlarmsArray: [PersonalAlarmDTO]?
+
     var alarms: NSMutableArray?
     
     var myRefresh = UIRefreshControl()
@@ -60,6 +62,17 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         
         self.alarmsArray = result.entityForKey("PersonalAlarms") as? [PersonalAlarmDTO]
         
+        sortedAlarmsArray = []
+        for alarma in self.alarmsArray!{
+            let event = alarma.event![0] as! EventDTO
+            alarma.eventID = event.eventID
+            print(alarma.eventID)
+            
+            sortedAlarmsArray?.append(alarma)
+        }
+        
+        sortedAlarmsArray = sortedAlarmsArray!.sort { $0.eventID!.compare($1.eventID!) == .OrderedAscending }
+        
         self.tabla!.reloadData()
     }
     
@@ -74,9 +87,9 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if self.alarmsArray != nil{
-            if self.alarmsArray!.count > 0{
-                return self.alarmsArray.count
+        if self.sortedAlarmsArray != nil{
+            if self.sortedAlarmsArray!.count > 0{
+                return self.sortedAlarmsArray!.count
             }
         }
         return 0 //////// si pongo 0 se mochea
@@ -99,10 +112,10 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if self.alarmsArray != nil{
+        if self.sortedAlarmsArray != nil{
             let alarmCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! AlarmItemTableViewCell
             
-            alarmCell.alarmDTO = self.alarmsArray[indexPath.row] as PersonalAlarmDTO
+            alarmCell.alarmDTO = self.sortedAlarmsArray![indexPath.row] as PersonalAlarmDTO
 //            alarmCell.setupAlarm()//(self.alarmsArray[indexPath.row])
             
             return alarmCell

@@ -12,14 +12,11 @@ class PersonalAlarmDTO: GenericDTO {
     
     var event : NSMutableArray?//EventDTO?
     var weather : NSMutableArray?//AlarmDTO?
+    var eventID : NSNumber?
     
     override class func mapping() -> RKObjectMapping {
         
         let mapping = RKObjectMapping(forClass: PersonalAlarmDTO.self)
-        //        mapping.addAttributeMappingsFromDictionary([
-        //            "event" : "event",
-        //            "weather" : "weather"
-        //            ])
         
         let eventMapping = EventDTO.mapping()
         let eventRelation = RKRelationshipMapping(fromKeyPath: "event", toKeyPath: "event", withMapping: eventMapping)
