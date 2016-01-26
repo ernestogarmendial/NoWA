@@ -13,6 +13,7 @@ class TournamentEventTableViewCell: GenericTableViewCell {
     var eventName : UILabel?
     var stampLabel : UILabel?
     var cancelIcon: UIImageView?
+    var isCancel : Bool?
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -71,8 +72,10 @@ class TournamentEventTableViewCell: GenericTableViewCell {
     func checkCancel(){
         if cancelIcon?.hidden == true {
             cancelIcon?.hidden = false
+            self.isCancel = false
         }else{
             cancelIcon?.hidden = true
+            self.isCancel = true
         }
     }
     

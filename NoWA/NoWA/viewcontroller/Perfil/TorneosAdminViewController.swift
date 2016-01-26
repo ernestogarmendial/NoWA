@@ -10,7 +10,7 @@ import UIKit
 
 class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var torneo : TournamentAdminDTO?
+    var torneo : TournamentAdminDTO!
     var cellsArray: [TournamentAdminDTO]!
     
     override func viewDidLoad() {
@@ -34,17 +34,17 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
     
     func callService(){
         let tournamentService : TournamentService = TournamentService()
-        tournamentService.getTournaments(token: UserService.currentUser.token,target: self,message: "getTournamentsFinish:")
+        tournamentService.getTournamentsEvents(tournamentID: torneo!.tournamentID,token: UserService.currentUser.token,target: self,message: "getTournamentEventsFinish:")
     }
     
     
-    func getTournamentsFinish (result : ServiceResult!){
+    func getTournamentEventsFinish (result : ServiceResult!){
         if(result.hasErrors()){
             print("Error papu")
             return
         }
         
-        self.cellsArray = result.entityForKey("TournamentsAdmin") as? [TournamentAdminDTO]
+        self.cellsArray = result.entityForKey("TournamentEvents") as? [TournamentAdminDTO]
         
         self.tabla!.reloadData()
     }
@@ -66,9 +66,9 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         if indexPath.row > 1 {
-//        let eventTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Tournament", forIndexPath: indexPath) as! TournamentEventTableViewCell
-//            
-//            eventTableViewCell
+            
+            let currentCell = self.tabla?.cellForRowAtIndexPath(indexPath) as? TournamentEventTableViewCell
+            currentCell!.checkCancel()
         }
         
     }
