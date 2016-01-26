@@ -53,7 +53,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if cellsArray != nil{
-            return cellsArray.count + 2
+            return cellsArray.count + 3
         }else{
             return 7
         }
@@ -67,7 +67,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if indexPath.row > 1 {
+        if indexPath.row > 1 && indexPath.row != 6{//indexPath.row != cellsArray.count + 3 {
             
             let currentCell = self.tabla?.cellForRowAtIndexPath(indexPath) as? TournamentEventTableViewCell
             currentCell!.checkCancel()
