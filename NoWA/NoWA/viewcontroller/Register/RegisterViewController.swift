@@ -118,7 +118,7 @@ class RegisterViewController: LoginViewController {
         login.logInWithReadPermissions(["public_profile"], fromViewController: self, handler: { (result, error) -> Void in
             if (error == nil){
                 print("logeado")
-                self.startApp()
+//                self.startApp()
             }else{
                 print("error")
             }
