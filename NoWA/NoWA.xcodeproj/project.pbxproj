@@ -44,6 +44,9 @@
 		942A997D1C1A165F00B12292 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */; };
 		942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 942A997E1C1A169600B12292 /* ServicioTabCells.plist */; };
 		942C18FD1C57C71C0071D10A /* CancelEventButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C18FC1C57C71C0071D10A /* CancelEventButtonTableViewCell.swift */; };
+		942C19011C590F700071D10A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942C18FE1C590F700071D10A /* FBSDKCoreKit.framework */; };
+		942C19021C590F700071D10A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942C18FF1C590F700071D10A /* FBSDKLoginKit.framework */; };
+		942C19031C590F700071D10A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942C19001C590F700071D10A /* FBSDKShareKit.framework */; };
 		94457EDB1C4D8224004D4E80 /* CheckAlarmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */; };
 		944728261C472B7600F8E963 /* PerfilTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 944728251C472B7600F8E963 /* PerfilTabCells.plist */; };
 		944728291C47331200F8E963 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944728281C47331200F8E963 /* PictureTableViewCell.swift */; };
@@ -151,6 +154,9 @@
 		942A997C1C1A165F00B12292 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = view/Alarm/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		942A997E1C1A169600B12292 /* ServicioTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServicioTabCells.plist; sourceTree = "<group>"; };
 		942C18FC1C57C71C0071D10A /* CancelEventButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancelEventButtonTableViewCell.swift; path = view/Perfil/CancelEventButtonTableViewCell.swift; sourceTree = "<group>"; };
+		942C18FE1C590F700071D10A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		942C18FF1C590F700071D10A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		942C19001C590F700071D10A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckAlarmDTO.swift; sourceTree = "<group>"; };
 		944728251C472B7600F8E963 /* PerfilTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PerfilTabCells.plist; sourceTree = "<group>"; };
 		944728281C47331200F8E963 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureTableViewCell.swift; path = view/Perfil/PictureTableViewCell.swift; sourceTree = "<group>"; };
@@ -209,7 +215,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942C19031C590F700071D10A /* FBSDKShareKit.framework in Frameworks */,
 				A826FA5374D4448A1079C48C /* libPods.a in Frameworks */,
+				942C19011C590F700071D10A /* FBSDKCoreKit.framework in Frameworks */,
+				942C19021C590F700071D10A /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +510,9 @@
 		9497789D1C0CDC260045099C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				942C18FE1C590F700071D10A /* FBSDKCoreKit.framework */,
+				942C18FF1C590F700071D10A /* FBSDKLoginKit.framework */,
+				942C19001C590F700071D10A /* FBSDKShareKit.framework */,
 				BAC99C11815F718924B1B194 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -910,6 +922,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NoWA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -928,6 +944,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NoWA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
