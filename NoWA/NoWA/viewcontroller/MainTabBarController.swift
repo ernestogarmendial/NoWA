@@ -16,7 +16,7 @@ class MainTabBarController: UITabBarController {
         self.view.backgroundColor = .registroGrayColor()
         
         //        UITabBar.appearance().barTintColor = UIColor.registroGrayColor()
-        UITabBar.appearance().barTintColor = UIColor.registroGrayColor()
+        UITabBar.appearance().barTintColor = UIColor.blackColor()
         
         
         // descomentar esto para que se haga transparente
