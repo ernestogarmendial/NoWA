@@ -114,6 +114,31 @@ class RegisterViewController: LoginViewController {
     
     func loginFacebook(){
         
+        let login = FBSDKLoginManager()
+        login.logInWithReadPermissions(["public_profile"], fromViewController: self, handler: { (result, error) -> Void in
+            if (error == nil){
+                print("logeado")
+                self.startApp()
+            }else{
+                print("error")
+            }
+            }
+        )
+        //        {
+        //            FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+        //            [login
+        //            logInWithReadPermissions: @[@"public_profile"]
+        //            fromViewController:self
+        //            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        //            if (error) {
+        //            NSLog(@"Process error");
+        //            } else if (result.isCancelled) {
+        //            NSLog(@"Cancelled");
+        //            } else {
+        //            NSLog(@"Logged in");
+        //            }
+        //            }];
+        //        }
     }
     
     func createAccount(){
@@ -130,8 +155,8 @@ class RegisterViewController: LoginViewController {
     func callService () {
         let userService : UserService = UserService()
         userService.login("gfaraone@litebox.com.ar", code: "631263" ,target: self,message: "loginFinish:")
-
-//        userService.login(emailView.inputTextField.text, code: passwordView.inputTextField.text ,target: self,message: "loginFinish:")
+        
+        //        userService.login(emailView.inputTextField.text, code: passwordView.inputTextField.text ,target: self,message: "loginFinish:")
     }
     
     func loginFinish (result : ServiceResult!){
