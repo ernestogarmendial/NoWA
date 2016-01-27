@@ -55,7 +55,6 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         timeLabel!.textColor = .whiteColor()
         timeLabel!.font = UIFont.appLatoFontOfSize(60)
         timeLabel!.adjustsFontSizeToFitWidth = true
-        timeLabel!.clearButtonMode = .WhileEditing
         timeLabel!.textAlignment = .Left
         timeLabel!.inputView = datePicker!
         self.addSubview(timeLabel!)
