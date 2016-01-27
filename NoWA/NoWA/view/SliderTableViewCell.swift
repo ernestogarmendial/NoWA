@@ -95,7 +95,43 @@ class SliderTableViewCell: GenericTableViewCell {
         sliderView!.addSubview(sliderRight!)
         self.addSubview(sliderView!)
         
+        
+        
         setupConstrains()
+        
+        setSlidersGradient()
+        
+        
+    }
+    
+    func setSlidersGradient(){
+        let colors : NSArray = NSArray(objects: UIColor.loginBlueColor().CGColor, UIColor.redColor().CGColor)
+        let trackGradientLayer : CAGradientLayer = CAGradientLayer()
+        var frame = CGRect(x: 0, y: 0, width: 115, height: 2)
+        frame.size.height = 2.0;
+        trackGradientLayer.frame = frame;
+        trackGradientLayer.colors = colors as! [CGColor]
+        //setting gradient as horizontal
+        trackGradientLayer.startPoint = CGPointMake(0.0, 0.2);
+        trackGradientLayer.endPoint = CGPointMake(1.0, 0.2);
+        let trackImage : UIImage = self.imageFromLayer(trackGradientLayer).resizableImageWithCapInsets(UIEdgeInsetsZero)
+        sliderLeft?.setMinimumTrackImage(trackImage, forState: .Normal)
+        sliderLeft?.setMaximumTrackImage(trackImage, forState: .Normal)
+        sliderRight?.setMinimumTrackImage(trackImage, forState: .Normal)
+        sliderRight?.setMaximumTrackImage(trackImage, forState: .Normal)
+    }
+    
+    func imageFromLayer(layer : CALayer) -> UIImage {
+        
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, layer.opaque, 0.0);
+        
+        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let outputImage : UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        
+        return outputImage;
+        
     }
     
     
