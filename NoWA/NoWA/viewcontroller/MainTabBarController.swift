@@ -10,9 +10,7 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "NOWAKEAPP"
-        
+                
         self.view.backgroundColor = .registroGrayColor()
         
         //        UITabBar.appearance().barTintColor = UIColor.registroGrayColor()
