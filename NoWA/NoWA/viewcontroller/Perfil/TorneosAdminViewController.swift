@@ -11,7 +11,7 @@ import UIKit
 class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, CancelEventDelegate {
     
     var torneo : TournamentAdminDTO!
-    var cellsArray: [TournamentAdminDTO]!
+    var cellsArray: [TournamentDTO]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         self.tabla!.registerClass(CancelEventButtonTableViewCell.self, forCellReuseIdentifier: "CancelButton")
         
         
-        //        callService()
+        callService()
         
     }
     
@@ -46,7 +46,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
             return
         }
         
-        self.cellsArray = result.entityForKey("TournamentEvents") as? [TournamentAdminDTO]
+        self.cellsArray = result.entityForKey("TournamentEvents") as? [TournamentDTO]
         
         self.tabla!.reloadData()
     }
@@ -55,7 +55,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         if cellsArray != nil{
             return cellsArray.count + 3
         }else{
-            return 7
+            return 2
         }
     }
     
@@ -67,7 +67,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if indexPath.row > 1 && indexPath.row != 6{//indexPath.row != cellsArray.count + 3 {
+        if indexPath.row > 1 && indexPath.row != cellsArray.count + 3 {
             
             let currentCell = self.tabla?.cellForRowAtIndexPath(indexPath) as? TournamentEventTableViewCell
             currentCell!.checkCancel()
@@ -97,17 +97,21 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
             let configTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Cancel", forIndexPath: indexPath) as! TorneoCancelAllTableViewCell
             configTableViewCell.configLabel!.text = self.torneo?.name
             return configTableViewCell
-        } else if indexPath.row == 6{//self.cellsArray.count + 3{
-            let cancelButtonCell = self.tabla!.dequeueReusableCellWithIdentifier("CancelButton", forIndexPath: indexPath) as! CancelEventButtonTableViewCell
-                cancelButtonCell.cancelDelegate = self
-            return cancelButtonCell
-        } else{
+        } else {
+            
+            if self.cellsArray != nil {
+                if indexPath.row == self.cellsArray.count + 2{
+                    let cancelButtonCell = self.tabla!.dequeueReusableCellWithIdentifier("CancelButton", forIndexPath: indexPath) as! CancelEventButtonTableViewCell
+                    cancelButtonCell.cancelDelegate = self
+                    return cancelButtonCell
+                }
+            }
             
             let eventTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Tournament", forIndexPath: indexPath) as! TournamentEventTableViewCell
             
             if self.cellsArray != nil {
-                //            let torneo = self.cellsArray[indexPath.row - 2] as TournamentAdminDTO
-                //            torneoAdminTableViewCell.tournamentName!.text = torneo.name
+                let evento = self.cellsArray[indexPath.row - 2] as TournamentDTO
+                eventTableViewCell.eventName!.text = evento.name
             }
             
             return eventTableViewCell
@@ -118,7 +122,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
     func cancelButtonPressed(){
         print("delegado cancelar apretado")
         
-        for var i = 2; i < 6 ; i++ {//self.cellsArray.count; i++ {
+        for var i = 2; i < self.cellsArray.count; i++ {
             
             let _indexPath = NSIndexPath(forRow: i, inSection: 0)
             let currentCell = self.tabla?.cellForRowAtIndexPath(_indexPath) as? TournamentEventTableViewCell
@@ -129,7 +133,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         }
         
     }
-   
+    
     
     
     

@@ -48,7 +48,7 @@ class TournamentDAO: GenericDAO {
         operation.start()
     }
     
-    func getTournamentsEvents(tournamentID _tournamentID : NSNumber?,token _token :String?, handler _handler : ((Operation,AnyObject)->Void)! ) {
+    func getTournamentsEvents(tournamentID _tournamentID : NSNumber!,token _token :String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         
         if(!self.register()){
             return;
@@ -60,15 +60,16 @@ class TournamentDAO: GenericDAO {
         
         RKMIMETypeSerialization.registerClass(RKNSJSONSerialization.self, forMIMEType: "application/json")
         
-        let mapping = TournamentAdminDTO.mapping()
+        let mapping = TournamentDTO.mapping()
         
-        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "tournaments", statusCodes: nil)
+        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "events", statusCodes: nil)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "tournaments/list/\(_token)/",
+            path: "tournaments/\(_tournamentID)/\(_token)/",
             parameters: nil)
         
+        print("tournaments/\(_tournamentID!)/\(_token)/")
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in
