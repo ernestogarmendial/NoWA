@@ -19,6 +19,9 @@ class MainTabBarController: UITabBarController {
         UITabBar.appearance().barTintColor = UIColor.blackColor()
         
         
+        let logoImage = UIImage(named:"logoNav")
+        self.navigationItem.titleView = UIImageView(image: logoImage)
+        
         // descomentar esto para que se haga transparente
         
         //        UITabBar.appearance().barTintColor = UIColor.clearColor()
