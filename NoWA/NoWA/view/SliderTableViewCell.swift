@@ -107,7 +107,7 @@ class SliderTableViewCell: GenericTableViewCell {
     func setSlidersGradient(){
         let colors : NSArray = NSArray(objects: UIColor.loginBlueColor().CGColor, UIColor.redColor().CGColor)
         let trackGradientLayer : CAGradientLayer = CAGradientLayer()
-        var frame = CGRect(x: 0, y: 0, width: 115, height: 2)
+        var frame = CGRect(x: 20, y: 0, width: 120, height: 2)
         frame.size.height = 2.0;
         trackGradientLayer.frame = frame;
         trackGradientLayer.colors = colors as! [CGColor]
