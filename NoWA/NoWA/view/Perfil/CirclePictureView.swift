@@ -9,10 +9,9 @@
 import UIKit
 
 class CirclePictureView: UIView {
-
+    
     var picture : UIImageView?
     var borderImage : UIImageView?
-
     
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -22,8 +21,11 @@ class CirclePictureView: UIView {
         borderImage = UIImageView(image: UIImage(named: "profile_photo_container"))
         self.addSubview(borderImage!)
         
-        picture = UIImageView()
+        picture = UIImageView(image: UIImage(named: "flanders"))
         picture?.backgroundColor = .yellowColor()
+        picture?.contentMode = UIViewContentMode.ScaleAspectFill
+        picture?.layer.masksToBounds = true
+        UIGraphicsBeginImageContext(picture!.bounds.size)
         self.addSubview(picture!)
         
         self.autoSetDimension(.Width, toSize: 120)
@@ -47,5 +49,5 @@ class CirclePictureView: UIView {
         super.init(coder: aDecoder)!
         
     }
-
+    
 }
