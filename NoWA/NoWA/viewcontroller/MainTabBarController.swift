@@ -10,7 +10,7 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         self.view.backgroundColor = .registroGrayColor()
         
         //        UITabBar.appearance().barTintColor = UIColor.registroGrayColor()
