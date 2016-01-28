@@ -48,6 +48,9 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         
         self.cellsArray = result.entityForKey("TournamentEvents") as? [TournamentDTO]
         
+        self.cellsArray = self.cellsArray!.sort { $0.tournamentID!.compare($1.tournamentID!) == .OrderedAscending }
+
+        
         self.tabla!.reloadData()
     }
     
@@ -110,8 +113,8 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
             let eventTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Tournament", forIndexPath: indexPath) as! TournamentEventTableViewCell
             
             if self.cellsArray != nil {
-                let evento = self.cellsArray[indexPath.row - 2] as TournamentDTO
-                eventTableViewCell.eventName!.text = evento.name
+                let evento : TournamentDTO = self.cellsArray[indexPath.row - 2] as TournamentDTO
+                eventTableViewCell.setValues(evento)
             }
             
             return eventTableViewCell

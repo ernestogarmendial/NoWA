@@ -15,7 +15,6 @@ class TournamentEventTableViewCell: GenericTableViewCell {
     var cancelIcon: UIImageView?
     var isCancel : Bool?
     
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -31,7 +30,6 @@ class TournamentEventTableViewCell: GenericTableViewCell {
         
         eventName = UILabel()
         eventName?.backgroundColor = .clearColor()
-        eventName!.text = "EQUIPO1 VS EQUIPO2"
         eventName!.textColor = .whiteColor()
         eventName!.font = UIFont.appLatoFontOfSize(14)
         eventName!.adjustsFontSizeToFitWidth = true
@@ -79,6 +77,47 @@ class TournamentEventTableViewCell: GenericTableViewCell {
             cancelIcon?.hidden = true
             self.isCancel = false
         }
+    }
+    
+    func setValues(event : TournamentDTO){
+        
+        self.eventName?.text = ""
+        self.stampLabel?.text = ""
+        
+        var teamsString : String!
+        
+        for team in event.teams!{
+            
+            let _team = team as! TeamDTO
+            teamsString = _team.name!
+            
+            if eventName!.text == "" {
+                eventName!.text = teamsString
+            }else{
+                eventName!.text = eventName!.text! + " VS \(teamsString)"
+            }
+            
+        }
+        
+        if let stamp = event.stamp {
+
+            let formatedStamp = stamp as NSString
+            let day = formatedStamp.substringWithRange(NSRange(location: 8, length: 2))
+            let month = formatedStamp.substringWithRange(NSRange(location: 5, length: 2))
+            let year = formatedStamp.substringWithRange(NSRange(location: 0, length: 4))
+            let hourmin = formatedStamp.substringWithRange(NSRange(location: 11, length: 5))
+            
+            self.stampLabel?.text = "\(day)-\(month)-\(year) \(hourmin)"
+            
+        }
+        
+        if let zone = event.eventZone {
+            self.stampLabel!.text = self.stampLabel!.text! + " - \(zone)"
+        }
+        
+  
+        
+        
     }
     
 }

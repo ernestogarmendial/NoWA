@@ -24,7 +24,6 @@ class TorneoAdminTableViewCell: GenericTableViewCell {
         
         tournamentName = UILabel()
         tournamentName?.backgroundColor = .clearColor()
-        tournamentName!.text = "NOMBRE DEL TORNEO"
         tournamentName!.textColor = .whiteColor()
         tournamentName!.font = UIFont.appLatoFontOfSize(14)
         tournamentName!.adjustsFontSizeToFitWidth = true
