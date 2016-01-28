@@ -12,6 +12,9 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
     
     var cellsArray: [TournamentAdminDTO]!
     
+    var myRefresh = UIRefreshControl()
+    var progressIcon = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +30,10 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         self.tabla!.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
         self.tabla!.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
         self.tabla!.registerClass(TorneoAdminTableViewCell.self, forCellReuseIdentifier: "Tournament")
+        
+        self.myRefresh.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.myRefresh.tintColor = .whiteColor()
+        tabla!.addSubview(myRefresh)
         
         callService()
         
@@ -106,6 +113,14 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         }
         
         return torneoAdminTableViewCell
+        
+    }
+    
+    func refresh () {
+        
+        self.callService()
+        self.tabla!.reloadData()
+        self.myRefresh.endRefreshing()
         
     }
     

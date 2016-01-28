@@ -34,6 +34,7 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         self.tabla!.registerClass(TorneoItemTableViewCell.self, forCellReuseIdentifier: "tournamentItem")
         
         self.myRefresh.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.myRefresh.tintColor = .whiteColor()
         tabla!.addSubview(myRefresh)
         
         callService()

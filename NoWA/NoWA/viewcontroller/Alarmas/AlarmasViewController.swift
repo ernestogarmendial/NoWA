@@ -37,6 +37,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         self.tabla!.registerClass(AlarmItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
         
         self.myRefresh.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.myRefresh.tintColor = .whiteColor()
         tabla!.addSubview(myRefresh)
         
         callService()
