@@ -14,6 +14,8 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     var newAlarmEventDTO : EventDTO?
     var cellsArray: NSMutableArray!
     
+    var defaultSeted : Bool?
+    
     override func viewDidLoad() {
         
         print(ServicioViewController.defaultData)
@@ -82,7 +84,9 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
         genericCell.tag = indexPath.row + 100
-        
+        if defaultSeted == true{
+            genericCell.setDefaults(ServicioViewController.defaultData!)
+        }
         if identificador == "AcceptButtonCell"{
             genericCell.buttonDelegate = self
         }
@@ -230,5 +234,9 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     
     func defaultButtonPressed(){
         print("apretadooooooooooooo")
+        
+        self.defaultSeted = true
+        self.tabla?.reloadData()
+        
     }
 }
