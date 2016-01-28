@@ -20,6 +20,9 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         
         self.view.backgroundColor = .registroGrayColor()
         
+        let logoImage = UIImage(named:"logoNav")
+        self.navigationItem.titleView = UIImageView(image: logoImage)
+        
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         

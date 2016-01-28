@@ -22,6 +22,9 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         self.view.backgroundColor = .registroGrayColor()
         
+        let logoImage = UIImage(named:"logoNav")
+        self.navigationItem.titleView = UIImageView(image: logoImage)
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         tabla!.addGestureRecognizer(tap)
         
