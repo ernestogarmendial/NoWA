@@ -94,6 +94,9 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
             genericCell.defaultDelegate = self
         }
         
+        if indexPath.row == cellsArray.count {
+            defaultSeted = false
+        }
         
         return genericCell
     }

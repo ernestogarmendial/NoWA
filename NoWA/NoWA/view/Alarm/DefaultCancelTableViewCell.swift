@@ -40,8 +40,8 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
         
         switchButton = UIButton()
         switchButton!.addTarget(self, action: "switchPressed:", forControlEvents: UIControlEvents.TouchUpInside)
-        switchButton!.setImage(UIImage(named: "switch_on"), forState: UIControlState.Normal)
-        switchButton!.setImage(UIImage(named: "switch_off"), forState: UIControlState.Selected)
+        switchButton!.setImage(UIImage(named: "switch_off"), forState: UIControlState.Normal)
+        switchButton!.setImage(UIImage(named: "switch_on"), forState: UIControlState.Selected)
         cancelationView!.addSubview(switchButton!)
         
         adviceLabel = UILabel()
@@ -64,8 +64,11 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
     func switchPressed (sender:UIButton) {
         
         sender.selected = !sender.selected;
-
-        self.defaultDelegate?.defaultButtonPressed()
+        
+        if sender.selected == true {
+            self.defaultDelegate?.defaultButtonPressed()
+        }
+        
     }
     
     
@@ -100,7 +103,7 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
         switchButton!.autoPinEdge(.Right, toEdge: .Right, ofView: cancelationView!, withOffset: -20)
         switchButton!.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: cancelationView!, withOffset: -3)
         switchButton!.autoPinEdge(.Top, toEdge: .Top, ofView: cancelationView!, withOffset: 3)
-
-
+        
+        
     }
 }
