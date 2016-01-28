@@ -17,6 +17,8 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         
+        print(ServicioViewController.defaultData)
+        
         super.viewDidLoad()
         self.view.backgroundColor = .registroGrayColor()
         
@@ -33,7 +35,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         self.tabla!.registerClass(ServicePickerTableViewCell.self, forCellReuseIdentifier: "ServicePicker")
         self.tabla!.registerClass(PickerTableViewCell.self, forCellReuseIdentifier: "PickerCell")
         self.tabla!.registerClass(LocationTableViewCell.self, forCellReuseIdentifier: "LocationCell")
-        self.tabla!.registerClass(ServiceAvisoTableViewCell.self, forCellReuseIdentifier: "ServiceAdviceCell")
+        self.tabla!.registerClass(DefaultCancelTableViewCell.self, forCellReuseIdentifier: "ServiceAdviceCell")
         self.tabla!.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "SliderCell")
         self.tabla!.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
         self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")

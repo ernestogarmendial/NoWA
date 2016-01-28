@@ -47,6 +47,7 @@
 		942C19011C590F700071D10A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942C18FE1C590F700071D10A /* FBSDKCoreKit.framework */; };
 		942C19021C590F700071D10A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942C18FF1C590F700071D10A /* FBSDKLoginKit.framework */; };
 		942C19031C590F700071D10A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942C19001C590F700071D10A /* FBSDKShareKit.framework */; };
+		942C19051C5A9B130071D10A /* DefaultCancelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C19041C5A9B130071D10A /* DefaultCancelTableViewCell.swift */; };
 		94457EDB1C4D8224004D4E80 /* CheckAlarmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */; };
 		944728261C472B7600F8E963 /* PerfilTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 944728251C472B7600F8E963 /* PerfilTabCells.plist */; };
 		944728291C47331200F8E963 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944728281C47331200F8E963 /* PictureTableViewCell.swift */; };
@@ -157,6 +158,7 @@
 		942C18FE1C590F700071D10A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		942C18FF1C590F700071D10A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		942C19001C590F700071D10A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		942C19041C5A9B130071D10A /* DefaultCancelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultCancelTableViewCell.swift; path = view/Alarm/DefaultCancelTableViewCell.swift; sourceTree = "<group>"; };
 		94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckAlarmDTO.swift; sourceTree = "<group>"; };
 		944728251C472B7600F8E963 /* PerfilTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PerfilTabCells.plist; sourceTree = "<group>"; };
 		944728281C47331200F8E963 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureTableViewCell.swift; path = view/Perfil/PictureTableViewCell.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				944728361C489A3700F8E963 /* NewAlarmInsertTableViewCell.swift */,
 				944728471C4C896B00F8E963 /* DaysButtonsView.swift */,
 				944728491C4C89B600F8E963 /* CircleDayButtonView.swift */,
+				942C19041C5A9B130071D10A /* DefaultCancelTableViewCell.swift */,
 			);
 			name = Alarmas;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				944728481C4C896B00F8E963 /* DaysButtonsView.swift in Sources */,
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
 				94457EDB1C4D8224004D4E80 /* CheckAlarmDTO.swift in Sources */,
+				942C19051C5A9B130071D10A /* DefaultCancelTableViewCell.swift in Sources */,
 				941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */,
 				941CA1381C3F5911004E4969 /* AlarmDAO.swift in Sources */,
 				941CA1401C3F6268004E4969 /* TeamDTO.swift in Sources */,

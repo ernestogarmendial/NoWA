@@ -12,13 +12,15 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
     var defaultWeatherDTO : AlarmDTO?
     var defaultDataDTO : AlarmDTO?
     
+    static var defaultData: AlarmDTO?
+    
     var cellsArray: NSMutableArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .registroGrayColor()
-
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         tabla!.addGestureRecognizer(tap)
         
@@ -28,7 +30,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         tabla?.delegate = self
         tabla?.dataSource = self
         tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
-
+        
         self.tabla!.registerClass(ServicePickerTableViewCell.self, forCellReuseIdentifier: "ServicePicker")
         self.tabla!.registerClass(PickerTableViewCell.self, forCellReuseIdentifier: "PickerCell")
         self.tabla!.registerClass(LocationTableViewCell.self, forCellReuseIdentifier: "LocationCell")
@@ -37,8 +39,8 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         self.tabla!.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
         self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")
         
-
-
+        
+        
         let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
         
@@ -192,6 +194,8 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         
         self.defaultDataDTO = result.entityForKey("GetDefault") as? AlarmDTO
         
+        ServicioViewController.defaultData = self.defaultDataDTO
+            
         self.tabla!.reloadData()
     }
     
