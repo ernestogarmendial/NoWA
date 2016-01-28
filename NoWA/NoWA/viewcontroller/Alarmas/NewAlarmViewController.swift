@@ -8,11 +8,10 @@
 
 import UIKit
 
-class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
+class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, DefaultCellDelegate {
     
     var newAlarmDTO : AlarmDTO?
     var newAlarmEventDTO : EventDTO?
-    
     var cellsArray: NSMutableArray!
     
     override func viewDidLoad() {
@@ -86,6 +85,9 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         if identificador == "AcceptButtonCell"{
             genericCell.buttonDelegate = self
+        }
+        if identificador == "ServiceAdviceCell"{
+            genericCell.defaultDelegate = self
         }
         
         
@@ -224,5 +226,9 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         let day = components.day
         
         let stamp = "\(year)-\(month)-\(day) \(insertCell.timeLabel!.text!):00.0"
+    }
+    
+    func defaultButtonPressed(){
+        print("apretadooooooooooooo")
     }
 }

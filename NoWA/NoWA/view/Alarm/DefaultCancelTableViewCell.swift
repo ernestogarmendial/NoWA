@@ -8,8 +8,11 @@
 
 import UIKit
 
+protocol DefaultCellDelegate {
+    func defaultButtonPressed() -> Void
+}
+
 class DefaultCancelTableViewCell: GenericTableViewCell {
-    
     
     var cancelationView : UIView?
     var cancelationLabel : UILabel?
@@ -61,9 +64,8 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
     func switchPressed (sender:UIButton) {
         
         sender.selected = !sender.selected;
-        
-        //        if sender.selected{
-        //        }
+
+        self.defaultDelegate?.defaultButtonPressed()
     }
     
     

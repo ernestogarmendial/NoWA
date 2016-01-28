@@ -21,6 +21,8 @@ class GenericTableViewCell: UITableViewCell {
 //    var acceptDelegate : ButtonFooterDelegate?
         var buttonDelegate : ButtonFooterDelegate?
 
+    var defaultDelegate : DefaultCellDelegate?
+
     
     var myDictionary : NSDictionary? {
         didSet{
