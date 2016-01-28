@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor.ribbonAltColor().colorWithAlphaComponent(0.5)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().translucent = false
-//        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
+        //        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         UINavigationBar.appearance().shadowImage = UIImage()
         
@@ -33,13 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // EGARMENDIA - DESCOMENTAR
-        //        if((NSUserDefaults.standardUserDefaults().valueForKey("firstTime")) != nil){
-        //            navigationController.viewControllers = [RegisterViewController()]
-        //        }else{
-        navigationController.viewControllers = [TourViewController()]
-        //            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstTime")
-        //            NSUserDefaults.standardUserDefaults().synchronize()
-        //        }
+        if((NSUserDefaults.standardUserDefaults().valueForKey("firstTime")) != nil){
+            navigationController.viewControllers = [RegisterViewController()]
+        }else{
+            navigationController.viewControllers = [TourViewController()]
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstTime")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         // EGARMENDIA - DESCOMENTAR
         
         
