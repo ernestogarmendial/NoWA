@@ -10,6 +10,7 @@ import UIKit
 
 protocol DefaultCellDelegate {
     func defaultButtonPressed() -> Void
+    func defaultButtonDisabled() -> Void
 }
 
 class DefaultCancelTableViewCell: GenericTableViewCell {

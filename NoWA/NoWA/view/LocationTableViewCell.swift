@@ -168,10 +168,10 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate, UITextFieldDel
         self.place = (self.locations![selectedRow].name as! String)
     }
     
-    override func setDefaults(defaultDTO: AlarmDTO){
+    override func setDefaults(defaultDTO: AlarmDTO,isCreate: Bool){
         
-        if !defaultSeted{
-            
+        if !defaultSeted || isCreate == true{
+        
             if let place = defaultDTO.place{
                 self.place = place
                 self.locationTextField!.text = place

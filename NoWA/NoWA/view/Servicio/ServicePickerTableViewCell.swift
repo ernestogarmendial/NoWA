@@ -133,8 +133,8 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         self.service = self.forecasts![selectedRow].forecastID!
     }
     
-    override func setDefaults(defaultDTO: AlarmDTO){
-        if self.defaultSeted == false{
+    override func setDefaults(defaultDTO: AlarmDTO,isCreate: Bool){
+        if self.defaultSeted == false || isCreate == true{
             
             if let service = defaultDTO.service{
                 

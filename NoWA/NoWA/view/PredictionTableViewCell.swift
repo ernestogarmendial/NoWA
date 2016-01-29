@@ -152,8 +152,8 @@ class PredictionTableViewCell: GenericTableViewCell {
         
     }
     
-    override func setDefaults(defaultDTO: AlarmDTO){
-        if self.defaultSeted == false{
+    override func setDefaults(defaultDTO: AlarmDTO,isCreate: Bool){
+        if self.defaultSeted == false || isCreate == true{
             
             if let prediction = defaultDTO.prediction{
                 self.prediction = prediction

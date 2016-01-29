@@ -166,23 +166,23 @@ class SliderTableViewCell: GenericTableViewCell {
         }
     }
     
-    override func setDefaults(defaultDTO: AlarmDTO) {
+    override func setDefaults(defaultDTO: AlarmDTO,isCreate: Bool){
         
         if titleLabel!.text == "TEMPERATURA"{
-            setDefaultValues(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp)
+            setDefaultValues(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp, isCreate: isCreate)
         }else if titleLabel!.text == "VIENTO"{
-            setDefaultValues(defaultDTO.minWind, maxDefaultValue: defaultDTO.maxWind)
+            setDefaultValues(defaultDTO.minWind, maxDefaultValue: defaultDTO.maxWind, isCreate: isCreate)
         }else if titleLabel!.text == "HUMEDAD"{
-            setDefaultValues(defaultDTO.minHumidity, maxDefaultValue: defaultDTO.maxHumidity)
+            setDefaultValues(defaultDTO.minHumidity, maxDefaultValue: defaultDTO.maxHumidity, isCreate: isCreate)
         }else if titleLabel!.text == "NIEVE"{
-            setDefaultValues(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow)
+            setDefaultValues(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow, isCreate: isCreate)
         }
         
     }
     
-    func setDefaultValues(minDefaultValue: NSNumber, maxDefaultValue: NSNumber) {
+    func setDefaultValues(minDefaultValue: NSNumber, maxDefaultValue: NSNumber, isCreate: Bool){
         
-        if !defaultSeted{
+        if !defaultSeted || isCreate == true {
             
             self.minValue = minDefaultValue
             self.maxValue = maxDefaultValue

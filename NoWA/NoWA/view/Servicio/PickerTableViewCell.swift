@@ -151,8 +151,8 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         self.condition = self.conditions![selectedRow].conditionID!
     }
     
-    override func setDefaults(defaultDTO: AlarmDTO){
-        if self.defaultSeted == false{
+    override func setDefaults(defaultDTO: AlarmDTO,isCreate: Bool){
+        if self.defaultSeted == false || isCreate == true{
             if let condition = defaultDTO.condition{
                 
                 self.condition = condition

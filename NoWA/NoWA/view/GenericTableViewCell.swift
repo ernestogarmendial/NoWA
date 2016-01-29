@@ -14,7 +14,7 @@ class GenericTableViewCell: UITableViewCell {
 
     var defaultDTO : AlarmDTO?{
         didSet{
-            setDefaults(defaultDTO!)
+            setDefaults(defaultDTO!, isCreate: false)
         }
     }
     
@@ -50,7 +50,7 @@ class GenericTableViewCell: UITableViewCell {
         
     }
     
-    func setDefaults(defaultDTO: AlarmDTO){
+    func setDefaults(defaultDTO: AlarmDTO, isCreate: Bool){
         
     }
     
