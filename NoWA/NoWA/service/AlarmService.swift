@@ -73,7 +73,7 @@ class AlarmService: GenericService {
         })
     }
     
-    func cancelAlarm(alarmID _alarmID : NSNumber, token _token :String?, target _target : NSObject, message _message : String ) {
+    func cancelAlarm(alarmID _alarmID : NSNumber, value _value : NSNumber, token _token :String?, target _target : NSObject, message _message : String ) {
         
         let serviceResult = ServiceResult()
         
@@ -85,7 +85,7 @@ class AlarmService: GenericService {
         
         let alarmDAO: AlarmDAO = AlarmDAO()
         alarmDAO.delegate = self
-        alarmDAO.cancelAlarm(alarmID: _alarmID, token: _token, handler: { (operation, result) in
+        alarmDAO.cancelAlarm(alarmID: _alarmID, value: _value, token: _token, handler: { (operation, result) in
             
             serviceResult.addEntity(result, forKey: "CancelAlarm")
             

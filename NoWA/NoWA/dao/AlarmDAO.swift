@@ -157,7 +157,7 @@ class AlarmDAO: GenericDAO {
         
     }
     
-    func cancelAlarm(alarmID _alarmID : NSNumber!,token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
+    func cancelAlarm(alarmID _alarmID : NSNumber!, value _value : NSNumber!,token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         
         if(!self.register()){
             return;
@@ -175,9 +175,10 @@ class AlarmDAO: GenericDAO {
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "alarms/cancel/\(_alarmID)/\(_token)/",
+            path: "alarms/toggle/\(_alarmID)/\(_value)/\(_token)/",
             parameters: nil)
         
+        print("alarms/toggle/\(_alarmID)/\(_value)/\(_token)/")
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in

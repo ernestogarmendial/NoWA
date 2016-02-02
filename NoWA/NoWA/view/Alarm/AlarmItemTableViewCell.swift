@@ -210,13 +210,13 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         
         if sender.selected{
             
-            cancelAlarmService()
+            cancelAlarmService(0)
             
             setInactiveColours()
             self.weekDaysView?.setDaysColor(.daysInactiveColor())
         }else{
             
-            //activarAlarmaService()
+            cancelAlarmService(1)
             
             setActiveColours()
             self.weekDaysView?.setDaysColor(.daysActiveColor())
@@ -269,9 +269,9 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         timeLabel!.textColor = .whiteColor()
     }
     
-    func cancelAlarmService(){
+    func cancelAlarmService(value: NSNumber?){
         let alarmService : AlarmService = AlarmService()
-        alarmService.cancelAlarm(alarmID: alarmID!, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
+        alarmService.cancelAlarm(alarmID: alarmID!, value: value!, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
     }
     
     func cancelAlarm (result : ServiceResult!){
