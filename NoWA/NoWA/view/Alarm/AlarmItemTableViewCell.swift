@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ToggleDelegate {
+    func switchTogglePressed() -> Void
+}
+
 class AlarmItemTableViewCell: GenericTableViewCell {
+    
+    var delegate : ToggleDelegate?
     
     var serviceIcon: UIImageView?
     var serviceLabel: UILabel?
@@ -206,20 +212,21 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     
     func alarmSwitchPressed (sender:UIButton) {
         
-        sender.selected = !sender.selected;
+        
+//        sender.selected = !sender.selected;
         
         if sender.selected{
             
-            cancelAlarmService(0)
-            
-            setInactiveColours()
-            self.weekDaysView?.setDaysColor(.daysInactiveColor())
-        }else{
-            
             cancelAlarmService(1)
             
-            setActiveColours()
-            self.weekDaysView?.setDaysColor(.daysActiveColor())
+//            setInactiveColours()
+//            self.weekDaysView?.setDaysColor(.daysInactiveColor())
+        }else{
+            
+            cancelAlarmService(0)
+            
+//            setActiveColours()
+//            self.weekDaysView?.setDaysColor(.daysActiveColor())
         }
     }
     
@@ -280,5 +287,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
             return
         }
 
+        self.delegate!.switchTogglePressed()
+        
     }
 }

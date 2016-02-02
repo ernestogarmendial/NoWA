@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmasViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
+class AlarmasViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource,ToggleDelegate {
     
     var alarmsArray: [PersonalAlarmDTO]?
     var sortedAlarmsArray: [PersonalAlarmDTO]?
@@ -117,6 +117,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
             let alarmCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! AlarmItemTableViewCell
             
             alarmCell.alarmDTO = self.sortedAlarmsArray![indexPath.row] as PersonalAlarmDTO
+            alarmCell.delegate = self
 //            alarmCell.setupAlarm()//(self.alarmsArray[indexPath.row])
             
             return alarmCell
@@ -137,4 +138,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         
     }
     
+    func switchTogglePressed(){
+        self.refresh()
+    }
 }
