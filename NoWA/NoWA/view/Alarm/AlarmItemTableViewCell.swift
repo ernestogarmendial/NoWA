@@ -8,13 +8,7 @@
 
 import UIKit
 
-protocol ToggleDelegate {
-    func switchTogglePressed() -> Void
-}
-
 class AlarmItemTableViewCell: GenericTableViewCell {
-    
-    var delegate : ToggleDelegate?
     
     var serviceIcon: UIImageView?
     var serviceLabel: UILabel?
@@ -28,15 +22,18 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     var alarmSwitch : UIButton?
     
     var alarmID : NSNumber?
+    
+    var reloadData : Bool = true
+    var event : EventDTO?
     var alarmDTO : PersonalAlarmDTO?{
         didSet{
             
+            if self.reloadData == true{
+                self.event = alarmDTO!.event![0] as? EventDTO
+            }
+            alarmID = self.event!.eventID
             
-            let event = alarmDTO!.event![0] as! EventDTO
-            
-            alarmID = event.eventID
-            
-            let stamp = event.stamp! as NSString
+            let stamp = self.event!.stamp! as NSString
             
             timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
             
@@ -45,9 +42,9 @@ class AlarmItemTableViewCell: GenericTableViewCell {
             
             dateLabel!.text = "\(day)-\(month)"
             
-            descriptionLabel!.text = event.eventDescription
+            descriptionLabel!.text = self.event!.eventDescription
             
-            if event.status == 0{
+            if self.event!.status == 0{
                 alarmSwitch?.selected = true
                 setInactiveColours()
             }else{
@@ -56,9 +53,9 @@ class AlarmItemTableViewCell: GenericTableViewCell {
             }
             
             weekDaysView?.hideAll()
-            if let daysString : String = event.repetition{
+            if let daysString : String = self.event!.repetition{
                 let daysArray : NSArray = daysString.componentsSeparatedByString(",")
-                if event.status == 0{
+                if self.event!.status == 0{
                     weekDaysView?.showDays(daysArray, color: UIColor.daysInactiveColor())
                 }else{
                     weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
@@ -66,6 +63,8 @@ class AlarmItemTableViewCell: GenericTableViewCell {
             }
             
             serviceLabel!.text = "ACCU WEATHER"
+            
+            self.reloadData = false
         }
     }
     
@@ -213,53 +212,25 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     func alarmSwitchPressed (sender:UIButton) {
         
         
-//        sender.selected = !sender.selected;
+        sender.selected = !sender.selected;
         
         if sender.selected{
             
-            cancelAlarmService(1)
-            
-//            setInactiveColours()
-//            self.weekDaysView?.setDaysColor(.daysInactiveColor())
-        }else{
-            
             cancelAlarmService(0)
             
-//            setActiveColours()
-//            self.weekDaysView?.setDaysColor(.daysActiveColor())
+            setInactiveColours()
+            self.weekDaysView?.setDaysColor(.daysInactiveColor())
+        }else{
+            
+            cancelAlarmService(1)
+            
+            setActiveColours()
+            self.weekDaysView?.setDaysColor(.daysActiveColor())
         }
     }
     
     func setupAlarm(){
         
-//        let event = alarmDTO!.event![0] as! EventDTO
-//        
-//        let stamp = event.stamp! as NSString
-//        
-//        timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
-//        
-//        let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
-//        let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
-//        
-//        dateLabel!.text = "\(day)-\(month)"
-//        
-//        descriptionLabel!.text = event.eventDescription
-//        
-//        if event.status == 0{
-//            alarmSwitch?.selected = true
-//            setInactiveColours()
-//        }
-//        
-//        if let daysString : String = event.repetition{
-//            let daysArray : NSArray = daysString.componentsSeparatedByString(",")
-//            if event.status == 0{
-//                weekDaysView?.showDays(daysArray, color: UIColor.daysInactiveColor())
-//            }else{
-//                weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
-//            }
-//        }
-//        
-//        serviceLabel!.text = "ACCU WEATHER"
     }
     
     func setInactiveColours(){
@@ -286,8 +257,12 @@ class AlarmItemTableViewCell: GenericTableViewCell {
             print("Error papu")
             return
         }
-
-        self.delegate!.switchTogglePressed()
+        
+        if self.event!.status == 0{
+            self.event!.status = 1
+        }else{
+            self.event!.status = 0
+        }
         
     }
 }

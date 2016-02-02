@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmasViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource,ToggleDelegate {
+class AlarmasViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
     
     var alarmsArray: [PersonalAlarmDTO]?
     var sortedAlarmsArray: [PersonalAlarmDTO]?
@@ -18,6 +18,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     var myRefresh = UIRefreshControl()
     var progressIcon = UIActivityIndicatorView()
     
+    var reloadData : Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,8 +117,8 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         if self.sortedAlarmsArray != nil{
             let alarmCell = tableView.dequeueReusableCellWithIdentifier("alarmItem", forIndexPath: indexPath) as! AlarmItemTableViewCell
             
+            alarmCell.reloadData = self.reloadData
             alarmCell.alarmDTO = self.sortedAlarmsArray![indexPath.row] as PersonalAlarmDTO
-            alarmCell.delegate = self
 //            alarmCell.setupAlarm()//(self.alarmsArray[indexPath.row])
             
             return alarmCell
@@ -126,6 +127,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
             let cell = UITableViewCell()
             return cell
         }
+        self.reloadData = false
     }
     
     func refresh () {
@@ -136,9 +138,8 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         
         self.myRefresh.endRefreshing()
         
+        reloadData = true
+        
     }
-    
-    func switchTogglePressed(){
-        self.refresh()
-    }
+
 }
