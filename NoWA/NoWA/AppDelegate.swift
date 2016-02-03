@@ -72,6 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          token = token.stringByReplacingOccurrencesOfString("<", withString: "")
         
         print(token)
+        
+        NSUserDefaults.standardUserDefaults().setValue(token, forKey: "deviceToken")
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     func applicationWillResignActive(application: UIApplication) {
@@ -100,5 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
+    
 }
+
 

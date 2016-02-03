@@ -19,6 +19,9 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let deviceToken =  NSUserDefaults.standardUserDefaults().valueForKey("deviceToken"){
+            print(deviceToken)
+        }
         self.view.backgroundColor = .registroGrayColor()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -195,7 +198,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         self.defaultDataDTO = result.entityForKey("GetDefault") as? AlarmDTO
         
         ServicioViewController.defaultData = self.defaultDataDTO
-            
+        
         self.tabla!.reloadData()
     }
     
