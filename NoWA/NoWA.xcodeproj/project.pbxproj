@@ -626,6 +626,11 @@
 					94686C6E1C0BA9EE00D05BD9 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = WDH25E4UXE;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					94686C821C0BA9EE00D05BD9 = {
 						CreatedOnToolsVersion = 7.1;

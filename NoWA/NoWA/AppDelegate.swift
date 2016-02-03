@@ -32,6 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         
         
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        
+        
         // EGARMENDIA - DESCOMENTAR
         if((NSUserDefaults.standardUserDefaults().valueForKey("firstTime")) != nil){
             navigationController.viewControllers = [RegisterViewController()]
@@ -58,6 +63,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        var token = deviceToken.description
+         token = token.stringByReplacingOccurrencesOfString(" ", withString: "")
+         token = token.stringByReplacingOccurrencesOfString(">", withString: "")
+         token = token.stringByReplacingOccurrencesOfString("<", withString: "")
+        
+        print(token)
     }
     
     func applicationWillResignActive(application: UIApplication) {
