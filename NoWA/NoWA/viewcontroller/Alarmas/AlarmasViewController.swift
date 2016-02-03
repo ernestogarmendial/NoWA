@@ -12,7 +12,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     
     var alarmsArray: [PersonalAlarmDTO]?
     var sortedAlarmsArray: [PersonalAlarmDTO]?
-
+    
     var alarms: NSMutableArray?
     
     var myRefresh = UIRefreshControl()
@@ -41,13 +41,14 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         self.myRefresh.tintColor = .whiteColor()
         tabla!.addSubview(myRefresh)
         
-        callService()
+//        callService()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
         self.tabBarController!.navigationItem.rightBarButtonItem = addAlarmButton
+        self.refresh()
     }
     
     func callService(){
@@ -119,7 +120,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
             
             alarmCell.reloadData = self.reloadData
             alarmCell.alarmDTO = self.sortedAlarmsArray![indexPath.row] as PersonalAlarmDTO
-//            alarmCell.setupAlarm()//(self.alarmsArray[indexPath.row])
+            //            alarmCell.setupAlarm()//(self.alarmsArray[indexPath.row])
             
             return alarmCell
         }
@@ -127,7 +128,6 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
             let cell = UITableViewCell()
             return cell
         }
-        self.reloadData = false
     }
     
     func refresh () {
@@ -141,5 +141,5 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         reloadData = true
         
     }
-
+    
 }

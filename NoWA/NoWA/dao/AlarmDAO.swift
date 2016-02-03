@@ -87,7 +87,7 @@ class AlarmDAO: GenericDAO {
     }
     
     
-    func createAlarm(eventDTO _eventDTO : EventDTO, alarmDTO _alarmDTO: AlarmDTO!, token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
+    func createAlarm(dateTime _dateTime : String, eventDTO _eventDTO : EventDTO, alarmDTO _alarmDTO: AlarmDTO!, token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         
         if(!self.register()){
             return;
@@ -138,11 +138,11 @@ class AlarmDAO: GenericDAO {
             repetition = _eventDTO.repetition
         }
         
-        print("alarms/create/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/")
+        print("alarms/create/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/")
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "alarms/create/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/",
+            path: "alarms/create/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/",
             parameters: nil)
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])

@@ -16,6 +16,8 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     
     var useDefaults : Bool? = false
     
+    var datetime : String?
+    
     override func viewDidLoad() {
         
         print(ServicioViewController.defaultData)
@@ -164,7 +166,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         
         let alarmService : AlarmService = AlarmService()
-        alarmService.createAlarm(eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "createAlarmFinish:")
+        alarmService.createAlarm(dateTime: self.datetime! ,eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "createAlarmFinish:")
         
         
     }
@@ -182,6 +184,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         dispatch_async(dispatch_get_main_queue()) {
             self.presentViewController(alert, animated: true, completion: nil)
         }
+        self.navigationController?.popViewControllerAnimated(true)
         
     }
     
@@ -221,14 +224,25 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     }
     
     func setStamp(insertCell: NewAlarmInsertTableViewCell, newAlarmDTO : AlarmDTO){
+        
+        let formatter = NSNumberFormatter()
+        formatter.minimumIntegerDigits = 2
+
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar() //2015-11-24 17:00:49.0
         let components = calendar.components([ .Year, .Month, .Day], fromDate: date)
-        let year = components.year
-        let month = components.month
-        let day = components.day
+        let year = formatter.stringFromNumber(components.year)
+        let month = formatter.stringFromNumber(components.month)
+        let day = formatter.stringFromNumber(components.day)
         
-        let stamp = "\(year)-\(month)-\(day) \(insertCell.timeLabel!.text!):00.0"
+        let timeLabel = insertCell.timeLabel!.text! as NSString
+        
+        
+        let hour = timeLabel.substringWithRange(NSRange(location: 0, length: 2))
+        let minute = timeLabel.substringWithRange(NSRange(location: 3, length: 2))
+
+//        dd-MM-yyyy-HH-mm-ss
+        self.datetime = "\(day!)-\(month!)-\(year!)-\(hour)-\(minute)-00"
     }
     
     func defaultButtonPressed(){
