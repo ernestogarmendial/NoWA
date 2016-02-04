@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ServicioViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
+class ServicioViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     var defaultWeatherDTO : AlarmDTO?
     var defaultDataDTO : AlarmDTO?
     
@@ -49,6 +49,11 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         
         getDefaults()
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     override func viewWillAppear(animated: Bool) {

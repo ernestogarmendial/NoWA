@@ -625,7 +625,7 @@
 				TargetAttributes = {
 					94686C6E1C0BA9EE00D05BD9 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = QG5HJGAUGS;
+						DevelopmentTeam = WDH25E4UXE;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -938,7 +938,7 @@
 				INFOPLIST_FILE = NoWA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nowakeapp.nowakeapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.egl.nowakeapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoWA/NoWA-Bridging-Header.h";
@@ -960,7 +960,7 @@
 				INFOPLIST_FILE = NoWA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nowakeapp.nowakeapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.egl.nowakeapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoWA/NoWA-Bridging-Header.h";
