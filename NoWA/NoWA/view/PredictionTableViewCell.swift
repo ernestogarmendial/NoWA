@@ -60,7 +60,7 @@ class PredictionTableViewCell: GenericTableViewCell {
         if self.prediction != nil{
             sliderLeft!.value = self.prediction as! Float
         }
-        sliderLeft!.minimumValue = 1
+        sliderLeft!.minimumValue = 0
         sliderLeft!.maximumValue = 3
         sliderLeft!.tintColor = UIColor.loginBlueColor()
         sliderLeft!.addTarget(self, action: "sliderValueChanged:", forControlEvents: .ValueChanged)
