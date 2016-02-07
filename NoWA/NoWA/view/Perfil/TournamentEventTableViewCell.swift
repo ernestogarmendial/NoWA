@@ -21,12 +21,13 @@ class TournamentEventTableViewCell: GenericTableViewCell {
         self.backgroundColor = .clearColor()
         self.contentView.backgroundColor = .clearColor()
         
-        self.isCancel = true
+        self.isCancel = false
         
         cancelIcon = UIImageView()
         cancelIcon!.image = UIImage(named: "tilde")
         cancelIcon!.contentMode = UIViewContentMode.ScaleAspectFit
         self.addSubview(cancelIcon!)
+        cancelIcon!.hidden = true
         
         eventName = UILabel()
         eventName?.backgroundColor = .clearColor()
