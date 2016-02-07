@@ -63,6 +63,7 @@ class PredictionTableViewCell: GenericTableViewCell {
         sliderLeft!.minimumValue = 0
         sliderLeft!.maximumValue = 3
         sliderLeft!.tintColor = UIColor.loginBlueColor()
+        sliderLeft!.continuous = true
         sliderLeft!.addTarget(self, action: "sliderValueChanged:", forControlEvents: .ValueChanged)
         self.addSubview(sliderLeft!)
         
@@ -149,6 +150,8 @@ class PredictionTableViewCell: GenericTableViewCell {
         self.prediction = value as NSNumber
         
         sliderLabel!.text = "\(String(value))hs"
+        
+        sender.setValue(Float(value), animated: false)
         
     }
     
