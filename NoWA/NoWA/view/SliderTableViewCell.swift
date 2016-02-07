@@ -99,13 +99,15 @@ class SliderTableViewCell: GenericTableViewCell {
         
         setupConstrains()
         
-        setSlidersGradient()
+        setSlidersGradient(sliderLeft!, leftColor: UIColor.loginBlueColor(),rightColor: UIColor.loginRedColor())
+        setSlidersGradient(sliderRight!, leftColor: UIColor.loginRedColor(),rightColor: UIColor.redColor())
+
         
         
     }
     
-    func setSlidersGradient(){
-        let colors : NSArray = NSArray(objects: UIColor.loginBlueColor().CGColor, UIColor.redColor().CGColor)
+    func setSlidersGradient(slider : UISlider, leftColor: UIColor, rightColor: UIColor){
+        let colors : NSArray = NSArray(objects: leftColor.CGColor, rightColor.CGColor)
         let trackGradientLayer : CAGradientLayer = CAGradientLayer()
         var frame = CGRect(x: 20, y: 0, width: 120, height: 2)
         frame.size.height = 2.0;
@@ -115,10 +117,9 @@ class SliderTableViewCell: GenericTableViewCell {
         trackGradientLayer.startPoint = CGPointMake(0.0, 0.2);
         trackGradientLayer.endPoint = CGPointMake(1.0, 0.2);
         let trackImage : UIImage = self.imageFromLayer(trackGradientLayer).resizableImageWithCapInsets(UIEdgeInsetsZero)
-        sliderLeft?.setMinimumTrackImage(trackImage, forState: .Normal)
-        sliderLeft?.setMaximumTrackImage(trackImage, forState: .Normal)
-        sliderRight?.setMinimumTrackImage(trackImage, forState: .Normal)
-        sliderRight?.setMaximumTrackImage(trackImage, forState: .Normal)
+        slider.setMinimumTrackImage(trackImage, forState: .Normal)
+        slider.setMaximumTrackImage(trackImage, forState: .Normal)
+
     }
     
     func imageFromLayer(layer : CALayer) -> UIImage {
