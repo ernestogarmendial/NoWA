@@ -67,9 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         var token = deviceToken.description
-         token = token.stringByReplacingOccurrencesOfString(" ", withString: "")
-         token = token.stringByReplacingOccurrencesOfString(">", withString: "")
-         token = token.stringByReplacingOccurrencesOfString("<", withString: "")
+        token = token.stringByReplacingOccurrencesOfString(" ", withString: "")
+        token = token.stringByReplacingOccurrencesOfString(">", withString: "")
+        token = token.stringByReplacingOccurrencesOfString("<", withString: "")
         
         print(token)
         
@@ -77,6 +77,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        //        print("Notification received: \(userInfo)")
+        //        let notification = userInfo["aps"] as? NSDictionary
+        //        let message = notification?.valueForKey("alert")
+        //
+        if ( application.applicationState == UIApplicationState.Active ) {
+            let alarmNotification = UILocalNotification()
+            alarmNotification.alertBody = "ALARMA SONANDO"
+            alarmNotification.soundName = UILocalNotificationDefaultSoundName
+            UIApplication.sharedApplication().presentLocalNotificationNow(alarmNotification)
+        }
+    }
+    
+    //    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+    //        let notificationSettings = UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil)
+    //        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+    //    }
+    //
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
