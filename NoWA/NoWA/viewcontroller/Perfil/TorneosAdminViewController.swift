@@ -43,6 +43,27 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        let myBackButton:UIButton = UIButton(type: .Custom) as UIButton
+        myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
+        myBackButton.setTitle("< Volver", forState: UIControlState.Normal)
+        myBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        myBackButton.sizeToFit()
+        let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
+        self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
+    }
+    
+    
+    func popToRoot(sender:UIBarButtonItem){
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKindOfClass(AdminViewController) {
+                self.navigationController?.popToViewController(controller as UIViewController, animated: true)
+                break
+            }
+        }
+    }
+    
     func callService(){
         let tournamentService : TournamentService = TournamentService()
         tournamentService.getTournamentsEvents(tournamentID: torneo!.tournamentID,token: UserService.currentUser.token,target: self,message: "getTournamentEventsFinish:")
@@ -58,7 +79,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         self.cellsArray = result.entityForKey("TournamentEvents") as? [TournamentDTO]
         
         self.cellsArray = self.cellsArray!.sort { $0.tournamentID!.compare($1.tournamentID!) == .OrderedAscending }
-
+        
         
         self.tabla!.reloadData()
     }
