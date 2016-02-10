@@ -31,7 +31,7 @@ class GenericViewController: UIViewController, ButtonFooterDelegate {
         pictureView?.autoSetDimension(.Height, toSize: 170)
         
         tabla?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
-        tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 64)
+        tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 140)//64)
         tabla?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
         tabla?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
 
