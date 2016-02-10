@@ -79,7 +79,7 @@ class UserDAO: GenericDAO {
             "birth": "birth",
             "phone": "phone",
             "instagram": "instagram",
-            "id": "id",
+            "id": "userid",
             "twitter": "twitter",
             "username": "username",
             "notifications": "notifications",

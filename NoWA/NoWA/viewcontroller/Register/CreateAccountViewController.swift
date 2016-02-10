@@ -118,6 +118,26 @@ class CreateAccountViewController: LoginViewController {
     
     func register(){
         
+        if emailView.inputTextField.text == "" || passwordView.inputTextField.text == "" || confirmView.inputTextField.text == ""{
+            let alert = UIAlertController(title: "Error", message: "Hay campos sin completar", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            return
+        }
+        
+        if passwordView.inputTextField.text !=  confirmView.inputTextField.text {
+            let alert = UIAlertController(title: "Error", message: "Las contraseñas no coinciden", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            return
+        }
+        
         callService()
     }
     
