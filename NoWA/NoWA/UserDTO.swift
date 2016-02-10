@@ -14,7 +14,7 @@ class UserDTO: GenericDTO {
     var birth: String?
     var phone: String?
     var instagram: String?
-    var id: NSNumber?
+    var userid: NSNumber?
     var twitter: String?
     var username: String?
     var notifications: String?
@@ -42,8 +42,8 @@ class UserDTO: GenericDTO {
         if user.instagram != nil{
             self.instagram = user.instagram
         }
-        if user.id != nil{
-            self.id = user.id
+        if user.userid != nil{
+            self.userid = user.userid
         }
         if user.twitter != nil{
             self.twitter = user.twitter

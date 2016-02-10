@@ -27,7 +27,7 @@ class TournamentEventTableViewCell: GenericTableViewCell {
         cancelIcon!.image = UIImage(named: "tilde")
         cancelIcon!.contentMode = UIViewContentMode.ScaleAspectFit
         self.addSubview(cancelIcon!)
-        cancelIcon!.hidden = true
+        cancelIcon!.hidden = true		
         
         eventName = UILabel()
         eventName?.backgroundColor = .clearColor()

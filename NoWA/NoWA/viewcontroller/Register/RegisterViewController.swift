@@ -118,7 +118,7 @@ class RegisterViewController: LoginViewController {
         login.logInWithReadPermissions(["public_profile"], fromViewController: self, handler: { (result, error) -> Void in
             if (error == nil){
                 print("logeado")
-//                self.startApp()
+                //                self.startApp()
             }else{
                 print("error")
             }
@@ -154,14 +154,22 @@ class RegisterViewController: LoginViewController {
     
     func callService () {
         let userService : UserService = UserService()
-        userService.login("gfaraone@litebox.com.ar", code: "631263" ,target: self,message: "loginFinish:")
+        //        userService.login("gfaraone@litebox.com.ar", code: "631263" ,target: self,message: "loginFinish:")
         
-        //        userService.login(emailView.inputTextField.text, code: passwordView.inputTextField.text ,target: self,message: "loginFinish:")
+        userService.login(emailView.inputTextField.text, code: passwordView.inputTextField.text ,target: self,message: "loginFinish:")
     }
     
     func loginFinish (result : ServiceResult!){
         if(result.hasErrors()){
             print("Error papu")
+            
+            let alert = UIAlertController(title: "Error", message: "Usuario o contraseña inválida", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            
             return
         }
         
