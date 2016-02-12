@@ -21,7 +21,7 @@ protocol OperationSupport {
 
 class GenericDAO  : NSObject, Operation {
     
-    let serverURL = "http://nowakeapp001.cloudapp.net:8080/nowakeapp/api"
+    let serverURL = "http://litebox.com.ar:8080/nowakeapp/api" ///"http://nowakeapp001.cloudapp.net:8080/nowakeapp/api"
    
     var completionHandler:((Operation,AnyObject)->Void)!
     
