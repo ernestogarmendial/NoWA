@@ -18,6 +18,8 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     var forecasts : [ForecastDTO]?
     var forecastsPicker:NSMutableArray!
     
+    static var forecastArray : NSMutableArray! = NSMutableArray()
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -118,12 +120,19 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         forecastsPicker = NSMutableArray()
         
+        let forecastsDict = NSMutableDictionary()
+        
         for forecast in forecasts! {
             forecastsPicker.addObject(forecast.name!)
             if self.service == nil{
                 self.service = forecast.forecastID
                 self.selectedServiceLabel!.text = forecast.name
                 
+                
+                forecastsDict.setValue(forecast.forecastID, forKey: "forecastID")
+                forecastsDict.setValue(forecast.name, forKey: "name")
+                
+                ServicePickerTableViewCell.forecastArray.addObject(forecastsDict)
             }
         }
     }

@@ -25,11 +25,13 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     
     var reloadData : Bool = true
     var event : EventDTO?
+    var weather : AlarmDTO?
     var alarmDTO : PersonalAlarmDTO?{
         didSet{
             
             if self.reloadData == true{
                 self.event = alarmDTO!.event![0] as? EventDTO
+                self.weather = alarmDTO!.weather![0] as? AlarmDTO
             }
             alarmID = self.event!.eventID
             
@@ -62,7 +64,21 @@ class AlarmItemTableViewCell: GenericTableViewCell {
                 }
             }
             
-            serviceLabel!.text = "ACCU WEATHER"
+            for forecast in ServicePickerTableViewCell.forecastArray! {
+                
+                let forecastID = forecast.valueForKey("forecastID") as! NSNumber
+                
+                if forecastID == weather?.service {
+                
+                    serviceLabel!.text = forecast.valueForKey("name") as? String
+
+                    return
+                }
+                
+            
+            }
+            
+//            serviceLabel!.text = "ACCU WEATHER"
             
             self.reloadData = false
         }
