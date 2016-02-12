@@ -28,8 +28,8 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         let logoImage = UIImage(named:"logoNav")
         self.navigationItem.titleView = UIImageView(image: logoImage)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        tabla!.addGestureRecognizer(tap)
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+//        tabla!.addGestureRecognizer(tap)
         
         let image = UIImage(named: "create_alarm_background")
         pictureView?.image = image

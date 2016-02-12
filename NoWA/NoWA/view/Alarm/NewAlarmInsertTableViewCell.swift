@@ -32,6 +32,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         self.addSubview(newAlertLabel!)
         
         nameTextField = UITextField()
+        nameTextField?.delegate = self
         nameTextField!.attributedPlaceholder =  NSAttributedString(string: "INGRESÁ UN NOMBRE ...",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         nameTextField!.textColor = .whiteColor()

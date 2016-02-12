@@ -25,8 +25,8 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         
         self.view.backgroundColor = .darkGrayCustomColor()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        tabla!.addGestureRecognizer(tap)
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+//        tabla!.addGestureRecognizer(tap)
         
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
@@ -41,7 +41,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         self.myRefresh.tintColor = .whiteColor()
         tabla!.addSubview(myRefresh)
         
-//        callService()
+        callService()
     }
     
     override func viewWillAppear(animated: Bool) {
