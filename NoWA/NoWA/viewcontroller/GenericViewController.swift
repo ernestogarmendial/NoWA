@@ -9,15 +9,20 @@
 import UIKit
 
 class GenericViewController: UIViewController, ButtonFooterDelegate {
-
+    
     var tabla : UITableView?
     var pictureView : UIImageView?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")        
-        self.view.addGestureRecognizer(tap)
+        
+        
+        //COMENTO PORQUE SINO NO PASA POR EL DIDSELECTROW AT INDEXPATH
+        
+        //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        //        self.view.addGestureRecognizer(tap)
+        
+        //COMENTO PORQUE SINO NO PASA POR EL DIDSELECTROW AT INDEXPATH
         
         tabla = UITableView()
         tabla!.backgroundColor = .clearColor()
@@ -37,13 +42,13 @@ class GenericViewController: UIViewController, ButtonFooterDelegate {
         tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 140)//64)
         tabla?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
         tabla?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
-
+        
     }
-
+    
     func dismissKeyboard(){
         tabla!.endEditing(true)
     }
-
+    
     func acceptButtonPressed(){
         print("accept")
     }

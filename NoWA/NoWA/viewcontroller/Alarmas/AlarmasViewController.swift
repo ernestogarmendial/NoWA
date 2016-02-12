@@ -24,24 +24,21 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         
         self.view.backgroundColor = .darkGrayCustomColor()
-        
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-//        tabla!.addGestureRecognizer(tap)
-        
+                
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         
-        tabla!.delegate = self
-        tabla!.dataSource = self
-        tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
+        self.tabla!.delegate = self
+        self.tabla!.dataSource = self
+        self.tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
         
         self.tabla!.registerClass(AlarmItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
         
         self.myRefresh.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         self.myRefresh.tintColor = .whiteColor()
-        tabla!.addSubview(myRefresh)
+        self.tabla!.addSubview(myRefresh)
         
-        callService()
+//        callService()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -106,6 +103,10 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        print("edit Alarm")
+
+        let editAlarmViewController = EditAlarmViewController()
+        self.navigationController?.pushViewController(editAlarmViewController, animated:true )
         
     }
     

@@ -1,14 +1,14 @@
 //
-//  NewAlarmViewController.swift
+//  EditAlarmViewController.swift
 //  NoWA
 //
-//  Created by Ernesto Garmendia Luis on 14/1/16.
+//  Created by Ernesto Garmendia Luis on 12/2/16.
 //  Copyright © 2016 Ernesto Garmendia Luis. All rights reserved.
 //
 
 import UIKit
 
-class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, DefaultCellDelegate {
+class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, DefaultCellDelegate {
     
     var newAlarmDTO : AlarmDTO?
     var newAlarmEventDTO : EventDTO?
@@ -28,8 +28,8 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         let logoImage = UIImage(named:"logoNav")
         self.navigationItem.titleView = UIImageView(image: logoImage)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        tabla!.addGestureRecognizer(tap)
+                let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+                tabla!.addGestureRecognizer(tap)
         
         let image = UIImage(named: "create_alarm_background")
         pictureView?.image = image
@@ -249,7 +249,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         let formatter = NSNumberFormatter()
         formatter.minimumIntegerDigits = 2
-
+        
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar() //2015-11-24 17:00:49.0
         let components = calendar.components([ .Year, .Month, .Day], fromDate: date)
@@ -262,8 +262,8 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         let hour = timeLabel.substringWithRange(NSRange(location: 0, length: 2))
         let minute = timeLabel.substringWithRange(NSRange(location: 3, length: 2))
-
-//        dd-MM-yyyy-HH-mm-ss
+        
+        //        dd-MM-yyyy-HH-mm-ss
         self.datetime = "\(day!)-\(month!)-\(year!)-\(hour)-\(minute)-00"
     }
     
@@ -277,6 +277,6 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     
     func defaultButtonDisabled(){
         self.useDefaults = false
-
+        
     }
 }
