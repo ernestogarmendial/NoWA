@@ -42,9 +42,11 @@ class UserDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
+        let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken")
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "user/login/\(_name)/\(_code)/",
+            path: "user/login/\(_name)/\(_code)/ios/\(deviceToken)/",
             parameters: nil)
         
         
@@ -92,9 +94,11 @@ class UserDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
+        let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken")
+
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "user/register/\(_name)/\(_code)/",
+            path: "user/register/\(_name)/\(_code)/ios/\(deviceToken)/",
             parameters: nil)
         
         
