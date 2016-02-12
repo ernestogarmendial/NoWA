@@ -79,13 +79,19 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
     
     func save(){
         print("guardar pressed")
-//                self.acceptDelegate!.acceptButtonPressed()
+        //                self.acceptDelegate!.acceptButtonPressed()
     }
     
     func close(){
         print("close pressed")
-        //        self.acceptDelegate!.acceptButtonPressed()
+        
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [RegisterViewController()]
+        
+        switchRootViewController(navigationController, animated: true, completion: nil)
+        
     }
+    
     func admin(){
         print("admin pressed")
         self.buttonDelegate!.adminButtonPressed()
@@ -95,4 +101,22 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
         print("admin pressed")
         self.buttonDelegate!.createButtonPressed()
     }
+    
+    func switchRootViewController(rootViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        if animated {
+            UIView.transitionWithView(UIApplication.sharedApplication().keyWindow!, duration: 0.5, options: .TransitionCrossDissolve, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled()
+                UIView.setAnimationsEnabled(false)
+                UIApplication.sharedApplication().keyWindow?.rootViewController = rootViewController
+                UIView.setAnimationsEnabled(oldState)
+                }, completion: { (finished: Bool) -> () in
+                    if (completion != nil) {
+                        completion!()
+                    }
+            })
+        } else {
+            UIApplication.sharedApplication().keyWindow?.rootViewController = rootViewController
+        }
+    }
+    
 }
