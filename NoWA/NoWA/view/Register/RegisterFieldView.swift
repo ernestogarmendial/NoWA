@@ -6,7 +6,7 @@
 //  Copyright © 2015 Ernesto Garmendia Luis. All rights reserved.
 //
 
-class RegisterFieldView: UIView {
+class RegisterFieldView: UIView,UITextFieldDelegate {
     
     var iconImage : UIImageView!
     var inputTextField : UITextField!
@@ -21,6 +21,7 @@ class RegisterFieldView: UIView {
         self.addSubview(iconImage)
         
         inputTextField = UITextField()
+        inputTextField!.delegate = self
         inputTextField.textColor = UIColor.whiteColor()
         inputTextField.keyboardType = UIKeyboardType.EmailAddress
         inputTextField.font = UIFont.appLatoFontOfSize(15)
@@ -33,6 +34,12 @@ class RegisterFieldView: UIView {
         lineView.backgroundColor = UIColor.whiteColor()
         self.addSubview(lineView)
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
     }
     
     required init(coder aDecoder: NSCoder) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericTableViewCell: UITableViewCell {
+class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     var defaultSeted : Bool! = false
 
@@ -28,6 +28,12 @@ class GenericTableViewCell: UITableViewCell {
         didSet{
             setItems(myDictionary!)
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {

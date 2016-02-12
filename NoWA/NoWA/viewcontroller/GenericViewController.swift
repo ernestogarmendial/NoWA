@@ -16,6 +16,9 @@ class GenericViewController: UIViewController, ButtonFooterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")        
+        self.view.addGestureRecognizer(tap)
+        
         tabla = UITableView()
         tabla!.backgroundColor = .clearColor()
         tabla!.separatorColor = .clearColor()
@@ -37,7 +40,7 @@ class GenericViewController: UIViewController, ButtonFooterDelegate {
 
     }
 
-    func dismissKeyboard() {
+    func dismissKeyboard(){
         tabla!.endEditing(true)
     }
 

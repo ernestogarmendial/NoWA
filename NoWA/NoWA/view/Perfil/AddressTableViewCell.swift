@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddressTableViewCell: GenericTableViewCell, UITextFieldDelegate {
+class AddressTableViewCell: GenericTableViewCell {
     
     var leftIcon : UIImageView?
     var addressTextField : UITextField?
@@ -57,9 +57,15 @@ class AddressTableViewCell: GenericTableViewCell, UITextFieldDelegate {
     }
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-        textField.resignFirstResponder()
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        
+//        textField.resignFirstResponder()
+//        setupConstrains()
+//        return true
+//    }
+    
+    override func textFieldShouldReturn(textField: UITextField) -> Bool {
+        super.textFieldShouldReturn(textField)
         setupConstrains()
         return true
     }

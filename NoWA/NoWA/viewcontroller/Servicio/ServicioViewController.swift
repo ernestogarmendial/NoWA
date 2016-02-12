@@ -24,12 +24,9 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         }
         self.view.backgroundColor = .registroGrayColor()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        tabla!.addGestureRecognizer(tap)
-        
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
-        
+
         tabla?.delegate = self
         tabla?.dataSource = self
         tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
@@ -41,8 +38,6 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         self.tabla!.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "SliderCell")
         self.tabla!.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
         self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")
-        
-        
         
         let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)

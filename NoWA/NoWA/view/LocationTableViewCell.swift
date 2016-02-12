@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocationTableViewCell: GenericTableViewCell,pickerDelegate, UITextFieldDelegate {
+class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     
     var place : String?
     
@@ -80,9 +80,8 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate, UITextFieldDel
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-        textField.resignFirstResponder()
+    override func textFieldShouldReturn(textField: UITextField) -> Bool {
+        super.textFieldShouldReturn(textField)
         rightButtonPressed()
         return true
     }
