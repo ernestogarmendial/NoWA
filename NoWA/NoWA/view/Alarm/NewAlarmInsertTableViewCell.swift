@@ -43,14 +43,25 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         nameTextField!.textAlignment = .Left
         self.addSubview(nameTextField!)
         
-        
-        
         datePicker = UIDatePicker()
         datePicker!.datePickerMode = UIDatePickerMode.Time
         datePicker!.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
         datePicker?.backgroundColor = .ribbonAltColor()
         datePicker!.addTarget(self, action: "onDatePickerValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
+        let toolbar = UIToolbar()
+        toolbar.barStyle = .Default
+        toolbar.translucent = false
+        toolbar.backgroundColor = .whiteColor()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "OK", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("done"))
+        doneButton.tintColor = .blackColor()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+
+        toolbar.setItems([flexibleSpace,doneButton,flexibleSpace], animated: false)
+        toolbar.userInteractionEnabled = true
+
         timeLabel = UITextField()
         timeLabel!.text = "00:00"
         timeLabel!.textColor = .whiteColor()
@@ -58,12 +69,19 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         timeLabel!.adjustsFontSizeToFitWidth = true
         timeLabel!.textAlignment = .Left
         timeLabel!.inputView = datePicker!
+        timeLabel!.inputAccessoryView = toolbar
         self.addSubview(timeLabel!)
+        
+       
         
         daysButtonsView = DaysButtonsView()
         self.addSubview(daysButtonsView!)
         
         setupConstrains()
+    }
+    
+    func done(){
+        timeLabel?.resignFirstResponder()
     }
     
     func onDatePickerValueChanged(datePicker: UIDatePicker){
@@ -89,7 +107,9 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         
         timeLabel?.autoPinEdge(.Top, toEdge: .Bottom, ofView: nameTextField!, withOffset: 10)
         timeLabel?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 10)
-        timeLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
+//        timeLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
+        timeLabel?.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.5)
+        
         
         daysButtonsView?.autoPinEdge(.Top, toEdge: .Bottom, ofView: timeLabel!)
         daysButtonsView?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 10)
