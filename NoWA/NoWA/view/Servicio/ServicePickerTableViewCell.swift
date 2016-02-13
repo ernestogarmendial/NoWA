@@ -166,4 +166,26 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         }
         
     }
+    
+    
+    override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isCreate: Bool, status: NSNumber?) {
+        
+        let event = editAlarmDTO.event![0] as? EventDTO
+        let weather = editAlarmDTO.weather![0] as? AlarmDTO
+        
+    
+        for forecast in ServicePickerTableViewCell.forecastArray! {
+            
+            let forecastID = forecast.valueForKey("forecastID") as! NSNumber
+            
+            if forecastID == weather?.service {
+                
+                selectedServiceLabel!.text = forecast.valueForKey("name") as? String
+                
+                return
+            }
+            
+        }
+        
+    }
 }
