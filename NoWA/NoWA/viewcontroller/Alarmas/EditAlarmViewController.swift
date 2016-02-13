@@ -47,7 +47,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")
         
         
-        let path = NSBundle.mainBundle().pathForResource("NewAlarmCells", ofType: "plist")
+        let path = NSBundle.mainBundle().pathForResource("EditAlarmCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
         
     }

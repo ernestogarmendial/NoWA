@@ -90,6 +90,7 @@
 		94A39A5C1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A5B1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift */; };
 		94A39A5E1C29021B00BA2BB8 /* AlarmHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A5D1C29021B00BA2BB8 /* AlarmHeaderView.swift */; };
 		94D5FE5F1C6D8B310022A630 /* EditAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE5E1C6D8B310022A630 /* EditAlarmViewController.swift */; };
+		94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94D5FE601C6ECFB00022A630 /* EditAlarmCells.plist */; };
 		94DEFEC21C51DE7400E40861 /* TorneosAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */; };
 		94DEFEC41C5700E700E40861 /* TournamentObjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */; };
 		94DEFEC61C570F3100E40861 /* TorneoCancelAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */; };
@@ -207,6 +208,7 @@
 		94A39A5B1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneoItemTableViewCell.swift; path = view/Torneos/TorneoItemTableViewCell.swift; sourceTree = "<group>"; };
 		94A39A5D1C29021B00BA2BB8 /* AlarmHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmHeaderView.swift; path = view/Alarm/AlarmHeaderView.swift; sourceTree = "<group>"; };
 		94D5FE5E1C6D8B310022A630 /* EditAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditAlarmViewController.swift; path = viewcontroller/Alarmas/EditAlarmViewController.swift; sourceTree = "<group>"; };
+		94D5FE601C6ECFB00022A630 /* EditAlarmCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EditAlarmCells.plist; sourceTree = "<group>"; };
 		94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneosAdminViewController.swift; path = viewcontroller/Perfil/TorneosAdminViewController.swift; sourceTree = "<group>"; };
 		94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentObjectDTO.swift; path = model/dto/TournamentObjectDTO.swift; sourceTree = "<group>"; };
 		94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneoCancelAllTableViewCell.swift; path = view/Perfil/TorneoCancelAllTableViewCell.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 				942A997E1C1A169600B12292 /* ServicioTabCells.plist */,
 				944728251C472B7600F8E963 /* PerfilTabCells.plist */,
 				944728341C4893EE00F8E963 /* NewAlarmCells.plist */,
+				94D5FE601C6ECFB00022A630 /* EditAlarmCells.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 			files = (
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
 				942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */,
+				94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */,
 				944728351C4893EE00F8E963 /* NewAlarmCells.plist in Resources */,
 				944728261C472B7600F8E963 /* PerfilTabCells.plist in Resources */,
 				94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */,
