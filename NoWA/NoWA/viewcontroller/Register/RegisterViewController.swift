@@ -19,7 +19,7 @@ class RegisterViewController: LoginViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         backgroundImage = UIImageView()
         backgroundImage.image = UIImage(named: "login")
         backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
@@ -115,33 +115,39 @@ class RegisterViewController: LoginViewController {
     func loginFacebook(){
         
         let login = FBSDKLoginManager()
-        login.logInWithReadPermissions(["public_profile"], fromViewController: self, handler: { (result, error) -> Void in
+        login.logInWithReadPermissions(["public_profile","email"], fromViewController: self, handler: { (result, error) -> Void in
             if (error == nil){
                 print("logeado")
+                
+                let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters:["fields":"email,id,name,picture.width(480).height(480)"])
+                graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+                    
+                    if ((error) != nil)
+                    {
+                        // Process error
+                        print("Error: \(error)")
+                    }
+                    else
+                    {
+                        print("fetched user: \(result)")
+                        let userName : NSString = result.valueForKey("name") as! NSString
+                        print("User Name is: \(userName)")
+                        let userEmail : NSString = result.valueForKey("email") as! NSString
+                        print("User Email is: \(userEmail)")
+                    }
+                })
+                
                 //                self.startApp()
+                
             }else{
                 print("error")
             }
             }
         )
-        //        {
-        //            FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-        //            [login
-        //            logInWithReadPermissions: @[@"public_profile"]
-        //            fromViewController:self
-        //            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-        //            if (error) {
-        //            NSLog(@"Process error");
-        //            } else if (result.isCancelled) {
-        //            NSLog(@"Cancelled");
-        //            } else {
-        //            NSLog(@"Logged in");
-        //            }
-        //            }];
-        //        }
     }
     
     func createAccount(){
+        
         let createAccountViewController = CreateAccountViewController()
         self.navigationController?.pushViewController(createAccountViewController, animated: true)
     }
