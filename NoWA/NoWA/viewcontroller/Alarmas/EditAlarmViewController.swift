@@ -45,6 +45,8 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         self.tabla!.registerClass(SliderTableViewCell.self, forCellReuseIdentifier: "SliderCell")
         self.tabla!.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
         self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")
+        self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "DeleteButtonCell")
+
         
         
         let path = NSBundle.mainBundle().pathForResource("EditAlarmCells", ofType: "plist")

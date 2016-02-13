@@ -69,6 +69,12 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
             if action == "create"{
                 button!.addTarget(self, action: "create", forControlEvents: UIControlEvents.TouchUpInside)
             }
+            if action == "update"{
+                button!.addTarget(self, action: "update", forControlEvents: UIControlEvents.TouchUpInside)
+            }
+            if action == "delete"{
+                button!.addTarget(self, action: "delete", forControlEvents: UIControlEvents.TouchUpInside)
+            }
         }
     }
     
