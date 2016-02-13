@@ -130,6 +130,16 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         let weather = editAlarmDTO.weather![0] as? AlarmDTO
         
         self.nameTextField!.text = event?.name
+        
+        let stamp = event!.stamp! as NSString
+        
+        timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
+        
+        let hour = stamp.substringWithRange(NSRange(location: 11, length: 2))
+        let min = stamp.substringWithRange(NSRange(location: 14, length: 2))
+        
+        self.timeLabel!.text = "\(hour):\(min)"
+        
     }
     
 }
