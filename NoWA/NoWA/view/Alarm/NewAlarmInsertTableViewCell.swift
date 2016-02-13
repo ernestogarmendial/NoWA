@@ -118,4 +118,10 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
  
     }
     
+    override func setItems(myDictionary: NSDictionary){
+        if let newAlertLabelText = myDictionary["title"] as? String{
+            newAlertLabel!.text = newAlertLabelText
+        }
+    }
+    
 }
