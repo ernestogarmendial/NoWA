@@ -120,7 +120,6 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         forecastsPicker = NSMutableArray()
         
-        let forecastsDict = NSMutableDictionary()
         
         for forecast in forecasts! {
             forecastsPicker.addObject(forecast.name!)
@@ -128,12 +127,14 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
                 self.service = forecast.forecastID
                 self.selectedServiceLabel!.text = forecast.name
                 
-                
-                forecastsDict.setValue(forecast.forecastID, forKey: "forecastID")
-                forecastsDict.setValue(forecast.name, forKey: "name")
-                
-                ServicePickerTableViewCell.forecastArray.addObject(forecastsDict)
             }
+            let forecastsDict = NSMutableDictionary()
+
+            forecastsDict.setValue(forecast.forecastID, forKey: "forecastID")
+            forecastsDict.setValue(forecast.name, forKey: "name")
+            
+            ServicePickerTableViewCell.forecastArray.addObject(forecastsDict)
+            
         }
     }
     
@@ -173,7 +174,7 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         let event = editAlarmDTO.event![0] as? EventDTO
         let weather = editAlarmDTO.weather![0] as? AlarmDTO
         
-    
+        
         for forecast in ServicePickerTableViewCell.forecastArray! {
             
             let forecastID = forecast.valueForKey("forecastID") as! NSNumber

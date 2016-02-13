@@ -11,13 +11,15 @@ import UIKit
 class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     var condition : NSNumber?
-//    var defaultSeted : Bool! = false
+    //    var defaultSeted : Bool! = false
     var titleLabel : UILabel?
     var descriptionLabel : UILabel?
     var leftIcon : UIImageView?
     var rightButton : UIButton?
     var conditions : [ConditionDTO]?
     var conditionsPicker:NSMutableArray!
+    
+    static var conditionsArray : NSMutableArray! = NSMutableArray()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -113,13 +115,21 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         conditionsPicker = NSMutableArray()
         
+        
+        
         for condition in conditions! {
             conditionsPicker.addObject(condition.name!)
-            if self.condition == nil{
+            if self.condition == nil {
                 self.condition = condition.conditionID
                 self.descriptionLabel!.text = condition.name
-                
             }
+            let conditionsDict = NSMutableDictionary()
+
+            conditionsDict.setValue(condition.conditionID, forKey: "conditionID")
+            conditionsDict.setValue(condition.name, forKey: "name")
+            
+            PickerTableViewCell.conditionsArray.addObject(conditionsDict)
+            
         }
         
     }
@@ -171,6 +181,27 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
                 }
             }
         }
+    }
+    
+    override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isCreate: Bool, status: NSNumber?) {
+        
+        let event = editAlarmDTO.event![0] as? EventDTO
+        let weather = editAlarmDTO.weather![0] as? AlarmDTO
+        
+        for condition in PickerTableViewCell.conditionsArray! {
+            
+            let conditionID = condition.valueForKey("conditionID") as! NSNumber
+            
+            if conditionID == weather?.condition {
+                
+                descriptionLabel!.text = condition.valueForKey("name") as? String
+                
+                return
+            }
+            
+        }
+        
+        
     }
     
 }

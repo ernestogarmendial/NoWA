@@ -143,7 +143,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         if let daysString : String = event!.repetition{
             let daysArray : NSArray = daysString.componentsSeparatedByString(",")
             if status == 0{
-                daysButtonsView?.setDaysColor(UIColor.daysActiveColor())
+                daysButtonsView?.setDaysColor(UIColor.daysInactiveColor())
                 daysButtonsView?.showDays(daysArray, color: UIColor.daysInactiveColor())
             }else{
                 daysButtonsView?.setDaysColor(UIColor.daysInactiveColor())
