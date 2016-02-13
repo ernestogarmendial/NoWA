@@ -24,7 +24,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         
         self.view.backgroundColor = .darkGrayCustomColor()
-                
+        
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         
@@ -38,7 +38,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         self.myRefresh.tintColor = .whiteColor()
         self.tabla!.addSubview(myRefresh)
         
-//        callService()
+        //        callService()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -104,11 +104,24 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         print("edit Alarm")
-
-        let alarma = self.sortedAlarmsArray![indexPath.row] as PersonalAlarmDTO
         
         let editAlarmViewController = EditAlarmViewController()
+
+        let alarmCell = tabla?.cellForRowAtIndexPath(indexPath) as! AlarmItemTableViewCell
+        
+        let alarma = self.sortedAlarmsArray![indexPath.row] as PersonalAlarmDTO
+        
+        if alarmCell.alarmSwitch!.selected == true {
+            print("esta inactiva")
+            editAlarmViewController.alarmStatus = 0
+        }else{
+            print("esta activa")
+            editAlarmViewController.alarmStatus = 1
+        }
+    
+        
         editAlarmViewController.editAlarmDTO = alarma
+        
         
         self.navigationController?.pushViewController(editAlarmViewController, animated:true )
         

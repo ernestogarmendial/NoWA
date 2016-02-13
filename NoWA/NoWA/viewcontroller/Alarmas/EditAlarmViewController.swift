@@ -18,8 +18,10 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     
     var datetime : String?
     
-    var event : EventDTO?
-    var weather : AlarmDTO?
+//    var event : EventDTO?
+//    var weather : AlarmDTO?
+    
+    var alarmStatus : NSNumber?
     var editAlarmDTO : PersonalAlarmDTO?
     
     override func viewDidLoad() {
@@ -113,6 +115,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         let genericCell = self.tabla!.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
         if (self.editAlarmDTO != nil){
+            genericCell.alarmStatus = self.alarmStatus
             genericCell.editAlarmDTO = self.editAlarmDTO
         }
         

@@ -12,6 +12,8 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     var defaultSeted : Bool! = false
 
+    var alarmStatus : NSNumber?
+    
     var defaultDTO : AlarmDTO?{
         didSet{
             setDefaults(defaultDTO!, isCreate: false)
@@ -20,7 +22,7 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     var editAlarmDTO : PersonalAlarmDTO?{
         didSet{
-            setEditAlarm(editAlarmDTO!, isCreate: false)
+            setEditAlarm(editAlarmDTO!, isCreate: false, status: alarmStatus)
         }
     }
     
@@ -66,7 +68,7 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
         
     }
     
-    func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isCreate: Bool){
+    func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isCreate: Bool, status: NSNumber?){
         
     }
 }

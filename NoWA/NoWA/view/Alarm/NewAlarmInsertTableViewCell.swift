@@ -124,7 +124,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         }
     }
     
-    override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isCreate: Bool) {
+    override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isCreate: Bool, status: NSNumber?) {
         
         let event = editAlarmDTO.event![0] as? EventDTO
         let weather = editAlarmDTO.weather![0] as? AlarmDTO
@@ -140,6 +140,17 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         
         self.timeLabel!.text = "\(hour):\(min)"
         
+        if let daysString : String = event!.repetition{
+            let daysArray : NSArray = daysString.componentsSeparatedByString(",")
+            if status == 0{
+                daysButtonsView?.setDaysColor(UIColor.daysActiveColor())
+                daysButtonsView?.showDays(daysArray, color: UIColor.daysInactiveColor())
+            }else{
+                daysButtonsView?.setDaysColor(UIColor.daysInactiveColor())
+                daysButtonsView?.showDays(daysArray, color: UIColor.daysActiveColor())
+            }
+        }
+
     }
     
 }

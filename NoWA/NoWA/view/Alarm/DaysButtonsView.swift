@@ -76,4 +76,41 @@ class DaysButtonsView: UIView {
         
     }
 
+    
+    func setDaysColor(color : UIColor){
+        lunes?.backgroundColor = color
+        martes?.backgroundColor = color
+        miercoles?.backgroundColor = color
+        jueves?.backgroundColor = color
+        viernes?.backgroundColor = color
+        sabado?.backgroundColor = color
+        domingo?.backgroundColor = color
+    }
+    
+    
+    func showDays(days : NSArray, color : UIColor){
+                
+        for day in days{
+            
+            switch (day as! String ) {
+            case "1":
+                lunes?.backgroundColor = color
+            case "2":
+                martes?.backgroundColor = color
+            case "3":
+                miercoles?.backgroundColor = color
+            case "4":
+                jueves?.backgroundColor = color
+            case "5":
+                viernes?.backgroundColor = color
+            case "6":
+                sabado?.backgroundColor = color
+            case "7":
+                domingo?.backgroundColor = color
+            default:
+                print("default case")
+            }
+        }
+        
+    }
 }
