@@ -16,7 +16,7 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     var selectedServiceLabel : UILabel?
     var pickerArrow : UIButton?
     var forecasts : [ForecastDTO]?
-    var forecastsPicker:NSMutableArray!
+    var forecastsPicker: NSMutableArray! = NSMutableArray()
     
     static var forecastArray : NSMutableArray! = NSMutableArray()
     
@@ -49,7 +49,9 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         pickerArrow!.setImage(UIImage(named: "down_arrow"), forState: UIControlState.Normal)
         self.addSubview(pickerArrow!)
         
-        callService()
+        if ServicePickerTableViewCell.forecastArray == [] {
+            callService()
+        }
         
         setupConstrains()
     }
@@ -88,6 +90,12 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     func pickerArrowPressed(){
         print("service picker pressed")
         
+        if forecastsPicker == [] {
+            for forecast in ServicePickerTableViewCell.forecastArray! {
+                forecastsPicker.addObject((forecast.valueForKey("name") as! String))
+            }
+        }
+        
         if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
             let popupViewController = PopUpPickerViewController()
             popupViewController.locationsPicker = forecastsPicker
@@ -118,18 +126,18 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         self.forecasts = (result.entityForKey("Forecasts") as! [ForecastDTO])
         
-        forecastsPicker = NSMutableArray()
+        //        forecastsPicker = NSMutableArray()
         
         
         for forecast in forecasts! {
-            forecastsPicker.addObject(forecast.name!)
+            //            forecastsPicker.addObject(forecast.name!)
             if self.service == nil{
                 self.service = forecast.forecastID
                 self.selectedServiceLabel!.text = forecast.name
                 
             }
             let forecastsDict = NSMutableDictionary()
-
+            
             forecastsDict.setValue(forecast.forecastID, forKey: "forecastID")
             forecastsDict.setValue(forecast.name, forKey: "name")
             
@@ -139,8 +147,23 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     }
     
     func pickerOptionSelected(selectedRow : Int){
-        self.selectedServiceLabel!.text = self.forecasts![selectedRow].name!
-        self.service = self.forecasts![selectedRow].forecastID!
+        //        self.selectedServiceLabel!.text = self.forecasts![selectedRow].name!
+        //        self.service = self.forecasts![selectedRow].forecastID!
+        
+        for forecast in ServicePickerTableViewCell.forecastArray! {
+            
+            let forecastID = forecast.valueForKey("forecastID") as! NSNumber
+            
+            if forecastID == selectedRow + 1 {
+                
+                self.selectedServiceLabel!.text = forecast.valueForKey("name") as? String
+                self.service = forecastID
+                
+                return
+            }
+            
+        }
+        
     }
     
     override func setDefaults(defaultDTO: AlarmDTO,isCreate: Bool){

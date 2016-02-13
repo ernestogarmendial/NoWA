@@ -17,7 +17,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     var leftIcon : UIImageView?
     var rightButton : UIButton?
     var conditions : [ConditionDTO]?
-    var conditionsPicker:NSMutableArray!
+    var conditionsPicker: NSMutableArray! = NSMutableArray()
     
     static var conditionsArray : NSMutableArray! = NSMutableArray()
     
@@ -53,7 +53,9 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         self.addSubview(rightButton!)
         
-        callService()
+        if PickerTableViewCell.conditionsArray == [] {
+            callService()
+        }
         
         setupConstrains()
     }
@@ -113,9 +115,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         self.conditions = (result.entityForKey("Conditions") as! [ConditionDTO])
         
-        conditionsPicker = NSMutableArray()
-        
-        
+        //        conditionsPicker = NSMutableArray()
         
         for condition in conditions! {
             conditionsPicker.addObject(condition.name!)
@@ -124,7 +124,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
                 self.descriptionLabel!.text = condition.name
             }
             let conditionsDict = NSMutableDictionary()
-
+            
             conditionsDict.setValue(condition.conditionID, forKey: "conditionID")
             conditionsDict.setValue(condition.name, forKey: "name")
             
@@ -137,6 +137,12 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     func rightButtonPressed(){
         print("right ButtonPressedpressed")
+        
+        if conditionsPicker == [] {
+            for condition in PickerTableViewCell.conditionsArray! {
+                conditionsPicker.addObject((condition.valueForKey("name") as! String))
+            }
+        }
         
         if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
             let popupViewController = PopUpPickerViewController()
@@ -157,8 +163,24 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     
     func pickerOptionSelected(selectedRow : Int){
-        self.descriptionLabel!.text = self.conditions![selectedRow].name!
-        self.condition = self.conditions![selectedRow].conditionID!
+        //        self.descriptionLabel!.text = self.conditions![selectedRow].name!
+        //        self.condition = self.conditions![selectedRow].conditionID!
+        
+        for condition in PickerTableViewCell.conditionsArray! {
+            
+            let conditionID = condition.valueForKey("conditionID") as! NSNumber
+            
+            if conditionID == selectedRow + 1 {
+                
+                self.descriptionLabel!.text = condition.valueForKey("name") as? String
+                
+                self.condition = conditionID
+                
+                return
+            }
+            
+        }
+        
     }
     
     override func setDefaults(defaultDTO: AlarmDTO,isCreate: Bool){
