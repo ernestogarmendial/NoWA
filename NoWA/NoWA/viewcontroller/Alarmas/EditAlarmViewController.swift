@@ -18,8 +18,8 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     
     var datetime : String?
     
-//    var event : EventDTO?
-//    var weather : AlarmDTO?
+    //    var event : EventDTO?
+    //    var weather : AlarmDTO?
     
     var alarmStatus : NSNumber?
     var editAlarmDTO : PersonalAlarmDTO?
@@ -122,7 +122,9 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
         genericCell.tag = indexPath.row + 100
         if self.useDefaults == true{
-            genericCell.setDefaults(ServicioViewController.defaultData!,isCreate: true)
+            if ServicioViewController.defaultData != nil {
+                genericCell.setDefaults(ServicioViewController.defaultData!,isCreate: true)
+            }
         }
         if identificador == "AcceptButtonCell"{
             genericCell.buttonDelegate = self

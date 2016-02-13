@@ -109,7 +109,9 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
         genericCell.tag = indexPath.row + 100
         if self.useDefaults == true{
-            genericCell.setDefaults(ServicioViewController.defaultData!,isCreate: true)
+            if ServicioViewController.defaultData != nil {
+                genericCell.setDefaults(ServicioViewController.defaultData!,isCreate: true)
+            }
         }
         if identificador == "AcceptButtonCell"{
             genericCell.buttonDelegate = self
@@ -249,7 +251,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         let formatter = NSNumberFormatter()
         formatter.minimumIntegerDigits = 2
-
+        
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar() //2015-11-24 17:00:49.0
         let components = calendar.components([ .Year, .Month, .Day], fromDate: date)
@@ -262,8 +264,8 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         let hour = timeLabel.substringWithRange(NSRange(location: 0, length: 2))
         let minute = timeLabel.substringWithRange(NSRange(location: 3, length: 2))
-
-//        dd-MM-yyyy-HH-mm-ss
+        
+        //        dd-MM-yyyy-HH-mm-ss
         self.datetime = "\(day!)-\(month!)-\(year!)-\(hour)-\(minute)-00"
     }
     
@@ -277,6 +279,6 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     
     func defaultButtonDisabled(){
         self.useDefaults = false
-
+        
     }
 }

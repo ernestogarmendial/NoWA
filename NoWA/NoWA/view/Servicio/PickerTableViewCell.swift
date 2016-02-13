@@ -222,8 +222,6 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
             }
             
         }
-        
-        
     }
     
 }
