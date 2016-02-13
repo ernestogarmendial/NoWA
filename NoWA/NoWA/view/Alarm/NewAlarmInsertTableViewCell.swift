@@ -58,10 +58,10 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         doneButton.tintColor = .blackColor()
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-
+        
         toolbar.setItems([flexibleSpace,doneButton,flexibleSpace], animated: false)
         toolbar.userInteractionEnabled = true
-
+        
         timeLabel = UITextField()
         timeLabel!.text = "00:00"
         timeLabel!.textColor = .whiteColor()
@@ -72,7 +72,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         timeLabel!.inputAccessoryView = toolbar
         self.addSubview(timeLabel!)
         
-       
+        
         
         daysButtonsView = DaysButtonsView()
         self.addSubview(daysButtonsView!)
@@ -107,7 +107,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         
         timeLabel?.autoPinEdge(.Top, toEdge: .Bottom, ofView: nameTextField!, withOffset: 10)
         timeLabel?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 10)
-//        timeLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
+        //        timeLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         timeLabel?.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.5)
         
         
@@ -115,13 +115,21 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         daysButtonsView?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 10)
         daysButtonsView?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         daysButtonsView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
- 
+        
     }
     
     override func setItems(myDictionary: NSDictionary){
         if let newAlertLabelText = myDictionary["title"] as? String{
             newAlertLabel!.text = newAlertLabelText
         }
+    }
+    
+    override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isCreate: Bool) {
+        
+        let event = editAlarmDTO.event![0] as? EventDTO
+        let weather = editAlarmDTO.weather![0] as? AlarmDTO
+        
+        self.nameTextField!.text = event?.name
     }
     
 }

@@ -18,6 +18,12 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
         }
     }
     
+    var editAlarmDTO : PersonalAlarmDTO?{
+        didSet{
+            setEditAlarm(editAlarmDTO!, isCreate: false)
+        }
+    }
+    
 //    var acceptDelegate : ButtonFooterDelegate?
         var buttonDelegate : ButtonFooterDelegate?
 
@@ -60,4 +66,7 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
         
     }
     
+    func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isCreate: Bool){
+        
+    }
 }

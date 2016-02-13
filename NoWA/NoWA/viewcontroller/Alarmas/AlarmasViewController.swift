@@ -105,7 +105,11 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         print("edit Alarm")
 
+        let alarma = self.sortedAlarmsArray![indexPath.row] as PersonalAlarmDTO
+        
         let editAlarmViewController = EditAlarmViewController()
+        editAlarmViewController.editAlarmDTO = alarma
+        
         self.navigationController?.pushViewController(editAlarmViewController, animated:true )
         
     }

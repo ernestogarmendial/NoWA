@@ -18,6 +18,10 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     
     var datetime : String?
     
+    var event : EventDTO?
+    var weather : AlarmDTO?
+    var editAlarmDTO : PersonalAlarmDTO?
+    
     override func viewDidLoad() {
         
         print(ServicioViewController.defaultData)
@@ -28,8 +32,8 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         let logoImage = UIImage(named:"logoNav")
         self.navigationItem.titleView = UIImageView(image: logoImage)
         
-                let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-                tabla!.addGestureRecognizer(tap)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        tabla!.addGestureRecognizer(tap)
         
         let image = UIImage(named: "create_alarm_background")
         pictureView?.image = image
@@ -46,7 +50,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         self.tabla!.registerClass(PredictionTableViewCell.self, forCellReuseIdentifier: "PredictionSliderCell")
         self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "AcceptButtonCell")
         self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "DeleteButtonCell")
-
+        
         
         
         let path = NSBundle.mainBundle().pathForResource("EditAlarmCells", ofType: "plist")
@@ -107,6 +111,10 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         let identificador = cellsArray[indexPath.row]["identifier"] as! String
         
         let genericCell = self.tabla!.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
+        
+        if (self.editAlarmDTO != nil){
+            genericCell.editAlarmDTO = self.editAlarmDTO
+        }
         
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
         genericCell.tag = indexPath.row + 100
