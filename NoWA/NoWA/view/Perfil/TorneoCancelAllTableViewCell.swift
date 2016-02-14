@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol CancelAllEventDelegate {
+    func cancelAllButtonPressed() -> Void
+}
+
 class TorneoCancelAllTableViewCell: GenericTableViewCell {
     
     var configLabel : UILabel?
     var cancelButton : UIButton?
+    
+    var cancelAllDelegate : CancelAllEventDelegate?
+
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -54,6 +61,7 @@ class TorneoCancelAllTableViewCell: GenericTableViewCell {
 
     func cancelAll(){
         print("cancel")
+        self.cancelAllDelegate?.cancelAllButtonPressed()
     }
     
 }

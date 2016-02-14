@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, CancelEventDelegate {
+class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, CancelEventDelegate, CancelAllEventDelegate {
     
     var torneo : TournamentAdminDTO!
     var cellsArray: [TournamentDTO]!
@@ -131,6 +131,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         } else if indexPath.row == 1 {
             let configTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Cancel", forIndexPath: indexPath) as! TorneoCancelAllTableViewCell
             configTableViewCell.configLabel!.text = self.torneo?.name
+            configTableViewCell.cancelAllDelegate = self
             return configTableViewCell
         } else {
             
@@ -165,6 +166,24 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
             if currentCell?.isCancel == true {
                 print("evento nro \(i) cancelado")
             }
+        }
+        
+    }
+    
+    func cancelAllButtonPressed(){
+        print("delegado cancelar todo apretado")
+ 
+        let alert = UIAlertController(title: "CANCELAR TODO",message:"Está seguro que desea cancelar todas las alarmas de este torneo?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
+            print("aca deberia llamar al metodo")
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+            print("Cancel")
+        }))
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
     }
