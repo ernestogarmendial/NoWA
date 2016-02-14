@@ -22,6 +22,7 @@ class RegisterFieldView: UIView,UITextFieldDelegate {
         
         inputTextField = UITextField()
         inputTextField!.delegate = self
+        inputTextField.returnKeyType = UIReturnKeyType.Done
         inputTextField.textColor = UIColor.whiteColor()
         inputTextField.keyboardType = UIKeyboardType.EmailAddress
         inputTextField.font = UIFont.appLatoFontOfSize(15)

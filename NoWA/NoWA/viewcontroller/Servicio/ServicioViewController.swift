@@ -19,6 +19,9 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "loggeado")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
         if let deviceToken =  NSUserDefaults.standardUserDefaults().valueForKey("deviceToken"){
             print(deviceToken)
         }

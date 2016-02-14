@@ -99,6 +99,9 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
         
         switchRootViewController(navigationController, animated: true, completion: nil)
         
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "loggeado")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
     }
     
     func admin(){
