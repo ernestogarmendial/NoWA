@@ -51,6 +51,8 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         if ServicePickerTableViewCell.forecastArray == [] {
             callService()
+        }else{
+            selectedServiceLabel!.text = ServicePickerTableViewCell.forecastArray[0].valueForKey("name") as? String
         }
         
         setupConstrains()
@@ -196,7 +198,6 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         let event = editAlarmDTO.event![0] as? EventDTO
         let weather = editAlarmDTO.weather![0] as? AlarmDTO
-        
         
         for forecast in ServicePickerTableViewCell.forecastArray! {
             

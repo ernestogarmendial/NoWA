@@ -55,6 +55,8 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         if PickerTableViewCell.conditionsArray == [] {
             callService()
+        }else{
+            descriptionLabel!.text = PickerTableViewCell.conditionsArray[0].valueForKey("name") as? String
         }
         
         setupConstrains()
