@@ -18,12 +18,21 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     
     var datetime : String?
     
-    //    var event : EventDTO?
-    //    var weather : AlarmDTO?
+    var event : EventDTO?
+    var weather : AlarmDTO?
     
     var alarmStatus : NSNumber?
     var isEditing : Bool?
-    var editAlarmDTO : PersonalAlarmDTO?
+    
+    var alarmID : NSNumber?
+    var editAlarmDTO : PersonalAlarmDTO?{
+        didSet{
+            self.event = editAlarmDTO!.event![0] as? EventDTO
+            self.weather = editAlarmDTO!.weather![0] as? AlarmDTO
+            
+            alarmID = self.event!.eventID
+        }
+    }
     
     override func viewDidLoad() {
         
@@ -142,6 +151,10 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         newAlarmEventDTO = EventDTO()
         newAlarmDTO = AlarmDTO()
         
+        if self.alarmID != nil{
+            newAlarmDTO!.alarmID = self.alarmID!
+        }
+        
         let insertCell = tabla!.viewWithTag(100) as! NewAlarmInsertTableViewCell
         if let alarmName = insertCell.nameTextField!.text{
             newAlarmEventDTO?.name = alarmName
@@ -203,7 +216,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         
         
         let alarmService : AlarmService = AlarmService()
-        alarmService.createAlarm(dateTime: self.datetime! ,eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "editAlarmFinish:")
+        alarmService.editAlarm(dateTime: self.datetime! ,eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "editAlarmFinish:")
         
         
     }
@@ -307,4 +320,39 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         
     }
     
+    override func deleteButtonPressed() {
+        newAlarmDTO = AlarmDTO()
+        
+        if self.alarmID != nil{
+            newAlarmDTO!.alarmID = self.alarmID!
+        }
+        let alarmService : AlarmService = AlarmService()
+        alarmService.deleteAlarm(alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "deleteAlarmFinish:")
+    }
+    
+    func deleteAlarmFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        
+        let alert = UIAlertController(title: "Se ha eliminado la alarma", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        //        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController!.popToRootViewControllerAnimated(true)
+        
+        
+        //        for controller in self.navigationController!.viewControllers as Array {
+        //            if controller.isKindOfClass(AdminViewController) {
+        //                self.navigationController?.popToViewController(controller as UIViewController, animated: true)
+        //                break
+        //            }
+        //        }
+        
+    }
 }

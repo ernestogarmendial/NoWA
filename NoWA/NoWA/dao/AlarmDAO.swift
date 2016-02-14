@@ -304,7 +304,43 @@ class AlarmDAO: GenericDAO {
             repetition = _eventDTO.repetition
         }
         
-        let originalURL = "alarms/update/\(_alarmDTO.alarmID)/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/"
+        let originalURL = "alarms/update/\(_alarmDTO.alarmID!)/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/"
+        var url = self.encodeURL(originalURL)
+        
+        let request = objectManager.requestWithObject(  nil,
+            method: RKRequestMethod.GET,
+            path: url,
+            parameters: nil)
+        
+        let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
+        operation.setCompletionBlockWithSuccess({ (operation, response) in
+            let defaultDTO = response.array()[0] as! PersonalAlarmDTO
+            self.finish(defaultDTO)
+            },
+            failure: { (operation, error) in
+                self.finish(nil)
+        })
+        operation.start()
+        
+    }
+    
+    func deleteAlarm(alarmDTO _alarmDTO: AlarmDTO!, token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
+        
+        if(!self.register()){
+            return;
+        }
+        
+        completionHandler = _handler
+        
+        let objectManager = RKObjectManager(baseURL: NSURL(string: serverURL))
+        
+        RKMIMETypeSerialization.registerClass(RKNSJSONSerialization.self, forMIMEType: "application/json")
+        
+        let mapping = PersonalAlarmDTO.mapping()
+        
+        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
+        
+        let originalURL = "alarms/delete/\(_alarmDTO.alarmID!)/\(_token)/"
         var url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
