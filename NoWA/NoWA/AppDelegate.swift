@@ -38,8 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         if (NSUserDefaults.standardUserDefaults().boolForKey("loggeado")) == true {
-//            navigationController.viewControllers = [ServicioViewController()]
-            beginInTabbar()
+            navigationController.viewControllers = [StartLoggedViewController()]
         }else{
             if((NSUserDefaults.standardUserDefaults().valueForKey("firstTime")) != nil){
                 navigationController.viewControllers = [RegisterViewController()]
@@ -130,50 +129,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    func beginInTabbar(){
-        let tabBarController = MainTabBarController()
-        
-        let servicio = ServicioViewController()
-        let alarmas = AlarmasViewController()
-        let torneos = TorneosViewController()
-        let perfil = PerfilViewController()
-        let controllers = [servicio,alarmas,torneos,perfil]
-        
-        tabBarController.viewControllers = controllers
-        
-        let firstImage = UIImage(named: "cloud")?.imageWithRenderingMode(.AlwaysOriginal)
-        let firstImage_sel = UIImage(named: "cloud_selected")?.imageWithRenderingMode(.AlwaysOriginal)
-        let secondImage = UIImage(named: "clock")?.imageWithRenderingMode(.AlwaysOriginal)
-        let secondImage_sel = UIImage(named: "clock_selected")?.imageWithRenderingMode(.AlwaysOriginal)
-        let thirdImage = UIImage(named: "team")?.imageWithRenderingMode(.AlwaysOriginal)
-        let thirdImage_sel = UIImage(named: "team_selected")?.imageWithRenderingMode(.AlwaysOriginal)
-        let fourthImage = UIImage(named: "equalizer")?.imageWithRenderingMode(.AlwaysOriginal)
-        let fourthImage_sel = UIImage(named: "equalizer_selected")?.imageWithRenderingMode(.AlwaysOriginal)
-        
-        
-        servicio.tabBarItem = UITabBarItem(
-            title: "Servicio",
-            image: firstImage,
-            selectedImage: firstImage_sel)
-        alarmas.tabBarItem = UITabBarItem(
-            title: "Alarmas",
-            image: secondImage,
-            selectedImage: secondImage_sel)
-        torneos.tabBarItem = UITabBarItem(
-            title: "Torneos",
-            image: thirdImage,
-            selectedImage: thirdImage_sel)
-        perfil.tabBarItem = UITabBarItem(
-            title: "Perfil",
-            image: fourthImage,
-            selectedImage: fourthImage_sel)
-        
-        let navigationController = UINavigationController()
-        navigationController.viewControllers = [tabBarController]
-        
-    }
-    
     
 }
 

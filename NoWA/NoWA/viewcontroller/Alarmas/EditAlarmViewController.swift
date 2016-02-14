@@ -229,21 +229,14 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         
         
         let alert = UIAlertController(title: "Se ha actualizado la alarma", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+            self.navigationController!.popToRootViewControllerAnimated(true)
+        }))
         
         dispatch_async(dispatch_get_main_queue()) {
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        //        self.navigationController?.popViewControllerAnimated(true)
-        self.navigationController!.popToRootViewControllerAnimated(true)
-        
-        
-        //        for controller in self.navigationController!.viewControllers as Array {
-        //            if controller.isKindOfClass(AdminViewController) {
-        //                self.navigationController?.popToViewController(controller as UIViewController, animated: true)
-        //                break
-        //            }
-        //        }
+
         
     }
     
@@ -336,23 +329,14 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             return
         }
         
-        
-        let alert = UIAlertController(title: "Se ha eliminado la alarma", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        let alert = UIAlertController(title: "ELIMINAR", message: "Se ha eliminado la alarma", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+            self.navigationController!.popToRootViewControllerAnimated(true)
+        }))
         
         dispatch_async(dispatch_get_main_queue()) {
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        //        self.navigationController?.popViewControllerAnimated(true)
-        self.navigationController!.popToRootViewControllerAnimated(true)
-        
-        
-        //        for controller in self.navigationController!.viewControllers as Array {
-        //            if controller.isKindOfClass(AdminViewController) {
-        //                self.navigationController?.popToViewController(controller as UIViewController, animated: true)
-        //                break
-        //            }
-        //        }
         
     }
 }

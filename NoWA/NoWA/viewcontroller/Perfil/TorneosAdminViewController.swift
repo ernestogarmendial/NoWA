@@ -178,7 +178,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         print(cancelIds)
         
         let alarmService : AlarmService = AlarmService()
-        alarmService.cancelAlarm(alarmID: 0,tournamentIDs: cancelIds, value: 0, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
+        alarmService.cancelAlarm(alarmID: 0,tournamentIDs: "", value: 0, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
         
     }
     

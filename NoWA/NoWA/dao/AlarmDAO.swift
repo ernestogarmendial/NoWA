@@ -185,7 +185,7 @@ class AlarmDAO: GenericDAO {
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
         let originalURL : String?
-        if _alarmID == 0{
+        if _alarmID != 0{
             originalURL  = "alarms/toggle/\(_alarmID)/\(_value)/\(_token)/"
         }else{
             originalURL = "alarms/toggle/\(_tournamentIDs)/\(_value)/\(_token)/"
