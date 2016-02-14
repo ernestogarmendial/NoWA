@@ -177,19 +177,37 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
             if let service = defaultDTO.service{
                 
                 self.service = service
-                
-                let delay = 1 * Double(NSEC_PER_SEC)
+//                
+                let delay = 0.1 * Double(NSEC_PER_SEC)
                 let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
                 dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-                    if self.forecasts != nil{
-                        for forecast in self.forecasts!{
-                            if forecast.forecastID == service{
-                                self.selectedServiceLabel!.text = forecast.name
-                                self.defaultSeted = true
-                                
-                            }
+                    
+                    for forecast in ServicePickerTableViewCell.forecastArray! {
+                        
+                        let forecastID = forecast.valueForKey("forecastID") as! NSNumber
+                        
+                        if forecastID == service {
+                            
+                            self.selectedServiceLabel!.text = forecast.valueForKey("name") as? String
+                            
+                            self.defaultSeted = true
+                            
+                            return
                         }
+                        
                     }
+                    
+//                    if self.forecasts != nil{
+//                        for forecast in self.forecasts!{
+//                            if forecast.forecastID == service{
+//                                self.selectedServiceLabel!.text = forecast.name
+//                                self.defaultSeted = true
+//                                
+//                            }
+//                        }
+//                    }
+                    
+                    
                 }
             }
         }
