@@ -73,7 +73,10 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         
         sortedAlarmsArray = sortedAlarmsArray!.sort { $0.eventID!.compare($1.eventID!) == .OrderedAscending }
         
-        self.tabla!.reloadData()
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tabla!.reloadData()
+        }
+        
     }
     
     
@@ -106,7 +109,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         print("edit Alarm")
         
         let editAlarmViewController = EditAlarmViewController()
-
+        
         let alarmCell = tabla?.cellForRowAtIndexPath(indexPath) as! AlarmItemTableViewCell
         
         let alarma = self.sortedAlarmsArray![indexPath.row] as PersonalAlarmDTO
@@ -149,13 +152,16 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     
     func refresh () {
         
-        self.callService()
+        dispatch_async(dispatch_get_main_queue()) {
+            self.callService()
+            
+            self.tabla!.reloadData()
+            
+            self.myRefresh.endRefreshing()
+            
+            self.reloadData = true
+        }
         
-        self.tabla!.reloadData()
-        
-        self.myRefresh.endRefreshing()
-        
-        reloadData = true
         
     }
     
