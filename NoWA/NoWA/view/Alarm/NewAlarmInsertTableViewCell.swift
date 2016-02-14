@@ -126,31 +126,35 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     
     override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isEdit: Bool, status: NSNumber?) {
         
-        let event = editAlarmDTO.event![0] as? EventDTO
-        let weather = editAlarmDTO.weather![0] as? AlarmDTO
-        
-        self.nameTextField!.text = event?.name
-        
-        let stamp = event!.stamp! as NSString
-        
-        timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
-        
-        let hour = stamp.substringWithRange(NSRange(location: 11, length: 2))
-        let min = stamp.substringWithRange(NSRange(location: 14, length: 2))
-        
-        self.timeLabel!.text = "\(hour):\(min)"
-        
-        if let daysString : String = event!.repetition{
-            let daysArray : NSArray = daysString.componentsSeparatedByString(",")
-            if status == 0{
-                daysButtonsView?.setDaysColor(UIColor.daysInactiveColor())
-                daysButtonsView?.showDays(daysArray, color: UIColor.daysInactiveColor())
-            }else{
-                daysButtonsView?.setDaysColor(UIColor.daysInactiveColor())
-                daysButtonsView?.showDays(daysArray, color: UIColor.daysActiveColor())
+        if self.firstTimeEdit == false {
+            
+            let event = editAlarmDTO.event![0] as? EventDTO
+            let weather = editAlarmDTO.weather![0] as? AlarmDTO
+            
+            self.nameTextField!.text = event?.name
+            
+            let stamp = event!.stamp! as NSString
+            
+            timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
+            
+            let hour = stamp.substringWithRange(NSRange(location: 11, length: 2))
+            let min = stamp.substringWithRange(NSRange(location: 14, length: 2))
+            
+            self.timeLabel!.text = "\(hour):\(min)"
+            
+            if let daysString : String = event!.repetition{
+                let daysArray : NSArray = daysString.componentsSeparatedByString(",")
+                if status == 0{
+                    daysButtonsView?.setDaysColor(UIColor.daysInactiveColor())
+                    daysButtonsView?.showDays(daysArray, color: UIColor.daysInactiveColor())
+                }else{
+                    daysButtonsView?.setDaysColor(UIColor.daysInactiveColor())
+                    daysButtonsView?.showDays(daysArray, color: UIColor.daysActiveColor())
+                }
             }
+            
+            self.firstTimeEdit = true
         }
-
     }
     
 }

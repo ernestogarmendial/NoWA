@@ -52,9 +52,10 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         if ServicePickerTableViewCell.forecastArray == [] {
             callService()
         }else{
-            selectedServiceLabel!.text = ServicePickerTableViewCell.forecastArray[0].valueForKey("name") as? String
-            service = ServicePickerTableViewCell.forecastArray[0].valueForKey("forecastID") as? NSNumber
-
+            if self.firstTimeEdit == false {
+                selectedServiceLabel!.text = ServicePickerTableViewCell.forecastArray[0].valueForKey("name") as? String
+                service = ServicePickerTableViewCell.forecastArray[0].valueForKey("forecastID") as? NSNumber
+            }
         }
         
         setupConstrains()
@@ -198,21 +199,25 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isEdit: Bool, status: NSNumber?) {
         
-        let event = editAlarmDTO.event![0] as? EventDTO
-        let weather = editAlarmDTO.weather![0] as? AlarmDTO
-        
-        for forecast in ServicePickerTableViewCell.forecastArray! {
+        if self.firstTimeEdit == false {
             
-            let forecastID = forecast.valueForKey("forecastID") as! NSNumber
+            let event = editAlarmDTO.event![0] as? EventDTO
+            let weather = editAlarmDTO.weather![0] as? AlarmDTO
             
-            if forecastID == weather?.service {
+            for forecast in ServicePickerTableViewCell.forecastArray! {
                 
-                selectedServiceLabel!.text = forecast.valueForKey("name") as? String
+                let forecastID = forecast.valueForKey("forecastID") as! NSNumber
                 
-                return
+                if forecastID == weather?.service {
+                    
+                    selectedServiceLabel!.text = forecast.valueForKey("name") as? String
+                    self.firstTimeEdit = true
+                    return
+                }
+                
             }
             
+            
         }
-        
     }
 }

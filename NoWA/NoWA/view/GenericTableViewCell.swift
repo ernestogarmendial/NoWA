@@ -10,6 +10,8 @@ import UIKit
 
 class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     
+    var firstTimeEdit : Bool? = false
+
     var defaultSeted : Bool! = false
 
     var editSeted : Bool! = false

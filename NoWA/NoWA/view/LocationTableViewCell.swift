@@ -170,7 +170,7 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     override func setDefaults(defaultDTO: AlarmDTO,isCreate: Bool){
         
         if !defaultSeted || isCreate == true{
-        
+            
             if let place = defaultDTO.place{
                 self.place = place
                 self.locationTextField!.text = place
@@ -183,11 +183,16 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     
     override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isEdit: Bool, status: NSNumber?) {
         
-        let event = editAlarmDTO.event![0] as? EventDTO
-        let weather = editAlarmDTO.weather![0] as? AlarmDTO
-        
-
-        locationTextField!.text = weather?.place
+        if self.firstTimeEdit == false {
+            
+            let event = editAlarmDTO.event![0] as? EventDTO
+            let weather = editAlarmDTO.weather![0] as? AlarmDTO
+            
+            
+            locationTextField!.text = weather?.place
+            
+            self.firstTimeEdit = true
+        }
     }
     
 }

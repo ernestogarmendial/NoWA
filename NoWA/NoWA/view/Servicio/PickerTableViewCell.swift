@@ -56,8 +56,11 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         if PickerTableViewCell.conditionsArray == [] {
             callService()
         }else{
-            descriptionLabel!.text = PickerTableViewCell.conditionsArray[0].valueForKey("name") as? String
-            condition = PickerTableViewCell.conditionsArray[0].valueForKey("conditionID") as? NSNumber
+            if self.firstTimeEdit == false {
+                
+                descriptionLabel!.text = PickerTableViewCell.conditionsArray[0].valueForKey("name") as? String
+                condition = PickerTableViewCell.conditionsArray[0].valueForKey("conditionID") as? NSNumber
+            }
         }
         
         setupConstrains()
@@ -210,21 +213,28 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isEdit: Bool, status: NSNumber?) {
         
-        let event = editAlarmDTO.event![0] as? EventDTO
-        let weather = editAlarmDTO.weather![0] as? AlarmDTO
-        
-        for condition in PickerTableViewCell.conditionsArray! {
+        if self.firstTimeEdit == false {
             
-            let conditionID = condition.valueForKey("conditionID") as! NSNumber
+            let event = editAlarmDTO.event![0] as? EventDTO
+            let weather = editAlarmDTO.weather![0] as? AlarmDTO
             
-            if conditionID == weather?.condition {
+            for condition in PickerTableViewCell.conditionsArray! {
                 
-                descriptionLabel!.text = condition.valueForKey("name") as? String
+                let conditionID = condition.valueForKey("conditionID") as! NSNumber
                 
-                return
+                if conditionID == weather?.condition {
+                    
+                    descriptionLabel!.text = condition.valueForKey("name") as? String
+                    self.firstTimeEdit = true
+                    return
+                }
+                
             }
+            
             
         }
     }
+    
+    
     
 }
