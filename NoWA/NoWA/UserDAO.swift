@@ -44,9 +44,13 @@ class UserDAO: GenericDAO {
         
         let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken") as! String
         
+        let originalURL = "user/login/\(_name)/\(_code)/ios/\(deviceToken)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "user/login/\(_name)/\(_code)/ios/\(deviceToken)/",
+            path: url,
             parameters: nil)
         
         
@@ -97,9 +101,14 @@ class UserDAO: GenericDAO {
         let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken") as! String
 
         print ("user/register/\(_name)/\(_code)/ios/\(deviceToken)/")
+        
+        let originalURL = "user/register/\(_name)/\(_code)/ios/\(deviceToken)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "user/register/\(_name)/\(_code)/ios/\(deviceToken)/",
+            path: url,
             parameters: nil)
         
         
@@ -134,9 +143,14 @@ class UserDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
+        let originalURL = "user/recover/\(_name)/"
+        
+        var url = self.encodeURL(originalURL)
+
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "user/recover/\(_name)/",
+            path: url,
             parameters: nil)
         
         

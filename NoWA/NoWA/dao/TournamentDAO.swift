@@ -26,9 +26,13 @@ class TournamentDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "tournaments", statusCodes: nil)
         
+        let originalURL = "tournaments/list/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "tournaments/list/\(_token)/",
+            path: url,
             parameters: nil)
         
         
@@ -64,9 +68,13 @@ class TournamentDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "events", statusCodes: nil)
         
+        let originalURL = "tournaments/\(_tournamentID)/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "tournaments/\(_tournamentID)/\(_token)/",
+            path: url,
             parameters: nil)
         
         print("tournaments/\(_tournamentID!)/\(_token)/")

@@ -26,9 +26,13 @@ class WeatherDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "services", statusCodes: nil)
         
+        let originalURL = "weather/services/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "weather/services/\(_token)/",
+            path: url,
             parameters: nil)
         
         
@@ -66,9 +70,13 @@ class WeatherDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "zone", statusCodes: nil)
         
+        let originalURL = "weather/location/\(_name)/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "weather/location/\(_name)/\(_token)/",
+            path: url,
             parameters: nil)
         
         
@@ -105,9 +113,13 @@ class WeatherDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "conditions", statusCodes: nil)
         
+        let originalURL = "weather/conditions/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "weather/conditions/\(_token)/",
+            path: url,
             parameters: nil)
         
         
@@ -151,10 +163,13 @@ class WeatherDAO: GenericDAO {
             place = _weatherDTO!.place
         }
         
+        let originalURL = "weather/set/default/\(_weatherDTO.condition!.intValue)/\(_weatherDTO.prediction!.intValue)/\(_weatherDTO.minTemp!.intValue)/\(_weatherDTO.maxTemp!.intValue)/\(_weatherDTO.minHumidity!.intValue)/\(_weatherDTO.maxHumidity!.intValue)/\(_weatherDTO.minWind!.intValue)/\(_weatherDTO.maxWind!.intValue)/\(_weatherDTO.minSnow!.intValue)/\(_weatherDTO.maxSnow!.intValue)/\(_weatherDTO.service!.intValue)/\(place)/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "weather/set/default/\(_weatherDTO.condition!.intValue)/\(_weatherDTO.prediction!.intValue)/\(_weatherDTO.minTemp!.intValue)/\(_weatherDTO.maxTemp!.intValue)/\(_weatherDTO.minHumidity!.intValue)/\(_weatherDTO.maxHumidity!.intValue)/\(_weatherDTO.minWind!.intValue)/\(_weatherDTO.maxWind!.intValue)/\(_weatherDTO.minSnow!.intValue)/\(_weatherDTO.maxSnow!.intValue)/\(_weatherDTO.service!.intValue)/\(place)/\(_token)/",
+            path: url,
             parameters: nil)
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
@@ -186,9 +201,13 @@ class WeatherDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
+        let originalURL = "weather/data/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "weather/data/\(_token)/",
+            path: url,
             parameters: nil)
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])

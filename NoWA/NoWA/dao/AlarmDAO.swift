@@ -26,9 +26,13 @@ class AlarmDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "events", statusCodes: nil)
         
+        let originalURL = "alarms/personal/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "alarms/personal/\(_token)/",
+            path: url,
             parameters: nil)
         
         
@@ -64,9 +68,13 @@ class AlarmDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "events", statusCodes: nil)
         
+        let originalURL = "alarms/tournament/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "alarms/tournament/\(_token)/",
+            path: url,
             parameters: nil)
         
         
@@ -140,10 +148,8 @@ class AlarmDAO: GenericDAO {
         
         let originalURL = "alarms/create/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/"
         
-        let encodedURL = originalURL.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-        print("escapedString: \(encodedURL!)")
-        let url = encodedURL!.stringByReplacingOccurrencesOfString("%2F", withString: "/", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        print(url)
+        var url = self.encodeURL(originalURL)
+
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
@@ -178,9 +184,13 @@ class AlarmDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
+        let originalURL = "alarms/toggle/\(_alarmID)/\(_value)/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "alarms/toggle/\(_alarmID)/\(_value)/\(_token)/",
+            path: url,
             parameters: nil)
         
         print("alarms/toggle/\(_alarmID)/\(_value)/\(_token)/")
@@ -200,7 +210,7 @@ class AlarmDAO: GenericDAO {
         })
         operation.start()
     }
-
+    
     
     func checkAlarm(alarmID _alarmID : NSNumber!,token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         
@@ -221,9 +231,13 @@ class AlarmDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
+        let originalURL = "alarms/check/\(_alarmID)/\(_token)/"
+        
+        var url = self.encodeURL(originalURL)
+        
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "alarms/check/\(_alarmID)/\(_token)/",
+            path: url,
             parameters: nil)
         
         
@@ -236,7 +250,7 @@ class AlarmDAO: GenericDAO {
                 self.finish(nil)
         })
         operation.start()
-
+        
     }
     
     func editAlarm(dateTime _dateTime : String, eventDTO _eventDTO : EventDTO, alarmDTO _alarmDTO: AlarmDTO!, token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
@@ -290,11 +304,12 @@ class AlarmDAO: GenericDAO {
             repetition = _eventDTO.repetition
         }
         
-        print("alarms/update/\(_alarmDTO.alarmID)/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/")
+        let originalURL = "alarms/update/\(_alarmDTO.alarmID)/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/"
+        var url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
-            path: "alarms/update/\(_alarmDTO.alarmID)/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/",
+            path: url,
             parameters: nil)
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])

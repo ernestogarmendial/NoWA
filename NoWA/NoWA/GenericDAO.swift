@@ -58,4 +58,12 @@ class GenericDAO  : NSObject, Operation {
         print(operation.HTTPRequestOperation.responseString)
     }
     
+    func encodeURL(originalURL: String) -> String{
+        
+        let encodedURL = originalURL.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+        print("escapedString: \(encodedURL!)")
+        let url = encodedURL!.stringByReplacingOccurrencesOfString("%2F", withString: "/", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        print(url)
+        return url
+    }
 }
