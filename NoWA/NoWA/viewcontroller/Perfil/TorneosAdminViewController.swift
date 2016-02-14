@@ -158,25 +158,49 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
     func cancelButtonPressed(){
         print("delegado cancelar apretado")
         
-        for var i = 2; i < self.cellsArray.count; i++ {
+        var cancelIds : String = ""
+        
+        for var i = 0; i < self.cellsArray.count ; i++ {
             
-            let _indexPath = NSIndexPath(forRow: i, inSection: 0)
+            let _indexPath = NSIndexPath(forRow: i + 2, inSection: 0)
             let currentCell = self.tabla?.cellForRowAtIndexPath(_indexPath) as? TournamentEventTableViewCell
             
             if currentCell?.isCancel == true {
-                print("evento nro \(i) cancelado")
+                
+                if cancelIds == ""{
+                    cancelIds = (currentCell!.tournamentID!.stringValue)
+                }else{
+                    cancelIds = cancelIds + "-\(currentCell!.tournamentID!.stringValue)"
+                }
             }
+        }
+        
+        print(cancelIds)
+        
+        let alarmService : AlarmService = AlarmService()
+        alarmService.cancelAlarm(alarmID: 0,tournamentIDs: cancelIds, value: 0, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
+        
+    }
+    
+    
+    
+    
+    
+    func cancelAlarm (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
         }
         
     }
     
     func cancelAllButtonPressed(){
         print("delegado cancelar todo apretado")
- 
-        let alert = UIAlertController(title: "CANCELAR TODO",message:"Está seguro que desea cancelar todas las alarmas de este torneo?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let alert = UIAlertController(title: "CANCELAR TODO" ,message:"Está seguro que desea cancelar todas las alarmas de este torneo?", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
             print("aca deberia llamar al metodo")
-            
+            self.cancelAllAlarms()
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
@@ -198,6 +222,28 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
             self.myRefresh.endRefreshing()
             
         }
+    }
+    
+    func cancelAllAlarms(){
+        var cancelIds : String = ""
+        
+        for var i = 0; i < self.cellsArray.count ; i++ {
+            
+            let _indexPath = NSIndexPath(forRow: i + 2, inSection: 0)
+            let currentCell = self.tabla?.cellForRowAtIndexPath(_indexPath) as? TournamentEventTableViewCell
+            
+            if cancelIds == ""{
+                cancelIds = (currentCell!.tournamentID!.stringValue)
+            }else{
+                cancelIds = cancelIds + "-\(currentCell!.tournamentID!.stringValue)"
+            }
+            
+        }
+        print(cancelIds)
+        
+        let alarmService : AlarmService = AlarmService()
+        alarmService.cancelAlarm(alarmID: 0,tournamentIDs: cancelIds, value: 0, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
+        
     }
     
 }

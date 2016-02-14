@@ -10,6 +10,7 @@ import UIKit
 
 class TournamentEventTableViewCell: GenericTableViewCell {
     
+    var tournamentID : NSNumber?
     var eventName : UILabel?
     var stampLabel : UILabel?
     var cancelIcon: UIImageView?
@@ -81,6 +82,8 @@ class TournamentEventTableViewCell: GenericTableViewCell {
     }
     
     func setValues(event : TournamentDTO){
+        
+        self.tournamentID = event.tournamentID
         
         self.eventName?.text = ""
         self.stampLabel?.text = ""

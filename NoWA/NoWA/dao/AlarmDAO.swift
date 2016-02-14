@@ -146,10 +146,10 @@ class AlarmDAO: GenericDAO {
             repetition = _eventDTO.repetition
         }
         
-        let originalURL = "alarms/create/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/"
+        let originalURL = "alarms/create/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/default/\(_token)/"
         
         var url = self.encodeURL(originalURL)
-
+        
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
@@ -168,7 +168,7 @@ class AlarmDAO: GenericDAO {
         
     }
     
-    func cancelAlarm(alarmID _alarmID : NSNumber!, value _value : NSNumber!,token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
+    func cancelAlarm(alarmID _alarmID : NSNumber!,tournamentIDs _tournamentIDs : String, value _value : NSNumber!,token _token: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         
         if(!self.register()){
             return;
@@ -184,16 +184,20 @@ class AlarmDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
-        let originalURL = "alarms/toggle/\(_alarmID)/\(_value)/\(_token)/"
+        let originalURL : String?
+        if _alarmID == 0{
+            originalURL  = "alarms/toggle/\(_alarmID)/\(_value)/\(_token)/"
+        }else{
+            originalURL = "alarms/toggle/\(_tournamentIDs)/\(_value)/\(_token)/"
+        }
         
-        var url = self.encodeURL(originalURL)
+        var url = self.encodeURL(originalURL!)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
             path: url,
             parameters: nil)
         
-        print("alarms/toggle/\(_alarmID)/\(_value)/\(_token)/")
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in
@@ -304,7 +308,7 @@ class AlarmDAO: GenericDAO {
             repetition = _eventDTO.repetition
         }
         
-        let originalURL = "alarms/update/\(_alarmDTO.alarmID!)/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_token)/"
+        let originalURL = "alarms/update/\(_alarmDTO.alarmID!)/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/default/\(_token)/"
         var url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,

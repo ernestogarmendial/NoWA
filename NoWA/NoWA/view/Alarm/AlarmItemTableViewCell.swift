@@ -265,7 +265,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     
     func cancelAlarmService(value: NSNumber?){
         let alarmService : AlarmService = AlarmService()
-        alarmService.cancelAlarm(alarmID: alarmID!, value: value!, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
+        alarmService.cancelAlarm(alarmID: alarmID!,tournamentIDs: "", value: value!, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
     }
     
     func cancelAlarm (result : ServiceResult!){
