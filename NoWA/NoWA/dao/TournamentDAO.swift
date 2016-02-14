@@ -85,7 +85,7 @@ class TournamentDAO: GenericDAO {
                 let array = response.array() as NSArray
                 self.finish(array)
             }else{
-                self.finish(nil)
+                self.finish([])
             }
             },
             failure: { (operation, error) in
