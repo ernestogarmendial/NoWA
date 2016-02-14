@@ -157,7 +157,7 @@ class WeatherDAO: GenericDAO {
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
     
         let place : String!
-        if _weatherDTO!.place == nil{
+        if _weatherDTO!.place == nil || _weatherDTO!.place == ""{
             place = "place"
         }else{
             place = _weatherDTO!.place
