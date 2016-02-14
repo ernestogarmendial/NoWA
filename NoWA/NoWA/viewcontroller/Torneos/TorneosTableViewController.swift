@@ -36,7 +36,10 @@ class TorneosTableViewController: GenericTableViewController {
         
         self.tournamentsArray = result.entityForKey("TournamentAlarms") as? [TournamentDTO]
         
-        self.tableView.reloadData()
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tableView.reloadData()
+        }
     }
     
     
@@ -67,9 +70,9 @@ class TorneosTableViewController: GenericTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
+        
         let torneoCell = tableView.dequeueReusableCellWithIdentifier("tournamentItem", forIndexPath: indexPath) as! TorneoItemTableViewCell
-       
+        
         torneoCell.setupTournament(self.tournamentsArray[indexPath.row])
         
         return torneoCell

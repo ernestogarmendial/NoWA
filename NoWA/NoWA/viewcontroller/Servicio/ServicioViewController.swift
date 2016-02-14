@@ -202,7 +202,10 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         
         ServicioViewController.defaultData = self.defaultDataDTO
         
-        self.tabla!.reloadData()
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tabla!.reloadData()
+        }
     }
     
     override func adminButtonPressed(){

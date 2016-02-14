@@ -78,7 +78,9 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         
         self.cellsArray = result.entityForKey("TournamentsAdmin") as? [TournamentAdminDTO]
         
-        self.tabla!.reloadData()
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tabla!.reloadData()
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -142,11 +144,12 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
     }
     
     func refresh () {
-        
+        dispatch_async(dispatch_get_main_queue()) {
+
         self.callService()
         self.tabla!.reloadData()
         self.myRefresh.endRefreshing()
-        
+        }
     }
     
 }

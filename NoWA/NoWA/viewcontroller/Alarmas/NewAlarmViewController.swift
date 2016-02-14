@@ -275,7 +275,10 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         print("apretadooooooooooooo")
         
         self.useDefaults = true
-        self.tabla?.reloadData()
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tabla?.reloadData()
+        }
         
     }
     

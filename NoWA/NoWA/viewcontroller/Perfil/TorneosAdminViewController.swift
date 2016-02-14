@@ -80,8 +80,10 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         
         self.cellsArray = self.cellsArray!.sort { $0.tournamentID!.compare($1.tournamentID!) == .OrderedAscending }
         
-        
-        self.tabla!.reloadData()
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tabla!.reloadData()
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -170,10 +172,13 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
     
     func refresh () {
         
-        self.callService()
-        self.tabla!.reloadData()
-        self.myRefresh.endRefreshing()
-        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.callService()
+            self.tabla!.reloadData()
+            self.myRefresh.endRefreshing()
+            
+        }
     }
     
 }

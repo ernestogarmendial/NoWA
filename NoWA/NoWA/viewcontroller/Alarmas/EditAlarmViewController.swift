@@ -221,16 +221,16 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         dispatch_async(dispatch_get_main_queue()) {
             self.presentViewController(alert, animated: true, completion: nil)
         }
-//        self.navigationController?.popViewControllerAnimated(true)
+        //        self.navigationController?.popViewControllerAnimated(true)
         self.navigationController!.popToRootViewControllerAnimated(true)
-
         
-//        for controller in self.navigationController!.viewControllers as Array {
-//            if controller.isKindOfClass(AdminViewController) {
-//                self.navigationController?.popToViewController(controller as UIViewController, animated: true)
-//                break
-//            }
-//        }
+        
+        //        for controller in self.navigationController!.viewControllers as Array {
+        //            if controller.isKindOfClass(AdminViewController) {
+        //                self.navigationController?.popToViewController(controller as UIViewController, animated: true)
+        //                break
+        //            }
+        //        }
         
     }
     
@@ -295,7 +295,10 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         print("apretadooooooooooooo")
         
         self.useDefaults = true
-        self.tabla?.reloadData()
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tabla?.reloadData()
+        }
         
     }
     

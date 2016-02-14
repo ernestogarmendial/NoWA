@@ -59,8 +59,11 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         self.tournamentsArray = result.entityForKey("TournamentAlarms") as? [TournamentDTO]
         
         tournamentsArray = tournamentsArray!.sort { $0.tournamentID!.compare($1.tournamentID!) == .OrderedAscending }
-
-        self.tabla!.reloadData()
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tabla!.reloadData()
+        }
     }
     
     
@@ -105,10 +108,13 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
     
     func refresh () {
         
-        self.callService()
-        self.tabla!.reloadData()
-        self.myRefresh.endRefreshing()
-        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.callService()
+            self.tabla!.reloadData()
+            self.myRefresh.endRefreshing()
+            
+        }
     }
     
 }

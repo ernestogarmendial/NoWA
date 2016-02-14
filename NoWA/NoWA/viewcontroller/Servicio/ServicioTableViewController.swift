@@ -180,7 +180,10 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         
         self.defaultDataDTO = result.entityForKey("GetDefault") as? AlarmDTO
         
-        self.tableView.reloadData()
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tableView.reloadData()
+        }
     }
     
     override func adminButtonPressed(){
