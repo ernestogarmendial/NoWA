@@ -12,7 +12,7 @@ class PictureTableViewCell: GenericTableViewCell {
 
     var circlePictureView : CirclePictureView?
     var nameLabel : UILabel?
-    var leyendLabel : UILabel?
+    var leyendLabel : UITextField?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,7 +30,7 @@ class PictureTableViewCell: GenericTableViewCell {
         let adminText = "\(username) - Admin"
         let firstPart = username
 //        nameLabel!.text = UserService.currentUser.username //cambiar por name
-        nameLabel!.font = UIFont.appLatoFontOfSize(16)
+        nameLabel!.font = UIFont.appLatoFontOfSize(14)
         nameLabel!.adjustsFontSizeToFitWidth = true
         nameLabel!.textAlignment = .Center
         nameLabel!.numberOfLines = 1
@@ -48,13 +48,25 @@ class PictureTableViewCell: GenericTableViewCell {
         self.addSubview(nameLabel!)
         
         
-        leyendLabel = UILabel()
+//        leyendLabel = UILabel()
+//        leyendLabel!.textColor = .whiteColor()
+//        leyendLabel!.text = "A lo hecho pecho!"
+//        leyendLabel!.font = UIFont.appLatoFontOfSize(14)
+//        leyendLabel!.adjustsFontSizeToFitWidth = true
+//        leyendLabel!.textAlignment = .Center
+//        leyendLabel!.numberOfLines = 1
+//        self.addSubview(leyendLabel!)
+        
+        leyendLabel = UITextField()
+        leyendLabel?.delegate = self
+        leyendLabel!.attributedPlaceholder =  NSAttributedString(string: "Ingresá tu frase personal!",
+            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         leyendLabel!.textColor = .whiteColor()
-        leyendLabel!.text = "A lo hecho pecho!"
-        leyendLabel!.font = UIFont.appLatoFontOfSize(14)
+        leyendLabel!.font = UIFont.appLatoFontOfSize(16)
         leyendLabel!.adjustsFontSizeToFitWidth = true
+        leyendLabel!.keyboardType = UIKeyboardType.Default
+        leyendLabel!.clearButtonMode = .WhileEditing
         leyendLabel!.textAlignment = .Center
-        leyendLabel!.numberOfLines = 1
         self.addSubview(leyendLabel!)
 
         setupConstrains()
