@@ -9,7 +9,7 @@
 import UIKit
 
 class SliderTableViewCell: GenericTableViewCell {
-    
+        
     var minValue : NSNumber?
     var maxValue : NSNumber?
     
@@ -28,6 +28,8 @@ class SliderTableViewCell: GenericTableViewCell {
     var leftIconString : String?
     
     var unity : String!
+    
+    var firstTimeEdit : Bool? = false
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -101,7 +103,7 @@ class SliderTableViewCell: GenericTableViewCell {
         
         setSlidersGradient(sliderLeft!, leftColor: UIColor.loginBlueColor(),rightColor: UIColor.loginRedColor())
         setSlidersGradient(sliderRight!, leftColor: UIColor.loginRedColor(),rightColor: UIColor.redColor())
-
+        
         
         
     }
@@ -119,7 +121,7 @@ class SliderTableViewCell: GenericTableViewCell {
         let trackImage : UIImage = self.imageFromLayer(trackGradientLayer).resizableImageWithCapInsets(UIEdgeInsetsZero)
         slider.setMinimumTrackImage(trackImage, forState: .Normal)
         slider.setMaximumTrackImage(trackImage, forState: .Normal)
-
+        
     }
     
     func imageFromLayer(layer : CALayer) -> UIImage {
@@ -164,6 +166,11 @@ class SliderTableViewCell: GenericTableViewCell {
                 sliderRight!.value = maximumValue
                 self.maxValue = maximumValue
             }
+        }
+        
+        if self.editAlarmDTO != nil && self.firstTimeEdit == false{
+            editSeted = false
+            self.setEditAlarm(self.editAlarmDTO!, isEdit: false, status: alarmStatus)
         }
     }
     
@@ -311,6 +318,49 @@ class SliderTableViewCell: GenericTableViewCell {
     
     func rightButtonPressed(){
         print("pepe")
+    }
+    
+    override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isEdit: Bool, status: NSNumber?) {
+        
+        let event = editAlarmDTO.event![0] as? EventDTO
+        let weather = editAlarmDTO.weather![0] as? AlarmDTO
+        
+        if titleLabel!.text == "TEMPERATURA"{
+            setEditValues(weather!.minTemp, maxDefaultValue: weather!.maxTemp, isEdit: isEdit)
+        }else if titleLabel!.text == "VIENTO"{
+            setEditValues(weather!.minWind, maxDefaultValue: weather!.maxWind, isEdit: isEdit)
+        }else if titleLabel!.text == "HUMEDAD"{
+            setEditValues(weather!.minHumidity, maxDefaultValue: weather!.maxHumidity, isEdit: isEdit)
+        }else if titleLabel!.text == "NIEVE"{
+            setEditValues(weather!.minSnow, maxDefaultValue: weather!.maxSnow, isEdit: isEdit)
+        }
+        
+    }
+    
+    func setEditValues(minDefaultValue: NSNumber, maxDefaultValue: NSNumber, isEdit: Bool){
+        
+        if !editSeted || isEdit == true {
+            
+            self.minValue = minDefaultValue
+            self.maxValue = maxDefaultValue
+            self.sliderLeft?.value = Float(minDefaultValue)
+            self.sliderRight?.value = Float(maxDefaultValue)
+            
+            if minDefaultValue != sliderLeft?.minimumValue{
+                self.sliderMinLabel?.text = "Min \n \(String(minDefaultValue)) \(unity)"
+            }else{
+                self.sliderMinLabel?.text = "Min \nOff"
+            }
+            
+            if maxDefaultValue != sliderLeft?.maximumValue{
+                self.sliderMaxLabel?.text = "Max \n \(String(maxDefaultValue)) \(unity)"
+            }else{
+                self.sliderMaxLabel?.text = "Max \nOff"
+            }
+            
+            editSeted = true
+            self.firstTimeEdit = true
+        }
     }
     
 }

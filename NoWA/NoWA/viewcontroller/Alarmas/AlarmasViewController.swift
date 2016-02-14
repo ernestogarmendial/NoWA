@@ -118,7 +118,6 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
             print("esta activa")
             editAlarmViewController.alarmStatus = 1
         }
-    
         
         editAlarmViewController.editAlarmDTO = alarma
         

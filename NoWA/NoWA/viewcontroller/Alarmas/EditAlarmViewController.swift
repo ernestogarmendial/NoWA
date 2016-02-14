@@ -22,6 +22,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     //    var weather : AlarmDTO?
     
     var alarmStatus : NSNumber?
+    var isEditing : Bool?
     var editAlarmDTO : PersonalAlarmDTO?
     
     override func viewDidLoad() {
