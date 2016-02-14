@@ -208,7 +208,9 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         dispatch_async(dispatch_get_main_queue()) {
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        //        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        
         
     }
     

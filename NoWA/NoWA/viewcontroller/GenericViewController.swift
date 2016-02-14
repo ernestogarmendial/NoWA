@@ -60,4 +60,12 @@ class GenericViewController: UIViewController, ButtonFooterDelegate {
         print("create")
     }
     
+    func deleteButtonPressed() {
+        print("delete")
+    }
+    
+    func updateButtonPressed() {
+        print("update")
+    }
+    
 }

@@ -182,9 +182,16 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
         
         self.tableView.reloadData()
     }
-override     
-    func adminButtonPressed(){
+    
+    override func adminButtonPressed(){
         print("pepe")
     }
     
+    func deleteButtonPressed() {
+        print("delete")
+    }
+    
+    func updateButtonPressed() {
+        print("update")
+    }
 }

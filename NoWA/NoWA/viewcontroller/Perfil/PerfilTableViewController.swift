@@ -81,4 +81,11 @@ class PerfilTableViewController: GenericTableViewController, ButtonFooterDelegat
     override func createButtonPressed() {
         print("create")
     }
+    
+    func deleteButtonPressed() {
+        print("delete")
+    }
+    func updateButtonPressed() {
+        print("update")
+    }
 }

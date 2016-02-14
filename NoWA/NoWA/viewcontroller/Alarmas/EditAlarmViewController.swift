@@ -127,7 +127,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
                 genericCell.setDefaults(ServicioViewController.defaultData!,isCreate: true)
             }
         }
-        if identificador == "AcceptButtonCell"{
+        if identificador == "AcceptButtonCell" || identificador == "DeleteButtonCell"{
             genericCell.buttonDelegate = self
         }
         if identificador == "ServiceAdviceCell"{
@@ -137,8 +137,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         return genericCell
     }
     
-    override func createButtonPressed() {
-        print("new alarm view controller")
+    override func updateButtonPressed() {
         
         newAlarmEventDTO = EventDTO()
         newAlarmDTO = AlarmDTO()
@@ -204,25 +203,34 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         
         
         let alarmService : AlarmService = AlarmService()
-        alarmService.createAlarm(dateTime: self.datetime! ,eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "createAlarmFinish:")
+        alarmService.createAlarm(dateTime: self.datetime! ,eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "editAlarmFinish:")
         
         
     }
     
-    func createAlarmFinish (result : ServiceResult!){
+    func editAlarmFinish (result : ServiceResult!){
         if(result.hasErrors()){
             print("Error papu")
             return
         }
         
         
-        let alert = UIAlertController(title: "Se ha creado la alarma", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Se ha actualizado la alarma", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         
         dispatch_async(dispatch_get_main_queue()) {
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        self.navigationController?.popViewControllerAnimated(true)
+//        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController!.popToRootViewControllerAnimated(true)
+
+        
+//        for controller in self.navigationController!.viewControllers as Array {
+//            if controller.isKindOfClass(AdminViewController) {
+//                self.navigationController?.popToViewController(controller as UIViewController, animated: true)
+//                break
+//            }
+//        }
         
     }
     
@@ -295,4 +303,5 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         self.useDefaults = false
         
     }
+    
 }

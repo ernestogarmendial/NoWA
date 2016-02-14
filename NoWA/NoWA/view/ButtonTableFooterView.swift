@@ -12,6 +12,9 @@ protocol ButtonFooterDelegate {
     func acceptButtonPressed() -> Void
     func adminButtonPressed() -> Void
     func createButtonPressed() -> Void
+    func deleteButtonPressed() -> Void
+    func updateButtonPressed() -> Void
+
 }
 
 class ButtonTableFooterView: GenericTableViewCell{//UIView {
@@ -106,6 +109,16 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
     func create(){
         print("admin pressed")
         self.buttonDelegate!.createButtonPressed()
+    }
+    
+    func delete(){
+        print("delete")
+        self.buttonDelegate!.deleteButtonPressed()
+    }
+    
+    func update(){
+        print("update")
+        self.buttonDelegate!.updateButtonPressed()
     }
     
     func switchRootViewController(rootViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {

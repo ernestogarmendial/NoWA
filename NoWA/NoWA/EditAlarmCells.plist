@@ -124,7 +124,7 @@
 		<key>identifier</key>
 		<string>AcceptButtonCell</string>
 		<key>title</key>
-		<string>ACEPTAR</string>
+		<string>ACTUALIZAR ALERTA</string>
 		<key>action</key>
 		<string>update</string>
 		<key>color</key>
