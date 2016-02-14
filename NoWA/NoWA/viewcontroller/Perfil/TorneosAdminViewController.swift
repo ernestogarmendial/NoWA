@@ -178,7 +178,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         print(cancelIds)
         
         let alarmService : AlarmService = AlarmService()
-        alarmService.cancelAlarm(alarmID: 0,tournamentIDs: "", value: 0, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
+        alarmService.cancelAlarm(alarmID: 0,tournamentIDs: cancelIds, value: 0, token: UserService.currentUser.token, target: self, message: "cancelAlarm:")
         
     }
     
@@ -190,6 +190,13 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         if(result.hasErrors()){
             print("Error papu")
             return
+        }
+        
+        let alert = UIAlertController(title: "CANCELAR", message: "Cancelación Exitosa", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
     }

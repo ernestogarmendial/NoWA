@@ -137,6 +137,10 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
             // armar stamp con dia actual mas horario del picker
             setStamp(insertCell, newAlarmDTO: newAlarmDTO!)
             
+            if alarmName == ""{
+                validateObligatoryFields("Nombre de la alarma")
+                return
+            }
         }
         setNewAlarmRepetitionDays(insertCell, newAlarmDTO: newAlarmDTO!, newAlarmEventDTO: newAlarmEventDTO!)
         
@@ -188,7 +192,6 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
             newAlarmDTO?.prediction = prediction
         }
         
-        
         let alarmService : AlarmService = AlarmService()
         alarmService.createAlarm(dateTime: self.datetime! ,eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "createAlarmFinish:")
         
@@ -203,13 +206,13 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         
         let alert = UIAlertController(title: "Se ha creado la alarma", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+            self.navigationController!.popToRootViewControllerAnimated(true)
+        }))
         
         dispatch_async(dispatch_get_main_queue()) {
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        //        self.navigationController?.popViewControllerAnimated(true)
-        self.navigationController?.popToRootViewControllerAnimated(true)
         
         
     }
@@ -285,5 +288,16 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     func defaultButtonDisabled(){
         self.useDefaults = false
         
+    }
+    
+    func validateObligatoryFields(field : String!){
+        
+        let alert = UIAlertController(title: "Error", message: "Debe completar el campo \(field)", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        return
     }
 }
