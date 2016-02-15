@@ -118,8 +118,12 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     
     func callService(){
         
+        var locationName = locationTextField?.text
+        if locationName == ""{
+            locationName = "%"
+        }
         let weatherService : WeatherService = WeatherService()
-        weatherService.getLocations(name: locationTextField?.text, token: UserService.currentUser.token,target: self,message: "getLocationsFinish:")
+        weatherService.getLocations(name: locationName, token: UserService.currentUser.token,target: self,message: "getLocationsFinish:")
         
     }
     

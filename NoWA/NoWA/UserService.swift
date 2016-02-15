@@ -114,6 +114,7 @@ class UserService: GenericService {
             }
         })
     }
+    
     func register(name : String?, code :String?, target _target : NSObject, message _message : String ) {
         
         let serviceResult = ServiceResult()
