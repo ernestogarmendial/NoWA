@@ -1,10 +1,6 @@
 //
 //  AudioManager.swift
-//  PersonalFest
-//
-//  Created by Mariano D'Agostino on 9/28/15.
-//  Copyright (c) 2015 TICTAPPS. All rights reserved.
-//
+
 
 import UIKit
 import AVFoundation

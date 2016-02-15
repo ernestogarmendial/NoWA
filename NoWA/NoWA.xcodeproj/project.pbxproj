@@ -26,8 +26,6 @@
 		941CA13C1C3F5BF5004E4969 /* EventDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA13B1C3F5BF5004E4969 /* EventDTO.swift */; };
 		941CA13E1C3F6179004E4969 /* TournamentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA13D1C3F6179004E4969 /* TournamentDTO.swift */; };
 		941CA1401C3F6268004E4969 /* TeamDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941CA13F1C3F6268004E4969 /* TeamDTO.swift */; };
-		9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB221C2A0DBC003CDB83 /* Reachability.m */; };
-		9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */; };
 		9425DB291C2A0E34003CDB83 /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB281C2A0E34003CDB83 /* GenericDAO.swift */; };
 		9425DB301C2A0ED4003CDB83 /* GenericDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB2E1C2A0ED4003CDB83 /* GenericDTO.swift */; };
 		9425DB351C2A0F09003CDB83 /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB331C2A0F09003CDB83 /* GenericService.swift */; };
@@ -94,6 +92,8 @@
 		94D5FE631C7052EB0022A630 /* StartLoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE621C7052EB0022A630 /* StartLoggedViewController.swift */; };
 		94D5FE681C7156560022A630 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE661C7156560022A630 /* AudioManager.swift */; };
 		94D5FE6D1C7159800022A630 /* ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94D5FE6C1C7159800022A630 /* ringtone.mp3 */; };
+		94D5FE721C715FBD0022A630 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE6F1C715FBD0022A630 /* Reachability.m */; };
+		94D5FE731C715FBD0022A630 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE711C715FBD0022A630 /* TTInternetConnection.m */; };
 		94DEFEC21C51DE7400E40861 /* TorneosAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */; };
 		94DEFEC41C5700E700E40861 /* TournamentObjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */; };
 		94DEFEC61C570F3100E40861 /* TorneoCancelAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */; };
@@ -140,10 +140,6 @@
 		941CA13B1C3F5BF5004E4969 /* EventDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDTO.swift; path = model/dto/EventDTO.swift; sourceTree = "<group>"; };
 		941CA13D1C3F6179004E4969 /* TournamentDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentDTO.swift; path = model/TournamentDTO.swift; sourceTree = "<group>"; };
 		941CA13F1C3F6268004E4969 /* TeamDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamDTO.swift; path = model/dto/TeamDTO.swift; sourceTree = "<group>"; };
-		9425DB211C2A0DBC003CDB83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		9425DB221C2A0DBC003CDB83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
-		9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInternetConnection.m; sourceTree = "<group>"; };
 		9425DB281C2A0E34003CDB83 /* GenericDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDAO.swift; sourceTree = "<group>"; };
 		9425DB2E1C2A0ED4003CDB83 /* GenericDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDTO.swift; sourceTree = "<group>"; };
 		9425DB331C2A0F09003CDB83 /* GenericService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
@@ -215,6 +211,10 @@
 		94D5FE621C7052EB0022A630 /* StartLoggedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartLoggedViewController.swift; sourceTree = "<group>"; };
 		94D5FE661C7156560022A630 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		94D5FE6C1C7159800022A630 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
+		94D5FE6E1C715FBD0022A630 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		94D5FE6F1C715FBD0022A630 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		94D5FE701C715FBD0022A630 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
+		94D5FE711C715FBD0022A630 /* TTInternetConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInternetConnection.m; sourceTree = "<group>"; };
 		94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneosAdminViewController.swift; path = viewcontroller/Perfil/TorneosAdminViewController.swift; sourceTree = "<group>"; };
 		94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentObjectDTO.swift; path = model/dto/TournamentObjectDTO.swift; sourceTree = "<group>"; };
 		94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneoCancelAllTableViewCell.swift; path = view/Perfil/TorneoCancelAllTableViewCell.swift; sourceTree = "<group>"; };
@@ -265,10 +265,10 @@
 		9425DB201C2A0D9A003CDB83 /* component */ = {
 			isa = PBXGroup;
 			children = (
-				9425DB211C2A0DBC003CDB83 /* Reachability.h */,
-				9425DB221C2A0DBC003CDB83 /* Reachability.m */,
-				9425DB231C2A0DBC003CDB83 /* TTInternetConnection.h */,
-				9425DB241C2A0DBC003CDB83 /* TTInternetConnection.m */,
+				94D5FE6E1C715FBD0022A630 /* Reachability.h */,
+				94D5FE6F1C715FBD0022A630 /* Reachability.m */,
+				94D5FE701C715FBD0022A630 /* TTInternetConnection.h */,
+				94D5FE711C715FBD0022A630 /* TTInternetConnection.m */,
 			);
 			name = component;
 			sourceTree = "<group>";
@@ -769,7 +769,6 @@
 				941CA1321C3B676F004E4969 /* ConditionDTO.swift in Sources */,
 				945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */,
 				9447283B1C4C3A1F00F8E963 /* ServicioViewController.swift in Sources */,
-				9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */,
 				94D5FE681C7156560022A630 /* AudioManager.swift in Sources */,
 				9425DB441C2A3076003CDB83 /* UserDAO.swift in Sources */,
 				941421811C2C6E1600D9495E /* ButtonTableFooterView.swift in Sources */,
@@ -779,7 +778,6 @@
 				941CA12A1C322B9D004E4969 /* WeatherService.swift in Sources */,
 				9447282B1C47343600F8E963 /* CirclePictureView.swift in Sources */,
 				942A99741C1A13EF00B12292 /* PerfilTableViewController.swift in Sources */,
-				9425DB251C2A0DBC003CDB83 /* Reachability.m in Sources */,
 				942A99791C1A15C000B12292 /* GenericTableViewCell.swift in Sources */,
 				9447283F1C4C5AF300F8E963 /* TorneosViewController.swift in Sources */,
 				94A39A5C1C28FA8400BA2BB8 /* TorneoItemTableViewCell.swift in Sources */,
@@ -800,6 +798,7 @@
 				9414217F1C2C65C800D9495E /* PredictionTableViewCell.swift in Sources */,
 				94500D671C3455FD003A70FA /* LocationDTO.swift in Sources */,
 				94DEFEC41C5700E700E40861 /* TournamentObjectDTO.swift in Sources */,
+				94D5FE731C715FBD0022A630 /* TTInternetConnection.m in Sources */,
 				944728481C4C896B00F8E963 /* DaysButtonsView.swift in Sources */,
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,
 				94457EDB1C4D8224004D4E80 /* CheckAlarmDTO.swift in Sources */,
@@ -822,6 +821,7 @@
 				9447284A1C4C89B600F8E963 /* CircleDayButtonView.swift in Sources */,
 				944728441C4C62E100F8E963 /* TorneoAdminTableViewCell.swift in Sources */,
 				941CA1341C3CB49D004E4969 /* AlarmDTO.swift in Sources */,
+				94D5FE721C715FBD0022A630 /* Reachability.m in Sources */,
 				94F069881C571C5D00F88340 /* TournamentEventTableViewCell.swift in Sources */,
 				944728291C47331200F8E963 /* PictureTableViewCell.swift in Sources */,
 				9425DB361C2A0F09003CDB83 /* ServiceResult.swift in Sources */,

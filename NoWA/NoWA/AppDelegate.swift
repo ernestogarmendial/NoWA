@@ -88,11 +88,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let message = notification?.valueForKey("alert") as! String
         if ( application.applicationState == UIApplicationState.Active ) {
             dispatch_async(dispatch_get_main_queue(), {
-                let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
                 let path = NSBundle.mainBundle().pathForResource("ringtone", ofType: "mp3")!
                 AudioManager.sharedInstance.play(path)
+                let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+                    AudioManager.sharedInstance.stop(path)
+                }))
+                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
             })
         }
     }

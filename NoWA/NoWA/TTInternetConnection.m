@@ -1,13 +1,12 @@
 //
 //  TTInternetConnection.m
-//  NoWA
-//
-//  Created by Ernesto Garmendia on 12/10/15.
-//  Copyright © 2015 Ernesto Garmendia Luis. All rights reserved.
-//
+//  InternetConnection
+
 
 #import "TTInternetConnection.h"
 #import "Reachability.h"
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+
 
 @implementation TTInternetConnection
 
@@ -81,8 +80,12 @@ TTInternetConnection *sharedInstance;
             return TTConnectionWiFi;
         }
     }
+    CTTelephonyNetworkInfo *networkInfo = [CTTelephonyNetworkInfo new];
+    [self evaluateRadioAcces:networkInfo.currentRadioAccessTechnology];
     return TTConnection3G;
 }
+
+
 
 - (void)reachabilityChanged:(NSNotification *)note
 {
@@ -105,6 +108,8 @@ TTInternetConnection *sharedInstance;
 
         case ReachableViaWWAN:        {
             _statusOfConnection = TTConnection3G;
+            CTTelephonyNetworkInfo *networkInfo = [CTTelephonyNetworkInfo new];
+            [self evaluateRadioAcces:networkInfo.currentRadioAccessTechnology];
             break;
         }
         case ReachableViaWiFi:        {
@@ -115,6 +120,32 @@ TTInternetConnection *sharedInstance;
     if (connectionRequired)
     {
         _statusOfConnection = TTConnectionNone;
+    }
+}
+
+- (void)evaluateRadioAcces:(NSString*)radioAccessTechnology {
+    if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyGPRS]) {
+        _statusOfConnection = TTConnection2G;
+    } else if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyEdge]) {
+        _statusOfConnection = TTConnection2G;
+    } else if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyWCDMA]) {
+        _statusOfConnection = TTConnection3G;
+    } else if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyHSDPA]) {
+        _statusOfConnection = TTConnection3G;
+    } else if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyHSUPA]) {
+        _statusOfConnection = TTConnection3G;
+    } else if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMA1x]) {
+        _statusOfConnection = TTConnection2G;
+    } else if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMAEVDORev0]) {
+        _statusOfConnection = TTConnection3G;
+    } else if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMAEVDORevA]) {
+        _statusOfConnection = TTConnection3G;
+    } else if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMAEVDORevB]) {
+        _statusOfConnection = TTConnection3G;
+    } else if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyeHRPD]) {
+        _statusOfConnection = TTConnection3G;
+    } else if ([radioAccessTechnology isEqualToString:CTRadioAccessTechnologyLTE]) {
+        _statusOfConnection = TTConnectionLTE;
     }
 }
 
