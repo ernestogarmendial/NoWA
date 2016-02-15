@@ -14,7 +14,7 @@ protocol ButtonFooterDelegate {
     func createButtonPressed() -> Void
     func deleteButtonPressed() -> Void
     func updateButtonPressed() -> Void
-
+    func saveButtonPressed() -> Void
 }
 
 class ButtonTableFooterView: GenericTableViewCell{//UIView {
@@ -95,7 +95,7 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
     
     func save(){
         print("guardar pressed")
-        //                self.acceptDelegate!.acceptButtonPressed()
+        self.buttonDelegate!.saveButtonPressed()
     }
     
     func close(){

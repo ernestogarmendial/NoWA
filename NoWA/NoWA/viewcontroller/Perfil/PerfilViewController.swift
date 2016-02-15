@@ -102,4 +102,55 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         print("pepe")
     }
     
+    override func saveButtonPressed() {
+        print("guardar")
+        
+        let updateDTO = UserDTO()
+        
+        let pictureTableViewCell = tabla!.viewWithTag(100) as! PictureTableViewCell
+        if let leyenda = pictureTableViewCell.leyendLabel!.text{
+            updateDTO.phrase = leyenda
+            updateDTO.username = pictureTableViewCell.nameLabel!.text
+        }
+        
+        let facebookAddress = tabla!.viewWithTag(102) as! AddressTableViewCell
+        if let facebook = facebookAddress.addressTextField!.text{
+            updateDTO.facebook = facebook
+        }
+        
+        let twitterAddress = tabla!.viewWithTag(103) as! AddressTableViewCell
+        if let twitter = twitterAddress.addressTextField!.text{
+            updateDTO.twitter = twitter
+            
+        }
+        
+        let instagramAddress = tabla!.viewWithTag(104) as! AddressTableViewCell
+        if let instagram = instagramAddress.addressTextField!.text{
+            updateDTO.instagram = instagram
+            
+        }
+        
+        print("")
+        let userService : UserService = UserService()
+        userService.update(updateDTO, token: UserService.currentUser.token! ,target: self,message: "updateFinish:")
+    }
+    
+    func updateFinish (result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            return
+        }
+        
+        if let userDTO:UserDTO = result.entityForKey("Update") as! UserDTO{
+            let alert = UIAlertController(title: "", message: "Se han guardado tus datos", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
+    
 }

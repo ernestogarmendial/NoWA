@@ -88,4 +88,7 @@ class PerfilTableViewController: GenericTableViewController, ButtonFooterDelegat
     func updateButtonPressed() {
         print("update")
     }
+    func saveButtonPressed() {
+        print("save")
+    }
 }

@@ -81,6 +81,39 @@ class UserService: GenericService {
         })
     }
     
+    
+    func update(updateDTO : UserDTO, token: String, target _target : NSObject, message _message : String ) {
+        
+        let serviceResult = ServiceResult()
+        
+        if !TTInternetConnection.sharedInstance().internetAccess() {
+            serviceResult.addError("No Internet")
+            self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            return
+        }
+        
+        
+        let userDAO: UserDAO = UserDAO()
+        userDAO.delegate = self
+        userDAO.update(updateDTO, token: UserService.currentUser.token!, handler: { (operation, result) in
+            let user = result as? UserDTO;
+            
+            if(user == nil || (user != nil && user!.errorTitle != nil)){
+                serviceResult.addError("error")
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }else{
+                
+                UserService.currentUser = result as! UserDTO;
+                //
+                if let accessToken = UserService.currentUser.token {
+                    //
+                    serviceResult.addEntity(UserService.currentUser, forKey: "Update")
+                    
+                    self.callMessage(target: _target, message: _message, withResult: serviceResult)
+                }
+            }
+        })
+    }
     func register(name : String?, code :String?, target _target : NSObject, message _message : String ) {
         
         let serviceResult = ServiceResult()

@@ -197,4 +197,7 @@ class ServicioTableViewController: GenericTableViewController, ButtonFooterDeleg
     func updateButtonPressed() {
         print("update")
     }
+    func saveButtonPressed() {
+        print("save")
+    }
 }
