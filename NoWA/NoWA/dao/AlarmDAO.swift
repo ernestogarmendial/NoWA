@@ -113,28 +113,28 @@ class AlarmDAO: GenericDAO {
         
         let place : String!
         if _alarmDTO!.place == ""{
-            place = "place"
+            place = "-"
         }else{
             place = _alarmDTO!.place
         }
         
         let name : String!
         if _eventDTO.name == nil{
-            name = "name"
+            name = "-"
         }else{
             name = _eventDTO.name
         }
         
         let description : String!
         if _eventDTO.eventDescription == nil{
-            description = "description"
+            description = "-"
         }else{
             description = _eventDTO.eventDescription
         }
         
         let zone : String!
         if _eventDTO.eventZone == nil{
-            zone = "zone"
+            zone = "-"
         }else{
             zone = _eventDTO.eventZone
         }
@@ -275,35 +275,35 @@ class AlarmDAO: GenericDAO {
         
         let place : String!
         if _alarmDTO!.place == ""{
-            place = "place"
+            place = "-"
         }else{
             place = _alarmDTO!.place
         }
         
         let name : String!
         if _eventDTO.name == nil{
-            name = "name"
+            name = "-"
         }else{
             name = _eventDTO.name
         }
         
         let description : String!
         if _eventDTO.eventDescription == nil{
-            description = "description"
+            description = "-"
         }else{
             description = _eventDTO.eventDescription
         }
         
         let zone : String!
-        if _eventDTO.eventZone == nil{
-            zone = "zone"
+        if _alarmDTO!.place == ""{
+            zone = "-"
         }else{
-            zone = _eventDTO.eventZone
+            zone = _alarmDTO!.place
         }
         
         let repetition : String!
         if _eventDTO.repetition == nil{
-            repetition = "repetition"
+            repetition = "-"
         }else{
             repetition = _eventDTO.repetition
         }
