@@ -85,13 +85,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Notification received: \(userInfo)")
         let notification = userInfo["aps"] as? NSDictionary
-        let message = notification?.valueForKey("alert")
+        let message = notification?.valueForKey("alert") as! String
         //
         if ( application.applicationState == UIApplicationState.Active ) {
-            //            let alarmNotification = UILocalNotification()
-            //            alarmNotification.alertBody = "ALARMA SONANDO"
-            //            alarmNotification.soundName = UILocalNotificationDefaultSoundName
-            //            UIApplication.sharedApplication().presentLocalNotificationNow(alarmNotification)
+            dispatch_async(dispatch_get_main_queue(), {
+                let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+            })
         }
     }
     
