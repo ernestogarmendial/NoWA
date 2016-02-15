@@ -11,6 +11,7 @@ import UIKit
 class TorneoItemTableViewCell: AlarmItemTableViewCell {
     
     var cancelLabel: UILabel?
+//    var alarmID : NSNumber?
     
     var torneoDTO : TournamentDTO?{
         didSet{

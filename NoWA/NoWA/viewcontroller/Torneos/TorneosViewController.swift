@@ -87,6 +87,26 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        let currentCell = self.tabla?.cellForRowAtIndexPath(indexPath) as? TorneoItemTableViewCell
+        
+        let alert = UIAlertController(title: "CANCELAR" ,message:"Está seguro que desea eliminar la alarma de este torneo?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
+//            print("aca deberia llamar al metodo")
+//            let newAlarmDTO = AlarmDTO()
+//            
+//                newAlarmDTO!.alarmID = currentCell
+//            }
+//            let alarmService : AlarmService = AlarmService()
+//            alarmService.deleteAlarm(alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "deleteAlarmFinish:")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+            print("Cancel")
+        }))
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
