@@ -20,7 +20,7 @@ protocol ButtonFooterDelegate {
 class ButtonTableFooterView: GenericTableViewCell{//UIView {
     
     //    var delegate : ButtonFooterDelegate?
-    var button : UIButton?
+    var button : TTPopButton?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,7 +28,7 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
         self.backgroundColor = .serviceLocationColor()
         self.contentView.backgroundColor = .serviceLocationColor()
         
-        button = UIButton()
+        button = TTPopButton()
         //        acceptButton!.backgroundColor = .servicePickerBlueColor()
         //        acceptButton!.setTitle("ACEPTAR", forState: UIControlState.Normal)
         button!.titleLabel!.font = UIFont.appLatoFontOfSize(15)

@@ -14,7 +14,7 @@ protocol CancelEventDelegate {
 
 class CancelEventButtonTableViewCell: GenericTableViewCell {
     
-    var button : UIButton?
+    var button : TTPopButton?
     var cancelDelegate : CancelEventDelegate?
 
     
@@ -24,7 +24,7 @@ class CancelEventButtonTableViewCell: GenericTableViewCell {
         self.backgroundColor = .serviceLocationColor()
         self.contentView.backgroundColor = .serviceLocationColor()
         
-        button = UIButton()
+        button = TTPopButton()
         button!.backgroundColor = .servicePickerBlueColor()
         button!.setTitle("CANCELAR", forState: UIControlState.Normal)
         button!.titleLabel!.font = UIFont.appLatoFontOfSize(15)

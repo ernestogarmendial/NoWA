@@ -11,10 +11,10 @@ class RegisterViewController: LoginViewController {
     var backgroundImage : UIImageView!
     var emailView : RegisterFieldView!
     var passwordView : RegisterFieldView!
-    var ingresarButton : UIButton!
-    var ingresarFacebookButton : UIButton!
-    var createAccountButton : UIButton!
-    var recoverButton : UIButton!
+    var ingresarButton : TTPopButton!
+    var ingresarFacebookButton : TTPopButton!
+    var createAccountButton : TTPopButton!
+    var recoverButton : TTPopButton!
     
     
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class RegisterViewController: LoginViewController {
         passwordView.setItems("lock",placeholder: "CONTRASEÑA", secureMode: true)
         self.view.addSubview(passwordView)
         
-        ingresarButton = UIButton()
+        ingresarButton = TTPopButton()
         ingresarButton.backgroundColor = .loginRedColor()
         ingresarButton.setTitle("INGRESAR", forState: UIControlState.Normal)
         ingresarButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
@@ -41,7 +41,7 @@ class RegisterViewController: LoginViewController {
         ingresarButton.layer.cornerRadius = 20
         self.view.addSubview(ingresarButton)
         
-        ingresarFacebookButton = UIButton()
+        ingresarFacebookButton = TTPopButton()
         ingresarFacebookButton.backgroundColor = .loginBlueColor()
         ingresarFacebookButton.setTitle("INGRESAR CON FACEBOOK", forState: UIControlState.Normal)
         ingresarFacebookButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
@@ -49,14 +49,14 @@ class RegisterViewController: LoginViewController {
         ingresarFacebookButton.layer.cornerRadius = 20
         self.view.addSubview(ingresarFacebookButton)
         
-        createAccountButton = UIButton()
+        createAccountButton = TTPopButton()
         createAccountButton.titleLabel!.font = UIFont.appLatoFontOfSize(12)
         createAccountButton.setTitle("CREAR UNA CUENTA", forState: UIControlState.Normal)
         createAccountButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         createAccountButton.addTarget(self, action: "createAccount", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(createAccountButton)
         
-        recoverButton = UIButton()
+        recoverButton = TTPopButton()
         recoverButton.backgroundColor = .clearColor()
         recoverButton.setTitle("RECUPERAR", forState: UIControlState.Normal)
         recoverButton.setTitleColor(.whiteColor(), forState: UIControlState.Normal)

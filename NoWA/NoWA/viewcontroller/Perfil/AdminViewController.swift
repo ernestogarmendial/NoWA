@@ -52,7 +52,7 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
         
-//        let button = UIButton(type: .Custom) as UIButton
+//        let button = TTPopButton(type: .Custom) as TTPopButton
 //        button.setImage(UIImage(named: "left_arrow"), forState: UIControlState.Normal)
 //        button.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
 //        button.frame=CGRectMake(0, 0, 30, 30)

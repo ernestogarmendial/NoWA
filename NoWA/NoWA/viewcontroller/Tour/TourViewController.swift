@@ -11,7 +11,7 @@ import UIKit
 class TourViewController: UIViewController,UIScrollViewDelegate {
     
     var tourScrollView:UIScrollView!
-    var nextButton : UIButton!
+    var nextButton : TTPopButton!
     var page : Int!
     
     
@@ -46,7 +46,7 @@ class TourViewController: UIViewController,UIScrollViewDelegate {
         
         self.view.addSubview(self.tourScrollView)
         
-        nextButton = UIButton()
+        nextButton = TTPopButton()
         nextButton.backgroundColor = .tourBlueColor()
         nextButton.setTitle("Siguiente", forState: UIControlState.Normal)
         nextButton.addTarget(self, action: "goNextPage", forControlEvents: UIControlEvents.TouchUpInside)

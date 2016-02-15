@@ -14,7 +14,7 @@ class CreateAccountViewController: LoginViewController {
     var emailView : RegisterFieldView!
     var passwordView : RegisterFieldView!
     var confirmView : RegisterFieldView!
-    var ingresarButton : UIButton!
+    var ingresarButton : TTPopButton!
     var termsView : UIView!
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class CreateAccountViewController: LoginViewController {
         confirmView.setItems("lock",placeholder: "CONFIRMAR", secureMode: true)
         self.view.addSubview(confirmView)
         
-        ingresarButton = UIButton()
+        ingresarButton = TTPopButton()
         ingresarButton.backgroundColor = .loginRedColor()
         ingresarButton.setTitle("INGRESAR", forState: UIControlState.Normal)
         ingresarButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
@@ -75,7 +75,7 @@ class CreateAccountViewController: LoginViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        let myBackButton:UIButton = UIButton(type: .Custom) as UIButton
+        let myBackButton:TTPopButton = TTPopButton(type: .Custom) as TTPopButton
         myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
         myBackButton.setTitle("< Volver", forState: UIControlState.Normal)
         myBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
@@ -83,7 +83,7 @@ class CreateAccountViewController: LoginViewController {
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
         
-        //        let button = UIButton(type: .Custom) as UIButton
+        //        let button = TTPopButton(type: .Custom) as TTPopButton
         //        button.setImage(UIImage(named: "left_arrow"), forState: UIControlState.Normal)
         //        button.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
         //        button.frame=CGRectMake(0, 0, 30, 30)

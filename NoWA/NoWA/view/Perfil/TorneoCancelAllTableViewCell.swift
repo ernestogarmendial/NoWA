@@ -15,7 +15,7 @@ protocol CancelAllEventDelegate {
 class TorneoCancelAllTableViewCell: GenericTableViewCell {
     
     var configLabel : UILabel?
-    var cancelButton : UIButton?
+    var cancelButton : TTPopButton?
     
     var cancelAllDelegate : CancelAllEventDelegate?
 
@@ -36,7 +36,7 @@ class TorneoCancelAllTableViewCell: GenericTableViewCell {
         configLabel!.numberOfLines = 1
         self.addSubview(configLabel!)
         
-        cancelButton = UIButton()
+        cancelButton = TTPopButton()
         cancelButton!.backgroundColor = .clearColor()
         cancelButton!.setTitle("CANCELAR TODO", forState: UIControlState.Normal)
         cancelButton!.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right

@@ -94,6 +94,7 @@
 		94D5FE6D1C7159800022A630 /* ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94D5FE6C1C7159800022A630 /* ringtone.mp3 */; };
 		94D5FE721C715FBD0022A630 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE6F1C715FBD0022A630 /* Reachability.m */; };
 		94D5FE731C715FBD0022A630 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE711C715FBD0022A630 /* TTInternetConnection.m */; };
+		94D5FE761C7161F00022A630 /* TTPopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE751C7161F00022A630 /* TTPopButton.m */; };
 		94DEFEC21C51DE7400E40861 /* TorneosAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */; };
 		94DEFEC41C5700E700E40861 /* TournamentObjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */; };
 		94DEFEC61C570F3100E40861 /* TorneoCancelAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */; };
@@ -215,6 +216,8 @@
 		94D5FE6F1C715FBD0022A630 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		94D5FE701C715FBD0022A630 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
 		94D5FE711C715FBD0022A630 /* TTInternetConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInternetConnection.m; sourceTree = "<group>"; };
+		94D5FE741C7161F00022A630 /* TTPopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPopButton.h; sourceTree = "<group>"; };
+		94D5FE751C7161F00022A630 /* TTPopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPopButton.m; sourceTree = "<group>"; };
 		94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneosAdminViewController.swift; path = viewcontroller/Perfil/TorneosAdminViewController.swift; sourceTree = "<group>"; };
 		94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentObjectDTO.swift; path = model/dto/TournamentObjectDTO.swift; sourceTree = "<group>"; };
 		94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneoCancelAllTableViewCell.swift; path = view/Perfil/TorneoCancelAllTableViewCell.swift; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 		941109BF1C0CDF3C00E67905 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				94D5FE741C7161F00022A630 /* TTPopButton.h */,
+				94D5FE751C7161F00022A630 /* TTPopButton.m */,
 				94D5FE6C1C7159800022A630 /* ringtone.mp3 */,
 				94D5FE661C7156560022A630 /* AudioManager.swift */,
 				941109C01C0CDF3C00E67905 /* UIColorExtension.swift */,
@@ -749,6 +754,7 @@
 				94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */,
 				9476A9051C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift in Sources */,
 				941CA13E1C3F6179004E4969 /* TournamentDTO.swift in Sources */,
+				94D5FE761C7161F00022A630 /* TTPopButton.m in Sources */,
 				9447282F1C474B7B00F8E963 /* ConfigTableViewCell.swift in Sources */,
 				944728411C4C5D3800F8E963 /* PerfilViewController.swift in Sources */,
 				944728391C4C3A0100F8E963 /* GenericViewController.swift in Sources */,
