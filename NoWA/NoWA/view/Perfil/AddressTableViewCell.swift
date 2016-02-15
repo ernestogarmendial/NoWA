@@ -23,7 +23,7 @@ class AddressTableViewCell: GenericTableViewCell {
         leftIcon = UIImageView()
         leftIcon!.contentMode = UIViewContentMode.Center
         self.addSubview(leftIcon!)
-
+        
         
         addressTextField = UITextField()
         addressTextField!.delegate = self
@@ -32,7 +32,7 @@ class AddressTableViewCell: GenericTableViewCell {
         addressTextField!.adjustsFontSizeToFitWidth = true
         addressTextField!.keyboardType = UIKeyboardType.Default
         addressTextField!.clearButtonMode = .WhileEditing
-        addressTextField!.textAlignment = .Center
+        addressTextField!.textAlignment = .Left
         self.addSubview(addressTextField!)
         
         setupConstrains()
@@ -46,6 +46,12 @@ class AddressTableViewCell: GenericTableViewCell {
     override func setItems(myDictionary: NSDictionary) {
         if let icon = myDictionary["icon"] as? String{
             leftIcon!.image = UIImage(named: icon)
+            
+            if icon == "envelope"{
+                addressTextField?.enabled = false
+                let email = NSUserDefaults.standardUserDefaults().valueForKey("email") as! String
+                addressTextField?.text = email
+            }
         }
         if let addressText = myDictionary["text"] as? String{
             addressTextField!.attributedPlaceholder =  NSAttributedString(string: addressText,
@@ -57,12 +63,12 @@ class AddressTableViewCell: GenericTableViewCell {
     }
     
     
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        
-//        textField.resignFirstResponder()
-//        setupConstrains()
-//        return true
-//    }
+    //    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    //
+    //        textField.resignFirstResponder()
+    //        setupConstrains()
+    //        return true
+    //    }
     
     override func textFieldShouldReturn(textField: UITextField) -> Bool {
         super.textFieldShouldReturn(textField)
@@ -72,13 +78,16 @@ class AddressTableViewCell: GenericTableViewCell {
     
     func setupConstrains(){
         
-        addressTextField?.autoCenterInSuperview()
-        
+        leftIcon?.autoAlignAxis(.Horizontal, toSameAxisOfView: self)
         leftIcon?.autoSetDimension(.Height, toSize: 20)
         leftIcon?.autoSetDimension(.Width, toSize: 20)
-        leftIcon?.autoAlignAxis(.Horizontal, toSameAxisOfView: addressTextField!)
-        leftIcon?.autoPinEdge(.Right, toEdge: .Left, ofView: addressTextField!, withOffset: -10)
+        leftIcon?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 40)
         
+        addressTextField?.autoAlignAxis(.Horizontal, toSameAxisOfView: self)
+        addressTextField?.autoPinEdge(.Left, toEdge: .Right, ofView: leftIcon!, withOffset: 30)
+        addressTextField?.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: 20)
+        addressTextField?.autoSetDimension(.Height, toSize: 20)
+
         
         
     }

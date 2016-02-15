@@ -141,7 +141,7 @@ class AlarmDAO: GenericDAO {
         
         let repetition : String!
         if _eventDTO.repetition == nil{
-            repetition = "repetition"
+            repetition = "-"
         }else{
             repetition = _eventDTO.repetition
         }

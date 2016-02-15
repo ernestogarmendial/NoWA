@@ -49,9 +49,11 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
     }
     
     override func setItems(myDictionary: NSDictionary){
+        
         if let title = myDictionary["title"] as? String{
             button!.setTitle(title, forState: UIControlState.Normal)
         }
+        
         if let color = myDictionary["color"] as? String{
             button!.backgroundColor = UIColor.UIColorFromRGB("\(color)")
         }
@@ -67,6 +69,11 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
                 button!.addTarget(self, action: "close", forControlEvents: UIControlEvents.TouchUpInside)
             }
             if action == "admin"{
+                
+                if  UserService.currentUser.role != 1{
+                    button?.hidden = true
+                }
+                
                 button!.addTarget(self, action: "admin", forControlEvents: UIControlEvents.TouchUpInside)
             }
             if action == "create"{

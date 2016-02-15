@@ -88,8 +88,12 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
     }
     
     override func adminButtonPressed(){
-        let adminViewController = AdminViewController()
-        self.navigationController?.pushViewController(adminViewController, animated:true )
+        if UserService.currentUser.role == 1{
+            let adminViewController = AdminViewController()
+            self.navigationController?.pushViewController(adminViewController, animated:true )
+        }else{
+            print("no es admin")
+        }
         
     }
     
