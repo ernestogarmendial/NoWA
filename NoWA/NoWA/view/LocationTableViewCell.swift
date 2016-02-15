@@ -19,7 +19,9 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     var locations : [LocationDTO]?
     var locationsPicker:NSMutableArray!
     
+    static var locationsArray : NSMutableArray! = NSMutableArray()
     
+    var firstTime : Bool = true
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -57,7 +59,14 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         rightButton!.addTarget(self, action: "rightButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.addSubview(rightButton!)
+        
+        
+        let weatherService : WeatherService = WeatherService()
+        weatherService.getLocations(name: "%", token: UserService.currentUser.token,target: self,message: "getLocationsFinish:")
+        
         setupConstrains()
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -122,10 +131,15 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         if locationName == ""{
             locationName = "%"
         }
+        
         let weatherService : WeatherService = WeatherService()
         weatherService.getLocations(name: locationName, token: UserService.currentUser.token,target: self,message: "getLocationsFinish:")
         
+        
     }
+    
+    
+    
     
     
     func getLocationsFinish (result : ServiceResult!){
@@ -144,25 +158,30 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         
         for location in locations! {
             locationsPicker.addObject(location.name!)
-        }
-        
-        
-        if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
-            let popupViewController = PopUpPickerViewController()
-            popupViewController.locationsPicker = locationsPicker
-            popupViewController.delegate = self
-            rootViewController.addChildViewController(popupViewController)
-            dispatch_async(dispatch_get_main_queue()) {
-                popupViewController.view.frame = rootViewController.view.frame
-                rootViewController.view.addSubview(popupViewController.view)
-                popupViewController.didMoveToParentViewController(rootViewController)
-                popupViewController.view.alpha = 0
-                UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                    popupViewController.view.alpha = 1
-                    }, completion: nil)
+            if firstTime == true{
+                LocationTableViewCell.locationsArray.addObject(location.name!)
             }
-            
         }
+        
+        if firstTime == false{
+            
+            if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
+                let popupViewController = PopUpPickerViewController()
+                popupViewController.locationsPicker = locationsPicker
+                popupViewController.delegate = self
+                rootViewController.addChildViewController(popupViewController)
+                dispatch_async(dispatch_get_main_queue()) {
+                    popupViewController.view.frame = rootViewController.view.frame
+                    rootViewController.view.addSubview(popupViewController.view)
+                    popupViewController.didMoveToParentViewController(rootViewController)
+                    popupViewController.view.alpha = 0
+                    UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        popupViewController.view.alpha = 1
+                        }, completion: nil)
+                }
+            }
+        }
+        firstTime = false
         
     }
     

@@ -147,6 +147,24 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         let locationCell = tabla!.viewWithTag(101) as! LocationTableViewCell
         if let place = locationCell.locationTextField!.text{
             newAlarmDTO?.place = place
+            
+            var ok : Bool = false
+            for location in LocationTableViewCell.locationsArray{
+                if location as! String == place{
+                    ok = true
+                }
+            }
+            
+            if ok == false{
+                let alert = UIAlertController(title: "Error", message: "La ubicación seleccionada no es válida", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+                return
+            }
+            
         }
         let serviceCell = tabla!.viewWithTag(103) as! ServicePickerTableViewCell
         if let service = serviceCell.service{
