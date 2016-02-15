@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-
+        
         
         
         self.window!.rootViewController = navigationController
@@ -83,15 +83,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        //        print("Notification received: \(userInfo)")
-        //        let notification = userInfo["aps"] as? NSDictionary
-        //        let message = notification?.valueForKey("alert")
+        print("Notification received: \(userInfo)")
+        let notification = userInfo["aps"] as? NSDictionary
+        let message = notification?.valueForKey("alert")
         //
         if ( application.applicationState == UIApplicationState.Active ) {
-            let alarmNotification = UILocalNotification()
-            alarmNotification.alertBody = "ALARMA SONANDO"
-            alarmNotification.soundName = UILocalNotificationDefaultSoundName
-            UIApplication.sharedApplication().presentLocalNotificationNow(alarmNotification)
+            //            let alarmNotification = UILocalNotification()
+            //            alarmNotification.alertBody = "ALARMA SONANDO"
+            //            alarmNotification.soundName = UILocalNotificationDefaultSoundName
+            //            UIApplication.sharedApplication().presentLocalNotificationNow(alarmNotification)
         }
     }
     
