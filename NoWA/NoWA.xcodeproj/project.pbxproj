@@ -92,6 +92,8 @@
 		94D5FE5F1C6D8B310022A630 /* EditAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE5E1C6D8B310022A630 /* EditAlarmViewController.swift */; };
 		94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94D5FE601C6ECFB00022A630 /* EditAlarmCells.plist */; };
 		94D5FE631C7052EB0022A630 /* StartLoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE621C7052EB0022A630 /* StartLoggedViewController.swift */; };
+		94D5FE681C7156560022A630 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE661C7156560022A630 /* AudioManager.swift */; };
+		94D5FE6D1C7159800022A630 /* ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94D5FE6C1C7159800022A630 /* ringtone.mp3 */; };
 		94DEFEC21C51DE7400E40861 /* TorneosAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */; };
 		94DEFEC41C5700E700E40861 /* TournamentObjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */; };
 		94DEFEC61C570F3100E40861 /* TorneoCancelAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */; };
@@ -211,6 +213,8 @@
 		94D5FE5E1C6D8B310022A630 /* EditAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditAlarmViewController.swift; path = viewcontroller/Alarmas/EditAlarmViewController.swift; sourceTree = "<group>"; };
 		94D5FE601C6ECFB00022A630 /* EditAlarmCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EditAlarmCells.plist; sourceTree = "<group>"; };
 		94D5FE621C7052EB0022A630 /* StartLoggedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartLoggedViewController.swift; sourceTree = "<group>"; };
+		94D5FE661C7156560022A630 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		94D5FE6C1C7159800022A630 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
 		94DEFEC11C51DE7400E40861 /* TorneosAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneosAdminViewController.swift; path = viewcontroller/Perfil/TorneosAdminViewController.swift; sourceTree = "<group>"; };
 		94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentObjectDTO.swift; path = model/dto/TournamentObjectDTO.swift; sourceTree = "<group>"; };
 		94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneoCancelAllTableViewCell.swift; path = view/Perfil/TorneoCancelAllTableViewCell.swift; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 		941109BF1C0CDF3C00E67905 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				94D5FE6C1C7159800022A630 /* ringtone.mp3 */,
+				94D5FE661C7156560022A630 /* AudioManager.swift */,
 				941109C01C0CDF3C00E67905 /* UIColorExtension.swift */,
 				941109C11C0CDF3C00E67905 /* UIFontExtension.swift */,
 			);
@@ -676,6 +682,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94D5FE6D1C7159800022A630 /* ringtone.mp3 in Resources */,
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
 				942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */,
 				94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */,
@@ -763,6 +770,7 @@
 				945C48B01C0F8168006367C9 /* MainTabBarController.swift in Sources */,
 				9447283B1C4C3A1F00F8E963 /* ServicioViewController.swift in Sources */,
 				9425DB261C2A0DBC003CDB83 /* TTInternetConnection.m in Sources */,
+				94D5FE681C7156560022A630 /* AudioManager.swift in Sources */,
 				9425DB441C2A3076003CDB83 /* UserDAO.swift in Sources */,
 				941421811C2C6E1600D9495E /* ButtonTableFooterView.swift in Sources */,
 				941CA1361C3F58CA004E4969 /* AlarmService.swift in Sources */,
