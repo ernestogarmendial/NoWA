@@ -134,6 +134,9 @@ class RegisterViewController: LoginViewController {
                         print("User Name is: \(userName)")
                         let userEmail : NSString = result.valueForKey("email") as! NSString
                         print("User Email is: \(userEmail)")
+                        let fbID : NSString = result.valueForKey("id") as! NSString
+
+                        self.callFacebookService(userName, email: userEmail, fbID : fbID)
                     }
                 })
                 
@@ -221,5 +224,37 @@ class RegisterViewController: LoginViewController {
         
     }
     
+    func callFacebookService(username: NSString!, email: NSString!, fbID : NSString!){
+        let userService : UserService = UserService()
+        userService.loginFacebook(username, email:  email, fbID: fbID ,target: self,message: "loginFacebookFinish:")
+    }
+    
+    func loginFacebookFinish(result : ServiceResult!){
+        if(result.hasErrors()){
+            print("Error papu")
+            
+            let alert = UIAlertController(title: "Error", message: "Usuario o contraseña inválida", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            
+            return
+        }
+        
+        NSUserDefaults.standardUserDefaults().setValue(emailView.inputTextField.text, forKey: "email")
+        NSUserDefaults.standardUserDefaults().setValue(passwordView.inputTextField.text, forKey: "pass")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        
+        let usuarioLogueado:UserDTO = result.entityForKey("UserFB") as! UserDTO
+        if usuarioLogueado.token != nil {
+            dispatch_async(dispatch_get_main_queue()) {
+                self.startApp()
+            }
+            
+        }
+    }
     
 }

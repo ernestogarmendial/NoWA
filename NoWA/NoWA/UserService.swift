@@ -46,6 +46,41 @@ class UserService: GenericService {
         })
     }
     
+    
+    func loginFacebook(username: NSString!, email: NSString!, fbID : NSString!, target _target : NSObject, message _message : String ) {
+        
+        let serviceResult = ServiceResult()
+        
+        if !TTInternetConnection.sharedInstance().internetAccess() {
+            serviceResult.addError("No Internet")
+            self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            return
+        }
+        
+        let md5code = md5(string: fbID! as String)
+        
+        let userDAO: UserDAO = UserDAO()
+        userDAO.delegate = self
+        userDAO.loginFacebook(username, email: email, fbID : md5code, handler: { (operation, result) in
+            let user = result as? UserDTO;
+            
+            if(user == nil || (user != nil && user!.errorTitle != nil)){
+                serviceResult.addError("error")
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }else{
+                
+                UserService.currentUser = result as! UserDTO;
+                //
+                if let accessToken = UserService.currentUser.token {
+                    //
+                    serviceResult.addEntity(UserService.currentUser, forKey: "UserFB")
+                    
+                    self.callMessage(target: _target, message: _message, withResult: serviceResult)
+                }
+            }
+        })
+    }
+    
     func register(name : String?, code :String?, target _target : NSObject, message _message : String ) {
         
         let serviceResult = ServiceResult()

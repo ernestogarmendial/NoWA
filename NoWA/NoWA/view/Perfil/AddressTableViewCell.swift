@@ -87,8 +87,6 @@ class AddressTableViewCell: GenericTableViewCell {
         addressTextField?.autoPinEdge(.Left, toEdge: .Right, ofView: leftIcon!, withOffset: 30)
         addressTextField?.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: 20)
         addressTextField?.autoSetDimension(.Height, toSize: 20)
-
-        
-        
+ 
     }
 }
