@@ -75,7 +75,7 @@ class CreateAccountViewController: LoginViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        let myBackButton:TTPopButton = TTPopButton(type: .Custom) as TTPopButton
+        let myBackButton:UIButton = UIButton(type: .Custom) as UIButton
         myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
         myBackButton.setTitle("< Volver", forState: UIControlState.Normal)
         myBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)

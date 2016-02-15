@@ -19,7 +19,7 @@ class RegisterViewController: LoginViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         backgroundImage = UIImageView()
         backgroundImage.image = UIImage(named: "login")
         backgroundImage.contentMode = UIViewContentMode.ScaleAspectFill
@@ -135,7 +135,7 @@ class RegisterViewController: LoginViewController {
                         let userEmail : NSString = result.valueForKey("email") as! NSString
                         print("User Email is: \(userEmail)")
                         let fbID : NSString = result.valueForKey("id") as! NSString
-
+                        
                         self.callFacebookService(userName, email: userEmail, fbID : fbID)
                     }
                 })
@@ -199,9 +199,13 @@ class RegisterViewController: LoginViewController {
     
     func recover(){
         
-        print("recover")
-        let userService : UserService = UserService()
-        userService.recover(emailView.inputTextField.text,target: self,message: "recoverFinish:")
+        if emailView.inputTextField.text != nil{
+            if emailView.inputTextField.text != ""{
+                print("recover")
+                let userService : UserService = UserService()
+                userService.recover(emailView.inputTextField.text,target: self,message: "recoverFinish:")
+            }
+        }
     }
     
     

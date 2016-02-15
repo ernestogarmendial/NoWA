@@ -49,9 +49,25 @@ class AddressTableViewCell: GenericTableViewCell {
             
             if icon == "envelope"{
                 addressTextField?.enabled = false
-                let email = NSUserDefaults.standardUserDefaults().valueForKey("email") as! String
+                let email = UserService.currentUser.username
                 addressTextField?.text = email
             }
+            
+            if icon == "facebook_ico"{
+                let facebook = UserService.currentUser.facebook
+                addressTextField?.text = facebook
+            }
+            
+            if icon == "twitter_ico"{
+                let twitter = UserService.currentUser.twitter
+                addressTextField?.text = twitter
+            }
+            
+            if icon == "instagram_ico"{
+                let instagram = UserService.currentUser.instagram
+                addressTextField?.text = instagram
+            }
+            
         }
         if let addressText = myDictionary["text"] as? String{
             addressTextField!.attributedPlaceholder =  NSAttributedString(string: addressText,
@@ -81,12 +97,12 @@ class AddressTableViewCell: GenericTableViewCell {
         leftIcon?.autoAlignAxis(.Horizontal, toSameAxisOfView: self)
         leftIcon?.autoSetDimension(.Height, toSize: 20)
         leftIcon?.autoSetDimension(.Width, toSize: 20)
-        leftIcon?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 40)
+        leftIcon?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 60)
         
         addressTextField?.autoAlignAxis(.Horizontal, toSameAxisOfView: self)
         addressTextField?.autoPinEdge(.Left, toEdge: .Right, ofView: leftIcon!, withOffset: 30)
         addressTextField?.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: 20)
         addressTextField?.autoSetDimension(.Height, toSize: 20)
- 
+        
     }
 }
