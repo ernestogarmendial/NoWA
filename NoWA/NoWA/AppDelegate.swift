@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        Fabric.with([Crashlytics.self])
+
         UINavigationBar.appearance().hidden = false
         UINavigationBar.appearance().barTintColor = UIColor.ribbonAltColor().colorWithAlphaComponent(0.5)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
@@ -37,9 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerForRemoteNotifications()
         
         
-        if (NSUserDefaults.standardUserDefaults().boolForKey("loggeado")) == true {
-            navigationController.viewControllers = [StartLoggedViewController()]
-        }else{
+//        if (NSUserDefaults.standardUserDefaults().boolForKey("loggeado")) == true {
+//            navigationController.viewControllers = [StartLoggedViewController()]
+//        }else{
             if((NSUserDefaults.standardUserDefaults().valueForKey("firstTime")) != nil){
                 navigationController.viewControllers = [RegisterViewController()]
             }else{
@@ -47,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstTime")
                 NSUserDefaults.standardUserDefaults().synchronize()
             }
-        }
+//        }
         
         
         

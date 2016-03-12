@@ -115,6 +115,7 @@ class RegisterViewController: LoginViewController {
     func loginFacebook(){
         
         let login = FBSDKLoginManager()
+        login.loginBehavior = .SystemAccount
         login.logInWithReadPermissions(["public_profile","email"], fromViewController: self, handler: { (result, error) -> Void in
             if (error == nil){
                 print("logeado")
