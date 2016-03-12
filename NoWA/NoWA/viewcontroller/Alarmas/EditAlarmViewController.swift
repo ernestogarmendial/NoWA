@@ -260,25 +260,25 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     
     func setNewAlarmRepetitionDays(insertCell: NewAlarmInsertTableViewCell, newAlarmDTO : AlarmDTO, newAlarmEventDTO : EventDTO){
         
-        if insertCell.daysButtonsView?.lunes?.dayButton?.selected == false {
+        if insertCell.daysButtonsView?.lunes?.isActive == true {
             setRepetitionValue("1")
         }
-        if insertCell.daysButtonsView?.martes?.dayButton?.selected == false {
+        if insertCell.daysButtonsView?.martes?.isActive == true {
             setRepetitionValue("2")
         }
-        if insertCell.daysButtonsView?.miercoles?.dayButton?.selected == false {
+        if insertCell.daysButtonsView?.miercoles?.isActive == true {
             setRepetitionValue("3")
         }
-        if insertCell.daysButtonsView?.jueves?.dayButton?.selected == false {
+        if insertCell.daysButtonsView?.jueves?.isActive == true {
             setRepetitionValue("4")
         }
-        if insertCell.daysButtonsView?.viernes?.dayButton?.selected == false {
+        if insertCell.daysButtonsView?.viernes?.isActive == true {
             setRepetitionValue("5")
         }
-        if insertCell.daysButtonsView?.sabado?.dayButton?.selected == false {
+        if insertCell.daysButtonsView?.sabado?.isActive == true {
             setRepetitionValue("6")
         }
-        if insertCell.daysButtonsView?.domingo?.dayButton?.selected == false {
+        if insertCell.daysButtonsView?.domingo?.isActive == true {
             setRepetitionValue("7")
         }
     }

@@ -146,10 +146,10 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
                 let daysArray : NSArray = daysString.componentsSeparatedByString(",")
                 if status == 0{
                     daysButtonsView?.setDaysColor(UIColor.daysInactiveColor())
-                    daysButtonsView?.showDays(daysArray, color: UIColor.daysInactiveColor())
+                    daysButtonsView?.showDays(daysArray, color: UIColor.daysInactiveColor(),isActive: false)
                 }else{
                     daysButtonsView?.setDaysColor(UIColor.daysInactiveColor())
-                    daysButtonsView?.showDays(daysArray, color: UIColor.daysActiveColor())
+                    daysButtonsView?.showDays(daysArray, color: UIColor.daysActiveColor(),isActive: true)
                 }
             }
             

@@ -12,6 +12,7 @@ class CircleDayButtonView: UIView {
     
     var day : String!
     var dayButton: UIButton?
+    var isActive : Bool?
     
     init(day: String, frame: CGRect) {
         super.init(frame:frame)
@@ -42,8 +43,10 @@ class CircleDayButtonView: UIView {
         
         if sender.selected{
             self.backgroundColor = .daysInactiveColor()
+            self.isActive = false
         }else{
             self.backgroundColor = .daysActiveColor()
+            self.isActive = true
         }
     }
     

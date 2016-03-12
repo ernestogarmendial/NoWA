@@ -88,25 +88,60 @@ class DaysButtonsView: UIView {
     }
     
     
-    func showDays(days : NSArray, color : UIColor){
+    func showDays(days : NSArray, color : UIColor, isActive : Bool){
                 
         for day in days{
             
             switch (day as! String ) {
             case "1":
                 lunes?.backgroundColor = color
+                if isActive {
+                    lunes?.isActive = true
+                }else{
+                    lunes?.isActive = false
+                }
             case "2":
                 martes?.backgroundColor = color
+                if isActive {
+                    martes?.isActive = true
+                }else{
+                    martes?.isActive = false
+                }
             case "3":
                 miercoles?.backgroundColor = color
+                if isActive {
+                    miercoles?.isActive = true
+                }else{
+                    miercoles?.isActive = false
+                }
             case "4":
                 jueves?.backgroundColor = color
+                if isActive {
+                    jueves?.isActive = true
+                }else{
+                    jueves?.isActive = false
+                }
             case "5":
                 viernes?.backgroundColor = color
+                if isActive {
+                    viernes?.isActive = true
+                }else{
+                    viernes?.isActive = false
+                }
             case "6":
                 sabado?.backgroundColor = color
+                if isActive {
+                    sabado?.isActive = true
+                }else{
+                    sabado?.isActive = false
+                }
             case "7":
                 domingo?.backgroundColor = color
+                if isActive {
+                    domingo?.isActive = true
+                }else{
+                    domingo?.isActive = false
+                }
             default:
                 print("default case")
             }
