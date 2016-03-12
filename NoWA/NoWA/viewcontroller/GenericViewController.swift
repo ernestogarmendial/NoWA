@@ -34,12 +34,12 @@ class GenericViewController: UIViewController, ButtonFooterDelegate {
         self.view.bringSubviewToFront(tabla!)
         
         pictureView?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view)
-        pictureView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
+        pictureView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: -2)
         pictureView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
         pictureView?.autoSetDimension(.Height, toSize: 230)
         
         tabla?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
-        tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 140)//64)
+        tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 180)
         tabla?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
         tabla?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
         
