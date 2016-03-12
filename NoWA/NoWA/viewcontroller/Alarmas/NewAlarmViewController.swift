@@ -170,41 +170,38 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         if let service = serviceCell.service{
             newAlarmDTO?.service = service
         }
-        
-        let temperatureCell = tabla!.viewWithTag(104) as! SliderTableViewCell
+        let conditionCell = tabla!.viewWithTag(104) as! PickerTableViewCell
+        if let condition = conditionCell.condition{
+            newAlarmDTO?.condition = condition
+        }
+        let temperatureCell = tabla!.viewWithTag(105) as! SliderTableViewCell
         if let minTemp = temperatureCell.minValue{
             newAlarmDTO?.minTemp = minTemp
         }
         if let maxTemp = temperatureCell.maxValue{
             newAlarmDTO?.maxTemp = maxTemp
         }
-        let windCell = tabla!.viewWithTag(105) as! SliderTableViewCell
+        let windCell = tabla!.viewWithTag(106) as! SliderTableViewCell
         if let minWind = windCell.minValue{
             newAlarmDTO?.minWind = minWind
         }
         if let maxWind = windCell.maxValue{
             newAlarmDTO?.maxWind = maxWind
         }
-        let humidityCell = tabla!.viewWithTag(106) as! SliderTableViewCell
+        let humidityCell = tabla!.viewWithTag(107) as! SliderTableViewCell
         if let minHumidity = humidityCell.minValue{
             newAlarmDTO?.minHumidity = minHumidity
         }
         if let maxHumidity = humidityCell.maxValue{
             newAlarmDTO?.maxHumidity = maxHumidity
         }
-        let snowCell = tabla!.viewWithTag(107) as! SliderTableViewCell
+        let snowCell = tabla!.viewWithTag(108) as! SliderTableViewCell
         if let minSnow = snowCell.minValue{
             newAlarmDTO?.minSnow = minSnow
         }
         if let maxSnow = snowCell.maxValue{
             newAlarmDTO?.maxSnow = maxSnow
         }
-        
-        let conditionCell = tabla!.viewWithTag(108) as! PickerTableViewCell
-        if let condition = conditionCell.condition{
-            newAlarmDTO?.condition = condition
-        }
-        
         let predictionCell = tabla!.viewWithTag(109) as! PredictionTableViewCell
         if let prediction = predictionCell.prediction{
             newAlarmDTO?.prediction = prediction

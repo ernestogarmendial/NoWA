@@ -36,6 +36,18 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
+		<string>PickerCell</string>
+		<key>left_icon</key>
+		<string>ice</string>
+		<key>right_icon</key>
+		<string>down_arrow</string>
+		<key>title</key>
+		<string>CONDICION CLIMATICA</string>
+		<key>height</key>
+		<integer>75</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
 		<string>SliderCell</string>
 		<key>left_icon</key>
 		<string>sun</string>
@@ -97,18 +109,6 @@
 		<integer>100</integer>
 		<key>height</key>
 		<integer>80</integer>
-	</dict>
-	<dict>
-		<key>identifier</key>
-		<string>PickerCell</string>
-		<key>left_icon</key>
-		<string>ice</string>
-		<key>right_icon</key>
-		<string>down_arrow</string>
-		<key>title</key>
-		<string>CONDICION CLIMATICA</string>
-		<key>height</key>
-		<integer>75</integer>
 	</dict>
 	<dict>
 		<key>identifier</key>
