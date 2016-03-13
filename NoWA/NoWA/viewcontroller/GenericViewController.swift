@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericViewController: UIViewController, ButtonFooterDelegate {
+class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRecognizerDelegate {
     
     var tabla : UITableView?
     var pictureView : UIImageView?
@@ -16,6 +16,8 @@ class GenericViewController: UIViewController, ButtonFooterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.interactivePopGestureRecognizer!.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer!.enabled = true
         
         //COMENTO PORQUE SINO NO PASA POR EL DIDSELECTROW AT INDEXPATH
         

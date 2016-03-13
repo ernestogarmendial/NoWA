@@ -6,7 +6,7 @@
 //  Copyright © 2015 Ernesto Garmendia Luis. All rights reserved.
 //
 
-class CreateAccountViewController: LoginViewController {
+class CreateAccountViewController: LoginViewController, UIGestureRecognizerDelegate {
     
     var backgroundImage : UIImageView!
     var checkImage : UIImageView!
@@ -19,6 +19,9 @@ class CreateAccountViewController: LoginViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.interactivePopGestureRecognizer!.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer!.enabled = true
         
         self.title = "REGISTRO"
         
@@ -73,6 +76,10 @@ class CreateAccountViewController: LoginViewController {
         
     }
     
+//    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+//        return true
+//    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         let myBackButton:UIButton = UIButton(type: .Custom) as UIButton
@@ -82,6 +89,7 @@ class CreateAccountViewController: LoginViewController {
         myBackButton.sizeToFit()
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
+
         
         //        let button = TTPopButton(type: .Custom) as TTPopButton
         //        button.setImage(UIImage(named: "left_arrow"), forState: UIControlState.Normal)
