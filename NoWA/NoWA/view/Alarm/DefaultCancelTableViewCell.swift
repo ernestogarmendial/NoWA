@@ -68,6 +68,8 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
         
         if sender.selected == true {
             self.defaultDelegate?.defaultButtonPressed()
+        } else {
+            self.defaultDelegate?.defaultButtonDisabled()
         }
         
     }

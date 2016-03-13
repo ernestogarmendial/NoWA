@@ -99,6 +99,12 @@ class PredictionTableViewCell: GenericTableViewCell {
         }
     }
     
+    override func resetValues(){
+        self.prediction = 0
+        self.sliderLeft!.value = Float(0)
+        self.sliderLabel!.text = "\(String(0))hs"
+    }
+    
     func setupConstrains(){
         
         titleView!.autoPinEdge(.Top, toEdge: .Top, ofView: self)

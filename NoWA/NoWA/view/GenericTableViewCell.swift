@@ -72,6 +72,10 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
         
     }
     
+    func resetValues(){
+    
+    }
+    
     func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isEdit: Bool, status: NSNumber?){
         
     }

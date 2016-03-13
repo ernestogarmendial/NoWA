@@ -178,7 +178,7 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
                 
                 self.service = service
 //                
-                let delay = 0.1 * Double(NSEC_PER_SEC)
+                let delay = 0.0001 * Double(NSEC_PER_SEC)
                 let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
                 dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
                     
@@ -214,6 +214,10 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
     }
     
+    override func resetValues(){
+        selectedServiceLabel!.text = ServicePickerTableViewCell.forecastArray[0].valueForKey("name") as? String
+        service = ServicePickerTableViewCell.forecastArray[0].valueForKey("forecastID") as? NSNumber
+    }
     
     override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isEdit: Bool, status: NSNumber?) {
         

@@ -213,6 +213,26 @@ class SliderTableViewCell: GenericTableViewCell {
         }
     }
     
+    override func resetValues(){
+        self.sliderMaxLabel?.text = "Max \nOff"
+        self.sliderMinLabel?.text = "Min \nOff"
+
+        if let minimumValue = myDictionary!["min"] as? Float{
+                sliderLeft!.minimumValue = minimumValue
+                sliderRight!.minimumValue = minimumValue
+                sliderLeft!.value = Float(minimumValue)
+                self.minValue = minimumValue
+
+        }
+        if let maximumValue = myDictionary!["max"] as? Float{
+                sliderLeft!.maximumValue = maximumValue
+                sliderRight!.maximumValue = maximumValue
+                sliderRight!.value = Float(maximumValue)
+                self.maxValue = maximumValue
+    
+        }
+    }
+    
     func sliderMinLabelChanged(sender: UISlider) {
         
         var value : Int!

@@ -112,6 +112,8 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
             if ServicioViewController.defaultData != nil {
                 genericCell.setDefaults(ServicioViewController.defaultData!,isCreate: true)
             }
+        }else{
+            genericCell.resetValues()
         }
         if identificador == "AcceptButtonCell"{
             genericCell.buttonDelegate = self
@@ -302,7 +304,10 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     
     func defaultButtonDisabled(){
         self.useDefaults = false
-        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tabla?.reloadData()
+        }
     }
     
     func validateObligatoryFields(field : String!){

@@ -328,7 +328,10 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     
     func defaultButtonDisabled(){
         self.useDefaults = false
-        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tabla?.reloadData()
+        }
     }
     
     override func deleteButtonPressed() {

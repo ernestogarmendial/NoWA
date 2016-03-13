@@ -89,6 +89,9 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         }
     }
     
+    override func resetValues(){
+        locationTextField!.text = ""
+    }
     override func textFieldShouldReturn(textField: UITextField) -> Bool {
         super.textFieldShouldReturn(textField)
         rightButtonPressed()
