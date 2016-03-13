@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, DefaultCellDelegate {
+class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, DefaultCellDelegate, LocationTableViewCellDelegate {
     
     var newAlarmDTO : AlarmDTO?
     var newAlarmEventDTO : EventDTO?
@@ -142,8 +142,20 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         if identificador == "ServiceAdviceCell"{
             genericCell.defaultDelegate = self
         }
+        if identificador == "LocationCell"{
+            genericCell.locationDelegate = self
+        }
         
         return genericCell
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Error", message: "La ubicación seleccionada no es válida", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     override func updateButtonPressed() {

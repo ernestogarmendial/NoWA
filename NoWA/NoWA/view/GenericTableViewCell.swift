@@ -36,6 +36,8 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     var defaultDelegate : DefaultCellDelegate?
 
     
+    var locationDelegate : LocationTableViewCellDelegate?
+
     var myDictionary : NSDictionary? {
         didSet{
             setItems(myDictionary!)

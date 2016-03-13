@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol LocationTableViewCellDelegate: class {
+    func showAlert()
+}
+
 class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     
     var place : String?
@@ -125,6 +129,23 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         print("pepe")
         
         callService()
+        
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        print(textField.text)
+        
+        var ok : Bool = false
+        for location in LocationTableViewCell.locationsArray{
+            if location as? String == textField.text{
+                ok = true
+            }
+        }
+        
+        if ok == false{
+            locationDelegate?.showAlert()
+            return
+        }
         
     }
     

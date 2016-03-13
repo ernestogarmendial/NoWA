@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ServicioViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class ServicioViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, LocationTableViewCellDelegate {
     var defaultWeatherDTO : AlarmDTO?
     var defaultDataDTO : AlarmDTO?
     
@@ -106,6 +106,11 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
             genericCell.buttonDelegate = self
             
         }
+        
+        if identificador == "LocationCell"{
+            genericCell.locationDelegate = self
+        }
+        
         return genericCell
     }
     
@@ -222,14 +227,26 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         
         ServicioViewController.defaultData = self.defaultDataDTO
         
-        dispatch_async(dispatch_get_main_queue()) {
-            
+//        dispatch_async(dispatch_get_main_queue()) {
+        let delay = 0.5 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+        
             self.tabla!.reloadData()
         }
     }
     
     override func adminButtonPressed(){
         print("pepe")
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Error", message: "La ubicación seleccionada no es válida", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
 }
