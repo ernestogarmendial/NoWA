@@ -352,6 +352,17 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         if self.alarmID != nil{
             newAlarmDTO!.alarmID = self.alarmID!
         }
+        
+        let alert = UIAlertController(title: "ELIMINAR", message: "Realmente desea eliminar la alarma?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Sí", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+            self.navigationController!.popToRootViewControllerAnimated(true)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil))
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
         let alarmService : AlarmService = AlarmService()
         alarmService.deleteAlarm(alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "deleteAlarmFinish:")
     }
@@ -362,14 +373,14 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             return
         }
         
-        let alert = UIAlertController(title: "ELIMINAR", message: "Se ha eliminado la alarma", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
-            self.navigationController!.popToRootViewControllerAnimated(true)
-        }))
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
+//        let alert = UIAlertController(title: "ELIMINAR", message: "Se ha eliminado la alarma", preferredStyle: UIAlertControllerStyle.Alert)
+//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+//            self.navigationController!.popToRootViewControllerAnimated(true)
+//        }))
+//        
+//        dispatch_async(dispatch_get_main_queue()) {
+//            self.presentViewController(alert, animated: true, completion: nil)
+//        }
         
     }
 }
