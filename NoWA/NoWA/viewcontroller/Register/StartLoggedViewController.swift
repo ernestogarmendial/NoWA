@@ -15,10 +15,16 @@ class StartLoggedViewController: LoginViewController {
         
         let userService : UserService = UserService()
         
-        let email = NSUserDefaults.standardUserDefaults().valueForKey("email") as! String
-        let pass = NSUserDefaults.standardUserDefaults().valueForKey("pass") as! String
+        let email = NSUserDefaults.standardUserDefaults().valueForKey("email") as? String
+        let pass = NSUserDefaults.standardUserDefaults().valueForKey("pass") as? String
         
-        userService.login(email, code: pass,target: self,message: "loginFinish:")
+        if email != nil && pass != nil {
+            userService.login(email, code: pass,target: self,message: "loginFinish:")
+        }
+        else {
+            let registerVC = RegisterViewController()
+            registerVC.loginFacebook()
+        }
     }
     
     func loginFinish (result : ServiceResult!){

@@ -243,7 +243,7 @@ class UserDAO: GenericDAO {
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
-        let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken") as! String
+        let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken") as? String
 
         print ("user/register/\(_name)/\(_code)/ios/\(deviceToken)/")
         

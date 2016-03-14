@@ -47,7 +47,7 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         
         locationTextField = UITextField()
         locationTextField!.delegate = self
-        locationTextField!.attributedPlaceholder =  NSAttributedString(string: "Ingrese una ubicación y presione el botón",
+        locationTextField!.attributedPlaceholder =  NSAttributedString(string: "Ingresa el lugar donde hagas el deporte",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         if self.place != nil{
             locationTextField!.text = self.place!

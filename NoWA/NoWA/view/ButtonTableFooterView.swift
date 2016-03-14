@@ -106,6 +106,10 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
         
         switchRootViewController(navigationController, animated: true, completion: nil)
         
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "email")
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "pass")
+        NSUserDefaults.standardUserDefaults().synchronize()
+
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "loggeado")
         NSUserDefaults.standardUserDefaults().synchronize()
         

@@ -41,9 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerForRemoteNotifications()
         
         
-//        if (NSUserDefaults.standardUserDefaults().boolForKey("loggeado")) == true {
-//            navigationController.viewControllers = [StartLoggedViewController()]
-//        }else{
+        if (NSUserDefaults.standardUserDefaults().boolForKey("loggeado")) == true {
+            navigationController.viewControllers = [StartLoggedViewController()]
+        }else{
             if((NSUserDefaults.standardUserDefaults().valueForKey("firstTime")) != nil){
                 navigationController.viewControllers = [RegisterViewController()]
             }else{
@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstTime")
                 NSUserDefaults.standardUserDefaults().synchronize()
             }
-//        }
+        }
         
         
         
