@@ -57,9 +57,16 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     func getPersonalAlarmsFinish (result : ServiceResult!){
         if(result.hasErrors()){
             print("Error papu")
+            self.emptyStateView?.hidden = false
+            sortedAlarmsArray = []
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tabla!.reloadData()
+            }
             return
         }
         
+        self.emptyStateView?.hidden = true
+
         self.alarmsArray = result.entityForKey("PersonalAlarms") as? [PersonalAlarmDTO]
         
         sortedAlarmsArray = []

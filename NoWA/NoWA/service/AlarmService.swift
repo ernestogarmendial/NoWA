@@ -24,6 +24,10 @@ class AlarmService: GenericService {
         alarmDAO.delegate = self
         alarmDAO.getPersonalAlarms( token: _token, handler: { (operation, result) in
             
+            if(result as! NSObject == []){
+                serviceResult.addError("error")
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }
             serviceResult.addEntity(result, forKey: "PersonalAlarms")
             
             self.callMessage(target: _target, message: _message, withResult: serviceResult)
@@ -44,7 +48,10 @@ class AlarmService: GenericService {
         let alarmDAO: AlarmDAO = AlarmDAO()
         alarmDAO.delegate = self
         alarmDAO.getTournamentAlarms( token: _token, handler: { (operation, result) in
-            
+            if(result as! NSObject == []){
+                serviceResult.addError("error")
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }
             serviceResult.addEntity(result, forKey: "TournamentAlarms")
             
             self.callMessage(target: _target, message: _message, withResult: serviceResult)

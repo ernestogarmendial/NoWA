@@ -12,6 +12,8 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
     
     var tabla : UITableView?
     var pictureView : UIImageView?
+    var emptyStateView : UIImageView?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +37,22 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         self.view.addSubview(pictureView!)
         self.view.bringSubviewToFront(tabla!)
         
+        emptyStateView = UIImageView()
+        emptyStateView?.hidden = true
+        emptyStateView?.backgroundColor = .blueColor()
+        self.view.addSubview(emptyStateView!)
+        self.view.bringSubviewToFront(emptyStateView!)
+        
         pictureView?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view)
         pictureView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: -2)
         pictureView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
         pictureView?.autoSetDimension(.Height, toSize: 230)
+        
+        emptyStateView?.autoPinEdge(.Top, toEdge: .Bottom, ofView: pictureView!)
+        emptyStateView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: 20)
+        emptyStateView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view, withOffset: -20)
+        emptyStateView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -80)
+        
         
         tabla?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
         tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 180)

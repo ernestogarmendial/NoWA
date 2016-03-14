@@ -53,8 +53,16 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
     func getTournamentAlarmsFinish (result : ServiceResult!){
         if(result.hasErrors()){
             print("Error papu")
+            self.emptyStateView?.hidden = false
+            tournamentsArray = []
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tabla!.reloadData()
+            }
             return
+            
         }
+        
+        self.emptyStateView?.hidden = true
         
         self.tournamentsArray = result.entityForKey("TournamentAlarms") as? [TournamentDTO]
         
@@ -91,13 +99,13 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         
         let alert = UIAlertController(title: "CANCELAR" ,message:"Está seguro que desea eliminar la alarma de este torneo?", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
-//            print("aca deberia llamar al metodo")
-//            let newAlarmDTO = AlarmDTO()
-//            
-//                newAlarmDTO!.alarmID = currentCell
-//            }
-//            let alarmService : AlarmService = AlarmService()
-//            alarmService.deleteAlarm(alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "deleteAlarmFinish:")
+            //            print("aca deberia llamar al metodo")
+            //            let newAlarmDTO = AlarmDTO()
+            //
+            //                newAlarmDTO!.alarmID = currentCell
+            //            }
+            //            let alarmService : AlarmService = AlarmService()
+            //            alarmService.deleteAlarm(alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "deleteAlarmFinish:")
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
