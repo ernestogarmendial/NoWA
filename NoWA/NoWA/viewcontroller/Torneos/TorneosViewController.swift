@@ -24,6 +24,9 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         
+        let empty_torneos = UIImage(named: "empty_torneos")
+        emptyStateView?.image = empty_torneos
+        
         tabla?.delegate = self
         tabla?.dataSource = self
         tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))

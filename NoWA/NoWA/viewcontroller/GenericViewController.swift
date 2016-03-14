@@ -39,7 +39,7 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         
         emptyStateView = UIImageView()
         emptyStateView?.hidden = true
-        emptyStateView?.backgroundColor = .blueColor()
+//        emptyStateView?.backgroundColor = .blueColor()
         self.view.addSubview(emptyStateView!)
         self.view.bringSubviewToFront(emptyStateView!)
         
@@ -48,10 +48,10 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         pictureView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
         pictureView?.autoSetDimension(.Height, toSize: 230)
         
-        emptyStateView?.autoPinEdge(.Top, toEdge: .Bottom, ofView: pictureView!)
-        emptyStateView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: 20)
-        emptyStateView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view, withOffset: -20)
-        emptyStateView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -80)
+        emptyStateView?.autoPinEdge(.Top, toEdge: .Bottom, ofView: pictureView!, withOffset: -30)
+        emptyStateView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: 10)
+        emptyStateView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view, withOffset: -10)
+        emptyStateView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -70)
         
         
         tabla?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
