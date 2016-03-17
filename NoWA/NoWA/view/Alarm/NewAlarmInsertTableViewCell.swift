@@ -137,6 +137,15 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
             
             timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
             
+            let dateString = timeLabel!.text
+            let df = NSDateFormatter()
+            df.dateFormat = "hh:mm"
+            let date = df.dateFromString(dateString!)
+            if let unwrappedDate = date {
+                datePicker!.setDate(unwrappedDate, animated: false)
+            }
+
+            
             let hour = stamp.substringWithRange(NSRange(location: 11, length: 2))
             let min = stamp.substringWithRange(NSRange(location: 14, length: 2))
             
