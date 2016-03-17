@@ -9,8 +9,8 @@
 class CreateAccountViewController: LoginViewController, UIGestureRecognizerDelegate {
     
     var backgroundImage : UIImageView!
-    var checkImage : UIImageView!
-    var aceptTermsLabel : UILabel!
+    var checkButton : UIButton!
+    var aceptTermsButton : UIButton!
     var emailView : RegisterFieldView!
     var passwordView : RegisterFieldView!
     var confirmView : RegisterFieldView!
@@ -52,28 +52,41 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         ingresarButton.layer.cornerRadius = 20
         self.view.addSubview(ingresarButton)
         
-        aceptTermsLabel = UILabel()
-        aceptTermsLabel.font = UIFont.appLatoFontOfSize(12)
-        aceptTermsLabel.text = "ACEPTO TÉRMINOS Y CONDICIONES"
-        aceptTermsLabel.textColor = .whiteColor()
-        aceptTermsLabel.textAlignment = .Center
-        aceptTermsLabel.adjustsFontSizeToFitWidth = true
-        aceptTermsLabel.numberOfLines = 1
-        self.view.addSubview(aceptTermsLabel)
+        aceptTermsButton = TTPopButton()
+        aceptTermsButton.backgroundColor = .clearColor()
+        aceptTermsButton.setTitle("ACEPTO TÉRMINOS Y CONDICIONES", forState: UIControlState.Normal)
+        aceptTermsButton.titleLabel!.font = UIFont.appLatoFontOfSize(12)
+        aceptTermsButton.addTarget(self, action: "acceptTerms", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(aceptTermsButton)
         
-        checkImage = UIImageView()
-        checkImage.image = UIImage(named: "tilde")
-        checkImage.contentMode = UIViewContentMode.ScaleAspectFill
-        self.view.addSubview(checkImage)
+        checkButton = TTPopButton()
+        checkButton.backgroundColor = .clearColor()
+        checkButton.setImage(UIImage(named: "tilde"), forState: UIControlState.Normal)
+        checkButton.addTarget(self, action: "checkPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(checkButton)
         
         termsView = UIView()
-        termsView.addSubview(aceptTermsLabel)
-        termsView.addSubview(checkImage)
+        termsView.addSubview(aceptTermsButton)
+        termsView.addSubview(checkButton)
         self.view.addSubview(termsView)
         
         setupConstrains()
         
+    }
+    
+    func checkPressed (sender:UIButton) {
         
+        sender.selected = !sender.selected;
+        
+        if sender.selected{
+            sender.alpha = 0.2
+        }else{
+            sender.alpha = 1
+        }
+    }
+    
+    func acceptTerms() {
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://nowakeapp.com/terminos.html")!)
     }
     
 //    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -115,15 +128,15 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         ingresarButton.autoSetDimension(ALDimension.Width, toSize: self.view.frame.width * 0.7)
         ingresarButton.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: self.view.frame.height * 0.68)
         
-        checkImage.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: termsView)
-        checkImage.autoAlignAxis(.Horizontal, toSameAxisOfView: termsView)
-        checkImage.autoSetDimension(ALDimension.Height, toSize: 25)
-        checkImage.autoSetDimension(ALDimension.Width, toSize: 25)
+        checkButton.autoPinEdge(ALEdge.Left, toEdge: .Left, ofView: termsView)
+        checkButton.autoAlignAxis(.Horizontal, toSameAxisOfView: termsView)
+        checkButton.autoSetDimension(ALDimension.Height, toSize: 25)
+        checkButton.autoSetDimension(ALDimension.Width, toSize: 25)
         
-        aceptTermsLabel.autoPinEdge(ALEdge.Left, toEdge: .Right, ofView: checkImage, withOffset: 10)
-        aceptTermsLabel.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: termsView)
-        aceptTermsLabel.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: termsView)
-        aceptTermsLabel.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: termsView)
+        aceptTermsButton.autoPinEdge(ALEdge.Left, toEdge: .Right, ofView: checkButton, withOffset: 10)
+        aceptTermsButton.autoPinEdge(ALEdge.Right, toEdge: .Right, ofView: termsView)
+        aceptTermsButton.autoPinEdge(ALEdge.Bottom, toEdge: .Bottom, ofView: termsView)
+        aceptTermsButton.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: termsView)
         
         termsView.autoSetDimension(ALDimension.Height, toSize: 30)
         termsView.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
@@ -160,6 +173,16 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         
         if passwordView.inputTextField.text !=  confirmView.inputTextField.text {
             let alert = UIAlertController(title: "Error", message: "Las contraseñas no coinciden", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            return
+        }
+        
+        if checkButton.alpha != 1 {
+            let alert = UIAlertController(title: "Error", message: "Usted no ha aceptado los términos y condiciones.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             
             dispatch_async(dispatch_get_main_queue()) {
