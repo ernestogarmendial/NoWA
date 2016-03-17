@@ -64,9 +64,9 @@
 		<key>unity</key>
 		<string>km/h</string>
 		<key>min</key>
-		<integer>19</integer>
+		<integer>10</integer>
 		<key>max</key>
-		<integer>52</integer>
+		<integer>50</integer>
 		<key>height</key>
 		<integer>80</integer>
 	</dict>

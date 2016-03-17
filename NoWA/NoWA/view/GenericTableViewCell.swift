@@ -16,7 +16,11 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     var editSeted : Bool! = false
     
+    var resetedValues : Bool? = false
+    
     var alarmStatus : NSNumber?
+    
+    
     
     var defaultDTO : AlarmDTO?{
         didSet{

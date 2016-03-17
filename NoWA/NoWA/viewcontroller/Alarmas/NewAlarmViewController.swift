@@ -30,7 +30,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         tabla!.addGestureRecognizer(tap)
-
+        
         tabla?.delegate = self
         tabla?.dataSource = self
         
@@ -108,9 +108,13 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         if self.useDefaults == true{
             if ServicioViewController.defaultData != nil {
                 genericCell.setDefaults(ServicioViewController.defaultData!,isCreate: true)
+                genericCell.resetedValues = false
             }
         }else{
-            genericCell.resetValues()
+            if (genericCell.resetedValues == false) {
+                genericCell.resetValues()
+                genericCell.resetedValues = true
+            }
         }
         if identificador == "AcceptButtonCell"{
             genericCell.buttonDelegate = self

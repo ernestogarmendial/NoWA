@@ -11,7 +11,7 @@ import UIKit
 class ServicioViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, LocationTableViewCellDelegate {
     var defaultWeatherDTO : AlarmDTO?
     var defaultDataDTO : AlarmDTO?
-    
+    var tempDefault : AlarmDTO?
     static var defaultData: AlarmDTO?
     
     var cellsArray: NSMutableArray!
@@ -198,9 +198,12 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
             return
         }
         
+        ServicioViewController.defaultData = defaultWeatherDTO
+        
         let alert = UIAlertController(title: "Servicio", message: "Se han guardado tus preferencias", preferredStyle: UIAlertControllerStyle.Alert)
         
         dispatch_async(dispatch_get_main_queue()) {
+            self.tabla!.reloadData()
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
