@@ -43,10 +43,12 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
             }
             
             if torneoDTO!.status == 0{
+                alarmSwitch?.selected = true
                 cancelLabel!.hidden = true
                 alarmSwitch?.hidden = false
                 setInactiveColours()
             }else if torneoDTO!.status == 1 {
+                alarmSwitch?.selected = false
                 cancelLabel!.hidden = true
                 alarmSwitch?.hidden = false
                 setActiveColours()
