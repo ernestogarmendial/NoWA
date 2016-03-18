@@ -23,6 +23,8 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     var locations : [LocationDTO]?
     var locationsPicker:NSMutableArray!
     
+    var serviceCalled : Bool = false
+    
     static var locationsArray : NSMutableArray! = NSMutableArray()
     
     var firstTime : Bool = true
@@ -98,7 +100,11 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     }
     override func textFieldShouldReturn(textField: UITextField) -> Bool {
         super.textFieldShouldReturn(textField)
-        rightButtonPressed()
+        if serviceCalled == false {
+            if textField.text != ""{
+                rightButtonPressed()
+            }
+        }
         return true
     }
     
@@ -127,14 +133,14 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     
     func rightButtonPressed(){
         print("pepe")
-        
+        serviceCalled = true
         callService()
         
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        print(textField.text)
-        
+        //        print(textField.text)
+        //
         var ok : Bool = false
         for location in LocationTableViewCell.locationsArray{
             if location as? String == textField.text{
@@ -142,11 +148,13 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
             }
         }
         
-        if ok == false{
-            locationDelegate?.showAlert()
+        if ok == true{
             return
         }
-        
+        if textField.text != ""{
+            
+            rightButtonPressed()
+        }
     }
     
     func callService(){
@@ -163,12 +171,12 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     }
     
     
-    
-    
-    
     func getLocationsFinish (result : ServiceResult!){
+        serviceCalled = false
+        
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error location")
+            locationDelegate?.showAlert()
             return
         }
         
@@ -188,7 +196,6 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         }
         
         if firstTime == false{
-            
             if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
                 let popupViewController = PopUpPickerViewController()
                 popupViewController.locationsPicker = locationsPicker
@@ -204,6 +211,7 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
                         }, completion: nil)
                 }
             }
+            
         }
         firstTime = false
         

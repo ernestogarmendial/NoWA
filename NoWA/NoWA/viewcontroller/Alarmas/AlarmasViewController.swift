@@ -56,7 +56,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     
     func getPersonalAlarmsFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error Alarmas")
             self.emptyStateView?.hidden = false
             sortedAlarmsArray = []
             dispatch_async(dispatch_get_main_queue()) {

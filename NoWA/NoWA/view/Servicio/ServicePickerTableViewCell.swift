@@ -125,7 +125,7 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     func getForecastsFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error forecast")
             return
         }
         

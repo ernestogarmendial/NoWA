@@ -38,8 +38,11 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         self.view.addSubview(pictureView!)
         self.view.bringSubviewToFront(tabla!)
         
-        let random1a23 = arc4random_uniform(23) + 1
-        let image = UIImage(named: "r\(random1a23)")
+       // let random1a23 = arc4random_uniform(23) + 1
+       // let image = UIImage(named: "r\(random1a23)")
+         let random1a23 = arc4random_uniform(4) + 1
+         let image = UIImage(named: "back_\(random1a23)")
+        
         pictureView?.image = image
         
         emptyStateView = UIImageView()

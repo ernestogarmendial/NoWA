@@ -270,7 +270,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
     
     func cancelAlarm (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error Cancel Alarm")
             return
         }
         

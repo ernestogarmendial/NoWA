@@ -194,7 +194,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
     
     func setDefaultFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error set def")
             return
         }
         
@@ -222,7 +222,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
     
     func getDefaultFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error get def")
             return
         }
         

@@ -115,7 +115,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     func getConditionsFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error conditions")
             return
         }
         
@@ -176,7 +176,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
             
             let conditionID = condition.valueForKey("conditionID") as! NSNumber
             
-            if conditionID == selectedRow + 1 {
+            if conditionID == selectedRow {
                 
                 self.descriptionLabel!.text = condition.valueForKey("name") as? String
                 

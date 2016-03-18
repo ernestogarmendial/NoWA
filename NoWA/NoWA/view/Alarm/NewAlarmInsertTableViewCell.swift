@@ -122,6 +122,14 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         if let newAlertLabelText = myDictionary["title"] as? String{
             newAlertLabel!.text = newAlertLabelText
         }
+        
+        let dateString = timeLabel!.text
+        let df = NSDateFormatter()
+        df.dateFormat = "hh:mm"
+        let date = df.dateFromString(dateString!)
+        if let unwrappedDate = date {
+            datePicker!.setDate(unwrappedDate, animated: false)
+        }
     }
     
     override func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isEdit: Bool, status: NSNumber?) {

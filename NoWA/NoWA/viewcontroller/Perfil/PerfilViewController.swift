@@ -137,7 +137,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
     
     func updateFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error update")
             return
         }
         

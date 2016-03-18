@@ -72,7 +72,7 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
     
     func getTournamentsFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error Admin")
             return
         }
         

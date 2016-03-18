@@ -69,6 +69,10 @@ class WeatherService: GenericService {
         let weatherDAO: WeatherDAO = WeatherDAO()
         weatherDAO.delegate = self
         weatherDAO.getLocations(name: _name, token: _token, handler: { (operation, result) in
+            if(result as! NSObject == []){
+                serviceResult.addError("error")
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }
             
             serviceResult.addEntity(result, forKey: "Locations")
             

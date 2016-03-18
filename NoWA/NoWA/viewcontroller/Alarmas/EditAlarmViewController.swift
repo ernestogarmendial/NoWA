@@ -253,7 +253,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     
     func editAlarmFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error edit")
             return
         }
         
@@ -369,7 +369,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     
     func deleteAlarmFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error delete")
             return
         }
         

@@ -202,7 +202,7 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
     
     func registerFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error register")
             return
         }
         

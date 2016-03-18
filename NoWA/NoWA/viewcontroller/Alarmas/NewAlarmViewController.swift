@@ -229,7 +229,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     
     func createAlarmFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error create")
             return
         }
         

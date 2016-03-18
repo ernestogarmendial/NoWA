@@ -171,7 +171,7 @@ class RegisterViewController: LoginViewController {
     
     func loginFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error login")
             
             let alert = UIAlertController(title: "Error", message: "Usuario o contraseña inválida", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
@@ -212,7 +212,7 @@ class RegisterViewController: LoginViewController {
     
     func recoverFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error register")
             return
         }
         
@@ -236,7 +236,7 @@ class RegisterViewController: LoginViewController {
     
     func loginFacebookFinish(result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error login face")
             
             let alert = UIAlertController(title: "Error", message: "Usuario o contraseña inválida", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))

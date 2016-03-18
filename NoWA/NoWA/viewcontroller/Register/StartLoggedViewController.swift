@@ -29,7 +29,8 @@ class StartLoggedViewController: LoginViewController {
     
     func loginFinish (result : ServiceResult!){
         if(result.hasErrors()){
-            print("Error papu")
+            print("Error login")
+            self.navigationController?.pushViewController(RegisterViewController(), animated: true)
             return
         }
         
