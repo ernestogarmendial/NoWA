@@ -34,6 +34,12 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
         }
     }
     
+    var editTournamentDTO : TournamentDTO?{
+        didSet{
+            setEditTournament(editTournamentDTO!, isEdit: false, status: alarmStatus)
+        }
+    }
+    
 //    var acceptDelegate : ButtonFooterDelegate?
         var buttonDelegate : ButtonFooterDelegate?
 
@@ -85,4 +91,13 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isEdit: Bool, status: NSNumber?){
         
     }
+    
+    func setEditTournament(editTournamentDTO: TournamentDTO, isEdit: Bool, status: NSNumber?){
+        
+    }
+    
+    func hideRepetition(){
+    
+    }
+    
 }

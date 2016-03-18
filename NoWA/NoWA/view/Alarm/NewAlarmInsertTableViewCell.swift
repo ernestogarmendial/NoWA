@@ -174,4 +174,37 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         }
     }
     
+    override func hideRepetition() {
+        self.daysButtonsView?.hidden = true
+//        self.nameTextField?.hidden = true
+        
+        self.contentView.removeConstraints(self.contentView.constraints)
+
+        
+    }
+    
+    override func setEditTournament(editTournamentDTO: TournamentDTO, isEdit: Bool, status: NSNumber?) {
+        self.nameTextField!.text = editTournamentDTO.name
+
+        let stamp = editTournamentDTO.stamp! as NSString
+        
+        timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
+        
+        let dateString = timeLabel!.text
+        let df = NSDateFormatter()
+        df.dateFormat = "hh:mm"
+        let date = df.dateFromString(dateString!)
+        if let unwrappedDate = date {
+            datePicker!.setDate(unwrappedDate, animated: false)
+        }
+        
+        
+        let hour = stamp.substringWithRange(NSRange(location: 11, length: 2))
+        let min = stamp.substringWithRange(NSRange(location: 14, length: 2))
+        
+        self.timeLabel!.text = "\(hour):\(min)"
+        
+    }
+    
+    
 }

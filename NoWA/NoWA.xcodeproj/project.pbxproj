@@ -101,6 +101,8 @@
 		94DEFEC41C5700E700E40861 /* TournamentObjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */; };
 		94DEFEC61C570F3100E40861 /* TorneoCancelAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */; };
 		94F069881C571C5D00F88340 /* TournamentEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F069871C571C5D00F88340 /* TournamentEventTableViewCell.swift */; };
+		94F312591C9B8DA500CAB4C0 /* EditTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F312581C9B8DA500CAB4C0 /* EditTournamentViewController.swift */; };
+		94F3125B1C9B907900CAB4C0 /* EditTournamentCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94F3125A1C9B907900CAB4C0 /* EditTournamentCells.plist */; };
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -226,6 +228,8 @@
 		94DEFEC31C5700E700E40861 /* TournamentObjectDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentObjectDTO.swift; path = model/dto/TournamentObjectDTO.swift; sourceTree = "<group>"; };
 		94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneoCancelAllTableViewCell.swift; path = view/Perfil/TorneoCancelAllTableViewCell.swift; sourceTree = "<group>"; };
 		94F069871C571C5D00F88340 /* TournamentEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentEventTableViewCell.swift; path = view/Perfil/TournamentEventTableViewCell.swift; sourceTree = "<group>"; };
+		94F312581C9B8DA500CAB4C0 /* EditTournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditTournamentViewController.swift; path = viewcontroller/Torneos/EditTournamentViewController.swift; sourceTree = "<group>"; };
+		94F3125A1C9B907900CAB4C0 /* EditTournamentCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EditTournamentCells.plist; sourceTree = "<group>"; };
 		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -354,6 +358,7 @@
 			children = (
 				942A996F1C1A13BF00B12292 /* TorneosTableViewController.swift */,
 				9447283E1C4C5AF300F8E963 /* TorneosViewController.swift */,
+				94F312581C9B8DA500CAB4C0 /* EditTournamentViewController.swift */,
 			);
 			name = Torneos;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				944728251C472B7600F8E963 /* PerfilTabCells.plist */,
 				944728341C4893EE00F8E963 /* NewAlarmCells.plist */,
 				94D5FE601C6ECFB00022A630 /* EditAlarmCells.plist */,
+				94F3125A1C9B907900CAB4C0 /* EditTournamentCells.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -697,6 +703,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94D5FE6D1C7159800022A630 /* ringtone.mp3 in Resources */,
+				94F3125B1C9B907900CAB4C0 /* EditTournamentCells.plist in Resources */,
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
 				942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */,
 				94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */,
@@ -826,6 +833,7 @@
 				9414217F1C2C65C800D9495E /* PredictionTableViewCell.swift in Sources */,
 				94500D671C3455FD003A70FA /* LocationDTO.swift in Sources */,
 				94DEFEC41C5700E700E40861 /* TournamentObjectDTO.swift in Sources */,
+				94F312591C9B8DA500CAB4C0 /* EditTournamentViewController.swift in Sources */,
 				94D5FE731C715FBD0022A630 /* TTInternetConnection.m in Sources */,
 				944728481C4C896B00F8E963 /* DaysButtonsView.swift in Sources */,
 				942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */,

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>identifier</key>
+		<string>Insert</string>
+		<key>height</key>
+		<integer>140</integer>
+		<key>title</key>
+		<string>EDITAR ALERTA</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>AcceptButtonCell</string>
+		<key>title</key>
+		<string>ACTUALIZAR ALERTA</string>
+		<key>action</key>
+		<string>update</string>
+		<key>color</key>
+		<string>1993C9</string>
+		<key>height</key>
+		<integer>100</integer>
+	</dict>
+</array>
+</plist>

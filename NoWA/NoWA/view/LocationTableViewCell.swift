@@ -139,7 +139,6 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        //        print(textField.text)
         //
         var ok : Bool = false
         for location in LocationTableViewCell.locationsArray{
