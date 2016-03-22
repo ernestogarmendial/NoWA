@@ -95,4 +95,5 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
     func saveButtonPressed() {
         print("update")
     }
+
 }

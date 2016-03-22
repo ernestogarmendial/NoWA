@@ -103,6 +103,7 @@
 		94F069881C571C5D00F88340 /* TournamentEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F069871C571C5D00F88340 /* TournamentEventTableViewCell.swift */; };
 		94F312591C9B8DA500CAB4C0 /* EditTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F312581C9B8DA500CAB4C0 /* EditTournamentViewController.swift */; };
 		94F3125B1C9B907900CAB4C0 /* EditTournamentCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94F3125A1C9B907900CAB4C0 /* EditTournamentCells.plist */; };
+		94F3125D1C9BBF8400CAB4C0 /* WebProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3125C1C9BBF8400CAB4C0 /* WebProfileTableViewCell.swift */; };
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -230,6 +231,7 @@
 		94F069871C571C5D00F88340 /* TournamentEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TournamentEventTableViewCell.swift; path = view/Perfil/TournamentEventTableViewCell.swift; sourceTree = "<group>"; };
 		94F312581C9B8DA500CAB4C0 /* EditTournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditTournamentViewController.swift; path = viewcontroller/Torneos/EditTournamentViewController.swift; sourceTree = "<group>"; };
 		94F3125A1C9B907900CAB4C0 /* EditTournamentCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EditTournamentCells.plist; sourceTree = "<group>"; };
+		94F3125C1C9BBF8400CAB4C0 /* WebProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebProfileTableViewCell.swift; path = view/Perfil/WebProfileTableViewCell.swift; sourceTree = "<group>"; };
 		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -411,6 +413,7 @@
 				94DEFEC51C570F3100E40861 /* TorneoCancelAllTableViewCell.swift */,
 				94F069871C571C5D00F88340 /* TournamentEventTableViewCell.swift */,
 				942C18FC1C57C71C0071D10A /* CancelEventButtonTableViewCell.swift */,
+				94F3125C1C9BBF8400CAB4C0 /* WebProfileTableViewCell.swift */,
 			);
 			name = Perfil;
 			sourceTree = "<group>";
@@ -858,6 +861,7 @@
 				944728441C4C62E100F8E963 /* TorneoAdminTableViewCell.swift in Sources */,
 				941CA1341C3CB49D004E4969 /* AlarmDTO.swift in Sources */,
 				94D5FE721C715FBD0022A630 /* Reachability.m in Sources */,
+				94F3125D1C9BBF8400CAB4C0 /* WebProfileTableViewCell.swift in Sources */,
 				94F069881C571C5D00F88340 /* TournamentEventTableViewCell.swift in Sources */,
 				944728291C47331200F8E963 /* PictureTableViewCell.swift in Sources */,
 				9425DB361C2A0F09003CDB83 /* ServiceResult.swift in Sources */,

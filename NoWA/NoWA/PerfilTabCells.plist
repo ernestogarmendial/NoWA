@@ -76,7 +76,7 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
-		<string>Address</string>
+		<string>Web</string>
 		<key>text</key>
 		<string>ACERCA DE NWA</string>
 		<key>bold_text</key>
@@ -86,7 +86,7 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
-		<string>Address</string>
+		<string>Web</string>
 		<key>text</key>
 		<string>SOPORTE</string>
 		<key>bold_text</key>
@@ -96,7 +96,7 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
-		<string>Address</string>
+		<string>Web</string>
 		<key>text</key>
 		<string>TÉRMINOS Y CONDICIONES</string>
 		<key>bold_text</key>

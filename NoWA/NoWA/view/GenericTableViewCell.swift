@@ -40,6 +40,8 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
         }
     }
     
+    var webDelegate : WebButtonDelegate?
+    
 //    var acceptDelegate : ButtonFooterDelegate?
         var buttonDelegate : ButtonFooterDelegate?
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PerfilViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
+class PerfilViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, WebButtonDelegate {
     
     var cellsArray: NSMutableArray!
     
@@ -32,6 +32,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         self.tabla!.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
         self.tabla!.registerClass(AddressTableViewCell.self, forCellReuseIdentifier: "Address")
         self.tabla!.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
+        self.tabla!.registerClass(WebProfileTableViewCell.self, forCellReuseIdentifier: "Web")
         self.tabla!.registerClass(ButtonTableFooterView.self, forCellReuseIdentifier: "ButtonCell")
         
         
@@ -81,9 +82,14 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         //        genericCell.alarmDefaults = self.defaultDataDTO
         genericCell.tag = indexPath.row + 100
         
-        //if identificador == "AcceptButtonCell"{
-        genericCell.buttonDelegate = self
-        //}
+        if identificador == "Web"{
+            genericCell.webDelegate = self
+        }
+        
+        if identificador == "ButtonCell"{
+            genericCell.buttonDelegate = self
+        }
+        
         return genericCell
     }
     
@@ -152,5 +158,9 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         }
     }
     
+    func webButtonPressed(url: String){
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://nowakeapp.com/terminos.html")!)
+
+    }
     
 }
