@@ -192,7 +192,7 @@
 		94500D661C3455FD003A70FA /* LocationDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDTO.swift; path = model/dto/LocationDTO.swift; sourceTree = "<group>"; };
 		94500D691C346E20003A70FA /* PopUpPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpPickerViewController.swift; path = viewcontroller/PopUpPickerViewController.swift; sourceTree = "<group>"; };
 		945C48AF1C0F8168006367C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = viewcontroller/MainTabBarController.swift; sourceTree = "<group>"; };
-		94686C6F1C0BA9EE00D05BD9 /* NoWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94686C6F1C0BA9EE00D05BD9 /* NoWakeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWakeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94686C791C0BA9EE00D05BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94686C7E1C0BA9EE00D05BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 		94686C701C0BA9EE00D05BD9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94686C6F1C0BA9EE00D05BD9 /* NoWA.app */,
+				94686C6F1C0BA9EE00D05BD9 /* NoWakeApp.app */,
 				94686C831C0BA9EE00D05BD9 /* NoWATests.xctest */,
 				94686C8E1C0BA9EE00D05BD9 /* NoWAUITests.xctest */,
 			);
@@ -612,7 +612,7 @@
 			);
 			name = NoWA;
 			productName = NoWA;
-			productReference = 94686C6F1C0BA9EE00D05BD9 /* NoWA.app */;
+			productReference = 94686C6F1C0BA9EE00D05BD9 /* NoWakeApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		94686C821C0BA9EE00D05BD9 /* NoWATests */ = {
@@ -999,7 +999,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nowakeapp.nowakeapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NoWakeApp;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoWA/NoWA-Bridging-Header.h";
 			};
@@ -1021,7 +1021,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nowakeapp.nowakeapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NoWakeApp;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoWA/NoWA-Bridging-Header.h";
 			};
