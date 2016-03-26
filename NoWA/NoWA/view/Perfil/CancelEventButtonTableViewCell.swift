@@ -26,7 +26,7 @@ class CancelEventButtonTableViewCell: GenericTableViewCell {
         
         button = TTPopButton()
         button!.backgroundColor = .servicePickerBlueColor()
-        button!.setTitle("CANCELAR", forState: UIControlState.Normal)
+        button!.setTitle(NSLocalizedString("CANCELAR", comment: ""), forState: UIControlState.Normal)
         button!.titleLabel!.font = UIFont.appLatoFontOfSize(15)
         button!.addTarget(self, action: "cancel", forControlEvents: UIControlEvents.TouchUpInside)
         button!.layer.cornerRadius = 20

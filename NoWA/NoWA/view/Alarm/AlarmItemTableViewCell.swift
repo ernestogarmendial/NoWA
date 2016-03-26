@@ -78,8 +78,6 @@ class AlarmItemTableViewCell: GenericTableViewCell {
             
             }
             
-//            serviceLabel!.text = "ACCU WEATHER"
-            
             self.reloadData = false
         }
     }
@@ -105,7 +103,6 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.addSubview(serviceLabel!)
         
         serviceView = UIView()
-        //        serviceView!.backgroundColor = .orangeColor()
         serviceView!.addSubview(serviceIcon!)
         serviceView!.addSubview(serviceLabel!)
         self.addSubview(serviceView!)
@@ -115,7 +112,6 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.addSubview(separatorBar!)
         
         timeLabel = UILabel()
-        timeLabel!.text = "07:30"
         timeLabel!.textColor = .whiteColor()
         timeLabel!.font = UIFont.appLatoFontOfSize(40)
         timeLabel!.adjustsFontSizeToFitWidth = true
@@ -132,7 +128,6 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.addSubview(dateLabel!)
         
         descriptionLabel = UILabel()
-        //        descriptionLabel!.text = "ENTRENAMIENTO SEMANAL"
         descriptionLabel!.textColor = .whiteColor()
         descriptionLabel!.font = UIFont.appLatoFontOfSize(12)
         descriptionLabel!.adjustsFontSizeToFitWidth = true
@@ -141,14 +136,12 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.addSubview(descriptionLabel!)
         
         infoView = UIView()
-        //        infoView?.backgroundColor = .purpleColor()
         infoView?.addSubview(timeLabel!)
         infoView?.addSubview(dateLabel!)
         infoView?.addSubview(descriptionLabel!)
         self.addSubview(infoView!)
         
         weekDaysView = WeekDaysView()
-        //        weekDaysView?.backgroundColor = .redColor()
         self.addSubview(weekDaysView!)
         
         alarmSwitch = UIButton()

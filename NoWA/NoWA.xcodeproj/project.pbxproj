@@ -81,6 +81,7 @@
 		94801F921C0DDFC100D05D6E /* TourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F901C0DDFC100D05D6E /* TourView.swift */; };
 		94801F961C0E143400D05D6E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94801F951C0E143400D05D6E /* CreateAccountViewController.swift */; };
 		94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94801F991C0F368800D05D6E /* Lato-Regular.ttf */; };
+		949A51021CA4D18F005AF2D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 949A51041CA4D18F005AF2D5 /* Localizable.strings */; };
 		94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A501C28D12E00BA2BB8 /* LoginViewController.swift */; };
 		94A39A531C28D87500BA2BB8 /* AlarmItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A521C28D87500BA2BB8 /* AlarmItemTableViewCell.swift */; };
 		94A39A551C28DCDD00BA2BB8 /* WeekDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A39A541C28DCDD00BA2BB8 /* WeekDaysView.swift */; };
@@ -206,6 +207,8 @@
 		94801F951C0E143400D05D6E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		94801F991C0F368800D05D6E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NoWA-Bridging-Header.h"; sourceTree = "<group>"; };
+		949A51031CA4D18F005AF2D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		949A51051CA4D1AD005AF2D5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		94A39A501C28D12E00BA2BB8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		94A39A521C28D87500BA2BB8 /* AlarmItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmItemTableViewCell.swift; path = view/Alarm/AlarmItemTableViewCell.swift; sourceTree = "<group>"; };
 		94A39A541C28DCDD00BA2BB8 /* WeekDaysView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekDaysView.swift; path = view/Alarm/WeekDaysView.swift; sourceTree = "<group>"; };
@@ -421,6 +424,7 @@
 		94686C661C0BA9EE00D05BD9 = {
 			isa = PBXGroup;
 			children = (
+				949A51041CA4D18F005AF2D5 /* Localizable.strings */,
 				94A53FC61C8E76B30092E50A /* Fabric.framework */,
 				94A53FC71C8E76B30092E50A /* Crashlytics.framework */,
 				9497789D1C0CDC260045099C /* Frameworks */,
@@ -687,6 +691,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 94686C661C0BA9EE00D05BD9;
 			productRefGroup = 94686C701C0BA9EE00D05BD9 /* Products */;
@@ -709,6 +714,7 @@
 				94F3125B1C9B907900CAB4C0 /* EditTournamentCells.plist in Resources */,
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
 				942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */,
+				949A51021CA4D18F005AF2D5 /* Localizable.strings in Resources */,
 				94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */,
 				944728351C4893EE00F8E963 /* NewAlarmCells.plist in Resources */,
 				944728261C472B7600F8E963 /* PerfilTabCells.plist in Resources */,
@@ -898,6 +904,18 @@
 			targetProxy = 94686C8F1C0BA9EE00D05BD9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		949A51041CA4D18F005AF2D5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				949A51031CA4D18F005AF2D5 /* en */,
+				949A51051CA4D1AD005AF2D5 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		94686C951C0BA9EE00D05BD9 /* Debug */ = {

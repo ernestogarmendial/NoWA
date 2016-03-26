@@ -34,7 +34,6 @@ class PictureTableViewCell: GenericTableViewCell {
         if  UserService.currentUser.role == 1{
             let adminText = "\(username) - Admin"
             let firstPart = username
-            //        nameLabel!.text = UserService.currentUser.username //cambiar por name
             
             var myMutableString = NSMutableAttributedString()
             myMutableString = NSMutableAttributedString(
@@ -51,20 +50,10 @@ class PictureTableViewCell: GenericTableViewCell {
         
         self.addSubview(nameLabel!)
         
-        
-        //        leyendLabel = UILabel()
-        //        leyendLabel!.textColor = .whiteColor()
-        //        leyendLabel!.text = "A lo hecho pecho!"
-        //        leyendLabel!.font = UIFont.appLatoFontOfSize(14)
-        //        leyendLabel!.adjustsFontSizeToFitWidth = true
-        //        leyendLabel!.textAlignment = .Center
-        //        leyendLabel!.numberOfLines = 1
-        //        self.addSubview(leyendLabel!)
-        
         leyendLabel = UITextField()
         leyendLabel?.delegate = self
-        leyendLabel!.attributedPlaceholder =  NSAttributedString(string: "Ingresá tu frase personal!",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+        leyendLabel!.attributedPlaceholder =  NSAttributedString(string: NSLocalizedString("Ingresá tu frase personal!", comment: ""),
+                                                                 attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         leyendLabel!.textColor = .whiteColor()
         leyendLabel!.font = UIFont.appLatoFontOfSize(16)
         leyendLabel!.adjustsFontSizeToFitWidth = true
@@ -75,24 +64,12 @@ class PictureTableViewCell: GenericTableViewCell {
         
         setupConstrains()
     }
-    //
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
-    //
-    //    override func setItems(myDictionary: NSDictionary) {
-    //        if let left_icon = myDictionary["left_icon"] as? String{
-    //            leftIcon!.image = UIImage(named: left_icon)
-    //        }
-    //        if let right_icon = myDictionary["right_icon"] as? String{
-    //            rightButton!.setImage(UIImage(named: right_icon), forState: UIControlState.Normal)
-    //        }
-    //        if let title = myDictionary["title"] as? String{
-    //            titleLabel!.text = title
-    //        }
-    //    }
-    //
+    
     func setupConstrains(){
         
         circlePictureView?.autoAlignAxis(.Vertical, toSameAxisOfView: self)
@@ -105,7 +82,7 @@ class PictureTableViewCell: GenericTableViewCell {
         leyendLabel?.autoPinEdge(.Top, toEdge: .Bottom, ofView: nameLabel!, withOffset: 20)
         leyendLabel?.autoPinEdge(.Left, toEdge: .Left, ofView: self)
         leyendLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
-    
+        
     }
     
 }

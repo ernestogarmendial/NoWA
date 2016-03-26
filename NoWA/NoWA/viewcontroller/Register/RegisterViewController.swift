@@ -26,16 +26,17 @@ class RegisterViewController: LoginViewController {
         self.view.addSubview(backgroundImage)
         
         emailView = RegisterFieldView()
-        emailView.setItems("envelope",placeholder: "TU CORREO", secureMode: false)
+        var languajeCode = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)!
+        emailView.setItems("envelope",placeholder: NSLocalizedString("TU CORREO", comment: ""), secureMode: false)
         self.view.addSubview(emailView)
         
         passwordView = RegisterFieldView()
-        passwordView.setItems("lock",placeholder: "CONTRASEÑA", secureMode: true)
+        passwordView.setItems("lock",placeholder: NSLocalizedString("CONTRASEÑA", comment: ""), secureMode: true)
         self.view.addSubview(passwordView)
         
         ingresarButton = TTPopButton()
         ingresarButton.backgroundColor = .loginRedColor()
-        ingresarButton.setTitle("INGRESAR", forState: UIControlState.Normal)
+        ingresarButton.setTitle(NSLocalizedString("INGRESAR", comment: ""), forState: UIControlState.Normal)
         ingresarButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
         ingresarButton.addTarget(self, action: "login", forControlEvents: UIControlEvents.TouchUpInside)
         ingresarButton.layer.cornerRadius = 20
@@ -43,7 +44,7 @@ class RegisterViewController: LoginViewController {
         
         ingresarFacebookButton = TTPopButton()
         ingresarFacebookButton.backgroundColor = .loginBlueColor()
-        ingresarFacebookButton.setTitle("INGRESAR CON FACEBOOK", forState: UIControlState.Normal)
+        ingresarFacebookButton.setTitle(NSLocalizedString("INGRESAR CON FACEBOOK", comment: ""), forState: UIControlState.Normal)
         ingresarFacebookButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
         ingresarFacebookButton.addTarget(self, action: "loginFacebook", forControlEvents: UIControlEvents.TouchUpInside)
         ingresarFacebookButton.layer.cornerRadius = 20
@@ -51,14 +52,14 @@ class RegisterViewController: LoginViewController {
         
         createAccountButton = TTPopButton()
         createAccountButton.titleLabel!.font = UIFont.appLatoFontOfSize(12)
-        createAccountButton.setTitle("CREAR UNA CUENTA", forState: UIControlState.Normal)
+        createAccountButton.setTitle(NSLocalizedString("CREAR UNA CUENTA", comment: ""), forState: UIControlState.Normal)
         createAccountButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         createAccountButton.addTarget(self, action: "createAccount", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(createAccountButton)
         
         recoverButton = TTPopButton()
         recoverButton.backgroundColor = .clearColor()
-        recoverButton.setTitle("RECUPERAR", forState: UIControlState.Normal)
+        recoverButton.setTitle(NSLocalizedString("RECUPERAR", comment: ""), forState: UIControlState.Normal)
         recoverButton.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
         recoverButton.titleLabel!.font = UIFont.appLatoFontOfSize(12)
         recoverButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -141,8 +142,6 @@ class RegisterViewController: LoginViewController {
                     }
                 })
                 
-                //                self.startApp()
-                
             }else{
                 print("error")
             }
@@ -164,8 +163,6 @@ class RegisterViewController: LoginViewController {
     
     func callService () {
         let userService : UserService = UserService()
-        //        userService.login("gfaraone@litebox.com.ar", code: "631263" ,target: self,message: "loginFinish:")
-        
         userService.login(emailView.inputTextField.text, code: passwordView.inputTextField.text ,target: self,message: "loginFinish:")
     }
     
@@ -173,7 +170,7 @@ class RegisterViewController: LoginViewController {
         if(result.hasErrors()){
             print("Error login")
             
-            let alert = UIAlertController(title: "Error", message: "Usuario o contraseña inválida", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Error", message: NSLocalizedString("Usuario o contraseña inválida", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             
             dispatch_async(dispatch_get_main_queue()) {
@@ -238,7 +235,7 @@ class RegisterViewController: LoginViewController {
         if(result.hasErrors()){
             print("Error login face")
             
-            let alert = UIAlertController(title: "Error", message: "Usuario o contraseña inválida", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Error", message: NSLocalizedString("Usuario o contraseña inválida", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             
             dispatch_async(dispatch_get_main_queue()) {

@@ -39,7 +39,7 @@ class PredictionTableViewCell: GenericTableViewCell {
         self.addSubview(titleLabel!)
         
         explainLabel = UILabel()
-        explainLabel!.text = "La cancelación quedará sin efecto si se predice una mejoría dentro de:"
+        explainLabel!.text = NSLocalizedString("La cancelación quedará sin efecto si se predice una mejoría dentro de:", comment: "")
         explainLabel!.textColor = .whiteColor()
         explainLabel!.font = UIFont.appLatoFontOfSize(14)
         explainLabel!.adjustsFontSizeToFitWidth = true

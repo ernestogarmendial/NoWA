@@ -15,7 +15,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Perfil"
+        self.title = NSLocalizedString("Perfil", comment: "")
         
         self.view.backgroundColor = .registroGrayColor()
         
@@ -79,7 +79,6 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         let genericCell = self.tabla!.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
-        //        genericCell.alarmDefaults = self.defaultDataDTO
         genericCell.tag = indexPath.row + 100
         
         if identificador == "Web"{
@@ -148,7 +147,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         }
         
         if let userDTO:UserDTO = result.entityForKey("Update") as! UserDTO{
-            let alert = UIAlertController(title: "", message: "Se han guardado tus datos", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "", message: NSLocalizedString("Se han guardado tus datos", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             
             dispatch_async(dispatch_get_main_queue()) {
@@ -159,7 +158,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
     }
     
     func webButtonPressed(url: String){
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://nowakeapp.com/terminos.html")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: NSLocalizedString("http://nowakeapp.com/terminos.html", comment: ""))!)
 
     }
     

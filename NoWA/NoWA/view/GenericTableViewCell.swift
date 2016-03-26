@@ -11,9 +11,9 @@ import UIKit
 class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     var firstTimeEdit : Bool? = false
-
+    
     var defaultSeted : Bool! = false
-
+    
     var editSeted : Bool! = false
     
     var resetedValues : Bool? = false
@@ -41,15 +41,13 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     var webDelegate : WebButtonDelegate?
+    var buttonDelegate : ButtonFooterDelegate?
     
-//    var acceptDelegate : ButtonFooterDelegate?
-        var buttonDelegate : ButtonFooterDelegate?
-
     var defaultDelegate : DefaultCellDelegate?
-
+    
     
     var locationDelegate : LocationTableViewCellDelegate?
-
+    
     var myDictionary : NSDictionary? {
         didSet{
             setItems(myDictionary!)
@@ -87,7 +85,7 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func resetValues(){
-    
+        
     }
     
     func setEditAlarm(editAlarmDTO: PersonalAlarmDTO, isEdit: Bool, status: NSNumber?){
@@ -99,7 +97,7 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func hideRepetition(){
-    
+        
     }
     
 }

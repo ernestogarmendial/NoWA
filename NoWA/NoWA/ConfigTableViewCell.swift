@@ -21,7 +21,7 @@ class ConfigTableViewCell: GenericTableViewCell {
         
         configLabel = UILabel()
         configLabel?.backgroundColor = .clearColor()
-        configLabel!.text = "Configuración"
+        configLabel!.text = NSLocalizedString("Configuración", comment: "")
         configLabel!.textColor = .whiteColor()
         configLabel!.font = UIFont.appLatoFontOfSize(14)
         configLabel!.adjustsFontSizeToFitWidth = true

@@ -41,7 +41,7 @@ class TournamentEventTableViewCell: GenericTableViewCell {
         
         stampLabel = UILabel()
         stampLabel?.backgroundColor = .clearColor()
-        stampLabel!.text = "25-12-2015 10:15 am - Sede Pilar"
+//        stampLabel!.text = "25-12-2015 10:15 am - Sede Pilar"
         stampLabel!.textColor = .whiteColor()
         stampLabel!.font = UIFont.appLatoFontOfSize(14)
         stampLabel!.adjustsFontSizeToFitWidth = true

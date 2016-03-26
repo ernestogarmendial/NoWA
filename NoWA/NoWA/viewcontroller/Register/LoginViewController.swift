@@ -59,21 +59,20 @@ class LoginViewController: UIViewController {
         let fourthImage = UIImage(named: "equalizer")?.imageWithRenderingMode(.AlwaysOriginal)
         let fourthImage_sel = UIImage(named: "equalizer_selected")?.imageWithRenderingMode(.AlwaysOriginal)
 
-
         servicio.tabBarItem = UITabBarItem(
-            title: "Servicio",
+            title: NSLocalizedString("Servicio", comment: ""),
             image: firstImage,
             selectedImage: firstImage_sel)
         alarmas.tabBarItem = UITabBarItem(
-            title: "Alarmas",
+            title: NSLocalizedString("Alarmas", comment: ""),
             image: secondImage,
             selectedImage: secondImage_sel)
         torneos.tabBarItem = UITabBarItem(
-            title: "Torneos",
+            title: NSLocalizedString("Torneos", comment: ""),
             image: thirdImage,
             selectedImage: thirdImage_sel)
         perfil.tabBarItem = UITabBarItem(
-            title: "Perfil",
+            title: NSLocalizedString("Perfil", comment: ""),
             image: fourthImage,
             selectedImage: fourthImage_sel)
         

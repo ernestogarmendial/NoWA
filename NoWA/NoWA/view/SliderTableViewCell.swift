@@ -28,9 +28,7 @@ class SliderTableViewCell: GenericTableViewCell {
     var leftIconString : String?
     
     var unity : String!
-    
-//    var firstTimeEdit : Bool? = false
-    
+        
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         

@@ -28,7 +28,7 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         
         serviceLabel = UILabel()
-        serviceLabel!.text = "SERVICIO"
+        serviceLabel!.text = NSLocalizedString("SERVICIO", comment: "")
         serviceLabel!.textColor = .whiteColor()
         serviceLabel!.font = UIFont.appLatoFontOfSize(14)
         serviceLabel!.adjustsFontSizeToFitWidth = true
@@ -131,11 +131,7 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         self.forecasts = (result.entityForKey("Forecasts") as! [ForecastDTO])
         
-        //        forecastsPicker = NSMutableArray()
-        
-        
         for forecast in forecasts! {
-            //            forecastsPicker.addObject(forecast.name!)
             if self.service == nil{
                 self.service = forecast.forecastID
                 self.selectedServiceLabel!.text = forecast.name
@@ -152,8 +148,6 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
     }
     
     func pickerOptionSelected(selectedRow : Int){
-        //        self.selectedServiceLabel!.text = self.forecasts![selectedRow].name!
-        //        self.service = self.forecasts![selectedRow].forecastID!
         
         for forecast in ServicePickerTableViewCell.forecastArray! {
             
@@ -196,18 +190,6 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
                         }
                         
                     }
-                    
-//                    if self.forecasts != nil{
-//                        for forecast in self.forecasts!{
-//                            if forecast.forecastID == service{
-//                                self.selectedServiceLabel!.text = forecast.name
-//                                self.defaultSeted = true
-//                                
-//                            }
-//                        }
-//                    }
-                    
-                    
                 }
             }
         }

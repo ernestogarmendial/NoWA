@@ -23,7 +23,7 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         self.navigationController?.interactivePopGestureRecognizer!.delegate = self
         self.navigationController?.interactivePopGestureRecognizer!.enabled = true
         
-        self.title = "REGISTRO"
+        self.title = NSLocalizedString("REGISTRO", comment: "")
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "registro")!)
         
@@ -33,20 +33,20 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         self.view.addSubview(backgroundImage)
         
         emailView = RegisterFieldView()
-        emailView.setItems("envelope",placeholder: "TU CORREO", secureMode: false)
+        emailView.setItems("envelope",placeholder: NSLocalizedString("TU CORREO", comment: ""), secureMode: false)
         self.view.addSubview(emailView)
         
         passwordView = RegisterFieldView()
-        passwordView.setItems("lock",placeholder: "CONTRASEÑA", secureMode: true)
+        passwordView.setItems("lock",placeholder: NSLocalizedString("CONTRASEÑA", comment: ""), secureMode: true)
         self.view.addSubview(passwordView)
         
         confirmView = RegisterFieldView()
-        confirmView.setItems("lock",placeholder: "CONFIRMAR", secureMode: true)
+        confirmView.setItems("lock",placeholder: NSLocalizedString("CONFIRMAR", comment: ""), secureMode: true)
         self.view.addSubview(confirmView)
         
         ingresarButton = TTPopButton()
         ingresarButton.backgroundColor = .loginRedColor()
-        ingresarButton.setTitle("INGRESAR", forState: UIControlState.Normal)
+        ingresarButton.setTitle(NSLocalizedString("INGRESAR", comment: ""), forState: UIControlState.Normal)
         ingresarButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
         ingresarButton.addTarget(self, action: "register", forControlEvents: UIControlEvents.TouchUpInside)
         ingresarButton.layer.cornerRadius = 20
@@ -54,7 +54,7 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         
         aceptTermsButton = TTPopButton()
         aceptTermsButton.backgroundColor = .clearColor()
-        aceptTermsButton.setTitle("ACEPTO TÉRMINOS Y CONDICIONES", forState: UIControlState.Normal)
+        aceptTermsButton.setTitle(NSLocalizedString("ACEPTO TÉRMINOS Y CONDICIONES", comment: ""), forState: UIControlState.Normal)
         aceptTermsButton.titleLabel!.font = UIFont.appLatoFontOfSize(12)
         aceptTermsButton.addTarget(self, action: "acceptTerms", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(aceptTermsButton)
@@ -86,12 +86,8 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
     }
     
     func acceptTerms() {
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://nowakeapp.com/terminos.html")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: NSLocalizedString("http://nowakeapp.com/terminos.html", comment: ""))!)
     }
-    
-//    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-//        return true
-//    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -103,13 +99,6 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
 
-        
-        //        let button = TTPopButton(type: .Custom) as TTPopButton
-        //        button.setImage(UIImage(named: "left_arrow"), forState: UIControlState.Normal)
-        //        button.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
-        //        button.frame=CGRectMake(0, 0, 30, 30)
-        //        let barButton = UIBarButtonItem(customView: button)
-        //        self.navigationItem.leftBarButtonItem = barButton
     }
     
     func popToRoot(sender:UIBarButtonItem){
@@ -162,7 +151,7 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
     func register(){
         
         if emailView.inputTextField.text == "" || passwordView.inputTextField.text == "" || confirmView.inputTextField.text == ""{
-            let alert = UIAlertController(title: "Error", message: "Hay campos sin completar", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Error", message: NSLocalizedString("Hay campos sin completar", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             
             dispatch_async(dispatch_get_main_queue()) {
@@ -172,7 +161,7 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         }
         
         if passwordView.inputTextField.text !=  confirmView.inputTextField.text {
-            let alert = UIAlertController(title: "Error", message: "Las contraseñas no coinciden", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Error", message: NSLocalizedString("Las contraseñas no coinciden", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             
             dispatch_async(dispatch_get_main_queue()) {
@@ -182,7 +171,7 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         }
         
         if checkButton.alpha != 1 {
-            let alert = UIAlertController(title: "Error", message: "Usted no ha aceptado los términos y condiciones.", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Error", message: NSLocalizedString("Usted no ha aceptado los términos y condiciones.", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             
             dispatch_async(dispatch_get_main_queue()) {

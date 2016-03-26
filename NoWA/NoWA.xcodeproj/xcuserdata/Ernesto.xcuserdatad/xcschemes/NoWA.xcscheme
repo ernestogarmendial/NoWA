@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "94686C6E1C0BA9EE00D05BD9"
-               BuildableName = "NoWA.app"
+               BuildableName = "NoWakeApp.app"
                BlueprintName = "NoWA"
                ReferencedContainer = "container:NoWA.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "94686C6E1C0BA9EE00D05BD9"
-            BuildableName = "NoWA.app"
+            BuildableName = "NoWakeApp.app"
             BlueprintName = "NoWA"
             ReferencedContainer = "container:NoWA.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "94686C6E1C0BA9EE00D05BD9"
-            BuildableName = "NoWA.app"
+            BuildableName = "NoWakeApp.app"
             BlueprintName = "NoWA"
             ReferencedContainer = "container:NoWA.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "94686C6E1C0BA9EE00D05BD9"
-            BuildableName = "NoWA.app"
+            BuildableName = "NoWakeApp.app"
             BlueprintName = "NoWA"
             ReferencedContainer = "container:NoWA.xcodeproj">
          </BuildableReference>

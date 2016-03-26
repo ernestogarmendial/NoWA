@@ -77,14 +77,7 @@ class AddressTableViewCell: GenericTableViewCell {
             //                titleLabel!.text = title
         }
     }
-    
-    
-    //    func textFieldShouldReturn(textField: UITextField) -> Bool {
-    //
-    //        textField.resignFirstResponder()
-    //        setupConstrains()
-    //        return true
-    //    }
+
     
     override func textFieldShouldReturn(textField: UITextField) -> Bool {
         super.textFieldShouldReturn(textField)

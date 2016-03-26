@@ -28,7 +28,6 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         
         tabla?.delegate = self
         tabla?.dataSource = self
-        //        tabla?.allowsSelection = true
         
         self.tabla!.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
         self.tabla!.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
@@ -51,13 +50,7 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         myBackButton.sizeToFit()
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
-        
-//        let button = TTPopButton(type: .Custom) as TTPopButton
-//        button.setImage(UIImage(named: "left_arrow"), forState: UIControlState.Normal)
-//        button.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
-//        button.frame=CGRectMake(0, 0, 30, 30)
-//        let barButton = UIBarButtonItem(customView: button)
-//        self.navigationItem.leftBarButtonItem = barButton
+
     }
     
     func popToRoot(sender:UIBarButtonItem){
@@ -128,7 +121,7 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
             return pictureCell
         } else if indexPath.row == 1 {
             let configTableViewCell = self.tabla!.dequeueReusableCellWithIdentifier("Config", forIndexPath: indexPath) as! ConfigTableViewCell
-            configTableViewCell.configLabel!.text = "Mis Torneos"
+            configTableViewCell.configLabel!.text = NSLocalizedString("Mis Torneos", comment: "")
             return configTableViewCell
         }
         

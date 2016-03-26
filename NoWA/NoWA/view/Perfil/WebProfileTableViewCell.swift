@@ -54,7 +54,7 @@ class WebProfileTableViewCell: GenericTableViewCell {
     }
     
     func goToTerms() {
-        self.webDelegate?.webButtonPressed("http://nowakeapp.com/terminos.html")
+        self.webDelegate?.webButtonPressed(NSLocalizedString("http://nowakeapp.com/terminos.html", comment: ""))
     }
     func goToSup() {
 //        self.webDelegate?.webButtonPressed(self.url!)

@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  NoWA
+
+  Created by Ernesto Garmendia Luis on 24/3/16.
+  Copyright © 2016 Ernesto Garmendia Luis. All rights reserved.
+*/
+
+"CONTRASEÑA" = "CONTRASEÑA";
+"TU CORREO" = "TU CORREO";
+"INGRESAR CON FACEBOOK" = "INGRESAR CON FACEBOOK";
+"INGRESAR" = "INGRESAR";
+"CREAR UNA CUENTA" = "CREAR UNA CUENTA";
+"RECUPERAR" = "RECUPERAR";
+"Usuario o contraseña inválida" = "Usuario o contraseña inválida";
+"REGISTRO" = "REGISTRO";
+"CONFIRMAR" = "CONFIRMAR";
+"ACEPTO TÉRMINOS Y CONDICIONES" = "ACEPTO TÉRMINOS Y CONDICIONES";
+"http://nowakeapp.com/terminos.html" = "http://nowakeapp.com/terminos.html";
+"Hay campos sin completar" = "Hay campos sin completar";
+"Las contraseñas no coinciden" = "Las contraseñas no coinciden";
+"Usted no ha aceptado los términos y condiciones." = "Usted no ha aceptado los términos y condiciones.";
+"La ubicación seleccionada no es válida" = "La ubicación seleccionada no es válida";
+"Servicio" = "Servicio";
+"Se han guardado tus preferencias" = "Se han guardado tus preferencias";
+"SERVICIO" = "SERVICIO";
+"Ingresa el lugar donde hagas el deporte" = "Ingresa el lugar donde hagas el deporte";
+"Rango de Cancelación" = "Rango de Cancelación";
+"ATENCION! Cualquiera de estos parámetros definirán la cancelación de tus alarmas" = "ATENCION! Cualquiera de estos parámetros definirán la cancelación de tus alarmas";
+"La cancelación quedará sin efecto si se predice una mejoría dentro de:" = "La cancelación quedará sin efecto si se predice una mejoría dentro de:";
+"Servicio" = "Servicio";
+"Alarmas" = "Alarmas";
+"Torneos" = "Torneos";
+"Perfil" = "Perfil";
+"http://nowakeapp.com/terminos.html" = "http://nowakeapp.com/terminos.html";
+"Se han guardado tus datos" = "Se han guardado tus datos";
+"Ingresá tu frase personal!" = "Ingresá tu frase personal!";
+"Configuración" = "Configuración";
+"Mis Torneos" = "Mis Torneos";
+"CANCELAR TODO" = "CANCELAR TODO";
+"CANCELAR" = "CANCELAR";
+"Cancelación Exitosa" = "Cancelación Exitosa";
+"Está seguro que desea cancelar todas las alarmas de este torneo?" = "Está seguro que desea cancelar todas las alarmas de este torneo?";

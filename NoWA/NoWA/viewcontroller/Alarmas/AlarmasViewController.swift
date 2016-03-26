@@ -38,7 +38,6 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         self.myRefresh.tintColor = .whiteColor()
         self.tabla!.addSubview(myRefresh)
         
-        //        callService()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -102,7 +101,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
                 return self.sortedAlarmsArray!.count
             }
         }
-        return 0 //////// si pongo 0 se mochea
+        return 0
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -147,7 +146,6 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
             
             alarmCell.reloadData = self.reloadData
             alarmCell.alarmDTO = self.sortedAlarmsArray![indexPath.row] as PersonalAlarmDTO
-            //            alarmCell.setupAlarm()//(self.alarmsArray[indexPath.row])
             
             return alarmCell
         }

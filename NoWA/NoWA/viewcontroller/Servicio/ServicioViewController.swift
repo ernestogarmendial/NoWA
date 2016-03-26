@@ -141,7 +141,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
             }
             
             if ok == false{
-                let alert = UIAlertController(title: "Error", message: "La ubicación seleccionada no es válida", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: NSLocalizedString("La ubicación seleccionada no es válida", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 
                 dispatch_async(dispatch_get_main_queue()) {
@@ -200,7 +200,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         
         ServicioViewController.defaultData = defaultWeatherDTO
         
-        let alert = UIAlertController(title: "Servicio", message: "Se han guardado tus preferencias", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: NSLocalizedString("Servicio", comment: ""), message: NSLocalizedString("Se han guardado tus preferencias", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         
         dispatch_async(dispatch_get_main_queue()) {
             self.tabla!.reloadData()
@@ -230,7 +230,6 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         
         ServicioViewController.defaultData = self.defaultDataDTO
         
-//        dispatch_async(dispatch_get_main_queue()) {
         let delay = 0.5 * Double(NSEC_PER_SEC)
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
@@ -244,7 +243,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
     }
     
     func showAlert() {
-        let alert = UIAlertController(title: "Error", message: "La ubicación seleccionada no es válida", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Error", message: NSLocalizedString("La ubicación seleccionada no es válida", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         
         dispatch_async(dispatch_get_main_queue()) {

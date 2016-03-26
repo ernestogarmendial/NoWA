@@ -28,7 +28,7 @@ class TorneoCancelAllTableViewCell: GenericTableViewCell {
         
         configLabel = UILabel()
         configLabel?.backgroundColor = .clearColor()
-        configLabel!.text = "Configuración"
+        configLabel!.text = NSLocalizedString("Configuración", comment: "")
         configLabel!.textColor = .whiteColor()
         configLabel!.font = UIFont.appLatoFontOfSize(14)
         configLabel!.adjustsFontSizeToFitWidth = true
@@ -38,7 +38,7 @@ class TorneoCancelAllTableViewCell: GenericTableViewCell {
         
         cancelButton = TTPopButton()
         cancelButton!.backgroundColor = .clearColor()
-        cancelButton!.setTitle("CANCELAR TODO", forState: UIControlState.Normal)
+        cancelButton!.setTitle(NSLocalizedString("CANCELAR TODO", comment: ""), forState: UIControlState.Normal)
         cancelButton!.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
         cancelButton!.titleLabel!.font = UIFont.appLatoFontOfSize(12)
         cancelButton!.addTarget(self, action: "cancelAll", forControlEvents: UIControlEvents.TouchUpInside)

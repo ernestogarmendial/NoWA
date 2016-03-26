@@ -17,9 +17,8 @@ protocol ButtonFooterDelegate {
     func saveButtonPressed() -> Void
 }
 
-class ButtonTableFooterView: GenericTableViewCell{//UIView {
+class ButtonTableFooterView: GenericTableViewCell{
     
-    //    var delegate : ButtonFooterDelegate?
     var button : TTPopButton?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
@@ -29,10 +28,7 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
         self.contentView.backgroundColor = .serviceLocationColor()
         
         button = TTPopButton()
-        //        acceptButton!.backgroundColor = .servicePickerBlueColor()
-        //        acceptButton!.setTitle("ACEPTAR", forState: UIControlState.Normal)
         button!.titleLabel!.font = UIFont.appLatoFontOfSize(15)
-        //                acceptButton!.addTarget(self, action: "accept", forControlEvents: UIControlEvents.TouchUpInside)
         button!.layer.cornerRadius = 20
         self.addSubview(button!)
         
@@ -52,6 +48,7 @@ class ButtonTableFooterView: GenericTableViewCell{//UIView {
         
         if let title = myDictionary["title"] as? String{
             button!.setTitle(title, forState: UIControlState.Normal)
+//            button!.setTitle(NSLocalizedString(title, comment: ""), forState: UIControlState.Normal)
         }
         
         if let color = myDictionary["color"] as? String{

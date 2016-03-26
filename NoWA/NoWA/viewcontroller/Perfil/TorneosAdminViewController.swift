@@ -199,7 +199,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         }
         
         
-        let alert = UIAlertController(title: "CANCELAR", message: "Cancelación Exitosa", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: NSLocalizedString("CANCELAR", comment: ""), message: NSLocalizedString("Cancelación Exitosa", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         
         dispatch_async(dispatch_get_main_queue()) {
@@ -216,9 +216,8 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         if self.cellsArray != nil {
             if self.cellsArray.count != 0 {
                 
-                let alert = UIAlertController(title: "CANCELAR TODO" ,message:"Está seguro que desea cancelar todas las alarmas de este torneo?", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: NSLocalizedString("CANCELAR TODO", comment: "") ,message:NSLocalizedString("Está seguro que desea cancelar todas las alarmas de este torneo?", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
-                    print("aca deberia llamar al metodo")
                     self.cancelAllAlarms()
                 }))
                 

@@ -11,7 +11,6 @@ import UIKit
 class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     var condition : NSNumber?
-    //    var defaultSeted : Bool! = false
     var titleLabel : UILabel?
     var descriptionLabel : UILabel?
     var leftIcon : UIImageView?
@@ -121,8 +120,6 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         self.conditions = (result.entityForKey("Conditions") as! [ConditionDTO])
         
-        //        conditionsPicker = NSMutableArray()
-        
         for condition in conditions! {
             conditionsPicker.addObject(condition.name!)
             if self.condition == nil {
@@ -169,8 +166,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     
     func pickerOptionSelected(selectedRow : Int){
-        //        self.descriptionLabel!.text = self.conditions![selectedRow].name!
-        //        self.condition = self.conditions![selectedRow].conditionID!
+
         
         for condition in PickerTableViewCell.conditionsArray! {
             
@@ -214,18 +210,6 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
                         }
                         
                     }
-
-//                    
-//                    if self.conditions != nil {
-//                        for cond in self.conditions!{
-//                            if cond.conditionID == condition{
-//                                self.descriptionLabel!.text = cond.name
-//                                self.defaultSeted = true
-//                            }
-//                        }
-//                    }
-                    
-                    
                     
                 }
             }
