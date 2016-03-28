@@ -86,7 +86,9 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
     }
     
     func acceptTerms() {
-        UIApplication.sharedApplication().openURL(NSURL(string: NSLocalizedString("http://nowakeapp.com/terminos.html", comment: ""))!)
+        let locUrl : String! = NSLocalizedString("http://nowakeapp.com/terminos.html", comment: "")
+        print(locUrl)
+        UIApplication.sharedApplication().openURL(NSURL(string: locUrl)!)
     }
     
     override func viewWillAppear(animated: Bool) {
