@@ -69,10 +69,26 @@ class AddressTableViewCell: GenericTableViewCell {
             }
             
         }
-        if let addressText = myDictionary["text"] as? String{
-            addressTextField!.attributedPlaceholder =  NSAttributedString(string: addressText,
-                attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+        
+        
+        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+        
+        if language == "en" {
+            if let addressText = myDictionary["text_en"] as? String{
+                addressTextField!.attributedPlaceholder =  NSAttributedString(string: addressText,
+                                                                              attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            }
+        }else if language == "es" {
+            
+            if let addressText = myDictionary["text"] as? String{
+                addressTextField!.attributedPlaceholder =  NSAttributedString(string: addressText,
+                                                                              attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            }
         }
+        
+
+        
+        
         if let boldText = myDictionary["bold_text"] as? String{
             //                titleLabel!.text = title
         }

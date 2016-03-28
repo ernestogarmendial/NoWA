@@ -27,6 +27,8 @@
 		<string>facebook_ico</string>
 		<key>text</key>
 		<string>Ingresá tu dirección de Facebook</string>
+		<key>text_en</key>
+		<string>Facebook ID</string>
 		<key>bold_text</key>
 		<string>Facebook</string>
 		<key>height</key>
@@ -39,6 +41,8 @@
 		<string>twitter_ico</string>
 		<key>text</key>
 		<string>Ingresá tu dirección de Twitter</string>
+		<key>text_en</key>
+		<string>Twitter ID</string>
 		<key>bold_text</key>
 		<string>Twitter</string>
 		<key>height</key>
@@ -51,6 +55,8 @@
 		<string>instagram_ico</string>
 		<key>text</key>
 		<string>Ingresá tu dirección de Instagram</string>
+		<key>text_en</key>
+		<string>Instagram ID</string>
 		<key>bold_text</key>
 		<string>Instagram</string>
 		<key>height</key>
@@ -81,6 +87,8 @@
 		<string>Web</string>
 		<key>text</key>
 		<string>ACERCA DE NWA</string>
+		<key>text_en</key>
+		<string>ABOUT NWA</string>
 		<key>bold_text</key>
 		<string>NWA</string>
 		<key>height</key>
@@ -91,6 +99,8 @@
 		<string>Web</string>
 		<key>text</key>
 		<string>SOPORTE</string>
+		<key>text_en</key>
+		<string>SUPPORT</string>
 		<key>bold_text</key>
 		<string>NWA</string>
 		<key>height</key>
@@ -101,6 +111,8 @@
 		<string>Web</string>
 		<key>text</key>
 		<string>TÉRMINOS Y CONDICIONES</string>
+		<key>text_en</key>
+		<string>TERMS AND CONDITIONS</string>
 		<key>bold_text</key>
 		<string>NWA</string>
 		<key>height</key>

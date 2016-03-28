@@ -31,7 +31,7 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
         self.addSubview(cancelationView!)
         
         cancelationLabel = UILabel()
-        cancelationLabel!.text = "Rango de Cancelación por defecto"
+        cancelationLabel!.text = NSLocalizedString("Rango de Cancelación", comment: "")
         cancelationLabel!.textColor = .whiteColor()
         cancelationLabel!.font = UIFont.appLatoFontOfSize(14)
         cancelationLabel!.adjustsFontSizeToFitWidth = true
@@ -46,7 +46,8 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
         cancelationView!.addSubview(switchButton!)
         
         adviceLabel = UILabel()
-        adviceLabel!.text = "ATENCION! Cualquiera de estos parámetros definirán la cancelación de tus alarmas"
+        adviceLabel!.text = NSLocalizedString("ATENCION! Cualquiera de estos parámetros definirán la cancelación de tus alarmas"
+, comment: "")
         adviceLabel!.textColor = .whiteColor()
         adviceLabel!.font = UIFont.appLatoFontOfSize(14)
         adviceLabel!.adjustsFontSizeToFitWidth = true

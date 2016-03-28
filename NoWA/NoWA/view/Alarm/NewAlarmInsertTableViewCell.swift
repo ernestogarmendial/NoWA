@@ -32,7 +32,8 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         
         nameTextField = UITextField()
         nameTextField?.delegate = self
-        nameTextField!.attributedPlaceholder =  NSAttributedString(string: "INGRESÁ UN NOMBRE ...",
+        nameTextField!.attributedPlaceholder =  NSAttributedString(string: NSLocalizedString("INGRESÁ UN NOMBRE ...", comment: "")
+,
                                                                    attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         nameTextField!.textColor = .whiteColor()
         nameTextField!.font = UIFont.appLatoFontOfSize(16)
