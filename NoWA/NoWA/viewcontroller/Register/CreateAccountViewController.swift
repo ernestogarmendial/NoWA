@@ -93,7 +93,7 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         super.viewWillAppear(true)
         let myBackButton:UIButton = UIButton(type: .Custom) as UIButton
         myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
-        myBackButton.setTitle("< Volver", forState: UIControlState.Normal)
+        myBackButton.setTitle(NSLocalizedString("< Volver", comment: ""), forState: UIControlState.Normal)
         myBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         myBackButton.sizeToFit()
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
