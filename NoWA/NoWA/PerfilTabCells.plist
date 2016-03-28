@@ -61,6 +61,8 @@
 		<string>ButtonCell</string>
 		<key>title</key>
 		<string>GUARDAR</string>
+		<key>title_en</key>
+		<string>SAVE</string>
 		<key>action</key>
 		<string>save</string>
 		<key>color</key>
@@ -109,6 +111,8 @@
 		<string>ButtonCell</string>
 		<key>title</key>
 		<string>ACCEDER AL ADMINISTRADOR</string>
+		<key>title_en</key>
+		<string>ACCESS ADMIN PANEL</string>
 		<key>action</key>
 		<string>admin</string>
 		<key>color</key>
@@ -121,6 +125,8 @@
 		<string>ButtonCell</string>
 		<key>title</key>
 		<string>CERRAR SESION</string>
+		<key>title_en</key>
+		<string>CLOSE SESSION</string>
 		<key>action</key>
 		<string>close</string>
 		<key>color</key>

@@ -93,9 +93,17 @@ class PredictionTableViewCell: GenericTableViewCell {
             leftIcon!.image = UIImage(named: left_icon)
             
         }
+        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
         
-        if let title = myDictionary["title"] as? String{
-            titleLabel!.text = title
+        if language == "en" {
+            if let title = myDictionary["title_en"] as? String{
+                titleLabel!.text = title
+            }
+        }else if language == "es" {
+            
+            if let title = myDictionary["title"] as? String{
+                titleLabel!.text = title
+            }
         }
     }
     

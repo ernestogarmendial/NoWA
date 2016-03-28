@@ -158,7 +158,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
     }
     
     func webButtonPressed(url: String){
-        UIApplication.sharedApplication().openURL(NSURL(string: NSLocalizedString("http://nowakeapp.com/terminos.html", comment: ""))!)
+        UIApplication.sharedApplication().openURL(NSURL(string: url)!)
 
     }
     

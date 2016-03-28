@@ -17,6 +17,8 @@
 		<string>location_arrow</string>
 		<key>title</key>
 		<string>UBICACION</string>
+		<key>title_en</key>
+		<string>LOCATION</string>
 		<key>height</key>
 		<integer>80</integer>
 	</dict>
@@ -35,6 +37,8 @@
 		<string>down_arrow</string>
 		<key>title</key>
 		<string>CONDICION CLIMATICA</string>
+		<key>title_en</key>
+		<string>WEATHER CONDITION</string>
 		<key>height</key>
 		<integer>75</integer>
 	</dict>
@@ -45,6 +49,8 @@
 		<string>sun</string>
 		<key>title</key>
 		<string>TEMPERATURA</string>
+		<key>title_en</key>
+		<string>TEMPERATURE</string>
 		<key>unity</key>
 		<string>°C</string>
 		<key>min</key>
@@ -61,6 +67,8 @@
 		<string>wind</string>
 		<key>title</key>
 		<string>VIENTO</string>
+		<key>title_en</key>
+		<string>WIND</string>
 		<key>unity</key>
 		<string>km/h</string>
 		<key>min</key>
@@ -77,6 +85,8 @@
 		<string>cloud</string>
 		<key>title</key>
 		<string>HUMEDAD</string>
+		<key>title_en</key>
+		<string>HUMIDITY</string>
 		<key>unity</key>
 		<string>%</string>
 		<key>min</key>
@@ -93,6 +103,8 @@
 		<string>ice</string>
 		<key>title</key>
 		<string>NIEVE</string>
+		<key>title_en</key>
+		<string>SNOW</string>
 		<key>unity</key>
 		<string>%</string>
 		<key>min</key>
@@ -109,6 +121,8 @@
 		<string>equalizer</string>
 		<key>title</key>
 		<string>PREDICCION</string>
+		<key>title_en</key>
+		<string>PREDICTION</string>
 		<key>height</key>
 		<integer>120</integer>
 	</dict>
@@ -117,6 +131,8 @@
 		<string>AcceptButtonCell</string>
 		<key>title</key>
 		<string>ACEPTAR</string>
+		<key>title_en</key>
+		<string>ACCEPT</string>
 		<key>action</key>
 		<string>accept</string>
 		<key>color</key>

@@ -77,8 +77,18 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         if let right_icon = myDictionary["right_icon"] as? String{
             rightButton!.setImage(UIImage(named: right_icon), forState: UIControlState.Normal)
         }
-        if let title = myDictionary["title"] as? String{
-            titleLabel!.text = title
+        
+        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+        
+        if language == "en" {
+            if let title = myDictionary["title_en"] as? String{
+                titleLabel!.text = title
+            }
+        }else if language == "es" {
+            
+            if let title = myDictionary["title"] as? String{
+                titleLabel!.text = title
+            }
         }
     }
     
@@ -166,7 +176,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
     
     
     func pickerOptionSelected(selectedRow : Int){
-
+        
         
         for condition in PickerTableViewCell.conditionsArray! {
             

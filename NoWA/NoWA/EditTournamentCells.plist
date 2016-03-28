@@ -9,12 +9,16 @@
 		<integer>140</integer>
 		<key>title</key>
 		<string>EDITAR ALERTA</string>
+		<key>title_en</key>
+		<string>EDIT ALERT</string>
 	</dict>
 	<dict>
 		<key>identifier</key>
 		<string>AcceptButtonCell</string>
 		<key>title</key>
 		<string>ACTUALIZAR ALERTA</string>
+		<key>title_en</key>
+		<string>UPDATE ALERT</string>
 		<key>action</key>
 		<string>update</string>
 		<key>color</key>

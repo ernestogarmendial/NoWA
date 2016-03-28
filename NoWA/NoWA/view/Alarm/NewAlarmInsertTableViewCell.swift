@@ -23,7 +23,6 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         self.contentView.backgroundColor = .clearColor()
         
         newAlertLabel = UILabel()
-        newAlertLabel!.text = "NUEVA ALERTA"
         newAlertLabel!.textColor = .whiteColor()
         newAlertLabel!.font = UIFont.appLatoFontOfSize(14)
         newAlertLabel!.adjustsFontSizeToFitWidth = true
@@ -34,7 +33,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         nameTextField = UITextField()
         nameTextField?.delegate = self
         nameTextField!.attributedPlaceholder =  NSAttributedString(string: "INGRESÁ UN NOMBRE ...",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+                                                                   attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         nameTextField!.textColor = .whiteColor()
         nameTextField!.font = UIFont.appLatoFontOfSize(16)
         nameTextField!.adjustsFontSizeToFitWidth = true
@@ -119,8 +118,18 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     }
     
     override func setItems(myDictionary: NSDictionary){
-        if let newAlertLabelText = myDictionary["title"] as? String{
-            newAlertLabel!.text = newAlertLabelText
+        
+        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+        
+        if language == "en" {
+            if let newAlertLabelText = myDictionary["title_en"] as? String{
+                newAlertLabel!.text = newAlertLabelText
+            }
+        }else if language == "es" {
+            
+            if let newAlertLabelText = myDictionary["title"] as? String{
+                newAlertLabel!.text = newAlertLabelText
+            }
         }
         
         let dateString = timeLabel!.text
@@ -152,7 +161,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
             if let unwrappedDate = date {
                 datePicker!.setDate(unwrappedDate, animated: false)
             }
-
+            
             
             let hour = stamp.substringWithRange(NSRange(location: 11, length: 2))
             let min = stamp.substringWithRange(NSRange(location: 14, length: 2))
@@ -176,16 +185,16 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     
     override func hideRepetition() {
         self.daysButtonsView?.hidden = true
-//        self.nameTextField?.hidden = true
+        //        self.nameTextField?.hidden = true
         
         self.contentView.removeConstraints(self.contentView.constraints)
-
+        
         
     }
     
     override func setEditTournament(editTournamentDTO: TournamentDTO, isEdit: Bool, status: NSNumber?) {
         self.nameTextField!.text = editTournamentDTO.name
-
+        
         let stamp = editTournamentDTO.stamp! as NSString
         
         timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
