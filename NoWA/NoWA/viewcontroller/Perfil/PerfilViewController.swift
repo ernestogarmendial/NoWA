@@ -158,8 +158,11 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
     }
     
     func webButtonPressed(url: String){
-        UIApplication.sharedApplication().openURL(NSURL(string: url)!)
-
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            UIApplication.sharedApplication().openURL(NSURL(string: url)!)
+        }
+        
     }
     
 }

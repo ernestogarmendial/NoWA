@@ -38,17 +38,36 @@ class WebProfileTableViewCell: GenericTableViewCell {
     
     override func setItems(myDictionary: NSDictionary) {
         
-        if let addressText = myDictionary["text"] as? String{
-            webButton!.setTitle(addressText, forState: UIControlState.Normal)
+        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+        
+        if language == "en" {
+            if let addressText = myDictionary["text_en"] as? String{
+                webButton!.setTitle(addressText, forState: UIControlState.Normal)
+                
+                if addressText == "TERMS AND CONDITIONS"{
+                    webButton!.addTarget(self, action: "goToTerms", forControlEvents: UIControlEvents.TouchUpInside)
+                }
+                if addressText == "SUPPORT"{
+                    webButton!.addTarget(self, action: "goToSup", forControlEvents: UIControlEvents.TouchUpInside)
+                }
+                if addressText == "ABOUT NWA"{
+                    webButton!.addTarget(self, action: "goToAbout", forControlEvents: UIControlEvents.TouchUpInside)
+                }
+            }
+        }else if language == "es" {
             
-            if addressText == "TÉRMINOS Y CONDICIONES"{
-                webButton!.addTarget(self, action: "goToTerms", forControlEvents: UIControlEvents.TouchUpInside)
-            }
-            if addressText == "SOPORTE"{
-                webButton!.addTarget(self, action: "goToSup", forControlEvents: UIControlEvents.TouchUpInside)
-            }
-            if addressText == "ACERCA DE NWA"{
-                webButton!.addTarget(self, action: "goToAbout", forControlEvents: UIControlEvents.TouchUpInside)
+            if let addressText = myDictionary["text"] as? String{
+                webButton!.setTitle(addressText, forState: UIControlState.Normal)
+                
+                if addressText == "TÉRMINOS Y CONDICIONES"{
+                    webButton!.addTarget(self, action: "goToTerms", forControlEvents: UIControlEvents.TouchUpInside)
+                }
+                if addressText == "SOPORTE"{
+                    webButton!.addTarget(self, action: "goToSup", forControlEvents: UIControlEvents.TouchUpInside)
+                }
+                if addressText == "ACERCA DE NWA"{
+                    webButton!.addTarget(self, action: "goToAbout", forControlEvents: UIControlEvents.TouchUpInside)
+                }
             }
         }
     }
@@ -57,10 +76,10 @@ class WebProfileTableViewCell: GenericTableViewCell {
         self.webDelegate?.webButtonPressed(NSLocalizedString("http://nowakeapp.com/terminos.html", comment: ""))
     }
     func goToSup() {
-//        self.webDelegate?.webButtonPressed(self.url!)
+        //        self.webDelegate?.webButtonPressed(self.url!)
     }
     func goToAbout() {
-//        self.webDelegate?.webButtonPressed(self.url!)
+        //        self.webDelegate?.webButtonPressed(self.url!)
     }
     
     

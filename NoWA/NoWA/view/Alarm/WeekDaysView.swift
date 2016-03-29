@@ -21,31 +21,31 @@ class WeekDaysView: UIView {
     override init(frame: CGRect) {
         super.init(frame:frame)
         
-        lunes = CircleDayView(day: "L" , frame: CGRect())
+        lunes = CircleDayView(day: NSLocalizedString("L", comment: "") , frame: CGRect())
         lunes!.hidden = true
         self.addSubview(lunes!)
         
-        martes = CircleDayView(day: "Ma" , frame: CGRect())
+        martes = CircleDayView(day: NSLocalizedString("Ma", comment: "") , frame: CGRect())
         martes!.hidden = true
         self.addSubview(martes!)
         
-        miercoles = CircleDayView(day: "Mi" , frame: CGRect())
+        miercoles = CircleDayView(day: NSLocalizedString("Mi", comment: "") , frame: CGRect())
         miercoles!.hidden = true
         self.addSubview(miercoles!)
         
-        jueves = CircleDayView(day: "J" , frame: CGRect())
+        jueves = CircleDayView(day: NSLocalizedString("J", comment: "") , frame: CGRect())
         jueves!.hidden = true
         self.addSubview(jueves!)
         
-        viernes = CircleDayView(day: "V" , frame: CGRect())
+        viernes = CircleDayView(day: NSLocalizedString("V", comment: "") , frame: CGRect())
         viernes!.hidden = true
         self.addSubview(viernes!)
         
-        sabado = CircleDayView(day: "S" , frame: CGRect())
+        sabado = CircleDayView(day: NSLocalizedString("S", comment: "") , frame: CGRect())
         sabado!.hidden = true
         self.addSubview(sabado!)
         
-        domingo = CircleDayView(day: "D" , frame: CGRect())
+        domingo = CircleDayView(day: NSLocalizedString("D", comment: "") , frame: CGRect())
         domingo!.hidden = true
         self.addSubview(domingo!)
         

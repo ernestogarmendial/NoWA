@@ -42,3 +42,10 @@
 "Cancelación Exitosa" = "Successful Cancellation";
 "Está seguro que desea cancelar todas las alarmas de este torneo?" = "Are you sure you want to cancel all?";
 "< Volver" = "< Back";
+"L" = "Mo";
+"Ma" = "Tu";
+"Mi" = "We";
+"J" = "Th";
+"V" = "Fr";
+"S" = "Sa";
+"D" = "Su";

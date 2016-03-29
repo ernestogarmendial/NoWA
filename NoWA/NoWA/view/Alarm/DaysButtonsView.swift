@@ -21,25 +21,25 @@ class DaysButtonsView: UIView {
     override init(frame: CGRect) {
         super.init(frame:frame)
         
-        lunes = CircleDayButtonView(day: "L" , frame: CGRect())
+        lunes = CircleDayButtonView(day: NSLocalizedString("L", comment: "") , frame: CGRect())
         self.addSubview(lunes!)
         
-        martes = CircleDayButtonView(day: "Ma" , frame: CGRect())
+        martes = CircleDayButtonView(day: NSLocalizedString("Ma", comment: "") , frame: CGRect())
         self.addSubview(martes!)
         
-        miercoles = CircleDayButtonView(day: "Mi" , frame: CGRect())
+        miercoles = CircleDayButtonView(day: NSLocalizedString("Mi", comment: "") , frame: CGRect())
         self.addSubview(miercoles!)
         
-        jueves = CircleDayButtonView(day: "J" , frame: CGRect())
+        jueves = CircleDayButtonView(day: NSLocalizedString("J", comment: "") , frame: CGRect())
         self.addSubview(jueves!)
         
-        viernes = CircleDayButtonView(day: "V" , frame: CGRect())
+        viernes = CircleDayButtonView(day: NSLocalizedString("V", comment: "") , frame: CGRect())
         self.addSubview(viernes!)
         
-        sabado = CircleDayButtonView(day: "S" , frame: CGRect())
+        sabado = CircleDayButtonView(day: NSLocalizedString("S", comment: "") , frame: CGRect())
         self.addSubview(sabado!)
         
-        domingo = CircleDayButtonView(day: "D" , frame: CGRect())
+        domingo = CircleDayButtonView(day: NSLocalizedString("D", comment: "") , frame: CGRect())
         self.addSubview(domingo!)
         
         setupConstrains()

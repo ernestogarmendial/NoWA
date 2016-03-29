@@ -88,7 +88,9 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
     func acceptTerms() {
         let locUrl : String! = NSLocalizedString("http://nowakeapp.com/terminos.html", comment: "")
         print(locUrl)
-        UIApplication.sharedApplication().openURL(NSURL(string: locUrl)!)
+        dispatch_async(dispatch_get_main_queue()) {
+            UIApplication.sharedApplication().openURL(NSURL(string: locUrl)!)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -100,7 +102,7 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         myBackButton.sizeToFit()
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
-
+        
     }
     
     func popToRoot(sender:UIBarButtonItem){
