@@ -9,7 +9,7 @@
 import UIKit
 
 class SliderTableViewCell: GenericTableViewCell {
-        
+    
     var minValue : NSNumber?
     var maxValue : NSNumber?
     
@@ -28,7 +28,7 @@ class SliderTableViewCell: GenericTableViewCell {
     var leftIconString : String?
     
     var unity : String!
-        
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -143,9 +143,22 @@ class SliderTableViewCell: GenericTableViewCell {
         if let right_icon = myDictionary["right_icon"] as? String{
             rightIconString = right_icon
         }
-        if let title = myDictionary["title"] as? String{
-            titleLabel!.text = title
+        
+        
+        
+        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+        
+        if language == "en" {
+            if let title = myDictionary["title_en"] as? String{
+                titleLabel!.text = title
+            }
+        }else if language == "es" {
+            
+            if let title = myDictionary["title"] as? String{
+                titleLabel!.text = title
+            }
         }
+        
         if let cellUnity = myDictionary["unity"] as? String{
             unity = cellUnity
         }
@@ -174,13 +187,13 @@ class SliderTableViewCell: GenericTableViewCell {
     
     override func setDefaults(defaultDTO: AlarmDTO,isCreate: Bool){
         
-        if titleLabel!.text == "TEMPERATURA"{
+        if titleLabel!.text == (NSLocalizedString("TEMPERATURA", comment: "")) {
             setDefaultValues(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp, isCreate: isCreate)
-        }else if titleLabel!.text == "VIENTO"{
+        }else if titleLabel!.text == (NSLocalizedString("VIENTO", comment: "")){
             setDefaultValues(defaultDTO.minWind, maxDefaultValue: defaultDTO.maxWind, isCreate: isCreate)
-        }else if titleLabel!.text == "HUMEDAD"{
+        }else if titleLabel!.text == (NSLocalizedString("HUMEDAD", comment: "")){
             setDefaultValues(defaultDTO.minHumidity, maxDefaultValue: defaultDTO.maxHumidity, isCreate: isCreate)
-        }else if titleLabel!.text == "NIEVE"{
+        }else if titleLabel!.text == (NSLocalizedString("NIEVE", comment: "")){
             setDefaultValues(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow, isCreate: isCreate)
         }
         
@@ -214,20 +227,20 @@ class SliderTableViewCell: GenericTableViewCell {
     override func resetValues(){
         self.sliderMaxLabel?.text = "Max \nOff"
         self.sliderMinLabel?.text = "Min \nOff"
-
+        
         if let minimumValue = myDictionary!["min"] as? Float{
-                sliderLeft!.minimumValue = minimumValue
-                sliderRight!.minimumValue = minimumValue
-                sliderLeft!.value = Float(minimumValue)
-                self.minValue = minimumValue
-
+            sliderLeft!.minimumValue = minimumValue
+            sliderRight!.minimumValue = minimumValue
+            sliderLeft!.value = Float(minimumValue)
+            self.minValue = minimumValue
+            
         }
         if let maximumValue = myDictionary!["max"] as? Float{
-                sliderLeft!.maximumValue = maximumValue
-                sliderRight!.maximumValue = maximumValue
-                sliderRight!.value = Float(maximumValue)
-                self.maxValue = maximumValue
-    
+            sliderLeft!.maximumValue = maximumValue
+            sliderRight!.maximumValue = maximumValue
+            sliderRight!.value = Float(maximumValue)
+            self.maxValue = maximumValue
+            
         }
     }
     
@@ -343,16 +356,17 @@ class SliderTableViewCell: GenericTableViewCell {
         let event = editAlarmDTO.event![0] as? EventDTO
         let weather = editAlarmDTO.weather![0] as? AlarmDTO
         
-        if titleLabel!.text == "TEMPERATURA"{
+        if titleLabel!.text == (NSLocalizedString("TEMPERATURA", comment: "")) {
             setEditValues(weather!.minTemp, maxDefaultValue: weather!.maxTemp, isEdit: isEdit)
-        }else if titleLabel!.text == "VIENTO"{
+        }else if titleLabel!.text == (NSLocalizedString("VIENTO", comment: "")){
             setEditValues(weather!.minWind, maxDefaultValue: weather!.maxWind, isEdit: isEdit)
-        }else if titleLabel!.text == "HUMEDAD"{
+        }else if titleLabel!.text == (NSLocalizedString("HUMEDAD", comment: "")){
             setEditValues(weather!.minHumidity, maxDefaultValue: weather!.maxHumidity, isEdit: isEdit)
-        }else if titleLabel!.text == "NIEVE"{
+        }else if titleLabel!.text == (NSLocalizedString("NIEVE", comment: "")){
             setEditValues(weather!.minSnow, maxDefaultValue: weather!.maxSnow, isEdit: isEdit)
+            
+            
         }
-        
     }
     
     func setEditValues(minDefaultValue: NSNumber, maxDefaultValue: NSNumber, isEdit: Bool){

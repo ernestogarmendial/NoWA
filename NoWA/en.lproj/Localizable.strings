@@ -49,3 +49,7 @@
 "V" = "Fr";
 "S" = "Sa";
 "D" = "Su";
+"TEMPERATURA" = "TEMPERATURE";
+"VIENTO" = "WIND";
+"HUMEDAD" = "HUMIDITY";
+"NIEVE" = "SNOW";

@@ -49,3 +49,7 @@
 "V" = "V";
 "S" = "S";
 "D" = "D";
+"TEMPERATURA" = "TEMPERATURA";
+"VIENTO" = "VIENTO";
+"HUMEDAD" = "HUMEDAD";
+"NIEVE" = "NIEVE";
