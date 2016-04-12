@@ -240,6 +240,8 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
                 if conditionID == weather?.condition {
                     
                     descriptionLabel!.text = condition.valueForKey("name") as? String
+                    self.condition = conditionID
+                    
                     self.firstTimeEdit = true
                     return
                 }

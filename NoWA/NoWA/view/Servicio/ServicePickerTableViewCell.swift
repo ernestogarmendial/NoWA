@@ -215,6 +215,8 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
                 if forecastID == weather?.service {
                     
                     selectedServiceLabel!.text = forecast.valueForKey("name") as? String
+                    self.service = forecastID
+
                     self.firstTimeEdit = true
                     return
                 }
