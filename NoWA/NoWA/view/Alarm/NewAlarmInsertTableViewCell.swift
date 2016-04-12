@@ -15,6 +15,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     var timeLabel: UITextField?
     var datePicker : UIDatePicker?
     var daysButtonsView : DaysButtonsView?
+    var amPmFormat : Bool! = false
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,7 +34,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         nameTextField = UITextField()
         nameTextField?.delegate = self
         nameTextField!.attributedPlaceholder =  NSAttributedString(string: NSLocalizedString("INGRESÁ UN NOMBRE ...", comment: "")
-,
+            ,
                                                                    attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         nameTextField!.textColor = .whiteColor()
         nameTextField!.font = UIFont.appLatoFontOfSize(16)
@@ -77,6 +78,20 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         daysButtonsView = DaysButtonsView()
         self.addSubview(daysButtonsView!)
         
+        
+        let locale = NSLocale.currentLocale()
+        
+        let dateFormat = NSDateFormatter.dateFormatFromTemplate("j", options: 0, locale: locale)!
+        
+        if dateFormat.rangeOfString("a") != nil {
+            print("12 hour")
+            amPmFormat = true
+        }
+        else {
+            print("24 hour")
+            amPmFormat = false
+        }
+        
         setupConstrains()
     }
     
@@ -86,8 +101,21 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     
     func onDatePickerValueChanged(datePicker: UIDatePicker){
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "hh:mm"
-        timeLabel!.text = String(dateFormatter.stringFromDate(datePicker.date))
+        
+        if amPmFormat == false {
+            dateFormatter.dateFormat = "hh:mm"
+            timeLabel!.text = String(dateFormatter.stringFromDate(datePicker.date))
+            
+        }
+        else {
+            dateFormatter.dateFormat = "hh:mm a"
+            let date = dateFormatter.dateFromString(String(dateFormatter.stringFromDate(datePicker.date)))
+            
+            dateFormatter.dateFormat = "HH:mm"
+            let date24 : String! = dateFormatter.stringFromDate(date!)
+            print(date24)
+            timeLabel!.text = date24
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -163,7 +191,6 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
                 datePicker!.setDate(unwrappedDate, animated: false)
             }
             
-            
             let hour = stamp.substringWithRange(NSRange(location: 11, length: 2))
             let min = stamp.substringWithRange(NSRange(location: 14, length: 2))
             
@@ -181,6 +208,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
             }
             
             self.firstTimeEdit = true
+            
         }
     }
     
