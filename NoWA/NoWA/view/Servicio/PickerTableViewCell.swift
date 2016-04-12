@@ -92,6 +92,10 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         }
     }
     
+    override func resetValues(){
+        descriptionLabel!.text = PickerTableViewCell.conditionsArray[0].valueForKey("name") as? String
+        condition = PickerTableViewCell.conditionsArray[0].valueForKey("conditionID") as? NSNumber
+    }
     
     func setupConstrains(){
         

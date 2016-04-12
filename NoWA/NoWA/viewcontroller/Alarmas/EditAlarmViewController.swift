@@ -134,6 +134,12 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         if self.useDefaults == true{
             if ServicioViewController.defaultData != nil {
                 genericCell.setDefaults(ServicioViewController.defaultData!,isCreate: true)
+                genericCell.resetedValues = false
+            }
+        }else{
+            if (genericCell.resetedValues == false) {
+                genericCell.resetValues()
+                genericCell.resetedValues = true
             }
         }
         if identificador == "AcceptButtonCell" || identificador == "DeleteButtonCell"{
@@ -200,6 +206,12 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             }
             
         }
+        
+        let isDefaultCell = tabla!.viewWithTag(102) as! DefaultCancelTableViewCell
+        if let isDefault = isDefaultCell.isSwtichActive {
+            newAlarmDTO?.isDefault = isDefault
+        }
+        
         let serviceCell = tabla!.viewWithTag(103) as! ServicePickerTableViewCell
         if let service = serviceCell.service{
             newAlarmDTO?.service = service
@@ -243,7 +255,6 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         if let prediction = predictionCell.prediction{
             newAlarmDTO?.prediction = prediction
         }
-        
         
         let alarmService : AlarmService = AlarmService()
         alarmService.editAlarm(dateTime: self.datetime! ,eventDTO: newAlarmEventDTO!, alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "editAlarmFinish:")

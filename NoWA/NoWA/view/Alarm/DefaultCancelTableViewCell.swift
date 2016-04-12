@@ -19,6 +19,7 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
     var cancelationLabel : UILabel?
     var adviceLabel : UILabel?
     var switchButton : UIButton?
+    var isSwtichActive : NSNumber?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -47,7 +48,7 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
         
         adviceLabel = UILabel()
         adviceLabel!.text = NSLocalizedString("ATENCION! Cualquiera de estos parámetros definirán la cancelación de tus alarmas"
-, comment: "")
+            , comment: "")
         adviceLabel!.textColor = .whiteColor()
         adviceLabel!.font = UIFont.appLatoFontOfSize(14)
         adviceLabel!.adjustsFontSizeToFitWidth = true
@@ -69,8 +70,10 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
         
         if sender.selected == true {
             self.defaultDelegate?.defaultButtonPressed()
+            isSwtichActive = 1
         } else {
             self.defaultDelegate?.defaultButtonDisabled()
+            isSwtichActive = 0
         }
         
     }
@@ -116,6 +119,9 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
         let event = editAlarmDTO.event![0] as? EventDTO
         let weather = editAlarmDTO.weather![0] as? AlarmDTO
         
+//        if weather!.isDefault == 1 {
+//            switchButton!.selected = true
+//        }
         
         
     }
