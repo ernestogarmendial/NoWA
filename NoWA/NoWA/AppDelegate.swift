@@ -93,7 +93,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if ( application.applicationState == UIApplicationState.Active ) {
             dispatch_async(dispatch_get_main_queue(), {
                 let path = NSBundle.mainBundle().pathForResource("ringtone", ofType: "mp3")!
-                AudioManager.sharedInstance.play(path)
+                if notification!["sound"] as! NSString! == "ringtone.mp3"{
+                    let path = NSBundle.mainBundle().pathForResource("ringtone", ofType: "mp3")!
+                    AudioManager.sharedInstance.play(path)
+                }
                 let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
                     AudioManager.sharedInstance.stop(path)

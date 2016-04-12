@@ -24,6 +24,8 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     var alarmStatus : NSNumber?
     var isEditing : Bool?
     
+    var shouldClear : Bool?
+    
     var alarmID : NSNumber?
     var editAlarmDTO : PersonalAlarmDTO?{
         didSet{
@@ -137,7 +139,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
                 genericCell.resetedValues = false
             }
         }else{
-            if (genericCell.resetedValues == false) {
+            if (genericCell.resetedValues == false && self.shouldClear == true) {
                 genericCell.resetValues()
                 genericCell.resetedValues = true
             }
@@ -342,6 +344,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         print("apretadooooooooooooo")
         
         self.useDefaults = true
+        self.shouldClear = false
         dispatch_async(dispatch_get_main_queue()) {
             
             self.tabla?.reloadData()
@@ -351,6 +354,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     
     func defaultButtonDisabled(){
         self.useDefaults = false
+        self.shouldClear = true
         dispatch_async(dispatch_get_main_queue()) {
             
             self.tabla?.reloadData()
