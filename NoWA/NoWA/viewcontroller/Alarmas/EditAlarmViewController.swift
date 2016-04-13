@@ -370,6 +370,10 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         
         let alert = UIAlertController(title: "ELIMINAR", message: "Realmente desea eliminar la alarma?", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Sí", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+            
+            let alarmService : AlarmService = AlarmService()
+            alarmService.deleteAlarm(alarmDTO: self.newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "deleteAlarmFinish:")
+            
             self.navigationController!.popToRootViewControllerAnimated(true)
         }))
         alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil))
@@ -378,8 +382,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
-        let alarmService : AlarmService = AlarmService()
-        alarmService.deleteAlarm(alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "deleteAlarmFinish:")
+
     }
     
     func deleteAlarmFinish (result : ServiceResult!){
