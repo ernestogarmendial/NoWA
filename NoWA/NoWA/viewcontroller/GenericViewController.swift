@@ -35,6 +35,7 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         
         pictureView = UIImageView()
         pictureView!.contentMode = .ScaleToFill
+//        pictureView!.contentMode = UIViewContentMode.ScaleAspectFill
         self.view.addSubview(pictureView!)
         self.view.bringSubviewToFront(tabla!)
         
@@ -63,7 +64,7 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         
         
         tabla?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
-        tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 180)
+        tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 182)
         tabla?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
         tabla?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
         
