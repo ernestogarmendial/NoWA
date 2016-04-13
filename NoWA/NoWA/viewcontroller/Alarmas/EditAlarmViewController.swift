@@ -158,7 +158,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     }
     
     func showAlert() {
-        let alert = UIAlertController(title: "Error", message: "La ubicación seleccionada no es válida", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Error", message: NSLocalizedString("La ubicación seleccionada no es válida", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         
         dispatch_async(dispatch_get_main_queue()) {
@@ -198,7 +198,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             }
             
             if ok == false{
-                let alert = UIAlertController(title: "Error", message: "La ubicación seleccionada no es válida", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: NSLocalizedString("La ubicación seleccionada no es válida", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 
                 dispatch_async(dispatch_get_main_queue()) {

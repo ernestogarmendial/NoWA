@@ -23,6 +23,8 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     var locations : [LocationDTO]?
     var locationsPicker:NSMutableArray!
     
+    var locationWroteRight : Bool = false
+    
     var serviceCalled : Bool = false
     
     static var locationsArray : NSMutableArray! = NSMutableArray()
@@ -50,7 +52,7 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         locationTextField = UITextField()
         locationTextField!.delegate = self
         locationTextField!.attributedPlaceholder =  NSAttributedString(string: NSLocalizedString("Ingresa el lugar donde hagas el deporte", comment: ""),
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+                                                                       attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         if self.place != nil{
             locationTextField!.text = self.place!
         }
@@ -110,8 +112,10 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     override func textFieldShouldReturn(textField: UITextField) -> Bool {
         super.textFieldShouldReturn(textField)
         if serviceCalled == false {
-            if textField.text != ""{
-                rightButtonPressed()
+            if locationWroteRight == false {
+                if textField.text != ""{
+                    rightButtonPressed()
+                }
             }
         }
         return true
@@ -148,17 +152,14 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        //
-        var ok : Bool = false
+        locationWroteRight = false
         for location in LocationTableViewCell.locationsArray{
             if location as? String == textField.text{
-                ok = true
+                locationWroteRight = true
+                return
             }
         }
         
-        if ok == true{
-            return
-        }
         if textField.text != ""{
             
             rightButtonPressed()
