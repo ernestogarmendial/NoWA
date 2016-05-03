@@ -25,6 +25,9 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         
+        let empty_perfil = UIImage(named: "empty_torneos")
+        emptyStateView?.image = empty_perfil
+        
         tabla?.delegate = self
         tabla?.dataSource = self
         tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
@@ -39,6 +42,13 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         let path = NSBundle.mainBundle().pathForResource("PerfilTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
         
+        if NSUserDefaults.standardUserDefaults().boolForKey("firstPerfil") == false {
+            self.entendidoButton.hidden = false
+            emptyStateView?.hidden = false
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstPerfil")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,7 +57,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if cellsArray != nil{
+        if cellsArray != nil && self.emptyStateView?.hidden == true {
             return cellsArray.count
         }else{
             return 0

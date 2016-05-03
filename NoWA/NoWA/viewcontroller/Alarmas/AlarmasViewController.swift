@@ -28,6 +28,9 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         
+        let empty_alarmas = UIImage(named: "empty_torneos")
+        emptyStateView?.image = empty_alarmas
+        
         self.tabla!.delegate = self
         self.tabla!.dataSource = self
         self.tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))

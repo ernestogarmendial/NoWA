@@ -70,6 +70,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         timeLabel!.adjustsFontSizeToFitWidth = true
         timeLabel!.textAlignment = .Left
         timeLabel!.inputView = datePicker!
+        timeLabel!.backgroundColor = .redColor()
         timeLabel!.inputAccessoryView = toolbar
         self.addSubview(timeLabel!)
         
@@ -104,18 +105,20 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         
         if amPmFormat == false {
             dateFormatter.dateFormat = "hh:mm"
-            timeLabel!.text = String(dateFormatter.stringFromDate(datePicker.date))
+            //            timeLabel!.text = String(dateFormatter.stringFromDate(datePicker.date))
             
         }
         else {
             dateFormatter.dateFormat = "hh:mm a"
-            let date = dateFormatter.dateFromString(String(dateFormatter.stringFromDate(datePicker.date)))
-            
-            dateFormatter.dateFormat = "HH:mm"
-            let date24 : String! = dateFormatter.stringFromDate(date!)
-            print(date24)
-            timeLabel!.text = date24
+            //            let date = dateFormatter.dateFromString(String(dateFormatter.stringFromDate(datePicker.date)))
+            //
+            //            dateFormatter.dateFormat = "HH:mm"
+            //            let date24 : String! = dateFormatter.stringFromDate(date!)
+            //            print(date24)
+            //            timeLabel!.text = date24
         }
+        timeLabel!.text = String(dateFormatter.stringFromDate(datePicker.date))
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -136,7 +139,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         timeLabel?.autoPinEdge(.Top, toEdge: .Bottom, ofView: nameTextField!, withOffset: 10)
         timeLabel?.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 10)
         //        timeLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
-        timeLabel?.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.5)
+        timeLabel?.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.7)
         
         
         daysButtonsView?.autoPinEdge(.Top, toEdge: .Bottom, ofView: timeLabel!)
@@ -148,7 +151,9 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
     
     override func setItems(myDictionary: NSDictionary){
         
-        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+        //        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+        let lang =  NSLocale.preferredLanguages().first! as NSString
+        let language = lang.substringWithRange(NSRange(location: 0, length: 2))
         
         if language == "en" {
             if let newAlertLabelText = myDictionary["title_en"] as? String{
@@ -159,6 +164,12 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
             if let newAlertLabelText = myDictionary["title"] as? String{
                 newAlertLabel!.text = newAlertLabelText
             }
+        }
+        
+        if amPmFormat == false {
+            
+        } else {
+            
         }
         
         let dateString = timeLabel!.text
@@ -179,6 +190,9 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
             
             self.nameTextField!.text = event?.name
             
+            
+            
+            
             let stamp = event!.stamp! as NSString
             
             timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
@@ -194,7 +208,57 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
             let hour = stamp.substringWithRange(NSRange(location: 11, length: 2))
             let min = stamp.substringWithRange(NSRange(location: 14, length: 2))
             
-            self.timeLabel!.text = "\(hour):\(min)"
+            if amPmFormat == false {
+                self.timeLabel!.text = "\(hour):\(min)"
+            } else {
+                var hourAMPM : String!
+                switch hour {
+                case "00":
+                    hourAMPM = "12"
+                case "13":
+                    hourAMPM = "01"
+                case "14":
+                    hourAMPM = "02"
+                case "15":
+                    hourAMPM = "03"
+                case "16":
+                    hourAMPM = "04"
+                case "17":
+                    hourAMPM = "05"
+                case "18":
+                    hourAMPM = "06"
+                case "19":
+                    hourAMPM = "07"
+                case "20":
+                    hourAMPM = "08"
+                case "21":
+                    hourAMPM = "09"
+                case "22":
+                    hourAMPM = "10"
+                case "23":
+                    hourAMPM = "11"
+                case "24":
+                    hourAMPM = "12"
+                default:
+                    print("default")
+                }
+                
+                if hourAMPM != nil{
+                    self.timeLabel!.text = "\(hourAMPM):\(min) PM"
+                } else {
+                    self.timeLabel!.text = "\(hour):\(min) AM"
+                }
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             if let daysString : String = event!.repetition{
                 let daysArray : NSArray = daysString.componentsSeparatedByString(",")
@@ -240,7 +304,49 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         let hour = stamp.substringWithRange(NSRange(location: 11, length: 2))
         let min = stamp.substringWithRange(NSRange(location: 14, length: 2))
         
-        self.timeLabel!.text = "\(hour):\(min)"
+        if amPmFormat == false {
+            self.timeLabel!.text = "\(hour):\(min)"
+        } else {
+            var hourAMPM : String!
+            switch hour {
+            case "00":
+                hourAMPM = "12"
+            case "13":
+                hourAMPM = "01"
+            case "14":
+                hourAMPM = "02"
+            case "15":
+                hourAMPM = "03"
+            case "16":
+                hourAMPM = "04"
+            case "17":
+                hourAMPM = "05"
+            case "18":
+                hourAMPM = "06"
+            case "19":
+                hourAMPM = "07"
+            case "20":
+                hourAMPM = "08"
+            case "21":
+                hourAMPM = "09"
+            case "22":
+                hourAMPM = "10"
+            case "23":
+                hourAMPM = "11"
+            case "24":
+                hourAMPM = "12"
+            default:
+                print("default")
+            }
+            
+            if hourAMPM != nil{
+                self.timeLabel!.text = "\(hourAMPM):\(min) PM"
+            } else {
+                self.timeLabel!.text = "\(hour):\(min) AM"
+            }
+            
+        }
+
         
     }
     

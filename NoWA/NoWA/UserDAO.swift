@@ -9,7 +9,7 @@
 import UIKit
 
 class UserDAO: GenericDAO {
-   
+    
     func login(name _name: String!, code _code: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         
         if(!self.register()){
@@ -50,9 +50,9 @@ class UserDAO: GenericDAO {
         var url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
-            method: RKRequestMethod.GET,
-            path: url,
-            parameters: nil)
+                                                        method: RKRequestMethod.GET,
+                                                        path: url,
+                                                        parameters: nil)
         
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
@@ -60,11 +60,11 @@ class UserDAO: GenericDAO {
             let userDTO = response.array()[0] as! UserDTO
             self.finish(userDTO)
             },
-            failure: { (operation, error) in
-                self.finish(error)
+                                                failure: { (operation, error) in
+                                                    self.finish(error)
         })
         operation.start()
-
+        
     }
     
     func loginFacebook(username: NSString!, email: NSString!, fbID : NSString!, handler _handler : ((Operation,AnyObject)->Void)! ) {
@@ -107,9 +107,9 @@ class UserDAO: GenericDAO {
         var url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
-            method: RKRequestMethod.GET,
-            path: url,
-            parameters: nil)
+                                                        method: RKRequestMethod.GET,
+                                                        path: url,
+                                                        parameters: nil)
         
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
@@ -117,8 +117,8 @@ class UserDAO: GenericDAO {
             let userDTO = response.array()[0] as! UserDTO
             self.finish(userDTO)
             },
-            failure: { (operation, error) in
-                self.finish(error)
+                                                failure: { (operation, error) in
+                                                    self.finish(error)
         })
         operation.start()
         
@@ -179,21 +179,21 @@ class UserDAO: GenericDAO {
             if updateDTO.instagram == ""{
                 updateDTO.instagram = "-"
             }
-        }        
+        }
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
         let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken") as! String
         
-//        /name/quote/facebook/twitter/instagram/location/notification/token/
+        //        /name/quote/facebook/twitter/instagram/location/notification/token/
         let originalURL = "user/update/\(updateDTO.username!)/\(updateDTO.phrase!)/\(updateDTO.facebook!)/\(updateDTO.twitter!)/\(updateDTO.instagram!)/1/1/\(token)/"
         
         var url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
-            method: RKRequestMethod.GET,
-            path: url,
-            parameters: nil)
+                                                        method: RKRequestMethod.GET,
+                                                        path: url,
+                                                        parameters: nil)
         
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
@@ -201,8 +201,9 @@ class UserDAO: GenericDAO {
             let userDTO = response.array()[0] as! UserDTO
             self.finish(userDTO)
             },
-            failure: { (operation, error) in
-                self.finish(error)
+                                                failure: { (operation, error) in
+                                                    self.printResponse(operation)
+                                                    self.finish(error)
         })
         operation.start()
         
@@ -244,7 +245,7 @@ class UserDAO: GenericDAO {
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
         let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken") as! String
-
+        
         print ("user/register/\(_name)/\(_code)/ios/\(deviceToken)/")
         
         let originalURL = "user/register/\(_name)/\(_code)/ios/\(deviceToken)/"
@@ -252,23 +253,28 @@ class UserDAO: GenericDAO {
         var url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
-            method: RKRequestMethod.GET,
-            path: url,
-            parameters: nil)
+                                                        method: RKRequestMethod.GET,
+                                                        path: url,
+                                                        parameters: nil)
         
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in
-            let userDTO = response.array()[0] as! UserDTO
-            self.finish(userDTO)
+            if response != nil{
+                let userDTO = response.array()[0] as! UserDTO
+                self.finish(userDTO)
+            }else{
+                self.finish([])
+            }
             },
-            failure: { (operation, error) in
-                self.finish(nil)
+                                                failure: { (operation, error) in
+                                                    self.printResponse(operation)
+                                                    self.finish([])
         })
         operation.start()
         
     }
-
+    
     func recover(name _name: String!, handler _handler : ((Operation,AnyObject)->Void)! ) {
         
         if(!self.register()){
@@ -291,12 +297,12 @@ class UserDAO: GenericDAO {
         let originalURL = "user/recover/\(_name)/"
         
         var url = self.encodeURL(originalURL)
-
+        
         
         let request = objectManager.requestWithObject(  nil,
-            method: RKRequestMethod.GET,
-            path: url,
-            parameters: nil)
+                                                        method: RKRequestMethod.GET,
+                                                        path: url,
+                                                        parameters: nil)
         
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
@@ -304,12 +310,12 @@ class UserDAO: GenericDAO {
             let recoverDTO = response.array()[0] as! RecoverDTO
             self.finish(recoverDTO)
             },
-            failure: { (operation, error) in
-                self.finish(nil)
+                                                failure: { (operation, error) in
+                                                    self.finish(nil)
         })
         operation.start()
         
     }
-
-
+    
+    
 }

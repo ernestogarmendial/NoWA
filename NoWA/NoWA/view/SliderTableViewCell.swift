@@ -146,7 +146,10 @@ class SliderTableViewCell: GenericTableViewCell {
         
         
         
-        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+//        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+//        
+        let lang =  NSLocale.preferredLanguages().first! as NSString
+        let language = lang.substringWithRange(NSRange(location: 0, length: 2))
         
         if language == "en" {
             if let title = myDictionary["title_en"] as? String{
@@ -189,11 +192,11 @@ class SliderTableViewCell: GenericTableViewCell {
         
         if titleLabel!.text == (NSLocalizedString("TEMPERATURA", comment: "")) {
             setDefaultValues(defaultDTO.minTemp, maxDefaultValue: defaultDTO.maxTemp, isCreate: isCreate)
-        }else if titleLabel!.text == (NSLocalizedString("VIENTO", comment: "")){
+        }else if titleLabel!.text == (NSLocalizedString("VIENTO", comment: "")) {
             setDefaultValues(defaultDTO.minWind, maxDefaultValue: defaultDTO.maxWind, isCreate: isCreate)
-        }else if titleLabel!.text == (NSLocalizedString("HUMEDAD", comment: "")){
+        }else if titleLabel!.text == (NSLocalizedString("HUMEDAD", comment: "")) {
             setDefaultValues(defaultDTO.minHumidity, maxDefaultValue: defaultDTO.maxHumidity, isCreate: isCreate)
-        }else if titleLabel!.text == (NSLocalizedString("NIEVE", comment: "")){
+        }else if titleLabel!.text == (NSLocalizedString("NIEVE", comment: "")) {
             setDefaultValues(defaultDTO.minSnow, maxDefaultValue: defaultDTO.maxSnow, isCreate: isCreate)
         }
         

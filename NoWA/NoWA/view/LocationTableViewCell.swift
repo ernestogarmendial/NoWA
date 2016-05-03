@@ -92,7 +92,9 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
             rightButton!.setImage(UIImage(named: right_icon), forState: UIControlState.Normal)
         }
         
-        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+//        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+        let lang =  NSLocale.preferredLanguages().first! as NSString
+        let language = lang.substringWithRange(NSRange(location: 0, length: 2))
         
         if language == "en" {
             if let title = myDictionary["title_en"] as? String{

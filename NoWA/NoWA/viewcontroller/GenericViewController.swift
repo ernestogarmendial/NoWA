@@ -13,8 +13,8 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
     var tabla : UITableView?
     var pictureView : UIImageView?
     var emptyStateView : UIImageView?
+    var entendidoButton : TTPopButton!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +52,15 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         self.view.addSubview(emptyStateView!)
         self.view.bringSubviewToFront(emptyStateView!)
         
+        entendidoButton = TTPopButton()
+        entendidoButton.backgroundColor = UIColor.loginBlueColor()
+        entendidoButton.setTitle("OK!", forState: UIControlState.Normal)
+        entendidoButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
+        entendidoButton.addTarget(self, action: #selector(GenericViewController.entendidoPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        entendidoButton.layer.cornerRadius = 20
+        self.view.addSubview(entendidoButton)
+        entendidoButton.hidden = true
+        
         pictureView?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view)
         pictureView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: -2)
         pictureView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
@@ -62,12 +71,22 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         emptyStateView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view, withOffset: -10)
         emptyStateView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -70)
         
+        entendidoButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
+        entendidoButton.autoSetDimension(ALDimension.Height, toSize: 40)
+        entendidoButton.autoSetDimension(ALDimension.Width, toSize: self.view.frame.width * 0.3)
+        entendidoButton.autoPinEdge(ALEdge.Top, toEdge: .Top, ofView: self.view, withOffset: self.view.frame.height * 0.15)
         
         tabla?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
         tabla?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view, withOffset: 182)
         tabla?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
         tabla?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
         
+    }
+    
+    func entendidoPressed() {
+        self.emptyStateView?.hidden = true
+        self.entendidoButton.hidden = true
+        self.tabla?.reloadData()
     }
     
     func dismissKeyboard(){

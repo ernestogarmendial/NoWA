@@ -133,9 +133,15 @@ class UserService: GenericService {
             let user = result as? UserDTO;
             
             if(user == nil || (user != nil && user!.errorTitle != nil)){
-                serviceResult.addErrorsFromDTO(user!)
+//                serviceResult.addErrorsFromDTO(user!)
+//                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+                serviceResult.addError("error")
                 self.callMessage(target: _target, message: _message, withResult: serviceResult)
             }else{
+                if(result as! NSObject == []){
+                    serviceResult.addError("error")
+                    self.callMessage(target: _target, message: _message, withResult: serviceResult)
+                }
                 
                 UserService.currentUser = result as! UserDTO;
                 //

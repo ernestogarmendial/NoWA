@@ -10,6 +10,8 @@ import UIKit
 
 class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, DefaultCellDelegate, LocationTableViewCellDelegate {
     
+    var amPmFormat : Bool! = false
+    
     var newAlarmDTO : AlarmDTO?
     var newAlarmEventDTO : EventDTO?
     var cellsArray: NSMutableArray!
@@ -49,8 +51,8 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         tabla!.addGestureRecognizer(tap)
         
-//        let image = UIImage(named: "create_alarm_background")
-//        pictureView?.image = image
+        //        let image = UIImage(named: "create_alarm_background")
+        //        pictureView?.image = image
         
         tabla?.delegate = self
         tabla?.dataSource = self
@@ -70,6 +72,18 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         let path = NSBundle.mainBundle().pathForResource("EditAlarmCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
         
+        let locale = NSLocale.currentLocale()
+        
+        let dateFormat = NSDateFormatter.dateFormatFromTemplate("j", options: 0, locale: locale)!
+        
+        if dateFormat.rangeOfString("a") != nil {
+            print("12 hour")
+            amPmFormat = true
+        }
+        else {
+            print("24 hour")
+            amPmFormat = false
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -279,7 +293,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         dispatch_async(dispatch_get_main_queue()) {
             self.presentViewController(alert, animated: true, completion: nil)
         }
-
+        
         
     }
     
@@ -332,12 +346,58 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         
         let timeLabel = insertCell.timeLabel!.text! as NSString
         
-        
         let hour = timeLabel.substringWithRange(NSRange(location: 0, length: 2))
         let minute = timeLabel.substringWithRange(NSRange(location: 3, length: 2))
         
-        //        dd-MM-yyyy-HH-mm-ss
-        self.datetime = "\(day!)-\(month!)-\(year!)-\(hour)-\(minute)-00"
+        if amPmFormat == true {
+            let amPm = timeLabel.substringWithRange(NSRange(location: 6, length: 2))
+            if amPm != "" {
+                var hourAMPM : String!
+                
+                if amPm == "PM"{
+                    switch hour {
+                    case "00":
+                        hourAMPM = "12"
+                    case "01":
+                        hourAMPM = "13"
+                    case "02":
+                        hourAMPM = "14"
+                    case "03":
+                        hourAMPM = "15"
+                    case "04":
+                        hourAMPM = "16"
+                    case "05":
+                        hourAMPM = "17"
+                    case "06":
+                        hourAMPM = "18"
+                    case "07":
+                        hourAMPM = "19"
+                    case "08":
+                        hourAMPM = "20"
+                    case "09":
+                        hourAMPM = "21"
+                    case "10":
+                        hourAMPM = "22"
+                    case "11":
+                        hourAMPM = "23"
+                    case "12":
+                        hourAMPM = "12"
+                    default:
+                        print("default")
+                    }
+                    self.datetime = "\(day!)-\(month!)-\(year!)-\(hourAMPM)-\(minute)-00"
+                    
+                }else{
+                    self.datetime = "\(day!)-\(month!)-\(year!)-\(hour)-\(minute)-00"
+                }
+            } else {
+                //        dd-MM-yyyy-HH-mm-ss
+                self.datetime = "\(day!)-\(month!)-\(year!)-\(hour)-\(minute)-00"
+            }
+        } else {
+            //        dd-MM-yyyy-HH-mm-ss
+            self.datetime = "\(day!)-\(month!)-\(year!)-\(hour)-\(minute)-00"
+        }
     }
     
     func defaultButtonPressed(){
@@ -382,7 +442,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
-
+        
     }
     
     func deleteAlarmFinish (result : ServiceResult!){
@@ -391,14 +451,14 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             return
         }
         
-//        let alert = UIAlertController(title: "ELIMINAR", message: "Se ha eliminado la alarma", preferredStyle: UIAlertControllerStyle.Alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
-//            self.navigationController!.popToRootViewControllerAnimated(true)
-//        }))
-//        
-//        dispatch_async(dispatch_get_main_queue()) {
-//            self.presentViewController(alert, animated: true, completion: nil)
-//        }
+        //        let alert = UIAlertController(title: "ELIMINAR", message: "Se ha eliminado la alarma", preferredStyle: UIAlertControllerStyle.Alert)
+        //        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+        //            self.navigationController!.popToRootViewControllerAnimated(true)
+        //        }))
+        //
+        //        dispatch_async(dispatch_get_main_queue()) {
+        //            self.presentViewController(alert, animated: true, completion: nil)
+        //        }
         
     }
 }

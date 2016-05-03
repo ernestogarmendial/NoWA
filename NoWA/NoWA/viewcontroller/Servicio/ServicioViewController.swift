@@ -33,6 +33,9 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         
+        let empty_servicio = UIImage(named: "empty_torneos")
+        emptyStateView?.image = empty_servicio
+        
         tabla?.delegate = self
         tabla?.dataSource = self
         tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
@@ -48,8 +51,15 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         let path = NSBundle.mainBundle().pathForResource("ServicioTabCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
         
-        getDefaults()
         
+        if NSUserDefaults.standardUserDefaults().boolForKey("firstServicio") == false {
+            self.entendidoButton.hidden = false
+            emptyStateView?.hidden = false
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstServicio")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        getDefaults()
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -64,7 +74,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if cellsArray != nil{
+        if cellsArray != nil && self.emptyStateView?.hidden == true {
             return cellsArray.count
         }else{
             return 0
@@ -233,7 +243,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         let delay = 0.5 * Double(NSEC_PER_SEC)
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-        
+            
             self.tabla!.reloadData()
         }
     }

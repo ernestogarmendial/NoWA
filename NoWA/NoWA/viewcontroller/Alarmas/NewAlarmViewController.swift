@@ -31,6 +31,9 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         tabla!.addGestureRecognizer(tap)
         
+        let empty_newalarm = UIImage(named: "empty_torneos")
+        emptyStateView?.image = empty_newalarm
+        
         tabla?.delegate = self
         tabla?.dataSource = self
         
@@ -46,6 +49,13 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         let path = NSBundle.mainBundle().pathForResource("NewAlarmCells", ofType: "plist")
         self.cellsArray = NSMutableArray(contentsOfFile: path!)
+        
+        if NSUserDefaults.standardUserDefaults().boolForKey("firstNuevaAlarma") == false {
+            self.entendidoButton.hidden = false
+            emptyStateView?.hidden = false
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstNuevaAlarma")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         
     }
     
@@ -72,7 +82,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if cellsArray != nil{
+        if cellsArray != nil && self.emptyStateView?.hidden == true {
             return cellsArray.count
         }else{
             return 0

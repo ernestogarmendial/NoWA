@@ -10,6 +10,7 @@ import UIKit
 
 class AlarmItemTableViewCell: GenericTableViewCell {
     
+    var amPmFormat : Bool! = false
     var serviceIcon: UIImageView?
     var serviceLabel: UILabel?
     var serviceView : UIView?
@@ -35,9 +36,68 @@ class AlarmItemTableViewCell: GenericTableViewCell {
             }
             alarmID = self.event!.eventID
             
+            
             let stamp = self.event!.stamp! as NSString
             
-            timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
+            let hour = stamp.substringWithRange(NSRange(location: 11, length: 2))
+            let min = stamp.substringWithRange(NSRange(location: 14, length: 2))
+            
+            if amPmFormat == false {
+                timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
+            } else {
+                var am = false
+                var hourAMPM : String!
+                switch hour {
+                case "12":
+                    hourAMPM = "12"
+                case "13":
+                    hourAMPM = "01"
+                case "14":
+                    hourAMPM = "02"
+                case "15":
+                    hourAMPM = "03"
+                case "16":
+                    hourAMPM = "04"
+                case "17":
+                    hourAMPM = "05"
+                case "18":
+                    hourAMPM = "06"
+                case "19":
+                    hourAMPM = "07"
+                case "20":
+                    hourAMPM = "08"
+                case "21":
+                    hourAMPM = "09"
+                case "22":
+                    hourAMPM = "10"
+                case "23":
+                    hourAMPM = "11"
+                case "24":
+                    hourAMPM = "12"
+                    am = true
+                default:
+                    print("default")
+                }
+                
+                if hourAMPM != nil{
+                    if am == true {
+                        self.timeLabel!.text = "\(hourAMPM):\(min) AM"
+                    }else {
+                        self.timeLabel!.text = "\(hourAMPM):\(min) PM"
+                    }
+                } else {
+                    self.timeLabel!.text = "\(hour):\(min) AM"
+                }
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
             let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
@@ -69,13 +129,13 @@ class AlarmItemTableViewCell: GenericTableViewCell {
                 let forecastID = forecast.valueForKey("forecastID") as! NSNumber
                 
                 if forecastID == weather?.service {
-                
+                    
                     serviceLabel!.text = forecast.valueForKey("name") as? String
-
+                    
                     return
                 }
                 
-            
+                
             }
             
             self.reloadData = false
@@ -117,6 +177,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         timeLabel!.adjustsFontSizeToFitWidth = true
         timeLabel!.textAlignment = .Left
         timeLabel!.numberOfLines = 1
+        timeLabel!.backgroundColor = .yellowColor()
         self.addSubview(timeLabel!)
         
         dateLabel = UILabel()
@@ -149,6 +210,19 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         alarmSwitch!.setImage(UIImage(named: "switch_on"), forState: UIControlState.Normal)
         alarmSwitch!.setImage(UIImage(named: "switch_off"), forState: UIControlState.Selected)
         self.addSubview(alarmSwitch!)
+        
+        let locale = NSLocale.currentLocale()
+        
+        let dateFormat = NSDateFormatter.dateFormatFromTemplate("j", options: 0, locale: locale)!
+        
+        if dateFormat.rangeOfString("a") != nil {
+            print("12 hour")
+            amPmFormat = true
+        }
+        else {
+            print("24 hour")
+            amPmFormat = false
+        }
         
         setupConstrains()
     }
