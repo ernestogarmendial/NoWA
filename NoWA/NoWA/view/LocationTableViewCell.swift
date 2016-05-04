@@ -156,8 +156,9 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
     func textFieldDidEndEditing(textField: UITextField) {
         locationWroteRight = false
         for location in LocationTableViewCell.locationsArray{
-            if location as? String == textField.text{
+            if location.uppercaseString as? String == textField.text?.uppercaseString{
                 locationWroteRight = true
+                textField.text = location as! String
                 return
             }
         }

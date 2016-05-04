@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Social
 
-class PerfilViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, WebButtonDelegate {
+class PerfilViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, WebButtonDelegate, ShareSocialTableViewCellDelegate {
     
     var cellsArray: NSMutableArray!
     
@@ -33,6 +34,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         tabla!.tableFooterView = UIView(frame: CGRect(x: 0,y: 0,width: 0,height: self.tabBarController!.tabBar.frame.height))
         
         self.tabla!.registerClass(PictureTableViewCell.self, forCellReuseIdentifier: "Picture")
+        self.tabla!.registerClass(ShareSocialTableViewCell.self, forCellReuseIdentifier: "Share")
         self.tabla!.registerClass(AddressTableViewCell.self, forCellReuseIdentifier: "Address")
         self.tabla!.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
         self.tabla!.registerClass(WebProfileTableViewCell.self, forCellReuseIdentifier: "Web")
@@ -93,6 +95,10 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         
         if identificador == "Web"{
             genericCell.webDelegate = self
+        }
+        
+        if identificador == "Share"{
+            genericCell.shareDelegate = self
         }
         
         if identificador == "ButtonCell"{
@@ -173,6 +179,49 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
             UIApplication.sharedApplication().openURL(NSURL(string: url)!)
         }
         
+    }
+    
+    func shareFb() {
+        
+        //        https://developers.facebook.com/docs/apps/review/prefill
+        //        https://developers.facebook.com/docs/apps/review/prefill
+        //        https://developers.facebook.com/docs/apps/review/prefill
+        //        https://developers.facebook.com/docs/apps/review/prefill
+        
+        
+        let screen = UIScreen.mainScreen()
+        
+        if let window = UIApplication.sharedApplication().keyWindow {
+            UIGraphicsBeginImageContextWithOptions(screen.bounds.size, false, 0);
+            window.drawViewHierarchyInRect(window.bounds, afterScreenUpdates: false)
+            let composeSheet = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            composeSheet.setInitialText("http://nowakeapp.com")
+            composeSheet.addImage(UIImage(named: "panda"))
+            composeSheet.addURL(NSURL(string: "http://nowakeapp.com")!)
+            
+            presentViewController(composeSheet, animated: true, completion: nil)
+        }
+    }
+    func shareTwitter() {
+        let screen = UIScreen.mainScreen()
+        
+        if let window = UIApplication.sharedApplication().keyWindow {
+            UIGraphicsBeginImageContextWithOptions(screen.bounds.size, false, 0);
+            window.drawViewHierarchyInRect(window.bounds, afterScreenUpdates: false)
+            
+            let composeSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            composeSheet.setInitialText("http://nowakeapp.com")
+            composeSheet.addImage(UIImage(named: "panda"))
+            composeSheet.addURL(NSURL(string: "http://nowakeapp.com")!)
+            
+            presentViewController(composeSheet, animated: true, completion: nil)
+        }
+    }
+    
+    func shareInstagram() {
+//        dispatch_async(dispatch_get_main_queue()) {
+//            UIApplication.sharedApplication().openURL(NSURL(string: "http://nowakeapp.com")!)
+//        }
     }
     
 }

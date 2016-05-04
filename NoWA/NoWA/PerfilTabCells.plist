@@ -10,6 +10,12 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
+		<string>Share</string>
+		<key>height</key>
+		<integer>70</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
 		<string>Address</string>
 		<key>icon</key>
 		<string>envelope</string>

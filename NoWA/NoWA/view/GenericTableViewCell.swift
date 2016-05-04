@@ -41,6 +41,9 @@ class GenericTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     var webDelegate : WebButtonDelegate?
+    
+    var shareDelegate : ShareSocialTableViewCellDelegate?
+
     var buttonDelegate : ButtonFooterDelegate?
     
     var defaultDelegate : DefaultCellDelegate?

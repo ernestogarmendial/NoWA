@@ -6,6 +6,8 @@
 //  Copyright © 2015 Ernesto Garmendia Luis. All rights reserved.
 //
 
+import Social
+
 class CreateAccountViewController: LoginViewController, UIGestureRecognizerDelegate {
     
     var backgroundImage : UIImageView!

@@ -138,6 +138,9 @@ class RegisterViewController: LoginViewController {
                         print("User Email is: \(userEmail)")
                         let fbID : NSString = result.valueForKey("id") as! NSString
                         
+                        NSUserDefaults.standardUserDefaults().setValue(fbID, forKey: "fbID")
+                        NSUserDefaults.standardUserDefaults().synchronize()
+                        
                         self.callFacebookService(userName, email: userEmail, fbID : fbID)
                     }
                 })

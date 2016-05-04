@@ -33,6 +33,8 @@
 		9425DB401C2A3022003CDB83 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB3F1C2A3022003CDB83 /* UserService.swift */; };
 		9425DB421C2A304A003CDB83 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB411C2A304A003CDB83 /* UserDTO.swift */; };
 		9425DB441C2A3076003CDB83 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425DB431C2A3076003CDB83 /* UserDAO.swift */; };
+		942A21691CD8476F008F5FC6 /* iphone_6_original.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 942A21681CD8476F008F5FC6 /* iphone_6_original.mp3 */; };
+		942A216B1CD981FC008F5FC6 /* ShareSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A216A1CD981FC008F5FC6 /* ShareSocialTableViewCell.swift */; };
 		942A99661C1A12A400B12292 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A99651C1A12A400B12292 /* GenericTableViewController.swift */; };
 		942A99701C1A13BF00B12292 /* TorneosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A996F1C1A13BF00B12292 /* TorneosTableViewController.swift */; };
 		942A99721C1A13D900B12292 /* ServicioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A99711C1A13D900B12292 /* ServicioTableViewController.swift */; };
@@ -154,6 +156,8 @@
 		9425DB3F1C2A3022003CDB83 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		9425DB411C2A304A003CDB83 /* UserDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		9425DB431C2A3076003CDB83 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
+		942A21681CD8476F008F5FC6 /* iphone_6_original.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iphone_6_original.mp3; sourceTree = "<group>"; };
+		942A216A1CD981FC008F5FC6 /* ShareSocialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareSocialTableViewCell.swift; path = view/Perfil/ShareSocialTableViewCell.swift; sourceTree = "<group>"; };
 		942A99651C1A12A400B12292 /* GenericTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTableViewController.swift; path = viewcontroller/GenericTableViewController.swift; sourceTree = "<group>"; };
 		942A996F1C1A13BF00B12292 /* TorneosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TorneosTableViewController.swift; path = viewcontroller/Torneos/TorneosTableViewController.swift; sourceTree = "<group>"; };
 		942A99711C1A13D900B12292 /* ServicioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServicioTableViewController.swift; path = viewcontroller/Servicio/ServicioTableViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 			children = (
 				94D5FE741C7161F00022A630 /* TTPopButton.h */,
 				94D5FE751C7161F00022A630 /* TTPopButton.m */,
+				942A21681CD8476F008F5FC6 /* iphone_6_original.mp3 */,
 				94D5FE6C1C7159800022A630 /* ringtone.mp3 */,
 				94D5FE661C7156560022A630 /* AudioManager.swift */,
 				941109C01C0CDF3C00E67905 /* UIColorExtension.swift */,
@@ -417,6 +422,7 @@
 				94F069871C571C5D00F88340 /* TournamentEventTableViewCell.swift */,
 				942C18FC1C57C71C0071D10A /* CancelEventButtonTableViewCell.swift */,
 				94F3125C1C9BBF8400CAB4C0 /* WebProfileTableViewCell.swift */,
+				942A216A1CD981FC008F5FC6 /* ShareSocialTableViewCell.swift */,
 			);
 			name = Perfil;
 			sourceTree = "<group>";
@@ -711,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94D5FE6D1C7159800022A630 /* ringtone.mp3 in Resources */,
+				942A21691CD8476F008F5FC6 /* iphone_6_original.mp3 in Resources */,
 				94F3125B1C9B907900CAB4C0 /* EditTournamentCells.plist in Resources */,
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
 				942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */,
@@ -849,6 +856,7 @@
 				94457EDB1C4D8224004D4E80 /* CheckAlarmDTO.swift in Sources */,
 				942C19051C5A9B130071D10A /* DefaultCancelTableViewCell.swift in Sources */,
 				94D5FE631C7052EB0022A630 /* StartLoggedViewController.swift in Sources */,
+				942A216B1CD981FC008F5FC6 /* ShareSocialTableViewCell.swift in Sources */,
 				941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */,
 				941CA1381C3F5911004E4969 /* AlarmDAO.swift in Sources */,
 				941CA1401C3F6268004E4969 /* TeamDTO.swift in Sources */,

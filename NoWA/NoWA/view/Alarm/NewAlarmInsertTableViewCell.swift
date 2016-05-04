@@ -70,7 +70,7 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         timeLabel!.adjustsFontSizeToFitWidth = true
         timeLabel!.textAlignment = .Left
         timeLabel!.inputView = datePicker!
-        timeLabel!.backgroundColor = .redColor()
+//        timeLabel!.backgroundColor = .redColor()
         timeLabel!.inputAccessoryView = toolbar
         self.addSubview(timeLabel!)
         

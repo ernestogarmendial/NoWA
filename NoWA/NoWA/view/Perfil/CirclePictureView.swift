@@ -20,13 +20,24 @@ class CirclePictureView: UIView {
         
         borderImage = UIImageView(image: UIImage(named: "profile_photo_container"))
         self.addSubview(borderImage!)
+
         
-        picture = UIImageView(image: UIImage(named: "flanders"))
+        
+        picture = UIImageView(image: UIImage(named: "panda"))
         picture?.backgroundColor = .yellowColor()
         picture?.contentMode = UIViewContentMode.ScaleAspectFill
         picture?.layer.masksToBounds = true
         UIGraphicsBeginImageContext(picture!.bounds.size)
         self.addSubview(picture!)
+        
+        let fbID = NSUserDefaults.standardUserDefaults().valueForKey("fbID") as! String!
+        var facebookProfileUrl = "http://graph.facebook.com/\(fbID)/picture?type=large"
+        
+        if let url  = NSURL(string: facebookProfileUrl),
+            data = NSData(contentsOfURL: url)
+        {
+            picture!.image = UIImage(data: data)
+        }
         
         self.autoSetDimension(.Width, toSize: 120)
         self.autoSetDimension(.Height, toSize: 120)
