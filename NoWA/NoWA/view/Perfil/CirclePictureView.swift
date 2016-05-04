@@ -31,12 +31,14 @@ class CirclePictureView: UIView {
         self.addSubview(picture!)
         
         let fbID = NSUserDefaults.standardUserDefaults().valueForKey("fbID") as! String!
+        if fbID != ""{
         var facebookProfileUrl = "http://graph.facebook.com/\(fbID)/picture?type=large"
         
         if let url  = NSURL(string: facebookProfileUrl),
             data = NSData(contentsOfURL: url)
         {
             picture!.image = UIImage(data: data)
+        }
         }
         
         self.autoSetDimension(.Width, toSize: 120)

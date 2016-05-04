@@ -187,6 +187,8 @@ class RegisterViewController: LoginViewController {
         NSUserDefaults.standardUserDefaults().setValue(passwordView.inputTextField.text, forKey: "pass")
         NSUserDefaults.standardUserDefaults().synchronize()
         
+        NSUserDefaults.standardUserDefaults().setValue("", forKey: "fbID")
+        NSUserDefaults.standardUserDefaults().synchronize()
         
         let usuarioLogueado:UserDTO = result.entityForKey("User") as! UserDTO
         if usuarioLogueado.token != nil {

@@ -205,6 +205,9 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         NSUserDefaults.standardUserDefaults().setValue(passwordView.inputTextField.text, forKey: "pass")
         NSUserDefaults.standardUserDefaults().synchronize()
         
+        NSUserDefaults.standardUserDefaults().setValue("", forKey: "fbID")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
         let usuarioLogueado:UserDTO = result.entityForKey("RegisterUser") as! UserDTO
         if usuarioLogueado.token != nil {
             dispatch_async(dispatch_get_main_queue()) {

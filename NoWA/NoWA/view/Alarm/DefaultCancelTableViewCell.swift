@@ -119,7 +119,7 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
         let event = editAlarmDTO.event![0] as? EventDTO
         let weather = editAlarmDTO.weather![0] as? AlarmDTO
         
-        if weather!.isDefault == 1 {
+        if event!.useDefault == 1 {
             switchButton!.selected = true
         }
         

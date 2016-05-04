@@ -135,6 +135,7 @@ class UserService: GenericService {
             if(user == nil || (user != nil && user!.errorTitle != nil)){
 //                serviceResult.addErrorsFromDTO(user!)
 //                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+                let error = result as! NSError
                 serviceResult.addError("error")
                 self.callMessage(target: _target, message: _message, withResult: serviceResult)
             }else{

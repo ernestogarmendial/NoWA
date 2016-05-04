@@ -96,16 +96,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if notification!["sound"] as! NSString! == "ringtone.mp3"{
                     let path = NSBundle.mainBundle().pathForResource("ringtone", ofType: "mp3")!
                     AudioManager.sharedInstance.play(path)
+                    let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+                        AudioManager.sharedInstance.stop(path)
+                    }))
+                    self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
                 } else if notification!["sound"] as! NSString! == "iphone_6_original.mp3"{
                     let path = NSBundle.mainBundle().pathForResource("iphone_6_original", ofType: "mp3")!
                     AudioManager.sharedInstance.play(path)
+                    let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+                        AudioManager.sharedInstance.stop(path)
+                    }))
+                    self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
                 }
 
-                let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
-                    AudioManager.sharedInstance.stop(path)
-                }))
-                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+//                let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+//                    AudioManager.sharedInstance.stop(path)
+//                }))
+//                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
             })
         }
     }

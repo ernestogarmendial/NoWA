@@ -225,7 +225,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         
         let isDefaultCell = tabla!.viewWithTag(102) as! DefaultCancelTableViewCell
         if let isDefault = isDefaultCell.isSwtichActive {
-            newAlarmDTO?.isDefault = isDefault
+            newAlarmEventDTO?.useDefault = isDefault
         }
         
         let serviceCell = tabla!.viewWithTag(103) as! ServicePickerTableViewCell

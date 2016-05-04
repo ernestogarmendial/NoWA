@@ -269,7 +269,7 @@ class UserDAO: GenericDAO {
             },
                                                 failure: { (operation, error) in
                                                     self.printResponse(operation)
-                                                    self.finish([])
+                                                    self.finish(error)
         })
         operation.start()
         

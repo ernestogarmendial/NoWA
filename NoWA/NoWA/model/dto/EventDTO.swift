@@ -17,6 +17,8 @@ class EventDTO: GenericDTO {
     var name : String?
     var eventZone : String?
     var repetition : String?
+    var useDefault : NSNumber?
+
     
     override class func mapping() -> RKObjectMapping {
         
@@ -29,6 +31,7 @@ class EventDTO: GenericDTO {
             "description": "eventDescription",
             "name": "name",
             "zone": "eventZone",
+            "useDefault": "useDefault",
             "repetition": "repetition"
             
             ])
