@@ -24,6 +24,7 @@ class NewAlarmTableViewController: UITableViewController {
         
         self.tableView.registerClass(NewAlarmInsertTableViewCell.self, forCellReuseIdentifier: "Insert")
         self.tableView.registerClass(ServicePickerTableViewCell.self, forCellReuseIdentifier: "ServicePicker")
+        self.tableView.registerClass(RingtoneTableViewCell.self, forCellReuseIdentifier: "RingtoneCell")
         self.tableView.registerClass(PickerTableViewCell.self, forCellReuseIdentifier: "PickerCell")
         self.tableView.registerClass(LocationTableViewCell.self, forCellReuseIdentifier: "LocationCell")
         self.tableView.registerClass(ServiceAvisoTableViewCell.self, forCellReuseIdentifier: "ServiceAdviceCell")

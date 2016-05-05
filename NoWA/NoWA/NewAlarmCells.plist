@@ -28,6 +28,20 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
+		<string>RingtoneCell</string>
+		<key>left_icon</key>
+		<string>location</string>
+		<key>right_icon</key>
+		<string>down_arrow</string>
+		<key>title</key>
+		<string>RINGTONE</string>
+		<key>title_en</key>
+		<string>RINGTONE</string>
+		<key>height</key>
+		<integer>80</integer>
+	</dict>
+	<dict>
+		<key>identifier</key>
 		<string>ServiceAdviceCell</string>
 		<key>height</key>
 		<integer>90</integer>

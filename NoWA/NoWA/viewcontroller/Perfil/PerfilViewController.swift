@@ -134,18 +134,18 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
             updateDTO.username = pictureTableViewCell.nameLabel!.text
         }
         
-        let facebookAddress = tabla!.viewWithTag(102) as! AddressTableViewCell
+        let facebookAddress = tabla!.viewWithTag(103) as! AddressTableViewCell
         if let facebook = facebookAddress.addressTextField!.text{
             updateDTO.facebook = facebook
         }
         
-        let twitterAddress = tabla!.viewWithTag(103) as! AddressTableViewCell
+        let twitterAddress = tabla!.viewWithTag(104) as! AddressTableViewCell
         if let twitter = twitterAddress.addressTextField!.text{
             updateDTO.twitter = twitter
             
         }
         
-        let instagramAddress = tabla!.viewWithTag(104) as! AddressTableViewCell
+        let instagramAddress = tabla!.viewWithTag(105) as! AddressTableViewCell
         if let instagram = instagramAddress.addressTextField!.text{
             updateDTO.instagram = instagram
             
