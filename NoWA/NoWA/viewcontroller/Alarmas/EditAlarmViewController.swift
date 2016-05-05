@@ -59,6 +59,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         
         self.tabla!.registerClass(NewAlarmInsertTableViewCell.self, forCellReuseIdentifier: "Insert")
         self.tabla!.registerClass(ServicePickerTableViewCell.self, forCellReuseIdentifier: "ServicePicker")
+        self.tabla!.registerClass(RingtoneTableViewCell.self, forCellReuseIdentifier: "RingtoneCell")
         self.tabla!.registerClass(PickerTableViewCell.self, forCellReuseIdentifier: "PickerCell")
         self.tabla!.registerClass(LocationTableViewCell.self, forCellReuseIdentifier: "LocationCell")
         self.tabla!.registerClass(DefaultCancelTableViewCell.self, forCellReuseIdentifier: "ServiceAdviceCell")
@@ -223,43 +224,48 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             
         }
         
-        let isDefaultCell = tabla!.viewWithTag(102) as! DefaultCancelTableViewCell
+        let ringtoneCell = tabla!.viewWithTag(102) as! RingtoneTableViewCell
+        if let ringtone = ringtoneCell.ringtone{
+            newAlarmEventDTO?.ringtone = ringtone as String
+        }
+        
+        let isDefaultCell = tabla!.viewWithTag(103) as! DefaultCancelTableViewCell
         if let isDefault = isDefaultCell.isSwtichActive {
             newAlarmEventDTO?.useDefault = isDefault
         }
         
-        let serviceCell = tabla!.viewWithTag(103) as! ServicePickerTableViewCell
+        let serviceCell = tabla!.viewWithTag(104) as! ServicePickerTableViewCell
         if let service = serviceCell.service{
             newAlarmDTO?.service = service
         }
         
-        let conditionCell = tabla!.viewWithTag(104) as! PickerTableViewCell
+        let conditionCell = tabla!.viewWithTag(105) as! PickerTableViewCell
         if let condition = conditionCell.condition{
             newAlarmDTO?.condition = condition
         }
         
-        let temperatureCell = tabla!.viewWithTag(105) as! SliderTableViewCell
+        let temperatureCell = tabla!.viewWithTag(106) as! SliderTableViewCell
         if let minTemp = temperatureCell.minValue{
             newAlarmDTO?.minTemp = minTemp
         }
         if let maxTemp = temperatureCell.maxValue{
             newAlarmDTO?.maxTemp = maxTemp
         }
-        let windCell = tabla!.viewWithTag(106) as! SliderTableViewCell
+        let windCell = tabla!.viewWithTag(107) as! SliderTableViewCell
         if let minWind = windCell.minValue{
             newAlarmDTO?.minWind = minWind
         }
         if let maxWind = windCell.maxValue{
             newAlarmDTO?.maxWind = maxWind
         }
-        let humidityCell = tabla!.viewWithTag(107) as! SliderTableViewCell
+        let humidityCell = tabla!.viewWithTag(108) as! SliderTableViewCell
         if let minHumidity = humidityCell.minValue{
             newAlarmDTO?.minHumidity = minHumidity
         }
         if let maxHumidity = humidityCell.maxValue{
             newAlarmDTO?.maxHumidity = maxHumidity
         }
-        let snowCell = tabla!.viewWithTag(108) as! SliderTableViewCell
+        let snowCell = tabla!.viewWithTag(109) as! SliderTableViewCell
         if let minSnow = snowCell.minValue{
             newAlarmDTO?.minSnow = minSnow
         }
@@ -267,7 +273,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             newAlarmDTO?.maxSnow = maxSnow
         }
         
-        let predictionCell = tabla!.viewWithTag(109) as! PredictionTableViewCell
+        let predictionCell = tabla!.viewWithTag(110) as! PredictionTableViewCell
         if let prediction = predictionCell.prediction{
             newAlarmDTO?.prediction = prediction
         }

@@ -52,8 +52,10 @@ class RingtoneTableViewCell: GenericTableViewCell , pickerDelegate {
         
         self.addSubview(rightButton!)
         
+        let defaultRingtone = "ringtone.mp3"
         if self.firstTimeEdit == false {
-            descriptionLabel?.text = "ringtone.mp3"
+            descriptionLabel?.text = defaultRingtone
+            ringtone = defaultRingtone
         }
         
         let ring1 = ["ringtoneID": 0, "name": "ringtone.mp3"]

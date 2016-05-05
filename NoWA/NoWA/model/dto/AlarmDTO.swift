@@ -26,6 +26,8 @@ class AlarmDTO: GenericDTO {
     var stamp : String?
     var alarmID : NSNumber?
     var status : NSNumber?
+    var ringtone : String?
+
     
     override class func mapping() -> RKObjectMapping {
         
@@ -47,6 +49,7 @@ class AlarmDTO: GenericDTO {
             "maxHumidity": "maxHumidity",
             "minSnow": "minSnow",
             "maxSnow": "maxSnow",
+            "ringtone": "ringtone",
             "place": "place"
             
             ])
