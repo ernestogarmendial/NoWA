@@ -41,13 +41,14 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         
        // let random1a23 = arc4random_uniform(23) + 1
        // let image = UIImage(named: "r\(random1a23)")
-         let random1a23 = arc4random_uniform(4) + 1
+         let random1a23 = arc4random_uniform(6) + 1
          let image = UIImage(named: "back_\(random1a23)")
         
         pictureView?.image = image
         
         emptyStateView = UIImageView()
         emptyStateView?.hidden = true
+        emptyStateView!.contentMode = .ScaleToFill
 //        emptyStateView?.backgroundColor = .blueColor()
         self.view.addSubview(emptyStateView!)
         self.view.bringSubviewToFront(emptyStateView!)
@@ -66,10 +67,15 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         pictureView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
         pictureView?.autoSetDimension(.Height, toSize: 230)
         
-        emptyStateView?.autoPinEdge(.Top, toEdge: .Bottom, ofView: pictureView!, withOffset: -30)
-        emptyStateView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: 10)
-        emptyStateView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view, withOffset: -10)
-        emptyStateView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -70)
+//        emptyStateView?.autoPinEdge(.Top, toEdge: .Bottom, ofView: pictureView!, withOffset: -30)
+//        emptyStateView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: 10)
+//        emptyStateView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view, withOffset: -10)
+//        emptyStateView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -70)
+        
+        emptyStateView?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view!, withOffset: 70)
+        emptyStateView?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: 0)
+        emptyStateView?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view, withOffset: 0)
+        emptyStateView?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -90)
         
         entendidoButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: self.view)
         entendidoButton.autoSetDimension(ALDimension.Height, toSize: 40)

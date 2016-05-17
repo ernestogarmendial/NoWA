@@ -10,6 +10,9 @@ import UIKit
 
 class StartLoggedViewController: LoginViewController {
     
+    var splash : UIImageView?
+    var progressIcon = UIActivityIndicatorView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +21,23 @@ class StartLoggedViewController: LoginViewController {
         let email = NSUserDefaults.standardUserDefaults().valueForKey("email") as? String
         let pass = NSUserDefaults.standardUserDefaults().valueForKey("pass") as? String
         
+        splash = UIImageView(image: (UIImage(named: "splash")))
+        self.view.addSubview(splash!)
+        
+        progressIcon.startAnimating()
+        self.view.addSubview(progressIcon)
+        
+        splash?.autoPinEdge(.Top, toEdge: .Top, ofView: self.view)
+        splash?.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view)
+        splash?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
+        splash?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
+        
+//        progressIcon.autoAlignAxis(.Horizontal, toSameAxisOfView: self.view)
+        progressIcon.autoAlignAxis(.Vertical, toSameAxisOfView: self.view)
+        progressIcon.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -120)
+
+
+
         if email != nil && pass != nil {
             userService.login(email, code: pass,target: self,message: "loginFinish:")
         }

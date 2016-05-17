@@ -54,3 +54,11 @@
 "HUMEDAD" = "HUMEDAD";
 "NIEVE" = "NIEVE";
 "Compartí en tus redes" = "Compartí en tus redes";
+"Esa cuenta ya existe. Ingrese una nueva." = "Esa cuenta ya existe. Ingrese una nueva.";
+"ELIMINAR" = "ELIMINAR";
+"Realmente desea eliminar la alarma?" = "Realmente desea eliminar la alarma?";
+"Sí" = "Sí";
+"Se ha actualizado la alarma" = "Se ha actualizado la alarma";
+"Debe completar el campo Nombre de la alarma" = "Debe completar el campo Nombre de la alarma";
+"Se ha creado la alarma" = "Se ha creado la alarma";
+"ALARMA" = "ALARMA";

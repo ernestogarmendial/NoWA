@@ -30,7 +30,7 @@
 		<key>identifier</key>
 		<string>RingtoneCell</string>
 		<key>left_icon</key>
-		<string>location</string>
+		<string>ringtone_icon</string>
 		<key>right_icon</key>
 		<string>down_arrow</string>
 		<key>title</key>

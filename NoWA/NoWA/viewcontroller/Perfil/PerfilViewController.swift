@@ -26,8 +26,17 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         
-        let empty_perfil = UIImage(named: "empty_torneos")
-        emptyStateView?.image = empty_perfil
+        let lang =  NSLocale.preferredLanguages().first! as NSString
+        let language = lang.substringWithRange(NSRange(location: 0, length: 2))
+        
+        if language == "en" {
+            let empty_perfil = UIImage(named: "empty_perfil_en")
+            emptyStateView?.image = empty_perfil
+        } else if language == "es" {
+            let empty_perfil = UIImage(named: "empty_perfil")
+            emptyStateView?.image = empty_perfil
+        }
+
         
         tabla?.delegate = self
         tabla?.dataSource = self

@@ -176,12 +176,12 @@ class RingtoneTableViewCell: GenericTableViewCell , pickerDelegate {
             
             for ringtone in ringtonesArray! {
                 
-                let conditionID = ringtone.valueForKey("ringtoneID") as! NSNumber
+                let ringtone = ringtone.valueForKey("name") as! String
                 
-                if conditionID == event?.ringtone {
+                if ringtone == event?.ringtone {
                     
-                    descriptionLabel!.text = ringtone.valueForKey("name") as? String
-                    self.ringtone = ringtone.valueForKey("name") as? String
+                    descriptionLabel!.text = ringtone as? String//ringtone.valueForKey("name") as? String
+                    self.ringtone = ringtone as? String//ringtone.valueForKey("name") as? String
                     
                     
                     self.firstTimeEdit = true

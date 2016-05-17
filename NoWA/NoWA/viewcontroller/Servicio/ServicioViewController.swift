@@ -30,11 +30,20 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tap)
         
-        let image = UIImage(named: "torneos_background")
+        let image = UIImage(named: "back_6")
         pictureView?.image = image
         
-        let empty_servicio = UIImage(named: "empty_torneos")
-        emptyStateView?.image = empty_servicio
+        let lang =  NSLocale.preferredLanguages().first! as NSString
+        let language = lang.substringWithRange(NSRange(location: 0, length: 2))
+        
+        if language == "en" {
+            let empty_servicio = UIImage(named: "empty_servicio_en")
+            emptyStateView?.image = empty_servicio
+        } else if language == "es" {
+            let empty_servicio = UIImage(named: "empty_servicio")
+            emptyStateView?.image = empty_servicio
+        }
+        
         
         tabla?.delegate = self
         tabla?.dataSource = self
@@ -58,7 +67,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstServicio")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-
+        
         getDefaults()
     }
     

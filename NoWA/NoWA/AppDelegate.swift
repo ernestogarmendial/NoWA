@@ -91,12 +91,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notification = userInfo["aps"] as? NSDictionary
         let message = notification?.valueForKey("alert") as! String
         if ( application.applicationState == UIApplicationState.Active ) {
-            dispatch_async(dispatch_get_main_queue(), {
+//            dispatch_async(dispatch_get_main_queue(), {
                 let path : String! = ""//= NSBundle.mainBundle().pathForResource("ringtone", ofType: "mp3")!
                 if notification!["sound"] as! NSString! == "ringtone.mp3"{
                     let path = NSBundle.mainBundle().pathForResource("ringtone", ofType: "mp3")!
                     AudioManager.sharedInstance.play(path)
-                    let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
                         AudioManager.sharedInstance.stop(path)
                     }))
@@ -104,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 } else if notification!["sound"] as! NSString! == "iphone_6_original.mp3"{
                     let path = NSBundle.mainBundle().pathForResource("iphone_6_original", ofType: "mp3")!
                     AudioManager.sharedInstance.play(path)
-                    let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
                         AudioManager.sharedInstance.stop(path)
                     }))
@@ -116,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                    AudioManager.sharedInstance.stop(path)
 //                }))
 //                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-            })
+//            })
         }
     }
     

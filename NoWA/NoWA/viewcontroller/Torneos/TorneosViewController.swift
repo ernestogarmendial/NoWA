@@ -21,11 +21,21 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         
         self.view.backgroundColor = .darkGrayCustomColor()
         
-        let image = UIImage(named: "torneos_background")
+        let image = UIImage(named: "back_5")
         pictureView?.image = image
         
-        let empty_torneos = UIImage(named: "empty_torneos")
-        emptyStateView?.image = empty_torneos
+        let lang =  NSLocale.preferredLanguages().first! as NSString
+        let language = lang.substringWithRange(NSRange(location: 0, length: 2))
+        
+        if language == "en" {
+            let empty_torneos = UIImage(named: "empty_torneos_en")
+            emptyStateView?.image = empty_torneos
+        } else if language == "es" {
+            let empty_torneos = UIImage(named: "empty_torneos")
+            emptyStateView?.image = empty_torneos
+        }
+        
+        
         
         tabla?.delegate = self
         tabla?.dataSource = self
@@ -106,44 +116,23 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         
         let alarma = self.tournamentsArray![indexPath.row] as TournamentDTO
         
-        if alarmCell.alarmSwitch!.selected == true {
-            print("esta inactiva")
-            editAlarmViewController.alarmStatus = 0
-        }else{
-            print("esta activa")
-            editAlarmViewController.alarmStatus = 1
+        if alarma.status != 2 {
+            
+            
+            if alarmCell.alarmSwitch!.selected == true {
+                print("esta inactiva")
+                editAlarmViewController.alarmStatus = 0
+            }else{
+                print("esta activa")
+                editAlarmViewController.alarmStatus = 1
+            }
+            
+            editAlarmViewController.editTournamentDTO = alarma
+            
+            
+            self.navigationController?.pushViewController(editAlarmViewController, animated:true )
+            
         }
-        
-        editAlarmViewController.editTournamentDTO = alarma
-        
-        self.navigationController?.pushViewController(editAlarmViewController, animated:true )
-        
-        
-        
-        
-        
-        
-//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-//        
-//        let currentCell = self.tabla?.cellForRowAtIndexPath(indexPath) as? TorneoItemTableViewCell
-//        
-//        let alert = UIAlertController(title: "CANCELAR" ,message:"Está seguro que desea eliminar la alarma de este torneo?", preferredStyle: UIAlertControllerStyle.Alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
-//            //            print("aca deberia llamar al metodo")
-//            //            let newAlarmDTO = AlarmDTO()
-//            //
-//            //                newAlarmDTO!.alarmID = currentCell
-//            //            }
-//            //            let alarmService : AlarmService = AlarmService()
-//            //            alarmService.deleteAlarm(alarmDTO: newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "deleteAlarmFinish:")
-//        }))
-//        
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
-//            print("Cancel")
-//        }))
-//        dispatch_async(dispatch_get_main_queue()) {
-//            self.presentViewController(alert, animated: true, completion: nil)
-//        }
         
     }
     

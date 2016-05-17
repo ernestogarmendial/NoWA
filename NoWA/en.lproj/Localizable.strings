@@ -54,3 +54,11 @@
 "HUMEDAD" = "HUMIDITY";
 "NIEVE" = "SNOW";
 "Compartí en tus redes" = "Share with your friends";
+"Esa cuenta ya existe. Ingrese una nueva." = "This account already exists. Enter a new one.";
+"ELIMINAR" = "DELETE";
+"Realmente desea eliminar la alarma?" = "Do you really want to delete the alarm?";
+"Sí" = "Yes";
+"Se ha actualizado la alarma" = "Alarm updated";
+"Debe completar el campo Nombre de la alarma" = "You must enter the name of the Alarm";
+"Se ha creado la alarma" = "Alarm created";
+"ALARMA" = "ALARM";

@@ -197,6 +197,13 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
     
     func registerFinish (result : ServiceResult!){
         if(result.hasErrors()){
+            if ( result.errorsString() == "-1017\n" ){
+                let alert = UIAlertController(title: "Error", message: NSLocalizedString("Esa cuenta ya existe. Ingrese una nueva.", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }            }
             print("Error register")
             return
         }

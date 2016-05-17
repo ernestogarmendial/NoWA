@@ -31,7 +31,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         tabla!.addGestureRecognizer(tap)
         
-        let empty_newalarm = UIImage(named: "empty_torneos")
+        let empty_newalarm = UIImage(named: "empty_crear-alarma")
         emptyStateView?.image = empty_newalarm
         
         tabla?.delegate = self
@@ -163,7 +163,14 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
             setStamp(insertCell, newAlarmDTO: newAlarmDTO!)
             
             if alarmName == ""{
-                validateObligatoryFields("Nombre de la alarma")
+//                validateObligatoryFields("Nombre de la alarma")
+//                return
+                let alert = UIAlertController(title: "Error", message: NSLocalizedString("Debe completar el campo Nombre de la alarma", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
                 return
             }
         }
@@ -251,7 +258,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         }
         
         
-        let alert = UIAlertController(title: "Se ha creado la alarma", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: NSLocalizedString("Se ha creado la alarma", comment: ""), message: "", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
             self.navigationController!.popToRootViewControllerAnimated(true)
         }))
@@ -339,14 +346,14 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func validateObligatoryFields(field : String!){
-        
-        let alert = UIAlertController(title: "Error", message: "Debe completar el campo \(field)", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        return
-    }
+//    func validateObligatoryFields(field : String!){
+//        
+//        let alert = UIAlertController(title: "Error", message: "Debe completar el campo \(field)", preferredStyle: UIAlertControllerStyle.Alert)
+//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+//        
+//        dispatch_async(dispatch_get_main_queue()) {
+//            self.presentViewController(alert, animated: true, completion: nil)
+//        }
+//        return
+//    }
 }

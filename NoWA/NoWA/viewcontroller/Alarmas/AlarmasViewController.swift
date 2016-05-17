@@ -28,8 +28,17 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         let image = UIImage(named: "torneos_background")
         pictureView?.image = image
         
-        let empty_alarmas = UIImage(named: "empty_torneos")
-        emptyStateView?.image = empty_alarmas
+        let lang =  NSLocale.preferredLanguages().first! as NSString
+        let language = lang.substringWithRange(NSRange(location: 0, length: 2))
+        
+        if language == "en" {
+            let empty_alarmas = UIImage(named: "empty_alarmas_en")
+            emptyStateView?.image = empty_alarmas
+        } else if language == "es" {
+            let empty_alarmas = UIImage(named: "empty_alarmas")
+            emptyStateView?.image = empty_alarmas
+        }
+
         
         self.tabla!.delegate = self
         self.tabla!.dataSource = self

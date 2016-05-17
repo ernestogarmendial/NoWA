@@ -291,7 +291,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         }
         
         
-        let alert = UIAlertController(title: "Se ha actualizado la alarma", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: NSLocalizedString("Se ha actualizado la alarma", comment: ""), message: "", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
             self.navigationController!.popToRootViewControllerAnimated(true)
         }))
@@ -434,8 +434,8 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             newAlarmDTO!.alarmID = self.alarmID!
         }
         
-        let alert = UIAlertController(title: "ELIMINAR", message: "Realmente desea eliminar la alarma?", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Sí", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+        let alert = UIAlertController(title: NSLocalizedString("ELIMINAR", comment: ""), message: NSLocalizedString("Realmente desea eliminar la alarma?", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Sí", comment: ""), style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
             
             let alarmService : AlarmService = AlarmService()
             alarmService.deleteAlarm(alarmDTO: self.newAlarmDTO!, token: UserService.currentUser.token,target: self,message: "deleteAlarmFinish:")

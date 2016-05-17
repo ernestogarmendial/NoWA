@@ -136,7 +136,8 @@ class UserService: GenericService {
 //                serviceResult.addErrorsFromDTO(user!)
 //                self.callMessage(target: _target, message: _message, withResult: serviceResult)
                 let error = result as! NSError
-                serviceResult.addError("error")
+                let errorString = String(error.code)
+                serviceResult.addError(errorString)
                 self.callMessage(target: _target, message: _message, withResult: serviceResult)
             }else{
                 if(result as! NSObject == []){
