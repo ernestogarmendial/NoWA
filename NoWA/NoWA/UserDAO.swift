@@ -318,4 +318,47 @@ class UserDAO: GenericDAO {
     }
     
     
+    func logout(handler _handler : ((Operation,AnyObject)->Void)! ) {
+        
+        if(!self.register()){
+            return;
+        }
+        
+        completionHandler = _handler
+        
+        let objectManager = RKObjectManager(baseURL: NSURL(string: serverURL))
+        
+        RKMIMETypeSerialization.registerClass(RKNSJSONSerialization.self, forMIMEType: "application/json")
+        
+        let mapping = RKObjectMapping(forClass: RecoverDTO.self)
+        mapping.addAttributeMappingsFromDictionary([
+            "code": "code"
+            ])
+        
+        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
+        
+        let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken") as! String
+
+        let originalURL = "user/logout/\(deviceToken)/"
+        
+        var url = self.encodeURL(originalURL)
+        
+        
+        let request = objectManager.requestWithObject(  nil,
+                                                        method: RKRequestMethod.GET,
+                                                        path: url,
+                                                        parameters: nil)
+        
+        
+        let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
+        operation.setCompletionBlockWithSuccess({ (operation, response) in
+            self.finish("OK")
+            },
+                                                failure: { (operation, error) in
+                                                    self.finish(nil)
+        })
+        operation.start()
+        
+    }
+    
 }

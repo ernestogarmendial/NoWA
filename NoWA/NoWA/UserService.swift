@@ -182,6 +182,31 @@ class UserService: GenericService {
             }
         })
     }
+    
+    func logout(target _target : NSObject, message _message : String ) {
+        
+        let serviceResult = ServiceResult()
+        
+        if !TTInternetConnection.sharedInstance().internetAccess() {
+            serviceResult.addError("No Internet")
+            self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            return
+        }
+        
+        let userDAO: UserDAO = UserDAO()
+        userDAO.delegate = self
+        userDAO.logout(handler: { (operation, result) in
+            let ok = result as? String;
+            
+            if(ok == nil){
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }else{
+                serviceResult.addEntity(ok, forKey: "logout")
+                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+            }
+        })
+    }
+    
 }
 
 

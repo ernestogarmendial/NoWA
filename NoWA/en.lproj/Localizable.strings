@@ -8,7 +8,7 @@
 
 "CONTRASEÑA" = "PASSWORD";
 "TU CORREO" = "YOUR EMAIL";
-"INGRESAR CON FACEBOOK" = "INGRESAR CON FACEBOOK";
+"INGRESAR CON FACEBOOK" = "LOGIN WITH FACEBOOK";
 "INGRESAR" = "LOGIN";
 "CREAR UNA CUENTA" = "CREATE AN ACCOUNT";
 "RECUPERAR" = "RECOVER";
@@ -62,3 +62,5 @@
 "Debe completar el campo Nombre de la alarma" = "You must enter the name of the Alarm";
 "Se ha creado la alarma" = "Alarm created";
 "ALARMA" = "ALARM";
+"Debe seleccionar qué dias que sonará la alarma" = "You must select the days the Alarm will sound";
+"La ubicación seleccionada no es válida" = "RIGHT NOW THE SERVICE IT'S NOT PROVIDED IN THAT LOCATION. For requests write to info@nowakeapp.com"; 

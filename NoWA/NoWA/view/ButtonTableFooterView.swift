@@ -107,6 +107,10 @@ class ButtonTableFooterView: GenericTableViewCell{
     }
     
     func close(){
+        
+//        let userService : UserService = UserService()
+//        userService.logout(target: self,message: "logoutFinish:")
+        
         print("close pressed")
         
         let navigationController = UINavigationController()
@@ -122,6 +126,25 @@ class ButtonTableFooterView: GenericTableViewCell{
         NSUserDefaults.standardUserDefaults().synchronize()
         
     }
+    
+//    func logoutFinish (result : ServiceResult!){
+//        if(result.hasErrors()){
+//            print("Error login")
+//            return
+//        }
+//        
+//        let navigationController = UINavigationController()
+//        navigationController.viewControllers = [RegisterViewController()]
+//        
+//        switchRootViewController(navigationController, animated: true, completion: nil)
+//        
+//        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "email")
+//        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "pass")
+//        NSUserDefaults.standardUserDefaults().synchronize()
+//        
+//        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "loggeado")
+//        NSUserDefaults.standardUserDefaults().synchronize()
+//    }
     
     func admin(){
         print("admin pressed")

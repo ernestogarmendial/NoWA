@@ -28,6 +28,8 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
     
     var shouldClear : Bool?
     
+    var isRepetitionSelected : Bool? = false
+
     var alarmID : NSNumber?
     var editAlarmDTO : PersonalAlarmDTO?{
         didSet{
@@ -201,6 +203,16 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         }
         setNewAlarmRepetitionDays(insertCell, newAlarmDTO: newAlarmDTO!, newAlarmEventDTO: newAlarmEventDTO!)
         
+        if (!isRepetitionSelected!) {
+            let alert = UIAlertController(title: "Error", message: NSLocalizedString("Debe seleccionar qué dias que sonará la alarma", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            return
+        }
+        
         let locationCell = tabla!.viewWithTag(101) as! LocationTableViewCell
         if let place = locationCell.locationTextField!.text{
             newAlarmDTO?.place = place
@@ -336,6 +348,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             newAlarmEventDTO!.repetition = (newAlarmEventDTO!.repetition)! + ",\(day)"
         }
         print(newAlarmEventDTO!.repetition)
+        isRepetitionSelected = true
     }
     
     func setStamp(insertCell: NewAlarmInsertTableViewCell, newAlarmDTO : AlarmDTO){
