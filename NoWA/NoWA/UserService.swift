@@ -196,14 +196,21 @@ class UserService: GenericService {
         let userDAO: UserDAO = UserDAO()
         userDAO.delegate = self
         userDAO.logout(handler: { (operation, result) in
-            let ok = result as? String;
+            let user = result as? UserDTO;
             
-            if(ok == nil){
+            if(user == nil || (user != nil && user!.errorTitle != nil)){
+                serviceResult.addError("error")
                 self.callMessage(target: _target, message: _message, withResult: serviceResult)
             }else{
-                serviceResult.addEntity(ok, forKey: "logout")
-                self.callMessage(target: _target, message: _message, withResult: serviceResult)
+                
+                UserService.currentUser = result as! UserDTO;
+                            
+                    serviceResult.addEntity(UserService.currentUser, forKey: "logout")
+                    
+                    self.callMessage(target: _target, message: _message, withResult: serviceResult)
+                
             }
+
         })
     }
     

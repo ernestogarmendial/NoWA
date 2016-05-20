@@ -32,8 +32,17 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         tabla!.addGestureRecognizer(tap)
         
-        let empty_newalarm = UIImage(named: "empty_crear-alarma")
-        emptyStateView?.image = empty_newalarm
+        let lang =  NSLocale.preferredLanguages().first! as NSString
+        let language = lang.substringWithRange(NSRange(location: 0, length: 2))
+        
+        if language == "en" {
+            let empty_newalarm = UIImage(named: "empty_crear-alarma_en")
+            emptyStateView?.image = empty_newalarm
+        } else if language == "es" {
+            let empty_newalarm = UIImage(named: "empty_crear-alarma")
+            emptyStateView?.image = empty_newalarm
+        }
+
         
         tabla?.delegate = self
         tabla?.dataSource = self

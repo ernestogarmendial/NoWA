@@ -45,7 +45,10 @@ class UserDAO: GenericDAO {
         
         let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken") as! String
         
-        let originalURL = "user/login/\(_name)/\(_code)/ios/\(deviceToken)/"
+        let lang =  NSLocale.preferredLanguages().first! as NSString
+        let language = lang.substringWithRange(NSRange(location: 0, length: 2))
+        
+        let originalURL = "user/login/v2/\(language.uppercaseString)/\(_name)/\(_code)/ios/\(deviceToken)/"
         
         var url = self.encodeURL(originalURL)
         
@@ -330,16 +333,29 @@ class UserDAO: GenericDAO {
         
         RKMIMETypeSerialization.registerClass(RKNSJSONSerialization.self, forMIMEType: "application/json")
         
-        let mapping = RKObjectMapping(forClass: RecoverDTO.self)
+        let mapping = RKObjectMapping(forClass: UserDTO.self)
         mapping.addAttributeMappingsFromDictionary([
-            "code": "code"
+            "lastName": "lastName",
+            "stamp": "stamp",
+            "birth": "birth",
+            "phone": "phone",
+            "instagram": "instagram",
+            "id": "userid",
+            "role": "role",
+            "twitter": "twitter",
+            "username": "username",
+            "notifications": "notifications",
+            "token": "token",
+            "phrase": "phrase",
+            "name": "name",
+            "facebook": "facebook",
+            "dni": "dni"
             ])
         
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
-        let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken") as! String
 
-        let originalURL = "user/logout/\(deviceToken)/"
+        let originalURL = "user/logout/\(UserService.currentUser.token!)/"
         
         var url = self.encodeURL(originalURL)
         
@@ -352,10 +368,11 @@ class UserDAO: GenericDAO {
         
         let operation : RKObjectRequestOperation = RKObjectRequestOperation(request: request, responseDescriptors: [responseDescriptor])
         operation.setCompletionBlockWithSuccess({ (operation, response) in
-            self.finish("OK")
+            let userDTO = response.array()[0] as! UserDTO
+            self.finish(userDTO)
             },
                                                 failure: { (operation, error) in
-                                                    self.finish(nil)
+                                                    self.finish(error)
         })
         operation.start()
         

@@ -136,8 +136,15 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         
         self.conditions = (result.entityForKey("Conditions") as! [ConditionDTO])
         
+        let lang =  NSLocale.preferredLanguages().first! as NSString
+        let language = lang.substringWithRange(NSRange(location: 0, length: 2))
+        
         for condition in conditions! {
-            conditionsPicker.addObject(condition.name!)
+            if language == "en" {
+                conditionsPicker.addObject(condition.en_name!)
+            } else if language == "es" {
+                conditionsPicker.addObject(condition.name!)
+            }
             if self.condition == nil {
                 self.condition = condition.conditionID
                 self.descriptionLabel!.text = condition.name
@@ -145,15 +152,19 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
             let conditionsDict = NSMutableDictionary()
             
             conditionsDict.setValue(condition.conditionID, forKey: "conditionID")
-            conditionsDict.setValue(condition.name, forKey: "name")
+            
+            if language == "en" {
+                conditionsDict.setValue(condition.en_name, forKey: "name")
+            } else if language == "es" {
+                conditionsDict.setValue(condition.name, forKey: "name")
+            }
             
             PickerTableViewCell.conditionsArray.addObject(conditionsDict)
             
         }
         
     }
-    
-    
+
     func rightButtonPressed(){
         print("right ButtonPressedpressed")
         

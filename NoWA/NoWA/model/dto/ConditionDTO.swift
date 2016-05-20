@@ -12,6 +12,7 @@ class ConditionDTO: GenericDTO {
 
     var conditionID : NSNumber?
     var name : String?
+    var en_name : String?
     
     override class func mapping() -> RKObjectMapping {
         
@@ -20,7 +21,8 @@ class ConditionDTO: GenericDTO {
             
             "id" : "conditionID",
             "name" : "name",
-            
+            "en_name" : "en_name",
+
             ])
         
         return mapping
