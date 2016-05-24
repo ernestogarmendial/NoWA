@@ -6,6 +6,8 @@
   Copyright © 2016 Ernesto Garmendia Luis. All rights reserved.
 */
 
+"Siguiente" = "Next";
+"Ingresá" = "Begin";
 "CONTRASEÑA" = "PASSWORD";
 "TU CORREO" = "YOUR EMAIL";
 "INGRESAR CON FACEBOOK" = "LOGIN WITH FACEBOOK";
@@ -17,6 +19,8 @@
 "CONFIRMAR" = "CONFIRM";
 "ACEPTO TÉRMINOS Y CONDICIONES" = "ACCEPT TERMS AND CONDITIONS";
 "http://nowakeapp.com/terminos.html" = "http://nowakeapp.com/terms.html";
+"http://nowakeapp.com/ayuda.html" = "http://nowakeapp.com/help.html";
+"http://nowakeapp.com/acerca-de-nwa.html" = "http://nowakeapp.com/about-us.html";
 "Hay campos sin completar" = "There are incomplete fields";
 "Las contraseñas no coinciden" = "Passwords doesn't match";
 "Usted no ha aceptado los términos y condiciones." = "You must accept terms and conditions";

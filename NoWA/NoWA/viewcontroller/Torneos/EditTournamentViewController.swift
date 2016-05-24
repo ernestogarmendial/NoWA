@@ -163,7 +163,7 @@ class EditTournamentViewController: GenericViewController, UITableViewDelegate, 
         }
         
         
-        let alert = UIAlertController(title: "Se ha actualizado la alarma", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: NSLocalizedString("Se ha actualizado la alarma", comment: ""), message: "", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
             self.navigationController!.popToRootViewControllerAnimated(true)
         }))

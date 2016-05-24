@@ -87,6 +87,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        RKObjectManager.sharedManager().cancelAllObjectRequestOperationsWithMethod(RKRequestMethod.Any, matchingPathPattern: "http://litebox.com.ar:8080/nowakeapp/api/")
+        
         print("Notification received: \(userInfo)")
         let notification = userInfo["aps"] as? NSDictionary
         let message = notification?.valueForKey("alert") as! String

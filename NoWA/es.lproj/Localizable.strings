@@ -6,6 +6,8 @@
   Copyright © 2016 Ernesto Garmendia Luis. All rights reserved.
 */
 
+"Siguiente" = "Siguiente";
+"Ingresá" = "Ingresá";
 "CONTRASEÑA" = "CONTRASEÑA";
 "TU CORREO" = "TU CORREO";
 "INGRESAR CON FACEBOOK" = "INGRESAR CON FACEBOOK";
@@ -17,6 +19,8 @@
 "CONFIRMAR" = "CONFIRMAR";
 "ACEPTO TÉRMINOS Y CONDICIONES" = "ACEPTO TÉRMINOS Y CONDICIONES";
 "http://nowakeapp.com/terminos.html" = "http://nowakeapp.com/terminos.html";
+"http://nowakeapp.com/ayuda.html" = "http://nowakeapp.com/ayuda.html";
+"http://nowakeapp.com/acerca-de-nwa.html" = "http://nowakeapp.com/acerca-de-nwa.html";
 "Hay campos sin completar" = "Hay campos sin completar";
 "Las contraseñas no coinciden" = "Las contraseñas no coinciden";
 "Usted no ha aceptado los términos y condiciones." = "Usted no ha aceptado los términos y condiciones.";

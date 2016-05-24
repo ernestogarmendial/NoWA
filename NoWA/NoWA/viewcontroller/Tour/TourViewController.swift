@@ -48,7 +48,7 @@ class TourViewController: UIViewController,UIScrollViewDelegate {
         
         nextButton = TTPopButton()
         nextButton.backgroundColor = .tourBlueColor()
-        nextButton.setTitle("Siguiente", forState: UIControlState.Normal)
+        nextButton.setTitle(NSLocalizedString("Siguiente", comment: ""), forState: UIControlState.Normal)
         nextButton.addTarget(self, action: "goNextPage", forControlEvents: UIControlEvents.TouchUpInside)
         nextButton.layer.cornerRadius = 25
         self.view.addSubview(nextButton)
@@ -70,7 +70,7 @@ class TourViewController: UIViewController,UIScrollViewDelegate {
         tourScrollView.scrollRectToVisible(scrollViewFrame, animated: true)
         
         if page == 2{
-            nextButton.setTitle("Ingresá", forState: UIControlState.Normal)
+            nextButton.setTitle(NSLocalizedString("Ingresá", comment: ""), forState: UIControlState.Normal)
             nextButton.addTarget(self, action: "goToRegister", forControlEvents: UIControlEvents.TouchUpInside)
         }
         

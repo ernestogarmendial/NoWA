@@ -78,10 +78,10 @@ class WebProfileTableViewCell: GenericTableViewCell {
         self.webDelegate?.webButtonPressed(NSLocalizedString("http://nowakeapp.com/terminos.html", comment: ""))
     }
     func goToSup() {
-        //        self.webDelegate?.webButtonPressed(self.url!)
+        self.webDelegate?.webButtonPressed(NSLocalizedString("http://nowakeapp.com/ayuda.html", comment: ""))
     }
     func goToAbout() {
-        //        self.webDelegate?.webButtonPressed(self.url!)
+        self.webDelegate?.webButtonPressed(NSLocalizedString("http://nowakeapp.com/acerca-de-nwa.html", comment: ""))
     }
     
     
