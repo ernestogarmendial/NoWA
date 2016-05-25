@@ -105,6 +105,7 @@ class UserDAO: GenericDAO {
         
         let deviceToken = NSUserDefaults.standardUserDefaults().valueForKey("deviceToken") as! String
         
+//        /user/facebook/v2/{language}/{mail}/{name}/{facebookhash}/{os}/{devicetoken}/
         let originalURL = "user/facebook/\(email)/\(username)/\(fbID)/ios/\(deviceToken)/"
         
         var url = self.encodeURL(originalURL)

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Fabric.with([Crashlytics.self])
-
+        
         UINavigationBar.appearance().hidden = false
         UINavigationBar.appearance().barTintColor = UIColor.ribbonAltColor().colorWithAlphaComponent(0.5)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
@@ -93,8 +93,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notification = userInfo["aps"] as? NSDictionary
         let message = notification?.valueForKey("alert") as! String
         if ( application.applicationState == UIApplicationState.Active ) {
-//            dispatch_async(dispatch_get_main_queue(), {
-                let path : String! = ""//= NSBundle.mainBundle().pathForResource("ringtone", ofType: "mp3")!
+            //            dispatch_async(dispatch_get_main_queue(), {
+            let path : String! = ""//= NSBundle.mainBundle().pathForResource("ringtone", ofType: "mp3")!
+            
+            if notification!["sound"] != nil {
+                
                 if notification!["sound"] as! NSString! == "ringtone.mp3"{
                     let path = NSBundle.mainBundle().pathForResource("ringtone", ofType: "mp3")!
                     AudioManager.sharedInstance.play(path)
@@ -112,13 +115,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }))
                     self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
                 }
-
-//                let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
-//                    AudioManager.sharedInstance.stop(path)
-//                }))
-//                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-//            })
+                
+                //                let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                //                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+                //                    AudioManager.sharedInstance.stop(path)
+                //                }))
+                //                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+                //            })
+                
+            }
+            else {
+                let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+            }
         }
     }
     
