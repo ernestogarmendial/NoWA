@@ -30,7 +30,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tap)
         
-        let image = UIImage(named: "back_6")
+        let image = UIImage(named: "golf_servicio")
         pictureView?.image = image
         
         let lang =  NSLocale.preferredLanguages().first! as NSString

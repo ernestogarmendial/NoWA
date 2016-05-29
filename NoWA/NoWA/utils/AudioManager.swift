@@ -23,6 +23,7 @@ import AVFoundation
     func play(file: String) {
         if let player = players[file] as? AVAudioPlayer {
             self.stopPlayer(player)
+            player.numberOfLoops = 3
             self.playPlayer(player)
             return
         }
@@ -60,6 +61,7 @@ import AVFoundation
     
     internal func playPlayer(player: AVAudioPlayer!){
         player.prepareToPlay()
+        player.numberOfLoops = 3
         player.play()
     }
     

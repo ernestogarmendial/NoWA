@@ -8,20 +8,25 @@
 
 import UIKit
 
-class PictureTableViewCell: GenericTableViewCell {
+class PictureTableViewCell: GenericTableViewCell,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var circlePictureView : CirclePictureView?
     var nameLabel : UILabel?
     var leyendLabel : UITextField?
-    
+    var button: UIButton?
+    var imagePicker = UIImagePickerController()
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.backgroundColor = .clearColor()
         self.contentView.backgroundColor = .clearColor()
-        
+
         circlePictureView = CirclePictureView()
         self.addSubview(circlePictureView!)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "buttonSelected")
+        self.circlePictureView!.addGestureRecognizer(tap)
         
         nameLabel = UILabel()
         nameLabel!.textColor = .loginRedColor()
@@ -65,6 +70,31 @@ class PictureTableViewCell: GenericTableViewCell {
         setupConstrains()
     }
     
+    func buttonSelected() {
+        print("apretado")
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            
+            let currentController = self.getCurrentViewController()
+            currentController?.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func getCurrentViewController() -> UIViewController? {
+        
+        if let rootController = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            var currentController: UIViewController! = rootController
+            while( currentController.presentedViewController != nil ) {
+                currentController = currentController.presentedViewController
+            }
+            return currentController
+        }
+        return nil
+        
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
@@ -83,6 +113,21 @@ class PictureTableViewCell: GenericTableViewCell {
         leyendLabel?.autoPinEdge(.Left, toEdge: .Left, ofView: self)
         leyendLabel?.autoPinEdge(.Right, toEdge: .Right, ofView: self)
         
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        let currentController = self.getCurrentViewController()
+        currentController?.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+
+        self.circlePictureView?.picture?.image = image
+        //Save image
+
+        let data = UIImagePNGRepresentation(image)
+        let defaultImageKey = "\(UserService.currentUser!.username!)ImageKey"
+        NSUserDefaults.standardUserDefaults().setObject(data, forKey: defaultImageKey)//"myImageKey")
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
 }

@@ -21,7 +21,7 @@ class TorneosViewController: GenericViewController , UITableViewDelegate, UITabl
         
         self.view.backgroundColor = .darkGrayCustomColor()
         
-        let image = UIImage(named: "back_5")
+        let image = UIImage(named: "futbol_torneos")
         pictureView?.image = image
         
         let lang =  NSLocale.preferredLanguages().first! as NSString

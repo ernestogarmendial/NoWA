@@ -10,14 +10,11 @@ import UIKit
 
 class EditTournamentViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var amPmFormat : Bool! = false
     var alarmStatus : NSNumber?
-    
     var datetime : String?
-    
     var cellsArray: NSMutableArray!
-    
     var alarmID : NSNumber?
-    
     var editTournamentDTO : TournamentDTO? {
         didSet{
             alarmID = self.editTournamentDTO!.tournamentID
@@ -36,6 +33,19 @@ class EditTournamentViewController: GenericViewController, UITableViewDelegate, 
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         tabla!.addGestureRecognizer(tap)
+        
+        let locale = NSLocale.currentLocale()
+        
+        let dateFormat = NSDateFormatter.dateFormatFromTemplate("j", options: 0, locale: locale)!
+        
+        if dateFormat.rangeOfString("a") != nil {
+            print("12 hour")
+            amPmFormat = true
+        }
+        else {
+            print("24 hour")
+            amPmFormat = false
+        }
         
         tabla?.delegate = self
         tabla?.dataSource = self
@@ -131,28 +141,94 @@ class EditTournamentViewController: GenericViewController, UITableViewDelegate, 
     
     func setStamp(insertCell: NewAlarmInsertTableViewCell){
         
-//        let formatter = NSNumberFormatter()
-//        formatter.minimumIntegerDigits = 2
+////        let formatter = NSNumberFormatter()
+////        formatter.minimumIntegerDigits = 2
+////        
+////        let date = NSDate()
+////        let calendar = NSCalendar.currentCalendar() //2015-11-24 17:00:49.0
+////        let components = calendar.components([ .Year, .Month, .Day], fromDate: date)
+////        let year = formatter.stringFromNumber(components.year)
+////        let month = formatter.stringFromNumber(components.month)
+////        let day = formatter.stringFromNumber(components.day)
+//    
+//        let timeLabel = insertCell.timeLabel!.text! as NSString
 //        
-//        let date = NSDate()
-//        let calendar = NSCalendar.currentCalendar() //2015-11-24 17:00:49.0
-//        let components = calendar.components([ .Year, .Month, .Day], fromDate: date)
-//        let year = formatter.stringFromNumber(components.year)
-//        let month = formatter.stringFromNumber(components.month)
-//        let day = formatter.stringFromNumber(components.day)
-    
-        let timeLabel = insertCell.timeLabel!.text! as NSString
+//        let stamp = (editTournamentDTO?.stamp)! as NSString
+//        let year = stamp.substringWithRange(NSRange(location: 0, length: 4))
+//        let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
+//        let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
+//        
+//        let hour = timeLabel.substringWithRange(NSRange(location: 0, length: 2))
+//        let minute = timeLabel.substringWithRange(NSRange(location: 3, length: 2))
+//        
+//        //        dd-MM-yyyy-HH-mm-ss
+//        self.datetime = "\(day)-\(month)-\(year)-\(hour)-\(minute)-00"
         
-        let stamp = (editTournamentDTO?.stamp)! as NSString
-        let year = stamp.substringWithRange(NSRange(location: 0, length: 4))
-        let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
-        let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
+        
+        let formatter = NSNumberFormatter()
+        formatter.minimumIntegerDigits = 2
+        
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar() //2015-11-24 17:00:49.0
+        let components = calendar.components([ .Year, .Month, .Day], fromDate: date)
+        let year = formatter.stringFromNumber(components.year)
+        let month = formatter.stringFromNumber(components.month)
+        let day = formatter.stringFromNumber(components.day)
+        
+        let timeLabel = insertCell.timeLabel!.text! as NSString
         
         let hour = timeLabel.substringWithRange(NSRange(location: 0, length: 2))
         let minute = timeLabel.substringWithRange(NSRange(location: 3, length: 2))
         
-        //        dd-MM-yyyy-HH-mm-ss
-        self.datetime = "\(day)-\(month)-\(year)-\(hour)-\(minute)-00"
+        if amPmFormat == true {
+            let amPm = timeLabel.substringWithRange(NSRange(location: 6, length: 2))
+            if amPm != "" {
+                var hourAMPM : String!
+                
+                if amPm == "PM"{
+                    switch hour {
+                    case "00":
+                        hourAMPM = "12"
+                    case "01":
+                        hourAMPM = "13"
+                    case "02":
+                        hourAMPM = "14"
+                    case "03":
+                        hourAMPM = "15"
+                    case "04":
+                        hourAMPM = "16"
+                    case "05":
+                        hourAMPM = "17"
+                    case "06":
+                        hourAMPM = "18"
+                    case "07":
+                        hourAMPM = "19"
+                    case "08":
+                        hourAMPM = "20"
+                    case "09":
+                        hourAMPM = "21"
+                    case "10":
+                        hourAMPM = "22"
+                    case "11":
+                        hourAMPM = "23"
+                    case "12":
+                        hourAMPM = "12"
+                    default:
+                        print("default")
+                    }
+                    self.datetime = "\(day!)-\(month!)-\(year!)-\(hourAMPM)-\(minute)-00"
+                    
+                }else{
+                    self.datetime = "\(day!)-\(month!)-\(year!)-\(hour)-\(minute)-00"
+                }
+            } else {
+                //        dd-MM-yyyy-HH-mm-ss
+                self.datetime = "\(day!)-\(month!)-\(year!)-\(hour)-\(minute)-00"
+            }
+        } else {
+            //        dd-MM-yyyy-HH-mm-ss
+            self.datetime = "\(day!)-\(month!)-\(year!)-\(hour)-\(minute)-00"
+        }
     }
     
     

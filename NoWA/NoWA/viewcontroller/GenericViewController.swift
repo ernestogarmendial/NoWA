@@ -41,8 +41,8 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         
        // let random1a23 = arc4random_uniform(23) + 1
        // let image = UIImage(named: "r\(random1a23)")
-         let random1a23 = arc4random_uniform(6) + 1
-         let image = UIImage(named: "back_\(random1a23)")
+         let random1a3 = arc4random_uniform(3) + 1
+         let image = UIImage(named: "back_\(random1a3)")
         
         pictureView?.image = image
         

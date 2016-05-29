@@ -106,8 +106,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         AudioManager.sharedInstance.stop(path)
                     }))
                     self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-                } else if notification!["sound"] as! NSString! == "iphone_6_original.mp3"{
-                    let path = NSBundle.mainBundle().pathForResource("iphone_6_original", ofType: "mp3")!
+                } else if notification!["sound"] as! NSString! == "Apex_mp3"{
+                    let path = NSBundle.mainBundle().pathForResource("Apex_mp3", ofType: "mp3")!
                     AudioManager.sharedInstance.play(path)
                     let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in

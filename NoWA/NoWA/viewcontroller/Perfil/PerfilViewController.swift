@@ -12,7 +12,7 @@ import Social
 class PerfilViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource, WebButtonDelegate, ShareSocialTableViewCellDelegate {
     
     var cellsArray: NSMutableArray!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +23,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         tabla!.addGestureRecognizer(tap)
         
-        let image = UIImage(named: "torneos_background")
+        let image = UIImage(named: "running_perfil")
         pictureView?.image = image
         
         let lang =  NSLocale.preferredLanguages().first! as NSString
@@ -232,5 +232,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
 //            UIApplication.sharedApplication().openURL(NSURL(string: "http://nowakeapp.com")!)
 //        }
     }
+    
+
     
 }

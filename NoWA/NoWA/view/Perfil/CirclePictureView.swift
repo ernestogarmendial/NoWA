@@ -30,20 +30,34 @@ class CirclePictureView: UIView {
         UIGraphicsBeginImageContext(picture!.bounds.size)
         self.addSubview(picture!)
         
-        let fbID = NSUserDefaults.standardUserDefaults().valueForKey("fbID") as! String!
-        if fbID != ""{
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                var facebookProfileUrl = "http://graph.facebook.com/\(fbID)/picture?type=large"
-                
-                if let url  = NSURL(string: facebookProfileUrl),
-                    data = NSData(contentsOfURL: url)
-                {
-                    self.picture!.image = UIImage(data: data)
-                }
-            }
+        //Get image
+//        if let imgData = NSUserDefaults.standardUserDefaults().objectForKey("myImageKey") as? NSData {
+        
+        let defaultImageKey = "\(UserService.currentUser!.username!)ImageKey"
+                if let imgData = NSUserDefaults.standardUserDefaults().objectForKey(defaultImageKey) as? NSData {
 
+
+            let retrievedImg = UIImage(data: imgData)
+            self.picture!.image = retrievedImg
+        } else {
+            
+            let fbID = NSUserDefaults.standardUserDefaults().valueForKey("fbID") as! String!
+            if fbID != ""{
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    var facebookProfileUrl = "http://graph.facebook.com/\(fbID)/picture?type=large"
+                    
+                    if let url  = NSURL(string: facebookProfileUrl),
+                        data = NSData(contentsOfURL: url)
+                    {
+                        self.picture!.image = UIImage(data: data)
+                    }
+                }
+                
+            }
         }
+        
+        
         
         self.autoSetDimension(.Width, toSize: 120)
         self.autoSetDimension(.Height, toSize: 120)
@@ -66,5 +80,4 @@ class CirclePictureView: UIView {
         super.init(coder: aDecoder)!
         
     }
-    
 }

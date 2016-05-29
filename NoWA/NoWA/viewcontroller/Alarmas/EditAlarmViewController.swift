@@ -53,9 +53,6 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         tabla!.addGestureRecognizer(tap)
         
-        //        let image = UIImage(named: "create_alarm_background")
-        //        pictureView?.image = image
-        
         tabla?.delegate = self
         tabla?.dataSource = self
         
