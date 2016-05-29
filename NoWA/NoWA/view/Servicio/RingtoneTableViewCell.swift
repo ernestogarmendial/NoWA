@@ -58,18 +58,12 @@ class RingtoneTableViewCell: GenericTableViewCell , pickerDelegate {
             ringtone = defaultRingtone
         }
         
-        
-        ringtonesArray.addObject(["ringtoneID": 0, "name": "ringtone.mp3"])
-        ringtonesPicker.addObject("ringtone.mp3")
-        ringtonesArray.addObject(["ringtoneID": 1, "name": "Apex"])
-        ringtonesPicker.addObject("Apex")
-//        ringtonesArray.addObject(["ringtoneID": 2, "name": "Beacon"])
-//        ringtonesPicker.addObject("Beacon")
-        
-        ringtonesArray.addObject(["ringtoneID": 2, "name": "Apex_mp3"])
-        ringtonesPicker.addObject("Apex_mp3")
-
-        
+        ringtonesArray.addObject(["ringtoneID": 0, "name": "ringtone"])
+        ringtonesPicker.addObject("ringtone")
+        ringtonesArray.addObject(["ringtoneID": 1, "name": "iphone_6_original"])
+        ringtonesPicker.addObject("iphone_6_original")
+        ringtonesArray.addObject(["ringtoneID": 2, "name": "Beacon"])
+        ringtonesPicker.addObject("Beacon")
         ringtonesArray.addObject(["ringtoneID": 3, "name": "Bulletin"])
         ringtonesPicker.addObject("Bulletin")
         ringtonesArray.addObject(["ringtoneID": 4, "name": "By The Seaside"])
@@ -120,19 +114,6 @@ class RingtoneTableViewCell: GenericTableViewCell , pickerDelegate {
         ringtonesPicker.addObject("Uplift")
         ringtonesArray.addObject(["ringtoneID": 27, "name": "Waves"])
         ringtonesPicker.addObject("Waves")
-        
-        
-        
-        
-        
-        
-        
-        
-
-
-        
-
-        
         
         setupConstrains()
     }

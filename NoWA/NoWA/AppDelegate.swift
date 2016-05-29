@@ -98,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             if notification!["sound"] != nil {
                 
-                if notification!["sound"] as! NSString! == "ringtone.mp3"{
+                if notification!["sound"] as! NSString! == "ringtone"{
                     let path = NSBundle.mainBundle().pathForResource("ringtone", ofType: "mp3")!
                     AudioManager.sharedInstance.play(path)
                     let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -106,8 +106,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         AudioManager.sharedInstance.stop(path)
                     }))
                     self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-                } else if notification!["sound"] as! NSString! == "Apex_mp3"{
-                    let path = NSBundle.mainBundle().pathForResource("Apex_mp3", ofType: "mp3")!
+                } else if notification!["sound"] as! NSString! == "iphone_6_original"{
+                    let path = NSBundle.mainBundle().pathForResource("iphone_6_original", ofType: "mp3")!
+                    AudioManager.sharedInstance.play(path)
+                    let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
+                        AudioManager.sharedInstance.stop(path)
+                    }))
+                    self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+                } else if notification!["sound"] as! NSString! == "Beacon"{
+                    let path = NSBundle.mainBundle().pathForResource("Beacon", ofType: "m4r")!
                     AudioManager.sharedInstance.play(path)
                     let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
@@ -115,13 +123,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }))
                     self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
                 }
-                
-                //                let alert = UIAlertController(title: "ALARMA", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                //                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
-                //                    AudioManager.sharedInstance.stop(path)
-                //                }))
-                //                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-                //            })
                 
             }
             else {

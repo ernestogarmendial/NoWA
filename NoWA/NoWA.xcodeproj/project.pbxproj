@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C01C0CDF3C00E67905 /* UIColorExtension.swift */; };
 		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
-		9411195A1CFA87CD007EF306 /* Apex_mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 941119591CFA87CD007EF306 /* Apex_mp3.mp3 */; };
 		941421771C2BAA6B00D9495E /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421761C2BAA6B00D9495E /* PickerTableViewCell.swift */; };
 		941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */; };
 		9414217D1C2C59E200D9495E /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */; };
@@ -97,7 +96,6 @@
 		94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94D5FE601C6ECFB00022A630 /* EditAlarmCells.plist */; };
 		94D5FE631C7052EB0022A630 /* StartLoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE621C7052EB0022A630 /* StartLoggedViewController.swift */; };
 		94D5FE681C7156560022A630 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE661C7156560022A630 /* AudioManager.swift */; };
-		94D5FE6D1C7159800022A630 /* ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94D5FE6C1C7159800022A630 /* ringtone.mp3 */; };
 		94D5FE721C715FBD0022A630 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE6F1C715FBD0022A630 /* Reachability.m */; };
 		94D5FE731C715FBD0022A630 /* TTInternetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE711C715FBD0022A630 /* TTInternetConnection.m */; };
 		94D5FE761C7161F00022A630 /* TTPopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D5FE751C7161F00022A630 /* TTPopButton.m */; };
@@ -108,33 +106,6 @@
 		94F312591C9B8DA500CAB4C0 /* EditTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F312581C9B8DA500CAB4C0 /* EditTournamentViewController.swift */; };
 		94F3125B1C9B907900CAB4C0 /* EditTournamentCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94F3125A1C9B907900CAB4C0 /* EditTournamentCells.plist */; };
 		94F3125D1C9BBF8400CAB4C0 /* WebProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F3125C1C9BBF8400CAB4C0 /* WebProfileTableViewCell.swift */; };
-		94F595761CFA68600053A326 /* Apex.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595751CFA68600053A326 /* Apex.m4r */; };
-		94F595921CFA72AC0053A326 /* Beacon.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595781CFA72AC0053A326 /* Beacon.m4r */; };
-		94F595931CFA72AC0053A326 /* Bulletin.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595791CFA72AC0053A326 /* Bulletin.m4r */; };
-		94F595941CFA72AC0053A326 /* By The Seaside.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5957A1CFA72AC0053A326 /* By The Seaside.m4r */; };
-		94F595951CFA72AC0053A326 /* Chimes.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5957B1CFA72AC0053A326 /* Chimes.m4r */; };
-		94F595961CFA72AC0053A326 /* Circuit.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5957C1CFA72AC0053A326 /* Circuit.m4r */; };
-		94F595971CFA72AC0053A326 /* Constellation.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5957D1CFA72AC0053A326 /* Constellation.m4r */; };
-		94F595981CFA72AC0053A326 /* Cosmic.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5957E1CFA72AC0053A326 /* Cosmic.m4r */; };
-		94F595991CFA72AC0053A326 /* Crystals.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5957F1CFA72AC0053A326 /* Crystals.m4r */; };
-		94F5959A1CFA72AC0053A326 /* Hillside.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595801CFA72AC0053A326 /* Hillside.m4r */; };
-		94F5959B1CFA72AC0053A326 /* Illuminate.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595811CFA72AC0053A326 /* Illuminate.m4r */; };
-		94F5959C1CFA72AC0053A326 /* Night Owl.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595821CFA72AC0053A326 /* Night Owl.m4r */; };
-		94F5959D1CFA72AC0053A326 /* Opening.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595831CFA72AC0053A326 /* Opening.m4r */; };
-		94F5959E1CFA72AC0053A326 /* Playtime.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595841CFA72AC0053A326 /* Playtime.m4r */; };
-		94F5959F1CFA72AC0053A326 /* Presto.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595851CFA72AC0053A326 /* Presto.m4r */; };
-		94F595A01CFA72AC0053A326 /* Radar.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595861CFA72AC0053A326 /* Radar.m4r */; };
-		94F595A11CFA72AC0053A326 /* Radiate.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595871CFA72AC0053A326 /* Radiate.m4r */; };
-		94F595A21CFA72AC0053A326 /* Ripples.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595881CFA72AC0053A326 /* Ripples.m4r */; };
-		94F595A31CFA72AC0053A326 /* Sencha.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595891CFA72AC0053A326 /* Sencha.m4r */; };
-		94F595A41CFA72AC0053A326 /* Signal.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5958A1CFA72AC0053A326 /* Signal.m4r */; };
-		94F595A51CFA72AC0053A326 /* Silk.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5958B1CFA72AC0053A326 /* Silk.m4r */; };
-		94F595A61CFA72AC0053A326 /* Slow Rise.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5958C1CFA72AC0053A326 /* Slow Rise.m4r */; };
-		94F595A71CFA72AC0053A326 /* Stargaze.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5958D1CFA72AC0053A326 /* Stargaze.m4r */; };
-		94F595A81CFA72AC0053A326 /* Summit.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5958E1CFA72AC0053A326 /* Summit.m4r */; };
-		94F595A91CFA72AC0053A326 /* Twinkle.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F5958F1CFA72AC0053A326 /* Twinkle.m4r */; };
-		94F595AA1CFA72AC0053A326 /* Uplift.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595901CFA72AC0053A326 /* Uplift.m4r */; };
-		94F595AB1CFA72AC0053A326 /* Waves.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 94F595911CFA72AC0053A326 /* Waves.m4r */; };
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -160,7 +131,6 @@
 		449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		941109C01C0CDF3C00E67905 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		941109C11C0CDF3C00E67905 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
-		941119591CFA87CD007EF306 /* Apex_mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Apex_mp3.mp3; sourceTree = "<group>"; };
 		941421761C2BAA6B00D9495E /* PickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerTableViewCell.swift; path = view/Servicio/PickerTableViewCell.swift; sourceTree = "<group>"; };
 		941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceAvisoTableViewCell.swift; path = view/Servicio/ServiceAvisoTableViewCell.swift; sourceTree = "<group>"; };
 		9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SliderTableViewCell.swift; path = view/SliderTableViewCell.swift; sourceTree = "<group>"; };
@@ -254,7 +224,6 @@
 		94D5FE601C6ECFB00022A630 /* EditAlarmCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EditAlarmCells.plist; sourceTree = "<group>"; };
 		94D5FE621C7052EB0022A630 /* StartLoggedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartLoggedViewController.swift; sourceTree = "<group>"; };
 		94D5FE661C7156560022A630 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
-		94D5FE6C1C7159800022A630 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
 		94D5FE6E1C715FBD0022A630 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		94D5FE6F1C715FBD0022A630 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		94D5FE701C715FBD0022A630 /* TTInternetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInternetConnection.h; sourceTree = "<group>"; };
@@ -268,33 +237,6 @@
 		94F312581C9B8DA500CAB4C0 /* EditTournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditTournamentViewController.swift; path = viewcontroller/Torneos/EditTournamentViewController.swift; sourceTree = "<group>"; };
 		94F3125A1C9B907900CAB4C0 /* EditTournamentCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EditTournamentCells.plist; sourceTree = "<group>"; };
 		94F3125C1C9BBF8400CAB4C0 /* WebProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebProfileTableViewCell.swift; path = view/Perfil/WebProfileTableViewCell.swift; sourceTree = "<group>"; };
-		94F595751CFA68600053A326 /* Apex.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Apex.m4r; sourceTree = "<group>"; };
-		94F595781CFA72AC0053A326 /* Beacon.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Beacon.m4r; sourceTree = "<group>"; };
-		94F595791CFA72AC0053A326 /* Bulletin.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bulletin.m4r; sourceTree = "<group>"; };
-		94F5957A1CFA72AC0053A326 /* By The Seaside.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = "By The Seaside.m4r"; sourceTree = "<group>"; };
-		94F5957B1CFA72AC0053A326 /* Chimes.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chimes.m4r; sourceTree = "<group>"; };
-		94F5957C1CFA72AC0053A326 /* Circuit.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Circuit.m4r; sourceTree = "<group>"; };
-		94F5957D1CFA72AC0053A326 /* Constellation.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Constellation.m4r; sourceTree = "<group>"; };
-		94F5957E1CFA72AC0053A326 /* Cosmic.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cosmic.m4r; sourceTree = "<group>"; };
-		94F5957F1CFA72AC0053A326 /* Crystals.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crystals.m4r; sourceTree = "<group>"; };
-		94F595801CFA72AC0053A326 /* Hillside.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hillside.m4r; sourceTree = "<group>"; };
-		94F595811CFA72AC0053A326 /* Illuminate.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Illuminate.m4r; sourceTree = "<group>"; };
-		94F595821CFA72AC0053A326 /* Night Owl.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Night Owl.m4r"; sourceTree = "<group>"; };
-		94F595831CFA72AC0053A326 /* Opening.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Opening.m4r; sourceTree = "<group>"; };
-		94F595841CFA72AC0053A326 /* Playtime.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Playtime.m4r; sourceTree = "<group>"; };
-		94F595851CFA72AC0053A326 /* Presto.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Presto.m4r; sourceTree = "<group>"; };
-		94F595861CFA72AC0053A326 /* Radar.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Radar.m4r; sourceTree = "<group>"; };
-		94F595871CFA72AC0053A326 /* Radiate.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Radiate.m4r; sourceTree = "<group>"; };
-		94F595881CFA72AC0053A326 /* Ripples.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ripples.m4r; sourceTree = "<group>"; };
-		94F595891CFA72AC0053A326 /* Sencha.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sencha.m4r; sourceTree = "<group>"; };
-		94F5958A1CFA72AC0053A326 /* Signal.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Signal.m4r; sourceTree = "<group>"; };
-		94F5958B1CFA72AC0053A326 /* Silk.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silk.m4r; sourceTree = "<group>"; };
-		94F5958C1CFA72AC0053A326 /* Slow Rise.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Slow Rise.m4r"; sourceTree = "<group>"; };
-		94F5958D1CFA72AC0053A326 /* Stargaze.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stargaze.m4r; sourceTree = "<group>"; };
-		94F5958E1CFA72AC0053A326 /* Summit.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Summit.m4r; sourceTree = "<group>"; };
-		94F5958F1CFA72AC0053A326 /* Twinkle.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Twinkle.m4r; sourceTree = "<group>"; };
-		94F595901CFA72AC0053A326 /* Uplift.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Uplift.m4r; sourceTree = "<group>"; };
-		94F595911CFA72AC0053A326 /* Waves.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = Waves.m4r; sourceTree = "<group>"; };
 		BAC99C11815F718924B1B194 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -332,7 +274,6 @@
 		941109BF1C0CDF3C00E67905 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				94F595771CFA6C560053A326 /* ringtones */,
 				94D5FE741C7161F00022A630 /* TTPopButton.h */,
 				94D5FE751C7161F00022A630 /* TTPopButton.m */,
 				94D5FE661C7156560022A630 /* AudioManager.swift */,
@@ -649,42 +590,6 @@
 			name = Torneos;
 			sourceTree = "<group>";
 		};
-		94F595771CFA6C560053A326 /* ringtones */ = {
-			isa = PBXGroup;
-			children = (
-				941119591CFA87CD007EF306 /* Apex_mp3.mp3 */,
-				94D5FE6C1C7159800022A630 /* ringtone.mp3 */,
-				94F595751CFA68600053A326 /* Apex.m4r */,
-				94F595781CFA72AC0053A326 /* Beacon.m4r */,
-				94F595791CFA72AC0053A326 /* Bulletin.m4r */,
-				94F5957A1CFA72AC0053A326 /* By The Seaside.m4r */,
-				94F5957B1CFA72AC0053A326 /* Chimes.m4r */,
-				94F5957C1CFA72AC0053A326 /* Circuit.m4r */,
-				94F5957D1CFA72AC0053A326 /* Constellation.m4r */,
-				94F5957E1CFA72AC0053A326 /* Cosmic.m4r */,
-				94F5957F1CFA72AC0053A326 /* Crystals.m4r */,
-				94F595801CFA72AC0053A326 /* Hillside.m4r */,
-				94F595811CFA72AC0053A326 /* Illuminate.m4r */,
-				94F595821CFA72AC0053A326 /* Night Owl.m4r */,
-				94F595831CFA72AC0053A326 /* Opening.m4r */,
-				94F595841CFA72AC0053A326 /* Playtime.m4r */,
-				94F595851CFA72AC0053A326 /* Presto.m4r */,
-				94F595861CFA72AC0053A326 /* Radar.m4r */,
-				94F595871CFA72AC0053A326 /* Radiate.m4r */,
-				94F595881CFA72AC0053A326 /* Ripples.m4r */,
-				94F595891CFA72AC0053A326 /* Sencha.m4r */,
-				94F5958A1CFA72AC0053A326 /* Signal.m4r */,
-				94F5958B1CFA72AC0053A326 /* Silk.m4r */,
-				94F5958C1CFA72AC0053A326 /* Slow Rise.m4r */,
-				94F5958D1CFA72AC0053A326 /* Stargaze.m4r */,
-				94F5958E1CFA72AC0053A326 /* Summit.m4r */,
-				94F5958F1CFA72AC0053A326 /* Twinkle.m4r */,
-				94F595901CFA72AC0053A326 /* Uplift.m4r */,
-				94F595911CFA72AC0053A326 /* Waves.m4r */,
-			);
-			name = ringtones;
-			sourceTree = "<group>";
-		};
 		AFC4C6ADB84285702FCCED31 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -808,42 +713,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94F595AB1CFA72AC0053A326 /* Waves.m4r in Resources */,
-				94F5959F1CFA72AC0053A326 /* Presto.m4r in Resources */,
-				94F595A01CFA72AC0053A326 /* Radar.m4r in Resources */,
-				94F595951CFA72AC0053A326 /* Chimes.m4r in Resources */,
-				94F595A41CFA72AC0053A326 /* Signal.m4r in Resources */,
-				94F595971CFA72AC0053A326 /* Constellation.m4r in Resources */,
-				94F595A21CFA72AC0053A326 /* Ripples.m4r in Resources */,
-				94F595A81CFA72AC0053A326 /* Summit.m4r in Resources */,
-				94F595A31CFA72AC0053A326 /* Sencha.m4r in Resources */,
-				94F595931CFA72AC0053A326 /* Bulletin.m4r in Resources */,
-				94F595981CFA72AC0053A326 /* Cosmic.m4r in Resources */,
-				9411195A1CFA87CD007EF306 /* Apex_mp3.mp3 in Resources */,
-				94F595991CFA72AC0053A326 /* Crystals.m4r in Resources */,
-				94D5FE6D1C7159800022A630 /* ringtone.mp3 in Resources */,
-				94F595A91CFA72AC0053A326 /* Twinkle.m4r in Resources */,
 				94F3125B1C9B907900CAB4C0 /* EditTournamentCells.plist in Resources */,
-				94F5959A1CFA72AC0053A326 /* Hillside.m4r in Resources */,
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
-				94F595A71CFA72AC0053A326 /* Stargaze.m4r in Resources */,
-				94F5959C1CFA72AC0053A326 /* Night Owl.m4r in Resources */,
-				94F595A11CFA72AC0053A326 /* Radiate.m4r in Resources */,
-				94F5959E1CFA72AC0053A326 /* Playtime.m4r in Resources */,
-				94F595761CFA68600053A326 /* Apex.m4r in Resources */,
-				94F595A51CFA72AC0053A326 /* Silk.m4r in Resources */,
 				942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */,
-				94F595921CFA72AC0053A326 /* Beacon.m4r in Resources */,
-				94F595941CFA72AC0053A326 /* By The Seaside.m4r in Resources */,
 				949A51021CA4D18F005AF2D5 /* Localizable.strings in Resources */,
 				94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */,
-				94F595AA1CFA72AC0053A326 /* Uplift.m4r in Resources */,
-				94F5959B1CFA72AC0053A326 /* Illuminate.m4r in Resources */,
-				94F595961CFA72AC0053A326 /* Circuit.m4r in Resources */,
 				944728351C4893EE00F8E963 /* NewAlarmCells.plist in Resources */,
 				944728261C472B7600F8E963 /* PerfilTabCells.plist in Resources */,
-				94F5959D1CFA72AC0053A326 /* Opening.m4r in Resources */,
-				94F595A61CFA72AC0053A326 /* Slow Rise.m4r in Resources */,
 				94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
