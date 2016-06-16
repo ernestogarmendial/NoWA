@@ -308,6 +308,11 @@ class AlarmDAO: GenericDAO {
             repetition = _eventDTO.repetition
         }
         
+//        let ringtone: String = _eventDTO.ringtone!
+//        let ringtoneArr = ringtone.componentsSeparatedByString(".")
+//        
+//        var ext: String = ringtoneArr[1]
+        
         let originalURL = "alarms/update/\(_alarmDTO.alarmID!)/\(_dateTime)/\(name)/\(description)/\(zone)/\(repetition)/\(_alarmDTO.condition!.intValue)/\(_alarmDTO.prediction!.intValue)/\(_alarmDTO.minTemp!.intValue)/\(_alarmDTO.maxTemp!.intValue)/\(_alarmDTO.minHumidity!.intValue)/\(_alarmDTO.maxHumidity!.intValue)/\(_alarmDTO.minWind!.intValue)/\(_alarmDTO.maxWind!.intValue)/\(_alarmDTO.minSnow!.intValue)/\(_alarmDTO.maxSnow!.intValue)/\(_alarmDTO.service!.intValue)/\(place)/\(_eventDTO.ringtone!)/\(_token)/"
         var url = self.encodeURL(originalURL)
         

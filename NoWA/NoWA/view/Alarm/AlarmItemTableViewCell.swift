@@ -49,7 +49,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
                 var hourAMPM : String!
                 switch hour {
                 case "12":
-                    hourAMPM = "12"
+                    hourAMPM = "00"
                 case "13":
                     hourAMPM = "01"
                 case "14":

@@ -52,69 +52,38 @@ class RingtoneTableViewCell: GenericTableViewCell , pickerDelegate {
         
         self.addSubview(rightButton!)
         
-        let defaultRingtone = "ringtone.mp3"
-        if self.firstTimeEdit == false {
+        let defaultRingtone = "Apex"
+        if self.firstTimeEdit == true {
             descriptionLabel?.text = defaultRingtone
             ringtone = defaultRingtone
         }
         
-        ringtonesArray.addObject(["ringtoneID": 0, "name": "ringtone"])
-        ringtonesPicker.addObject("ringtone")
-        ringtonesArray.addObject(["ringtoneID": 1, "name": "iphone_6_original"])
-        ringtonesPicker.addObject("iphone_6_original")
-        ringtonesArray.addObject(["ringtoneID": 2, "name": "Beacon"])
+//        ringtonesArray.addObject(["ringtoneID": 0, "name": "ringtone"])
+//        ringtonesPicker.addObject("ringtone")
+//        ringtonesArray.addObject(["ringtoneID": 1, "name": "iphone_6_original"])
+//        ringtonesPicker.addObject("iphone_6_original")
+        ringtonesArray.addObject(["ringtoneID": 0, "name": "Apex"])
+        ringtonesPicker.addObject("Apex")
+        ringtonesArray.addObject(["ringtoneID": 1, "name": "Beacon"])
         ringtonesPicker.addObject("Beacon")
-        ringtonesArray.addObject(["ringtoneID": 3, "name": "Bulletin"])
+        ringtonesArray.addObject(["ringtoneID": 2, "name": "Bulletin"])
         ringtonesPicker.addObject("Bulletin")
-        ringtonesArray.addObject(["ringtoneID": 4, "name": "By The Seaside"])
-        ringtonesPicker.addObject("By The Seaside")
-        ringtonesArray.addObject(["ringtoneID": 5, "name": "Chimes"])
-        ringtonesPicker.addObject("Chimes")
-        ringtonesArray.addObject(["ringtoneID": 6, "name": "Circuit"])
+        ringtonesArray.addObject(["ringtoneID": 3, "name": "Circuit"])
         ringtonesPicker.addObject("Circuit")
-        ringtonesArray.addObject(["ringtoneID": 7, "name": "Constellation"])
-        ringtonesPicker.addObject("Constellation")
-        ringtonesArray.addObject(["ringtoneID": 8, "name": "Cosmic"])
-        ringtonesPicker.addObject("Cosmic")
-        ringtonesArray.addObject(["ringtoneID": 9, "name": "Crystals"])
+        ringtonesArray.addObject(["ringtoneID": 4, "name": "Crystals"])
         ringtonesPicker.addObject("Crystals")
-        ringtonesArray.addObject(["ringtoneID": 10, "name": "Hillside"])
-        ringtonesPicker.addObject("Hillside")
-        ringtonesArray.addObject(["ringtoneID": 11, "name": "Illuminate"])
-        ringtonesPicker.addObject("Illuminate")
-        ringtonesArray.addObject(["ringtoneID": 12, "name": "Night Owl"])
-        ringtonesPicker.addObject("Night Owl")
-        ringtonesArray.addObject(["ringtoneID": 13, "name": "Opening"])
-        ringtonesPicker.addObject("Opening")
-        ringtonesArray.addObject(["ringtoneID": 14, "name": "Playtime"])
-        ringtonesPicker.addObject("Playtime")
-        ringtonesArray.addObject(["ringtoneID": 15, "name": "Presto"])
+        ringtonesArray.addObject(["ringtoneID": 5, "name": "Presto"])
         ringtonesPicker.addObject("Presto")
-        ringtonesArray.addObject(["ringtoneID": 16, "name": "Radar"])
+        ringtonesArray.addObject(["ringtoneID": 6, "name": "Radar"])
         ringtonesPicker.addObject("Radar")
-        ringtonesArray.addObject(["ringtoneID": 17, "name": "Radiate"])
-        ringtonesPicker.addObject("Radiate")
-        ringtonesArray.addObject(["ringtoneID": 18, "name": "Ripples"])
-        ringtonesPicker.addObject("Ripples")
-        ringtonesArray.addObject(["ringtoneID": 19, "name": "Sencha"])
+        ringtonesArray.addObject(["ringtoneID": 7, "name": "Sencha"])
         ringtonesPicker.addObject("Sencha")
-        ringtonesArray.addObject(["ringtoneID": 20, "name": "Signal"])
+        ringtonesArray.addObject(["ringtoneID": 8, "name": "Signal"])
         ringtonesPicker.addObject("Signal")
-        ringtonesArray.addObject(["ringtoneID": 21, "name": "Silk"])
-        ringtonesPicker.addObject("Silk")
-        ringtonesArray.addObject(["ringtoneID": 22, "name": "Slow Rise"])
+        ringtonesArray.addObject(["ringtoneID": 9, "name": "Slow Rise"])
         ringtonesPicker.addObject("Slow Rise")
-        ringtonesArray.addObject(["ringtoneID": 23, "name": "Stargaze"])
-        ringtonesPicker.addObject("Stargaze")
-        ringtonesArray.addObject(["ringtoneID": 24, "name": "Summit"])
-        ringtonesPicker.addObject("Summit")
-        ringtonesArray.addObject(["ringtoneID": 25, "name": "Twinkle"])
+        ringtonesArray.addObject(["ringtoneID": 10, "name": "Twinkle"])
         ringtonesPicker.addObject("Twinkle")
-        ringtonesArray.addObject(["ringtoneID": 26, "name": "Uplift"])
-        ringtonesPicker.addObject("Uplift")
-        ringtonesArray.addObject(["ringtoneID": 27, "name": "Waves"])
-        ringtonesPicker.addObject("Waves")
-        
         setupConstrains()
     }
     
@@ -227,7 +196,7 @@ class RingtoneTableViewCell: GenericTableViewCell , pickerDelegate {
                 
                 let ringtone = ringtone.valueForKey("name") as! String
                 
-                if ringtone == event?.ringtone {
+                if "\(ringtone).m4a" == event!.ringtone! {
                     
                     descriptionLabel!.text = ringtone as? String//ringtone.valueForKey("name") as? String
                     self.ringtone = ringtone as? String//ringtone.valueForKey("name") as? String

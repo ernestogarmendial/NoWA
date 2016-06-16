@@ -235,7 +235,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         
         let ringtoneCell = tabla!.viewWithTag(102) as! RingtoneTableViewCell
         if let ringtone = ringtoneCell.ringtone{
-            newAlarmEventDTO?.ringtone = ringtone as String
+            newAlarmEventDTO?.ringtone = "\(ringtone as String).m4a"
         }
         
         let isDefaultCell = tabla!.viewWithTag(103) as! DefaultCancelTableViewCell

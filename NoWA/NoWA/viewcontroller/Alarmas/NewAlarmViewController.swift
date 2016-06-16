@@ -235,7 +235,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         let ringtoneCell = tabla!.viewWithTag(102) as! RingtoneTableViewCell
         if let ringtone = ringtoneCell.ringtone{
-            newAlarmEventDTO?.ringtone = ringtone as String
+            newAlarmEventDTO?.ringtone = "\(ringtone as String).m4a"
         }
         
         let serviceCell = tabla!.viewWithTag(104) as! ServicePickerTableViewCell

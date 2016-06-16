@@ -9,6 +9,28 @@
 /* Begin PBXBuildFile section */
 		941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C01C0CDF3C00E67905 /* UIColorExtension.swift */; };
 		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
+		94114AE81D123823001D1268 /* Apex.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114ADC1D123823001D1268 /* Apex.m4a */; };
+		94114AE91D123823001D1268 /* Beacon.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114ADD1D123823001D1268 /* Beacon.m4a */; };
+		94114AEA1D123823001D1268 /* Bulletin.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114ADE1D123823001D1268 /* Bulletin.m4a */; };
+		94114AEC1D123823001D1268 /* Circuit.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114AE01D123823001D1268 /* Circuit.m4a */; };
+		94114AED1D123823001D1268 /* Crystals.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114AE11D123823001D1268 /* Crystals.m4a */; };
+		94114AEE1D123823001D1268 /* Presto.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114AE21D123823001D1268 /* Presto.m4a */; };
+		94114AEF1D123824001D1268 /* Radar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114AE31D123823001D1268 /* Radar.m4a */; };
+		94114AF01D123824001D1268 /* Sencha.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114AE41D123823001D1268 /* Sencha.m4a */; };
+		94114AF11D123824001D1268 /* Signal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114AE51D123823001D1268 /* Signal.m4a */; };
+		94114AF21D123824001D1268 /* Slow Rise.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114AE61D123823001D1268 /* Slow Rise.m4a */; };
+		94114AF31D123824001D1268 /* Twinkle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 94114AE71D123823001D1268 /* Twinkle.m4a */; };
+		94114AF41D12383C001D1268 /* Apex.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114ADC1D123823001D1268 /* Apex.m4a */; };
+		94114AF51D12383C001D1268 /* Beacon.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114ADD1D123823001D1268 /* Beacon.m4a */; };
+		94114AF61D12383C001D1268 /* Bulletin.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114ADE1D123823001D1268 /* Bulletin.m4a */; };
+		94114AF81D12383C001D1268 /* Circuit.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114AE01D123823001D1268 /* Circuit.m4a */; };
+		94114AF91D12383C001D1268 /* Crystals.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114AE11D123823001D1268 /* Crystals.m4a */; };
+		94114AFA1D12383C001D1268 /* Presto.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114AE21D123823001D1268 /* Presto.m4a */; };
+		94114AFB1D12383C001D1268 /* Radar.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114AE31D123823001D1268 /* Radar.m4a */; };
+		94114AFC1D12383C001D1268 /* Sencha.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114AE41D123823001D1268 /* Sencha.m4a */; };
+		94114AFD1D12383C001D1268 /* Signal.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114AE51D123823001D1268 /* Signal.m4a */; };
+		94114AFE1D12383C001D1268 /* Slow Rise.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114AE61D123823001D1268 /* Slow Rise.m4a */; };
+		94114AFF1D12383C001D1268 /* Twinkle.m4a in Sources */ = {isa = PBXBuildFile; fileRef = 94114AE71D123823001D1268 /* Twinkle.m4a */; };
 		941421771C2BAA6B00D9495E /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421761C2BAA6B00D9495E /* PickerTableViewCell.swift */; };
 		941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */; };
 		9414217D1C2C59E200D9495E /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */; };
@@ -131,6 +153,17 @@
 		449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		941109C01C0CDF3C00E67905 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		941109C11C0CDF3C00E67905 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		94114ADC1D123823001D1268 /* Apex.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Apex.m4a; sourceTree = "<group>"; };
+		94114ADD1D123823001D1268 /* Beacon.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Beacon.m4a; sourceTree = "<group>"; };
+		94114ADE1D123823001D1268 /* Bulletin.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bulletin.m4a; sourceTree = "<group>"; };
+		94114AE01D123823001D1268 /* Circuit.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Circuit.m4a; sourceTree = "<group>"; };
+		94114AE11D123823001D1268 /* Crystals.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crystals.m4a; sourceTree = "<group>"; };
+		94114AE21D123823001D1268 /* Presto.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Presto.m4a; sourceTree = "<group>"; };
+		94114AE31D123823001D1268 /* Radar.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Radar.m4a; sourceTree = "<group>"; };
+		94114AE41D123823001D1268 /* Sencha.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sencha.m4a; sourceTree = "<group>"; };
+		94114AE51D123823001D1268 /* Signal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Signal.m4a; sourceTree = "<group>"; };
+		94114AE61D123823001D1268 /* Slow Rise.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Slow Rise.m4a"; sourceTree = "<group>"; };
+		94114AE71D123823001D1268 /* Twinkle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Twinkle.m4a; sourceTree = "<group>"; };
 		941421761C2BAA6B00D9495E /* PickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerTableViewCell.swift; path = view/Servicio/PickerTableViewCell.swift; sourceTree = "<group>"; };
 		941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceAvisoTableViewCell.swift; path = view/Servicio/ServiceAvisoTableViewCell.swift; sourceTree = "<group>"; };
 		9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SliderTableViewCell.swift; path = view/SliderTableViewCell.swift; sourceTree = "<group>"; };
@@ -274,6 +307,17 @@
 		941109BF1C0CDF3C00E67905 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				94114ADC1D123823001D1268 /* Apex.m4a */,
+				94114ADD1D123823001D1268 /* Beacon.m4a */,
+				94114ADE1D123823001D1268 /* Bulletin.m4a */,
+				94114AE01D123823001D1268 /* Circuit.m4a */,
+				94114AE11D123823001D1268 /* Crystals.m4a */,
+				94114AE21D123823001D1268 /* Presto.m4a */,
+				94114AE31D123823001D1268 /* Radar.m4a */,
+				94114AE41D123823001D1268 /* Sencha.m4a */,
+				94114AE51D123823001D1268 /* Signal.m4a */,
+				94114AE61D123823001D1268 /* Slow Rise.m4a */,
+				94114AE71D123823001D1268 /* Twinkle.m4a */,
 				94D5FE741C7161F00022A630 /* TTPopButton.h */,
 				94D5FE751C7161F00022A630 /* TTPopButton.m */,
 				94D5FE661C7156560022A630 /* AudioManager.swift */,
@@ -714,13 +758,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				94F3125B1C9B907900CAB4C0 /* EditTournamentCells.plist in Resources */,
+				94114AED1D123823001D1268 /* Crystals.m4a in Resources */,
+				94114AEA1D123823001D1268 /* Bulletin.m4a in Resources */,
+				94114AE81D123823001D1268 /* Apex.m4a in Resources */,
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
+				94114AEE1D123823001D1268 /* Presto.m4a in Resources */,
 				942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */,
+				94114AF01D123824001D1268 /* Sencha.m4a in Resources */,
+				94114AEC1D123823001D1268 /* Circuit.m4a in Resources */,
+				94114AF11D123824001D1268 /* Signal.m4a in Resources */,
+				94114AF31D123824001D1268 /* Twinkle.m4a in Resources */,
+				94114AE91D123823001D1268 /* Beacon.m4a in Resources */,
 				949A51021CA4D18F005AF2D5 /* Localizable.strings in Resources */,
 				94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */,
 				944728351C4893EE00F8E963 /* NewAlarmCells.plist in Resources */,
 				944728261C472B7600F8E963 /* PerfilTabCells.plist in Resources */,
+				94114AF21D123824001D1268 /* Slow Rise.m4a in Resources */,
 				94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */,
+				94114AEF1D123824001D1268 /* Radar.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,6 +846,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94114AF41D12383C001D1268 /* Apex.m4a in Sources */,
+				94114AF51D12383C001D1268 /* Beacon.m4a in Sources */,
+				94114AF61D12383C001D1268 /* Bulletin.m4a in Sources */,
+				94114AF81D12383C001D1268 /* Circuit.m4a in Sources */,
+				94114AF91D12383C001D1268 /* Crystals.m4a in Sources */,
+				94114AFA1D12383C001D1268 /* Presto.m4a in Sources */,
+				94114AFB1D12383C001D1268 /* Radar.m4a in Sources */,
+				94114AFC1D12383C001D1268 /* Sencha.m4a in Sources */,
+				94114AFD1D12383C001D1268 /* Signal.m4a in Sources */,
+				94114AFE1D12383C001D1268 /* Slow Rise.m4a in Sources */,
+				94114AFF1D12383C001D1268 /* Twinkle.m4a in Sources */,
 				94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */,
 				9476A9051C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift in Sources */,
 				941CA13E1C3F6179004E4969 /* TournamentDTO.swift in Sources */,
