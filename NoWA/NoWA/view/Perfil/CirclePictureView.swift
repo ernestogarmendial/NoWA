@@ -29,10 +29,7 @@ class CirclePictureView: UIView {
         picture?.layer.masksToBounds = true
         UIGraphicsBeginImageContext(picture!.bounds.size)
         self.addSubview(picture!)
-        
-        //Get image
-//        if let imgData = NSUserDefaults.standardUserDefaults().objectForKey("myImageKey") as? NSData {
-        
+               
         let defaultImageKey = "\(UserService.currentUser!.username!)ImageKey"
                 if let imgData = NSUserDefaults.standardUserDefaults().objectForKey(defaultImageKey) as? NSData {
 

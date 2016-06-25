@@ -235,7 +235,7 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         
         let ringtoneCell = tabla!.viewWithTag(102) as! RingtoneTableViewCell
         if let ringtone = ringtoneCell.ringtone{
-            newAlarmEventDTO?.ringtone = "\(ringtone as String).m4a"
+            newAlarmEventDTO?.ringtone = "\(ringtone as String).mp3"
         }
         
         let serviceCell = tabla!.viewWithTag(104) as! ServicePickerTableViewCell
@@ -439,14 +439,5 @@ class NewAlarmViewController: GenericViewController, UITableViewDelegate, UITabl
         }
     }
     
-//    func validateObligatoryFields(field : String!){
-//        
-//        let alert = UIAlertController(title: "Error", message: "Debe completar el campo \(field)", preferredStyle: UIAlertControllerStyle.Alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-//        
-//        dispatch_async(dispatch_get_main_queue()) {
-//            self.presentViewController(alert, animated: true, completion: nil)
-//        }
-//        return
-//    }
+
 }

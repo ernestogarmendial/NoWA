@@ -140,30 +140,7 @@ class EditTournamentViewController: GenericViewController, UITableViewDelegate, 
     }
     
     func setStamp(insertCell: NewAlarmInsertTableViewCell){
-        
-////        let formatter = NSNumberFormatter()
-////        formatter.minimumIntegerDigits = 2
-////        
-////        let date = NSDate()
-////        let calendar = NSCalendar.currentCalendar() //2015-11-24 17:00:49.0
-////        let components = calendar.components([ .Year, .Month, .Day], fromDate: date)
-////        let year = formatter.stringFromNumber(components.year)
-////        let month = formatter.stringFromNumber(components.month)
-////        let day = formatter.stringFromNumber(components.day)
-//    
-//        let timeLabel = insertCell.timeLabel!.text! as NSString
-//        
-//        let stamp = (editTournamentDTO?.stamp)! as NSString
-//        let year = stamp.substringWithRange(NSRange(location: 0, length: 4))
-//        let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
-//        let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
-//        
-//        let hour = timeLabel.substringWithRange(NSRange(location: 0, length: 2))
-//        let minute = timeLabel.substringWithRange(NSRange(location: 3, length: 2))
-//        
-//        //        dd-MM-yyyy-HH-mm-ss
-//        self.datetime = "\(day)-\(month)-\(year)-\(hour)-\(minute)-00"
-        
+            
         
         let formatter = NSNumberFormatter()
         formatter.minimumIntegerDigits = 2

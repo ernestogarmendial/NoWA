@@ -27,8 +27,6 @@ import AVFoundation
             self.playPlayer(player)
             return
         }
-
-//        var audioPlayer = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: file) , error: nil)
         
         do {
             let audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: file))
@@ -78,11 +76,9 @@ import AVFoundation
      
         do {
             var audioPlayer =  try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: file))
-            //        self.playPlayer(audioPlayer)
             
             audioPlayer.prepareToPlay()
             
-            //temp[file] = audioPlayer
             temp.addObject(audioPlayer)
         } catch {
             //Handle the error
@@ -90,18 +86,6 @@ import AVFoundation
 
     }
     
-//    func pauseAllSounds (all:NSArray){ // todo borrar
-//        for sonidos in all {
-//            var sound = NSBundle.mainBundle().pathForResource((sonidos["Sound"] as! String), ofType: "wav")
-//            self.pause(sound!)
-//        }
-//
-//    }
-//    
-//    func pause(file: String) {
-//        if let player = players[file] as? AVAudioPlayer {
-//            player.pause()
-//        }
-//    }
+
     
 }

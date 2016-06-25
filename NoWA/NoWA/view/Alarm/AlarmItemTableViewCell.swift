@@ -177,7 +177,6 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         timeLabel!.adjustsFontSizeToFitWidth = true
         timeLabel!.textAlignment = .Left
         timeLabel!.numberOfLines = 1
-//        timeLabel!.backgroundColor = .yellowColor()
         self.addSubview(timeLabel!)
         
         dateLabel = UILabel()

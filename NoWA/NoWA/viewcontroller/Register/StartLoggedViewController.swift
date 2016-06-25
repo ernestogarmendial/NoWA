@@ -32,7 +32,6 @@ class StartLoggedViewController: LoginViewController {
         splash?.autoPinEdge(.Left, toEdge: .Left, ofView: self.view)
         splash?.autoPinEdge(.Right, toEdge: .Right, ofView: self.view)
         
-//        progressIcon.autoAlignAxis(.Horizontal, toSameAxisOfView: self.view)
         progressIcon.autoAlignAxis(.Vertical, toSameAxisOfView: self.view)
         progressIcon.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self.view, withOffset: -120)
 

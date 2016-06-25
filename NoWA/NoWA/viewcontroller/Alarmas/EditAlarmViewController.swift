@@ -96,12 +96,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
         
-        //        let button = UIButton(type: .Custom) as UIButton
-        //        button.setImage(UIImage(named: "left_arrow"), forState: UIControlState.Normal)
-        //        button.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
-        //        button.frame=CGRectMake(0, 0, 30, 30)
-        //        let barButton = UIBarButtonItem(customView: button)
-        //        self.navigationItem.leftBarButtonItem = barButton
+
     }
     
     func popToRoot(sender:UIBarButtonItem){
@@ -235,7 +230,7 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
         
         let ringtoneCell = tabla!.viewWithTag(102) as! RingtoneTableViewCell
         if let ringtone = ringtoneCell.ringtone{
-            newAlarmEventDTO?.ringtone = "\(ringtone as String).m4a"
+            newAlarmEventDTO?.ringtone = "\(ringtone as String).mp3"
         }
         
         let isDefaultCell = tabla!.viewWithTag(103) as! DefaultCancelTableViewCell
@@ -466,15 +461,6 @@ class EditAlarmViewController: GenericViewController, UITableViewDelegate, UITab
             print("Error delete")
             return
         }
-        
-        //        let alert = UIAlertController(title: "ELIMINAR", message: "Se ha eliminado la alarma", preferredStyle: UIAlertControllerStyle.Alert)
-        //        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
-        //            self.navigationController!.popToRootViewControllerAnimated(true)
-        //        }))
-        //
-        //        dispatch_async(dispatch_get_main_queue()) {
-        //            self.presentViewController(alert, animated: true, completion: nil)
-        //        }
         
     }
 }

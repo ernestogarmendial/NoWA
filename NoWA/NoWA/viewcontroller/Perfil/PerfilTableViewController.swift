@@ -59,12 +59,9 @@ class PerfilTableViewController: GenericTableViewController, ButtonFooterDelegat
         let genericCell = self.tableView.dequeueReusableCellWithIdentifier(identificador, forIndexPath: indexPath) as! GenericTableViewCell
         
         genericCell.myDictionary = cellsArray[indexPath.row] as? NSDictionary
-        //        genericCell.alarmDefaults = self.defaultDataDTO
         genericCell.tag = indexPath.row + 100
         
-        //if identificador == "AcceptButtonCell"{
         genericCell.buttonDelegate = self
-        //}
         return genericCell
     }
     

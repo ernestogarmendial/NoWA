@@ -112,19 +112,7 @@ class ButtonTableFooterView: GenericTableViewCell{
         userService.logout(target: self,message: "logoutFinish:")
         
         print("close pressed")
-//        
-//        let navigationController = UINavigationController()
-//        navigationController.viewControllers = [RegisterViewController()]
-//        
-//        switchRootViewController(navigationController, animated: true, completion: nil)
-//        
-//        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "email")
-//        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "pass")
-//        NSUserDefaults.standardUserDefaults().synchronize()
-//
-//        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "loggeado")
-//        NSUserDefaults.standardUserDefaults().synchronize()
-        
+
     }
     
     func logoutFinish (result : ServiceResult!){

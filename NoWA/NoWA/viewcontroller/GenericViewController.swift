@@ -21,12 +21,6 @@ class GenericViewController: UIViewController, ButtonFooterDelegate, UIGestureRe
         self.navigationController?.interactivePopGestureRecognizer!.delegate = self
         self.navigationController?.interactivePopGestureRecognizer!.enabled = true
         
-        //COMENTO PORQUE SINO NO PASA POR EL DIDSELECTROW AT INDEXPATH
-        
-        //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        //        self.view.addGestureRecognizer(tap)
-        
-        //COMENTO PORQUE SINO NO PASA POR EL DIDSELECTROW AT INDEXPATH
         
         tabla = UITableView()
         tabla!.backgroundColor = .clearColor()

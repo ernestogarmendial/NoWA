@@ -36,27 +36,6 @@ class GenericTableViewController: UITableViewController {
         self.tabBarController!.navigationItem.rightBarButtonItem = nil
     }
 
-
-//    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let imageFooterView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, 125))
-//        
-//        imageFooterView.backgroundColor = UIColor.darkGrayCustomColor()
-//        
-//        let bg = UIImageView(image: UIImage(named: "torneos_background"))
-//        imageFooterView.addSubview(bg)
-//        
-//        bg.autoPinEdge(.Left, toEdge: .Left, ofView: imageFooterView)
-//        bg.autoPinEdge(.Right, toEdge: .Right, ofView: imageFooterView)
-//        bg.autoPinEdge(.Top, toEdge: .Top, ofView: imageFooterView)
-//        bg.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: imageFooterView)
-//
-//        return imageFooterView
-//    }
-//    
-//    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 125
-//    }
-
     
     func adminButtonPressed(){
         print("admin")

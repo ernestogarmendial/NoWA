@@ -93,7 +93,6 @@ class PredictionTableViewCell: GenericTableViewCell {
             leftIcon!.image = UIImage(named: left_icon)
             
         }
-//        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
         let lang =  NSLocale.preferredLanguages().first! as NSString
         let language = lang.substringWithRange(NSRange(location: 0, length: 2))
         

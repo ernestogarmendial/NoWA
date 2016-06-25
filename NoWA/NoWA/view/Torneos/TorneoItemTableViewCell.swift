@@ -143,46 +143,7 @@ class TorneoItemTableViewCell: AlarmItemTableViewCell {
     
     func setupTournament(tournament: TournamentDTO){
         
-        //        let stamp = tournament.stamp! as NSString
-        //        timeLabel!.text = stamp.substringWithRange(NSRange(location: 11, length: 5))
-        //        let day = stamp.substringWithRange(NSRange(location: 8, length: 2))
-        //        let month = stamp.substringWithRange(NSRange(location: 5, length: 2))
-        //        dateLabel!.text = "\(day)-\(month)"
-        //
-        //        var teamsString : String!
-        //        for team in tournament.teams!{
-        //
-        //            let _team = team as! TeamDTO
-        //            teamsString = _team.name!
-        //
-        //            if descriptionLabel!.text == nil {
-        //                descriptionLabel!.text = teamsString
-        //            }else{
-        //                descriptionLabel!.text = descriptionLabel!.text! + " VS \(teamsString)"
-        //            }
-        //
-        //            if serviceLabel!.text == nil {
-        //                if let tournamentName = _team.tournament {
-        //                    serviceLabel!.text = tournamentName
-        //                }
-        //            }
-        //        }
-        //
-        //        if tournament.status == 0{
-        //            cancelLabel!.hidden = false
-        //            setInactiveColours()
-        //        }else{
-        //            cancelLabel!.hidden = true
-        //        }
-        //
-        //        if let daysString : String = tournament.repetition{
-        //            let daysArray : NSArray = daysString.componentsSeparatedByString(",")
-        //            if tournament.status == 0{
-        //                weekDaysView?.showDays(daysArray, color: UIColor.daysInactiveColor())
-        //            }else{
-        //                weekDaysView?.showDays(daysArray, color: UIColor.daysActiveColor())
-        //            }
-        //        }
+
     }
     
     override func setInactiveColours(){

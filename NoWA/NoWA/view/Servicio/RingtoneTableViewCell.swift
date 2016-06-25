@@ -58,10 +58,6 @@ class RingtoneTableViewCell: GenericTableViewCell , pickerDelegate {
             ringtone = defaultRingtone
         }
         
-//        ringtonesArray.addObject(["ringtoneID": 0, "name": "ringtone"])
-//        ringtonesPicker.addObject("ringtone")
-//        ringtonesArray.addObject(["ringtoneID": 1, "name": "iphone_6_original"])
-//        ringtonesPicker.addObject("iphone_6_original")
         ringtonesArray.addObject(["ringtoneID": 0, "name": "Apex"])
         ringtonesPicker.addObject("Apex")
         ringtonesArray.addObject(["ringtoneID": 1, "name": "Beacon"])
@@ -74,15 +70,9 @@ class RingtoneTableViewCell: GenericTableViewCell , pickerDelegate {
         ringtonesPicker.addObject("Crystals")
         ringtonesArray.addObject(["ringtoneID": 5, "name": "Presto"])
         ringtonesPicker.addObject("Presto")
-        ringtonesArray.addObject(["ringtoneID": 6, "name": "Radar"])
-        ringtonesPicker.addObject("Radar")
-        ringtonesArray.addObject(["ringtoneID": 7, "name": "Sencha"])
+        ringtonesArray.addObject(["ringtoneID": 6, "name": "Sencha"])
         ringtonesPicker.addObject("Sencha")
-        ringtonesArray.addObject(["ringtoneID": 8, "name": "Signal"])
-        ringtonesPicker.addObject("Signal")
-        ringtonesArray.addObject(["ringtoneID": 9, "name": "Slow Rise"])
-        ringtonesPicker.addObject("Slow Rise")
-        ringtonesArray.addObject(["ringtoneID": 10, "name": "Twinkle"])
+        ringtonesArray.addObject(["ringtoneID": 7, "name": "Twinkle"])
         ringtonesPicker.addObject("Twinkle")
         setupConstrains()
     }
@@ -196,7 +186,7 @@ class RingtoneTableViewCell: GenericTableViewCell , pickerDelegate {
                 
                 let ringtone = ringtone.valueForKey("name") as! String
                 
-                if "\(ringtone).m4a" == event!.ringtone! {
+                if "\(ringtone).mp3" == event!.ringtone! {
                     
                     descriptionLabel!.text = ringtone as? String//ringtone.valueForKey("name") as? String
                     self.ringtone = ringtone as? String//ringtone.valueForKey("name") as? String
