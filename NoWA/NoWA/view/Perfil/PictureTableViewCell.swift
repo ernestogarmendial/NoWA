@@ -124,7 +124,9 @@ class PictureTableViewCell: GenericTableViewCell,UINavigationControllerDelegate,
         self.circlePictureView?.picture?.image = image
         //Save image
 
-        let data = UIImagePNGRepresentation(image)
+//        let data = UIImagePNGRepresentation(image)
+        let data = UIImageJPEGRepresentation(image, 0.5)
+
         let defaultImageKey = "\(UserService.currentUser!.username!)ImageKey"
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: defaultImageKey)//"myImageKey")
         NSUserDefaults.standardUserDefaults().synchronize()

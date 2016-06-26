@@ -35,6 +35,10 @@ class CirclePictureView: UIView {
 
 
             let retrievedImg = UIImage(data: imgData)
+                    
+//                    let orientedImage = UIImage(CGImage: initialImage.CGImage, scale: 1, orientation: initialImage.imageOrientation)!
+
+//            let orientedImg = UIImage(CGImage: retrievedImg!.CGImage!, scale: 1, orientation: UIImageOrientation.Left)
             self.picture!.image = retrievedImg
         } else {
             
