@@ -9,22 +9,22 @@
 /* Begin PBXBuildFile section */
 		941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C01C0CDF3C00E67905 /* UIColorExtension.swift */; };
 		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
-		94114B081D1EECB6001D1268 /* Apex.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B001D1EECB6001D1268 /* Apex.mp3 */; };
-		94114B091D1EECB6001D1268 /* Beacon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B011D1EECB6001D1268 /* Beacon.mp3 */; };
-		94114B0A1D1EECB6001D1268 /* Bulletin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B021D1EECB6001D1268 /* Bulletin.mp3 */; };
-		94114B0B1D1EECB6001D1268 /* Circuit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B031D1EECB6001D1268 /* Circuit.mp3 */; };
-		94114B0C1D1EECB6001D1268 /* Crystals.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B041D1EECB6001D1268 /* Crystals.mp3 */; };
-		94114B0D1D1EECB6001D1268 /* Presto.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B051D1EECB6001D1268 /* Presto.mp3 */; };
-		94114B0E1D1EECB6001D1268 /* Sencha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B061D1EECB6001D1268 /* Sencha.mp3 */; };
-		94114B0F1D1EECB6001D1268 /* Twinkle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B071D1EECB6001D1268 /* Twinkle.mp3 */; };
-		94114B101D1EECD6001D1268 /* Apex.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B001D1EECB6001D1268 /* Apex.mp3 */; };
-		94114B111D1EECD6001D1268 /* Beacon.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B011D1EECB6001D1268 /* Beacon.mp3 */; };
-		94114B121D1EECD6001D1268 /* Bulletin.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B021D1EECB6001D1268 /* Bulletin.mp3 */; };
-		94114B131D1EECD6001D1268 /* Circuit.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B031D1EECB6001D1268 /* Circuit.mp3 */; };
-		94114B141D1EECD6001D1268 /* Crystals.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B041D1EECB6001D1268 /* Crystals.mp3 */; };
-		94114B151D1EECD6001D1268 /* Presto.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B051D1EECB6001D1268 /* Presto.mp3 */; };
-		94114B161D1EECD6001D1268 /* Sencha.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B061D1EECB6001D1268 /* Sencha.mp3 */; };
-		94114B171D1EECD6001D1268 /* Twinkle.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B071D1EECB6001D1268 /* Twinkle.mp3 */; };
+		94114B2A1D2032F1001D1268 /* Apex.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B221D2032F1001D1268 /* Apex.mp3 */; };
+		94114B2B1D2032F1001D1268 /* Beacon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B231D2032F1001D1268 /* Beacon.mp3 */; };
+		94114B2C1D2032F1001D1268 /* Bulletin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B241D2032F1001D1268 /* Bulletin.mp3 */; };
+		94114B2D1D2032F1001D1268 /* Circuit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B251D2032F1001D1268 /* Circuit.mp3 */; };
+		94114B2E1D2032F1001D1268 /* Crystals.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B261D2032F1001D1268 /* Crystals.mp3 */; };
+		94114B2F1D2032F1001D1268 /* Presto.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B271D2032F1001D1268 /* Presto.mp3 */; };
+		94114B301D2032F1001D1268 /* Sencha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B281D2032F1001D1268 /* Sencha.mp3 */; };
+		94114B311D2032F1001D1268 /* Twinkle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B291D2032F1001D1268 /* Twinkle.mp3 */; };
+		94114B321D203313001D1268 /* Apex.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B221D2032F1001D1268 /* Apex.mp3 */; };
+		94114B331D203313001D1268 /* Beacon.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B231D2032F1001D1268 /* Beacon.mp3 */; };
+		94114B341D203313001D1268 /* Bulletin.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B241D2032F1001D1268 /* Bulletin.mp3 */; };
+		94114B351D203313001D1268 /* Circuit.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B251D2032F1001D1268 /* Circuit.mp3 */; };
+		94114B361D203313001D1268 /* Crystals.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B261D2032F1001D1268 /* Crystals.mp3 */; };
+		94114B371D203313001D1268 /* Presto.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B271D2032F1001D1268 /* Presto.mp3 */; };
+		94114B381D203313001D1268 /* Sencha.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B281D2032F1001D1268 /* Sencha.mp3 */; };
+		94114B391D203313001D1268 /* Twinkle.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 94114B291D2032F1001D1268 /* Twinkle.mp3 */; };
 		941421771C2BAA6B00D9495E /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421761C2BAA6B00D9495E /* PickerTableViewCell.swift */; };
 		941421791C2C430100D9495E /* ServiceAvisoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */; };
 		9414217D1C2C59E200D9495E /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */; };
@@ -147,14 +147,14 @@
 		449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		941109C01C0CDF3C00E67905 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		941109C11C0CDF3C00E67905 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
-		94114B001D1EECB6001D1268 /* Apex.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Apex.mp3; sourceTree = "<group>"; };
-		94114B011D1EECB6001D1268 /* Beacon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beacon.mp3; sourceTree = "<group>"; };
-		94114B021D1EECB6001D1268 /* Bulletin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bulletin.mp3; sourceTree = "<group>"; };
-		94114B031D1EECB6001D1268 /* Circuit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Circuit.mp3; sourceTree = "<group>"; };
-		94114B041D1EECB6001D1268 /* Crystals.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crystals.mp3; sourceTree = "<group>"; };
-		94114B051D1EECB6001D1268 /* Presto.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Presto.mp3; sourceTree = "<group>"; };
-		94114B061D1EECB6001D1268 /* Sencha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sencha.mp3; sourceTree = "<group>"; };
-		94114B071D1EECB6001D1268 /* Twinkle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Twinkle.mp3; sourceTree = "<group>"; };
+		94114B221D2032F1001D1268 /* Apex.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Apex.mp3; sourceTree = "<group>"; };
+		94114B231D2032F1001D1268 /* Beacon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beacon.mp3; sourceTree = "<group>"; };
+		94114B241D2032F1001D1268 /* Bulletin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bulletin.mp3; sourceTree = "<group>"; };
+		94114B251D2032F1001D1268 /* Circuit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Circuit.mp3; sourceTree = "<group>"; };
+		94114B261D2032F1001D1268 /* Crystals.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crystals.mp3; sourceTree = "<group>"; };
+		94114B271D2032F1001D1268 /* Presto.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Presto.mp3; sourceTree = "<group>"; };
+		94114B281D2032F1001D1268 /* Sencha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sencha.mp3; sourceTree = "<group>"; };
+		94114B291D2032F1001D1268 /* Twinkle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Twinkle.mp3; sourceTree = "<group>"; };
 		941421761C2BAA6B00D9495E /* PickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerTableViewCell.swift; path = view/Servicio/PickerTableViewCell.swift; sourceTree = "<group>"; };
 		941421781C2C430100D9495E /* ServiceAvisoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceAvisoTableViewCell.swift; path = view/Servicio/ServiceAvisoTableViewCell.swift; sourceTree = "<group>"; };
 		9414217C1C2C59E200D9495E /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SliderTableViewCell.swift; path = view/SliderTableViewCell.swift; sourceTree = "<group>"; };
@@ -298,6 +298,14 @@
 		941109BF1C0CDF3C00E67905 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				94114B221D2032F1001D1268 /* Apex.mp3 */,
+				94114B231D2032F1001D1268 /* Beacon.mp3 */,
+				94114B241D2032F1001D1268 /* Bulletin.mp3 */,
+				94114B251D2032F1001D1268 /* Circuit.mp3 */,
+				94114B261D2032F1001D1268 /* Crystals.mp3 */,
+				94114B271D2032F1001D1268 /* Presto.mp3 */,
+				94114B281D2032F1001D1268 /* Sencha.mp3 */,
+				94114B291D2032F1001D1268 /* Twinkle.mp3 */,
 				94D5FE741C7161F00022A630 /* TTPopButton.h */,
 				94D5FE751C7161F00022A630 /* TTPopButton.m */,
 				94D5FE661C7156560022A630 /* AudioManager.swift */,
@@ -557,14 +565,6 @@
 		94801F971C0F363900D05D6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				94114B001D1EECB6001D1268 /* Apex.mp3 */,
-				94114B011D1EECB6001D1268 /* Beacon.mp3 */,
-				94114B021D1EECB6001D1268 /* Bulletin.mp3 */,
-				94114B031D1EECB6001D1268 /* Circuit.mp3 */,
-				94114B041D1EECB6001D1268 /* Crystals.mp3 */,
-				94114B051D1EECB6001D1268 /* Presto.mp3 */,
-				94114B061D1EECB6001D1268 /* Sencha.mp3 */,
-				94114B071D1EECB6001D1268 /* Twinkle.mp3 */,
 				94801F981C0F364B00D05D6E /* Fonts */,
 				949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */,
 				94686C7E1C0BA9EE00D05BD9 /* Info.plist */,
@@ -745,21 +745,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94114B0A1D1EECB6001D1268 /* Bulletin.mp3 in Resources */,
-				94114B081D1EECB6001D1268 /* Apex.mp3 in Resources */,
+				94114B2C1D2032F1001D1268 /* Bulletin.mp3 in Resources */,
+				94114B2A1D2032F1001D1268 /* Apex.mp3 in Resources */,
 				94F3125B1C9B907900CAB4C0 /* EditTournamentCells.plist in Resources */,
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
 				942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */,
 				949A51021CA4D18F005AF2D5 /* Localizable.strings in Resources */,
 				94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */,
-				94114B0F1D1EECB6001D1268 /* Twinkle.mp3 in Resources */,
+				94114B311D2032F1001D1268 /* Twinkle.mp3 in Resources */,
 				944728351C4893EE00F8E963 /* NewAlarmCells.plist in Resources */,
-				94114B0B1D1EECB6001D1268 /* Circuit.mp3 in Resources */,
+				94114B2D1D2032F1001D1268 /* Circuit.mp3 in Resources */,
 				944728261C472B7600F8E963 /* PerfilTabCells.plist in Resources */,
-				94114B0C1D1EECB6001D1268 /* Crystals.mp3 in Resources */,
-				94114B0D1D1EECB6001D1268 /* Presto.mp3 in Resources */,
-				94114B0E1D1EECB6001D1268 /* Sencha.mp3 in Resources */,
-				94114B091D1EECB6001D1268 /* Beacon.mp3 in Resources */,
+				94114B2E1D2032F1001D1268 /* Crystals.mp3 in Resources */,
+				94114B2F1D2032F1001D1268 /* Presto.mp3 in Resources */,
+				94114B301D2032F1001D1268 /* Sencha.mp3 in Resources */,
+				94114B2B1D2032F1001D1268 /* Beacon.mp3 in Resources */,
 				94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -831,14 +831,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94114B101D1EECD6001D1268 /* Apex.mp3 in Sources */,
-				94114B111D1EECD6001D1268 /* Beacon.mp3 in Sources */,
-				94114B121D1EECD6001D1268 /* Bulletin.mp3 in Sources */,
-				94114B131D1EECD6001D1268 /* Circuit.mp3 in Sources */,
-				94114B141D1EECD6001D1268 /* Crystals.mp3 in Sources */,
-				94114B151D1EECD6001D1268 /* Presto.mp3 in Sources */,
-				94114B161D1EECD6001D1268 /* Sencha.mp3 in Sources */,
-				94114B171D1EECD6001D1268 /* Twinkle.mp3 in Sources */,
+				94114B321D203313001D1268 /* Apex.mp3 in Sources */,
+				94114B331D203313001D1268 /* Beacon.mp3 in Sources */,
+				94114B341D203313001D1268 /* Bulletin.mp3 in Sources */,
+				94114B351D203313001D1268 /* Circuit.mp3 in Sources */,
+				94114B361D203313001D1268 /* Crystals.mp3 in Sources */,
+				94114B371D203313001D1268 /* Presto.mp3 in Sources */,
+				94114B381D203313001D1268 /* Sencha.mp3 in Sources */,
+				94114B391D203313001D1268 /* Twinkle.mp3 in Sources */,
 				94A39A511C28D12E00BA2BB8 /* LoginViewController.swift in Sources */,
 				9476A9051C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift in Sources */,
 				941CA13E1C3F6179004E4969 /* TournamentDTO.swift in Sources */,

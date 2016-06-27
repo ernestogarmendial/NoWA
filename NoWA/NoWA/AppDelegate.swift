@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             if notification!["sound"] != nil {
                 
-                    if notification!["sound"] as! NSString! == "Apex.mp3"{
+                if notification!["sound"] as! NSString! == "Apex.mp3"{
                     let path = NSBundle.mainBundle().pathForResource("Apex", ofType: "mp3")!
                     AudioManager.sharedInstance.play(path)
                     let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -145,32 +145,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         AudioManager.sharedInstance.stop(path)
                     }))
                     self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-                } else if notification!["sound"] as! NSString! == "Radar.mp3"{
-                    let path = NSBundle.mainBundle().pathForResource("Radar", ofType: "mp3")!
-                    AudioManager.sharedInstance.play(path)
-                    let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
-                        AudioManager.sharedInstance.stop(path)
-                    }))
-                    self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
                 } else if notification!["sound"] as! NSString! == "Sencha.mp3"{
                     let path = NSBundle.mainBundle().pathForResource("Sencha", ofType: "mp3")!
-                    AudioManager.sharedInstance.play(path)
-                    let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
-                        AudioManager.sharedInstance.stop(path)
-                    }))
-                    self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-                } else if notification!["sound"] as! NSString! == "Signal.mp3"{
-                    let path = NSBundle.mainBundle().pathForResource("Signal", ofType: "mp3")!
-                    AudioManager.sharedInstance.play(path)
-                    let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
-                        AudioManager.sharedInstance.stop(path)
-                    }))
-                    self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-                } else if notification!["sound"] as! NSString! == "Slow Rise.mp3"{
-                    let path = NSBundle.mainBundle().pathForResource("Slow Rise", ofType: "mp3")!
                     AudioManager.sharedInstance.play(path)
                     let alert = UIAlertController(title: NSLocalizedString("ALARMA", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:  { (action: UIAlertAction!) in
