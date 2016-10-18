@@ -20,7 +20,7 @@ class PerfilViewController: GenericViewController, UITableViewDelegate, UITableV
         
         self.view.backgroundColor = .registroGrayColor()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         tabla!.addGestureRecognizer(tap)
         
         let image = UIImage(named: "running_perfil")

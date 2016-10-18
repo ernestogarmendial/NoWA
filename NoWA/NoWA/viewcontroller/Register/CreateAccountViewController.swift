@@ -50,7 +50,7 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         ingresarButton.backgroundColor = .loginRedColor()
         ingresarButton.setTitle(NSLocalizedString("INGRESAR", comment: ""), forState: UIControlState.Normal)
         ingresarButton.titleLabel!.font = UIFont.appLatoFontOfSize(15)
-        ingresarButton.addTarget(self, action: "register", forControlEvents: UIControlEvents.TouchUpInside)
+        ingresarButton.addTarget(self, action: #selector(CreateAccountViewController.register), forControlEvents: UIControlEvents.TouchUpInside)
         ingresarButton.layer.cornerRadius = 20
         self.view.addSubview(ingresarButton)
         
@@ -58,13 +58,13 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
         aceptTermsButton.backgroundColor = .clearColor()
         aceptTermsButton.setTitle(NSLocalizedString("ACEPTO TÉRMINOS Y CONDICIONES", comment: ""), forState: UIControlState.Normal)
         aceptTermsButton.titleLabel!.font = UIFont.appLatoFontOfSize(12)
-        aceptTermsButton.addTarget(self, action: "acceptTerms", forControlEvents: UIControlEvents.TouchUpInside)
+        aceptTermsButton.addTarget(self, action: #selector(CreateAccountViewController.acceptTerms), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(aceptTermsButton)
         
         checkButton = TTPopButton()
         checkButton.backgroundColor = .clearColor()
         checkButton.setImage(UIImage(named: "tilde"), forState: UIControlState.Normal)
-        checkButton.addTarget(self, action: "checkPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        checkButton.addTarget(self, action: #selector(CreateAccountViewController.checkPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(checkButton)
         
         termsView = UIView()
@@ -98,7 +98,7 @@ class CreateAccountViewController: LoginViewController, UIGestureRecognizerDeleg
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         let myBackButton:UIButton = UIButton(type: .Custom) as UIButton
-        myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
+        myBackButton.addTarget(self, action: #selector(CreateAccountViewController.popToRoot(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         myBackButton.setTitle(NSLocalizedString("< Volver", comment: ""), forState: UIControlState.Normal)
         myBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         myBackButton.sizeToFit()

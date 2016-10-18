@@ -46,10 +46,10 @@ class CirclePictureView: UIView {
             if fbID != ""{
                 
                 dispatch_async(dispatch_get_main_queue()) {
-                    var facebookProfileUrl = "http://graph.facebook.com/\(fbID)/picture?type=large"
+                    let facebookProfileUrl = "http://graph.facebook.com/\(fbID)/picture?type=large"
                     
                     if let url  = NSURL(string: facebookProfileUrl),
-                        data = NSData(contentsOfURL: url)
+                        let data = NSData(contentsOfURL: url)
                     {
                         self.picture!.image = UIImage(data: data)
                     }

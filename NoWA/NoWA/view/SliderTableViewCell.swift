@@ -56,7 +56,7 @@ class SliderTableViewCell: GenericTableViewCell {
         sliderLeft!.minimumTrackTintColor = UIColor.loginBlueColor()
         sliderLeft!.maximumTrackTintColor = UIColor.loginBlueColor()
         sliderLeft!.continuous = true;
-        sliderLeft!.addTarget(self, action: "sliderMinLabelChanged:", forControlEvents: .ValueChanged)
+        sliderLeft!.addTarget(self, action: #selector(SliderTableViewCell.sliderMinLabelChanged(_:)), forControlEvents: .ValueChanged)
         self.addSubview(sliderLeft!)
         
         sliderMinLabel = UILabel()
@@ -72,7 +72,7 @@ class SliderTableViewCell: GenericTableViewCell {
         sliderRight!.minimumTrackTintColor = UIColor.loginBlueColor()
         sliderRight!.maximumTrackTintColor = UIColor.loginBlueColor()
         sliderRight!.continuous = true;
-        sliderRight!.addTarget(self, action: "sliderMaxLabelChanged:", forControlEvents: .ValueChanged)
+        sliderRight!.addTarget(self, action: #selector(SliderTableViewCell.sliderMaxLabelChanged(_:)), forControlEvents: .ValueChanged)
         self.addSubview(sliderRight!)
         
         sliderMaxLabel = UILabel()
@@ -127,7 +127,7 @@ class SliderTableViewCell: GenericTableViewCell {
         UIGraphicsBeginImageContextWithOptions(layer.frame.size, layer.opaque, 0.0);
         
         layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let outputImage : UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        let outputImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!;
         
         UIGraphicsEndImageContext();
         

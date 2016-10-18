@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940620451DB5CB9B006D6CF7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 940620441DB5CB9B006D6CF7 /* Info.plist */; };
 		941109C21C0CDF3C00E67905 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C01C0CDF3C00E67905 /* UIColorExtension.swift */; };
 		941109C31C0CDF3C00E67905 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941109C11C0CDF3C00E67905 /* UIFontExtension.swift */; };
 		94114B2A1D2032F1001D1268 /* Apex.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94114B221D2032F1001D1268 /* Apex.mp3 */; };
@@ -64,6 +65,7 @@
 		942C19021C590F700071D10A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942C18FF1C590F700071D10A /* FBSDKLoginKit.framework */; };
 		942C19031C590F700071D10A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942C19001C590F700071D10A /* FBSDKShareKit.framework */; };
 		942C19051C5A9B130071D10A /* DefaultCancelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942C19041C5A9B130071D10A /* DefaultCancelTableViewCell.swift */; };
+		942E82741DB5C8F70043B866 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 942E82761DB5C8F70043B866 /* InfoPlist.strings */; };
 		94457EDB1C4D8224004D4E80 /* CheckAlarmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */; };
 		944728261C472B7600F8E963 /* PerfilTabCells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 944728251C472B7600F8E963 /* PerfilTabCells.plist */; };
 		944728291C47331200F8E963 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944728281C47331200F8E963 /* PictureTableViewCell.swift */; };
@@ -125,26 +127,10 @@
 		A826FA5374D4448A1079C48C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC99C11815F718924B1B194 /* libPods.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		94686C841C0BA9EE00D05BD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 94686C671C0BA9EE00D05BD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 94686C6E1C0BA9EE00D05BD9;
-			remoteInfo = NoWA;
-		};
-		94686C8F1C0BA9EE00D05BD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 94686C671C0BA9EE00D05BD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 94686C6E1C0BA9EE00D05BD9;
-			remoteInfo = NoWA;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		1D78AA6A48DB986E52D0FAD3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		940620441DB5CB9B006D6CF7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		941109C01C0CDF3C00E67905 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		941109C11C0CDF3C00E67905 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		94114B221D2032F1001D1268 /* Apex.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Apex.mp3; sourceTree = "<group>"; };
@@ -194,6 +180,8 @@
 		942C18FF1C590F700071D10A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		942C19001C590F700071D10A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		942C19041C5A9B130071D10A /* DefaultCancelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultCancelTableViewCell.swift; path = view/Alarm/DefaultCancelTableViewCell.swift; sourceTree = "<group>"; };
+		942E82751DB5C8F70043B866 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		942E82771DB5C8F90043B866 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94457EDA1C4D8224004D4E80 /* CheckAlarmDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckAlarmDTO.swift; sourceTree = "<group>"; };
 		944728251C472B7600F8E963 /* PerfilTabCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PerfilTabCells.plist; sourceTree = "<group>"; };
 		944728281C47331200F8E963 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureTableViewCell.swift; path = view/Perfil/PictureTableViewCell.swift; sourceTree = "<group>"; };
@@ -223,9 +211,6 @@
 		94686C6F1C0BA9EE00D05BD9 /* NoWakeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWakeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94686C721C0BA9EE00D05BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94686C791C0BA9EE00D05BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		94686C7E1C0BA9EE00D05BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94686C831C0BA9EE00D05BD9 /* NoWATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoWATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94686C8E1C0BA9EE00D05BD9 /* NoWAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoWAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9476A9041C2B9EA6004AB8E3 /* ServicePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServicePickerTableViewCell.swift; path = view/Servicio/ServicePickerTableViewCell.swift; sourceTree = "<group>"; };
 		94801F851C0DD7D100D05D6E /* TourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
 		94801F881C0DD8D100D05D6E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +229,7 @@
 		94A39A5D1C29021B00BA2BB8 /* AlarmHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmHeaderView.swift; path = view/Alarm/AlarmHeaderView.swift; sourceTree = "<group>"; };
 		94A53FC61C8E76B30092E50A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		94A53FC71C8E76B30092E50A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		94B171F71DADDAE600FD9659 /* NoWakeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoWakeApp.entitlements; sourceTree = "<group>"; };
 		94D5FE5E1C6D8B310022A630 /* EditAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditAlarmViewController.swift; path = viewcontroller/Alarmas/EditAlarmViewController.swift; sourceTree = "<group>"; };
 		94D5FE601C6ECFB00022A630 /* EditAlarmCells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EditAlarmCells.plist; sourceTree = "<group>"; };
 		94D5FE621C7052EB0022A630 /* StartLoggedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartLoggedViewController.swift; sourceTree = "<group>"; };
@@ -275,20 +261,6 @@
 				942C19011C590F700071D10A /* FBSDKCoreKit.framework in Frameworks */,
 				94A53FC91C8E76B30092E50A /* Crashlytics.framework in Frameworks */,
 				942C19021C590F700071D10A /* FBSDKLoginKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94686C801C0BA9EE00D05BD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94686C8B1C0BA9EE00D05BD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,8 +444,6 @@
 			isa = PBXGroup;
 			children = (
 				94686C6F1C0BA9EE00D05BD9 /* NoWakeApp.app */,
-				94686C831C0BA9EE00D05BD9 /* NoWATests.xctest */,
-				94686C8E1C0BA9EE00D05BD9 /* NoWAUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -481,6 +451,7 @@
 		94686C711C0BA9EE00D05BD9 /* NoWA */ = {
 			isa = PBXGroup;
 			children = (
+				94B171F71DADDAE600FD9659 /* NoWakeApp.entitlements */,
 				9425DB321C2A0EF1003CDB83 /* service */,
 				9425DB2C1C2A0EBB003CDB83 /* model */,
 				9425DB271C2A0E02003CDB83 /* dao */,
@@ -565,9 +536,10 @@
 		94801F971C0F363900D05D6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				940620441DB5CB9B006D6CF7 /* Info.plist */,
+				942E82761DB5C8F70043B866 /* InfoPlist.strings */,
 				94801F981C0F364B00D05D6E /* Fonts */,
 				949778AF1C0CDDF80045099C /* NoWA-Bridging-Header.h */,
-				94686C7E1C0BA9EE00D05BD9 /* Info.plist */,
 				94686C791C0BA9EE00D05BD9 /* Assets.xcassets */,
 				942A997E1C1A169600B12292 /* ServicioTabCells.plist */,
 				944728251C472B7600F8E963 /* PerfilTabCells.plist */,
@@ -654,42 +626,6 @@
 			productReference = 94686C6F1C0BA9EE00D05BD9 /* NoWakeApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		94686C821C0BA9EE00D05BD9 /* NoWATests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 94686C9A1C0BA9EE00D05BD9 /* Build configuration list for PBXNativeTarget "NoWATests" */;
-			buildPhases = (
-				94686C7F1C0BA9EE00D05BD9 /* Sources */,
-				94686C801C0BA9EE00D05BD9 /* Frameworks */,
-				94686C811C0BA9EE00D05BD9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				94686C851C0BA9EE00D05BD9 /* PBXTargetDependency */,
-			);
-			name = NoWATests;
-			productName = NoWATests;
-			productReference = 94686C831C0BA9EE00D05BD9 /* NoWATests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		94686C8D1C0BA9EE00D05BD9 /* NoWAUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 94686C9D1C0BA9EE00D05BD9 /* Build configuration list for PBXNativeTarget "NoWAUITests" */;
-			buildPhases = (
-				94686C8A1C0BA9EE00D05BD9 /* Sources */,
-				94686C8B1C0BA9EE00D05BD9 /* Frameworks */,
-				94686C8C1C0BA9EE00D05BD9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				94686C901C0BA9EE00D05BD9 /* PBXTargetDependency */,
-			);
-			name = NoWAUITests;
-			productName = NoWAUITests;
-			productReference = 94686C8E1C0BA9EE00D05BD9 /* NoWAUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -703,19 +639,16 @@
 					94686C6E1C0BA9EE00D05BD9 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = QG5HJGAUGS;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
-					};
-					94686C821C0BA9EE00D05BD9 = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 94686C6E1C0BA9EE00D05BD9;
-					};
-					94686C8D1C0BA9EE00D05BD9 = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 94686C6E1C0BA9EE00D05BD9;
 					};
 				};
 			};
@@ -734,8 +667,6 @@
 			projectRoot = "";
 			targets = (
 				94686C6E1C0BA9EE00D05BD9 /* NoWA */,
-				94686C821C0BA9EE00D05BD9 /* NoWATests */,
-				94686C8D1C0BA9EE00D05BD9 /* NoWAUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -747,11 +678,13 @@
 			files = (
 				94114B2C1D2032F1001D1268 /* Bulletin.mp3 in Resources */,
 				94114B2A1D2032F1001D1268 /* Apex.mp3 in Resources */,
+				940620451DB5CB9B006D6CF7 /* Info.plist in Resources */,
 				94F3125B1C9B907900CAB4C0 /* EditTournamentCells.plist in Resources */,
 				94686C7A1C0BA9EE00D05BD9 /* Assets.xcassets in Resources */,
 				942A997F1C1A169600B12292 /* ServicioTabCells.plist in Resources */,
 				949A51021CA4D18F005AF2D5 /* Localizable.strings in Resources */,
 				94D5FE611C6ECFB00022A630 /* EditAlarmCells.plist in Resources */,
+				942E82741DB5C8F70043B866 /* InfoPlist.strings in Resources */,
 				94114B311D2032F1001D1268 /* Twinkle.mp3 in Resources */,
 				944728351C4893EE00F8E963 /* NewAlarmCells.plist in Resources */,
 				94114B2D1D2032F1001D1268 /* Circuit.mp3 in Resources */,
@@ -761,20 +694,6 @@
 				94114B301D2032F1001D1268 /* Sencha.mp3 in Resources */,
 				94114B2B1D2032F1001D1268 /* Beacon.mp3 in Resources */,
 				94801F9A1C0F368800D05D6E /* Lato-Regular.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94686C811C0BA9EE00D05BD9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94686C8C1C0BA9EE00D05BD9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,36 +847,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94686C7F1C0BA9EE00D05BD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94686C8A1C0BA9EE00D05BD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		94686C851C0BA9EE00D05BD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 94686C6E1C0BA9EE00D05BD9 /* NoWA */;
-			targetProxy = 94686C841C0BA9EE00D05BD9 /* PBXContainerItemProxy */;
-		};
-		94686C901C0BA9EE00D05BD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 94686C6E1C0BA9EE00D05BD9 /* NoWA */;
-			targetProxy = 94686C8F1C0BA9EE00D05BD9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
+		942E82761DB5C8F70043B866 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				942E82751DB5C8F70043B866 /* en */,
+				942E82771DB5C8F90043B866 /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		949A51041CA4D18F005AF2D5 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -987,6 +888,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1032,6 +934,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1058,8 +961,10 @@
 			baseConfigurationReference = 1D78AA6A48DB986E52D0FAD3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NoWA/NoWakeApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = QG5HJGAUGS;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1070,8 +975,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nowakeapp.nowakeapp;
 				PRODUCT_NAME = NoWakeApp;
-				PROVISIONING_PROFILE = "82ca0a8d-58ba-426d-b257-49463af24f1f";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoWA/NoWA-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1080,8 +987,10 @@
 			baseConfigurationReference = 449A99101F6C47F0BC1B008D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = NoWA/NoWakeApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = QG5HJGAUGS;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1092,56 +1001,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nowakeapp.nowakeapp;
 				PRODUCT_NAME = NoWakeApp;
-				PROVISIONING_PROFILE = "82ca0a8d-58ba-426d-b257-49463af24f1f";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoWA/NoWA-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		94686C9B1C0BA9EE00D05BD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = NoWATests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.egl.NoWATests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoWA.app/NoWA";
-			};
-			name = Debug;
-		};
-		94686C9C1C0BA9EE00D05BD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = NoWATests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.egl.NoWATests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoWA.app/NoWA";
-			};
-			name = Release;
-		};
-		94686C9E1C0BA9EE00D05BD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = NoWAUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.egl.NoWAUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = NoWA;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		94686C9F1C0BA9EE00D05BD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = NoWAUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.egl.NoWAUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = NoWA;
-				USES_XCTRUNNER = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -1162,24 +1025,6 @@
 			buildConfigurations = (
 				94686C981C0BA9EE00D05BD9 /* Debug */,
 				94686C991C0BA9EE00D05BD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		94686C9A1C0BA9EE00D05BD9 /* Build configuration list for PBXNativeTarget "NoWATests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				94686C9B1C0BA9EE00D05BD9 /* Debug */,
-				94686C9C1C0BA9EE00D05BD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		94686C9D1C0BA9EE00D05BD9 /* Build configuration list for PBXNativeTarget "NoWAUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				94686C9E1C0BA9EE00D05BD9 /* Debug */,
-				94686C9F1C0BA9EE00D05BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

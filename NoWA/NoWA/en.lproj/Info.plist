@@ -154,6 +154,6 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>NWA need access to your photos to change the profile picture</string>
 </dict>
 </plist>

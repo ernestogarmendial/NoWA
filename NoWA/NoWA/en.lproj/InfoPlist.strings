@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  NoWA
+
+  Created by Ernesto Garmendia Luis on 18/10/16.
+  Copyright © 2016 Ernesto Garmendia Luis. All rights reserved.
+*/
+
+"NSPhotoLibraryUsageDescription" = "NWA need access to your photos to change the profile picture";

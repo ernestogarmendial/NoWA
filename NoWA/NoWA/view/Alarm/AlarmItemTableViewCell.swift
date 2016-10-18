@@ -205,7 +205,7 @@ class AlarmItemTableViewCell: GenericTableViewCell {
         self.addSubview(weekDaysView!)
         
         alarmSwitch = UIButton()
-        alarmSwitch!.addTarget(self, action: "alarmSwitchPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        alarmSwitch!.addTarget(self, action: #selector(AlarmItemTableViewCell.alarmSwitchPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         alarmSwitch!.setImage(UIImage(named: "switch_on"), forState: UIControlState.Normal)
         alarmSwitch!.setImage(UIImage(named: "switch_off"), forState: UIControlState.Selected)
         self.addSubview(alarmSwitch!)

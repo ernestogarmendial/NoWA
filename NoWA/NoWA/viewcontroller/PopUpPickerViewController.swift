@@ -24,7 +24,7 @@ class PopUpPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap = UITapGestureRecognizer(target: self, action: Selector("cancelAction"))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PopUpPickerViewController.cancelAction))
         self.view.addGestureRecognizer(tap)
         
         pickerContainerView = UIView()
@@ -40,7 +40,7 @@ class PopUpPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         okButton.backgroundColor = .whiteColor()
         okButton.setTitle("OK", forState: .Normal)
         okButton.setTitleColor(UIColor.blackColor(), forState:UIControlState.Normal)
-        okButton.addTarget(self, action: "okPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        okButton.addTarget(self, action: #selector(PopUpPickerViewController.okPressed), forControlEvents: UIControlEvents.TouchUpInside)
         pickerContainerView!.addSubview(okButton)
         pickerContainerView?.bringSubviewToFront(okButton)
         

@@ -75,7 +75,7 @@ import AVFoundation
         }
      
         do {
-            var audioPlayer =  try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: file))
+            let audioPlayer =  try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: file))
             
             audioPlayer.prepareToPlay()
             

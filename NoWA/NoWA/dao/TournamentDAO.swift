@@ -28,7 +28,7 @@ class TournamentDAO: GenericDAO {
         
         let originalURL = "tournaments/list/\(_token)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
@@ -69,7 +69,7 @@ class TournamentDAO: GenericDAO {
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
         let originalURL = "alarms/updatetime/\(_alarmID)/\(_dateTime)/\(_token)/"
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
@@ -109,7 +109,7 @@ class TournamentDAO: GenericDAO {
         let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: nil, statusCodes: nil)
         
         let originalURL = "alarms/tournament/toggle/\(_alarmID)/\(_value)/\(_token)/"
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
@@ -151,7 +151,7 @@ class TournamentDAO: GenericDAO {
         
         let originalURL = "tournaments/\(_tournamentID)/\(_token)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,

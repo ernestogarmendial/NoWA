@@ -28,7 +28,7 @@ class WeatherDAO: GenericDAO {
         
         let originalURL = "weather/services/\(_token)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
@@ -72,7 +72,7 @@ class WeatherDAO: GenericDAO {
         
         let originalURL = "weather/location/\(_name)/\(_token)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
@@ -115,7 +115,7 @@ class WeatherDAO: GenericDAO {
         
         let originalURL = "weather/conditions/\(_token)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
@@ -165,7 +165,7 @@ class WeatherDAO: GenericDAO {
         
         let originalURL = "weather/set/default/\(_weatherDTO.condition!.intValue)/\(_weatherDTO.prediction!.intValue)/\(_weatherDTO.minTemp!.intValue)/\(_weatherDTO.maxTemp!.intValue)/\(_weatherDTO.minHumidity!.intValue)/\(_weatherDTO.maxHumidity!.intValue)/\(_weatherDTO.minWind!.intValue)/\(_weatherDTO.maxWind!.intValue)/\(_weatherDTO.minSnow!.intValue)/\(_weatherDTO.maxSnow!.intValue)/\(_weatherDTO.service!.intValue)/\(place)/\(_token)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,
@@ -203,7 +203,7 @@ class WeatherDAO: GenericDAO {
         
         let originalURL = "weather/data/\(_token)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
             method: RKRequestMethod.GET,

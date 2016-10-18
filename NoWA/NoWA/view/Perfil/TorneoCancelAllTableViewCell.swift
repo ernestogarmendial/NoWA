@@ -41,7 +41,7 @@ class TorneoCancelAllTableViewCell: GenericTableViewCell {
         cancelButton!.setTitle(NSLocalizedString("CANCELAR TODO", comment: ""), forState: UIControlState.Normal)
         cancelButton!.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
         cancelButton!.titleLabel!.font = UIFont.appLatoFontOfSize(12)
-        cancelButton!.addTarget(self, action: "cancelAll", forControlEvents: UIControlEvents.TouchUpInside)
+        cancelButton!.addTarget(self, action: #selector(TorneoCancelAllTableViewCell.cancelAll), forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(cancelButton!)
         
         configLabel!.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: 20)

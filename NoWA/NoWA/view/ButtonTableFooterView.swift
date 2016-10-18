@@ -68,13 +68,13 @@ class ButtonTableFooterView: GenericTableViewCell{
         if let action = myDictionary["action"] as? String{
             
             if action == "accept"{
-                button!.addTarget(self, action: "accept", forControlEvents: UIControlEvents.TouchUpInside)
+                button!.addTarget(self, action: #selector(ButtonTableFooterView.accept), forControlEvents: UIControlEvents.TouchUpInside)
             }
             if action == "save"{
-                button!.addTarget(self, action: "save", forControlEvents: UIControlEvents.TouchUpInside)
+                button!.addTarget(self, action: #selector(ButtonTableFooterView.save), forControlEvents: UIControlEvents.TouchUpInside)
             }
             if action == "close"{
-                button!.addTarget(self, action: "close", forControlEvents: UIControlEvents.TouchUpInside)
+                button!.addTarget(self, action: #selector(ButtonTableFooterView.close), forControlEvents: UIControlEvents.TouchUpInside)
             }
             if action == "admin"{
                 
@@ -82,16 +82,16 @@ class ButtonTableFooterView: GenericTableViewCell{
                     button?.hidden = true
                 }
                 
-                button!.addTarget(self, action: "admin", forControlEvents: UIControlEvents.TouchUpInside)
+                button!.addTarget(self, action: #selector(ButtonTableFooterView.admin), forControlEvents: UIControlEvents.TouchUpInside)
             }
             if action == "create"{
-                button!.addTarget(self, action: "create", forControlEvents: UIControlEvents.TouchUpInside)
+                button!.addTarget(self, action: #selector(ButtonTableFooterView.create), forControlEvents: UIControlEvents.TouchUpInside)
             }
             if action == "update"{
-                button!.addTarget(self, action: "update", forControlEvents: UIControlEvents.TouchUpInside)
+                button!.addTarget(self, action: #selector(ButtonTableFooterView.update), forControlEvents: UIControlEvents.TouchUpInside)
             }
             if action == "delete"{
-                button!.addTarget(self, action: "delete", forControlEvents: UIControlEvents.TouchUpInside)
+                button!.addTarget(self, action: #selector(ButtonTableFooterView.delete as (ButtonTableFooterView) -> () -> ()), forControlEvents: UIControlEvents.TouchUpInside)
             }
         }
     }

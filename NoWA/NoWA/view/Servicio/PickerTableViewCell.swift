@@ -48,7 +48,7 @@ class PickerTableViewCell: GenericTableViewCell, pickerDelegate {
         self.addSubview(descriptionLabel!)
         
         rightButton = UIButton()
-        rightButton!.addTarget(self, action: "rightButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        rightButton!.addTarget(self, action: #selector(PickerTableViewCell.rightButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
         
         self.addSubview(rightButton!)
         

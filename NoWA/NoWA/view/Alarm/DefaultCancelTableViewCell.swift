@@ -41,7 +41,7 @@ class DefaultCancelTableViewCell: GenericTableViewCell {
         cancelationView!.addSubview(cancelationLabel!)
         
         switchButton = UIButton()
-        switchButton!.addTarget(self, action: "switchPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        switchButton!.addTarget(self, action: #selector(DefaultCancelTableViewCell.switchPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         switchButton!.setImage(UIImage(named: "switch_off"), forState: UIControlState.Normal)
         switchButton!.setImage(UIImage(named: "switch_on"), forState: UIControlState.Selected)
         cancelationView!.addSubview(switchButton!)

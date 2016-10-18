@@ -64,7 +64,7 @@ class LocationTableViewCell: GenericTableViewCell,pickerDelegate {
         self.addSubview(locationTextField!)
         
         rightButton = UIButton()
-        rightButton!.addTarget(self, action: "rightButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        rightButton!.addTarget(self, action: #selector(LocationTableViewCell.rightButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
         
         self.addSubview(rightButton!)
         

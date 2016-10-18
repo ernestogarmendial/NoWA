@@ -50,7 +50,7 @@ class UserDAO: GenericDAO {
         
         let originalURL = "user/login/v2/\(language.uppercaseString)/\(_name)/\(_code)/ios/\(deviceToken)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
                                                         method: RKRequestMethod.GET,
@@ -108,7 +108,7 @@ class UserDAO: GenericDAO {
 //        /user/facebook/v2/{language}/{mail}/{name}/{facebookhash}/{os}/{devicetoken}/
         let originalURL = "user/facebook/\(email)/\(username)/\(fbID)/ios/\(deviceToken)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
                                                         method: RKRequestMethod.GET,
@@ -192,7 +192,7 @@ class UserDAO: GenericDAO {
         //        /name/quote/facebook/twitter/instagram/location/notification/token/
         let originalURL = "user/update/\(updateDTO.username!)/\(updateDTO.phrase!)/\(updateDTO.facebook!)/\(updateDTO.twitter!)/\(updateDTO.instagram!)/1/1/\(token)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
                                                         method: RKRequestMethod.GET,
@@ -254,7 +254,7 @@ class UserDAO: GenericDAO {
         
         let originalURL = "user/register/\(_name)/\(_code)/ios/\(deviceToken)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         let request = objectManager.requestWithObject(  nil,
                                                         method: RKRequestMethod.GET,
@@ -300,7 +300,7 @@ class UserDAO: GenericDAO {
         
         let originalURL = "user/recover/\(_name)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         
         let request = objectManager.requestWithObject(  nil,
@@ -358,7 +358,7 @@ class UserDAO: GenericDAO {
 
         let originalURL = "user/logout/\(UserService.currentUser.token!)/"
         
-        var url = self.encodeURL(originalURL)
+        let url = self.encodeURL(originalURL)
         
         
         let request = objectManager.requestWithObject(  nil,

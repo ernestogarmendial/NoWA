@@ -154,6 +154,6 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>NWA necesita acceder a tus fotos para cambiar la foto de perfil</string>
 </dict>
 </plist>

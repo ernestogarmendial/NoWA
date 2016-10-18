@@ -35,7 +35,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         self.tabla!.registerClass(TournamentEventTableViewCell.self, forCellReuseIdentifier: "Tournament")
         self.tabla!.registerClass(CancelEventButtonTableViewCell.self, forCellReuseIdentifier: "CancelButton")
         
-        self.myRefresh.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.myRefresh.addTarget(self, action: #selector(TorneosAdminViewController.refresh), forControlEvents: UIControlEvents.ValueChanged)
         self.myRefresh.tintColor = .whiteColor()
         tabla!.addSubview(myRefresh)
         
@@ -46,7 +46,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         let myBackButton:UIButton = UIButton(type: .Custom) as UIButton
-        myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
+        myBackButton.addTarget(self, action: #selector(TorneosAdminViewController.popToRoot(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         myBackButton.setTitle(NSLocalizedString("< Volver", comment: ""), forState: UIControlState.Normal)
         myBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         myBackButton.sizeToFit()
@@ -163,7 +163,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         if self.cellsArray != nil {
             if self.cellsArray.count != 0 {
                 
-                for var i = 0; i < self.cellsArray.count ; i++ {
+                for i in 0 ..< self.cellsArray.count {
                     
                     let _indexPath = NSIndexPath(forRow: i + 2, inSection: 0)
                     let currentCell = self.tabla?.cellForRowAtIndexPath(_indexPath) as? TournamentEventTableViewCell
@@ -249,7 +249,7 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
         if self.cellsArray != nil {
             if self.cellsArray.count != 0 {
                 
-                for var i = 0; i < self.cellsArray.count ; i++ {
+                for i in 0 ..< self.cellsArray.count {
                     
                     let _indexPath = NSIndexPath(forRow: i + 2, inSection: 0)
                     let currentCell = self.tabla?.cellForRowAtIndexPath(_indexPath) as? TournamentEventTableViewCell

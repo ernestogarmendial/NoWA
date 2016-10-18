@@ -48,14 +48,14 @@ class NewAlarmInsertTableViewCell: GenericTableViewCell {
         datePicker!.datePickerMode = UIDatePickerMode.Time
         datePicker!.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
         datePicker?.backgroundColor = .ribbonAltColor()
-        datePicker!.addTarget(self, action: "onDatePickerValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        datePicker!.addTarget(self, action: #selector(NewAlarmInsertTableViewCell.onDatePickerValueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         let toolbar = UIToolbar()
         toolbar.barStyle = .Default
         toolbar.translucent = false
         toolbar.backgroundColor = .whiteColor()
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "OK", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("done"))
+        let doneButton = UIBarButtonItem(title: "OK", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(NewAlarmInsertTableViewCell.done))
         doneButton.tintColor = .blackColor()
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)

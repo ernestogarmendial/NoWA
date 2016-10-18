@@ -21,7 +21,7 @@ class CircleDayButtonView: UIView {
         
         dayButton = UIButton()
         dayButton?.setTitle(day, forState: .Normal)
-        dayButton!.addTarget(self, action: "dayPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        dayButton!.addTarget(self, action: #selector(CircleDayButtonView.dayPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(dayButton!)
         
         self.autoSetDimension(.Width, toSize: 30)

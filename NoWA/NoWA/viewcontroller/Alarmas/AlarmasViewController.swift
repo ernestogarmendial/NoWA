@@ -46,7 +46,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
         
         self.tabla!.registerClass(AlarmItemTableViewCell.self, forCellReuseIdentifier: "alarmItem")
         
-        self.myRefresh.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.myRefresh.addTarget(self, action: #selector(AlarmasViewController.refresh), forControlEvents: UIControlEvents.ValueChanged)
         self.myRefresh.tintColor = .whiteColor()
         self.tabla!.addSubview(myRefresh)
         
@@ -54,7 +54,7 @@ class AlarmasViewController: GenericViewController, UITableViewDelegate, UITable
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addAlarm")
+        let addAlarmButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(AlarmasViewController.addAlarm))
         self.tabBarController!.navigationItem.rightBarButtonItem = addAlarmButton
         self.refresh()
     }

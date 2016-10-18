@@ -27,7 +27,7 @@ class ServicioViewController: GenericViewController, UITableViewDelegate, UITabl
         }
         self.view.backgroundColor = .registroGrayColor()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
         
         let image = UIImage(named: "golf_servicio")

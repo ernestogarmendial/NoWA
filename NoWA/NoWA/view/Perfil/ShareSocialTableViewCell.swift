@@ -41,19 +41,19 @@ class ShareSocialTableViewCell: GenericTableViewCell {
         fbButton = TTPopButton()
         fbButton!.backgroundColor = .clearColor()
         fbButton!.setImage(UIImage(named: "facebook_ico"), forState: UIControlState.Normal)
-        fbButton!.addTarget(self, action: "fbPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        fbButton!.addTarget(self, action: #selector(ShareSocialTableViewCell.fbPressed), forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(fbButton!)
         
         twitterButton = TTPopButton()
         twitterButton!.backgroundColor = .clearColor()
         twitterButton!.setImage(UIImage(named: "twitter_ico"), forState: UIControlState.Normal)
-        twitterButton!.addTarget(self, action: "twitterPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        twitterButton!.addTarget(self, action: #selector(ShareSocialTableViewCell.twitterPressed), forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(twitterButton!)
         
         instagramButton = TTPopButton()
         instagramButton!.backgroundColor = .clearColor()
         instagramButton!.setImage(UIImage(named: "instagram_ico"), forState: UIControlState.Normal)
-        instagramButton!.addTarget(self, action: "instagramPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        instagramButton!.addTarget(self, action: #selector(ShareSocialTableViewCell.instagramPressed), forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(instagramButton!)
         instagramButton?.hidden = true
         

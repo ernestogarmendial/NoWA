@@ -31,7 +31,7 @@ class TourViewController: UIViewController,UIScrollViewDelegate {
         self.tourScrollView.showsVerticalScrollIndicator = false
         self.tourScrollView.scrollEnabled = false
         
-        for var i = 0; i < 3; i++ {
+        for i in 0 ..< 3 {
             
             let frame = CGRectMake(CGFloat(i*Int(tourScrollView.frame.size.width)), 0, tourScrollView.frame.size.width, tourScrollView.frame.size.height)
             
@@ -49,7 +49,7 @@ class TourViewController: UIViewController,UIScrollViewDelegate {
         nextButton = TTPopButton()
         nextButton.backgroundColor = .tourBlueColor()
         nextButton.setTitle(NSLocalizedString("Siguiente", comment: ""), forState: UIControlState.Normal)
-        nextButton.addTarget(self, action: "goNextPage", forControlEvents: UIControlEvents.TouchUpInside)
+        nextButton.addTarget(self, action: #selector(TourViewController.goNextPage), forControlEvents: UIControlEvents.TouchUpInside)
         nextButton.layer.cornerRadius = 25
         self.view.addSubview(nextButton)
         
@@ -71,7 +71,7 @@ class TourViewController: UIViewController,UIScrollViewDelegate {
         
         if page == 2{
             nextButton.setTitle(NSLocalizedString("Ingresá", comment: ""), forState: UIControlState.Normal)
-            nextButton.addTarget(self, action: "goToRegister", forControlEvents: UIControlEvents.TouchUpInside)
+            nextButton.addTarget(self, action: #selector(TourViewController.goToRegister), forControlEvents: UIControlEvents.TouchUpInside)
         }
         
     }

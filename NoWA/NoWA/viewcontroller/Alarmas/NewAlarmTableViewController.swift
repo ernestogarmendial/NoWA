@@ -19,7 +19,7 @@ class NewAlarmTableViewController: UITableViewController {
         self.tableView.backgroundColor = .darkGrayCustomColor()
         self.tableView.separatorColor = .clearColor()
 
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewAlarmTableViewController.dismissKeyboard))
         self.tableView.addGestureRecognizer(tap)
         
         self.tableView.registerClass(NewAlarmInsertTableViewCell.self, forCellReuseIdentifier: "Insert")

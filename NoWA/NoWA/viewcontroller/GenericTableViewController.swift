@@ -19,7 +19,7 @@ class GenericTableViewController: UITableViewController {
 
         self.tableView.separatorColor = .clearColor()
 
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GenericTableViewController.dismissKeyboard))
         self.tableView.addGestureRecognizer(tap)
         
 

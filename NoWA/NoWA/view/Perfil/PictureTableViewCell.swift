@@ -25,7 +25,7 @@ class PictureTableViewCell: GenericTableViewCell,UINavigationControllerDelegate,
         circlePictureView = CirclePictureView()
         self.addSubview(circlePictureView!)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "buttonSelected")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PictureTableViewCell.buttonSelected))
         self.circlePictureView!.addGestureRecognizer(tap)
         
         nameLabel = UILabel()

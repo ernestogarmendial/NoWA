@@ -47,13 +47,13 @@ class WebProfileTableViewCell: GenericTableViewCell {
                 webButton!.setTitle(addressText, forState: UIControlState.Normal)
                 
                 if addressText == "TERMS AND CONDITIONS"{
-                    webButton!.addTarget(self, action: "goToTerms", forControlEvents: UIControlEvents.TouchUpInside)
+                    webButton!.addTarget(self, action: #selector(WebProfileTableViewCell.goToTerms), forControlEvents: UIControlEvents.TouchUpInside)
                 }
                 if addressText == "SUPPORT"{
-                    webButton!.addTarget(self, action: "goToSup", forControlEvents: UIControlEvents.TouchUpInside)
+                    webButton!.addTarget(self, action: #selector(WebProfileTableViewCell.goToSup), forControlEvents: UIControlEvents.TouchUpInside)
                 }
                 if addressText == "ABOUT NWA"{
-                    webButton!.addTarget(self, action: "goToAbout", forControlEvents: UIControlEvents.TouchUpInside)
+                    webButton!.addTarget(self, action: #selector(WebProfileTableViewCell.goToAbout), forControlEvents: UIControlEvents.TouchUpInside)
                 }
             }
         }else if language == "es" {
@@ -62,13 +62,13 @@ class WebProfileTableViewCell: GenericTableViewCell {
                 webButton!.setTitle(addressText, forState: UIControlState.Normal)
                 
                 if addressText == "TÉRMINOS Y CONDICIONES"{
-                    webButton!.addTarget(self, action: "goToTerms", forControlEvents: UIControlEvents.TouchUpInside)
+                    webButton!.addTarget(self, action: #selector(WebProfileTableViewCell.goToTerms), forControlEvents: UIControlEvents.TouchUpInside)
                 }
                 if addressText == "SOPORTE"{
-                    webButton!.addTarget(self, action: "goToSup", forControlEvents: UIControlEvents.TouchUpInside)
+                    webButton!.addTarget(self, action: #selector(WebProfileTableViewCell.goToSup), forControlEvents: UIControlEvents.TouchUpInside)
                 }
                 if addressText == "ACERCA DE NWA"{
-                    webButton!.addTarget(self, action: "goToAbout", forControlEvents: UIControlEvents.TouchUpInside)
+                    webButton!.addTarget(self, action: #selector(WebProfileTableViewCell.goToAbout), forControlEvents: UIControlEvents.TouchUpInside)
                 }
             }
         }

@@ -31,7 +31,7 @@ class EditTournamentViewController: GenericViewController, UITableViewDelegate, 
         let logoImage = UIImage(named:"logoNav")
         self.navigationItem.titleView = UIImageView(image: logoImage)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         tabla!.addGestureRecognizer(tap)
         
         let locale = NSLocale.currentLocale()
@@ -61,7 +61,7 @@ class EditTournamentViewController: GenericViewController, UITableViewDelegate, 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         let myBackButton:UIButton = UIButton(type: .Custom) as UIButton
-        myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
+        myBackButton.addTarget(self, action: #selector(EditTournamentViewController.popToRoot(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         myBackButton.setTitle(NSLocalizedString("< Volver", comment: ""), forState: UIControlState.Normal)
         myBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         myBackButton.sizeToFit()

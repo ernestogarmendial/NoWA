@@ -33,7 +33,7 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
         self.tabla!.registerClass(ConfigTableViewCell.self, forCellReuseIdentifier: "Config")
         self.tabla!.registerClass(TorneoAdminTableViewCell.self, forCellReuseIdentifier: "Tournament")
         
-        self.myRefresh.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.myRefresh.addTarget(self, action: #selector(AdminViewController.refresh), forControlEvents: UIControlEvents.ValueChanged)
         self.myRefresh.tintColor = .whiteColor()
         tabla!.addSubview(myRefresh)
         
@@ -44,7 +44,7 @@ class AdminViewController: GenericViewController, UITableViewDelegate, UITableVi
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         let myBackButton:UIButton = UIButton(type: .Custom) as UIButton
-        myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
+        myBackButton.addTarget(self, action: #selector(AdminViewController.popToRoot(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         myBackButton.setTitle(NSLocalizedString("< Volver", comment: ""), forState: UIControlState.Normal)
         myBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         myBackButton.sizeToFit()

@@ -45,7 +45,7 @@ class ServicePickerTableViewCell: GenericTableViewCell, pickerDelegate {
         self.addSubview(selectedServiceLabel!)
         
         pickerArrow = UIButton()
-        pickerArrow!.addTarget(self, action: "pickerArrowPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        pickerArrow!.addTarget(self, action: #selector(ServicePickerTableViewCell.pickerArrowPressed), forControlEvents: UIControlEvents.TouchUpInside)
         pickerArrow!.setImage(UIImage(named: "down_arrow"), forState: UIControlState.Normal)
         self.addSubview(pickerArrow!)
         

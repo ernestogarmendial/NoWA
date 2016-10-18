@@ -63,7 +63,7 @@ class PredictionTableViewCell: GenericTableViewCell {
         sliderLeft!.maximumValue = 3
         sliderLeft!.tintColor = UIColor.loginBlueColor()
         sliderLeft!.continuous = true
-        sliderLeft!.addTarget(self, action: "sliderValueChanged:", forControlEvents: .ValueChanged)
+        sliderLeft!.addTarget(self, action: #selector(PredictionTableViewCell.sliderValueChanged(_:)), forControlEvents: .ValueChanged)
         self.addSubview(sliderLeft!)
         
         self.prediction = sliderLeft!.minimumValue
