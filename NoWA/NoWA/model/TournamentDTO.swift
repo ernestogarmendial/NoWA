@@ -18,6 +18,7 @@ class TournamentDTO: GenericDTO {
     var name : String?
     var eventZone : String?
     var repetition : String?
+    var cancelSelected : Bool?
     
     override class func mapping() -> RKObjectMapping {
         

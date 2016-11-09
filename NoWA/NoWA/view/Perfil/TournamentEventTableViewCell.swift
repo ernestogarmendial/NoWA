@@ -85,6 +85,7 @@ class TournamentEventTableViewCell: GenericTableViewCell {
         
         self.tournamentID = event.tournamentID
         
+        cancelIcon?.hidden = true
         self.eventName?.text = ""
         self.stampLabel?.text = ""
         
@@ -119,8 +120,11 @@ class TournamentEventTableViewCell: GenericTableViewCell {
             self.stampLabel!.text = self.stampLabel!.text! + " - \(zone)"
         }
         
-  
-        
+        if event.cancelSelected != nil {
+            if event.cancelSelected == true {
+                cancelIcon?.hidden = false
+            }
+        }
         
     }
     

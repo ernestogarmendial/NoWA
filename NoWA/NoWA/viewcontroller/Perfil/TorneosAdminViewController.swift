@@ -106,6 +106,12 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
             
             let currentCell = self.tabla?.cellForRowAtIndexPath(indexPath) as? TournamentEventTableViewCell
             currentCell!.checkCancel()
+            
+            var evento : TournamentDTO = self.cellsArray[indexPath.row-2] as TournamentDTO
+            evento.cancelSelected = currentCell?.isCancel
+            self.cellsArray[indexPath.row-2] = evento
+            
+            
         }
         
     }
@@ -165,15 +171,14 @@ class TorneosAdminViewController: GenericViewController, UITableViewDelegate, UI
                 
                 for i in 0 ..< self.cellsArray.count {
                     
-                    let _indexPath = NSIndexPath(forRow: i + 2, inSection: 0)
-                    let currentCell = self.tabla?.cellForRowAtIndexPath(_indexPath) as? TournamentEventTableViewCell
-                    
-                    if currentCell?.isCancel == true {
-                        
-                        if cancelIds == ""{
-                            cancelIds = (currentCell!.tournamentID!.stringValue)
-                        }else{
-                            cancelIds = cancelIds + "-\(currentCell!.tournamentID!.stringValue)"
+                    let evento : TournamentDTO = self.cellsArray[i] as TournamentDTO
+                    if (evento.cancelSelected != nil) {
+                        if evento.cancelSelected == true {
+                            if cancelIds == ""{
+                                cancelIds = (evento.tournamentID!.stringValue)
+                            }else{
+                                cancelIds = cancelIds + "-\(evento.tournamentID!.stringValue)"
+                            }
                         }
                     }
                 }
